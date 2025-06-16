@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>google-scholar</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="google-scholar" fill-rule="nonzero">
+            <polygon id="Path" fill="#4285F4" points="12 19.271214 0 9.500114 12 0"></polygon>
+            <polygon id="Path" fill="#356AC3" points="12 19.271214 24 9.500114 12 0"></polygon>
+            <path d="M11.9998,23.999614 C15.8658,23.999614 18.9997,20.865714 18.9997,16.999814 C18.9997,13.133914 15.8658,10.000014 11.9998,10.000014 C8.13394,10.000014 5,13.133914 5,16.999814 C5,20.865714 8.13394,23.999614 11.9998,23.999614 Z" id="Path" fill="#A0C3FF"></path>
+            <path d="M5.67334,13.999814 C6.79693,11.635014 9.20725,10.000014 11.9996,10.000014 C14.7919,10.000014 17.2022,11.635014 18.3258,13.999814 L5.67334,13.999814 Z" id="Path" fill="#76A7FA"></path>
+        </g>
+    </g>
+</svg>

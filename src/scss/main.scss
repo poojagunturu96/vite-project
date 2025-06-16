@@ -1,0 +1,159 @@
+////
+/// Main root file to import other partials
+////
+
+// abstracts
+@import 'functions';
+@import 'variables';
+@import 'mixins';
+
+// vendor
+// @import '../../node_modules/normalize.css/normalize';
+// @import '../../node_modules/swiper/swiper.scss';
+
+// base
+@import 'global';
+@import 'keyframes';
+
+// objects
+@import 'paragraphs';
+
+// components
+@import 'components/accordion';
+@import 'components/add-to-cal';
+@import 'components/alert';
+@import 'components/anchor-header';
+@import 'components/announcement';
+@import 'components/app-header';
+@import 'components/audio';
+@import 'components/badge';
+@import 'components/banner';
+@import 'components/box-menu';
+@import 'components/breadcrumb';
+@import 'components/button';
+@import 'components/card-carousel-item';
+@import 'components/card-carousel';
+@import 'components/chart';
+@import 'components/checkboxes';
+@import 'components/cookie-banner';
+@import 'components/count';
+@import 'components/course-list';
+@import 'components/cta-bar';
+@import 'components/cta-group';
+@import 'components/datepicker';
+@import 'components/davis-header';
+@import 'components/digest';
+@import 'components/dispatches-item';
+@import 'components/dispatches';
+@import 'components/drawer-nav';
+@import 'components/drawer';
+@import 'components/dropdown';
+@import 'components/emma-form';
+@import 'components/flowchart';
+@import 'components/fluencies';
+@import 'components/filter';
+@import 'components/foldable';
+@import 'components/footer-menu';
+@import 'components/form';
+@import 'components/gallery';
+// @import 'components/grid-stats';
+@import 'components/grid';
+@import 'components/helpfulness';
+@import 'components/college-homepage-grid';
+@import 'components/college-homepage-grid-header';
+@import 'components/college-homepage-grid-item';
+@import 'components/icon';
+@import 'components/image';
+@import 'components/input-group';
+@import 'components/institutional-header';
+@import 'components/journey';
+@import 'components/journey-modal';
+@import 'components/lib-search';
+@import 'components/lightbox';
+@import 'components/link-list';
+@import 'components/list';
+@import 'components/logo-bar';
+@import 'components/ls-hero';
+@import 'components/major-minor-list-table';
+@import 'components/masquerade';
+@import 'components/media-object';
+@import 'components/media';
+@import 'components/mega-cta';
+@import 'components/midd-footer';
+@import 'components/midd-header';
+@import 'components/miis-header';
+@import 'components/midd-nav';
+@import 'components/midd-search';
+@import 'components/nav';
+@import 'components/nav-dropdown';
+@import 'components/non-discrimination-policy';
+@import 'components/office-hours';
+@import 'components/office-footer';
+@import 'components/page-header';
+@import 'components/page-image';
+@import 'components/page-nav';
+@import 'components/pagination';
+@import 'components/pardot-form';
+@import 'components/portrait-video';
+@import 'components/profile-detail';
+@import 'components/profile-spotlight-item';
+@import 'components/quote';
+@import 'components/radios';
+@import 'components/schedule';
+@import 'components/school-footer';
+@import 'components/school-header';
+@import 'components/school-nav';
+@import 'components/school-search';
+@import 'components/section';
+@import 'components/slider';
+@import 'components/spotlight';
+@import 'components/stat-panel';
+@import 'components/stats';
+@import 'components/status-report';
+@import 'components/table';
+@import 'components/tabs';
+@import 'components/terms';
+@import 'components/themed-box';
+@import 'components/themed-panel';
+@import 'components/tooltip';
+@import 'components/top-btn';
+@import 'components/transcript';
+@import 'components/video';
+@import 'components/waveform';
+@import 'components/wrmc-accordion';
+@import 'components/wrmc-footer';
+@import 'components/wrmc-header';
+@import 'components/wrmc-show-teaser';
+@import 'components/wrmc-status-bar';
+@import 'components/wrmc-top-thirty-songs';
+@import 'components/wrmc-weekly-schedule';
+
+// scope
+@import 'scope/typography';
+@import 'scope/google-custom-search';
+@import 'scope/webform';
+@import 'scope/slateform';
+
+// utils
+@import 'utils/background';
+@import 'utils/border';
+@import 'utils/break';
+@import 'utils/clearfix';
+@import 'utils/columns';
+@import 'utils/display';
+@import 'utils/flex';
+@import 'utils/float';
+@import 'utils/hover';
+@import 'utils/order';
+@import 'utils/screen-reader';
+@import 'utils/sizing';
+@import 'utils/spacing';
+@import 'utils/text';
+@import 'utils/toggler';
+
+@import 'print';
+@import 'vendor';
+
+.main {
+  min-height: 85vh;
+}

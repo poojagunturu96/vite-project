@@ -1,0 +1,43 @@
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip__button {
+  background: none;
+  border: 0;
+  line-height: 1;
+  padding: 0;
+  // TODO: these opacity changes don't really belong
+  // to a generic tooltip but we'll add them here for now.
+  opacity: 0.5;
+  transition: opacity 0.2s;
+
+  &:focus,
+  &:hover {
+    opacity: 1;
+  }
+
+  .tooltip--light & {
+    color: $white;
+  }
+}
+
+.tooltip__label {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 10px);
+  background: $white;
+  padding: $spacing-2;
+  font-size: $typescale-2;
+  box-shadow: 0 0 8px rgba($black, 0.5);
+  min-width: 230px;
+  max-width: 100vw;
+  animation: fadeInDown 0.2s;
+
+  .tooltip__button:focus ~ &,
+  .tooltip__button:hover ~ & {
+    display: block;
+  }
+}

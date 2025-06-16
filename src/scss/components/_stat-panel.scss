@@ -1,0 +1,124 @@
+.stat-panel {
+  position: relative;
+  background-color: $gray;
+
+  @include breakpoint(lg) {
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: $color-primary;
+      opacity: 0.7;
+      z-index: $z-index-stat-panel-overlay;
+    }
+  }
+}
+
+.stat-panel__text {
+  font-size: $typescale-5;
+  @include breakpoint(lg) {
+    color: $white;
+  }
+}
+
+.stat-panel__media {
+  @include breakpoint(lg) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $z-index-stat-panel-image;
+  }
+
+  img {
+    object-fit: cover;
+    font-family: 'object-fit: cover;'; // for object-fit-images polyfill
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.stat-panel__content {
+  @include breakpoint(md) {
+    @include make-row;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @include breakpoint(lg) {
+    position: relative;
+    z-index: $z-index-stat-panel-content;
+    min-height: 700px;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.stat-panel__item {
+  padding: $spacing-5;
+
+  @include breakpoint(md) {
+    @include make-col-ready;
+    @include make-col(6);
+  }
+
+  @include breakpoint(lg) {
+    background-color: transparent !important;
+    padding: $spacing-8;
+    @include make-col(5);
+  }
+
+  @include breakpoint(lg) {
+    @include make-col(4);
+  }
+}
+
+// These modifiers have to be before panel item so background color becomes transparent on medium and up
+.stat-panel__item--primary {
+  background-color: $gray-light;
+}
+
+.stat-panel__item--secondary {
+  background-color: $color-primary;
+  text-align: center;
+}
+
+.stat-panel__stats-list {
+  margin-bottom: $spacing-7;
+}
+
+.stat-panel__stats-title {
+  color: $white;
+  font-size: $typescale-7;
+  margin-bottom: $spacing-5;
+}
+
+.stat-panel__stats-label {
+  display: block;
+  color: $white;
+  font-family: $font-family-serif;
+  font-size: 48px; // TODO: add to typescale?
+  line-height: $line-height-solid;
+}
+
+.stat-panel__stats-text {
+  color: $white;
+  font-size: $typescale-3;
+
+  &:not(:last-of-type) {
+    padding-bottom: $spacing-4;
+    margin-bottom: $spacing-4;
+    border-bottom: 1px solid rgba($white, 0.25);
+  }
+
+  @include breakpoint(lg) {
+    font-size: $typescale-4;
+  }
+}

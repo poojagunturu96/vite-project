@@ -1,0 +1,61 @@
+.cookie-banner {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: $black;
+  color: $white;
+  z-index: $z-index-cookie-banner;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: $spacing-4 $spacing-3;
+
+  @include breakpoint(md) {
+    padding: $spacing-5 $spacing-3;
+    flex-direction: row;
+  }
+
+  @include breakpoint(lg) {
+    padding: $spacing-5;
+  }
+
+  &.is-toggled {
+    display: none;
+  }
+
+  p {
+    @include breakpoint(md) {
+      @include make-col(10);
+    }
+
+    a {
+      font-weight: $font-weight-semibold;
+      color: $white;
+      @include link-border;
+    }
+  }
+
+  .cookie-banner__button {
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing;
+    font-weight: $font-weight-semibold;
+    font-size: $typescale-2;
+    color: $white;
+    background: none;
+    border: 0;
+
+    .cookie-banner__button-icon {
+      width: $typescale-5;
+      height: $typescale-5;
+    }
+  }
+
+  .cookie-banner__button--close {
+    margin-bottom: $spacing-4;
+    margin-left: auto;
+
+    @include breakpoint(md) {
+      margin-bottom: auto;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.flowchart {
+  counter-reset: flowchart;
+  background: $blue-lighter;
+}
+
+.flowchart__item {
+  padding: $spacing-5;
+  padding-left: $spacing-7;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+.flowchart__item--active {
+  border-left: 4px solid $navy;
+}
+
+.flowchart__item--answer {
+  background: $navy;
+  color: $white;
+
+  @include links-current;
+}
+
+.flowchart__title {
+  position: relative;
+
+  &:before {
+    counter-increment: flowchart;
+    display: block;
+    content: counter(flowchart) '.';
+    position: absolute;
+    top: 0;
+    right: 100%;
+    margin-right: 4px;
+  }
+}

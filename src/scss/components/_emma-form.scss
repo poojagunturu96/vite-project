@@ -1,0 +1,47 @@
+// can't control markrup for emma form so we have to disable class lint
+// stylelint-disable selector-class-pattern
+.e2ma_signup_form {
+  max-width: 400px;
+  margin-bottom: 4rem;
+
+  a {
+    @include link-border;
+  }
+}
+
+.e2ma_signup_message {
+  @include h3;
+  margin-bottom: $spacing-4;
+}
+
+.e2ma_signup_form_row {
+  @include form-group;
+}
+
+.e2ma_signup_form_label {
+  @include form-label;
+}
+
+.e2ma_signup_form_required_asterix {
+  color: $danger;
+}
+
+.e2ma_signup_form_element {
+  select,
+  input {
+    @include form-control;
+  }
+  select {
+    @include form-select;
+  }
+}
+
+.e2ma_signup_form_required_footnote {
+  @include form-text;
+  @include form-group;
+}
+
+.e2ma_signup_form_button {
+  @include button-base;
+  @include button-theme('primary');
+}

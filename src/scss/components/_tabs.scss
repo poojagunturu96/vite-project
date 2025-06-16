@@ -1,0 +1,119 @@
+.tabs {
+  width: calc(100vw - #{$spacing-5});
+  margin-top: $spacing-6;
+
+  @include breakpoint(md) {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.tabs__nav {
+  position: relative;
+  right: 0;
+  margin: 0 -$spacing-3;
+
+  @include breakpoint(md) {
+    margin: 0;
+  }
+
+  @include print-hide;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 4rem;
+    background-image: linear-gradient(to right, transparent, rgba($navy, 0.7));
+
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+}
+
+.tabs__list {
+  border-bottom: 4px solid $black;
+  margin-bottom: rem(36);
+  padding: 0 $spacing-3;
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @include print-hide;
+
+  @include breakpoint(md) {
+    margin-bottom: $spacing-5;
+    padding: 0;
+    overflow-x: auto;
+  }
+
+  .tabs--light & {
+    border-color: $white;
+  }
+}
+
+.tabs__item {
+  &:last-child {
+    padding-right: 4rem;
+    @include breakpoint(md) {
+      padding-right: 0;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-right: $spacing-4;
+  }
+}
+
+.tabs__button {
+  display: inline-block;
+  padding-top: $spacing-2;
+  padding-bottom: $spacing-2;
+  border-top: 1px solid transparent;
+  opacity: 0.8;
+  transition: 0.2s;
+  font-weight: $font-weight-medium;
+
+  &:hover {
+    text-decoration: none;
+    border-top-color: $border-color;
+    opacity: 1;
+  }
+
+  &.tabs__button--active,
+  &[aria-selected='true'] {
+    border-top-color: $black;
+    color: $color-active;
+  }
+
+  .tabs--light & {
+    color: $white;
+
+    &:hover {
+      text-decoration: none;
+      border-top-color: rgba($white, 0.5);
+      opacity: 1;
+    }
+
+    &[aria-selected='true'] {
+      border-top-color: $white;
+      color: $white;
+    }
+  }
+}
+
+// .tabs__panel {
+//   .input-group {
+//     .form-control {
+//       padding: 0 $spacing-3;
+//     }
+
+//     button {
+//       padding: rem(12) $spacing-5;
+//     }
+//   }
+// }

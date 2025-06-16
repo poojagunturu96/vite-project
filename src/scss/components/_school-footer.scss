@@ -1,0 +1,91 @@
+.school-footer {
+  background-color: $color-primary;
+  padding-top: $spacing-5;
+  padding-bottom: $spacing-5;
+
+  @include breakpoint(md) {
+    padding-top: $spacing-7;
+    padding-bottom: $spacing-7;
+  }
+}
+
+.school-footer__main {
+  @include make-col-ready;
+
+  @include breakpoint(lg) {
+    @include make-col(4);
+  }
+}
+
+.school-footer__primary {
+  @include make-col-ready;
+
+  @include breakpoint(md) {
+    @include make-col(5);
+  }
+
+  @include breakpoint(lg) {
+    @include make-col(12);
+  }
+
+  .school-footer--lite & {
+    @include breakpoint(lg) {
+      @include make-col(5);
+    }
+  }
+}
+
+.school-footer__secondary {
+  @include make-col-ready;
+  padding-top: $spacing-5;
+  padding-bottom: $spacing-5;
+
+  @include breakpoint(md) {
+    @include make-col(4);
+    margin-left: auto;
+  }
+
+  @include breakpoint(lg) {
+    @include make-col(12);
+    padding-bottom: 0;
+  }
+
+  .school-footer--lite & {
+    padding-bottom: 0;
+    @include breakpoint(md) {
+      border-left: 1px solid $navy-light;
+      padding-top: $spacing-3;
+      padding-bottom: $spacing-3;
+    }
+
+    @include breakpoint(lg) {
+      @include make-col(4);
+    }
+  }
+}
+
+.school-footer__text {
+  @include h0;
+  color: $white;
+  margin-bottom: $spacing-4;
+
+  @include breakpoint(md) {
+    margin-bottom: $spacing-5;
+  }
+}
+
+.school-footer__nav {
+  @include make-col-ready;
+  border-top: 1px solid $navy-light;
+
+  @include breakpoint(md) {
+    margin-top: $spacing-5;
+  }
+
+  @include breakpoint(lg) {
+    @include make-col(8);
+    border-left: 1px solid $navy-light;
+    border-top: 0;
+    margin-top: 0;
+  }
+}

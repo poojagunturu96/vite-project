@@ -1,0 +1,57 @@
+$card-carousel-height: 600px;
+
+.card-carousel {
+  // margin-bottom: $component-margin-bottom;
+}
+
+.card-carousel__header {
+  height: 100%;
+  padding: 2rem;
+  background-color: $color-primary;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  @include breakpoint(md) {
+    text-align: left;
+    padding: 8rem 4rem 3rem;
+    height: $card-carousel-height;
+  }
+}
+
+.card-carousel__title {
+  color: $white;
+  @include h0;
+  // line-height: $h1-line-height;
+  margin-bottom: 1rem;
+
+  @include breakpoint(md) {
+    margin-bottom: 3rem;
+  }
+}
+
+.card-carousel__button {
+}
+
+.card-carousel__controls {
+  margin-top: 2rem;
+  @include breakpoint(md) {
+    margin-top: auto;
+  }
+}
+
+.card-carousel__container {
+}
+
+.card-carousel__content {
+  display: flex;
+  height: $card-carousel-height;
+}
+
+.card-carousel__item {
+  @include breakpoint(md) {
+    &:not(:last-child) {
+      border-right: 1px solid $white;
+    }
+  }
+}

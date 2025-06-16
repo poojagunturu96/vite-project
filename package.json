@@ -1,0 +1,38 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@vituum/vite-plugin-twig": "^1.1.0",
+    "js-yaml": "^4.1.0",
+    "sass-embedded": "^1.89.1",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5",
+    "vituum": "^1.2.0"
+  },
+  "dependencies": {
+    "anchor-js": "^5.0.0",
+    "animejs": "^4.0.2",
+    "focus-within-polyfill": "^5.2.1",
+    "headroom.js": "^0.12.0",
+    "intersection-observer": "^0.12.2",
+    "lodash": "^4.17.21",
+    "lozad": "^1.16.0",
+    "mdn-polyfills": "^5.20.0",
+    "micromodal": "^0.6.1",
+    "object-fit-images": "^3.2.4",
+    "pikaday": "^1.8.2",
+    "preact": "^10.26.9",
+    "promise-polyfill": "^8.3.0",
+    "stickybits": "^3.7.11",
+    "superclamp": "^0.2.3",
+    "swiper": "^11.2.8"
+  }
+}

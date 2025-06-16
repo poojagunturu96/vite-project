@@ -1,0 +1,160 @@
+$spotlight-item-breakpoint: 'xs';
+
+.card-carousel-item {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.card-carousel-item__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: $z-index-card-carousel-item-image;
+
+  img {
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.card-carousel-item__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: $z-index-card-carousel-item-content;
+}
+
+.card-carousel-item__side {
+  animation: fadeInDown 0.8s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-carousel-item__side--front {
+  .card-carousel-item.has-toggler.is-toggled & {
+    display: none;
+  }
+}
+
+.card-carousel-item__side--back {
+  background-color: $blue-lighter;
+
+  .card-carousel-item.has-toggler & {
+    display: none;
+  }
+
+  .card-carousel-item.is-toggled & {
+    display: flex;
+  }
+}
+
+.card-carousel-item__toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: $spacing-2;
+}
+
+.card-carousel-item__header {
+  padding: $spacing-3;
+  padding-right: $spacing-6;
+  padding-bottom: $spacing-4;
+  background-image: linear-gradient(
+    to bottom,
+    rgba($black, 0.75) 20%,
+    rgba($white, 0)
+  );
+
+  .card-carousel-item__side--back & {
+    // remove gradient from card back header
+    background: 0;
+  }
+}
+
+.card-carousel-item__body {
+  padding: $spacing-3;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.card-carousel-item__footer {
+  flex: 0 1 auto;
+  padding: $spacing-3;
+  text-align: center;
+  position: relative;
+  margin-top: auto;
+
+  .card-carousel-item__side--back & {
+    &:after {
+      content: '';
+      display: block;
+      background-image: linear-gradient(
+        to bottom,
+        rgba($white, 0),
+        $blue-lighter
+      );
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      width: 100%;
+      height: $spacing-5;
+    }
+  }
+}
+
+.card-carousel-item__label {
+  white-space: pre-wrap;
+  font-size: $typescale-2;
+  line-height: $line-height-body;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-2;
+}
+
+.card-carousel-item__title {
+  @include h4;
+
+  .card-carousel-item__side--front & {
+    color: $white;
+  }
+}
+
+.card-carousel-item__text {
+  font-size: $typescale-3;
+
+  .card-carousel-item__side--front & {
+    color: $white;
+  }
+}
+
+.card-carousel-item__header--band {
+  padding: $spacing-2 $spacing-3;
+  margin-top: $spacing-9;
+}
+
+$card-carousel-item-colors: (
+  dark-blue: #0d395f,
+  red: #962c28,
+  green: #5e7e2c,
+  light-blue: #75a3cd,
+  maroon: #763649,
+  bronze: #907036,
+  teal: #1f9f8b,
+  orange: #c26533
+);
+
+@each $key, $hex in $card-carousel-item-colors {
+  .card-carousel-item__header--#{$key} {
+    background: rgba($hex, 0.9);
+  }
+}

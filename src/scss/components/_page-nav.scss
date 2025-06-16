@@ -1,0 +1,105 @@
+.page-nav {
+  margin-bottom: $spacing-4;
+  @include breakpoint(md) {
+    margin-bottom: $spacing-8;
+  }
+  @include print-hide;
+}
+
+.page-nav__title {
+  border-bottom: 4px solid $border-color;
+  @include small-caps;
+}
+
+.page-nav__button {
+  padding: 1rem;
+  border: 1px solid $border-color;
+  width: 100%;
+  background: none;
+  font-size: $typescale-2;
+  font-weight: $font-weight-semibold;
+  // font-family: inherit;
+  text-align: left;
+  color: $color-primary;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(lg) {
+    display: none;
+  }
+
+  .page-nav__button-text__label {
+    @include gray-label;
+    margin-bottom: $spacing-1;
+    line-height: 1.4;
+    color: $gray-semi-light;
+  }
+
+  .page-nav__button-text {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.page-nav__icon {
+  float: right;
+  transition: $chevron-transition;
+  margin-left: $spacing-2;
+  margin-top: rem(2);
+
+  .page-nav__button.is-toggled & {
+    transform: $chevron-transform;
+  }
+}
+
+.page-nav__content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 1px solid $border-color;
+  border-top: 0;
+  background-color: #f2f2f2;
+
+  @include breakpoint(lg) {
+    padding-left: 0;
+    padding-right: 0;
+    border: 0;
+    background-color: transparent;
+  }
+
+  &.has-toggler {
+    display: none;
+
+    @include breakpoint(lg) {
+      display: block;
+    }
+  }
+
+  &.is-toggled {
+    display: block;
+  }
+}
+
+.page-nav__list {
+  // nested lists
+  .page-nav__list {
+    margin-left: 2rem;
+    border-top: 1px solid $border-color;
+  }
+}
+
+.page-nav__item {
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+.page-nav__link {
+  display: block;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.page-nav__link--active {
+  color: $sky;
+  font-weight: $font-weight-semibold;
+}

@@ -1,0 +1,24 @@
+.masquerade {
+  margin-bottom: $spacing-6;
+
+  h2 {
+    @include form-label;
+  }
+
+  .container-inline {
+    display: flex;
+  }
+
+  input[type='text'] {
+    @include form-control;
+    font-size: $input-font-size-sm;
+    padding: $input-padding-y-sm $input-padding-x-sm;
+  }
+
+  input[type='submit'] {
+    // @include button-base;
+    @include button-theme('primary');
+    @include button-size('sm');
+    height: 100%; // set height since its wrapped in a div and wont match flex height
+  }
+}

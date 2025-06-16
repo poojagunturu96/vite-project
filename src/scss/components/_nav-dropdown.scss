@@ -1,0 +1,53 @@
+$nav-dropdown-bp: lg;
+
+.nav-dropdown {
+  position: relative;
+
+  &:hover,
+  &:focus-within {
+    .nav-dropdown__menu {
+      @include breakpoint($nav-dropdown-bp) {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.nav-dropdown__menu {
+  display: none;
+
+  @include breakpoint($nav-dropdown-bp) {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 240px;
+    transition: opacity 0.2s;
+    z-index: 3;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.is-toggled {
+    display: block;
+    @include breakpoint($nav-dropdown-bp) {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.nav-dropdown__button {
+  @include breakpoint($nav-dropdown-bp) {
+    // display: none;
+  }
+}
+
+.nav-dropdown__icon {
+  transition: $chevron-transition;
+
+  .nav-dropdown__button.is-toggled & {
+    transform: $chevron-transform;
+  }
+}

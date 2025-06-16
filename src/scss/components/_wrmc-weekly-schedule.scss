@@ -1,0 +1,128 @@
+.weekly-schedule {
+  position: relative;
+
+  .weekly-schedule__column {
+    width: percentage(1/7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: $spacing-2;
+
+    @include breakpoint(lg) {
+      padding-right: $spacing-5;
+    }
+
+    &, button {
+      font-size: $typescale-1;
+      font-weight: $font-weight-semibold;
+      line-height: $line-height-heading; 
+      letter-spacing: $letter-spacing;
+    }
+
+    button:hover,
+    button:focus {
+      .weekly-schedule__show {
+        background-color: darken($navy, 10%);
+      }
+    }
+
+    h2 {
+      color: $black;
+      font-family: $font-family-sans-serif;
+      font-size: $typescale-2;
+      font-weight: $font-weight-semibold;
+      line-height: $line-height-body;
+      text-transform: uppercase;
+      margin-bottom: $spacing-6;
+    }
+
+    .weekly-schedule__show-wrapper {
+      position: relative;
+      margin-bottom: $spacing-4;
+
+      @each $genre, $genre-color in $wrmc-genre-colors {
+        &.#{$genre} {
+          .weekly-schedule__show {
+            background-color: $genre-color;
+          }
+
+          button:hover,
+          button:focus,
+          &:focus-within {
+            .weekly-schedule__show {
+              background-color: darken($genre-color, 10%);
+            }
+          }
+        }
+      }
+
+      &, button {
+        width: 100%;
+
+        &:focus,
+        &:hover {
+          .weekly-schedule__show-teaser {
+            display: block;
+          }
+
+          .weekly-schedule__show {
+            svg {
+              display: block;
+            }
+          }
+        }
+      }
+
+      &:focus-within {
+        .weekly-schedule__show-teaser {
+          display: block;
+        }
+
+        .weekly-schedule__show {
+          // background-color: darken($navy, 10%);
+          
+          svg {
+            display: block;
+          }
+        }
+      }
+
+      .weekly-schedule__show {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        color: $white;
+        // background-color: $navy;
+
+        time {
+          width: 100%;
+          text-align: center;
+          border-bottom: 1px solid $white;
+          padding: $spacing-1 0;
+        }
+
+        svg {
+          display: none;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+
+        h3 {
+          width: 100%;
+          padding: $spacing-2;
+          font-family: $font-family-sans-serif;
+          font-size: $typescale-1;
+          font-weight: $font-weight-semibold;
+          text-transform: capitalize;
+          letter-spacing: initial;
+        }
+      }
+    }
+
+    .weekly-schedule__time {
+      color: $gray;
+      margin-bottom: $spacing-4;
+    }
+  }
+}

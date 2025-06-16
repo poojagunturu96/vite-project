@@ -1,0 +1,61 @@
+@mixin terms() {
+  @include breakpoint(lg) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li,
+  p {
+    font-size: $typescale-3;
+  }
+}
+@mixin terms-title() {
+  flex: 0 0 30%;
+  font-weight: $font-weight-medium;
+  margin-bottom: $spacing-2;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include breakpoint(lg) {
+    flex: 0 0 30%;
+    padding-bottom: $spacing-4;
+    margin-bottom: $spacing-4;
+    padding-right: $spacing-2;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $border-color;
+    }
+  }
+}
+@mixin terms-text() {
+  padding-bottom: $spacing-4;
+  margin-bottom: $spacing-4;
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $border-color;
+  }
+
+  @include breakpoint(lg) {
+    flex: 0 0 70%;
+    padding-left: $spacing-2;
+  }
+}
+
+.terms {
+  @include terms;
+}
+
+.terms__title {
+  @include terms-title;
+}
+
+.terms__text {
+  @include terms-text;
+}

@@ -1,0 +1,62 @@
+.office-footer {
+  background: $gray-lighter;
+  text-align: center;
+  border-top: 1px solid $border-color;
+
+  @include breakpoint(lg) {
+    padding-top: $spacing-5;
+    padding-bottom: $spacing-5;
+  }
+}
+
+.office-footer__row {
+  @include make-row;
+  justify-content: center;
+}
+
+.office-footer__col {
+  @include make-col-ready;
+  padding-bottom: $spacing-4;
+  padding-top: $spacing-4;
+
+  @include breakpoint(md) {
+    padding-bottom: $spacing-5;
+    padding-top: $spacing-5;
+  }
+
+  @include breakpoint(lg) {
+    @include make-col(4);
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $border-color;
+
+    @include breakpoint(lg) {
+      border-bottom: 0;
+      border-right: 1px solid $border-color;
+    }
+  }
+}
+
+.office-footer__col div {
+  &:not(:first-child) {
+    h3 {
+      margin-left: -$spacing-3;
+      margin-right: -$spacing-3;
+      margin-top: $spacing-4;
+      padding-top: $spacing-4;
+      border-top: 1px solid $border-color;
+
+      @include breakpoint(lg) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.office-footer__col h4 {
+  margin-top: rem(14);
+}

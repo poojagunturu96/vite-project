@@ -1,0 +1,48 @@
+.label,
+label {
+  @include form-label;
+}
+
+.form-group {
+  @include form-group;
+}
+
+.form-control {
+  @include form-control;
+}
+
+// TODO: change form-control classes to be unique for their purpose and not use clever qualifying type
+// stylelint-disable-next-line selector-no-qualifying-type
+textarea.form-control {
+  @include form-textarea;
+}
+
+// TODO: change form-control classes to be unique for their purpose and not use clever qualifying type
+// stylelint-disable-next-line selector-no-qualifying-type
+select.form-control {
+  @include form-select;
+}
+
+.form-control--sm {
+  font-size: $input-font-size-sm;
+  padding: $input-padding-y-sm $input-padding-x-sm;
+}
+
+.form-check {
+  @include form-checkbox-item;
+}
+
+.form-check__input {
+  @include form-checkbox-control;
+}
+
+.form-check__label {
+  @include form-checkbox-label;
+}
+
+.form-check--inline {
+  display: inline-flex;
+  margin-right: $spacing-3;
+  // align-items: center;
+  margin-bottom: 0;
+}

@@ -1,0 +1,20 @@
+.dropdown__button.addtocal {
+  @include button-size(sm);
+  display: inline-block;
+}
+
+.dropdown__list.addtocal-menu {
+  display: none;
+}
+
+.dropdown__list.addtocal-menu,
+.dropdown__list.addtocal-menu:hover {
+  border-top: 1px solid $white;
+  background: $navy;
+}
+
+.addtocal-link a.dropdown__link,
+.addtocal-link a.dropdown__link:hover {
+  color: $white;
+  background-color: transparent;
+}

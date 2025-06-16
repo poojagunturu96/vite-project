@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "ES2020",
+    "noImplicitAny": true,
+    "target": "ES5",
+    "jsx": "react",
+    "jsxFactory": "h",
+    "strict": false,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true
+  },
+  "include": ["src/js/**/*.ts"],
+  "exclude": ["src/js/journey-old.ts"]
+}

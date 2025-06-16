@@ -1,0 +1,69 @@
+/* stylelint-disable */
+.helpfulness {
+  background: $blue-lighter;
+  padding: $spacing-4;
+
+  .form-item-helpfulness-rating {
+    @include radio;
+
+    label {
+      @include radio-label();
+    }
+
+    input[type='radio'] {
+      @include radio-input();
+
+      &:focus ~ label {
+        @include radio-input-focus-label;
+      }
+
+      &:checked ~ label {
+        @include radio-input-checked-label;
+      }
+    }
+  }
+
+  .form-item-helpfulness-comments {
+    margin-top: $spacing-4;
+    @include form-group;
+  }
+
+  .form-textarea {
+    @include form-control;
+    @include form-textarea;
+  }
+
+  .helpfulness_no_description,
+  .helpfulness_yes_description {
+    @include form-text;
+  }
+
+  p {
+    font-size: inherit;
+  }
+}
+
+.helpfulness--unanswered {
+  .form-item-helpfulness-comments,
+  .form-item-helpfulness-comments-yes,
+  .form-item-helpfulness-comments-no,
+  .helpfulness_no_description,
+  .helpfulness_yes_description,
+  .helpfulness_yes_title,
+  .helpfulness_no_title,
+  .form-submit {
+    display: none;
+  }
+}
+
+.helpfulness--yes {
+  .form-item-helpfulness-comments-no {
+    display: none;
+  }
+}
+
+.helpfulness--no {
+  .form-item-helpfulness-comments-yes {
+    display: none;
+  }
+}

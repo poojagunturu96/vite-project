@@ -1,0 +1,87 @@
+.anchor-header {
+  background-color: $gray-lighter;
+  padding-top: $spacing-4;
+  border-bottom: 1px solid $border-color;
+
+  @include breakpoint(lg) {
+    padding-top: $spacing-7;
+  }
+
+  @media print {
+    border-bottom: 0;
+  }
+}
+
+.anchor-header--front {
+  margin-bottom: $spacing-5;
+  @include breakpoint(md) {
+    margin-bottom: $spacing-7;
+  }
+  @include breakpoint(lg) {
+    margin-bottom: $spacing-8;
+  }
+}
+
+.anchor-header__primary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @include breakpoint(lg) {
+    display: block;
+  }
+}
+
+.anchor-header__title {
+  @include h0;
+  font-family: $font-family-serif;
+  margin-bottom: $spacing-3;
+}
+
+.anchor-header__link {
+  @include link-border;
+  border-color: $gray-light;
+
+  &:hover,
+  &:focus {
+    color: $sky;
+  }
+}
+
+.anchor-header__button {
+  margin-left: $spacing-3;
+  color: $color-primary;
+  padding: $spacing-2;
+  border: 1px solid $color-primary;
+  background: none;
+  appearance: none;
+  line-height: 1;
+  margin-top: $spacing-1;
+  @include print-hide;
+
+  @include breakpoint(lg) {
+    display: none;
+  }
+}
+
+.anchor-header__icon {
+  transition: $chevron-transition;
+
+  .anchor-header__button.is-toggled & {
+    transform: $chevron-transform;
+  }
+}
+
+.anchor-header__nav {
+  &.has-toggler {
+    display: none;
+
+    @include breakpoint(lg) {
+      display: block;
+    }
+  }
+
+  &.is-toggled {
+    display: block;
+  }
+}

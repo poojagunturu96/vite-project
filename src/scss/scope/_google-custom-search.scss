@@ -1,0 +1,296 @@
+// stylelint-disable selector-max-id
+// stylelint-disable selector-id-pattern
+// reason: ID selector is needed for specificity.
+
+// stylelint-disable selector-class-pattern
+// reason: Classnames out of our control
+
+// stylelint-disable selector-no-qualifying-type
+// reason: limited selector options when working with gcs
+
+#___gcse_0 {
+  .gsc-control-cse {
+    padding: 0;
+    margin-bottom: 3rem;
+  }
+
+  /* search input + search button container */
+
+  .gsc-search-box {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 3rem;
+  }
+
+  .gsc-input-box {
+    border: 1px solid $border-color;
+    padding: 0;
+    border-radius: 0;
+
+    &:focus-within {
+      border-color: $navy;
+    }
+  }
+
+  // text field
+  .gsib_a {
+    padding: 1rem;
+    line-height: 1;
+  }
+
+  // clear button
+  .gsib_b {
+    line-height: 1;
+    padding: 1rem;
+  }
+
+  // clear x icon
+  .gsst_a,
+  .gsst_b {
+    padding: 0;
+  }
+
+  // x icon
+  .gscb_a {
+    font-size: 24px;
+    line-height: 16px;
+    color: $navy;
+  }
+
+  // space between input and search button
+  td.gsc-input {
+    padding-right: 0.5rem;
+  }
+
+  // search input field
+  input.gsc-input {
+    padding: 0.5rem;
+    font-family: $font-family-sans-serif;
+    background-position: 0.5rem;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  // search submit button
+  button.gsc-search-button {
+    font-family: $font-family-sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    background-color: $navy;
+    padding: 1rem;
+    height: auto;
+    cursor: pointer;
+    margin: 0;
+    border-radius: 0;
+    border: 1px solid $navy;
+  }
+
+  /* filter tabs */
+
+  .gsc-tabsArea {
+    border-bottom: 4px solid $navy;
+    margin-bottom: 1rem;
+    border-radius: 0;
+
+    .gsc-tabHeader {
+      font-size: 16px;
+      padding: 0.5rem 0;
+      font-weight: $font-weight-medium;
+      text-transform: none;
+      margin-right: 1.5rem;
+      margin-top: 0;
+      border-top: 1px solid transparent;
+      border-bottom: 0;
+      line-height: inherit;
+
+      &:not(.gsc-tabhActive):hover {
+        // background-color: $gray-light;
+        border-color: $navy;
+      }
+    }
+
+    .gsc-tabHeader.gsc-tabhInactive {
+      background: none;
+      color: $color-primary;
+      border: 0;
+    }
+
+    .gsc-tabhActive {
+      // background-color: $color-primary;
+      // color: $white;
+      border-color: $navy;
+    }
+  }
+
+  /* result timestamp */
+
+  // results time
+  .gsc-above-wrapper-area {
+    border-bottom: 1px solid $border-color;
+    padding: 0;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  // results time text
+  .gsc-result-info {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #000;
+    font-family: $font-family-sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Search result container */
+
+  .gsc-results {
+    padding: 0;
+    width: 100%;
+  }
+
+  /* Search result item */
+
+  .gsc-result {
+    border: 0;
+    padding: 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $border-color;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
+
+  /* item title */
+
+  .gsc-thumbnail-inside {
+    padding: 0;
+  }
+
+  .gs-title {
+    @include h3;
+    color: $color-primary;
+    font-family: $font-family-serif;
+    text-decoration: none;
+    margin-bottom: 0;
+
+    b {
+      text-decoration: none;
+      font-weight: normal;
+      font-size: $typescale-5;
+      line-height: $line-height-heading;
+      color: currentcolor;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  /* search result item url */
+
+  .gsc-url-top {
+    padding: 0;
+  }
+
+  .gs-visibleUrl {
+    font-family: $font-family-sans-serif;
+    font-size: 14px;
+    padding: 0;
+    margin-bottom: 1rem;
+    color: $navy;
+  }
+
+  /* search result item image and snippet */
+
+  .gsc-table-result {
+    padding: 0;
+  }
+
+  /* image */
+
+  .gs-web-image-box {
+    padding: 0;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    width: auto;
+  }
+
+  .gs-image {
+    border: 0;
+    max-width: 100px;
+  }
+
+  .gsc-table-cell-thumbnail {
+    padding: 0;
+  }
+
+  /* snippet */
+
+  .gs-fileFormat {
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-family: $font-family-sans-serif;
+  }
+
+  .gs-snippet {
+    font-family: $font-family-sans-serif;
+    font-size: $paragraph-font-size;
+    line-height: $paragraph-line-height;
+    margin: 0;
+  }
+
+  .gs-per-result-labels {
+    font-family: $font-family-sans-serif;
+    margin-top: 0.5rem;
+  }
+
+  /* pagination */
+
+  .gsc-cursor-box {
+    border-top: 0;
+    margin: 0;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    padding: 0;
+  }
+
+  .gsc-cursor-page {
+    font-weight: $font-weight-semibold;
+    font-size: 14px;
+    padding: 0.5rem;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      background-color: $gray-light;
+    }
+  }
+
+  .gsc-cursor-current-page {
+    background-color: $color-primary;
+    color: $white;
+  }
+
+  .gs-promotion .gs-visibleUrl {
+    color: $black;
+  }
+
+  /* branded parts */
+
+  .gcsc-more-maybe-branding-root {
+    a {
+      color: $navy;
+    }
+  }
+
+  // search for <term> on google link
+  .gcsc-find-more-on-google {
+    margin: 0;
+  }
+
+  // powered by
+  .gcsc-branding {
+  }
+}

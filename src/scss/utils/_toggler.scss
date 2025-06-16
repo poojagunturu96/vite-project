@@ -1,0 +1,43 @@
+////
+/// Utilities to be combined with [data-toggle-target] JS widget.
+////
+
+// TODO: it isn't clear that these require the parent element to toggle the element the class is defined on.
+// Perhaps we change this something along the lines of `parent-toggled-flip`
+.toggled-flip {
+  transition: $chevron-transition;
+
+  .is-toggled > & {
+    transform: $chevron-transform;
+  }
+}
+
+.toggled-show {
+  display: none;
+
+  .is-toggled > & {
+    display: inline-block;
+  }
+}
+
+.toggled-hide {
+  .is-toggled > & {
+    display: none;
+  }
+}
+
+.is-toggled.is-toggled-show {
+  display: block;
+}
+
+.is-toggled.is-toggled-hide {
+  display: none;
+}
+
+.has-toggler.has-toggler-hide {
+  display: none;
+}
+
+.has-toggler.has-toggler-show {
+  display: block;
+}

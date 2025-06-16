@@ -1,0 +1,245 @@
+.page-header {
+}
+
+.page-header--has-image {
+  padding-top: percentage(2 / 5);
+  height: 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  margin-bottom: $spacing-7;
+
+  img {
+    @include absolute-fill;
+    object-fit: cover;
+  }
+
+  .page-header__title {
+    color: $white;
+    padding-right: $spacing-4; // make room for tooltip on image
+  }
+}
+
+.page-header--wrmc {
+  overflow: initial;
+
+  .page-header__figure {
+    &:before {
+      content: '';
+      z-index: 6;
+      width: 75%;
+      height: 50%;
+      display: block;
+      position: absolute;
+      right: 0;
+      background: linear-gradient(to bottom left, rgba($black, 0.9) 0%, transparent 50%);
+
+      @include breakpoint(sm) {
+        width: 50%;
+        background: linear-gradient(to bottom left, rgba($black, 0.9) 0%, transparent 40%);
+      }
+
+      @include breakpoint(lg) {
+        background: linear-gradient(to bottom left, rgba($black, 0.9) 0%, transparent 30%);
+      }
+
+      @include breakpoint(xl) {
+        background: linear-gradient(to bottom left, rgba($black, 0.9) 0%, transparent 25%);
+      }
+    }
+  }
+}
+
+.page-header__figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.page-header__caption {
+  position: absolute;
+  right: $spacing-3;
+  bottom: $spacing-7;
+  z-index: $z-index-page-header-caption;
+
+  @include breakpoint(md) {
+    bottom: $spacing-4;
+    right: $spacing-5;
+  }
+}
+
+.page-header__list-toggle {
+  position: absolute;
+  top:0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  column-gap: $spacing-3;
+  color: $white;
+  font-size: $typescale-2;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-solid;
+  text-transform: uppercase;
+  padding-top: $spacing-3;
+  padding-right: $spacing-3;
+  z-index: 8;
+
+  @include breakpoint(lg) {
+    padding-right: $spacing-5;
+  }
+
+  .page-header__list-ellipsis {
+    & > span {
+      display: block;
+      width: $spacing-1;
+      height: $spacing-1;
+      border-radius: 50%;
+      background-color: $white;
+      margin: $spacing-1 0;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: $navy;
+
+    .page-header__list-ellipsis {
+      & > span {
+        background-color: $navy;
+      }
+    }
+
+    ~ .page-header__list {
+      background-color: $white;
+      transition: background-color 0.2s;
+      z-index: 7;
+
+      .page-header__list-overlay {
+        display: block;
+        padding-left: $spacing-7;
+        padding-right: $spacing-5;
+        padding-top: rem(56);
+        padding-bottom: $spacing-3;
+      }
+    }
+  }
+}
+
+.page-header__list {
+  position: absolute;
+  top:0;
+  right: 0;
+  max-width: 200px;
+  box-shadow: 0px 0px $spacing-2 0px rgba($black, 0.25);
+
+  .page-header__list-overlay {
+    display: none;
+
+    &, p {
+      font-size: $typescale-2;
+      font-weight: $font-weight-semibold;
+      line-height: $line-height-heading;
+    }
+
+    counter-reset: ol;
+
+    > li {
+      counter-increment: ol;
+      position: relative;
+
+      &:before {
+        content: counter(ol) '.';
+        position: absolute;
+        right: calc(100% + #{$spacing-2});
+        color: $wrmc-pink;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: $spacing-2;
+      }
+
+      p:last-child {
+        color: $wrmc-pink;
+      }
+    }
+  }
+}
+
+.page-header__main {
+  .page-header--has-image & {
+    background-image: linear-gradient(to bottom, transparent, $black);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.page-header--has-menu {
+  margin-bottom: 0;
+}
+
+.page-header__content {
+  @include make-col-ready;
+  padding-top: $spacing-5;
+  padding-bottom: $spacing-4;
+
+  @include breakpoint(md) {
+    padding-top: $spacing-6;
+    @include make-col(10);
+    @include make-col-offset(1);
+  }
+
+  @include breakpoint(lg) {
+    padding-top: $spacing-8;
+    padding-bottom: $spacing-9;
+  }
+
+  .page-header--has-image & {
+    padding-top: $spacing-9;
+    padding-bottom: $spacing-5;
+  }
+
+  .page-header--has-menu & {
+    padding-bottom: $spacing-3;
+
+    @include breakpoint(md) {
+      padding-bottom: $spacing-4;
+    }
+
+    @include breakpoint(lg) {
+      padding-bottom: $spacing-5;
+    }
+  }
+
+  .page-header--has-image.page-header--has-menu & {
+    padding-bottom: $spacing-7;
+  }
+}
+
+.page-header__title {
+  @include h1;
+}
+
+.page-header--app {
+  .page-header__content {
+    padding-top: $spacing-4;
+    padding-bottom: $spacing-4;
+    @include breakpoint(lg) {
+      padding-top: $spacing-8;
+      padding-bottom: $spacing-8;
+    }
+  }
+
+  .page-header__title {
+    font-size: $typescale-7;
+
+    @include breakpoint(md) {
+      font-size: $typescale-8;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+////
+/// Flexbox order utilities to change element orders at breakpoints
+////
+
+@each $breakpoint, $variant in $responsive-variants {
+  @include breakpoint($breakpoint) {
+    .order#{$variant}-first {
+      order: -1;
+    }
+
+    .order#{$variant}-last {
+      order: 9999;
+    }
+
+    @for $i from 0 through $grid-columns {
+      .order#{$variant}-#{$i} {
+        order: $i;
+      }
+    }
+  }
+}

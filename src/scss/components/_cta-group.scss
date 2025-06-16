@@ -1,0 +1,90 @@
+.footer-cta-light {
+  h2 {
+    font-size: $typescale-4;
+    letter-spacing: 2px;
+  }
+}
+
+.cta-group {
+  @include make-row;
+}
+
+.cta-group__item {
+  @include make-col-ready;
+  padding-top: $spacing-4;
+  padding-bottom: $spacing-4;
+  text-align: center;
+
+  @include breakpoint(md) {
+    padding-top: $spacing-5;
+    padding-bottom: $spacing-5;
+  }
+
+  @include breakpoint(lg) {
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    // From grid framework.
+    // Makes cols equal widths no matter amount since cta-group can be 2-4 items.
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $border-color;
+
+    @include breakpoint(lg) {
+      border-bottom: 0;
+      border-right: 1px solid $border-color;
+    }
+
+    &.blue-border {
+      border-bottom: 0;
+
+      @include breakpoint(lg) {
+        border-color: $blue;
+      }
+
+      & + .border-bottom {
+        display: block;
+        width: $spacing-7;
+        margin: auto;
+        border-bottom: 1px solid $blue;
+
+        @include breakpoint(lg) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.cta-group__title {
+  @include h2;
+  margin-bottom: $spacing-2;
+}
+
+.cta-group__text {
+  font-size: $typescale-4;
+  margin-bottom: $spacing-4;
+
+  @include breakpoint(md) {
+    margin-bottom: $spacing-5;
+  }
+}
+
+.cta-group__button {
+  margin-top: auto;
+  align-self: center; // prevents button from becoming full width
+}
+
+.footer-cta-light {
+  h2 {
+    font-family: $font-family-sans-serif;
+    text-transform: uppercase;
+  }
+}

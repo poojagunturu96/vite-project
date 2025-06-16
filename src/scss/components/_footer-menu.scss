@@ -1,0 +1,36 @@
+.footer-menu {
+  margin-top: $spacing-5;
+  @include breakpoint(lg) {
+    margin-top: 0;
+  }
+  @include print-hide;
+}
+
+.footer-menu__title {
+  @include h5;
+  color: $white;
+  margin-bottom: $spacing-4;
+}
+
+.footer-menu__list--cols {
+  @include breakpoint(sm) {
+    columns: 2;
+  }
+}
+
+.footer-menu__list--four-cols {
+  @include breakpoint(sm) {
+    columns: 4;
+  }
+}
+
+.footer-menu__item {
+  &:not(:last-child) {
+    margin-bottom: $spacing-4;
+  }
+}
+
+.footer-menu__link {
+  color: $white;
+  font-size: $typescale-2;
+}

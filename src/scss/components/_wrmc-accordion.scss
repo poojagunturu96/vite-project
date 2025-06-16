@@ -1,0 +1,167 @@
+.wrmc-accordion {
+  margin-top: $spacing-3;
+}
+
+.wrmc-accordion-toggle-links {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  color: $navy;
+  font-size: $typescale-2;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-solid;
+  text-transform: uppercase;
+  margin-bottom: $spacing-3;
+
+  a:first-child {
+    margin-right: rem(20);
+  }
+
+  @include breakpoint(md) {
+    margin-bottom: $spacing-2;
+  }
+}
+
+.wrmc-accordion-item {
+  margin-bottom: $spacing-2;
+
+  &.is-toggled {
+    margin-bottom: 0;
+  }
+}
+
+.wrmc-accordion-item__char {
+  color: $gray;
+  font-size: $typescale-2;
+  font-family: $font-family-serif;
+  line-height: 30px;
+  margin-right: $spacing-3;
+  align-self: flex-start;
+}
+
+.wrmc-accordion-item__link {
+  color: $black;
+  transition: background-color 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+    background-color: rgba($blue-light, 0.2);
+  }
+}
+
+.wrmc-accordion-item__title {
+  display: flex;
+  justify-content: space-between;
+  padding: $spacing-2;
+  padding-right: $spacing-3;
+  font-size: $typescale-3;
+  font-family: $font-family-sans-serif;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-body;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  background-color: $blue-lighter;
+
+  .wrmc-accordion-item.has-toggler & {
+    .wrmc-accordion-item-close {
+      display: none;
+    }
+
+    .wrmc-accordion-item-open {
+      display: inline-block;
+    }
+  }
+
+  .wrmc-accordion-item.is-toggled & {
+    .wrmc-accordion-item-close {
+      display: inline-block;
+    }
+
+    .wrmc-accordion-item-open {
+      display: none;
+    }
+  }
+
+}
+
+.wrmc-accordion-item__label {
+  flex: 1 1 auto;
+  width: 100%;
+
+  &--bold {
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.wrmc-accordion-item__icon {
+  transition: $chevron-transition;
+  margin-left: $spacing-3;
+  flex: 0 0 auto;
+
+  .wrmc-accordion-item.is-toggled & {
+    transform: $chevron-transform;
+  }
+}
+
+.wrmc-accordion-item__content-list {
+  display: flex;
+  flex-direction: column;
+
+  // @include breakpoint(md) {
+  //   padding-left: $spacing-3;
+  //   padding-right: $spacing-3;
+  // }
+
+  .wrmc-accordion-item.has-toggler & {
+    display: none;
+  }
+
+  .wrmc-accordion-item.is-toggled & {
+    display: flex; // must be flex for faq accordions
+  }
+
+  @media print {
+    display: flex !important;
+  }
+}
+
+.wrmc-accordion-item__list-item {
+  &:first-child {
+    padding-top: $spacing-3;
+
+    .show-teaser {
+      padding-top: 0;
+    }
+  }
+
+  @include breakpoint(md) {
+    &:first-child {
+      padding-top: $spacing-4;
+    }
+  }
+  
+  &:not(:last-child){
+    border-bottom: 1px solid $gray-light;
+  }
+}
+
+.wrmc-accordion-item__sub-title {
+  font-size: $typescale-1;
+  font-family: $font-family-sans-serif;
+  font-weight: $font-weight-medium;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  margin-bottom: $spacing-2;
+  color: $gray;
+
+  &:not(:first-child) {
+    margin-top: $spacing-4;
+    margin-bottom: $spacing-1;
+    padding-top: $spacing-4;
+    border-top: 1px solid #dedede;
+  }
+}

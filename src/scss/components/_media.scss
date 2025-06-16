@@ -1,0 +1,30 @@
+.media {
+}
+
+.media__caption {
+  font-size: $typescale-2;
+  padding-top: $spacing-2;
+  @include contains-links;
+}
+
+.media--contain-caption {
+  display: table;
+
+  @include ie {
+    table-layout: fixed;
+    width: 100%;
+
+    // Unset 100% width for floated images and media-objects
+    // otherwise it causes layout issues in ie11
+    .image--left &,
+    .image--right &,
+    .media-object & {
+      width: auto;
+    }
+  }
+
+  .media__caption {
+    display: table-caption;
+    caption-side: bottom;
+  }
+}

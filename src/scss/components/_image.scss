@@ -1,0 +1,25 @@
+.image {
+  display: flex;
+  justify-content: center;
+}
+
+// margin is applied at .paragraphs level
+.image--right {
+  @include breakpoint(md) {
+    float: right;
+  }
+
+  @media print {
+    float: none !important;
+  }
+}
+
+.image--left {
+  @include breakpoint(md) {
+    float: left;
+  }
+
+  @media print {
+    float: none !important;
+  }
+}

@@ -1,0 +1,52 @@
+////
+/// Sass mixins
+////
+
+@import 'mixins/breakpoints';
+@import 'mixins/grid';
+@import 'mixins/grid-framework';
+@import 'mixins/clearfix';
+@import 'mixins/type';
+@import 'mixins/screen-reader';
+@import 'mixins/forms';
+@import 'mixins/buttons';
+@import 'mixins/waveform-bars';
+@import 'mixins/homepage_grid';
+
+@mixin absolute-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// applies each theme color to the property passed
+@mixin themify($prop) {
+  @each $name, $color in $themes {
+    .theme-#{$name} & {
+      #{$prop}: $color;
+    }
+  }
+}
+
+@mixin print-hide() {
+  @media print {
+    display: none !important;
+  }
+}
+
+@mixin contains-links {
+  a {
+    @include link-border;
+  }
+}
+
+// detect ie10-11
+// source: https://stackoverflow.com/a/35063378/2193516
+@mixin ie {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    /* add your IE10-IE11 css here */
+    @content;
+  }
+}

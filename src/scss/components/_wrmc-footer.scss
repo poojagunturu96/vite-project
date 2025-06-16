@@ -1,0 +1,79 @@
+.wrmc-footer {
+  background-color: $wrmc-blue-light;
+  padding: $spacing-7 0;
+
+  @include breakpoint(md) {
+    padding: $spacing-5 0;
+  }
+}
+
+.wrmc-footer__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $spacing-5;
+
+  @include breakpoint(md) {
+    flex-direction: row;
+    align-items: initial;
+    padding: 0 $spacing-3;
+  }
+
+  @include breakpoint(lg) {
+    padding: 0 $spacing-5;  
+  }
+}
+
+.wrmc-footer__logo {
+  color: $black;
+  font-size: $typescale-1;
+  font-weight: 800;
+  line-height: $line-height-solid;
+  letter-spacing: $letter-spacing;
+  text-transform: uppercase;
+
+  span {
+    margin-left: -$spacing-2;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.wrmc-footer__logo-image {
+  position: relative;
+  padding-bottom: rem(14);
+
+  img:first-child {
+    position: absolute;
+  }
+
+  img:last-child {
+    z-index: 2;
+    position: relative;
+    left: $spacing-7;
+    top: $spacing-3;
+  }
+}
+
+.wrmc-footer__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: $spacing-1;
+
+  @include breakpoint(md) {
+    flex-direction: row;
+    row-gap: initial;
+  }
+}
+
+.wrmc-footer__link {
+  font-size: $typescale-1;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-solid;
+
+  @include link-border;
+}

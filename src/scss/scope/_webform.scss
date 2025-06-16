@@ -1,0 +1,130 @@
+.node-webform {
+  padding: 2px;
+
+  a {
+    @include link-border;
+  }
+
+  h1 {
+    @include h3;
+    margin-bottom: $spacing-4;
+  }
+
+  .field-type-text-with-summary {
+    font-size: $paragraph-font-size;
+    margin-bottom: $paragraph-margin-bottom;
+
+    p {
+      margin-bottom: $spacing-4;
+    }
+  }
+
+  fieldset {
+    @include form-fieldset;
+
+    .form-item:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  legend {
+    @include form-legend;
+  }
+
+  .form-actions,
+  .form-item {
+    @include form-group;
+  }
+
+  label {
+    @include form-label;
+  }
+
+  .form-required {
+    @include form-required;
+  }
+
+  .description {
+    font-size: $typescale-2;
+    margin-bottom: $spacing-1;
+  }
+
+  .form-select,
+  .form-textarea,
+  .form-text {
+    @include form-control;
+    margin-top: 0; // remove style coming from global form-text, which is meant for helper text
+    padding: $spacing-2;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .form-select {
+    @include form-select;
+  }
+
+  .form-type-radio,
+  .form-type-checkbox {
+    @include form-checkbox-item;
+
+    input[type='checkbox'],
+    input[type='radio'] {
+      @include form-checkbox-control;
+    }
+
+    label {
+      @include form-checkbox-label;
+    }
+  }
+
+  .button-primary {
+    @include button-base;
+    @include button-theme('primary');
+  }
+
+  .form-managed-file {
+    display: inline-flex;
+    background: $gray-lighter;
+
+    .form-submit {
+      @include button-base;
+      @include button-theme('primary');
+      @include button-size('sm');
+    }
+
+    .form-file {
+      @include button-base;
+      @include button-size('sm');
+      background: transparent;
+    }
+  }
+
+  .inline {
+    display: flex;
+
+    > li + li {
+      margin-left: $spacing-3;
+    }
+  }
+
+  .webform-calendar {
+    display: none;
+  }
+
+  .webform-container-inline {
+    @include breakpoint(sm) {
+      display: flex;
+    }
+
+    .form-item {
+      @include breakpoint(sm) {
+        flex: 0 0 auto;
+        margin-bottom: 0;
+      }
+
+      &:not(:last-child) {
+        margin-right: $spacing-3;
+      }
+    }
+  }
+}

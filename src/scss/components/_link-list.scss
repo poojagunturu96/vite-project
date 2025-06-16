@@ -1,0 +1,40 @@
+.link-list {
+}
+
+.link-list__list {
+  margin-top: $spacing-7;
+
+  @include breakpoint(sm) {
+    @include make-row;
+  }
+}
+
+.link-list__item {
+  margin-bottom: $spacing-5;
+
+  @include breakpoint(sm) {
+    @include make-col-ready;
+    @include make-col(6);
+  }
+  @include breakpoint(md) {
+    @include make-col(4);
+  }
+}
+
+.link-list__box {
+  border-bottom: 1px solid $border-color;
+  height: 100%;
+  padding-bottom: $spacing-5;
+}
+
+.link-list__link {
+  font-size: $typescale-5;
+  font-weight: $font-weight-medium;
+  font-family: $font-family-sans-serif;
+  @include link-border;
+}
+
+.link-list__info {
+  font-size: $typescale-2;
+  margin-top: $spacing-2;
+}

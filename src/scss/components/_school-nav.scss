@@ -1,0 +1,142 @@
+.school-nav {
+  @include print-hide;
+}
+
+.school-nav__handle {
+  display: inline-block;
+  padding: $spacing-3;
+  font-size: $typescale-2;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-body;
+  color: $navy;
+  background: none;
+  border: 0;
+
+  @include breakpoint($school-header-breakpoint) {
+    display: none;
+  }
+}
+
+.school-nav__menu {
+  display: none;
+
+  @include breakpoint($school-header-breakpoint) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.school-nav__bars {
+  .school-nav__handle.is-toggled & {
+    display: none;
+  }
+}
+
+.school-nav__times {
+  display: none;
+
+  .school-nav__handle.is-toggled & {
+    display: inline-block;
+  }
+}
+
+.school-nav__list {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.school-nav__list--sub {
+  display: block; // unset display-flex
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: $white;
+  padding: #{$spacing-3 / 2} $spacing-3;
+  border: 1px solid $navy;
+  transition: opacity 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: $z-index-school-nav-dropdown;
+  min-width: 300px;
+}
+
+.school-nav__list--cols {
+  column-count: 2;
+  min-width: 500px;
+
+  .school-nav__item {
+    width: 100%;
+    display: inline-block;
+  }
+}
+
+.school-nav__item {
+  position: relative;
+  display: block;
+  transition: opacity 0.2s;
+
+  &:not(:last-child):not(.school-nav__item--sub) {
+    margin-right: $spacing-5;
+  }
+
+  &:focus-within,
+  &:hover {
+    .school-nav__list--sub {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.school-nav__link {
+  display: block;
+  padding-top: $spacing-3;
+  padding-bottom: $spacing-3;
+  color: $navy;
+  font-size: $typescale-3;
+  font-weight: $font-weight-medium;
+  opacity: 0.8;
+  transition:
+    opacity 0.2s,
+    border-color 0.2s;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+.school-nav__link--sub {
+  padding-top: $spacing-3 / 2;
+  padding-bottom: $spacing-3 / 2;
+  font-size: $typescale-2;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.school-nav__link--top {
+  border-bottom: 4px solid transparent;
+
+  .school-nav__item:focus-within &,
+  .school-nav__item:hover & {
+    @include themify(border-color);
+  }
+}
+
+.school-nav__link--active {
+  @include themify(border-color);
+}
+
+.school-nav__link--util {
+  font-size: $typescale-2;
+  border-top: 4px solid transparent;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    @include themify(border-top-color);
+  }
+}

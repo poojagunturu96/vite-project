@@ -1,0 +1,43 @@
+$list-item-margin-bottom: $spacing-5;
+$list-item-margin-bottom-sm: $spacing-3;
+
+.list {
+  // margin-bottom: 60px;
+}
+
+.list__item {
+  &:not(:last-child) {
+    margin-bottom: $list-item-margin-bottom;
+  }
+
+  p:last-child {
+    a {
+      @include link-border;
+    }
+  }
+}
+
+.list--dividers {
+  .list__item {
+    &:not(:last-child) {
+      border-bottom: 1px solid $border-color;
+      padding-bottom: $list-item-margin-bottom;
+    }
+  }
+}
+
+.list--sm {
+  .list__item {
+    &:not(:last-child) {
+      margin-bottom: $list-item-margin-bottom-sm;
+    }
+  }
+
+  &.list--dividers {
+    .list__item {
+      &:not(:last-child) {
+        padding-bottom: $list-item-margin-bottom-sm;
+      }
+    }
+  }
+}

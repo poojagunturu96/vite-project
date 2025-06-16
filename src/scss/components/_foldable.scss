@@ -1,0 +1,52 @@
+// TODO: switch page-nav to this
+.foldable {
+}
+
+.foldable__button {
+  padding: $spacing-3;
+  border: 1px solid $border-color;
+  width: 100%;
+  background: none;
+  font-size: $typescale-2;
+  font-weight: $font-weight-semibold;
+  text-align: left;
+  color: $color-primary;
+
+  @include breakpoint(lg) {
+    display: none;
+  }
+}
+
+.foldable__icon {
+  float: right;
+  transition: $chevron-transition;
+
+  .foldable__button.is-toggled & {
+    transform: $chevron-transform;
+  }
+}
+
+.foldable__content {
+  padding: $spacing-3;
+  border: 1px solid $border-color;
+  border-top: 0;
+  background-color: $gray-lighter;
+
+  @include breakpoint(lg) {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+  }
+
+  &.has-toggler {
+    display: none;
+
+    @include breakpoint(lg) {
+      display: block;
+    }
+  }
+
+  &.is-toggled {
+    display: block;
+  }
+}

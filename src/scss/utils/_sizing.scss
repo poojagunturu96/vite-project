@@ -1,0 +1,21 @@
+////
+/// Sizing utilities like width and height
+////
+
+.w-md-40 {
+  @include breakpoint(md) {
+    width: 40%;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+@each $breakpoint, $variant in $responsive-variants {
+  @include breakpoint($breakpoint) {
+    .w#{$variant}-50 {
+      width: 50%;
+    }
+  }
+}

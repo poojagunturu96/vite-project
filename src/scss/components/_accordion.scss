@@ -1,0 +1,103 @@
+.accordion {
+}
+
+.accordion-item {
+  transition: box-shadow 0.2s;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $border-color;
+  }
+
+  &:hover,
+  &.is-toggled {
+    box-shadow: 0 0 8px rgba($black, 0.1);
+  }
+}
+
+.accordion-item__char {
+  color: $gray;
+  font-size: $typescale-2;
+  font-family: $font-family-serif;
+  line-height: 30px;
+  margin-right: $spacing-3;
+  align-self: flex-start;
+}
+
+.accordion-item__title {
+  font-size: $typescale-4;
+  font-family: $font-family-sans-serif;
+  line-height: $line-height-body;
+}
+
+.accordion-item__link {
+  display: flex;
+  justify-content: space-between;
+  color: $link-color;
+  padding: $spacing-3;
+  font-size: $typescale-4;
+  transition: background-color 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+    background-color: $gray-lighter;
+  }
+}
+
+.accordion-item__label {
+  flex: 1 1 auto;
+  width: 100%;
+
+  &--bold {
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.accordion-item__icon {
+  transition: $chevron-transition;
+  margin-left: $spacing-3;
+  flex: 0 0 auto;
+
+  .accordion-item.is-toggled & {
+    transform: $chevron-transform;
+  }
+}
+
+.accordion-item__content,
+.accordion-item__content--column {
+  padding-top: $spacing-3;
+  padding-bottom: $spacing-7;
+  padding-left: $spacing-3;
+  padding-right: $spacing-3;
+
+  .accordion-item.has-toggler & {
+    display: none;
+  }
+
+  .accordion-item.is-toggled & {
+    display: flex; // must be flex for faq accordions
+
+    &--column {
+      flex-direction: column;
+    }
+  }
+
+  @media print {
+    display: flex !important;
+  }
+}
+
+.accordion-item__sub-title {
+  @include gray-label;
+  margin-bottom: $spacing-2;
+
+  &:not(:first-child) {
+    margin-top: $spacing-4;
+    margin-bottom: $spacing-1;
+    padding-top: $spacing-4;
+    border-top: 1px solid #dedede;
+  }
+}

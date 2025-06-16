@@ -1,0 +1,87 @@
+.slateform {
+  padding: 2px;
+
+  a {
+    @include link-border;
+  }
+
+  h1 {
+    @include h3;
+    margin-bottom: $spacing-4;
+  }
+
+  fieldset {
+    @include form-fieldset;
+
+    div:last-of-type {
+      margin-bottom: 0;
+    }
+
+    > .form_label {
+      display: none;
+    }
+  }
+
+  legend {
+    @include form-legend;
+  }
+
+  .action,
+  .form_question,
+  fieldset > div {
+    @include form-group;
+  }
+
+  label,
+  .form_label {
+    @include form-label;
+  }
+
+  div[data-required='1'] label:after {
+    content: ' *';
+    @include form-required;
+  }
+
+  select,
+  textarea,
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'] {
+    @include form-control;
+    margin-top: 0; // remove style coming from global form-text, which is meant for helper text
+    padding: $spacing-2;
+    width: auto;
+    max-width: 100%;
+  }
+
+  select {
+    @include form-select;
+  }
+
+  .action button {
+    @include button-base;
+    @include button-theme('primary');
+  }
+
+  .form_responses {
+    @include breakpoint(sm) {
+      display: flex;
+    }
+
+    select,
+    input {
+      @include breakpoint(sm) {
+        flex: 0 0 auto;
+        margin-bottom: 0;
+      }
+
+      &:not(:last-child) {
+        margin-right: $spacing-3;
+      }
+    }
+  }
+
+  .form_loading.hidden {
+    display: none;
+  }
+}

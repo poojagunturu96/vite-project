@@ -1,0 +1,20 @@
+// TODO: switch box menu to this.
+.themed-box {
+  box-shadow: inset 0 0 0 1px $gray-light;
+  border-top: 8px solid $navy;
+  @include themify(border-top-color);
+  background-color: $white;
+  padding: $spacing-4;
+  margin-bottom: $spacing-7;
+
+  @include breakpoint(md) {
+    margin-bottom: $spacing-8;
+  }
+}
+
+.themed-box--compress {
+  @include breakpoint(md) {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}

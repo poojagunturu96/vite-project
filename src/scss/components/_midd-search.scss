@@ -1,0 +1,91 @@
+.midd-search {
+  order: 1;
+  margin-left: auto;
+  @include print-hide;
+
+  @include breakpoint(lg) {
+    margin-left: 0;
+    order: 2;
+    position: relative;
+  }
+}
+
+.midd-search__handle {
+  display: inline-block;
+  color: $white;
+  font-weight: $font-weight-medium;
+  font-size: $typescale-2;
+  line-height: $line-height-solid;
+  padding: $spacing-3;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @include breakpoint(lg) {
+    border-top: 4px solid transparent;
+    transition: border-color 0.2s;
+    padding-top: calc(#{$spacing-4} - 4px);
+    padding-bottom: $spacing-4;
+    padding-left: 0;
+    padding-right: 0;
+    opacity: 0.8;
+
+    &:hover,
+    &.is-toggled {
+      opacity: 1;
+      border-color: $white;
+    }
+  }
+}
+
+.midd-search__mag {
+  margin-right: $spacing-1;
+  .midd-search__handle.is-toggled & {
+    display: none;
+  }
+}
+
+.midd-search__times {
+  display: none;
+  margin-right: $spacing-1;
+  .midd-search__handle.is-toggled & {
+    display: inline-block;
+  }
+}
+
+.midd-search__content {
+  background: $navy-dark;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  padding: $spacing-3;
+  padding-top: $spacing-4; // space away from shield more
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s;
+  z-index: $z-index-midd-search-content;
+
+  &.is-toggled {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  @include breakpoint(lg) {
+    width: 400px;
+    border-top: 1px solid $white;
+    padding-top: $spacing-3;
+  }
+}
+
+.midd-search__input {
+  border-color: $color-primary-dark;
+  background-color: $white;
+}
+
+.midd-search__submit {
+  border-color: $color-primary-dark;
+  color: $navy;
+  background-color: $white;
+}

@@ -1,0 +1,46 @@
+@mixin make-bar-styles($colors, $heights, $margins, $breakpoint) {
+  @each $color-index, $color in $colors {
+    @each $height-index, $height in $heights {
+      @each $margin-index, $margin in $margins {
+        @include breakpoint($breakpoint) {
+          .bar-styles-#{$breakpoint}-#{($color-index * (length($heights) * length($margins)))+($height-index * length($margins))
+            + $margin-index} {
+            margin-top: #{$margin}px;
+            height: #{$height}px;
+            background-color: $color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin make-bar-color-styles($colors) {
+  @each $color-index, $color in $colors {
+    @include breakpoint(sm) {
+      .bar-color-style-#{$color-index} {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+@mixin make-bar-height-styles($heights, $breakpoint) {
+  @each $height-index, $height in $heights {
+    @include breakpoint($breakpoint) {
+      .bar-height-style-#{$breakpoint}-#{$height-index} {
+        height: #{$height}px;
+      }
+    }
+  }
+}
+
+@mixin make-bar-margin-styles($margins, $breakpoint) {
+  @each $margin-index, $margin in $margins {
+    @include breakpoint($breakpoint) {
+      .bar-margin-style-#{$breakpoint}-#{$margin-index} {
+        margin-top: #{$margin}px;
+      }
+    }
+  }
+}

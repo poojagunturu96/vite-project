@@ -1,0 +1,247 @@
+@for $i from 1 through 4 {
+  .quad-#{$i} {
+    grid-area: quad-#{$i};
+  }
+}
+
+@for $i from 1 through 4 {
+  .quad-item-#{$i} {
+    position: relative;
+    grid-area: quad-item-#{$i};
+  }
+}
+
+.grid-container {
+  width: fit-content;
+  margin: auto;
+  display: grid;
+  grid-template-areas:
+    'quad-1'
+    'quad-2'
+    'quad-3'
+    'quad-4';
+  column-gap: $spacing-2;
+
+  @include breakpoint(sm) {
+    grid-template-areas:
+      'quad-1 quad-2'
+      'quad-3 quad-4';
+  }
+
+  .grid-quad-block {
+    display: grid;
+    gap: $spacing-2;
+    text-align: center;
+    padding: 0;
+    padding-bottom: $spacing-2;
+
+    &.quad-2,
+    &.quad-3,
+    &.quad-4 {
+      display: none;
+    }
+
+    @include breakpoint(md) {
+      &.quad-2 {
+        display: grid;
+      }
+    }
+
+    > div {
+      background-color: #022543;
+    }
+
+    .quad-item-1 {
+      max-width: 320px;
+      height: 180px;
+
+      @include breakpoint(md) {
+        max-width: 380px;
+        height: 214px;
+      }
+      @include breakpoint(lg) {
+        max-width: 596px;
+        height: 335px;
+      }
+      @include breakpoint(xl) {
+        max-width: 716px;
+        height: 403px;
+      }
+    }
+
+    .quad-item-2 {
+      max-width: 132px;
+      height: 180px;
+
+      @include breakpoint(md) {
+        max-width: 158px;
+        height: 214px;
+      }
+      @include breakpoint(lg) {
+        max-width: 252px;
+        height: 335px;
+      }
+      @include breakpoint(xl) {
+        max-width: 305px;
+        height: 402px;
+      }
+    }
+
+    .quad-item-3 {
+      max-width: 180px;
+      height: 320px;
+
+      @include breakpoint(md) {
+        max-width: 214px;
+        height: 380px;
+      }
+      @include breakpoint(lg) {
+        max-width: 335px;
+        height: 596px;
+      }
+      @include breakpoint(xl) {
+        max-width: 403px;
+        height: 716px;
+      }
+    }
+
+    .quad-item-4 {
+      max-width: 132px;
+      height: 132px;
+
+      @include breakpoint(md) {
+        max-width: 158px;
+        height: 158px;
+      }
+      @include breakpoint(lg) {
+        max-width: 252px;
+        height: 252px;
+      }
+      @include breakpoint(xl) {
+        max-width: 305px;
+        height: 305px;
+      }
+    }
+
+    &.quad-1 {
+      grid-template-areas:
+        'quad-item-1 quad-item-1'
+        'quad-item-2 quad-item-3'
+        'quad-item-4 quad-item-3';
+    }
+
+    &.quad-2 {
+      grid-template-areas:
+        'quad-item-3 quad-item-4'
+        'quad-item-3 quad-item-2'
+        'quad-item-1 quad-item-1';
+    }
+
+    &.quad-3 {
+      grid-template-areas:
+        'quad-item-1 quad-item-1'
+        'quad-item-4 quad-item-3'
+        'quad-item-2 quad-item-3';
+    }
+
+    &.quad-4 {
+      grid-template-areas:
+        'quad-item-3 quad-item-4'
+        'quad-item-3 quad-item-2'
+        'quad-item-1 quad-item-1';
+    }
+  }
+}
+
+.grid__label-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 3px 5px;
+  background-color: #fff;
+  color: #0d395f;
+  border-color: #fff;
+
+  @include breakpoint(lg) {
+    padding: 7px;
+  }
+
+  &.expand {
+    padding: 4px;
+
+    @include breakpoint(lg) {
+      padding: 5px;
+    }
+  }
+
+  .icon.expand {
+    height: $typescale-3;
+    width: $typescale-3;
+
+    @include breakpoint(lg) {
+      height: $typescale-5;
+      width: $typescale-5;
+    }
+  }
+
+  .icon.play {
+    height: rem(10);
+    width: rem(12);
+
+    @include breakpoint(lg) {
+      height: $typescale-3;
+      width: $typescale-3;
+    }
+  }
+}
+
+.grid__button {
+  display: flex;
+  position: relative;
+  text-transform: uppercase;
+  margin: auto;
+  margin-top: -$spacing-5;
+
+  .icon {
+    margin-left: $spacing-3;
+  }
+
+  .button--show-less {
+    display: none;
+  }
+
+  &.toggle-button {
+    margin-top: -$spacing-2;
+    padding: 0;
+
+    .button--load-more {
+      display: none;
+    }
+
+    .button--show-less {
+      display: flex;
+      padding: $spacing-3 $spacing-5;
+
+      &:hover {
+        text-decoration: none;
+        color: $white;
+      }
+    }
+  }
+
+  &.button--light:focus {
+    background-color: $white;
+    color: $navy;
+    border-color: $white;
+  }
+
+  &.button--light:hover {
+    background-color: $navy-dark;
+    color: $white;
+    border-color: $navy-dark;
+
+    a {
+      color: $white;
+    }
+  }
+}

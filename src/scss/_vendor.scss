@@ -1,0 +1,87 @@
+////
+/// Elements added to the page by 3rd party widgets or 3rd party node packages
+////
+
+/* libchat widget button */
+// stylelint-disable-next-line selector-class-pattern
+.lcs_slide_out.lcs_slide_out-b {
+  bottom: 64px !important;
+  border: 0 !important;
+
+  @media only screen and (min-width: 512px) {
+    right: 0px !important;
+    bottom: 0px !important;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    right: 0px !important;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    right: 100px !important;
+  }
+}
+
+// stylelint-disable-next-line selector-class-pattern
+.lcs_slide_out.lcs_slide_out-b.open {
+  border: 1px solid #ccc;
+}
+ 
+// stylelint-disable-next-line selector-class-pattern
+.lcs_slide_out .lcs_header a {
+  right: -56px !important;
+  left: auto !important;
+  top: 16px !important;
+  bottom: auto !important;
+  border: 1px solid #fff !important;
+  box-shadow: none !important;
+
+  @media only screen and (min-width: 512px) {
+    top: -48px !important;
+    right: 10px !important;
+  }
+}
+
+// Push Olark chat button away from right edge more
+// to make space for back to top button.
+
+// stylelint-disable selector-max-id
+#olark-wrapper, 
+#olark-wrapper .olark-launch-button-wrapper .olark-button-focus-wrapper:focus,
+#olark-wrapper .olark-launch-button-wrapper .olark-button-focus-wrapper:focus-within {
+  position: fixed !important;
+  bottom: 64px !important;
+  right: 100px !important;
+  left: auto !important;
+  z-index: 9000000 !important;
+}
+
+#olark-wrapper .olark-launch-button-wrapper {
+  position: relative !important;
+  bottom: auto !important;
+  right: auto !important;
+  left: auto !important;
+  z-index: 9000000 !important;
+}
+
+#olark-wrapper #olark-container,
+#olark-wrapper #olark-container:focus:not(.olark-inline) {
+  bottom: 144px !important;
+}
+
+#olark-wrapper .olark-launch-button.olark-text-button .olark-button-text {
+  padding: 10px !important;
+}
+
+#olark-wrapper .olark-launch-button.olark-text-button .olark-button-text {
+  line-height: 1em !important;
+}
+
+.typography .anchorjs-link,
+.anchorjs-link {
+  border: 0;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

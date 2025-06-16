@@ -1,0 +1,21 @@
+////
+/// Background colors utilities
+////
+
+$bg-colors: (
+  'primary': $color-primary,
+  'gray': $gray,
+  'gray-light': $gray-light,
+  'gray-lighter': $gray-lighter,
+  'blue-light': $blue-light,
+  'blue-lighter': $blue-lighter,
+  'danger': $danger,
+  'success': $success,
+  'warning': $warning
+);
+
+@each $name, $hex in $bg-colors {
+  .bg-#{$name} {
+    background-color: $hex;
+  }
+}

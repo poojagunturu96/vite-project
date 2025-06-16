@@ -1,0 +1,269 @@
+.typography {
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: $paragraph-font-size;
+    margin-bottom: $paragraph-margin-bottom;
+  }
+
+  a {
+    font-weight: $font-weight-medium;
+    @include link-border;
+  }
+
+  a:not([href*='middlebury.edu']):not([href^='#']):not([href^='/']):not(
+      [href^='mailto:']
+    ):not([href*='drive.google.com']):not([href*='docs.google.com']):not(
+      [href*='.pdf']
+    ):not([href*='middleburycollege-my.sharepoint.com']):not([name]) {
+    @include link-external;
+  }
+
+  a[href^='mailto:'],
+  a[href*='drive.google.com'],
+  a[href*='docs.google.com'],
+  a[href*='.pdf'],
+  a[href^='/media/'],
+  a[href*='middleburycollege-my.sharepoint.com'] {
+    &:after {
+      font-size: rem(10);
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing;
+      padding: $spacing-1;
+      line-height: 1;
+      background: $navy;
+      color: $white;
+      margin-left: $spacing-1;
+      transition: 0.2s;
+    }
+
+    &:hover,
+    &:focus {
+      &:after {
+        transform: translateY(-4px);
+      }
+    }
+  }
+
+  a[href^='mailto:'] {
+    &:after {
+      content: 'Email';
+    }
+  }
+
+  a[href*='.pdf'],
+  a[href^='/media/'] {
+    &:after {
+      content: 'PDF';
+    }
+  }
+
+  a[href*='drive.google.com'],
+  a[href*='docs.google.com'] {
+    &:after {
+      content: 'Google Drive';
+    }
+  }
+
+  a[href*='middleburycollege-my.sharepoint.com'] {
+    &:after {
+      content: 'Office 365';
+    }
+  }
+
+  // reset styles for jump links
+  a[id][name] {
+    color: currentcolor;
+    text-decoration: none;
+    border: 0;
+  }
+
+  ul,
+  ol {
+    margin-bottom: $paragraph-margin-bottom;
+    padding-left: $spacing-5;
+    padding-right: $spacing-5;
+    font-size: $paragraph-font-size;
+
+    ul,
+    ol {
+      margin-top: $spacing-3;
+      margin-bottom: $spacing-3;
+      padding-left: $spacing-4;
+    }
+  }
+
+  ul {
+    > li {
+      position: relative;
+
+      &:before {
+        content: '\2022';
+        position: absolute;
+        right: calc(100% + 8px);
+        top: 6px;
+        font-size: 10px;
+      }
+    }
+  }
+
+  ol {
+    list-style-type: none;
+    counter-reset: ol;
+
+    > li {
+      counter-increment: ol;
+      position: relative;
+
+      &:before {
+        content: counter(ol) '.';
+        position: absolute;
+        right: calc(100% + #{$spacing-2});
+        top: 0.25rem;
+        font-size: $typescale-2;
+        line-height: $line-height-body;
+      }
+    }
+  }
+
+  li {
+    &:not(:last-of-type) {
+      margin-bottom: $spacing-2;
+    }
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  dl {
+    margin-bottom: $spacing-5;
+    margin-top: $spacing-5;
+
+    @include terms;
+  }
+
+  dt {
+    @include terms-title;
+  }
+
+  dd {
+    @include terms-text;
+  }
+
+  // Maintain vertical h2 top margin when
+  // there is a text component followed by another
+  // or intro text before a text component.
+  //
+  // These styles are duplicated with the below h2 ruleset
+  // because @at-root seems to make the styles root for the entire list of selectors
+  // instead of the single selector it is used in front of.
+  // See https://stackoverflow.com/q/36902927/2193516
+  @at-root .paragraph--text + .paragraph--text > h2,
+    .lead + .paragraph--text > h2 {
+    @include h2;
+    margin-top: $spacing-7;
+    margin-bottom: $spacing-4;
+
+    @include breakpoint(lg) {
+      margin-top: $spacing-8;
+      margin-bottom: $spacing-5;
+    }
+  }
+
+  h2 {
+    @include h2;
+    margin-top: $spacing-7;
+    margin-bottom: $spacing-4;
+
+    @include breakpoint(lg) {
+      margin-top: $spacing-8;
+      margin-bottom: $spacing-5;
+    }
+  }
+
+  h3 {
+    @include h3;
+    margin-top: $spacing-5;
+    margin-bottom: $spacing-2;
+    font-weight: $font-weight-semibold;
+  }
+
+  h4 {
+    @include h4;
+    margin-top: $spacing-5;
+    margin-bottom: $spacing-1;
+    font-weight: $font-weight-semibold;
+  }
+
+  h5 {
+    @include h5;
+    margin-top: $spacing-5;
+    margin-bottom: $spacing-1;
+    font-weight: $font-weight-semibold;
+  }
+
+  h6 {
+    @include h6;
+    margin-top: $spacing-5;
+    margin-bottom: $spacing-1;
+    font-weight: $font-weight-semibold;
+  }
+
+  h6 > a,
+  h5 > a,
+  h4 > a,
+  h3 > a {
+    font-weight: 600;
+  }
+
+  table {
+    @extend %table;
+  }
+
+  blockquote {
+    padding-left: $spacing-4;
+    border-left: 2px solid $border-color;
+    margin-top: $spacing-5;
+    margin-bottom: $spacing-5;
+    font-size: $paragraph-font-size;
+  }
+
+  @media print {
+    a[href]:after {
+      content: '(' attr(href) ')';
+      background: transparent;
+      color: $black;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: inherit;
+      margin: 0;
+      padding: 0;
+      word-break: break-word;
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    abbr[title]:after {
+      content: '(' attr(title) ')';
+    }
+  }
+}
+
+.typography--sm {
+  li,
+  p {
+    font-size: $typescale-2;
+  }
+}
+
+.contains-links {
+  @include contains-links;
+}

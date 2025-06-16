@@ -1,0 +1,62 @@
+$school-header-breakpoint: xl;
+
+.school-header {
+  background: $white;
+  border-top: 8px solid $color-primary;
+  position: relative;
+  border-bottom: 1px solid $navy;
+
+  @include themify(border-top-color);
+
+  &.headroom {
+    will-change: transform;
+    transition: transform 0.4s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: $z-index-school-header;
+
+    @media print {
+      position: relative;
+    }
+  }
+
+  &.headroom--pinned {
+    transform: translateY(0%);
+  }
+
+  &.headroom--unpinned {
+    transform: translateY(-100%);
+  }
+
+  @media print {
+    border: 0;
+  }
+}
+
+.school-header__title {
+  font-size: 100%;
+}
+
+.school-header__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.school-header__logo {
+  padding-top: $spacing-2;
+  padding-bottom: $spacing-2;
+}
+
+.school-header__content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+
+  @include breakpoint($school-header-breakpoint) {
+    position: relative;
+  }
+}

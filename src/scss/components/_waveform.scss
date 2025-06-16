@@ -1,0 +1,412 @@
+$theme-colors: (
+  0: #c0e3fd,
+  1: #83c9fc,
+  2: #0e68b1,
+  3: #07487b,
+  4: #043666
+);
+
+$theme-heights-xl: (
+  0: 429,
+  1: 431,
+  2: 435,
+  3: 446,
+  4: 454,
+  5: 514
+);
+
+$theme-heights-lg: (
+  0: 366,
+  1: 368,
+  2: 372,
+  3: 380,
+  4: 387,
+  5: 438
+);
+
+$theme-heights-sm: (
+  0: 320,
+  1: 322,
+  2: 326,
+  3: 333,
+  4: 340,
+  5: 384
+);
+
+$theme-margins-xl: (
+  0: 0,
+  1: 10,
+  2: 20,
+  3: 30,
+  4: 35
+);
+
+$theme-margins-lg: (
+  0: 0,
+  1: 22,
+  2: 40,
+  3: 50,
+  4: 73,
+  5: 87
+);
+
+$theme-margins-sm: (
+  0: 0,
+  1: 17,
+  2: 26,
+  3: 39,
+  4: 58
+);
+
+@keyframes fade-in {
+  from {
+    left: -50%;
+  }
+
+  to {
+    left: 0px;
+  }
+}
+
+.waveform {
+  background-color: #071427;
+  overflow: hidden;
+
+  .shifting-slider {
+    position: relative;
+    display: flex;
+    left: 0px;
+
+    @include breakpoint(lg) {
+      left: -50%;
+    }
+
+    &.fade-in-element {
+      @include breakpoint(lg) {
+        left: 0px;
+        animation: fade-in 1.4s;
+      }
+    }
+  }
+}
+
+.waveform__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: $spacing-3;
+  padding-right: $spacing-3;
+  padding-top: $spacing-3;
+
+  @include breakpoint(sm) {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  @include breakpoint(md) {
+    padding-top: $spacing-4;
+  }
+
+  @include breakpoint(lg) {
+    padding-left: $spacing-5;
+    padding-right: $spacing-5;
+    padding-top: $spacing-5;
+  }
+
+  .section__title {
+    border-top: 0;
+    padding-top: 0;
+    color: $white;
+    margin: 0;
+    font-weight: $font-weight-bold;
+    font-size: $typescale-6;
+    letter-spacing: 0.06em;
+    order: 1;
+
+    @include breakpoint(sm) {
+      order: unset;
+    }
+
+    @include breakpoint(md) {
+      font-weight: $font-weight-semibold;
+      font-size: $typescale-7;
+    }
+
+    @include breakpoint(lg) {
+      font-weight: $font-weight-normal;
+      font-size: $typescale-8;
+    }
+  }
+
+  .waveform__blurb {
+    order: 2;
+    margin-bottom: $spacing-3;
+
+    @include breakpoint(sm) {
+      order: unset;
+    }
+
+    @include breakpoint(lg) {
+      width: 100%;
+    }
+
+    .section__text {
+      color: $white;
+
+      @include breakpoint(md) {
+        padding-bottom: 0;
+      }
+
+      @include breakpoint(lg) {
+        width: 75%;
+      }
+    }
+  }
+
+  .paragraph--button {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    font-size: $typescale-2;
+    line-height: $line-height-solid;
+    font-weight: $font-weight-bold;
+    height: fit-content;
+    order: 3;
+
+    @include breakpoint(sm) {
+      margin-bottom: 0;
+      order: unset;
+    }
+  }
+}
+
+.waveform__list {
+  display: flex;
+  justify-content: space-between;
+  padding-top: $spacing-5;
+  padding-bottom: 1rem;
+  overflow: scroll;
+
+  @include breakpoint(md) {
+    padding-bottom: $spacing-5;
+    padding-top: $spacing-5;
+  }
+
+  @include breakpoint(lg) {
+    overflow: initial;
+    padding-bottom: $spacing-7;
+    padding-top: $spacing-7;
+  }
+
+  @include breakpoint(xl) {
+    padding-bottom: rem(54);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    overflow: scroll;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.waveform__list-item {
+  min-width: 263px;
+  height: 340px;
+  margin-right: $spacing-2;
+  background-color: $white;
+  transition:
+    background-color 0.2s,
+    min-width 0.5s,
+    margin 0.5s,
+    height 0.5s;
+
+  .waveform__list-item--tooltip {
+    display: block;
+    font-size: $typescale-2;
+    line-height: $line-height-body;
+    background-color: $white;
+    padding: $spacing-2;
+    position: fixed;
+    z-index: 15;
+    width: max-content;
+    height: fit-content;
+    box-shadow: 0 0 8px rgba($black, 0.5);
+  }
+
+  @include breakpoint(lg) {
+    &:hover .waveform__list-item--tooltip {
+      display: block;
+    }
+  }
+
+  @include breakpoint(sm) {
+    margin-left: rem(12);
+    margin-right: rem(12);
+    min-width: $spacing-4;
+
+    &:hover {
+      background-color: $white !important;
+      margin-left: rem(6);
+      margin-right: rem(6);
+      min-width: rem(36);
+      cursor: pointer;
+    }
+  }
+
+  &.has-toggler {
+    overflow: hidden;
+
+    @include breakpoint(sm) {
+      &.is-toggled {
+        margin-top: 0;
+        z-index: 10;
+        background-color: $white !important;
+
+        &:hover {
+          margin-left: rem(12);
+          margin-right: rem(12);
+        }
+
+        @include breakpoint(sm) {
+          .waveform__event-card {
+            display: flex !important;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .waveform__event-card {
+      flex-direction: column;
+      justify-content: space-between;
+      width: 263px;
+      height: 340px;
+      padding: $spacing-2;
+      padding-top: $spacing-3;
+      display: flex !important;
+      transition: opacity 0.5;
+
+      @include breakpoint(sm) {
+        opacity: 0;
+        display: none !important;
+      }
+
+      @include breakpoint(lg) {
+        padding-top: $spacing-4;
+      }
+
+      @include breakpoint(xl) {
+        padding: $spacing-3;
+        padding-top: $spacing-4;
+      }
+    }
+
+    &.is-toggled,
+    .waveform__event-card {
+      @include breakpoint(sm) {
+        min-width: 278px;
+        height: 360px !important;
+      }
+
+      @include breakpoint(lg) {
+        min-width: 353px;
+        height: 460px !important;
+      }
+
+      @include breakpoint(xl) {
+        min-width: 383px;
+        height: 500px !important;
+      }
+    }
+
+    .waveform__event-card__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+
+      .waveform__event-card__content--text {
+        height: 254px;
+        margin-bottom: $spacing-3;
+
+        @include breakpoint(md) {
+          height: 266px;
+          margin-bottom: $spacing-4;
+          margin-left: $spacing-2;
+          margin-right: $spacing-2;
+        }
+
+        @include breakpoint(lg) {
+          height: 358px;
+        }
+
+        @include breakpoint(xl) {
+          height: 390px;
+        }
+
+        time {
+          font-size: $typescale-1;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+
+          @include breakpoint(lg) {
+            font-size: $typescale-2;
+          }
+        }
+
+        p {
+          display: inline;
+        }
+      }
+    }
+
+    h3 {
+      font-size: $typescale-5;
+      font-weight: $font-weight-bold;
+      padding-top: $spacing-4;
+      padding-bottom: $spacing-1;
+
+      @include breakpoint(lg) {
+        font-size: $typescale-7;
+        font-weight: $font-weight-normal;
+        padding-top: $spacing-5;
+      }
+
+      @include breakpoint(xl) {
+        padding-top: $spacing-7;
+      }
+    }
+  }
+
+  .paragraph--button {
+    font-size: $typescale-2;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-solid;
+    width: 100%;
+    margin: 0;
+    border: 0;
+
+    @include breakpoint(xl) {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+@include make-bar-color-styles($theme-colors);
+@include make-bar-height-styles($theme-heights-sm, 'sm');
+@include make-bar-height-styles($theme-heights-lg, 'lg');
+@include make-bar-height-styles($theme-heights-xl, 'xl');
+@include make-bar-margin-styles($theme-margins-sm, 'sm');
+@include make-bar-margin-styles($theme-margins-lg, 'lg');
+@include make-bar-margin-styles($theme-margins-xl, 'xl');

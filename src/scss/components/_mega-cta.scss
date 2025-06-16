@@ -1,0 +1,282 @@
+%make-columns {
+  text-align: center;
+  @include make-col-ready;
+
+  @include breakpoint(sm) {
+    @include make-col(8);
+  }
+
+  @include breakpoint(lg) {
+    @include make-col(6);
+  }
+}
+
+.mega-cta {
+  position: relative;
+  min-height: 640px;
+  background: #000;
+
+  @include breakpoint(md) {
+    height: 0;
+    padding-top: percentage(9 / 16);
+    overflow: hidden;
+  }
+  @include breakpoint(lg) {
+    min-height: auto;
+  }
+}
+
+.mega-cta__back {
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    opacity: 0.4;
+    z-index: $z-index-mega-cta-image;
+
+    .mega-cta--hero & {
+      @include breakpoint(md) {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.mega-cta__back-gradient {
+  img {
+    @include breakpoint(lg) {
+      opacity: 1;
+    }
+  }
+}
+
+$mega-cta-alignments: (
+  left-bottom: left bottom,
+  right-bottom: right bottom,
+  left-top: left top,
+  right-top: right top
+);
+
+@each $key, $pos in $mega-cta-alignments {
+  .mega-cta--gradient-#{$key} {
+    @include breakpoint(lg) {
+      background: linear-gradient(to $pos, transparent 45%, $black 100%);
+    }
+  }
+}
+
+@each $key, $pos in $mega-cta-alignments {
+  .mega-cta--image-#{$key} {
+    img {
+      @include breakpoint(lg) {
+        object-position: $pos;
+        font-family: 'object-position: #{$pos};';
+      }
+    }
+  }
+}
+
+.mega-cta__front {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: $z-index-mega-cta-front;
+
+  .mega-cta--hero & {
+    align-items: flex-start;
+    padding-top: $spacing-7;
+
+    @include breakpoint(md) {
+      padding-top: 0;
+      align-items: center;
+    }
+  }
+}
+
+.mega-cta__content {
+  @extend %make-columns;
+}
+
+.mega-cta__content-miis {
+  @extend %make-columns;
+
+  @include breakpoint(md) {
+    @include make-col(6);
+  }
+
+  @include breakpoint(lg) {
+    @include make-col(4);
+  }
+}
+
+.mega-cta__content-position {
+  position: absolute;
+  text-align: left;
+  padding: 0 1rem;
+  &-left-top {
+    top: $spacing-7;
+    @include breakpoint(md) {
+      padding: 0;
+      top: $spacing-8;
+      left: rem(80);
+    }
+    @include breakpoint(lg) {
+      top: $spacing-8;
+      left: rem(132);
+    }
+    @include breakpoint(xl) {
+      top: $spacing-8;
+      left: rem(152);
+    }
+  }
+  &-left-bottom {
+    top: $spacing-7;
+    @include breakpoint(md) {
+      padding: 0;
+      top: $spacing-8;
+      left: rem(80);
+    }
+    @include breakpoint(lg) {
+      top: initial;
+      bottom: $spacing-8;
+      left: rem(132);
+    }
+    @include breakpoint(xl) {
+      top: initial;
+      bottom: $spacing-8;
+      left: rem(152);
+    }
+  }
+  &-right-top {
+    top: $spacing-7;
+    @include breakpoint(md) {
+      padding: 0;
+      top: $spacing-8;
+      left: rem(80);
+    }
+    @include breakpoint(lg) {
+      top: $spacing-8;
+      right: rem(132);
+      left: initial;
+    }
+    @include breakpoint(xl) {
+      top: $spacing-8;
+      right: rem(152);
+    }
+  }
+  &-right-bottom {
+    top: $spacing-7;
+    @include breakpoint(md) {
+      padding: 0;
+      top: $spacing-8;
+      left: rem(80);
+    }
+    @include breakpoint(lg) {
+      top: initial;
+      bottom: $spacing-8;
+      right: rem(132);
+      left: initial;
+    }
+    @include breakpoint(xl) {
+      top: initial;
+      bottom: $spacing-8;
+      right: rem(152);
+    }
+  }
+  @include breakpoint(md) {
+    margin-top: $spacing-8;
+  }
+  @include breakpoint(lg) {
+    margin-top: 0;
+  }
+}
+
+.mega-cta__title {
+  color: $white;
+  margin-bottom: $spacing-2;
+  @include h0;
+
+  @include breakpoint(md) {
+    margin-bottom: $spacing-3;
+  }
+
+  .mega-cta--hero & {
+    text-align: left;
+  }
+}
+
+.mega-cta__title-miis {
+  color: $white;
+  font-size: rem(28);
+  margin-bottom: $spacing-1;
+}
+
+.mega-cta__text {
+  color: $white;
+  font-size: $typescale-2;
+  margin-bottom: $spacing-4;
+
+  @include breakpoint(md) {
+    margin-bottom: $spacing-5;
+    font-size: $typescale-3;
+  }
+
+  @include breakpoint(lg) {
+    margin-bottom: $spacing-7;
+    font-size: $typescale-4;
+  }
+
+  .mega-cta--hero & {
+    text-align: left;
+  }
+}
+
+.mega-cta__text-miis {
+  color: $white;
+  font-size: rem(18);
+  margin-bottom: $spacing-5;
+}
+
+.mega-cta__link {
+  :hover {
+    text-decoration: underline;
+    color: $white;
+  }
+}
+
+.mega-cta__caption {
+  position: absolute;
+  right: $spacing-5;
+  bottom: $spacing-8;
+  z-index: $z-index-mega-cta-caption;
+
+  @include breakpoint(md) {
+    bottom: $spacing-4;
+  }
+}
+
+.mega-cta--blse {
+  .mega-cta__text {
+    color: $yellow;
+    font-size: $typescale-6;
+    @include breakpoint(lg) {
+      font-size: $typescale-8;
+    }
+  }
+
+  .mega-cta__content {
+    text-align: left;
+    @include breakpoint(lg) {
+      @include make-col(8);
+    }
+  }
+}

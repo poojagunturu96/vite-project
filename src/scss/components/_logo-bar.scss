@@ -1,0 +1,41 @@
+.logo-bar {
+  background: $blue-lighter;
+  padding: $spacing-5;
+
+  @include breakpoint(md) {
+    padding: $spacing-4;
+  }
+}
+
+.logo-bar__title {
+  font-family: $font-family-sans-serif;
+  font-weight: $font-weight-medium;
+  font-size: $typescale-3;
+  letter-spacing: $letter-spacing;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: $line-height-heading;
+  margin-bottom: $spacing-7;
+  letter-spacing: 2.5px;
+}
+
+.logo-bar__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: $spacing-7;
+}
+
+.logo-bar__item {
+  opacity: 0.5;
+  text-align: center;
+  flex: 1 1 100%;
+
+  @include breakpoint(sm) {
+    flex-basis: 50%;
+  }
+
+  @include breakpoint(xl) {
+    flex-basis: auto;
+  }
+}

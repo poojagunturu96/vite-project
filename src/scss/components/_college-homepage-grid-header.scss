@@ -1,0 +1,353 @@
+$homepage-animation-duration: 8;
+$homepage-animation-sub-duration: $homepage-animation-duration / 4;
+
+$text-colors: (
+  1: #75a3cd,
+  2: #8f9a17,
+  3: #c26533,
+  4: #0d395f
+);
+
+// Accessible versions of the text colors listed above with right contrast ratios
+$accessible-text-colors: (
+  1: #407ab0,
+  2: #737c13,
+  3: #b55f30
+);
+
+@keyframes homepageFadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes homepageSlideInOut {
+  0% {
+    opacity: 0;
+    transform: translateX($spacing-8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes homepageSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX($spacing-8);
+  }
+
+  75%,
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes homepageFadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes homepageFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@include make-color-animation($text-colors);
+
+.homepage-header {
+  margin-top: $spacing-5;
+  margin-bottom: $spacing-4;
+  color: $navy;
+
+  @include breakpoint(lg) {
+    margin-top: $spacing-7;
+    margin-bottom: $spacing-2;
+  }
+}
+
+.homepage-title {
+  font-family: $font-family-sans-serif;
+  font-weight: $font-weight-semibold;
+  font-size: $typescale-4;
+  text-transform: uppercase;
+  letter-spacing: rem(2);
+  overflow: hidden;
+  width: 100%;
+
+  @include breakpoint(md) {
+    font-weight: $font-weight-normal;
+    font-size: rem(32);
+  }
+
+  @include breakpoint(lg) {
+    font-weight: $font-weight-light;
+    font-size: $typescale-10;
+  }
+
+  .homepage-title--transition-state {
+    display: block;
+    opacity: 0;
+    animation: #{$homepage-animation-sub-duration +
+      ($homepage-animation-sub-duration / 2)}s ease-in-out;
+    animation-play-state: inherit;
+    font-size: $typescale-7;
+    width: calc(11 / 12 * 100%);
+
+    .run-animation & {
+      animation-name: homepageSlideInOut;
+    }
+
+    &:nth-child(2) {
+      width: min-content;
+
+      @include breakpoint(sm) {
+        width: initial;
+      }
+    }
+
+    &:last-child {
+      animation: #{$homepage-animation-sub-duration}s ease-in forwards;
+      animation-play-state: inherit;
+      width: calc(11 / 12 * 100%);
+
+      @include breakpoint(sm) {
+        width: 100%;
+      }
+
+      .run-animation & {
+        animation-name: homepageSlideIn;
+      }
+    }
+
+    &:not(:last-child) {
+      position: absolute;
+    }
+
+    @include breakpoint(md) {
+      font-size: $typescale-8;
+      strong {
+        font-weight: $font-weight-bold;
+      }
+    }
+
+    @include breakpoint(lg) {
+      font-size: $typescale-10;
+
+      strong {
+        font-weight: $font-weight-semibold;
+      }
+    }
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{($homepage-animation-sub-duration) * ($i - 1)}s;
+
+        strong {
+          color: map-get($text-colors, $i);
+        }
+      }
+    }
+  }
+}
+
+.homepage-header__list {
+  display: flex;
+  margin-top: $spacing-3;
+  flex-direction: column;
+  animation-play-state: inherit;
+
+  @include breakpoint(md) {
+    flex-direction: row;
+    margin-top: $spacing-3;
+    margin-left: -$spacing-3;
+    margin-right: -$spacing-3;
+  }
+
+  @include breakpoint(lg) {
+    margin-top: $spacing-2;
+    margin-left: -$spacing-5;
+    margin-right: -$spacing-5;
+  }
+
+  li {
+    font-size: $typescale-4;
+    padding: 0;
+    color: $black;
+    padding-bottom: 0;
+
+    @include breakpoint(md) {
+      border-left: 0;
+      padding: $spacing-3 0;
+      padding-bottom: 0;
+      width: calc(100% / 3);
+    }
+
+    @include breakpoint(lg) {
+      padding: $spacing-4 0;
+    }
+
+    p {
+      padding-bottom: $spacing-3;
+      animation: #{$homepage-animation-sub-duration +
+        ($homepage-animation-sub-duration / 2)}s ease-in-out;
+      font-size: $typescale-2;
+
+      @include breakpoint(md) {
+        border-bottom: 0;
+        margin-left: $spacing-3;
+        padding-right: $spacing-3;
+        padding-bottom: 0;
+      }
+
+      @include breakpoint(lg) {
+        font-size: $typescale-3;
+        margin-left: $spacing-5;
+        padding-right: $spacing-5;
+      }
+    }
+
+    strong {
+      color: $navy;
+      font-weight: $font-weight-bold;
+      animation: #{$homepage-animation-sub-duration +
+        ($homepage-animation-sub-duration / 2)}s ease-in-out;
+      animation-play-state: inherit;
+    }
+
+    &:last-child {
+      p {
+        padding-bottom: 0;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: $spacing-3;
+
+      p {
+        border-bottom: $gray-light 1px solid;
+      }
+
+      @include breakpoint(md) {
+        margin-bottom: 0;
+
+        p {
+          border-bottom: 0;
+          border-right: $gray-light 1px solid;
+        }
+      }
+    }
+
+    @for $i from 1 through 3 {
+      .run-animation &:nth-child(#{$i}) {
+        p,
+        strong {
+          animation-delay: #{($homepage-animation-sub-duration) * ($i - 1)}s;
+          animation-name: homepageColorFadeInOut#{$i};
+        }
+      }
+
+      &:nth-child(#{$i}) {
+        @media (prefers-reduced-motion: reduce) {
+          strong, p {
+            color: map-get($accessible-text-colors, $i);
+          }
+        }
+      }
+    }
+  }
+}
+
+.homepage-header__container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: relative;
+
+  button {
+    position: absolute;
+    right: 0;
+    margin-bottom: rem(6);
+
+    @include breakpoint(md) {
+      margin-bottom: rem(10);
+    }
+
+    @include breakpoint(lg) {
+      margin-bottom: $spacing-3;
+    }
+
+    .homepage-button {
+      width: $spacing-4;
+      height: $spacing-4;
+      border-radius: $spacing-4;
+      background-color: $white;
+      color: $navy;
+      transition:
+        color 0.2s,
+        background-color 0.2s;
+
+      @include breakpoint(lg) {
+        width: $spacing-7;
+        height: $spacing-7;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .homepage-button {
+        background-color: $navy;
+        color: $white;
+      }
+    }
+  }
+
+  .homepage-title--pause-button,
+  .homepage-title--play-button,
+  .homepage-title--replay-button {
+    z-index: $z-index-homepage-header-button;
+  }
+
+  .homepage-title--pause-button {
+    display: block;
+  }
+
+  .homepage-title--play-button,
+  .homepage-title--replay-button {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .homepage-title--pause-button,
+  .homepage-title--play-button,
+  .homepage-title--replay-button {
+    display: none !important;
+  }
+}
+
+.pause-animation {
+  animation-play-state: paused !important;
+}

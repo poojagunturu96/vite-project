@@ -1,0 +1,31 @@
+.status-report {
+  @include breakpoint(md) {
+    column-count: 2;
+  }
+}
+
+.status-report__item {
+  display: inline-flex;
+  width: 100%;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $border-color;
+    padding-bottom: $spacing-3;
+    margin-bottom: $spacing-3;
+  }
+}
+
+.status-report__icon {
+  display: inline-flex;
+  color: $white;
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-right: $spacing-2;
+
+  .icon {
+    top: 0; // unset .icon top position which is intended elsewhere for lining up with text
+  }
+}

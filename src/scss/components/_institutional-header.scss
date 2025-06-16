@@ -1,0 +1,198 @@
+$midd-header-background-gradient: linear-gradient(
+  0deg,
+  rgba(0, 0, 0, 0) 4%,
+  rgba(0, 0, 0, 0.4) 100%
+);
+
+.midd-header.midd-header--transparent {
+  background-color: unset;
+}
+
+.midd-header--transparent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $z-index-midd-header-transparent;
+  transition: 0.2s background-color;
+  height: 75px;
+
+  @include breakpoint(sm) {
+    height: 100px;
+  }
+
+  @include breakpoint(lg) {
+    height: 120px;
+  }
+
+  .midd-header__container {
+    max-width: initial;
+    align-items: flex-start;
+    padding-left: $spacing-3;
+    padding-right: $spacing-3;
+    opacity: 1;
+
+    @include breakpoint(md) {
+      padding-left: $spacing-3;
+      padding-right: $spacing-3;
+    }
+
+    @include breakpoint(lg) {
+      padding-left: $spacing-5;
+      padding-right: $spacing-5;
+    }
+  }
+
+  @include breakpoint(lg) {
+    transition: none;
+  }
+
+  .midd-header__brand {
+    height: fit-content;
+    padding-top: rem(12);
+
+    @include breakpoint(md) {
+      padding-top: $spacing-3;
+    }
+
+    @include breakpoint(lg) {
+      padding-top: $spacing-4;
+    }
+
+    a {
+      text-decoration: none;
+
+      .midd-header__shield {
+        width: 42px;
+        top: 0;
+
+        @include breakpoint(md) {
+          width: 64px;
+        }
+      }
+
+      .midd-header__wordmark {
+        width: 78px;
+        margin-left: rem(8);
+
+        @include breakpoint(md) {
+          width: 116px;
+          margin-left: rem(10);
+        }
+      }
+    }
+  }
+
+  &.has-toggler {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      background-image: $midd-header-background-gradient;
+      z-index: -1;
+      opacity: 0.75;
+
+      @include breakpoint(md) {
+        opacity: 1;
+      }
+    }
+
+    &.is-toggled {
+      &::before {
+        background-image: none;
+        background-color: $navy-dark;
+        opacity: 1;
+
+        @include breakpoint(lg) {
+          background-image: $midd-header-background-gradient;
+          background-color: unset;
+        }
+      }
+    }
+  }
+
+  .midd-nav {
+    padding-top: $spacing-2;
+
+    @include breakpoint(lg) {
+      padding-top: 0;
+    }
+
+    .midd-nav__handle {
+      padding-left: $spacing-4;
+
+      @include breakpoint(lg) {
+        padding-left: $spacing-3;
+      }
+    }
+
+    .midd-nav__list--top {
+      transition: 0.2s opacity;
+
+      @include breakpoint(lg) {
+        background-color: transparent;
+      }
+    }
+
+    .midd-nav__item--top {
+      &:last-child::after {
+        @include breakpoint(lg) {
+          color: $white;
+          padding-top: $spacing-3;
+          padding-left: $spacing-4;
+          content: '|';
+        }
+      }
+    }
+
+    .midd-nav__link {
+      opacity: 1;
+    }
+  }
+
+  .midd-search {
+    padding-top: $spacing-2;
+
+    @include breakpoint(lg) {
+      padding-top: 0;
+    }
+
+    .midd-search__handle {
+      display: flex;
+      opacity: 1;
+      padding-right: 0;
+
+      &::after {
+        padding-left: $spacing-4;
+        content: '|';
+
+        @include breakpoint(lg) {
+          padding-left: 0;
+          content: none;
+        }
+      }
+    }
+
+    .midd-search__mag,
+    .midd-search__times {
+      @include breakpoint(sm) {
+        margin-right: rem(12);
+      }
+    }
+  }
+
+  .midd-schools__button {
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-solid;
+    color: $white;
+    padding: $spacing-3 0;
+    margin-top: $spacing-2;
+    border: 2px solid $white;
+    height: fit-content;
+    width: 164px;
+    order: 3;
+  }
+}

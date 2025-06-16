@@ -1,0 +1,206 @@
+////
+/// Contains mainly classless selectors for base resets and styles
+////
+
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+
+html,
+body {
+  // overflow-x: hidden;
+}
+
+/*
+ * 1. prevent chrome from hiding background images and colors by default when printing
+ */
+body {
+  font-family: $font-family-base;
+  line-height: $line-height-body;
+  font-size: $font-size-base;
+  color: $body-color;
+  background-color: $body-bg;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-print-color-adjust: exact; /* 1 */
+
+  @media print {
+    // remove padding top added for sticky headers
+    padding-top: 0 !important;
+  }
+}
+
+button {
+  padding: 0;
+  background: 0;
+  border: 0;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+// remove ios border radius
+input,
+textarea {
+  border-radius: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+figure {
+  margin: 0;
+}
+
+hr {
+  background-color: $gray-light;
+  margin-top: $spacing-5;
+  margin-bottom: $spacing-5;
+  height: 1px;
+  border: 0;
+}
+
+blockquote {
+  margin: 0;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+dl,
+dt,
+dd {
+  margin: 0;
+}
+
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  &:hover {
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+[href^='mailto:'] {
+  word-wrap: break-word;
+}
+
+strong {
+  font-weight: $font-weight-semibold;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+p {
+  font-family: $font-family-base;
+  font-size: $paragraph-font-size;
+  line-height: $paragraph-line-height;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+address {
+  font-family: $font-family-base;
+  font-style: normal;
+  font-size: $paragraph-font-size;
+  line-height: $paragraph-line-height;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+ol,
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.h1,
+h1 {
+  @include h1;
+}
+
+.h2,
+h2 {
+  @include h2;
+}
+
+.h3,
+h3 {
+  @include h3;
+}
+
+.h4,
+h4 {
+  @include h4;
+}
+
+.h5,
+h5 {
+  @include h5;
+}
+
+.h6,
+h6 {
+  @include h6;
+}
+
+svg {
+  fill: currentcolor;
+}
+
+// Fixes wbr tag in e11
+// https://stackoverflow.com/questions/23756932/wbr-tag-doesnt-work-in-ie
+wbr:after {
+  content: '\00200B';
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  :before,
+  :after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important; // stylelint-disable-line
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
+  }
+}

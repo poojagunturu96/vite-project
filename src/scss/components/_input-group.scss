@@ -1,0 +1,13 @@
+.input-group {
+  display: flex;
+
+  .form-control {
+    border-right: 0;
+    flex: 1 1 auto;
+  }
+
+  .button {
+    border-left: 0;
+    flex: 0 1 auto;
+  }
+}

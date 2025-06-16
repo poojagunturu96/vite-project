@@ -1,0 +1,57 @@
+.box-menu {
+  box-shadow: inset 0 0 0 1px $gray-light;
+  border-top: 8px solid $navy;
+  margin-bottom: $spacing-7;
+  background-color: $white;
+  @include themify(border-top-color);
+
+  @include print-hide;
+
+  @include breakpoint(md) {
+    margin-bottom: $spacing-8;
+  }
+}
+
+.box-menu__list {
+  padding: $spacing-4;
+
+  @include breakpoint(md) {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: $spacing-3;
+    padding-bottom: 0;
+  }
+}
+
+.box-menu__item {
+  &:not(:last-child) {
+    margin-bottom: $spacing-3;
+  }
+
+  @include breakpoint(md) {
+    flex: 0 0 auto;
+    margin-right: $spacing-4;
+    margin-bottom: $spacing-3;
+  }
+}
+
+/*
+ * 1. fixes bug in safari 12 where text wraps. See https://github.com/middlebury/drupal8/issues/838
+ */
+.box-menu__link {
+  @include link-border;
+  display: block; /* 1 */
+  border-color: transparent;
+
+  &:hover,
+  &:focus {
+    color: $sky;
+    border-color: $sky;
+  }
+}
+
+.box-menu--overlap {
+  margin-top: -#{$spacing-5};
+  position: relative;
+  z-index: $z-index-box-menu;
+}

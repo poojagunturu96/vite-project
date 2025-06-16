@@ -1,0 +1,100 @@
+.midd-footer {
+  background-color: $navy-dark;
+  padding-top: $spacing-4;
+  padding-bottom: $spacing-4;
+  @include print-hide;
+}
+
+.midd-footer__list {
+  @include breakpoint(lg) {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    margin-top: $spacing-3;
+  }
+}
+
+.midd-footer__item {
+  &:not(:first-child) {
+    @include breakpoint(lg) {
+      margin-left: $spacing-3;
+    }
+    @include breakpoint(xl) {
+      margin-left: $spacing-4;
+    }
+  }
+}
+
+.midd-footer__link {
+  color: $white;
+  font-size: $typescale-2;
+  display: block;
+  padding-top: $spacing-1;
+  padding-bottom: $spacing-1;
+  white-space: nowrap;
+
+  @include breakpoint(lg) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.midd-footer {
+  &.davis-footer {
+    padding-top: $spacing-4;
+    padding-bottom: $spacing-4;
+    background-color: $black;
+
+    @include breakpoint(lg) {
+      padding-top: $spacing-7;
+      padding-bottom: $spacing-7;
+    }
+
+    .midd-footer__list {
+      @include breakpoint(lg) {
+        display: block;
+      }
+
+      @include breakpoint(xl) {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+      }
+    }
+
+    .davis-logo {
+      img {
+        margin-bottom: $spacing-3;
+      }
+
+      img:first-child {
+        margin-right: rem(12);
+      }
+    }
+
+    .midd-footer__item {
+      &:not(:first-child) {
+        @include breakpoint(lg) {
+          margin-left: 0;
+        }
+        @include breakpoint(xl) {
+          margin-left: $spacing-4;
+        }
+      }
+    }
+
+    .midd-footer__link {
+      @include breakpoint(lg) {
+        padding-top: $spacing-1;
+        padding-bottom: $spacing-1;
+      }
+
+      @include breakpoint(xl) {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}

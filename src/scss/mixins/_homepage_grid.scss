@@ -1,0 +1,14 @@
+@mixin make-color-animation($text-colors) {
+  @each $color-index, $color in $text-colors {
+    @keyframes homepageColorFadeInOut#{$color-index} {
+      0%,
+      100% {
+        color: currentcolor;
+      }
+
+      50% {
+        color: $color;
+      }
+    }
+  }
+}

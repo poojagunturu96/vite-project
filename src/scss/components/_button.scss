@@ -1,0 +1,65 @@
+.button {
+  @include button-base;
+}
+
+.button--disabled,
+.button[disabled] {
+  @include button-disabled;
+}
+
+// Shapes
+
+.button--block {
+  display: block;
+  width: 100%;
+}
+
+.button--circle {
+  border-radius: 10rem;
+  padding: 1rem;
+  width: 3rem;
+  height: 3rem;
+  line-height: 1;
+}
+
+.button--pill {
+  border-radius: 10rem;
+}
+
+.button--heavy {
+  font-size: $typescale-2;
+  font-weight: $font-weight-semibold;
+}
+
+// Sizes
+
+.button--sm {
+  @include button-size(sm);
+}
+
+// Themes
+
+.button--primary {
+  @include button-theme('primary');
+
+  &.button--outline {
+    @include button-theme('primary-outline');
+  }
+}
+
+.button--light {
+  @include button-theme('light');
+
+  &.button--outline {
+    @include button-theme('light-outline');
+  }
+
+  &.button--dark-outline {
+    @include button-theme('dark-outline');
+  }
+}
+
+.button--link {
+  border: 0;
+  background-color: transparent;
+}

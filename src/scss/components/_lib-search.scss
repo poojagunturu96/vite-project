@@ -1,0 +1,46 @@
+.lib-search__cover {
+  min-height: 260px;
+  display: grid;
+  grid-template-columns: 1fr;
+  background: $navy-dark;
+}
+
+.lib-search__content {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  z-index: 1;
+  background: rgba($navy-dark, 0.7);
+
+  > *,
+  a {
+    color: $white;
+  }
+
+  .lib-search__title {
+    margin-top: $spacing-4;
+    margin-bottom: $spacing-4;
+
+    @include breakpoint(md) {
+      margin-top: $spacing-5;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: $spacing-9;
+      margin-bottom: $spacing-5;
+    }
+
+    @include breakpoint(xl) {
+      margin-top: rem(128);
+    }
+  }
+}
+
+.lib-search__back {
+  grid-row-start: 1;
+  grid-column-start: 1;
+
+  img {
+    object-fit: cover;
+    min-height: 260px;
+  }
+}

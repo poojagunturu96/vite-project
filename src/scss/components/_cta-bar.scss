@@ -1,0 +1,44 @@
+.cta-bar {
+  display: block;
+  background: $navy;
+  text-align: center;
+  text-decoration: none;
+  font-weight: $font-weight-semibold;
+  font-size: $typescale-3;
+  transition: background 0.2s;
+  padding-top: $spacing-1;
+  padding-bottom: $spacing-2;
+  @include make-gutters;
+
+  @include breakpoint(md) {
+    padding-bottom: $spacing-1;
+  }
+
+  &:hover,
+  &:focus {
+    background: $navy-dark;
+
+    .cta-bar__text,
+    .cta-bar__button {
+      opacity: 0.8;
+    }
+  }
+}
+
+.cta-bar__text {
+  color: $white;
+  display: block;
+  margin-bottom: $spacing-2;
+  transition: opacity 0.2s;
+
+  @include breakpoint(md) {
+    display: inline-block;
+    margin-right: $spacing-5;
+    margin-bottom: 0;
+  }
+}
+
+.cta-bar__button {
+  transition: opacity 0.2s;
+  background: $white;
+}

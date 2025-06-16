@@ -1,0 +1,109 @@
+.status-bar {
+  display: flex;
+  align-items: center;
+  background-color: $black;
+  color: $white;
+  overflow: hidden;
+
+  .status-bar__broadcast-status {
+    font-family: $font-family-sans-serif;
+    font-size: $typescale-9;
+    font-weight: $font-weight-light;
+    color: $wrmc-green;
+    text-transform: uppercase;
+    line-height: $line-height-solid;
+    padding: 0 rem(12);
+  }
+
+  .status-bar-divider {
+    position: absolute;
+    width: 100%;
+    background-color: rgba($wrmc-blue-light, 0.5);
+    margin: 0;
+  }
+
+  .status-bar-content {
+    width: calc(100% - 95px);
+    // min-width: 1344px;
+    overflow: auto;
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .status-bar-content__wrapper {
+      width: max-content;
+    }
+  }
+
+  .status-bar-row {
+    display: flex;
+ 
+    .status-bar-section {
+      padding: $spacing-2 rem(12);
+
+      &.section-show {
+        padding-right: $spacing-4;
+        border-right: 1px solid rgba($wrmc-blue-light, 0.5);
+      }
+
+      &.section-playlist {
+        .status-bar-section__playlist-items {
+          display: flex;
+          min-width: max-content;
+        }
+      }
+
+      dd {
+        color: $wrmc-blue-light;
+        font-family: $font-family-sans-serif;
+        font-size: $typescale-2;
+        font-weight: $font-weight-semibold;
+        line-height: $line-height-solid;
+        text-transform: uppercase;
+        margin-bottom: $spacing-1;
+      }
+
+      dt {
+        font-size: $typescale-2;
+        font-weight: $font-weight-bold;
+        line-height: $line-height-solid;
+        
+        em {
+          color: $wrmc-pink;
+          padding-left: $spacing-1;
+        }
+
+        a {
+          color: $white;
+
+          border-bottom: 0.5px solid currentColor;
+          text-decoration: none;
+
+          &:hover {
+            border-bottom-color: transparent;
+            text-decoration: none;
+          }
+        }
+
+        p {
+          font-size: inherit;
+          line-height: inherit;
+        }
+      }
+
+      .text-separator {
+        color: $wrmc-blue-light;
+        font-size: rem(10);
+        padding: 0 $spacing-3;
+      }
+    }
+  }
+}

@@ -1,0 +1,381 @@
+$school-header-breakpoint: xl;
+
+.wrmc-header {
+  background: $wrmc-blue-light;
+  position: relative;
+  // overflow-y: hidden;
+
+  @include themify(border-top-color);
+
+  &.headroom {
+    will-change: transform;
+    transition: transform 0.4s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: $z-index-school-header;
+
+    @media print {
+      position: relative;
+    }
+  }
+
+  &.headroom--pinned {
+    transform: translateY(0%);
+  }
+
+  &.headroom--unpinned {
+    transform: translateY(-100%);
+  }
+
+  @media print {
+    border: 0;
+  }
+}
+
+.wrmc-header__title {
+  font-size: 100%;
+}
+
+.wrmc-header__main {
+  display: flex;
+  justify-content: space-between;
+  // align-items: center;
+}
+
+.wrmc-header__logo {
+  // padding: rem(12) 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: -$spacing-5;
+  padding-left: $spacing-5;
+  overflow-y: hidden;
+}
+
+.wrmc-header__logo-graphic {
+  display: flex;
+  // flex-direction: column;
+  margin: $spacing-3 0;
+
+  @include breakpoint(lg) {
+    margin: 0;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.wrmc-header__logo-background {
+  position: absolute;
+  top: 0;
+  left: -$spacing-4;
+  z-index: -1;
+
+  @include breakpoint(md) {
+    left: 0;
+  }
+}
+
+.wrmc-header__logo-wordmark {
+  display: flex;
+  flex-direction: column;
+  margin-top: $spacing-1;
+  margin-left: $spacing-2;
+  font-family: $font-family-sans-serif;
+  font-weight: 800;
+  line-height: $line-height-journey;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  @include breakpoint(sm) {
+    line-height: $line-height-solid;
+  }
+
+  
+  // img {
+  //   width: fit-content;
+
+  //   &:last-child {
+  //     margin-left: rem(14);
+  //     margin-top: rem(14);
+  //   }
+  // }
+
+  span:first-child {
+    font-size: $typescale-6;
+
+    @include breakpoint(sm) {
+      font-size: $typescale-9;
+    }
+
+    @include breakpoint(xl) {
+      font-size: rem(64);
+    }
+  }
+
+  span:last-child {
+    // margin-top: $spacing-1;
+    font-size: $typescale-2;
+    line-height: 1.2;
+
+    @include breakpoint(sm) {
+      margin-left: rem(12);
+      margin-top: $spacing-2;
+      font-size: $typescale-4;
+    }
+
+    @include breakpoint(xl) {
+      margin-top: $spacing-1;
+      font-size: $typescale-4;
+    }
+  }
+}
+
+.wrmc-header__content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+
+  @include breakpoint(md) {
+    position: relative;
+  }
+}
+
+.wrmc-nav {
+  @include print-hide;
+
+  @include breakpoint(md) {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.wrmc-nav__handle {
+  display: flex;
+  align-items: center;
+  margin-top: $spacing-4;
+  font-size: $typescale-2;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-body;
+  color: $navy;
+  background: none;
+  border: 0;
+
+  @include breakpoint(md) {
+    margin-top: 0;
+    margin-bottom: $spacing-4;
+  }
+
+  @include breakpoint(lg) {
+    display: none;
+  }
+}
+
+.wrmc-nav__menu {
+  display: none;
+  padding-top: $spacing-3;
+  padding-bottom: $spacing-2;
+
+  @include breakpoint(md) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.wrmc-nav__secondary-menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  img {
+    mix-blend-mode: multiply;
+    height: fit-content;
+  }
+
+  .wrmc-nav__secondary-menu--links {
+    display: flex;
+    flex-direction: column;
+    margin-left: $spacing-3;
+
+    .button {
+      font-size: $typescale-2;
+      font-weight: $font-weight-semibold;
+      text-transform: uppercase;
+      padding: $spacing-1 rem(12);
+      margin: $spacing-3 0;
+      width: fit-content;
+    }
+  
+    a:last-child {
+      font-size: $typescale-1;
+      font-weight: $font-weight-semibold;
+      @include link-border;
+    }
+  }
+}
+
+.wrmc-nav__bars {
+  .wrmc-nav__handle.is-toggled & {
+    display: none;
+  }
+}
+
+.wrmc-nav__times {
+  display: none;
+
+  .wrmc-nav__handle.is-toggled & {
+    display: inline-block;
+  }
+}
+
+.wrmc-nav__list {
+  display: none;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin-top: $spacing-6;
+
+  @include breakpoint(lg) {
+    display: flex;
+  }
+}
+
+.wrmc-nav__list--sub {
+  display: block; // unset display-flex
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: $white;
+  padding: #{$spacing-3 / 2} $spacing-3;
+  border: 1px solid $navy;
+  transition: opacity 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: $z-index-school-nav-dropdown;
+  min-width: 300px;
+}
+
+.wrmc-nav__list--cols {
+  column-count: 2;
+  min-width: 500px;
+
+  .wrmc-nav__item {
+    width: 100%;
+    display: inline-block;
+  }
+}
+
+.wrmc-nav__item {
+  position: relative;
+  display: block;
+  transition: opacity 0.2s;
+
+  &:not(:last-child):not(.wrmc-nav__item--sub) {
+    margin-right: $spacing-5;
+  }
+
+  &:focus-within,
+  &:hover {
+    .wrmc-nav__list--sub {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .school-search__handle {
+    padding: 0;
+    padding-bottom: $spacing-1;
+    font-size: $typescale-2;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.wrmc-nav__link {
+  display: block;
+  // padding-bottom: $spacing-1;
+  color: $navy;
+  font-size: $typescale-2;
+  font-weight: $font-weight-semibold;
+  opacity: 0.8;
+  transition: opacity 0.2s, border-color 0.2s;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+.wrmc-nav__link--sub {
+  padding-top: $spacing-3 / 2;
+  padding-bottom: $spacing-3 / 2;
+  font-size: $typescale-2;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.wrmc-nav__link--top {
+  border-bottom: 4px solid transparent;
+
+  .wrmc-nav__item:focus-within &,
+  .wrmc-nav__item:hover & {
+    @include themify(border-color);
+  }
+}
+
+.wrmc-nav__link--active {
+  @include themify(border-color);
+}
+
+.wrmc-nav__link--util {
+  font-size: $typescale-2;
+  border-top: 4px solid transparent;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    @include themify(border-top-color);
+  }
+}
+
+.wrmc-drawer.drawer {
+  .drawer__header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: $spacing-5;
+  }
+
+  .wrmc-nav__secondary-menu {
+    justify-content: flex-start;
+    padding-left: $spacing-3;
+    padding-top: $spacing-3;
+
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+
+  .drawer__content {
+    background-color: $wrmc-blue-light;
+  }
+
+  .drawer-nav__item {
+    border-top-color: $white;
+  }
+
+  .drawer__close,
+  .drawer-nav__link {
+    color: $navy;
+  }
+}
+

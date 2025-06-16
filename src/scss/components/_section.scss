@@ -1,0 +1,72 @@
+.section {
+  margin-bottom: $spacing-8;
+
+  @include breakpoint(md) {
+    margin-bottom: $spacing-9;
+  }
+}
+
+.section__header {
+  border-top: 4px solid $navy;
+  padding-top: $spacing-2;
+  margin-bottom: $spacing-5;
+
+  @include breakpoint(md) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: $spacing-7;
+  }
+}
+
+.section__title {
+  letter-spacing: $letter-spacing;
+  text-transform: uppercase;
+  font-family: $font-family-sans-serif;
+  font-weight: $font-weight-normal;
+  font-size: $typescale-6;
+  // % unit is defined on flex basis value for ie11
+  // https://stackoverflow.com/a/42630660/2193516
+  flex: 1 1 0%;
+
+  // Adds border style to title and removes it when nested in section header
+  // so we don't need extra header elements in sections which do not have a cta link or blurb.
+  border-top: 4px solid $navy;
+  padding-top: $spacing-2;
+  margin-bottom: $spacing-5;
+
+  @include breakpoint(md) {
+    margin-bottom: $spacing-7;
+  }
+
+  .section__header & {
+    border-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+
+  &.section__title-publications {
+    margin-bottom: $spacing-3;
+  }
+}
+
+.section__link {
+  @include link-border;
+  flex: 0 0 auto;
+
+  @include breakpoint(md) {
+    .section__title + & {
+      margin-left: $spacing-3;
+    }
+  }
+}
+
+.section__text {
+  margin-top: $spacing-2;
+  flex: 0 0 100%;
+
+  a {
+    @include link-border;
+  }
+}

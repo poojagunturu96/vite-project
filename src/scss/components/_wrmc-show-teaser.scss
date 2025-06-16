@@ -1,0 +1,126 @@
+.show-teaser {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: $spacing-4 $spacing-3;
+
+  @include breakpoint(md) {
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.show-time {
+  margin-bottom: $spacing-2;
+
+  @include breakpoint(md) {
+    flex: 0 0 30%;
+    width: 30%;
+    margin-bottom: 0;
+  }
+}
+
+.show-details {
+  h3 {
+    font-size: $typescale-6;
+    font-family: $font-family-sans-serif;
+    margin-bottom: $spacing-1;
+  }
+
+  .show-details__hosts {
+    font-size: $typescale-3;
+    line-height: $line-height-heading;
+  }
+
+  .show-details__description {
+    font-size: $typescale-2;
+    margin: $spacing-3 0;
+  }
+
+  .show-details__genre {
+    display: block;
+    width: fit-content;
+    margin-top: $spacing-3;
+    padding: $spacing-2;
+    background-color: $navy;
+    color: $white;
+    font-size: $typescale-1;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-heading;
+    text-transform: uppercase;
+
+    @each $genre, $genre-color in $wrmc-genre-colors {
+      &.#{$genre} {
+        background-color: $genre-color;
+      }
+    }
+  }
+}
+
+.weekly-schedule {
+  .weekly-schedule__show-teaser {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 50vw;
+    max-width: 468px;
+    margin-top: $spacing-2;
+    background-color: $white;
+    filter: drop-shadow(0px 0px $spacing-2 rgba(0, 0, 0, 0.2));
+
+    &.align-top {
+      bottom: calc(100% + #{$spacing-2});
+    }
+
+    &.align-right {
+      right: 0;
+    }
+
+    &.align-top-right {
+      bottom: calc(100% + #{$spacing-2});
+      right: 0;
+    }
+     
+    &.show-teaser {
+      flex-direction: column;
+      font-weight: $font-weight-normal;
+      letter-spacing: initial;
+      padding: $spacing-3;
+
+      .show-time {
+        font-size: $typescale-3;
+        font-weight: $font-weight-normal;
+        line-height: $line-height-body;
+        margin-bottom: $spacing-4;
+      }
+
+      .show-details__description {
+        margin-bottom: 0;
+      }
+
+      .show-details__close {
+        width: fit-content;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: none;
+        border: 0;
+        color: $navy;
+        padding: $spacing-3;
+        font-size: $typescale-2;
+        font-weight: normal;
+        letter-spacing: initial;
+      }
+
+      .show-details__genre {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 0;
+      }
+    }
+  }
+}

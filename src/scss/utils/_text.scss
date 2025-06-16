@@ -1,0 +1,192 @@
+////
+/// Mixed text/font style utilities like font sizes, text align, font families, font weights, etc
+////
+
+///
+/// font sizes
+///
+
+@each $name, $size in $typescale {
+  .f#{$name} {
+    font-size: $size;
+  }
+}
+
+///
+/// text alignment
+///
+
+@each $breakpoint, $variant in $responsive-variants {
+  @include breakpoint($breakpoint) {
+    .text#{$variant}-left {
+      text-align: left !important;
+    }
+
+    .text#{$variant}-right {
+      text-align: right !important;
+    }
+
+    .text#{$variant}-center {
+      text-align: center !important;
+    }
+  }
+}
+
+///
+/// text colors
+///
+
+$text-colors: (
+  'white': $white,
+  'gray': $gray
+);
+
+@each $name, $hex in $text-colors {
+  .text-#{$name} {
+    color: $hex;
+  }
+}
+
+///
+/// font family
+///
+
+.font-sans-serif {
+  font-family: $font-family-sans-serif;
+}
+
+.font-serif {
+  font-family: $font-family-serif;
+}
+
+///
+/// alt heading treatments
+///
+
+///
+/// extra large headings
+///
+
+// TODO: do we need to add these font sizes to typescale?
+
+.h0 {
+  @include h0;
+}
+
+///
+/// links
+///
+
+.link-underline {
+  @include link-border;
+}
+
+.link-external {
+  @include link-external;
+}
+
+///
+/// pronouns
+///
+
+.pronouns {
+  font-family: $font-family-serif;
+  font-size: $typescale-7;
+  line-height: $line-height-heading;
+
+  @include breakpoint(md) {
+    font-size: rem(32);
+  }
+
+  @include breakpoint(lg) {
+    font-size: $typescale-8;
+  }
+}
+
+///
+/// lead
+///
+
+.lead {
+  font-size: $lead-font-size;
+  line-height: $lead-line-height;
+  margin-bottom: $lead-margin-bottom;
+
+  a {
+    @include link-border;
+  }
+}
+
+.davis-lead {
+  font-size: $typescale-6;
+  font-weight: $font-weight-light;
+  background-color: $white;
+  border-top: $spacing-2 solid $black;
+  padding: $spacing-2;
+  margin-left: $spacing-3;
+  margin-right: $spacing-3;
+
+  @include breakpoint(sm) {
+    font-size: rem(32);
+  }
+
+  @include breakpoint(md) {
+    padding: $spacing-2 $spacing-3;
+  }
+
+  @include breakpoint(lg) {
+    padding: $spacing-3 $spacing-5;
+    margin-left: $spacing-5;
+    margin-right: $spacing-5;
+  }
+}
+
+.text-caps {
+  @include small-caps;
+}
+
+///
+/// Line height
+///
+
+.lh-solid {
+  line-height: $line-height-solid;
+}
+
+.lh-heading {
+  line-height: $line-height-heading;
+}
+
+.lh-body {
+  line-height: $line-height-body;
+}
+
+.lh6 {
+  line-height: $typescale-6;
+}
+
+///
+/// font weight
+///
+
+.font-normal {
+  font-weight: $font-weight-normal;
+}
+
+.font-medium {
+  font-weight: $font-weight-medium;
+}
+
+.font-semibold {
+  font-weight: $font-weight-semibold;
+}
+
+.font-bold,
+// text-bold is deprecated
+.text-bold {
+  font-weight: $font-weight-bold;
+}
+
+.whitespace-no-wrap {
+  white-space: nowrap;
+}

@@ -1,0 +1,65 @@
+.ls-hero {
+  position: relative;
+  padding-top: percentage(2 / 5);
+  min-height: 480px;
+
+  @include breakpoint(md) {
+    min-height: auto;
+  }
+}
+
+.ls-hero__image {
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    z-index: $z-index-mega-cta-image;
+  }
+}
+
+.ls-hero__content {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.ls-hero__title {
+  font-size: $typescale-6;
+  margin-bottom: $spacing-5;
+  text-align: center;
+
+  @include breakpoint(lg) {
+    font-size: $typescale-8;
+    margin-bottom: $spacing-8;
+  }
+}
+
+.ls-hero__nav {
+}
+
+.ls-hero__list {
+}
+
+.ls-hero__item {
+  display: inline-block;
+  text-align: center;
+  margin-right: $spacing-4 / 2;
+  margin-left: $spacing-4 / 2;
+  margin-bottom: $spacing-2;
+}
+
+.ls-hero__link {
+  font-weight: $font-weight-medium;
+  @include breakpoint(lg) {
+    font-size: $typescale-5;
+  }
+}

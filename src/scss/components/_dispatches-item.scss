@@ -1,0 +1,238 @@
+$dispatches-sm-border: $spacing-2 solid $blue;
+$dispatches-border: $spacing-1 solid $blue;
+$dispatches-card-height: 470px;
+
+.dispatches-item {
+  height: $dispatches-card-height;
+
+  & p + article {
+    padding-top: 0px;
+  }
+
+  border: $dispatches-sm-border;
+  border-top: 0;
+
+  @include breakpoint(sm) {
+    border-left: $dispatches-border;
+    border-bottom: $dispatches-border;
+    border-right: 0;
+  }
+}
+
+.dispatches-item__card {
+  height: 100%;
+}
+
+.dispatches-item__label {
+  position: absolute;
+  bottom: 0;
+  font-size: $typescale-1;
+  line-height: $line-height-solid;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  padding: $spacing-2;
+  margin-top: $spacing-3;
+
+  @include breakpoint(md) {
+    padding-left: $spacing-3;
+    padding-right: $spacing-3;
+  }
+
+  @include breakpoint(xl) {
+    padding-left: $spacing-4;
+    padding-right: $spacing-4;
+  }
+}
+
+.dispatches-item__image-wrapper {
+  position: relative;
+  &:before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: (9 / 16) * 100%;
+  }
+
+  > .dispatches-item__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.dispatches-item__content {
+  z-index: $z-index-card-carousel-item-content;
+}
+
+.dispatches-item__side {
+  animation: fadeInDown 0.8s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dispatches-item__side--front {
+  .dispatches-item.has-toggler.is-toggled & {
+    display: none;
+  }
+}
+
+.dispatches-item__side--back {
+  background-color: $blue-lighter;
+
+  .dispatches-item.has-toggler & {
+    display: none;
+  }
+
+  .dispatches-item.is-toggled & {
+    display: flex;
+  }
+}
+
+.dispatches-item__toggle {
+  // position: absolute;
+  right: 0;
+  top: 0;
+  padding: $spacing-2;
+}
+
+.dispatches-item__header {
+  padding: $spacing-3;
+  padding-right: $spacing-6;
+  padding-bottom: $spacing-4;
+  background-image: linear-gradient(
+    to bottom,
+    rgba($black, 0.75) 20%,
+    rgba($white, 0)
+  );
+
+  .dispatches-item__side--back & {
+    // remove gradient from card back header
+    background: 0;
+  }
+}
+
+.dispatches-item__body {
+  padding: 0 $spacing-2;
+  overflow: hidden;
+  height: calc(0.52 * 470px);
+
+  @media only screen and (min-width: 375px) {
+    height: calc(0.4 * 470px);
+  }
+
+  @include breakpoint(sm) {
+    height: calc(0.65 * 470px);
+  }
+
+  @include breakpoint(md) {
+    padding: 0 $spacing-3;
+    height: calc(0.55 * 470px);
+  }
+
+  @include breakpoint(lg) {
+    height: calc(0.6 * 470px);
+  }
+
+  @include breakpoint(xl) {
+    padding: 0 $spacing-4;
+    height: calc(0.47 * 470px);
+  }
+
+  h4 {
+    line-height: $line-height-body;
+    font-weight: $font-weight-bold;
+    margin-top: $spacing-2;
+    margin-bottom: $spacing-1;
+  }
+
+  p {
+    font-size: $typescale-3;
+    display: inline;
+  }
+
+  .dispatches-item__title-label {
+    display: inline;
+    padding: 0 $spacing-1;
+    margin-left: $spacing-1;
+    background-color: $white;
+    color: $navy;
+    border-color: $white;
+    border: 1px solid $navy;
+    border-radius: $spacing-3;
+
+    .dispatches-item__icon {
+      width: 0.625em;
+      height: 0.875em;
+      margin-left: rem(2);
+      margin-bottom: rem(2);
+    }
+  }
+}
+
+.dispatches-item__body-text {
+  h4 {
+    line-height: $line-height-body;
+    font-weight: $font-weight-bold;
+    margin-top: $spacing-2;
+    margin-bottom: $spacing-1;
+  }
+
+  p {
+    font-size: $typescale-3;
+  }
+}
+
+.dispatches-item__footer {
+  flex: 0 1 auto;
+  padding: $spacing-3;
+  text-align: center;
+  // position: relative;
+  margin-top: auto;
+
+  .dispatches-item__side--back & {
+    &:after {
+      content: '';
+      display: block;
+      background-image: linear-gradient(
+        to bottom,
+        rgba($white, 0),
+        $blue-lighter
+      );
+      // position: absolute;
+      bottom: 100%;
+      left: 0;
+      width: 100%;
+      height: $spacing-5;
+    }
+  }
+}
+
+.dispatches-item__title {
+  @include h4;
+
+  .dispatches-item__side--front & {
+    color: $white;
+  }
+}
+
+.dispatches-item__text {
+  font-size: $typescale-3;
+  .dispatches-item__side--front & {
+    color: $white;
+  }
+}
+
+.dispatches-item__header--band {
+  padding: $spacing-2 $spacing-3;
+  margin-top: $spacing-9;
+}

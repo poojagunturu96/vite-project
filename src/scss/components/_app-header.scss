@@ -1,0 +1,131 @@
+$app-header-bp: lg;
+
+.app-header {
+  background: $navy;
+}
+
+.app-header__wrap {
+  @include make-container;
+  display: flex;
+
+  @media print {
+    display: block;
+  }
+}
+
+.app-header__wrap--main {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-header__logo {
+  position: relative;
+  top: 1rem;
+  z-index: 2;
+
+  @media print {
+    float: right;
+  }
+}
+
+.app-header__title {
+  @include h2;
+}
+
+.app-header__link {
+  color: $white;
+
+  @media print {
+    display: block;
+    margin-top: $spacing-3;
+  }
+}
+
+.app-header__secondary {
+  background: $gray-lighter;
+  position: relative;
+  @include print-hide;
+}
+
+.app-header__button {
+  @include button-base;
+  font-size: $typescale-2;
+  font-weight: $font-weight-medium;
+  padding: $spacing-3;
+  border: 0;
+
+  @include breakpoint($app-header-bp) {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: $typescale-3;
+    font-weight: $font-weight-normal;
+
+    &:hover,
+    &.is-toggled {
+      box-shadow: inset 0 -4px 0 0 $navy;
+    }
+  }
+}
+
+.app-header__dropdown {
+  flex: 0 0 auto;
+
+  // HACK: pull buttons to left to line up with site title since container has padding
+  &:first-child {
+    margin-left: -#{$spacing-3};
+    @include breakpoint($app-header-bp) {
+      margin-left: 0;
+    }
+  }
+
+  @include breakpoint($app-header-bp) {
+    // use relative position at larger screen so search dropdown lines up with toggle button
+    position: relative;
+  }
+}
+
+.app-header__nav {
+  display: none;
+  position: absolute;
+  background: $gray-lighter;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: $z-index-app-header-nav;
+
+  &.is-toggled {
+    display: block;
+  }
+
+  @include breakpoint($app-header-bp) {
+    display: block;
+    position: relative;
+    top: 0;
+  }
+}
+
+.app-header__search {
+  background: $gray-lighter;
+  border-bottom: 1px solid $border-color;
+  border-top: 1px solid $border-color;
+  padding: $spacing-3;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  transition: opacity 0.2s;
+  visibility: hidden;
+  opacity: 0;
+  z-index: $z-index-app-header-search;
+
+  &.is-toggled {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include breakpoint($app-header-bp) {
+    width: 400px;
+    border: 1px solid $border-color;
+  }
+}

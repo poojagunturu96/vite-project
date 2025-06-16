@@ -1,0 +1,64 @@
+.digest {
+  border-left: 1px solid $gray-light;
+  @include print-hide;
+
+  @include breakpoint(lg) {
+    max-height: 70vh;
+    overflow-y: auto;
+
+    // force scrollbars to display to convey scrollable digest nav
+
+    // firefox
+    scrollbar-color: $gray-light $white;
+    scrollbar-width: auto;
+
+    // for safari and chrome
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 7px;
+    }
+
+    // for safari and chrome
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.digest__title {
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  font-size: $typescale-2;
+  font-family: $font-family-sans-serif;
+  padding: $spacing-3;
+  padding-left: $spacing-3 + $spacing-1;
+  @include breakpoint(lg) {
+    background: $white;
+    position: sticky;
+    top: 0;
+  }
+}
+
+.digest__nav {
+  background-color: $white;
+}
+
+.digest__list {
+}
+
+.digest__item {
+  margin-bottom: $spacing-2;
+}
+
+.digest__link {
+  display: block;
+  font-size: $typescale-2;
+  padding: $spacing-1 $spacing-3;
+  border-left: 4px solid transparent;
+  transition: border-color 0.2s;
+
+  .digest__item.active & {
+    border-color: $color-primary;
+  }
+}

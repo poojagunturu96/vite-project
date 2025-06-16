@@ -1,0 +1,39 @@
+.breadcrumb {
+  @include print-hide;
+}
+
+.breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.breadcrumb__item {
+  display: none;
+
+  @include breakpoint(md) {
+    display: block;
+  }
+
+  &:not(:last-of-type) {
+    margin-right: 5px;
+
+    &:after {
+      content: '/';
+    }
+  }
+
+  &:last-child {
+    display: block;
+  }
+}
+
+.breadcrumb__link {
+  font-size: $typescale-2;
+}
+
+.breadcrumb--light {
+  .breadcrumb__item:after,
+  .breadcrumb__link {
+    color: $white;
+  }
+}

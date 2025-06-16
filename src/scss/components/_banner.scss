@@ -1,0 +1,121 @@
+.banner {
+  background-color: $navy-dark;
+  padding: $spacing-3;
+
+  @include breakpoint(sm) {
+    padding: $spacing-4 $spacing-3;
+  }
+
+  @include breakpoint(lg) {
+    padding: $spacing-5;
+  }
+
+  figure {
+    position: relative;
+    // max-width: 1376px;
+    max-width: fit-content;
+
+    img {
+      min-height: 250px;
+      object-fit: cover;
+      max-width: fit-content;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .banner__top-line,
+  .banner__bottom-line {
+    position: absolute;
+    display: block;
+    width: percentage(12 / 12);
+
+    @include breakpoint(sm) {
+      width: percentage(9 / 12);
+    }
+  }
+
+  .banner__top-line {
+    border-top: $spacing-1 solid $blue;
+  }
+
+  .banner__bottom-line {
+    bottom: 0;
+    right: 0;
+    border-top: 1px solid #a7c504;
+  }
+
+  .banner__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: $spacing-3;
+
+    @include breakpoint(sm) {
+      margin-right: $spacing-4;
+    }
+
+    @include breakpoint(xl) {
+      margin-right: $spacing-5;
+    }
+  }
+
+  .banner__campaign-logo {
+    display: flex;
+    flex-direction: column;
+    margin-top: -$spacing-1;
+
+    @include breakpoint(md) {
+      margin-top: 0;
+    }
+
+    svg {
+      fill: $white;
+
+      &:first-child {
+        margin-left: -$spacing-5;
+        margin-bottom: $spacing-2;
+        width: 200px;
+
+        @include breakpoint(md) {
+          width: initial;
+          margin-left: rem(-144);
+          margin-bottom: $spacing-3;
+        }
+      }
+
+      &:nth-child(2) {
+        width: 200px;
+
+        @include breakpoint(md) {
+          width: initial;
+        }
+      }
+    }
+  }
+
+  .banner__link {
+    position: absolute;
+    bottom: 0;
+    right: $spacing-3;
+    margin-bottom: $spacing-3;
+    color: $white;
+    font-size: $typescale-1;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing;
+    text-transform: uppercase;
+
+    @include breakpoint(sm) {
+      margin-bottom: $spacing-4;
+      right: $spacing-4;
+    }
+
+    @include breakpoint(xl) {
+      right: $spacing-5;
+    }
+  }
+}

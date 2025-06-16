@@ -1,0 +1,236 @@
+.paragraph--fluencies {
+  > h2,
+  * {
+    font-family: $font-family-sans-serif;
+  }
+  padding-top: $spacing-4;
+  padding-bottom: $spacing-4;
+  background-color: $blue-darker;
+  color: $white;
+  border-top: solid $spacing-2 $blue;
+
+  @include breakpoint(md) {
+    padding-top: $spacing-6;
+  }
+
+  @include breakpoint(lg) {
+    padding-top: $spacing-5;
+  }
+
+  @include breakpoint(xl) {
+    padding-top: $spacing-7;
+  }
+
+  h2 {
+    font-size: $typescale-7;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    @include breakpoint(lg) {
+      font-size: rem(40);
+      font-weight: $font-weight-normal;
+    }
+
+    @include breakpoint(xl) {
+      font-size: $typescale-9;
+    }
+
+    & + p {
+      font-size: $typescale-6;
+      font-weight: $font-weight-light;
+      line-height: $line-height-heading;
+
+      @include breakpoint(lg) {
+        font-size: rem(32);
+      }
+
+      @include breakpoint(xl) {
+        font-size: rem(40);
+      }
+    }
+  }
+
+  .focus-area--wrapper {
+    overflow-x: scroll;
+
+    @include breakpoint(lg) {
+      // firefox
+      scrollbar-color: $gray-light $white;
+      scrollbar-width: 4px;
+
+      // for safari and chrome
+      &::-webkit-scrollbar {
+        -webkit-appearance: none;
+        height: 4px;
+      }
+
+      // for safari and chrome
+      &::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: rgba(255, 255, 255, 0.75);
+      }
+    }
+
+    @include breakpoint(xl) {
+      overflow: initial;
+    }
+  }
+
+  ul {
+    width: 100%;
+    min-width: 1136px;
+
+    li {
+      padding: 0;
+      margin-right: $spacing-2;
+
+      @include breakpoint(xl) {
+        margin: 0;
+        padding-right: $spacing-3;
+      }
+
+      .focus-area-item__media {
+        position: relative;
+
+        &::before {
+          content: '';
+          display: block;
+          padding-top: 100%;
+          width: 100%;
+        }
+
+        a {
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+          position: absolute;
+
+          img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+      }
+
+      .focus-area-item__content {
+        position: relative;
+        border-bottom: solid $spacing-2 $blue;
+        background-color: $white;
+        color: $black;
+
+        &::before {
+          content: '';
+          display: block;
+          padding-top: percentage(143/166);
+          width: 100%;
+
+          @include breakpoint(xl) {
+            padding-top: percentage(133/166);
+          }
+        }
+
+        .focus-area-item__content-text {
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+          position: absolute;
+          padding: $spacing-3;
+
+          a {
+            display: block;
+            width: 65%;
+
+            &:hover {
+              text-decoration-thickness: 1px;
+            }
+          }
+
+          h3 {
+            font-size: $typescale-5;
+            font-weight: $font-weight-normal;
+            color: $navy;
+            padding-bottom: $spacing-2;
+
+            @include breakpoint(md) {
+              font-size: $typescale-6;
+            }
+
+            @media only screen and (min-width: 1440px) {
+              font-size: rem(32);
+              font-weight: $font-weight-light;
+            }
+          }
+
+          p {
+            font-size: $typescale-2;
+
+            @media only screen and (min-width: 1440px) {
+              font-size: $typescale-3;
+            }
+          }
+        }
+      }
+
+      &:first-child {
+        .focus-area-item__content-text a {
+          width: 65%;
+
+          @include breakpoint(lg) {
+            width: 75%;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        .focus-area-item__content-text a {
+          width: 55%;
+
+          @include breakpoint(lg) {
+            width: 65%;
+          }
+        }
+      }
+
+      &:last-child {
+        margin: 0;
+
+        .focus-area-item__content-text a {
+          width: 85%;
+
+          @include breakpoint(lg) {
+            width: 100%;
+          }
+        }
+      }
+
+      .focus-area-item--button {
+        color: $navy;
+        font-size: $typescale-1;
+        font-weight: $font-weight-semibold;
+        letter-spacing: $letter-spacing;
+        text-transform: uppercase;
+
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: $spacing-1 $spacing-3;
+        border-top: 1px solid $gray-light;
+
+        .icon {
+          width: 1.5em;
+          height: 1.5em;
+        }
+
+        @include breakpoint(md) {
+          padding: $spacing-2 $spacing-3;
+        }
+      }
+    }
+  }
+}

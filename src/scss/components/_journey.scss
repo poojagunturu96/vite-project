@@ -1,0 +1,666 @@
+// Animation styles
+
+@keyframes offset {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dot-ripple-ease-out {
+  0% {
+    stroke: #f4b824;
+    stroke-width: 2;
+    r: 8px;
+  }
+
+  30% {
+    stroke: #f4b824;
+    stroke-width: 2;
+  }
+
+  100% {
+    stroke: transparent;
+    stroke-width: 0;
+    r: 20px;
+  }
+}
+
+@keyframes dot-ripple-persist {
+  0% {
+    stroke: #f4b824;
+    stroke-width: 1;
+    r: 8px;
+  }
+  50% {
+    stroke: #f4b824;
+    stroke-width: 1.5;
+  }
+  100% {
+    stroke: #f4b824;
+    stroke-width: 2;
+    r: 20px;
+  }
+}
+
+@keyframes dot-ripple-persist-mobile {
+  0% {
+    stroke: #f4b824;
+    stroke-width: 1;
+    r: 8px;
+  }
+  50% {
+    stroke: #f4b824;
+    stroke-width: 1.5;
+  }
+  100% {
+    stroke: #f4b824;
+    stroke-width: 2;
+    r: 16px;
+  }
+}
+
+// Element Styles
+
+.journey {
+  position: relative;
+  overflow: hidden;
+}
+
+.journey-line-box,
+.journey-link-box {
+  position: absolute;
+  width: 100%;
+  pointer-events: auto;
+  top: 0;
+}
+
+.journey-line-box {
+  top: 22%;
+
+  @include breakpoint(sm) {
+    top: 16%;
+  }
+
+  @include breakpoint(lg) {
+    top: 24%;
+  }
+}
+
+.journey-link-box {
+  @include breakpoint(lg) {
+    top: 0;
+  }
+}
+
+.journey-line-svg {
+  position: relative;
+  z-index: 20;
+
+  &.journey-line--desktop {
+    display: none;
+
+    @include breakpoint(sm) {
+      transform: scale(1.1);
+    }
+
+    @include breakpoint(lg) {
+      display: inline-block;
+      width: 54%;
+      right: -23%;
+      transform: none;
+    }
+  }
+
+  &.journey-line--tablet {
+    display: none;
+
+    @include breakpoint(sm) {
+      display: inline-block;
+      width: 60%;
+      right: -19%;
+    }
+
+    @include breakpoint(lg) {
+      display: none;
+    }
+  }
+
+  &.journey-line--mobile {
+    display: inline-block;
+    width: 86%;
+    right: -10%;
+
+    @include breakpoint(sm) {
+      display: none;
+    }
+  }
+}
+
+.journey-links-svg {
+  position: relative;
+  z-index: 20;
+
+  &.journey-links--desktop {
+    display: none;
+
+    @include breakpoint(lg) {
+      display: initial;
+    }
+  }
+
+  &.journey-links--tablet {
+    display: none;
+
+    @include breakpoint(sm) {
+      display: initial;
+    }
+
+    @include breakpoint(lg) {
+      display: none;
+    }
+  }
+
+  &.journey-links--mobile {
+    display: initial;
+
+    @include breakpoint(sm) {
+      display: none;
+    }
+  }
+
+  .journey-link--section.animate {
+    .journey--link:nth-child(2) .journey--dot-ripple {
+      animation-delay: 1.85s;
+
+      @include breakpoint(sm) {
+        animation-delay: 1s;
+      }
+
+      @include breakpoint(lg) {
+        animation-delay: 0.75s;
+      }
+    }
+
+    .journey--link:nth-child(3) .journey--dot-ripple {
+      animation-delay: 2.5s;
+
+      @include breakpoint(sm) {
+        animation-delay: 2s;
+      }
+
+      @include breakpoint(lg) {
+        animation-delay: 1.5s;
+      }
+    }
+
+    .journey--dot-ripple {
+      animation: dot-ripple-ease-out 2s ease-out;
+    }
+
+    &.disable-animate .journey--dot-ripple {
+      animation: unset;
+    }
+  }
+
+  .journey-link--section .journey--link {
+    font-size: $typescale-1;
+    font-weight: $font-weight-medium;
+    line-height: 1.25;
+    fill: white;
+
+    @include breakpoint(sm) {
+      font-size: $typescale-2;
+    }
+
+    &:hover {
+      .journey--dot-ripple {
+        animation-delay: 0s !important;
+        stroke: #f4b824;
+        stroke-width: 0;
+        animation: dot-ripple-persist-mobile forwards 1s ease-out;
+
+        @include breakpoint(md) {
+          animation-name: dot-ripple-persist;
+        }
+      }
+    }
+
+    .journey--link-text {
+      color: white;
+      fill: white;
+    }
+  }
+}
+
+.journey-section {
+  position: relative;
+  // overflow: hidden;
+  align-items: center;
+  padding-top: percentage(16/9);
+
+  @include breakpoint(sm) {
+    padding-top: percentage(225/256);
+  }
+
+  @include breakpoint(lg) {
+    padding-top: percentage(9/16);
+  }
+
+  .journey-section__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: transparent no-repeat 50% 0% / cover;
+
+    @include breakpoint(lg) {
+      min-width: initial;
+      min-height: initial;
+      left: 0;
+    }
+
+    video[poster] {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.9;
+      background-color: transparent;
+      background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.0001) 2.61%,
+        #000000 100%
+      );
+    }
+  }
+
+  &.journey-section--intro {
+    .journey-section__background {
+      background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-01-320x568.webp?fv=1');
+
+      @include breakpoint(md) {
+        background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-01-1200x675.webp?fv=1');
+      }
+
+      @include breakpoint(xl) {
+        background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-01-1440x810.webp?fv=1');
+      }
+
+      @media only screen and (min-width: 1600px) {
+        background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-01-1920x1080.webp?fv=1');
+      }
+    }
+  }
+
+  &.journey-section--learning {
+    .journey-section__background {
+      background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-02-320x568.webp?fv=1');
+
+      @include breakpoint(md) {
+        background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-02-1200x675.webp?fv=1');
+      }
+
+      @include breakpoint(xl) {
+        background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-02-1440x810.webp?fv=1');
+      }
+
+      @media only screen and (min-width: 1600px) {
+        background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-02-1920x1080.webp?fv=1');
+      }
+    }
+  }
+
+  &.journey-section--thinking {
+    .journey-section__background {
+      background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-03-320x568.webp?fv=1');
+
+      @include breakpoint(md) {
+        background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-03-1200x675.webp?fv=1');
+      }
+
+      @include breakpoint(xl) {
+        background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-03-1440x810.webp?fv=1');
+      }
+
+      @media only screen and (min-width: 1600px) {
+        background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-03-1920x1080.webp?fv=1');
+      }
+    }
+  }
+
+  &.journey-section--opportunity {
+    .journey-section__background {
+      background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-04-320x568.webp?fv=1');
+
+      @include breakpoint(md) {
+        background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-04-1200x675.webp?fv=1');
+      }
+
+      @include breakpoint(xl) {
+        background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-04-1440x810.webp?fv=1');
+      }
+
+      @media only screen and (min-width: 1600px) {
+        background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-04-1920x1080.webp?fv=1');
+      }
+    }
+  }
+
+  .journey-video--button {
+    position: absolute;
+    bottom: $spacing-3;
+    left: $spacing-3;
+    color: white;
+    z-index: 30;
+    opacity: 0.5;
+    display: none;
+
+    @include breakpoint(sm) {
+      display: block;
+    }
+
+    @include breakpoint(lg) {
+      bottom: $spacing-5;
+      left: $spacing-5;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      display: none;
+    }
+
+    .journey-video--button-play {
+      display: none;
+    }
+
+    .journey-video--button-pause {
+      display: block;
+    }
+
+    &.not-playing {
+      .journey-video--button-play {
+        display: block;
+      }
+
+      .journey-video--button-pause {
+        display: none;
+      }
+    }
+
+    .icon {
+      width: $typescale-9;
+      height: $typescale-9;
+    }
+  }
+
+  img {
+    max-width: initial;
+    width: 316%;
+    transform: translate(-30%);
+
+    @include breakpoint(sm) {
+      width: 156%;
+      transform: translate(-15%);
+    }
+
+    @include breakpoint(lg) {
+      transform: unset;
+      width: 100%;
+    }
+  }
+
+  .journey-section__body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: $white;
+
+    .container {
+      height: 100%;
+    }
+
+    .journey-section__body-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+
+      @include breakpoint(sm) {
+        padding-top: 0;
+      }
+
+      &.align-left {
+        .row {
+          justify-content: flex-start;
+          text-align: left;
+        }
+      }
+
+      &.align-right {
+        .row {
+          justify-content: flex-end;
+          text-align: right;
+        }
+      }
+
+      &.left--mobile {
+        .row {
+          justify-content: flex-start;
+          text-align: left;
+
+          @include breakpoint(lg) {
+            justify-content: flex-end;
+            text-align: right;
+          }
+        }
+      }
+
+      &.align-center {
+        .row {
+          justify-content: center;
+          text-align: center;
+        }
+      }
+    }
+
+    .journey-section__text {
+      position: relative;
+      z-index: 25;
+      text-align: left;
+
+      > * {
+        font-family: $font-family-sans-serif;
+      }
+
+      h1 {
+        font-size: $typescale-7;
+
+        @include breakpoint(lg) {
+          font-size: rem(40);
+        }
+
+        @include breakpoint(xl) {
+          font-size: $typescale-9;
+        }
+
+        font-weight: $font-weight-light;
+      }
+
+      p.sub-title {
+        font-size: $typescale-1;
+        font-weight: $font-weight-semibold;
+        color: $journey-yellow;
+        text-transform: uppercase;
+        margin-top: $spacing-4;
+        letter-spacing: $letter-spacing;
+
+        @include breakpoint(sm) {
+          font-weight: $font-weight-normal;
+          font-size: $typescale-2;
+        }
+
+        @include breakpoint(sm) {
+          margin-top: $spacing-5;
+        }
+
+        @include breakpoint(xl) {
+          margin-top: $spacing-7;
+          font-size: $typescale-3;
+        }
+      }
+
+      p.blurb {
+        font-size: $typescale-6;
+        font-weight: $font-weight-light;
+        line-height: 1.35;
+
+        @include breakpoint(lg) {
+          font-size: rem(32);
+        }
+
+        @include breakpoint(xl) {
+          font-size: rem(40);
+        }
+      }
+    }
+  }
+
+  .school-picker {
+    font-size: $typescale-2;
+    font-weight: $font-weight-semibold;
+    bottom: 0;
+    width: 100%;
+    z-index: 25;
+    overflow-x: scroll;
+    position: fixed;
+
+    @include breakpoint(xl) {
+      overflow-x: hidden;
+    }
+
+    @include breakpoint(md) {
+      // firefox
+      scrollbar-color: $gray-light $white;
+      scrollbar-width: 4px;
+
+      // for safari and chrome
+      &::-webkit-scrollbar {
+        -webkit-appearance: none;
+        height: 4px;
+      }
+
+      // for safari and chrome
+      &::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: rgba(255, 255, 255, 0.75);
+      }
+    }
+
+    &.not-fixed {
+      position: absolute;
+    }
+
+    ul {
+      display: flex;
+      min-width: 1200px;
+      border-collapse: collapse;
+
+      li {
+        color: $navy;
+        border-top: $spacing-2 solid currentcolor;
+        padding: $spacing-3 0;
+        text-align: center;
+        transition: $btn-transition;
+        flex: 1 1 0;
+        background-image: linear-gradient(
+          to top,
+          transparent 50%,
+          currentcolor 50%
+        );
+        background-size: 100% 200%;
+        background-position: bottom;
+        transition: background-position 0.2s ease-in-out;
+
+        &:first-child {
+          color: $blue-light;
+        }
+
+        &:hover {
+          background-position: top;
+        }
+
+        a {
+          display: flex;
+          justify-content: center;
+          color: $white;
+
+          span {
+            display: block;
+            text-align: left;
+          }
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        &:not(:last-child) {
+          a {
+            border-right: 1px solid $white;
+          }
+        }
+
+        &:nth-child(1) {
+          flex-grow: 1.2;
+
+          a span {
+            width: 87px;
+            font-weight: 800;
+          }
+        }
+
+        &:nth-child(2) {
+          a span {
+            width: 160px;
+          }
+        }
+
+        &:nth-child(3) {
+          a span {
+            width: 121px;
+          }
+        }
+
+        &:nth-child(4) {
+          a span {
+            width: 148px;
+          }
+        }
+
+        &:nth-child(5) {
+          a span {
+            width: 158px;
+          }
+        }
+
+        &:nth-child(6) {
+          a span {
+            width: 158px;
+          }
+        }
+      }
+    }
+  }
+}

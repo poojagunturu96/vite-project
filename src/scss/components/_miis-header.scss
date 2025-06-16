@@ -1,0 +1,30 @@
+.miis-header {
+  @extend .midd-header;
+
+  background-color: $navy;
+}
+
+.miis-header__transparent {
+  @extend .midd-header--transparent;
+}
+
+.miis-header__container {
+  @extend .midd-header__container;
+}
+
+.miis-header__brand {
+  @extend .midd-header__brand;
+}
+
+.miis-header__shield {
+  @extend .midd-header__shield;
+}
+
+.miis-header__wordmark {
+  @extend .midd-header__wordmark;
+  width: 190px;
+
+  @include breakpoint(lg) {
+    width: 284px;
+  }
+}
