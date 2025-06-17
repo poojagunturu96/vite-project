@@ -1,0 +1,45 @@
+{% extends 'pages/layout.twig.html' %}
+
+{% block page %}
+	<div class="container">
+		<table class="table">
+			<thead>
+				<th>
+					name
+				</th>
+				<th>
+					max size
+				</th>
+				<th>
+					aspect ratio
+				</th>
+				<th>
+					image preview
+				</th>
+			</thead>
+			<tbody>
+        {% if image_styles %}
+          {% for image in image_styles|cast_to_array %}
+            {% set size = image.srcset|last %}
+
+            <tr>
+              <td>
+                {{ image.title }}
+              </td>
+              <td>
+                {{ size }}
+              </td>
+              <td>
+                {{ image.ratio }}
+              </td>
+              <td>
+                {% set url = 'https://placehold.co/' ~ size %}
+                <a href="{{ url }}">{{ url }}</a>
+              </td>
+            </tr>
+          {% endfor %}
+        {% endif %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}
