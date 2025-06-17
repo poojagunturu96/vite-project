@@ -28,6 +28,7 @@ export default defineConfig ({
     vituum(),
     twig({
       root: './src',
+      // ignoredPaths: ['./src/templates/*layout.twig'],
       filters: {
         exists: (value, args) => {
           if (!value) {

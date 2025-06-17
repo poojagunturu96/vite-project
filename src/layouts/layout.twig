@@ -13,12 +13,12 @@
     {% endif %}
   </head>
   <body class="{% if body_class %}{{body_class}}{% endif %} {% if theme %}theme-{{theme}}{% endif %}" id="midd-pagetop">
-    {% include 'paragraphs/cookie-banner.twig' %}
+    {% include '../paragraphs/cookie-banner.twig' %}
     <nav aria-labelledby="midd-skip-link">
       <a href="#midd-main" class="sr-only sr-focusable" id="midd-skip-link">Skip to content</a>
     </nav>
     <div style="display:none">
-      {% include 'partials/icons.twig' %}
+      {% include '../partials/icons.twig' %}
     </div>
     <div class="site-container">
       {% if alert %}
@@ -34,7 +34,7 @@
 
       <main class="main" id="midd-main" aria-labelledby="midd-page-header-label"> {% block before_page_header %}{% endblock %}
         {% if page_header %}
-          {% include 'partials/page-header.twig' with page_header %}
+          {% include '../partials/page-header.twig' with page_header %}
         {% endif %}
 
         {% block page %}{% endblock %}
@@ -45,7 +45,7 @@
     </div>
 
     {% if not env.production %}
-      {% include 'partials/grid-overlay.twig' %}
+      {% include '../partials/grid-overlay.twig' %}
     {% endif %}
 
     {% block layout_before_body_close %}{% endblock %}
