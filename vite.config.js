@@ -65,13 +65,13 @@ export default defineConfig ({
   build: {
     outDir: 'dist',
     rollupOptions: {
-      // input: ['./src/**/*.twig'],
+      // input: ['./src/templates/**/*.twig'],
       output: {
-        assetFileNames: (assetInfo) => {
-          console.log(assetInfo);
-          if (assetInfo.names[0] == "index.css") return "css/styles.css";
-          return assetInfo.names;
-        },
+        // assetFileNames: (assetInfo) => {
+        //   console.log(assetInfo);
+        //   if (assetInfo.names[0] == "index.css") return "css/styles.css";
+        //   return assetInfo.names;
+        // },
       }
     }
   }
