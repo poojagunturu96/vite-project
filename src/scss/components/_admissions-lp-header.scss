@@ -1,0 +1,22 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
+.admissions-lp-header {
+}
+
+.admissions-lp-header__logo {
+  img {
+    border-right: 1px solid variables.$white;
+  }
+}
+
+.admissions-lp-header__logo-text {
+  font-size: variables.$typescale-3;
+  text-transform: uppercase;
+  letter-spacing: variables.$letter-spacing;
+  font-weight: variables.$font-weight-semibold;
+
+  @include breakpoints.breakpoint(md) {
+    font-size: variables.$typescale-6;
+  }
+}

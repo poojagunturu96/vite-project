@@ -1,37 +1,40 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 @mixin terms() {
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     display: flex;
     flex-wrap: wrap;
   }
 
   li,
   p {
-    font-size: $typescale-3;
+    font-size: variables.$typescale-3;
   }
 }
 @mixin terms-title() {
   flex: 0 0 30%;
-  font-weight: $font-weight-medium;
-  margin-bottom: $spacing-2;
+  font-weight: variables.$font-weight-medium;
+  margin-bottom: variables.$spacing-2;
 
   &:last-child {
     margin-bottom: 0;
   }
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     flex: 0 0 30%;
-    padding-bottom: $spacing-4;
-    margin-bottom: $spacing-4;
-    padding-right: $spacing-2;
+    padding-bottom: variables.$spacing-4;
+    margin-bottom: variables.$spacing-4;
+    padding-right: variables.$spacing-2;
 
     &:not(:last-of-type) {
-      border-bottom: 1px solid $border-color;
+      border-bottom: 1px solid variables.$border-color;
     }
   }
 }
 @mixin terms-text() {
-  padding-bottom: $spacing-4;
-  margin-bottom: $spacing-4;
+  padding-bottom: variables.$spacing-4;
+  margin-bottom: variables.$spacing-4;
 
   &:last-child {
     margin-bottom: 0;
@@ -39,12 +42,12 @@
   }
 
   &:not(:last-of-type) {
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid variables.$border-color;
   }
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     flex: 0 0 70%;
-    padding-left: $spacing-2;
+    padding-left: variables.$spacing-2;
   }
 }
 

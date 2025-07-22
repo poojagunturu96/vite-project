@@ -1,17 +1,19 @@
+@use '../core/variables';
+
 ////
 /// Background colors utilities
 ////
 
 $bg-colors: (
-  'primary': $color-primary,
-  'gray': $gray,
-  'gray-light': $gray-light,
-  'gray-lighter': $gray-lighter,
-  'blue-light': $blue-light,
-  'blue-lighter': $blue-lighter,
-  'danger': $danger,
-  'success': $success,
-  'warning': $warning
+  'primary': variables.$color-primary,
+  'gray': variables.$gray,
+  'gray-light': variables.$gray-light,
+  'gray-lighter': variables.$gray-lighter,
+  'blue-light': variables.$blue-light,
+  'blue-lighter': variables.$blue-lighter,
+  'danger': variables.$danger,
+  'success': variables.$success,
+  'warning': variables.$warning
 );
 
 @each $name, $hex in $bg-colors {

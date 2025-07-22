@@ -1,0 +1,58 @@
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+
+.mega-cta {
+  &.mega-cta--admissions-lp {
+    overflow: initial;
+    background: variables.$white;
+
+    &:not(.mega-cta--banner-cta) {
+      min-height: 324px;
+    }
+
+    .mega-cta__front {
+      .mega-cta__content {
+        margin-top: -(variables.$spacing-8);
+        @include breakpoints.breakpoint(md) {
+          @include grid.make-col(8);
+        }
+
+        .button {
+          padding: functions.rem(12) variables.$spacing-5;
+
+          @include breakpoints.breakpoint(md) {
+            padding: variables.$spacing-3 variables.$spacing-5;
+          }
+        }
+      }
+    }
+
+    .mega-cta__title {
+      font-size: functions.rem(32);
+      font-weight: variables.$font-weight-semibold;
+      margin-bottom: variables.$spacing-4;
+
+      @include breakpoints.breakpoint(md) {
+        margin-bottom: variables.$spacing-5;
+      }
+
+      @include breakpoints.breakpoint(lg) {
+        font-size: variables.$typescale-10;
+        margin-bottom: variables.$spacing-9;
+      }
+    }
+
+    &.mega-cta--banner-cta {
+      min-height: 250px;
+      padding-top: 0;
+
+      .mega-cta__front {
+        .mega-cta__content {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

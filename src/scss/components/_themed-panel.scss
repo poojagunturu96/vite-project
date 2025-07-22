@@ -1,9 +1,15 @@
+@use 'sass:math';
+
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
+
 /*
  * 1. prevent issues with dropdowns and other z-index layers above this component
  */
 .themed-panel {
-  background: $navy;
-  z-index: $z-index-themed-panel;
+  background: variables.$navy;
+  z-index: variables.$z-index-themed-panel;
 }
 
 .themed-panel__main {
@@ -14,36 +20,36 @@
 }
 
 .themed-panel__title {
-  font-size: $typescale-8;
-  color: $white;
-  padding: $spacing-3;
+  font-size: variables.$typescale-8;
+  color: variables.$white;
+  padding: variables.$spacing-3;
 
-  @include breakpoint(md){
-    font-size: $typescale-9;
+  @include breakpoints.breakpoint(md) {
+    font-size: variables.$typescale-9;
   }
 
-  @include breakpoint(lg) {
-    font-size: $typescale-10;
-    padding: $spacing-3 $spacing-5;
+  @include breakpoints.breakpoint(lg) {
+    font-size: variables.$typescale-10;
+    padding: variables.$spacing-3 variables.$spacing-5;
   }
 }
 
 .themed-panel__figure {
   position: relative;
-  
+
   &:before {
     display: block;
-    content: "";
+    content: '';
     width: 100%;
-    padding-top: (9 / 16) * 100%;
+    padding-top: math.div(9, 16) * 100%;
   }
 
-  @include breakpoint(sm) {
-    margin: $spacing-3 $spacing-3 0;
+  @include breakpoints.breakpoint(sm) {
+    margin: variables.$spacing-3 variables.$spacing-3 0;
   }
 
-  @include breakpoint(lg) {
-    margin: $spacing-5 $spacing-5 0;
+  @include breakpoints.breakpoint(lg) {
+    margin: variables.$spacing-5 variables.$spacing-5 0;
   }
 
   .themed-panel__title + & {
@@ -58,8 +64,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    
-    @include breakpoint(xl) {
+
+    @include breakpoints.breakpoint(xl) {
       object-fit: cover;
       font-family: 'object-fit: cover;';
     }
@@ -73,47 +79,47 @@
 
 .themed-panel__main-article {
   display: block;
-  background: $navy;
-  margin-left: $spacing-3;
-  margin-right: $spacing-3; 
-  margin-bottom: $spacing-4;
+  background: variables.$navy;
+  margin-left: variables.$spacing-3;
+  margin-right: variables.$spacing-3;
+  margin-bottom: variables.$spacing-4;
   position: relative;
   z-index: 1;
 
-  @include breakpoint(md) {
-    margin-bottom: $spacing-5;
+  @include breakpoints.breakpoint(md) {
+    margin-bottom: variables.$spacing-5;
   }
 
-  @include breakpoint(lg) {
-    margin-left: $spacing-5;
-    margin-right: $spacing-5; 
+  @include breakpoints.breakpoint(lg) {
+    margin-left: variables.$spacing-5;
+    margin-right: variables.$spacing-5;
   }
 
   .themed-panel__article {
     margin: auto;
-    margin-top: -$spacing-7;
+    margin-top: -(variables.$spacing-7);
   }
 }
 
 .themed-panel__article {
-  background: $white;
-  padding: $spacing-2;
-  padding-bottom: $spacing-4;
+  background: variables.$white;
+  padding: variables.$spacing-2;
+  padding-bottom: variables.$spacing-4;
 
-  @include breakpoint(md) {
-    padding-top: $spacing-3;
-    padding: $spacing-4;
+  @include breakpoints.breakpoint(md) {
+    padding-top: variables.$spacing-3;
+    padding: variables.$spacing-4;
   }
 
-  @include breakpoint(lg) {
-    padding: $spacing-4;
+  @include breakpoints.breakpoint(lg) {
+    padding: variables.$spacing-4;
   }
 
   .themed-panel__text {
-    color: $black;
+    color: variables.$black;
 
     a {
-      color: $navy;
+      color: variables.$navy;
     }
   }
 }
@@ -122,91 +128,90 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: $spacing-5;
-  margin-top: $spacing-5;
+  padding-bottom: variables.$spacing-5;
+  margin-top: variables.$spacing-5;
 
   .themed-panel__main-article + & {
     margin-top: 0;
   }
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     flex-direction: row;
   }
 }
 
 .themed-panel__subarticle {
-
   .themed-panel__heading {
-    color: $white;
-    font-weight: $font-weight-bold;
+    color: variables.$white;
+    font-weight: variables.$font-weight-bold;
   }
 
   &:not(:last-child) {
-    width: calc(100% - #{$spacing-5});
+    width: calc(100% - #{variables.$spacing-5});
     padding: 0;
-    padding-bottom: $spacing-5;
-    margin: 0 $spacing-3;
-    margin-bottom: $spacing-5;
-    border-bottom: 1px solid rgba($white, 0.3);
+    padding-bottom: variables.$spacing-5;
+    margin: 0 variables.$spacing-3;
+    margin-bottom: variables.$spacing-5;
+    border-bottom: 1px solid rgba(variables.$white, 0.3);
 
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       width: initial;
       margin: 0;
       padding-bottom: 0;
-      padding-left: $spacing-3;
-      padding-right: $spacing-3;
+      padding-left: variables.$spacing-3;
+      padding-right: variables.$spacing-3;
       border-bottom: 0;
-      border-right: 1px solid rgba($white, 0.3);
+      border-right: 1px solid rgba(variables.$white, 0.3);
     }
 
-    @include breakpoint(lg) {
-      padding-left: $spacing-5;
-      padding-right: $spacing-5;
+    @include breakpoints.breakpoint(lg) {
+      padding-left: variables.$spacing-5;
+      padding-right: variables.$spacing-5;
     }
   }
 }
 
 .themed-panel__heading {
-  margin-bottom: $spacing-1;
+  margin-bottom: variables.$spacing-1;
 
-  @include breakpoint(lg) {
-    margin-bottom: $spacing-2;
+  @include breakpoints.breakpoint(lg) {
+    margin-bottom: variables.$spacing-2;
   }
 
   &.h2 {
-    font-weight: $font-weight-bold;
+    font-weight: variables.$font-weight-bold;
 
-    @include breakpoint(lg) {
-      font-weight: $font-weight-normal;
+    @include breakpoints.breakpoint(lg) {
+      font-weight: variables.$font-weight-normal;
     }
   }
 }
 
 .themed-panel__text {
-  color: $white;
-  font-size: $typescale-3;
+  color: variables.$white;
+  font-size: variables.$typescale-3;
 
-  @include breakpoint(lg) {
-    font-size: $typescale-4;
+  @include breakpoints.breakpoint(lg) {
+    font-size: variables.$typescale-4;
   }
 
   .themed-panel__subarticle & {
-    font-size: $typescale-3;
+    font-size: variables.$typescale-3;
   }
 
   a {
-    color: $white;
-    @include link-border;
+    color: variables.$white;
+    @include type.link-border;
   }
 }
 
 .themed-panel__cta {
-  color: $white;
-  font-weight: $font-weight-semibold;
-  padding: $spacing-2;
-  margin-top: $spacing-4;
-  
+  color: variables.$white;
+  font-weight: variables.$font-weight-semibold;
+  padding: variables.$spacing-2;
+  margin-top: variables.$spacing-4;
+
   &.button--light {
-    font-size: $typescale-2;
+    font-size: variables.$typescale-2;
   }
 }

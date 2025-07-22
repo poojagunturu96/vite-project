@@ -1,18 +1,24 @@
-$dispatches-sm-border: $spacing-2 solid $blue;
-$dispatches-border: $spacing-1 solid $blue;
+@use 'sass:math';
+
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
+
+$dispatches-sm-border: variables.$spacing-2 solid variables.$blue;
+$dispatches-border: variables.$spacing-1 solid variables.$blue;
 $dispatches-card-height: 470px;
 
 .dispatches-item {
   height: $dispatches-card-height;
-
-  & p + article {
-    padding-top: 0px;
-  }
-
   border: $dispatches-sm-border;
   border-top: 0;
 
-  @include breakpoint(sm) {
+  & p + article {
+    padding-top: 0;
+  }
+
+  @include breakpoints.breakpoint(sm) {
     border-left: $dispatches-border;
     border-bottom: $dispatches-border;
     border-right: 0;
@@ -26,31 +32,32 @@ $dispatches-card-height: 470px;
 .dispatches-item__label {
   position: absolute;
   bottom: 0;
-  font-size: $typescale-1;
-  line-height: $line-height-solid;
+  font-size: variables.$typescale-1;
+  line-height: variables.$line-height-solid;
   text-transform: uppercase;
-  letter-spacing: $letter-spacing;
-  padding: $spacing-2;
-  margin-top: $spacing-3;
+  letter-spacing: variables.$letter-spacing;
+  padding: variables.$spacing-2;
+  margin-top: variables.$spacing-3;
 
-  @include breakpoint(md) {
-    padding-left: $spacing-3;
-    padding-right: $spacing-3;
+  @include breakpoints.breakpoint(md) {
+    padding-left: variables.$spacing-3;
+    padding-right: variables.$spacing-3;
   }
 
-  @include breakpoint(xl) {
-    padding-left: $spacing-4;
-    padding-right: $spacing-4;
+  @include breakpoints.breakpoint(xl) {
+    padding-left: variables.$spacing-4;
+    padding-right: variables.$spacing-4;
   }
 }
 
 .dispatches-item__image-wrapper {
   position: relative;
+
   &:before {
     display: block;
     content: '';
     width: 100%;
-    padding-top: (9 / 16) * 100%;
+    padding-top: math.div(9, 16) * 100%;
   }
 
   > .dispatches-item__image {
@@ -70,7 +77,7 @@ $dispatches-card-height: 470px;
 }
 
 .dispatches-item__content {
-  z-index: $z-index-card-carousel-item-content;
+  z-index: variables.$z-index-card-carousel-item-content;
 }
 
 .dispatches-item__side {
@@ -87,7 +94,7 @@ $dispatches-card-height: 470px;
 }
 
 .dispatches-item__side--back {
-  background-color: $blue-lighter;
+  background-color: variables.$blue-lighter;
 
   .dispatches-item.has-toggler & {
     display: none;
@@ -102,17 +109,17 @@ $dispatches-card-height: 470px;
   // position: absolute;
   right: 0;
   top: 0;
-  padding: $spacing-2;
+  padding: variables.$spacing-2;
 }
 
 .dispatches-item__header {
-  padding: $spacing-3;
-  padding-right: $spacing-6;
-  padding-bottom: $spacing-4;
+  padding: variables.$spacing-3;
+  padding-right: variables.$spacing-6;
+  padding-bottom: variables.$spacing-4;
   background-image: linear-gradient(
     to bottom,
-    rgba($black, 0.75) 20%,
-    rgba($white, 0)
+    rgba(variables.$black, 0.75) 20%,
+    rgba(variables.$white, 0)
   );
 
   .dispatches-item__side--back & {
@@ -122,7 +129,7 @@ $dispatches-card-height: 470px;
 }
 
 .dispatches-item__body {
-  padding: 0 $spacing-2;
+  padding: 0 variables.$spacing-2;
   overflow: hidden;
   height: calc(0.52 * 470px);
 
@@ -130,71 +137,71 @@ $dispatches-card-height: 470px;
     height: calc(0.4 * 470px);
   }
 
-  @include breakpoint(sm) {
+  @include breakpoints.breakpoint(sm) {
     height: calc(0.65 * 470px);
   }
 
-  @include breakpoint(md) {
-    padding: 0 $spacing-3;
+  @include breakpoints.breakpoint(md) {
+    padding: 0 variables.$spacing-3;
     height: calc(0.55 * 470px);
   }
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     height: calc(0.6 * 470px);
   }
 
-  @include breakpoint(xl) {
-    padding: 0 $spacing-4;
+  @include breakpoints.breakpoint(xl) {
+    padding: 0 variables.$spacing-4;
     height: calc(0.47 * 470px);
   }
 
   h4 {
-    line-height: $line-height-body;
-    font-weight: $font-weight-bold;
-    margin-top: $spacing-2;
-    margin-bottom: $spacing-1;
+    line-height: variables.$line-height-body;
+    font-weight: variables.$font-weight-bold;
+    margin-top: variables.$spacing-2;
+    margin-bottom: variables.$spacing-1;
   }
 
   p {
-    font-size: $typescale-3;
+    font-size: variables.$typescale-3;
     display: inline;
   }
 
   .dispatches-item__title-label {
     display: inline;
-    padding: 0 $spacing-1;
-    margin-left: $spacing-1;
-    background-color: $white;
-    color: $navy;
-    border-color: $white;
-    border: 1px solid $navy;
-    border-radius: $spacing-3;
+    padding: 0 variables.$spacing-1;
+    margin-left: variables.$spacing-1;
+    background-color: variables.$white;
+    color: variables.$navy;
+    border-color: variables.$white;
+    border: 1px solid variables.$navy;
+    border-radius: variables.$spacing-3;
 
     .dispatches-item__icon {
       width: 0.625em;
       height: 0.875em;
-      margin-left: rem(2);
-      margin-bottom: rem(2);
+      margin-left: functions.rem(2);
+      margin-bottom: functions.rem(2);
     }
   }
 }
 
 .dispatches-item__body-text {
   h4 {
-    line-height: $line-height-body;
-    font-weight: $font-weight-bold;
-    margin-top: $spacing-2;
-    margin-bottom: $spacing-1;
+    line-height: variables.$line-height-body;
+    font-weight: variables.$font-weight-bold;
+    margin-top: variables.$spacing-2;
+    margin-bottom: variables.$spacing-1;
   }
 
   p {
-    font-size: $typescale-3;
+    font-size: variables.$typescale-3;
   }
 }
 
 .dispatches-item__footer {
   flex: 0 1 auto;
-  padding: $spacing-3;
+  padding: variables.$spacing-3;
   text-align: center;
   // position: relative;
   margin-top: auto;
@@ -205,34 +212,35 @@ $dispatches-card-height: 470px;
       display: block;
       background-image: linear-gradient(
         to bottom,
-        rgba($white, 0),
-        $blue-lighter
+        rgba(variables.$white, 0),
+        variables.$blue-lighter
       );
       // position: absolute;
       bottom: 100%;
       left: 0;
       width: 100%;
-      height: $spacing-5;
+      height: variables.$spacing-5;
     }
   }
 }
 
 .dispatches-item__title {
-  @include h4;
+  @include type.h4;
 
   .dispatches-item__side--front & {
-    color: $white;
+    color: variables.$white;
   }
 }
 
 .dispatches-item__text {
-  font-size: $typescale-3;
+  font-size: variables.$typescale-3;
+
   .dispatches-item__side--front & {
-    color: $white;
+    color: variables.$white;
   }
 }
 
 .dispatches-item__header--band {
-  padding: $spacing-2 $spacing-3;
-  margin-top: $spacing-9;
+  padding: variables.$spacing-2 variables.$spacing-3;
+  margin-top: variables.$spacing-9;
 }

@@ -1,6 +1,10 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
+
 .pagination {
-  margin-bottom: $spacing-9;
-  margin-top: $spacing-7;
+  margin-bottom: variables.$spacing-9;
+  margin-top: variables.$spacing-7;
 }
 
 .pagination__list {
@@ -14,7 +18,7 @@
     margin-right: 1rem;
   }
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     display: block;
   }
 }
@@ -28,17 +32,17 @@
 .pagination__item--first,
 .pagination__item--last,
 .pagination__item--others {
-  @include breakpoint(sm) {
+  @include breakpoints.breakpoint(sm) {
     display: inline-block;
   }
 }
 
 .pagination__link {
   display: block;
-  font-weight: $font-weight-semibold;
+  font-weight: variables.$font-weight-semibold;
   font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: $letter-spacing;
+  letter-spacing: variables.$letter-spacing;
   text-align: center;
   padding: 0.25rem 0.5rem;
   transition: background 0.2s;
@@ -46,19 +50,19 @@
   &:hover,
   &:focus {
     text-decoration: none;
-    background-color: $gray-light;
+    background-color: variables.$gray-light;
   }
 
   &.pagination__link--active {
-    background-color: $color-primary;
-    color: $white;
+    background-color: variables.$color-primary;
+    color: variables.$white;
   }
 
   .pagination__item--next &,
   .pagination__item--previous & {
     padding-left: 0;
     padding-right: 0;
-    @include link-border;
+    @include type.link-border;
 
     &:focus,
     &:hover {

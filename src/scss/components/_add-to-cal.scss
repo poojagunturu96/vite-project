@@ -1,5 +1,8 @@
+@use '../core/variables';
+@use '../mixins/buttons';
+
 .dropdown__button.addtocal {
-  @include button-size(sm);
+  @include buttons.button-size(sm);
   display: inline-block;
 }
 
@@ -9,12 +12,12 @@
 
 .dropdown__list.addtocal-menu,
 .dropdown__list.addtocal-menu:hover {
-  border-top: 1px solid $white;
-  background: $navy;
+  border-top: 1px solid variables.$white;
+  background: variables.$navy;
 }
 
 .addtocal-link a.dropdown__link,
 .addtocal-link a.dropdown__link:hover {
-  color: $white;
+  color: variables.$white;
   background-color: transparent;
 }

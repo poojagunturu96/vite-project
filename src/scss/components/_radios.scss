@@ -1,21 +1,23 @@
+@use '../mixins/forms';
+
 .radio {
-  @include radio;
+  @include forms.radio;
 }
 
 .radio__input {
-  @include radio-input;
+  @include forms.radio-input;
 }
 
 .radio__label {
-  @include radio-label;
+  @include forms.radio-label;
 }
 
 .radio__input:focus ~ .radio__label {
-  @include radio-input-focus-label;
+  @include forms.radio-input-focus-label;
 }
 
 .radio__input:checked ~ .radio__label {
-  @include radio-input-checked-label;
+  @include forms.radio-input-checked-label;
 }
 
 /// Handle states for when the classes are
@@ -24,9 +26,9 @@
 ///   <a href="#target" class="radio__label radio__label--checked">Yes</a>
 
 .radio__label--checked {
-  @include radio-input-checked-label;
+  @include forms.radio-input-checked-label;
 }
 
 .radio__label:focus {
-  @include radio-input-focus-label;
+  @include forms.radio-input-focus-label;
 }

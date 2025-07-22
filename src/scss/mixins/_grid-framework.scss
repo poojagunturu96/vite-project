@@ -1,13 +1,20 @@
+@use '../core/variables';
+@use 'breakpoints';
+@use 'grid';
+
 // adapted from Bootstrap v4.1.1
 // https://github.com/twbs/bootstrap/blob/v4.1.1/scss/mixins/_grid-framework.scss
 
-@mixin make-grid-columns($columns: $grid-columns, $breakpoints: $breakpoints) {
+@mixin make-grid-columns(
+  $columns: variables.$grid-columns,
+  $breakpoints: variables.$breakpoints
+) {
   // use placeholders and extend so selectors are combined when css is generated
   %grid-column {
-    @include make-col-ready;
+    @include grid.make-col-ready;
   }
 
-  @each $breakpoint, $variant in $responsive-variants {
+  @each $breakpoint, $variant in variables.$responsive-variants {
     // Allow columns to stretch full width below their breakpoints
     @for $i from 1 through $columns {
       .col#{$variant}-#{$i} {
@@ -20,7 +27,7 @@
       @extend %grid-column;
     }
 
-    @include breakpoint($breakpoint) {
+    @include breakpoints.breakpoint($breakpoint) {
       // Provide basic `.col-{bp}` classes for equal-width flexbox columns
       .col#{$variant} {
         flex-basis: 0;
@@ -36,7 +43,7 @@
 
       @for $i from 1 through $columns {
         .col#{$variant}-#{$i} {
-          @include make-col($i, $columns);
+          @include grid.make-col($i, $columns);
         }
       }
 
@@ -45,7 +52,7 @@
         // Avoid emitting useless .offset-0
         @if not($variant == '' and $i == 0) {
           .offset#{$variant}-#{$i} {
-            @include make-col-offset($i, $columns);
+            @include grid.make-col-offset($i, $columns);
           }
         }
       }

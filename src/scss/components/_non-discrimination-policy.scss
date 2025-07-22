@@ -1,12 +1,15 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 .paragraph--policy {
-  background: rgba($gray-light, 0.3);
-  font-weight: $font-weight-light;
+  background: rgba(variables.$gray-light, 0.3);
+  font-weight: variables.$font-weight-light;
 
   p {
-    font-size: $typescale-2;
+    font-size: variables.$typescale-2;
 
-    @include breakpoint(lg) {
-      font-size: $typescale-3;
+    @include breakpoints.breakpoint(lg) {
+      font-size: variables.$typescale-3;
     }
   }
 

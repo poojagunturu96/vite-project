@@ -1,3 +1,5 @@
+@use '../core/variables';
+
 .page-image {
-  margin-bottom: $spacing-5;
+  margin-bottom: variables.$spacing-5;
 }

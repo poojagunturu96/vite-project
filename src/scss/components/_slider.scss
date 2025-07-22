@@ -1,19 +1,22 @@
+@use '../core/variables';
+@use '../mixins/screen-reader';
+
 .slider {
   width: 100%;
 }
 
 .slider__label {
-  @include sr-only;
+  @include screen-reader.sr-only;
 }
 
 .slider__track {
-  background: $gray-light;
+  background: variables.$gray-light;
 }
 
 .slider__handle {
   text-indent: -9999px;
   display: block;
-  background-color: $color-primary;
+  background-color: variables.$color-primary;
   height: 8px;
   position: relative;
 }

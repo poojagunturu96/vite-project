@@ -1,3 +1,7 @@
+@use '../mixins/clearfix';
+@use 'mixins';
+@use 'variables';
+
 ////
 /// Print styles
 ////
@@ -5,7 +9,7 @@
 @media print {
   * {
     background: transparent !important;
-    color: $black !important;
+    color: variables.$black !important;
   }
 
   h1,
@@ -26,7 +30,7 @@
   }
 
   a {
-    color: $black !important;
+    color: variables.$black !important;
     border: 0 !important;
   }
 
@@ -35,20 +39,20 @@
   }
 
   .print-hide {
-    @include print-hide;
+    @include mixins.print-hide;
   }
 
   // hacks: force styles mostly as-is for print layout though we want them to unapply on small non-print screens.
   // Should revert this back to use some sort of `roster` specific styles and not utils.
   .roster {
     .media-object {
-      @include clearfix;
+      @include clearfix.clearfix;
     }
 
     .media-object__image {
       float: left;
       width: 200px;
-      margin-right: $spacing-3;
+      margin-right: variables.$spacing-3;
     }
 
     .media-object__body {
@@ -60,7 +64,7 @@
     }
 
     .pr-md-3 {
-      padding-right: $spacing-3;
+      padding-right: variables.$spacing-3;
     }
   }
 }

@@ -1,14 +1,19 @@
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/buttons';
+
 $nav-bp: lg;
 
 .nav {
-  @include print-hide;
+  @include mixins.print-hide;
 
   // Pulls the menu out to be flush with viewport
   // since anchor header has a container with constant padding.
   .anchor-header__nav & {
     margin-left: -1rem;
     margin-right: -1rem;
-    @include breakpoint($nav-bp) {
+    @include breakpoints.breakpoint($nav-bp) {
       margin-left: 0;
       margin-right: 0;
     }
@@ -16,8 +21,8 @@ $nav-bp: lg;
 }
 
 .nav__list {
-  border-bottom: 1px solid $border-color;
-  @include breakpoint($nav-bp) {
+  border-bottom: 1px solid variables.$border-color;
+  @include breakpoints.breakpoint($nav-bp) {
     display: flex;
     border-bottom: 0;
     flex-wrap: wrap;
@@ -27,10 +32,10 @@ $nav-bp: lg;
 .nav__item {
   display: flex;
   flex-wrap: wrap;
-  border-top: 1px solid $border-color;
+  border-top: 1px solid variables.$border-color;
 
-  @include breakpoint($nav-bp) {
-    margin-right: $spacing-4;
+  @include breakpoints.breakpoint($nav-bp) {
+    margin-right: variables.$spacing-4;
     flex: 0 0 auto;
     border-top: 0;
   }
@@ -38,33 +43,33 @@ $nav-bp: lg;
 
 .nav__link {
   display: block;
-  padding: $spacing-3;
-  font-size: $typescale-3;
-  font-weight: $font-weight-medium;
+  padding: variables.$spacing-3;
+  font-size: variables.$typescale-3;
+  font-weight: variables.$font-weight-medium;
   flex: 1 0 auto;
 
-  @include breakpoint($nav-bp) {
+  @include breakpoints.breakpoint($nav-bp) {
     padding-left: 0;
     padding-right: 0;
-    font-weight: $font-weight-normal;
+    font-weight: variables.$font-weight-normal;
     line-height: 1;
 
     .nav__item:focus-within &,
     .nav__item:hover & {
-      color: $color-active;
+      color: variables.$color-active;
       text-decoration: none;
-      box-shadow: inset 0 -4px 0 0 $navy;
+      box-shadow: inset 0 -4px 0 0 variables.$navy;
     }
   }
 }
 
 .nav__button {
-  @include button-reset;
-  border-left: 1px solid $border-color;
+  @include buttons.button-reset;
+  border-left: 1px solid variables.$border-color;
   margin-left: auto;
-  padding: $spacing-3;
+  padding: variables.$spacing-3;
 
-  @include breakpoint($nav-bp) {
+  @include breakpoints.breakpoint($nav-bp) {
     display: none;
   }
 }
@@ -75,34 +80,34 @@ $nav-bp: lg;
 
 .nav__sublist {
   width: 100%;
-  @include breakpoint($nav-bp) {
-    border: 1px solid $navy;
-    background: $white;
+  @include breakpoints.breakpoint($nav-bp) {
+    border: 1px solid variables.$navy;
+    background: variables.$white;
   }
 }
 
 .nav__subitem {
-  border-top: 1px solid $border-color;
+  border-top: 1px solid variables.$border-color;
 
-  @include breakpoint($nav-bp) {
+  @include breakpoints.breakpoint($nav-bp) {
     border-top: 0;
   }
 }
 
 .nav__sublink {
   display: block;
-  padding: $spacing-3;
-  font-size: $typescale-2;
-  padding-left: $spacing-7;
+  padding: variables.$spacing-3;
+  font-size: variables.$typescale-2;
+  padding-left: variables.$spacing-7;
 
-  @include breakpoint($nav-bp) {
-    padding-left: $spacing-3;
-    font-size: $typescale-3;
-    padding-top: $spacing-2;
-    padding-bottom: $spacing-2;
+  @include breakpoints.breakpoint($nav-bp) {
+    padding-left: variables.$spacing-3;
+    font-size: variables.$typescale-3;
+    padding-top: variables.$spacing-2;
+    padding-bottom: variables.$spacing-2;
   }
 }
 
 .nav__link--active {
-  color: $color-active;
+  color: variables.$color-active;
 }

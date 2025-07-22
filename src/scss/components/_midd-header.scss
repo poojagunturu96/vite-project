@@ -1,5 +1,9 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+
 .midd-header {
-  background-color: $navy-dark;
+  background-color: variables.$navy-dark;
 
   &.headroom {
     will-change: transform;
@@ -8,7 +12,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: $z-index-midd-header;
+    z-index: variables.$z-index-midd-header;
   }
 
   &.headroom--pinned {
@@ -21,14 +25,17 @@
 }
 
 .midd-header__container {
-  @include make-container;
-  position: relative;
-  display: flex;
+  @include grid.make-container;
+
+  & {
+    position: relative;
+    display: flex;
+  }
 }
 
 .midd-header__brand {
   height: 48px;
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     height: 64px;
   }
 }
@@ -37,9 +44,9 @@
   width: 44px;
   position: relative;
   top: 8px;
-  z-index: $z-index-midd-header-shield;
+  z-index: variables.$z-index-midd-header-shield;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     width: 67px;
   }
 }
@@ -49,7 +56,7 @@
   position: relative;
   margin-left: 4px;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     width: 114px;
     margin-left: 8px;
   }

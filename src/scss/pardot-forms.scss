@@ -2,63 +2,68 @@
 /// Pardot forms stylesheet to be uploaded directly to pardot file hosting and used in landing page templates.
 ////
 
-@import 'functions';
-@import 'variables';
-@import 'mixins';
+@use 'core/functions';
+@use 'core/variables';
+@use 'core/mixins';
 
-@import 'global';
+@use 'core/global';
+@use 'mixins/buttons';
+@use 'mixins/forms';
 
 .form {
   padding: 2px; /* push in so elems arent hidden */
 }
 
 .form-field {
-  @include form-group;
+  @include forms.form-group;
 }
 
 .field-label {
-  @include form-label;
+  @include forms.form-label;
 }
 
 .description {
-  @include form-text;
+  @include forms.form-text;
 }
 
 select,
 textarea,
 input[type='text'] {
-  @include form-control;
-  padding: $spacing-2;
+  @include forms.form-control;
+
+  & {
+    padding: variables.$spacing-2;
+  }
 }
 
 select {
-  @include form-select;
+  @include forms.form-select;
 }
 
 textarea {
-  @include form-textarea;
+  @include forms.form-textarea;
 }
 
 input[type='submit'] {
-  @include button-base;
-  @include button-theme('primary');
+  @include buttons.button-base;
+  @include buttons.button-theme('primary');
 }
 
 // checkbox item groups
 .pd-radio .value > span,
 .pd-checkbox .value > span {
   display: block;
-  @include form-checkbox-item;
+  @include forms.form-checkbox-item;
 }
 
 input[type='radio'],
 input[type='checkbox'] {
-  @include form-checkbox-control;
+  @include forms.form-checkbox-control;
 }
 
 input[type='radio'] + label,
 input[type='checkbox'] + label {
-  @include form-checkbox-label;
+  @include forms.form-checkbox-label;
 }
 
 /* error states */
@@ -66,7 +71,7 @@ input[type='checkbox'] + label {
 .form-field.error textarea,
 .form-field.error select,
 .form-field.error input[type='text'] {
-  border-color: $danger;
+  border-color: variables.$danger;
 }
 
 // Error might be on another element that isn't p tag we want.
@@ -76,12 +81,12 @@ p.error {
   margin-top: 0.5rem;
   margin-bottom: 0;
   font-size: 14px;
-  color: $danger;
+  color: variables.$danger;
 }
 
 /* required asterisk */
 
 .form-field.required .field-label:after {
   content: '*';
-  @include form-required;
+  @include forms.form-required;
 }

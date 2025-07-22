@@ -1,37 +1,58 @@
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
+@use '../mixins/screen-reader';
+
 .box-menu {
-  box-shadow: inset 0 0 0 1px $gray-light;
-  border-top: 8px solid $navy;
-  margin-bottom: $spacing-7;
-  background-color: $white;
-  @include themify(border-top-color);
+  box-shadow: inset 0 0 0 1px variables.$gray-light;
+  border-top: 8px solid variables.$navy;
+  margin-bottom: variables.$spacing-7;
+  background-color: variables.$white;
+  @include mixins.themify(border-top-color);
 
-  @include print-hide;
+  @include mixins.print-hide;
 
-  @include breakpoint(md) {
-    margin-bottom: $spacing-8;
+  @include breakpoints.breakpoint(md) {
+    margin-bottom: variables.$spacing-8;
+  }
+}
+
+.box-menu__title {
+  color: variables.$white;
+  font-family: variables.$font-family-sans-serif;
+  font-size: variables.$typescale-2;
+  font-weight: variables.$font-weight-bold;
+  line-height: variables.$line-height-solid;
+  text-transform: uppercase;
+
+  @include breakpoints.breakpoint(xl) {
+    font-size: variables.$typescale-4;
   }
 }
 
 .box-menu__list {
-  padding: $spacing-4;
+  padding: variables.$spacing-4;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     display: flex;
     flex-wrap: wrap;
-    padding-top: $spacing-3;
+    padding-top: variables.$spacing-3;
     padding-bottom: 0;
   }
 }
 
 .box-menu__item {
+  width: fit-content;
+
   &:not(:last-child) {
-    margin-bottom: $spacing-3;
+    margin-bottom: variables.$spacing-3;
   }
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     flex: 0 0 auto;
-    margin-right: $spacing-4;
-    margin-bottom: $spacing-3;
+    margin-right: variables.$spacing-4;
+    margin-bottom: variables.$spacing-3;
   }
 }
 
@@ -39,19 +60,106 @@
  * 1. fixes bug in safari 12 where text wraps. See https://github.com/middlebury/drupal8/issues/838
  */
 .box-menu__link {
-  @include link-border;
+  @include type.link-border;
   display: block; /* 1 */
   border-color: transparent;
 
   &:hover,
   &:focus {
-    color: $sky;
-    border-color: $sky;
+    color: variables.$sky;
+    border-color: variables.$sky;
   }
 }
 
 .box-menu--overlap {
-  margin-top: -#{$spacing-5};
+  margin-top: -#{variables.$spacing-5};
   position: relative;
-  z-index: $z-index-box-menu;
+  z-index: variables.$z-index-box-menu;
+}
+
+.box-menu--admissions-lp {
+  border-top: 0;
+  background-color: variables.$navy;
+  padding: variables.$spacing-3 variables.$spacing-2;
+  margin-bottom: variables.$spacing-4;
+  box-shadow: none;
+
+  @include breakpoints.breakpoint(md) {
+    padding-left: variables.$spacing-4;
+    padding-right: variables.$spacing-4;
+    margin-bottom: variables.$spacing-7;
+  }
+
+  @include breakpoints.breakpoint(lg) {
+    padding-left: variables.$spacing-5;
+    padding-right: variables.$spacing-5;
+    padding-bottom: 0;
+    margin-bottom: variables.$spacing-8;
+  }
+
+  .box-menu__list {
+    padding-left: 0;
+    display: none;
+
+    &.is-toggled {
+      display: block;
+      padding-top: variables.$spacing-4;
+      padding-bottom: 0;
+
+      @include breakpoints.breakpoint(lg) {
+        display: flex;
+        padding-top: variables.$spacing-3;
+      }
+    }
+
+    @include breakpoints.breakpoint(lg) {
+      display: flex;
+    }
+  }
+
+  .box-menu__item {
+    margin-bottom: variables.$spacing-4;
+
+    &:last-child {
+      margin-bottom: variables.$spacing-2;
+    }
+
+    @include breakpoints.breakpoint(lg) {
+      margin-bottom: variables.$spacing-3;
+    }
+  }
+
+  .box-menu__link {
+    font-weight: variables.$font-weight-semibold;
+    font-size: variables.$typescale-2;
+    line-height: variables.$line-height-solid;
+    color: variables.$white;
+
+    &:hover,
+    &:focus {
+      color: variables.$white;
+      border-color: variables.$white;
+    }
+  }
+
+  .box-menu__button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: variables.$white;
+
+    @include breakpoints.breakpoint(lg) {
+      display: none;
+    }
+
+    .icon {
+      width: 1.25em;
+      height: 1.25em;
+      transition: variables.$chevron-transition;
+    }
+
+    &.is-toggled .icon {
+      transform: variables.$chevron-transform;
+    }
+  }
 }

@@ -1,3 +1,8 @@
+@use '../core/mixins';
+@use '../core/variables';
+
+@use 'sass:math';
+
 .portrait-video {
   max-width: 300px;
   margin: 0 auto;
@@ -5,11 +10,11 @@
 
 .portrait-video__content {
   position: relative;
-  padding-bottom: percentage(16 / 9);
+  padding-bottom: math.percentage(math.div(16, 9));
 
   img,
   iframe {
-    @include absolute-fill;
+    @include mixins.absolute-fill;
   }
 }
 
@@ -19,8 +24,8 @@
   left: 0;
   width: 100%;
   background: linear-gradient(to top, #000, transparent);
-  padding: $spacing-3;
-  padding-top: $spacing-8;
+  padding: variables.$spacing-3;
+  padding-top: variables.$spacing-8;
   z-index: 3;
 }
 
@@ -28,10 +33,10 @@
   &:after {
     content: '';
     display: block;
-    background: rgba($navy, 0.5);
+    background: rgba(variables.$navy, 0.5);
     opacity: 0;
     transition: opacity 0.2s;
-    @include absolute-fill;
+    @include mixins.absolute-fill;
     z-index: 1;
   }
 
@@ -40,6 +45,7 @@
     &:after {
       opacity: 1;
     }
+
     .portrait-video__title {
       transform: translateY(-1rem);
     }
@@ -47,9 +53,9 @@
 }
 
 .portrait-video__title {
-  font-family: $font-family-sans-serif;
-  font-size: $typescale-4;
-  font-weight: $font-weight-semibold;
-  color: $white;
+  font-family: variables.$font-family-sans-serif;
+  font-size: variables.$typescale-4;
+  font-weight: variables.$font-weight-semibold;
+  color: variables.$white;
   transition: transform 0.2s;
 }

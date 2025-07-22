@@ -1,18 +1,23 @@
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use 'school-header';
+
 .school-nav {
-  @include print-hide;
+  @include mixins.print-hide;
 }
 
 .school-nav__handle {
   display: inline-block;
-  padding: $spacing-3;
-  font-size: $typescale-2;
-  font-weight: $font-weight-medium;
-  line-height: $line-height-body;
-  color: $navy;
+  padding: variables.$spacing-3;
+  font-size: variables.$typescale-2;
+  font-weight: variables.$font-weight-medium;
+  line-height: variables.$line-height-body;
+  color: variables.$navy;
   background: none;
   border: 0;
 
-  @include breakpoint($school-header-breakpoint) {
+  @include breakpoints.breakpoint(school-header.$school-header-breakpoint) {
     display: none;
   }
 }
@@ -20,10 +25,55 @@
 .school-nav__menu {
   display: none;
 
-  @include breakpoint($school-header-breakpoint) {
+  @include breakpoints.breakpoint(school-header.$school-header-breakpoint) {
     display: flex;
     flex-direction: column-reverse;
   }
+}
+
+.school-nav__menu {
+  nav:first-child {
+    margin-top: variables.$spacing-3;
+  }
+
+  nav:last-child {
+    display: flex;
+    justify-content: flex-end;
+
+    .school-nav__list--extended {
+      border-left: 1px solid variables.$navy;
+      margin: variables.$spacing-2 0;
+      margin-left: variables.$spacing-5;
+      padding-left: variables.$spacing-5;
+
+      .school-nav__list {
+        margin: -(variables.$spacing-2) 0;
+
+        .school-nav__link {
+          font-weight: variables.$font-weight-bold;
+        }
+      }
+    }
+  }
+
+  // nav:last-child {
+  //   .school-nav__item:nth-last-child(-n + 3) {
+  //     padding: variables.$spacing-2 0;
+  //     margin: variables.$spacing-2 0;
+
+  //     .school-nav__link {
+  //       padding: 0;
+  //       font-weight: variables.$font-weight-bold;
+  //     }
+  //   }
+
+  //   .school-nav__item:nth-last-child(3) {
+  //     // border-left: 1px solid currentColor;
+  //     &:before {
+  //       content: '|';
+  //     }
+  //   }
+  // }
 }
 
 .school-nav__bars {
@@ -50,13 +100,13 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: $white;
-  padding: #{$spacing-3 / 2} $spacing-3;
-  border: 1px solid $navy;
+  background-color: variables.$white;
+  padding: #{variables.$spacing-3 * 0.5} variables.$spacing-3;
+  border: 1px solid variables.$navy;
   transition: opacity 0.2s;
   opacity: 0;
   visibility: hidden;
-  z-index: $z-index-school-nav-dropdown;
+  z-index: variables.$z-index-school-nav-dropdown;
   min-width: 300px;
 }
 
@@ -76,7 +126,7 @@
   transition: opacity 0.2s;
 
   &:not(:last-child):not(.school-nav__item--sub) {
-    margin-right: $spacing-5;
+    margin-right: variables.$spacing-5;
   }
 
   &:focus-within,
@@ -90,15 +140,13 @@
 
 .school-nav__link {
   display: block;
-  padding-top: $spacing-3;
-  padding-bottom: $spacing-3;
-  color: $navy;
-  font-size: $typescale-3;
-  font-weight: $font-weight-medium;
-  opacity: 0.8;
-  transition:
-    opacity 0.2s,
-    border-color 0.2s;
+  padding-top: variables.$spacing-2;
+  padding-bottom: variables.$spacing-2;
+  color: variables.$navy;
+  font-size: variables.$typescale-3;
+  font-weight: variables.$font-weight-medium;
+  // opacity: 0.8;
+  transition: border-color 0.2s;
 
   &:hover {
     text-decoration: none;
@@ -107,9 +155,9 @@
 }
 
 .school-nav__link--sub {
-  padding-top: $spacing-3 / 2;
-  padding-bottom: $spacing-3 / 2;
-  font-size: $typescale-2;
+  padding-top: variables.$spacing-3 * 0.5;
+  padding-bottom: variables.$spacing-3 * 0.5;
+  font-size: variables.$typescale-2;
 
   &:hover,
   &:focus {
@@ -118,25 +166,25 @@
 }
 
 .school-nav__link--top {
-  border-bottom: 4px solid transparent;
+  border-bottom: 8px solid transparent;
 
   .school-nav__item:focus-within &,
   .school-nav__item:hover & {
-    @include themify(border-color);
+    @include mixins.themify(border-color);
   }
 }
 
 .school-nav__link--active {
-  @include themify(border-color);
+  @include mixins.themify(border-color);
 }
 
 .school-nav__link--util {
-  font-size: $typescale-2;
+  font-size: variables.$typescale-2;
   border-top: 4px solid transparent;
 
   &:hover,
   &:focus {
     text-decoration: none;
-    @include themify(border-top-color);
+    @include mixins.themify(border-top-color);
   }
 }

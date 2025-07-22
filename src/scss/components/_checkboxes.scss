@@ -1,3 +1,5 @@
+@use '../core/variables';
+
 .checkbox {
   position: relative;
 }
@@ -10,10 +12,10 @@
 .checkbox__label {
   display: flex;
   width: 100%;
-  padding-top: $spacing-1;
-  padding-bottom: $spacing-1;
-  font-size: $typescale-2;
-  font-weight: $font-weight-medium;
+  padding-top: variables.$spacing-1;
+  padding-bottom: variables.$spacing-1;
+  font-size: variables.$typescale-2;
+  font-weight: variables.$font-weight-medium;
   // color: $navy;
   cursor: pointer;
   margin-bottom: 0; // unset global label bottom margin
@@ -27,8 +29,8 @@
     display: block;
     height: 1rem;
     width: 1rem;
-    margin-right: $spacing-2;
-    margin-top: $spacing-1;
+    margin-right: variables.$spacing-2;
+    margin-top: variables.$spacing-1;
     border: 1px solid currentcolor;
     flex-shrink: 0;
   }
@@ -37,7 +39,7 @@
 .checkbox__label:focus,
 .checkbox__input:focus ~ .checkbox__label {
   &:before {
-    box-shadow: 0 0 0 2px $color-active;
+    box-shadow: 0 0 0 2px variables.$color-active;
   }
 }
 
@@ -52,11 +54,11 @@
 
 .checkbox--filter {
   .checkbox__label {
-    padding: $spacing-2 $spacing-3;
+    padding: variables.$spacing-2 variables.$spacing-3;
     transition: background 0.2s;
 
     &:hover {
-      background: $gray-lighter;
+      background: variables.$gray-lighter;
     }
   }
 }

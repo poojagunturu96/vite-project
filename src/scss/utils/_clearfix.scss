@@ -1,7 +1,9 @@
+@use '../mixins/clearfix';
+
 ////
 /// Clearfix for correcting floats. Used with float-left/float-right utilities or css rules.
 ////
 
 .clearfix {
-  @include clearfix;
+  @include clearfix.clearfix;
 }

@@ -1,10 +1,15 @@
-.anchor-header {
-  background-color: $gray-lighter;
-  padding-top: $spacing-4;
-  border-bottom: 1px solid $border-color;
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
 
-  @include breakpoint(lg) {
-    padding-top: $spacing-7;
+.anchor-header {
+  background-color: variables.$gray-lighter;
+  padding-top: variables.$spacing-4;
+  border-bottom: 1px solid variables.$border-color;
+
+  @include breakpoints.breakpoint(lg) {
+    padding-top: variables.$spacing-7;
   }
 
   @media print {
@@ -13,12 +18,12 @@
 }
 
 .anchor-header--front {
-  margin-bottom: $spacing-5;
-  @include breakpoint(md) {
-    margin-bottom: $spacing-7;
+  margin-bottom: variables.$spacing-5;
+  @include breakpoints.breakpoint(md) {
+    margin-bottom: variables.$spacing-7;
   }
-  @include breakpoint(lg) {
-    margin-bottom: $spacing-8;
+  @include breakpoints.breakpoint(lg) {
+    margin-bottom: variables.$spacing-8;
   }
 }
 
@@ -27,48 +32,51 @@
   align-items: flex-start;
   justify-content: space-between;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     display: block;
   }
 }
 
 .anchor-header__title {
-  @include h0;
-  font-family: $font-family-serif;
-  margin-bottom: $spacing-3;
+  @include type.h0;
+
+  & {
+    font-family: variables.$font-family-serif;
+    margin-bottom: variables.$spacing-3;
+  }
 }
 
 .anchor-header__link {
-  @include link-border;
-  border-color: $gray-light;
+  @include type.link-border;
+  border-color: variables.$gray-light;
 
   &:hover,
   &:focus {
-    color: $sky;
+    color: variables.$sky;
   }
 }
 
 .anchor-header__button {
-  margin-left: $spacing-3;
-  color: $color-primary;
-  padding: $spacing-2;
-  border: 1px solid $color-primary;
+  margin-left: variables.$spacing-3;
+  color: variables.$color-primary;
+  padding: variables.$spacing-2;
+  border: 1px solid variables.$color-primary;
   background: none;
   appearance: none;
   line-height: 1;
-  margin-top: $spacing-1;
-  @include print-hide;
+  margin-top: variables.$spacing-1;
+  @include mixins.print-hide;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     display: none;
   }
 }
 
 .anchor-header__icon {
-  transition: $chevron-transition;
+  transition: variables.$chevron-transition;
 
   .anchor-header__button.is-toggled & {
-    transform: $chevron-transform;
+    transform: variables.$chevron-transform;
   }
 }
 
@@ -76,7 +84,7 @@
   &.has-toggler {
     display: none;
 
-    @include breakpoint(lg) {
+    @include breakpoints.breakpoint(lg) {
       display: block;
     }
   }

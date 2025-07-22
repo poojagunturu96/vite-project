@@ -5,13 +5,15 @@
 ////
 /// Convert a number into an em unit given a base font size
 ////
+@use 'sass:math';
+
 @function em($target, $base: 16) {
-  @return $target / $base * 1em;
+  @return math.div($target, $base) * 1em;
 }
 
 ////
 /// Convert a number into an rem unit given a base font size
 ////
 @function rem($target, $base: 16) {
-  @return $target / $base * 1rem;
+  @return math.div($target, $base) * 1rem;
 }

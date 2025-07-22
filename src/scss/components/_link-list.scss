@@ -1,40 +1,45 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+@use '../mixins/type';
+
 .link-list {
 }
 
 .link-list__list {
-  margin-top: $spacing-7;
+  margin-top: variables.$spacing-7;
 
-  @include breakpoint(sm) {
-    @include make-row;
+  @include breakpoints.breakpoint(sm) {
+    @include grid.make-row;
   }
 }
 
 .link-list__item {
-  margin-bottom: $spacing-5;
+  margin-bottom: variables.$spacing-5;
 
-  @include breakpoint(sm) {
-    @include make-col-ready;
-    @include make-col(6);
+  @include breakpoints.breakpoint(sm) {
+    @include grid.make-col-ready;
+    @include grid.make-col(6);
   }
-  @include breakpoint(md) {
-    @include make-col(4);
+  @include breakpoints.breakpoint(md) {
+    @include grid.make-col(4);
   }
 }
 
 .link-list__box {
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid variables.$border-color;
   height: 100%;
-  padding-bottom: $spacing-5;
+  padding-bottom: variables.$spacing-5;
 }
 
 .link-list__link {
-  font-size: $typescale-5;
-  font-weight: $font-weight-medium;
-  font-family: $font-family-sans-serif;
-  @include link-border;
+  font-size: variables.$typescale-5;
+  font-weight: variables.$font-weight-medium;
+  font-family: variables.$font-family-sans-serif;
+  @include type.link-border;
 }
 
 .link-list__info {
-  font-size: $typescale-2;
-  margin-top: $spacing-2;
+  font-size: variables.$typescale-2;
+  margin-top: variables.$spacing-2;
 }

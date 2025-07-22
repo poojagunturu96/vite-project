@@ -1,3 +1,5 @@
+@use '../core/variables';
+
 .drawer {
   display: none;
   position: fixed;
@@ -5,7 +7,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: $z-index-drawer;
+  z-index: variables.$z-index-drawer;
 
   &.is-open {
     display: block;
@@ -13,13 +15,13 @@
 }
 
 .drawer__overlay {
-  background: rgba($black, 0.75);
+  background: rgba(variables.$black, 0.75);
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: $z-index-drawer-overlay;
+  z-index: variables.$z-index-drawer-overlay;
   animation: fadeIn 0.2s;
 }
 
@@ -32,23 +34,23 @@
   max-width: 100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  z-index: $z-index-drawer-content;
+  z-index: variables.$z-index-drawer-content;
   animation: slideInRight 0.2s;
 
   // TODO: Move this elsewhere. Drawer should be an object, not aware of theming.
-  background: $navy;
+  background: variables.$navy;
 }
 
 .drawer__header {
   text-align: right;
-  padding-top: $spacing-3;
-  padding-bottom: $spacing-3;
+  padding-top: variables.$spacing-3;
+  padding-bottom: variables.$spacing-3;
 }
 
 .drawer__close {
   background: none;
   border: 0;
-  color: $white;
-  padding: $spacing-3;
-  font-size: $typescale-2;
+  color: variables.$white;
+  padding: variables.$spacing-3;
+  font-size: variables.$typescale-2;
 }

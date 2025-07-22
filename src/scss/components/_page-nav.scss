@@ -1,38 +1,44 @@
+@use '../core/functions';
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
+
 .page-nav {
-  margin-bottom: $spacing-4;
-  @include breakpoint(md) {
-    margin-bottom: $spacing-8;
+  margin-bottom: variables.$spacing-4;
+  @include breakpoints.breakpoint(md) {
+    margin-bottom: variables.$spacing-8;
   }
-  @include print-hide;
+  @include mixins.print-hide;
 }
 
 .page-nav__title {
-  border-bottom: 4px solid $border-color;
-  @include small-caps;
+  border-bottom: 4px solid variables.$border-color;
+  @include type.small-caps;
 }
 
 .page-nav__button {
   padding: 1rem;
-  border: 1px solid $border-color;
+  border: 1px solid variables.$border-color;
   width: 100%;
   background: none;
-  font-size: $typescale-2;
-  font-weight: $font-weight-semibold;
+  font-size: variables.$typescale-2;
+  font-weight: variables.$font-weight-semibold;
   // font-family: inherit;
   text-align: left;
-  color: $color-primary;
+  color: variables.$color-primary;
   display: flex;
   flex-direction: column;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     display: none;
   }
 
   .page-nav__button-text__label {
-    @include gray-label;
-    margin-bottom: $spacing-1;
+    @include type.gray-label;
+    margin-bottom: variables.$spacing-1;
     line-height: 1.4;
-    color: $gray-semi-light;
+    color: variables.$gray-semi-light;
   }
 
   .page-nav__button-text {
@@ -43,23 +49,23 @@
 
 .page-nav__icon {
   float: right;
-  transition: $chevron-transition;
-  margin-left: $spacing-2;
-  margin-top: rem(2);
+  transition: variables.$chevron-transition;
+  margin-left: variables.$spacing-2;
+  margin-top: functions.rem(2);
 
   .page-nav__button.is-toggled & {
-    transform: $chevron-transform;
+    transform: variables.$chevron-transform;
   }
 }
 
 .page-nav__content {
   padding-left: 1rem;
   padding-right: 1rem;
-  border: 1px solid $border-color;
+  border: 1px solid variables.$border-color;
   border-top: 0;
   background-color: #f2f2f2;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     padding-left: 0;
     padding-right: 0;
     border: 0;
@@ -69,7 +75,7 @@
   &.has-toggler {
     display: none;
 
-    @include breakpoint(lg) {
+    @include breakpoints.breakpoint(lg) {
       display: block;
     }
   }
@@ -83,13 +89,13 @@
   // nested lists
   .page-nav__list {
     margin-left: 2rem;
-    border-top: 1px solid $border-color;
+    border-top: 1px solid variables.$border-color;
   }
 }
 
 .page-nav__item {
   &:not(:last-of-type) {
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid variables.$border-color;
   }
 }
 
@@ -100,6 +106,6 @@
 }
 
 .page-nav__link--active {
-  color: $sky;
-  font-weight: $font-weight-semibold;
+  color: variables.$sky;
+  font-weight: variables.$font-weight-semibold;
 }

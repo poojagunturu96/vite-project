@@ -1,4 +1,6 @@
-$drawer-nav-color: $navy-light;
+@use '../core/variables';
+
+$drawer-nav-color: variables.$navy-light;
 
 .drawer-nav {
 }
@@ -7,18 +9,19 @@ $drawer-nav-color: $navy-light;
   background: none;
   border: 0;
   display: inline-block;
-  padding: $spacing-3;
-  font-size: $typescale-2;
-  font-weight: $font-weight-medium;
-  line-height: $line-height-body;
-  color: $white;
+  padding: variables.$spacing-3;
+  font-size: variables.$typescale-2;
+  font-weight: variables.$font-weight-medium;
+  line-height: variables.$line-height-body;
+  color: variables.$white;
   border-left: 1px solid $drawer-nav-color;
 }
 
 .drawer-nav__chevron {
-  transition: $chevron-transition;
+  transition: variables.$chevron-transition;
+
   .drawer-nav__handle.is-toggled & {
-    transform: $chevron-transform;
+    transform: variables.$chevron-transform;
   }
 }
 
@@ -49,23 +52,28 @@ $drawer-nav-color: $navy-light;
   justify-content: space-between;
 }
 
+.drawer-nav__item-cta {
+  border-top-color: variables.$navy;
+  background-color: variables.$navy-light;
+}
+
 .drawer-nav__link {
   display: block;
-  padding: $spacing-3;
-  color: $white;
+  padding: variables.$spacing-3;
+  color: variables.$white;
   flex: 1;
 }
 
 .drawer-nav__link--sub {
-  padding-left: $spacing-7;
-  font-size: $typescale-2;
+  padding-left: variables.$spacing-7;
+  font-size: variables.$typescale-2;
 }
 
 .drawer-nav__link--top {
-  font-weight: $font-weight-medium;
+  font-weight: variables.$font-weight-medium;
 }
 
 .drawer-nav__link--util {
-  font-size: $typescale-2;
+  font-size: variables.$typescale-2;
   font-weight: normal;
 }

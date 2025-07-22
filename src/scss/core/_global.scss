@@ -1,3 +1,6 @@
+@use '../mixins/type';
+@use 'variables';
+
 ////
 /// Contains mainly classless selectors for base resets and styles
 ////
@@ -8,7 +11,6 @@
   box-sizing: border-box;
 }
 
-
 html,
 body {
   // overflow-x: hidden;
@@ -18,11 +20,11 @@ body {
  * 1. prevent chrome from hiding background images and colors by default when printing
  */
 body {
-  font-family: $font-family-base;
-  line-height: $line-height-body;
-  font-size: $font-size-base;
-  color: $body-color;
-  background-color: $body-bg;
+  font-family: variables.$font-family-base;
+  line-height: variables.$line-height-body;
+  font-size: variables.$font-size-base;
+  color: variables.$body-color;
+  background-color: variables.$body-bg;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -60,9 +62,9 @@ figure {
 }
 
 hr {
-  background-color: $gray-light;
-  margin-top: $spacing-5;
-  margin-bottom: $spacing-5;
+  background-color: variables.$gray-light;
+  margin-top: variables.$spacing-5;
+  margin-bottom: variables.$spacing-5;
   height: 1px;
   border: 0;
 }
@@ -82,11 +84,11 @@ dd {
 }
 
 a {
-  color: $link-color;
-  text-decoration: $link-decoration;
+  color: variables.$link-color;
+  text-decoration: variables.$link-decoration;
 
   &:hover {
-    text-decoration: $link-hover-decoration;
+    text-decoration: variables.$link-hover-decoration;
   }
 }
 
@@ -95,7 +97,7 @@ a {
 }
 
 strong {
-  font-weight: $font-weight-semibold;
+  font-weight: variables.$font-weight-semibold;
 }
 
 fieldset {
@@ -105,18 +107,18 @@ fieldset {
 }
 
 p {
-  font-family: $font-family-base;
-  font-size: $paragraph-font-size;
-  line-height: $paragraph-line-height;
+  font-family: variables.$font-family-base;
+  font-size: variables.$paragraph-font-size;
+  line-height: variables.$paragraph-line-height;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 address {
-  font-family: $font-family-base;
+  font-family: variables.$font-family-base;
   font-style: normal;
-  font-size: $paragraph-font-size;
-  line-height: $paragraph-line-height;
+  font-size: variables.$paragraph-font-size;
+  line-height: variables.$paragraph-line-height;
 }
 
 img {
@@ -144,41 +146,41 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $headings-font-family;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
+  font-family: variables.$headings-font-family;
+  font-weight: variables.$headings-font-weight;
+  line-height: variables.$headings-line-height;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .h1,
 h1 {
-  @include h1;
+  @include type.h1;
 }
 
 .h2,
 h2 {
-  @include h2;
+  @include type.h2;
 }
 
 .h3,
 h3 {
-  @include h3;
+  @include type.h3;
 }
 
 .h4,
 h4 {
-  @include h4;
+  @include type.h4;
 }
 
 .h5,
 h5 {
-  @include h5;
+  @include type.h5;
 }
 
 .h6,
 h6 {
-  @include h6;
+  @include type.h6;
 }
 
 svg {

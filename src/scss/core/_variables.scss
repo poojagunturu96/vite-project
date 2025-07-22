@@ -1,3 +1,6 @@
+@use 'sass:color';
+@use 'functions';
+
 ////
 /// Sass Variables
 ////
@@ -16,8 +19,8 @@ $screen-xl: 1280px !default;
 $grid-columns: 12 !default;
 $container-max-width: 1440px !default;
 
-$grid-gutter-width: rem(32) !default;
-$grid-gutter-width-lg: rem(64) !default;
+$grid-gutter-width: functions.rem(32) !default;
+$grid-gutter-width-lg: functions.rem(64) !default;
 
 $breakpoints: (
   xs: 0,
@@ -44,15 +47,15 @@ $responsive-variants: (
 ////
 
 $spacing-0: 0 !default;
-$spacing-1: rem(4) !default;
-$spacing-2: rem(8) !default;
-$spacing-3: rem(16) !default;
-$spacing-4: rem(24) !default;
-$spacing-5: rem(32) !default;
-$spacing-6: rem(40) !default;
-$spacing-7: rem(48) !default;
-$spacing-8: rem(64) !default;
-$spacing-9: rem(96) !default;
+$spacing-1: functions.rem(4) !default;
+$spacing-2: functions.rem(8) !default;
+$spacing-3: functions.rem(16) !default;
+$spacing-4: functions.rem(24) !default;
+$spacing-5: functions.rem(32) !default;
+$spacing-6: functions.rem(40) !default;
+$spacing-7: functions.rem(48) !default;
+$spacing-8: functions.rem(64) !default;
+$spacing-9: functions.rem(96) !default;
 
 $spacing: (
   0: $spacing-0,
@@ -85,6 +88,7 @@ $blue-lighter: #e5f1fa !default;
 
 $wrmc-blue-light: #a3e6ff !default;
 $wrmc-pink: #ee6cb9 !default;
+$wrmc-pink-darker: #de1b90 !default;
 $wrmc-green: #a7c504 !default;
 
 $sky: #0573cd;
@@ -173,41 +177,138 @@ $font-family-serif: (
   serif
 ) !default;
 
+$wrmc-text-dark: $navy-dark;
+
 $wrmc-genre-colors: (
-  blues: #1D6CA6,
-  country: #AC7306,
-  experimental: #C926E4,
-  funk: #07BBD3,
-  indie: #927575,
-  pop: #A60505,
-  punk: #044882,
-  rb-soul: #56A4FF,
-  rock: #047825,
-  world: #52D6FF,
-  classical: #349B76,
-  electronic: #9AA705,
-  folk: #E28A07,
-  jazz: #0CBDBD,
-  heavy-metal: #727070,
-  hip-hop: #01777F,
-  kpop: #8807D7,
-  latin: #81E334,
-  reggae: #E3BF42,
-  news: #8F8D8D,
-  talk: #000000
+  // blues
+  genre-1d6ca6: (
+      bg-color: #1d6ca6,
+      color: $white
+    ),
+  // country
+  genre-a16b06: (
+      bg-color: #a16b06,
+      color: $white
+    ),
+  // experimental
+  genre-c425de: (
+      bg-color: #c425de,
+      color: $white
+    ),
+  // funk
+  genre-0ee3ff: (
+      bg-color: #0ee3ff,
+      color: $wrmc-text-dark
+    ),
+  // indie
+  genre-916b6b: (
+      bg-color: #916b6b,
+      color: $white
+    ),
+  // pop
+  genre-ff4d4d: (
+      bg-color: #ff4d4d,
+      color: $wrmc-text-dark
+    ),
+  // punk
+  genre-044882: (
+      bg-color: #044882,
+      color: $white
+    ),
+  // rb-soul
+  genre-8fceff: (
+      bg-color: #8fceff,
+      color: $wrmc-text-dark
+    ),
+  // rock
+  genre-048228: (
+      bg-color: #048228,
+      color: $white
+    ),
+  // world
+  genre-47f5ec: (
+      bg-color: #47f5ec,
+      color: $wrmc-text-dark
+    ),
+  // classical
+  genre-3e8369: (
+      bg-color: #3e8369,
+      color: $white
+    ),
+  // electronic
+  genre-b7c706: (
+      bg-color: #b7c706,
+      color: $wrmc-text-dark
+    ),
+  // folk
+  genre-f29407: (
+      bg-color: #f29407,
+      color: $wrmc-text-dark
+    ),
+  // jazz
+  genre-13e9bf: (
+      bg-color: #13e9bf,
+      color: $wrmc-text-dark
+    ),
+  // heavy-metal
+  genre-6b6b6b: (
+      bg-color: #6b6b6b,
+      color: $white
+    ),
+  // hip-hop
+  genre-01777f: (
+      bg-color: #01777f,
+      color: $white
+    ),
+  // kpop
+  genre-8807d7: (
+      bg-color: #8807d7,
+      color: $white
+    ),
+  // latin
+  genre-85eb35: (
+      bg-color: #85eb35,
+      color: $wrmc-text-dark
+    ),
+  // reggae
+  genre-f2cc46: (
+      bg-color: #f2cc46,
+      color: $wrmc-text-dark
+    ),
+  // news
+  genre-827373: (
+      bg-color: #827373,
+      color: $white
+    ),
+  // talk
+  genre-000000: (
+      bg-color: #000000,
+      color: $white
+    ),
+  // rap
+  genre-880808: (
+      bg-color: #880808,
+      color: $white
+    ),
+  // generic
+  genre-0d395f: (
+      bg-color: #0d395f,
+      color: $white
+    )
 );
 
 // type scale
-$typescale-1: rem(12) !default;
-$typescale-2: rem(14) !default;
-$typescale-3: rem(16) !default;
-$typescale-4: rem(18) !default;
-$typescale-5: rem(20) !default;
-$typescale-6: rem(24) !default;
-$typescale-7: rem(28) !default;
-$typescale-8: rem(36) !default;
-$typescale-9: rem(48) !default;
-$typescale-10: rem(64) !default;
+$typescale-1: functions.rem(12) !default;
+$typescale-2: functions.rem(14) !default;
+$typescale-3: functions.rem(16) !default;
+$typescale-4: functions.rem(18) !default;
+$typescale-5: functions.rem(20) !default;
+$typescale-6: functions.rem(24) !default;
+$typescale-7: functions.rem(28) !default;
+$typescale-8: functions.rem(36) !default;
+$typescale-9: functions.rem(48) !default;
+$typescale-10: functions.rem(64) !default;
+$typescale-11: functions.rem(72) !default;
 
 $typescale: (
   1: $typescale-1,
@@ -315,7 +416,7 @@ $btn-color: $navy !default;
 // primary
 $btn-primary-bg: $color-primary !default;
 $btn-primary-color: $white !default;
-$btn-primary-hover-bg: lighten($color-primary, 10%) !default;
+$btn-primary-hover-bg: color.adjust($color-primary, $lightness: 10%) !default;
 $btn-primary-hover-color: $white !default;
 
 // secondary
@@ -454,6 +555,7 @@ $input-focus-border-color: $green-light !default;
 
 $chevron-transform: rotate(-180deg);
 $chevron-transition: transform 0.2s ease-in-out;
+$caret-transform: rotate(90deg);
 
 ///
 // z-indexes
@@ -487,6 +589,8 @@ $z-index-school-header: 100;
 $z-index-school-search-content: 200;
 
 $z-index-school-nav-dropdown: 200;
+
+$z-index-curriculum-header: 99;
 
 $z-index-school-explorer: 50;
 
@@ -526,3 +630,5 @@ $z-index-homepage-header-button: 10;
 $z-index-dispatches: 2;
 
 $z-index-journey-modal: 5;
+
+$z-index-background-video-control: 30;

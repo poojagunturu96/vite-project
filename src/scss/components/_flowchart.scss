@@ -1,26 +1,29 @@
+@use '../core/variables';
+@use '../mixins/type';
+
 .flowchart {
   counter-reset: flowchart;
-  background: $blue-lighter;
+  background: variables.$blue-lighter;
 }
 
 .flowchart__item {
-  padding: $spacing-5;
-  padding-left: $spacing-7;
+  padding: variables.$spacing-5;
+  padding-left: variables.$spacing-7;
 
   &:not(:last-child) {
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid variables.$border-color;
   }
 }
 
 .flowchart__item--active {
-  border-left: 4px solid $navy;
+  border-left: 4px solid variables.$navy;
 }
 
 .flowchart__item--answer {
-  background: $navy;
-  color: $white;
+  background: variables.$navy;
+  color: variables.$white;
 
-  @include links-current;
+  @include type.links-current;
 }
 
 .flowchart__title {

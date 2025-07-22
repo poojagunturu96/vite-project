@@ -1,24 +1,27 @@
-.quote {
-  border-top: 4px solid $blue;
-  border-bottom: 1px solid $blue;
-  margin-top: $spacing-7;
-  margin-bottom: $spacing-7;
-  padding: $spacing-5 $spacing-3;
+@use '../core/variables';
+@use '../mixins/breakpoints';
 
-  @include breakpoint(md) {
-    margin-top: $spacing-7;
-    margin-bottom: $spacing-7;
+.quote {
+  border-top: 4px solid variables.$blue;
+  border-bottom: 1px solid variables.$blue;
+  margin-top: variables.$spacing-7;
+  margin-bottom: variables.$spacing-7;
+  padding: variables.$spacing-5 variables.$spacing-3;
+
+  @include breakpoints.breakpoint(md) {
+    margin-top: variables.$spacing-7;
+    margin-bottom: variables.$spacing-7;
   }
 }
 
 .quote__text {
-  color: $blue-dark;
-  font-size: $typescale-5;
-  line-height: $line-height-heading;
-  margin-bottom: $spacing-2;
+  color: variables.$blue-dark;
+  font-size: variables.$typescale-5;
+  line-height: variables.$line-height-heading;
+  margin-bottom: variables.$spacing-2;
 
-  @include breakpoint(md) {
-    font-size: $typescale-6;
+  @include breakpoints.breakpoint(md) {
+    font-size: variables.$typescale-6;
   }
 
   .quote--marks & {
@@ -39,5 +42,5 @@
 }
 
 .quote__cite {
-  font-size: $typescale-3;
+  font-size: variables.$typescale-3;
 }

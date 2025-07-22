@@ -1,40 +1,45 @@
+@use '../core/functions';
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 .midd-footer {
-  background-color: $navy-dark;
-  padding-top: $spacing-4;
-  padding-bottom: $spacing-4;
-  @include print-hide;
+  background-color: variables.$navy-dark;
+  padding-top: variables.$spacing-4;
+  padding-bottom: variables.$spacing-4;
+  @include mixins.print-hide;
 }
 
 .midd-footer__list {
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 100%;
-    margin-top: $spacing-3;
+    margin-top: variables.$spacing-3;
   }
 }
 
 .midd-footer__item {
   &:not(:first-child) {
-    @include breakpoint(lg) {
-      margin-left: $spacing-3;
+    @include breakpoints.breakpoint(lg) {
+      margin-left: variables.$spacing-3;
     }
-    @include breakpoint(xl) {
-      margin-left: $spacing-4;
+    @include breakpoints.breakpoint(xl) {
+      margin-left: variables.$spacing-4;
     }
   }
 }
 
 .midd-footer__link {
-  color: $white;
-  font-size: $typescale-2;
+  color: variables.$white;
+  font-size: variables.$typescale-2;
   display: block;
-  padding-top: $spacing-1;
-  padding-bottom: $spacing-1;
+  padding-top: variables.$spacing-1;
+  padding-bottom: variables.$spacing-1;
   white-space: nowrap;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -42,21 +47,21 @@
 
 .midd-footer {
   &.davis-footer {
-    padding-top: $spacing-4;
-    padding-bottom: $spacing-4;
-    background-color: $black;
+    padding-top: variables.$spacing-4;
+    padding-bottom: variables.$spacing-4;
+    background-color: variables.$black;
 
-    @include breakpoint(lg) {
-      padding-top: $spacing-7;
-      padding-bottom: $spacing-7;
+    @include breakpoints.breakpoint(lg) {
+      padding-top: variables.$spacing-7;
+      padding-bottom: variables.$spacing-7;
     }
 
     .midd-footer__list {
-      @include breakpoint(lg) {
+      @include breakpoints.breakpoint(lg) {
         display: block;
       }
 
-      @include breakpoint(xl) {
+      @include breakpoints.breakpoint(xl) {
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -66,32 +71,40 @@
 
     .davis-logo {
       img {
-        margin-bottom: $spacing-3;
+        margin-bottom: variables.$spacing-3;
       }
 
       img:first-child {
-        margin-right: rem(12);
+        margin-right: functions.rem(12);
+      }
+
+      img:nth-child(2) {
+        width: 288px;
+
+        @include breakpoints.breakpoint(md) {
+          width: 309px;
+        }
       }
     }
 
     .midd-footer__item {
       &:not(:first-child) {
-        @include breakpoint(lg) {
+        @include breakpoints.breakpoint(lg) {
           margin-left: 0;
         }
-        @include breakpoint(xl) {
-          margin-left: $spacing-4;
+        @include breakpoints.breakpoint(xl) {
+          margin-left: variables.$spacing-4;
         }
       }
     }
 
     .midd-footer__link {
-      @include breakpoint(lg) {
-        padding-top: $spacing-1;
-        padding-bottom: $spacing-1;
+      @include breakpoints.breakpoint(lg) {
+        padding-top: variables.$spacing-1;
+        padding-bottom: variables.$spacing-1;
       }
 
-      @include breakpoint(xl) {
+      @include breakpoints.breakpoint(xl) {
         padding-top: 0;
         padding-bottom: 0;
       }

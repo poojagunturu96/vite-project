@@ -1,9 +1,15 @@
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/type';
+
+@use 'sass:math';
+
 .gallery {
 }
 
 .gallery__image {
   position: relative;
-  padding-top: percentage(9 / 16);
+  padding-top: math.percentage(math.div(9, 16));
   height: 0;
   overflow: hidden;
 
@@ -20,10 +26,10 @@
   &:after {
     content: '';
     display: block;
-    background: rgba($navy, 0.5);
+    background: rgba(variables.$navy, 0.5);
     opacity: 0;
     transition: opacity 0.2s;
-    @include absolute-fill;
+    @include mixins.absolute-fill;
   }
 
   &:hover,
@@ -38,19 +44,19 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: $z-index-gallery-button;
+  z-index: variables.$z-index-gallery-button;
 }
 
 .gallery__body {
-  padding: $spacing-3 $spacing-4;
-  border: 1px solid $border-color;
+  padding: variables.$spacing-3 variables.$spacing-4;
+  border: 1px solid variables.$border-color;
 }
 
 .gallery__title {
-  @include h3;
-  margin-bottom: $spacing-2;
+  @include type.h3;
+  margin-bottom: variables.$spacing-2;
 }
 
 .gallery__text {
-  font-size: $typescale-3;
+  font-size: variables.$typescale-3;
 }

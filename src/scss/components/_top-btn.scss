@@ -1,16 +1,19 @@
+@use '../core/functions';
+@use '../core/variables';
+
 .to-top-btn {
-  color: $navy;
-  padding: rem(14);
-  background: $white;
-  font-weight: $font-weight-medium;
+  color: variables.$navy;
+  padding: functions.rem(14);
+  background: variables.$white;
+  font-weight: variables.$font-weight-medium;
   box-shadow: 0 0 8px rgba(#000, 0.2);
   position: fixed;
-  bottom: $spacing-8;
-  right: $spacing-2;
+  bottom: variables.$spacing-8;
+  right: variables.$spacing-2;
   transition:
     transform 0.2s,
     bottom 0.2s;
-  z-index: $z-index-to-top-button;
+  z-index: variables.$z-index-to-top-button;
 
   &[hidden] {
     transform: translateY(100%);

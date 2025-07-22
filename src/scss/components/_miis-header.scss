@@ -1,7 +1,11 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../components/midd-header';
+@use '../components/institutional-header';
+
 .miis-header {
   @extend .midd-header;
-
-  background-color: $navy;
+  background-color: variables.$navy;
 }
 
 .miis-header__transparent {
@@ -24,7 +28,7 @@
   @extend .midd-header__wordmark;
   width: 190px;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     width: 284px;
   }
 }

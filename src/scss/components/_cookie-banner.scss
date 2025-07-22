@@ -1,22 +1,27 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+@use '../mixins/type';
+
 .cookie-banner {
   width: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
-  background-color: $black;
-  color: $white;
-  z-index: $z-index-cookie-banner;
+  background-color: variables.$black;
+  color: variables.$white;
+  z-index: variables.$z-index-cookie-banner;
   display: flex;
   flex-direction: column-reverse;
-  padding: $spacing-4 $spacing-3;
+  padding: variables.$spacing-4 variables.$spacing-3;
 
-  @include breakpoint(md) {
-    padding: $spacing-5 $spacing-3;
+  @include breakpoints.breakpoint(md) {
+    padding: variables.$spacing-5 variables.$spacing-3;
     flex-direction: row;
   }
 
-  @include breakpoint(lg) {
-    padding: $spacing-5;
+  @include breakpoints.breakpoint(lg) {
+    padding: variables.$spacing-5;
   }
 
   &.is-toggled {
@@ -24,37 +29,37 @@
   }
 
   p {
-    @include breakpoint(md) {
-      @include make-col(10);
+    @include breakpoints.breakpoint(md) {
+      @include grid.make-col(10);
     }
 
     a {
-      font-weight: $font-weight-semibold;
-      color: $white;
-      @include link-border;
+      font-weight: variables.$font-weight-semibold;
+      color: variables.$white;
+      @include type.link-border;
     }
   }
 
   .cookie-banner__button {
     text-transform: uppercase;
-    letter-spacing: $letter-spacing;
-    font-weight: $font-weight-semibold;
-    font-size: $typescale-2;
-    color: $white;
+    letter-spacing: variables.$letter-spacing;
+    font-weight: variables.$font-weight-semibold;
+    font-size: variables.$typescale-2;
+    color: variables.$white;
     background: none;
     border: 0;
 
     .cookie-banner__button-icon {
-      width: $typescale-5;
-      height: $typescale-5;
+      width: variables.$typescale-5;
+      height: variables.$typescale-5;
     }
   }
 
   .cookie-banner__button--close {
-    margin-bottom: $spacing-4;
+    margin-bottom: variables.$spacing-4;
     margin-left: auto;
 
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       margin-bottom: auto;
     }
   }

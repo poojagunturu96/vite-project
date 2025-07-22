@@ -1,11 +1,17 @@
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
+@use 'sass:math';
+
 .paragraph--top-thirty-songs {
   justify-content: center;
-  
-  .row {
-    row-gap: $spacing-6;
 
-    @include breakpoint(md) {
-      row-gap: $spacing-8;
+  .row {
+    row-gap: variables.$spacing-6;
+
+    @include breakpoints.breakpoint(md) {
+      row-gap: variables.$spacing-8;
     }
   }
 }
@@ -23,37 +29,37 @@
       position: relative;
 
       &:before {
-        content: "0" counter(ol);
+        content: '0' counter(ol);
         position: absolute;
         z-index: 6;
-        font-size: rem(18);
-        font-weight: $font-weight-semibold;
-        line-height: $line-height-solid;
+        font-size: functions.rem(18);
+        font-weight: variables.$font-weight-semibold;
+        line-height: variables.$line-height-solid;
       }
 
-      &:nth-child(n+10):before {
+      &:nth-child(n + 10):before {
         content: counter(ol);
       }
 
       .song__trapezoid-marker {
         position: absolute;
         z-index: 5;
-        width: $spacing-5;
-        border-bottom: $typescale-5 solid $wrmc-blue-light;
-        border-left: 0px solid transparent;
-        border-right: $typescale-1 solid transparent;
+        width: variables.$spacing-5;
+        border-bottom: variables.$typescale-5 solid variables.$wrmc-blue-light;
+        border-left: 0 solid transparent;
+        border-right: variables.$typescale-1 solid transparent;
       }
     }
   }
 
   .song__album-placeholder {
     position: relative;
-    
-    &:before{ 
-      content: "";
+
+    &:before {
+      content: '';
       display: block;
-      padding-top: percentage(1/1);
-      background-color: $wrmc-pink;
+      padding-top: math.percentage(math.div(1, 1));
+      background-color: variables.$wrmc-pink;
     }
 
     .song__album-placeholder-image {
@@ -62,7 +68,7 @@
       height: 100%;
       top: 0;
       left: 0;
-      padding: $spacing-2;
+      padding: variables.$spacing-2;
 
       img {
         object-fit: cover;
@@ -73,20 +79,20 @@
   }
 
   p {
-    font-size: $typescale-2;
-    font-weight: $font-weight-bold;
+    font-size: variables.$typescale-2;
+    font-weight: variables.$font-weight-bold;
 
     &.song__artist {
-      margin-top: $spacing-1;
+      margin-top: variables.$spacing-1;
 
-      @include breakpoint(md) {
-        margin-top: $spacing-2;
+      @include breakpoints.breakpoint(md) {
+        margin-top: variables.$spacing-2;
       }
     }
 
     &.song__title {
-      color: $wrmc-pink;
-      line-height: $line-height-heading;
+      color: variables.$wrmc-pink-darker;
+      line-height: variables.$line-height-heading;
     }
   }
 }

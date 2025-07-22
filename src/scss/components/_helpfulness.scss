@@ -1,41 +1,44 @@
+@use '../core/variables';
+@use '../mixins/forms';
+
 /* stylelint-disable */
 .helpfulness {
-  background: $blue-lighter;
-  padding: $spacing-4;
+  background: variables.$blue-lighter;
+  padding: variables.$spacing-4;
 
   .form-item-helpfulness-rating {
-    @include radio;
+    @include forms.radio;
 
     label {
-      @include radio-label();
+      @include forms.radio-label();
     }
 
     input[type='radio'] {
-      @include radio-input();
+      @include forms.radio-input();
 
       &:focus ~ label {
-        @include radio-input-focus-label;
+        @include forms.radio-input-focus-label;
       }
 
       &:checked ~ label {
-        @include radio-input-checked-label;
+        @include forms.radio-input-checked-label;
       }
     }
   }
 
   .form-item-helpfulness-comments {
-    margin-top: $spacing-4;
-    @include form-group;
+    margin-top: variables.$spacing-4;
+    @include forms.form-group;
   }
 
   .form-textarea {
-    @include form-control;
-    @include form-textarea;
+    @include forms.form-control;
+    @include forms.form-textarea;
   }
 
   .helpfulness_no_description,
   .helpfulness_yes_description {
-    @include form-text;
+    @include forms.form-text;
   }
 
   p {

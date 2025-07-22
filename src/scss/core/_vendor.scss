@@ -9,12 +9,12 @@
   border: 0 !important;
 
   @media only screen and (min-width: 512px) {
-    right: 0px !important;
-    bottom: 0px !important;
+    right: 0 !important;
+    bottom: 0 !important;
   }
 
   @media only screen and (min-width: 1024px) {
-    right: 0px !important;
+    right: 0 !important;
   }
 
   @media only screen and (min-width: 1200px) {
@@ -26,7 +26,7 @@
 .lcs_slide_out.lcs_slide_out-b.open {
   border: 1px solid #ccc;
 }
- 
+
 // stylelint-disable-next-line selector-class-pattern
 .lcs_slide_out .lcs_header a {
   right: -56px !important;
@@ -46,9 +46,11 @@
 // to make space for back to top button.
 
 // stylelint-disable selector-max-id
-#olark-wrapper, 
+#olark-wrapper,
 #olark-wrapper .olark-launch-button-wrapper .olark-button-focus-wrapper:focus,
-#olark-wrapper .olark-launch-button-wrapper .olark-button-focus-wrapper:focus-within {
+#olark-wrapper
+  .olark-launch-button-wrapper
+  .olark-button-focus-wrapper:focus-within {
   position: fixed !important;
   bottom: 64px !important;
   right: 100px !important;
@@ -71,9 +73,6 @@
 
 #olark-wrapper .olark-launch-button.olark-text-button .olark-button-text {
   padding: 10px !important;
-}
-
-#olark-wrapper .olark-launch-button.olark-text-button .olark-button-text {
   line-height: 1em !important;
 }
 

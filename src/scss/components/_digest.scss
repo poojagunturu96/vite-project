@@ -1,15 +1,19 @@
-.digest {
-  border-left: 1px solid $gray-light;
-  @include print-hide;
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
 
-  @include breakpoint(lg) {
+.digest {
+  border-left: 1px solid variables.$gray-light;
+  @include mixins.print-hide;
+
+  @include breakpoints.breakpoint(lg) {
     max-height: 70vh;
     overflow-y: auto;
 
     // force scrollbars to display to convey scrollable digest nav
 
     // firefox
-    scrollbar-color: $gray-light $white;
+    scrollbar-color: variables.$gray-light variables.$white;
     scrollbar-width: auto;
 
     // for safari and chrome
@@ -21,44 +25,44 @@
     // for safari and chrome
     &::-webkit-scrollbar-thumb {
       border-radius: 4px;
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: rgb(0 0 0 / 0.1);
     }
   }
 }
 
 .digest__title {
   text-transform: uppercase;
-  letter-spacing: $letter-spacing;
-  font-size: $typescale-2;
-  font-family: $font-family-sans-serif;
-  padding: $spacing-3;
-  padding-left: $spacing-3 + $spacing-1;
-  @include breakpoint(lg) {
-    background: $white;
+  letter-spacing: variables.$letter-spacing;
+  font-size: variables.$typescale-2;
+  font-family: variables.$font-family-sans-serif;
+  padding: variables.$spacing-3;
+  padding-left: variables.$spacing-3 + variables.$spacing-1;
+  @include breakpoints.breakpoint(lg) {
+    background: variables.$white;
     position: sticky;
     top: 0;
   }
 }
 
 .digest__nav {
-  background-color: $white;
+  background-color: variables.$white;
 }
 
 .digest__list {
 }
 
 .digest__item {
-  margin-bottom: $spacing-2;
+  margin-bottom: variables.$spacing-2;
 }
 
 .digest__link {
   display: block;
-  font-size: $typescale-2;
-  padding: $spacing-1 $spacing-3;
+  font-size: variables.$typescale-2;
+  padding: variables.$spacing-1 variables.$spacing-3;
   border-left: 4px solid transparent;
   transition: border-color 0.2s;
 
   .digest__item.active & {
-    border-color: $color-primary;
+    border-color: variables.$color-primary;
   }
 }

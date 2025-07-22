@@ -1,13 +1,16 @@
-.announcement {
-  background: $blue-lighter;
-  padding: $spacing-5 $spacing-3;
+@use '../core/variables';
+@use '../mixins/breakpoints';
 
-  @include breakpoint(md) {
-    padding: $spacing-7 $spacing-5;
+.announcement {
+  background: variables.$blue-lighter;
+  padding: variables.$spacing-5 variables.$spacing-3;
+
+  @include breakpoints.breakpoint(md) {
+    padding: variables.$spacing-7 variables.$spacing-5;
   }
 
-  @include breakpoint(lg) {
-    padding-left: $spacing-9;
-    padding-right: $spacing-9;
+  @include breakpoints.breakpoint(lg) {
+    padding-left: variables.$spacing-9;
+    padding-right: variables.$spacing-9;
   }
 }

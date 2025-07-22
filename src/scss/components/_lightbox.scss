@@ -1,3 +1,6 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 .lightbox {
   display: none;
   position: fixed;
@@ -5,7 +8,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: $black;
+  background-color: variables.$black;
   z-index: 9999;
   overflow: auto;
   -webkit-overflow-scrolling: touch; // maintain scrolling inertia on ios
@@ -22,14 +25,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-image: linear-gradient(to bottom, $black, transparent);
+  background-image: linear-gradient(to bottom, variables.$black, transparent);
 }
 
 .lightbox__count {
-  color: $white;
+  color: variables.$white;
   width: 4em;
-  font-weight: $font-weight-semibold;
-  font-size: $typescale-2;
+  font-weight: variables.$font-weight-semibold;
+  font-size: variables.$typescale-2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,18 +40,18 @@
 
 .lightbox__button {
   text-transform: uppercase;
-  letter-spacing: $letter-spacing;
-  font-weight: $font-weight-semibold;
-  font-size: $typescale-2;
-  color: $white;
+  letter-spacing: variables.$letter-spacing;
+  font-weight: variables.$font-weight-semibold;
+  font-size: variables.$typescale-2;
+  color: variables.$white;
   transition: opacity 0.2s;
   opacity: 0.8;
   background: none;
   border: 0;
-  padding: $spacing-3;
+  padding: variables.$spacing-3;
 
-  @include breakpoint(lg) {
-    padding: $spacing-5;
+  @include breakpoints.breakpoint(lg) {
+    padding: variables.$spacing-5;
   }
 
   &:hover,
@@ -62,22 +65,22 @@
 }
 
 .lightbox__images {
-  padding: $spacing-3;
+  padding: variables.$spacing-3;
   padding-top: 7rem;
 
-  @include breakpoint(lg) {
-    padding: $spacing-5;
+  @include breakpoints.breakpoint(lg) {
+    padding: variables.$spacing-5;
     padding-top: 8rem;
     width: calc(100vw - 100px);
   }
 }
 
 .lightbox__figure {
-  margin-bottom: $spacing-9;
+  margin-bottom: variables.$spacing-9;
 
   .media__caption {
     a {
-      color: $white;
+      color: variables.$white;
     }
   }
 }
@@ -95,7 +98,7 @@
   display: none;
   width: 130px; /* 1 */
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     display: block;
   }
 }
@@ -122,11 +125,11 @@
 
 .lightbox__thumbs-item {
   border-left: 4px solid transparent;
-  padding-left: $spacing-2;
-  padding-right: $spacing-5;
+  padding-left: variables.$spacing-2;
+  padding-right: variables.$spacing-5;
 
   &:not(:last-child) {
-    margin-bottom: $spacing-4;
+    margin-bottom: variables.$spacing-4;
   }
 
   &.active {

@@ -1,13 +1,17 @@
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 .midd-nav {
   order: 2;
-  z-index: $z-index-midd-nav;
+  z-index: variables.$z-index-midd-nav;
 
   // Pull menu toggler out of container so it's flush with the opened menu
-  margin-right: -#{$spacing-3};
+  margin-right: -#{variables.$spacing-3};
 
-  @include print-hide;
+  @include mixins.print-hide;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     order: 1;
     margin-left: auto;
     margin-right: 0;
@@ -16,21 +20,21 @@
 
 .midd-nav__handle {
   display: inline-block;
-  font-weight: $font-weight-medium;
-  font-size: $typescale-2;
-  color: $white;
-  line-height: $line-height-solid;
-  padding: $spacing-3;
+  font-weight: variables.$font-weight-medium;
+  font-size: variables.$typescale-2;
+  color: variables.$white;
+  line-height: variables.$line-height-solid;
+  padding: variables.$spacing-3;
   background: none;
   border: 0;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     display: none;
   }
 }
 
 .midd-nav__handle--sub {
-  border-left: 1px solid $navy-light;
+  border-left: 1px solid variables.$navy-light;
 }
 
 .midd-nav__bars {
@@ -41,6 +45,7 @@
 
 .midd-nav__times {
   display: none;
+
   .midd-nav__handle.is-toggled & {
     display: inline-block;
   }
@@ -54,8 +59,8 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background: $navy-dark;
-  padding-top: $spacing-4;
+  background: variables.$navy-dark;
+  padding-top: variables.$spacing-4;
   transition: 0.2s;
   opacity: 0;
   visibility: hidden;
@@ -65,7 +70,7 @@
     visibility: visible;
   }
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     opacity: 1;
     visibility: visible;
     display: flex;
@@ -83,16 +88,16 @@
     display: block;
   }
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     display: block;
     position: absolute;
     top: 100%;
     left: 0;
     width: 240px;
-    background: $navy-dark;
-    padding: $spacing-2;
-    z-index: $z-index-midd-nav-dropdown;
-    border-top: 1px solid $white;
+    background: variables.$navy-dark;
+    padding: variables.$spacing-2;
+    z-index: variables.$z-index-midd-nav-dropdown;
+    border-top: 1px solid variables.$white;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.2s;
@@ -106,9 +111,9 @@
 }
 
 .midd-nav__item {
-  border-top: 1px solid $navy-light;
+  border-top: 1px solid variables.$navy-light;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     border-top: 0;
     flex: 1 0 auto;
   }
@@ -119,20 +124,20 @@
   flex-wrap: wrap;
   position: relative;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     border-top: 0;
-    margin-right: $spacing-4;
+    margin-right: variables.$spacing-4;
   }
 }
 
 .midd-nav__link {
-  font-size: $typescale-3;
-  color: $white;
+  font-size: variables.$typescale-3;
+  color: variables.$white;
   display: block;
 
-  @include breakpoint(lg) {
-    font-weight: $font-weight-medium;
-    font-size: $typescale-2;
+  @include breakpoints.breakpoint(lg) {
+    font-weight: variables.$font-weight-medium;
+    font-size: variables.$typescale-2;
     transition: 0.2s;
     opacity: 0.8;
 
@@ -144,42 +149,43 @@
 
 .midd-nav__link--top {
   flex: 1 0 auto;
-  padding: $spacing-4 $spacing-3;
-  line-height: $line-height-solid;
+  padding: variables.$spacing-4 variables.$spacing-3;
+  line-height: variables.$line-height-solid;
 
-  @include breakpoint(lg) {
-    padding-left: $spacing-5;
-    padding-right: $spacing-5;
+  @include breakpoints.breakpoint(lg) {
+    padding-left: variables.$spacing-5;
+    padding-right: variables.$spacing-5;
   }
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     border-top: 4px solid transparent;
-    padding-top: calc(#{$spacing-4} - 4px);
-    padding-bottom: $spacing-4;
+    padding-top: calc(#{variables.$spacing-4} - 4px);
+    padding-bottom: variables.$spacing-4;
     padding-left: 0;
     padding-right: 0;
   }
 
   .midd-nav__item:hover &,
   .midd-nav__item:focus-within & {
-    border-top-color: $white;
+    border-top-color: variables.$white;
     text-decoration: none;
   }
 }
 
 .midd-nav__link--sub {
-  padding: $spacing-3;
+  padding: variables.$spacing-3;
   // inset sub menu items
-  padding-left: $spacing-6;
+  padding-left: variables.$spacing-6;
 
-  @include breakpoint(lg) {
-    padding-left: $spacing-4 / 2;
+  @include breakpoints.breakpoint(lg) {
+    padding-left: variables.$spacing-4 * 0.5;
   }
 }
 
 .midd-nav__chevron {
-  transition: $chevron-transition;
+  transition: variables.$chevron-transition;
+
   .midd-nav__handle.is-toggled & {
-    transform: $chevron-transform;
+    transform: variables.$chevron-transform;
   }
 }

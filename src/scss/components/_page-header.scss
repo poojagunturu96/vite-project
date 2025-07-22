@@ -1,22 +1,31 @@
+@use '../core/functions';
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+@use '../mixins/type';
+
+@use 'sass:math';
+
 .page-header {
 }
 
 .page-header--has-image {
-  padding-top: percentage(2 / 5);
+  padding-top: math.percentage(2 * 0.2);
   height: 0;
   position: relative;
   overflow: hidden;
   min-height: 300px;
-  margin-bottom: $spacing-7;
+  margin-bottom: variables.$spacing-7;
 
   img {
-    @include absolute-fill;
+    @include mixins.absolute-fill;
     object-fit: cover;
   }
 
   .page-header__title {
-    color: $white;
-    padding-right: $spacing-4; // make room for tooltip on image
+    color: variables.$white;
+    padding-right: variables.$spacing-4; // make room for tooltip on image
   }
 }
 
@@ -32,19 +41,35 @@
       display: block;
       position: absolute;
       right: 0;
-      background: linear-gradient(to bottom left, rgba($black, 0.9) 0%, transparent 50%);
+      background: linear-gradient(
+        to bottom left,
+        rgba(variables.$black, 0.9) 0%,
+        transparent 50%
+      );
 
-      @include breakpoint(sm) {
+      @include breakpoints.breakpoint(sm) {
         width: 50%;
-        background: linear-gradient(to bottom left, rgba($black, 0.9) 0%, transparent 40%);
+        background: linear-gradient(
+          to bottom left,
+          rgba(variables.$black, 0.9) 0%,
+          transparent 40%
+        );
       }
 
-      @include breakpoint(lg) {
-        background: linear-gradient(to bottom left, rgba($black, 0.9) 0%, transparent 30%);
+      @include breakpoints.breakpoint(lg) {
+        background: linear-gradient(
+          to bottom left,
+          rgba(variables.$black, 0.9) 0%,
+          transparent 30%
+        );
       }
 
-      @include breakpoint(xl) {
-        background: linear-gradient(to bottom left, rgba($black, 0.9) 0%, transparent 25%);
+      @include breakpoints.breakpoint(xl) {
+        background: linear-gradient(
+          to bottom left,
+          rgba(variables.$black, 0.9) 0%,
+          transparent 25%
+        );
       }
     }
   }
@@ -60,68 +85,68 @@
 
 .page-header__caption {
   position: absolute;
-  right: $spacing-3;
-  bottom: $spacing-7;
-  z-index: $z-index-page-header-caption;
+  right: variables.$spacing-3;
+  bottom: variables.$spacing-7;
+  z-index: variables.$z-index-page-header-caption;
 
-  @include breakpoint(md) {
-    bottom: $spacing-4;
-    right: $spacing-5;
+  @include breakpoints.breakpoint(md) {
+    bottom: variables.$spacing-4;
+    right: variables.$spacing-5;
   }
 }
 
 .page-header__list-toggle {
   position: absolute;
-  top:0;
+  top: 0;
   right: 0;
   display: flex;
   align-items: center;
-  column-gap: $spacing-3;
-  color: $white;
-  font-size: $typescale-2;
-  font-weight: $font-weight-semibold;
-  line-height: $line-height-solid;
+  column-gap: variables.$spacing-3;
+  color: variables.$white;
+  font-size: variables.$typescale-2;
+  font-weight: variables.$font-weight-semibold;
+  line-height: variables.$line-height-solid;
   text-transform: uppercase;
-  padding-top: $spacing-3;
-  padding-right: $spacing-3;
+  padding-top: variables.$spacing-3;
+  padding-right: variables.$spacing-3;
   z-index: 8;
 
-  @include breakpoint(lg) {
-    padding-right: $spacing-5;
+  @include breakpoints.breakpoint(lg) {
+    padding-right: variables.$spacing-5;
   }
 
   .page-header__list-ellipsis {
     & > span {
       display: block;
-      width: $spacing-1;
-      height: $spacing-1;
+      width: variables.$spacing-1;
+      height: variables.$spacing-1;
       border-radius: 50%;
-      background-color: $white;
-      margin: $spacing-1 0;
+      background-color: variables.$white;
+      margin: variables.$spacing-1 0;
     }
   }
 
   &:hover,
   &:focus {
-    color: $navy;
+    color: variables.$navy;
 
     .page-header__list-ellipsis {
       & > span {
-        background-color: $navy;
+        background-color: variables.$navy;
       }
     }
 
     ~ .page-header__list {
-      background-color: $white;
+      background-color: variables.$white;
       transition: background-color 0.2s;
       z-index: 7;
 
       .page-header__list-overlay {
         display: block;
-        padding-left: $spacing-7;
-        padding-right: $spacing-5;
-        padding-top: rem(56);
-        padding-bottom: $spacing-3;
+        padding-left: variables.$spacing-7;
+        padding-right: variables.$spacing-5;
+        padding-top: functions.rem(56);
+        padding-bottom: variables.$spacing-3;
       }
     }
   }
@@ -129,21 +154,21 @@
 
 .page-header__list {
   position: absolute;
-  top:0;
+  top: 0;
   right: 0;
   max-width: 200px;
-  box-shadow: 0px 0px $spacing-2 0px rgba($black, 0.25);
+  box-shadow: 0 0 variables.$spacing-2 0 rgba(variables.$black, 0.25);
 
   .page-header__list-overlay {
     display: none;
-
-    &, p {
-      font-size: $typescale-2;
-      font-weight: $font-weight-semibold;
-      line-height: $line-height-heading;
-    }
-
     counter-reset: ol;
+
+    &,
+    p {
+      font-size: variables.$typescale-2;
+      font-weight: variables.$font-weight-semibold;
+      line-height: variables.$line-height-heading;
+    }
 
     > li {
       counter-increment: ol;
@@ -152,16 +177,16 @@
       &:before {
         content: counter(ol) '.';
         position: absolute;
-        right: calc(100% + #{$spacing-2});
-        color: $wrmc-pink;
+        right: calc(100% + #{variables.$spacing-2});
+        color: variables.$wrmc-pink;
       }
 
       &:not(:last-child) {
-        margin-bottom: $spacing-2;
+        margin-bottom: variables.$spacing-2;
       }
 
       p:last-child {
-        color: $wrmc-pink;
+        color: variables.$wrmc-pink;
       }
     }
   }
@@ -169,7 +194,7 @@
 
 .page-header__main {
   .page-header--has-image & {
-    background-image: linear-gradient(to bottom, transparent, $black);
+    background-image: linear-gradient(to bottom, transparent, variables.$black);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -184,62 +209,65 @@
 }
 
 .page-header__content {
-  @include make-col-ready;
-  padding-top: $spacing-5;
-  padding-bottom: $spacing-4;
+  @include grid.make-col-ready;
 
-  @include breakpoint(md) {
-    padding-top: $spacing-6;
-    @include make-col(10);
-    @include make-col-offset(1);
+  & {
+    padding-top: variables.$spacing-5;
+    padding-bottom: variables.$spacing-4;
   }
 
-  @include breakpoint(lg) {
-    padding-top: $spacing-8;
-    padding-bottom: $spacing-9;
+  @include breakpoints.breakpoint(md) {
+    padding-top: variables.$spacing-6;
+    @include grid.make-col(10);
+    @include grid.make-col-offset(1);
+  }
+
+  @include breakpoints.breakpoint(lg) {
+    padding-top: variables.$spacing-8;
+    padding-bottom: variables.$spacing-9;
   }
 
   .page-header--has-image & {
-    padding-top: $spacing-9;
-    padding-bottom: $spacing-5;
+    padding-top: variables.$spacing-9;
+    padding-bottom: variables.$spacing-5;
   }
 
   .page-header--has-menu & {
-    padding-bottom: $spacing-3;
+    padding-bottom: variables.$spacing-3;
 
-    @include breakpoint(md) {
-      padding-bottom: $spacing-4;
+    @include breakpoints.breakpoint(md) {
+      padding-bottom: variables.$spacing-4;
     }
 
-    @include breakpoint(lg) {
-      padding-bottom: $spacing-5;
+    @include breakpoints.breakpoint(lg) {
+      padding-bottom: variables.$spacing-5;
     }
   }
 
   .page-header--has-image.page-header--has-menu & {
-    padding-bottom: $spacing-7;
+    padding-bottom: variables.$spacing-7;
   }
 }
 
 .page-header__title {
-  @include h1;
+  @include type.h1;
 }
 
 .page-header--app {
   .page-header__content {
-    padding-top: $spacing-4;
-    padding-bottom: $spacing-4;
-    @include breakpoint(lg) {
-      padding-top: $spacing-8;
-      padding-bottom: $spacing-8;
+    padding-top: variables.$spacing-4;
+    padding-bottom: variables.$spacing-4;
+    @include breakpoints.breakpoint(lg) {
+      padding-top: variables.$spacing-8;
+      padding-bottom: variables.$spacing-8;
     }
   }
 
   .page-header__title {
-    font-size: $typescale-7;
+    font-size: variables.$typescale-7;
 
-    @include breakpoint(md) {
-      font-size: $typescale-8;
+    @include breakpoints.breakpoint(md) {
+      font-size: variables.$typescale-8;
     }
   }
 }

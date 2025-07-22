@@ -1,9 +1,12 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 ////
 /// Sizing utilities like width and height
 ////
 
 .w-md-40 {
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     width: 40%;
   }
 }
@@ -12,8 +15,8 @@
   width: 100%;
 }
 
-@each $breakpoint, $variant in $responsive-variants {
-  @include breakpoint($breakpoint) {
+@each $breakpoint, $variant in variables.$responsive-variants {
+  @include breakpoints.breakpoint($breakpoint) {
     .w#{$variant}-50 {
       width: 50%;
     }

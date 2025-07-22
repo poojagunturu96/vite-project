@@ -1,3 +1,6 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 $nav-dropdown-bp: lg;
 
 .nav-dropdown {
@@ -6,7 +9,7 @@ $nav-dropdown-bp: lg;
   &:hover,
   &:focus-within {
     .nav-dropdown__menu {
-      @include breakpoint($nav-dropdown-bp) {
+      @include breakpoints.breakpoint($nav-dropdown-bp) {
         opacity: 1;
         visibility: visible;
       }
@@ -17,7 +20,7 @@ $nav-dropdown-bp: lg;
 .nav-dropdown__menu {
   display: none;
 
-  @include breakpoint($nav-dropdown-bp) {
+  @include breakpoints.breakpoint($nav-dropdown-bp) {
     display: block;
     position: absolute;
     top: 100%;
@@ -31,7 +34,7 @@ $nav-dropdown-bp: lg;
 
   &.is-toggled {
     display: block;
-    @include breakpoint($nav-dropdown-bp) {
+    @include breakpoints.breakpoint($nav-dropdown-bp) {
       opacity: 1;
       visibility: visible;
     }
@@ -39,15 +42,15 @@ $nav-dropdown-bp: lg;
 }
 
 .nav-dropdown__button {
-  @include breakpoint($nav-dropdown-bp) {
+  @include breakpoints.breakpoint($nav-dropdown-bp) {
     // display: none;
   }
 }
 
 .nav-dropdown__icon {
-  transition: $chevron-transition;
+  transition: variables.$chevron-transition;
 
   .nav-dropdown__button.is-toggled & {
-    transform: $chevron-transform;
+    transform: variables.$chevron-transform;
   }
 }

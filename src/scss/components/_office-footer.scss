@@ -1,41 +1,55 @@
-.office-footer {
-  background: $gray-lighter;
-  text-align: center;
-  border-top: 1px solid $border-color;
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
 
-  @include breakpoint(lg) {
-    padding-top: $spacing-5;
-    padding-bottom: $spacing-5;
+.office-footer {
+  background: variables.$gray-lighter;
+  text-align: center;
+  border-top: 1px solid variables.$border-color;
+
+  @include breakpoints.breakpoint(lg) {
+    padding-top: variables.$spacing-5;
+    padding-bottom: variables.$spacing-5;
   }
 }
 
 .office-footer__row {
-  @include make-row;
-  justify-content: center;
+  @include grid.make-row;
+
+  & {
+    justify-content: center;
+  }
 }
 
 .office-footer__col {
-  @include make-col-ready;
-  padding-bottom: $spacing-4;
-  padding-top: $spacing-4;
+  @include grid.make-col-ready;
 
-  @include breakpoint(md) {
-    padding-bottom: $spacing-5;
-    padding-top: $spacing-5;
+  & {
+    padding-bottom: variables.$spacing-4;
+    padding-top: variables.$spacing-4;
   }
 
-  @include breakpoint(lg) {
-    @include make-col(4);
-    padding-top: 0;
-    padding-bottom: 0;
+  @include breakpoints.breakpoint(md) {
+    padding-bottom: variables.$spacing-5;
+    padding-top: variables.$spacing-5;
+  }
+
+  @include breakpoints.breakpoint(lg) {
+    @include grid.make-col(4);
+
+    & {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
 
   &:not(:last-child) {
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid variables.$border-color;
 
-    @include breakpoint(lg) {
+    @include breakpoints.breakpoint(lg) {
       border-bottom: 0;
-      border-right: 1px solid $border-color;
+      border-right: 1px solid variables.$border-color;
     }
   }
 }
@@ -43,13 +57,13 @@
 .office-footer__col div {
   &:not(:first-child) {
     h3 {
-      margin-left: -$spacing-3;
-      margin-right: -$spacing-3;
-      margin-top: $spacing-4;
-      padding-top: $spacing-4;
-      border-top: 1px solid $border-color;
+      margin-left: -(variables.$spacing-3);
+      margin-right: -(variables.$spacing-3);
+      margin-top: variables.$spacing-4;
+      padding-top: variables.$spacing-4;
+      border-top: 1px solid variables.$border-color;
 
-      @include breakpoint(lg) {
+      @include breakpoints.breakpoint(lg) {
         margin-left: 0;
         margin-right: 0;
       }
@@ -58,5 +72,5 @@
 }
 
 .office-footer__col h4 {
-  margin-top: rem(14);
+  margin-top: functions.rem(14);
 }

@@ -1,91 +1,114 @@
-.school-footer {
-  background-color: $color-primary;
-  padding-top: $spacing-5;
-  padding-bottom: $spacing-5;
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+@use '../mixins/type';
 
-  @include breakpoint(md) {
-    padding-top: $spacing-7;
-    padding-bottom: $spacing-7;
+.school-footer {
+  background-color: variables.$color-primary;
+  padding-top: variables.$spacing-5;
+  padding-bottom: variables.$spacing-5;
+
+  @include breakpoints.breakpoint(md) {
+    padding-top: variables.$spacing-7;
+    padding-bottom: variables.$spacing-7;
   }
 }
 
 .school-footer__main {
-  @include make-col-ready;
+  @include grid.make-col-ready;
 
-  @include breakpoint(lg) {
-    @include make-col(4);
+  @include breakpoints.breakpoint(lg) {
+    @include grid.make-col(4);
   }
 }
 
 .school-footer__primary {
-  @include make-col-ready;
+  @include grid.make-col-ready;
 
-  @include breakpoint(md) {
-    @include make-col(5);
+  @include breakpoints.breakpoint(md) {
+    @include grid.make-col(5);
   }
 
-  @include breakpoint(lg) {
-    @include make-col(12);
+  @include breakpoints.breakpoint(lg) {
+    @include grid.make-col(12);
   }
 
   .school-footer--lite & {
-    @include breakpoint(lg) {
-      @include make-col(5);
+    @include breakpoints.breakpoint(lg) {
+      @include grid.make-col(5);
     }
   }
 }
 
 .school-footer__secondary {
-  @include make-col-ready;
-  padding-top: $spacing-5;
-  padding-bottom: $spacing-5;
+  @include grid.make-col-ready;
 
-  @include breakpoint(md) {
-    @include make-col(4);
-    margin-left: auto;
+  & {
+    padding-top: variables.$spacing-5;
+    padding-bottom: variables.$spacing-5;
   }
 
-  @include breakpoint(lg) {
-    @include make-col(12);
-    padding-bottom: 0;
+  @include breakpoints.breakpoint(md) {
+    @include grid.make-col(4);
+
+    & {
+      margin-left: auto;
+    }
+  }
+
+  @include breakpoints.breakpoint(lg) {
+    @include grid.make-col(12);
+
+    & {
+      padding-bottom: 0;
+    }
   }
 
   .school-footer--lite & {
     padding-bottom: 0;
-    @include breakpoint(md) {
-      border-left: 1px solid $navy-light;
-      padding-top: $spacing-3;
-      padding-bottom: $spacing-3;
+    @include breakpoints.breakpoint(md) {
+      border-left: 1px solid variables.$navy-light;
+      padding-top: variables.$spacing-3;
+      padding-bottom: variables.$spacing-3;
     }
 
-    @include breakpoint(lg) {
-      @include make-col(4);
+    @include breakpoints.breakpoint(lg) {
+      @include grid.make-col(4);
     }
   }
 }
 
 .school-footer__text {
-  @include h0;
-  color: $white;
-  margin-bottom: $spacing-4;
+  @include type.h0;
 
-  @include breakpoint(md) {
-    margin-bottom: $spacing-5;
+  & {
+    color: variables.$white;
+    margin-bottom: variables.$spacing-4;
+  }
+
+  @include breakpoints.breakpoint(md) {
+    margin-bottom: variables.$spacing-5;
   }
 }
 
 .school-footer__nav {
-  @include make-col-ready;
-  border-top: 1px solid $navy-light;
+  @include grid.make-col-ready;
 
-  @include breakpoint(md) {
-    margin-top: $spacing-5;
+  & {
+    border-top: 1px solid variables.$navy-light;
   }
 
-  @include breakpoint(lg) {
-    @include make-col(8);
-    border-left: 1px solid $navy-light;
-    border-top: 0;
-    margin-top: 0;
+  @include breakpoints.breakpoint(md) {
+    margin-top: variables.$spacing-5;
+  }
+
+  @include breakpoints.breakpoint(lg) {
+    @include grid.make-col(8);
+
+    & {
+      border-left: 1px solid variables.$navy-light;
+      border-top: 0;
+      margin-top: 0;
+    }
   }
 }

@@ -1,3 +1,9 @@
+@use '../components/college-homepage-grid-header';
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
+
 ////
 /// Mixed text/font style utilities like font sizes, text align, font families, font weights, etc
 ////
@@ -6,7 +12,7 @@
 /// font sizes
 ///
 
-@each $name, $size in $typescale {
+@each $name, $size in variables.$typescale {
   .f#{$name} {
     font-size: $size;
   }
@@ -16,8 +22,8 @@
 /// text alignment
 ///
 
-@each $breakpoint, $variant in $responsive-variants {
-  @include breakpoint($breakpoint) {
+@each $breakpoint, $variant in variables.$responsive-variants {
+  @include breakpoints.breakpoint($breakpoint) {
     .text#{$variant}-left {
       text-align: left !important;
     }
@@ -36,15 +42,20 @@
 /// text colors
 ///
 
-$text-colors: (
-  'white': $white,
-  'gray': $gray
-);
+.text-white {
+  color: variables.$white;
+}
 
-@each $name, $hex in $text-colors {
-  .text-#{$name} {
-    color: $hex;
-  }
+.text-gray {
+  color: variables.$gray;
+}
+
+.text-caps {
+  @include type.small-caps;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
 }
 
 ///
@@ -52,11 +63,11 @@ $text-colors: (
 ///
 
 .font-sans-serif {
-  font-family: $font-family-sans-serif;
+  font-family: variables.$font-family-sans-serif;
 }
 
 .font-serif {
-  font-family: $font-family-serif;
+  font-family: variables.$font-family-serif;
 }
 
 ///
@@ -70,7 +81,7 @@ $text-colors: (
 // TODO: do we need to add these font sizes to typescale?
 
 .h0 {
-  @include h0;
+  @include type.h0;
 }
 
 ///
@@ -78,11 +89,11 @@ $text-colors: (
 ///
 
 .link-underline {
-  @include link-border;
+  @include type.link-border;
 }
 
 .link-external {
-  @include link-external;
+  @include type.link-external;
 }
 
 ///
@@ -90,16 +101,16 @@ $text-colors: (
 ///
 
 .pronouns {
-  font-family: $font-family-serif;
-  font-size: $typescale-7;
-  line-height: $line-height-heading;
+  font-family: variables.$font-family-serif;
+  font-size: variables.$typescale-7;
+  line-height: variables.$line-height-heading;
 
-  @include breakpoint(md) {
-    font-size: rem(32);
+  @include breakpoints.breakpoint(md) {
+    font-size: functions.rem(32);
   }
 
-  @include breakpoint(lg) {
-    font-size: $typescale-8;
+  @include breakpoints.breakpoint(lg) {
+    font-size: variables.$typescale-8;
   }
 }
 
@@ -108,41 +119,47 @@ $text-colors: (
 ///
 
 .lead {
-  font-size: $lead-font-size;
-  line-height: $lead-line-height;
-  margin-bottom: $lead-margin-bottom;
+  font-size: variables.$lead-font-size;
+  line-height: variables.$lead-line-height;
+  margin-bottom: variables.$lead-margin-bottom;
 
   a {
-    @include link-border;
+    @include type.link-border;
+  }
+}
+
+.lead--admissions-lp {
+  font-size: functions.rem(32);
+  line-height: variables.$line-height-heading;
+  color: variables.$white;
+
+  @include breakpoints.breakpoint(lg) {
+    font-size: variables.$typescale-9;
   }
 }
 
 .davis-lead {
-  font-size: $typescale-6;
-  font-weight: $font-weight-light;
-  background-color: $white;
-  border-top: $spacing-2 solid $black;
-  padding: $spacing-2;
-  margin-left: $spacing-3;
-  margin-right: $spacing-3;
+  font-size: variables.$typescale-6;
+  font-weight: variables.$font-weight-light;
+  background-color: variables.$white;
+  border-top: variables.$spacing-2 solid variables.$black;
+  padding: variables.$spacing-2;
+  margin-left: variables.$spacing-3;
+  margin-right: variables.$spacing-3;
 
-  @include breakpoint(sm) {
-    font-size: rem(32);
+  @include breakpoints.breakpoint(sm) {
+    font-size: functions.rem(32);
   }
 
-  @include breakpoint(md) {
-    padding: $spacing-2 $spacing-3;
+  @include breakpoints.breakpoint(md) {
+    padding: variables.$spacing-2 variables.$spacing-3;
   }
 
-  @include breakpoint(lg) {
-    padding: $spacing-3 $spacing-5;
-    margin-left: $spacing-5;
-    margin-right: $spacing-5;
+  @include breakpoints.breakpoint(lg) {
+    padding: variables.$spacing-3 variables.$spacing-5;
+    margin-left: variables.$spacing-5;
+    margin-right: variables.$spacing-5;
   }
-}
-
-.text-caps {
-  @include small-caps;
 }
 
 ///
@@ -150,19 +167,19 @@ $text-colors: (
 ///
 
 .lh-solid {
-  line-height: $line-height-solid;
+  line-height: variables.$line-height-solid;
 }
 
 .lh-heading {
-  line-height: $line-height-heading;
+  line-height: variables.$line-height-heading;
 }
 
 .lh-body {
-  line-height: $line-height-body;
+  line-height: variables.$line-height-body;
 }
 
 .lh6 {
-  line-height: $typescale-6;
+  line-height: variables.$typescale-6;
 }
 
 ///
@@ -170,21 +187,21 @@ $text-colors: (
 ///
 
 .font-normal {
-  font-weight: $font-weight-normal;
+  font-weight: variables.$font-weight-normal;
 }
 
 .font-medium {
-  font-weight: $font-weight-medium;
+  font-weight: variables.$font-weight-medium;
 }
 
 .font-semibold {
-  font-weight: $font-weight-semibold;
+  font-weight: variables.$font-weight-semibold;
 }
 
 .font-bold,
 // text-bold is deprecated
 .text-bold {
-  font-weight: $font-weight-bold;
+  font-weight: variables.$font-weight-bold;
 }
 
 .whitespace-no-wrap {

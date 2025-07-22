@@ -1,3 +1,6 @@
+@use '../core/variables';
+@use '../mixins/type';
+
 $spotlight-item-breakpoint: 'xs';
 
 .card-carousel-item {
@@ -12,7 +15,7 @@ $spotlight-item-breakpoint: 'xs';
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: $z-index-card-carousel-item-image;
+  z-index: variables.$z-index-card-carousel-item-image;
 
   img {
     object-fit: cover;
@@ -28,7 +31,7 @@ $spotlight-item-breakpoint: 'xs';
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: $z-index-card-carousel-item-content;
+  z-index: variables.$z-index-card-carousel-item-content;
 }
 
 .card-carousel-item__side {
@@ -45,7 +48,7 @@ $spotlight-item-breakpoint: 'xs';
 }
 
 .card-carousel-item__side--back {
-  background-color: $blue-lighter;
+  background-color: variables.$blue-lighter;
 
   .card-carousel-item.has-toggler & {
     display: none;
@@ -60,17 +63,17 @@ $spotlight-item-breakpoint: 'xs';
   position: absolute;
   right: 0;
   top: 0;
-  padding: $spacing-2;
+  padding: variables.$spacing-2;
 }
 
 .card-carousel-item__header {
-  padding: $spacing-3;
-  padding-right: $spacing-6;
-  padding-bottom: $spacing-4;
+  padding: variables.$spacing-3;
+  padding-right: variables.$spacing-6;
+  padding-bottom: variables.$spacing-4;
   background-image: linear-gradient(
     to bottom,
-    rgba($black, 0.75) 20%,
-    rgba($white, 0)
+    rgba(variables.$black, 0.75) 20%,
+    rgba(variables.$white, 0)
   );
 
   .card-carousel-item__side--back & {
@@ -80,14 +83,14 @@ $spotlight-item-breakpoint: 'xs';
 }
 
 .card-carousel-item__body {
-  padding: $spacing-3;
+  padding: variables.$spacing-3;
   flex: 1;
   overflow-y: auto;
 }
 
 .card-carousel-item__footer {
   flex: 0 1 auto;
-  padding: $spacing-3;
+  padding: variables.$spacing-3;
   text-align: center;
   position: relative;
   margin-top: auto;
@@ -98,48 +101,48 @@ $spotlight-item-breakpoint: 'xs';
       display: block;
       background-image: linear-gradient(
         to bottom,
-        rgba($white, 0),
-        $blue-lighter
+        rgba(variables.$white, 0),
+        variables.$blue-lighter
       );
       position: absolute;
       bottom: 100%;
       left: 0;
       width: 100%;
-      height: $spacing-5;
+      height: variables.$spacing-5;
     }
   }
 }
 
 .card-carousel-item__label {
   white-space: pre-wrap;
-  font-size: $typescale-2;
-  line-height: $line-height-body;
+  font-size: variables.$typescale-2;
+  line-height: variables.$line-height-body;
   height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: $spacing-2;
+  padding: variables.$spacing-2;
 }
 
 .card-carousel-item__title {
-  @include h4;
+  @include type.h4;
 
   .card-carousel-item__side--front & {
-    color: $white;
+    color: variables.$white;
   }
 }
 
 .card-carousel-item__text {
-  font-size: $typescale-3;
+  font-size: variables.$typescale-3;
 
   .card-carousel-item__side--front & {
-    color: $white;
+    color: variables.$white;
   }
 }
 
 .card-carousel-item__header--band {
-  padding: $spacing-2 $spacing-3;
-  margin-top: $spacing-9;
+  padding: variables.$spacing-2 variables.$spacing-3;
+  margin-top: variables.$spacing-9;
 }
 
 $card-carousel-item-colors: (
@@ -154,7 +157,7 @@ $card-carousel-item-colors: (
 );
 
 @each $key, $hex in $card-carousel-item-colors {
-  .card-carousel-item__header--#{$key} {
+  .card-carousel-item__header--#{'' + $key} {
     background: rgba($hex, 0.9);
   }
 }

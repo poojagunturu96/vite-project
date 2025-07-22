@@ -1,5 +1,11 @@
+@use 'sass:math';
+
+@use '../core/variables';
+@use '../mixins/grid';
+@use '../mixins/grid-framework';
+
 .container {
-  @include make-container;
+  @include grid.make-container;
 
   @media print {
     padding-left: 0;
@@ -8,7 +14,7 @@
 }
 
 .row {
-  @include make-row;
+  @include grid.make-row;
 }
 
 .row--no-gutters {
@@ -23,14 +29,14 @@
 }
 
 .row--sm-gutters {
-  margin-right: ($grid-gutter-width / -2) !important;
-  margin-left: ($grid-gutter-width / -2) !important;
+  margin-right: math.div(variables.$grid-gutter-width, -2) !important;
+  margin-left: math.div(variables.$grid-gutter-width, -2) !important;
 
   > .col,
   > [class*='col-'] {
-    padding-left: $grid-gutter-width / 2;
-    padding-right: $grid-gutter-width / 2;
+    padding-left: variables.$grid-gutter-width * 0.5;
+    padding-right: variables.$grid-gutter-width * 0.5;
   }
 }
 
-@include make-grid-columns;
+@include grid-framework.make-grid-columns;

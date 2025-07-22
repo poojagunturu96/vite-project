@@ -1,13 +1,19 @@
-.banner {
-  background-color: $navy-dark;
-  padding: $spacing-3;
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
 
-  @include breakpoint(sm) {
-    padding: $spacing-4 $spacing-3;
+@use 'sass:math';
+
+.banner {
+  background-color: variables.$navy-dark;
+  padding: variables.$spacing-3;
+
+  @include breakpoints.breakpoint(sm) {
+    padding: variables.$spacing-4 variables.$spacing-3;
   }
 
-  @include breakpoint(lg) {
-    padding: $spacing-5;
+  @include breakpoints.breakpoint(lg) {
+    padding: variables.$spacing-5;
   }
 
   figure {
@@ -28,15 +34,15 @@
   .banner__bottom-line {
     position: absolute;
     display: block;
-    width: percentage(12 / 12);
+    width: math.percentage(math.div(12, 12));
 
-    @include breakpoint(sm) {
-      width: percentage(9 / 12);
+    @include breakpoints.breakpoint(sm) {
+      width: math.percentage(math.div(9, 12));
     }
   }
 
   .banner__top-line {
-    border-top: $spacing-1 solid $blue;
+    border-top: variables.$spacing-1 solid variables.$blue;
   }
 
   .banner__bottom-line {
@@ -53,45 +59,45 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-right: $spacing-3;
+    margin-right: variables.$spacing-3;
 
-    @include breakpoint(sm) {
-      margin-right: $spacing-4;
+    @include breakpoints.breakpoint(sm) {
+      margin-right: variables.$spacing-4;
     }
 
-    @include breakpoint(xl) {
-      margin-right: $spacing-5;
+    @include breakpoints.breakpoint(xl) {
+      margin-right: variables.$spacing-5;
     }
   }
 
   .banner__campaign-logo {
     display: flex;
     flex-direction: column;
-    margin-top: -$spacing-1;
+    margin-top: -(variables.$spacing-1);
 
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       margin-top: 0;
     }
 
     svg {
-      fill: $white;
+      fill: variables.$white;
 
       &:first-child {
-        margin-left: -$spacing-5;
-        margin-bottom: $spacing-2;
+        margin-left: -(variables.$spacing-5);
+        margin-bottom: variables.$spacing-2;
         width: 200px;
 
-        @include breakpoint(md) {
+        @include breakpoints.breakpoint(md) {
           width: initial;
-          margin-left: rem(-144);
-          margin-bottom: $spacing-3;
+          margin-left: functions.rem(-144);
+          margin-bottom: variables.$spacing-3;
         }
       }
 
       &:nth-child(2) {
         width: 200px;
 
-        @include breakpoint(md) {
+        @include breakpoints.breakpoint(md) {
           width: initial;
         }
       }
@@ -101,21 +107,21 @@
   .banner__link {
     position: absolute;
     bottom: 0;
-    right: $spacing-3;
-    margin-bottom: $spacing-3;
-    color: $white;
-    font-size: $typescale-1;
-    font-weight: $font-weight-semibold;
-    letter-spacing: $letter-spacing;
+    right: variables.$spacing-3;
+    margin-bottom: variables.$spacing-3;
+    color: variables.$white;
+    font-size: variables.$typescale-1;
+    font-weight: variables.$font-weight-semibold;
+    letter-spacing: variables.$letter-spacing;
     text-transform: uppercase;
 
-    @include breakpoint(sm) {
-      margin-bottom: $spacing-4;
-      right: $spacing-4;
+    @include breakpoints.breakpoint(sm) {
+      margin-bottom: variables.$spacing-4;
+      right: variables.$spacing-4;
     }
 
-    @include breakpoint(xl) {
-      right: $spacing-5;
+    @include breakpoints.breakpoint(xl) {
+      right: variables.$spacing-5;
     }
   }
 }

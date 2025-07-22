@@ -1,5 +1,11 @@
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/homepage_grid';
+
+@use 'sass:map';
 $homepage-animation-duration: 8;
-$homepage-animation-sub-duration: $homepage-animation-duration / 4;
+$homepage-animation-sub-duration: $homepage-animation-duration * 0.25;
 
 $text-colors: (
   1: #75a3cd,
@@ -29,7 +35,7 @@ $accessible-text-colors: (
 @keyframes homepageSlideInOut {
   0% {
     opacity: 0;
-    transform: translateX($spacing-8);
+    transform: translateX(variables.$spacing-8);
   }
 
   50% {
@@ -45,7 +51,7 @@ $accessible-text-colors: (
 @keyframes homepageSlideIn {
   0% {
     opacity: 0;
-    transform: translateX($spacing-8);
+    transform: translateX(variables.$spacing-8);
   }
 
   75%,
@@ -75,45 +81,45 @@ $accessible-text-colors: (
   }
 }
 
-@include make-color-animation($text-colors);
+@include homepage_grid.make-color-animation($text-colors);
 
 .homepage-header {
-  margin-top: $spacing-5;
-  margin-bottom: $spacing-4;
-  color: $navy;
+  margin-top: variables.$spacing-5;
+  margin-bottom: variables.$spacing-4;
+  color: variables.$navy;
 
-  @include breakpoint(lg) {
-    margin-top: $spacing-7;
-    margin-bottom: $spacing-2;
+  @include breakpoints.breakpoint(lg) {
+    margin-top: variables.$spacing-7;
+    margin-bottom: variables.$spacing-2;
   }
 }
 
 .homepage-title {
-  font-family: $font-family-sans-serif;
-  font-weight: $font-weight-semibold;
-  font-size: $typescale-4;
+  font-family: variables.$font-family-sans-serif;
+  font-weight: variables.$font-weight-semibold;
+  font-size: variables.$typescale-4;
   text-transform: uppercase;
-  letter-spacing: rem(2);
+  letter-spacing: functions.rem(2);
   overflow: hidden;
   width: 100%;
 
-  @include breakpoint(md) {
-    font-weight: $font-weight-normal;
-    font-size: rem(32);
+  @include breakpoints.breakpoint(md) {
+    font-weight: variables.$font-weight-normal;
+    font-size: functions.rem(32);
   }
 
-  @include breakpoint(lg) {
-    font-weight: $font-weight-light;
-    font-size: $typescale-10;
+  @include breakpoints.breakpoint(lg) {
+    font-weight: variables.$font-weight-light;
+    font-size: variables.$typescale-10;
   }
 
   .homepage-title--transition-state {
     display: block;
     opacity: 0;
     animation: #{$homepage-animation-sub-duration +
-      ($homepage-animation-sub-duration / 2)}s ease-in-out;
+      ($homepage-animation-sub-duration * 0.5)}s ease-in-out;
     animation-play-state: inherit;
-    font-size: $typescale-7;
+    font-size: variables.$typescale-7;
     width: calc(11 / 12 * 100%);
 
     .run-animation & {
@@ -123,7 +129,7 @@ $accessible-text-colors: (
     &:nth-child(2) {
       width: min-content;
 
-      @include breakpoint(sm) {
+      @include breakpoints.breakpoint(sm) {
         width: initial;
       }
     }
@@ -133,7 +139,7 @@ $accessible-text-colors: (
       animation-play-state: inherit;
       width: calc(11 / 12 * 100%);
 
-      @include breakpoint(sm) {
+      @include breakpoints.breakpoint(sm) {
         width: 100%;
       }
 
@@ -146,18 +152,19 @@ $accessible-text-colors: (
       position: absolute;
     }
 
-    @include breakpoint(md) {
-      font-size: $typescale-8;
+    @include breakpoints.breakpoint(md) {
+      font-size: variables.$typescale-8;
+
       strong {
-        font-weight: $font-weight-bold;
+        font-weight: variables.$font-weight-bold;
       }
     }
 
-    @include breakpoint(lg) {
-      font-size: $typescale-10;
+    @include breakpoints.breakpoint(lg) {
+      font-size: variables.$typescale-10;
 
       strong {
-        font-weight: $font-weight-semibold;
+        font-weight: variables.$font-weight-semibold;
       }
     }
 
@@ -166,7 +173,7 @@ $accessible-text-colors: (
         animation-delay: #{($homepage-animation-sub-duration) * ($i - 1)}s;
 
         strong {
-          color: map-get($text-colors, $i);
+          color: map.get($text-colors, $i);
         }
       }
     }
@@ -175,65 +182,65 @@ $accessible-text-colors: (
 
 .homepage-header__list {
   display: flex;
-  margin-top: $spacing-3;
+  margin-top: variables.$spacing-3;
   flex-direction: column;
   animation-play-state: inherit;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     flex-direction: row;
-    margin-top: $spacing-3;
-    margin-left: -$spacing-3;
-    margin-right: -$spacing-3;
+    margin-top: variables.$spacing-3;
+    margin-left: -(variables.$spacing-3);
+    margin-right: -(variables.$spacing-3);
   }
 
-  @include breakpoint(lg) {
-    margin-top: $spacing-2;
-    margin-left: -$spacing-5;
-    margin-right: -$spacing-5;
+  @include breakpoints.breakpoint(lg) {
+    margin-top: variables.$spacing-2;
+    margin-left: -(variables.$spacing-5);
+    margin-right: -(variables.$spacing-5);
   }
 
   li {
-    font-size: $typescale-4;
+    font-size: variables.$typescale-4;
     padding: 0;
-    color: $black;
+    color: variables.$black;
     padding-bottom: 0;
 
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       border-left: 0;
-      padding: $spacing-3 0;
+      padding: variables.$spacing-3 0;
       padding-bottom: 0;
       width: calc(100% / 3);
     }
 
-    @include breakpoint(lg) {
-      padding: $spacing-4 0;
+    @include breakpoints.breakpoint(lg) {
+      padding: variables.$spacing-4 0;
     }
 
     p {
-      padding-bottom: $spacing-3;
+      padding-bottom: variables.$spacing-3;
       animation: #{$homepage-animation-sub-duration +
-        ($homepage-animation-sub-duration / 2)}s ease-in-out;
-      font-size: $typescale-2;
+        ($homepage-animation-sub-duration * 0.5)}s ease-in-out;
+      font-size: variables.$typescale-2;
 
-      @include breakpoint(md) {
+      @include breakpoints.breakpoint(md) {
         border-bottom: 0;
-        margin-left: $spacing-3;
-        padding-right: $spacing-3;
+        margin-left: variables.$spacing-3;
+        padding-right: variables.$spacing-3;
         padding-bottom: 0;
       }
 
-      @include breakpoint(lg) {
-        font-size: $typescale-3;
-        margin-left: $spacing-5;
-        padding-right: $spacing-5;
+      @include breakpoints.breakpoint(lg) {
+        font-size: variables.$typescale-3;
+        margin-left: variables.$spacing-5;
+        padding-right: variables.$spacing-5;
       }
     }
 
     strong {
-      color: $navy;
-      font-weight: $font-weight-bold;
+      color: variables.$navy;
+      font-weight: variables.$font-weight-bold;
       animation: #{$homepage-animation-sub-duration +
-        ($homepage-animation-sub-duration / 2)}s ease-in-out;
+        ($homepage-animation-sub-duration * 0.5)}s ease-in-out;
       animation-play-state: inherit;
     }
 
@@ -244,18 +251,18 @@ $accessible-text-colors: (
     }
 
     &:not(:last-child) {
-      margin-bottom: $spacing-3;
+      margin-bottom: variables.$spacing-3;
 
       p {
-        border-bottom: $gray-light 1px solid;
+        border-bottom: variables.$gray-light 1px solid;
       }
 
-      @include breakpoint(md) {
+      @include breakpoints.breakpoint(md) {
         margin-bottom: 0;
 
         p {
           border-bottom: 0;
-          border-right: $gray-light 1px solid;
+          border-right: variables.$gray-light 1px solid;
         }
       }
     }
@@ -271,8 +278,9 @@ $accessible-text-colors: (
 
       &:nth-child(#{$i}) {
         @media (prefers-reduced-motion: reduce) {
-          strong, p {
-            color: map-get($accessible-text-colors, $i);
+          strong,
+          p {
+            color: map.get($accessible-text-colors, $i);
           }
         }
       }
@@ -289,37 +297,37 @@ $accessible-text-colors: (
   button {
     position: absolute;
     right: 0;
-    margin-bottom: rem(6);
+    margin-bottom: functions.rem(6);
 
-    @include breakpoint(md) {
-      margin-bottom: rem(10);
+    @include breakpoints.breakpoint(md) {
+      margin-bottom: functions.rem(10);
     }
 
-    @include breakpoint(lg) {
-      margin-bottom: $spacing-3;
+    @include breakpoints.breakpoint(lg) {
+      margin-bottom: variables.$spacing-3;
     }
 
     .homepage-button {
-      width: $spacing-4;
-      height: $spacing-4;
-      border-radius: $spacing-4;
-      background-color: $white;
-      color: $navy;
+      width: variables.$spacing-4;
+      height: variables.$spacing-4;
+      border-radius: variables.$spacing-4;
+      background-color: variables.$white;
+      color: variables.$navy;
       transition:
         color 0.2s,
         background-color 0.2s;
 
-      @include breakpoint(lg) {
-        width: $spacing-7;
-        height: $spacing-7;
+      @include breakpoints.breakpoint(lg) {
+        width: variables.$spacing-7;
+        height: variables.$spacing-7;
       }
     }
 
     &:hover,
     &:focus {
       .homepage-button {
-        background-color: $navy;
-        color: $white;
+        background-color: variables.$navy;
+        color: variables.$white;
       }
     }
   }
@@ -327,7 +335,7 @@ $accessible-text-colors: (
   .homepage-title--pause-button,
   .homepage-title--play-button,
   .homepage-title--replay-button {
-    z-index: $z-index-homepage-header-button;
+    z-index: variables.$z-index-homepage-header-button;
   }
 
   .homepage-title--pause-button {

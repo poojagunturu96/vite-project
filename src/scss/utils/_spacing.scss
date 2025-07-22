@@ -1,12 +1,15 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 ////
 /// Margin and padding spacing utilities.
 /// Based on https://github.com/twbs/bootstrap/blob/v4.0.0-beta/scss/utilities/_spacing.scss
 ////
 
-@each $breakpoint, $variant in $responsive-variants {
-  @include breakpoint($breakpoint) {
+@each $breakpoint, $variant in variables.$responsive-variants {
+  @include breakpoints.breakpoint($breakpoint) {
     @each $prop, $abbrev in (margin: m, padding: p) {
-      @each $size, $length in $spacing {
+      @each $size, $length in variables.$spacing {
         .#{$abbrev}#{$variant}-#{$size} {
           #{$prop}: $length !important;
         }

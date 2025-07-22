@@ -1,3 +1,7 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+
 ///
 //// chart group
 ///
@@ -9,35 +13,38 @@
 }
 
 .chart-group__list {
-  @include make-row;
+  @include grid.make-row;
 }
 
 .chart-group__item {
-  @include make-col-ready;
-  margin-bottom: $spacing-5;
+  @include grid.make-col-ready;
+
+  & {
+    margin-bottom: variables.$spacing-5;
+  }
 
   // TODO: clever class names we should change to pass stylelint class pattern
   // stylelint-disable-next-line
   .chart-group__list--2 & {
-    @include breakpoint(md) {
-      @include make-col(6);
+    @include breakpoints.breakpoint(md) {
+      @include grid.make-col(6);
     }
   }
 
   // stylelint-disable-next-line
   .chart-group__list--3\+ & {
-    @include breakpoint(md) {
-      @include make-col(4);
+    @include breakpoints.breakpoint(md) {
+      @include grid.make-col(4);
     }
   }
 }
 
 .chart-group__item--stats {
-  @include breakpoint(sm) {
-    @include make-col(6);
+  @include breakpoints.breakpoint(sm) {
+    @include grid.make-col(6);
   }
-  @include breakpoint(md) {
-    @include make-col(4);
+  @include breakpoints.breakpoint(md) {
+    @include grid.make-col(4);
   }
 }
 
@@ -60,10 +67,10 @@
 
 .chart--percentage-bar {
   figcaption {
-    font-size: $typescale-2;
-    font-weight: $font-weight-medium;
+    font-size: variables.$typescale-2;
+    font-weight: variables.$font-weight-medium;
     text-align: center;
-    padding: $spacing-4;
+    padding: variables.$spacing-4;
   }
 }
 ///
@@ -79,7 +86,7 @@
 
 .chart-legend--inline {
   .chart-legend__list {
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       display: flex;
       flex-wrap: wrap;
     }
@@ -87,7 +94,7 @@
 
   .chart-legend__item {
     flex: 0 0 auto;
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       &:not(:last-child) {
         margin-right: 1rem;
       }
@@ -104,17 +111,33 @@
 .chart-legend__item {
   display: flex;
   align-items: center;
-  margin-bottom: $spacing-1;
+  margin-bottom: variables.$spacing-1;
 
-  &, p {
-    font-size: $typescale-2;
+  &,
+  p {
+    font-size: variables.$typescale-2;
   }
 }
 
 .chart-legend__icon {
   display: inline-block;
-  background: $gray-light;
+  background: variables.$gray-light;
   width: 1rem;
   height: 0.5rem;
-  margin-right: $spacing-2;
+  margin-right: variables.$spacing-2;
+}
+
+.chart--light {
+  > * {
+    color: variables.$white;
+  }
+
+  h2 {
+    font-family: variables.$font-family-sans-serif;
+    font-weight: variables.$font-weight-semibold;
+  }
+
+  .stats__label {
+    border-bottom-color: variables.$white;
+  }
 }

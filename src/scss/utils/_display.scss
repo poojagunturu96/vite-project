@@ -1,9 +1,12 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 ////
 /// Display property utilities
 ////
 
-@each $breakpoint, $variant in $responsive-variants {
-  @include breakpoint($breakpoint) {
+@each $breakpoint, $variant in variables.$responsive-variants {
+  @include breakpoints.breakpoint($breakpoint) {
     .d#{$variant}-none {
       display: none;
     }

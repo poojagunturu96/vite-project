@@ -1,9 +1,12 @@
+@use 'breakpoints';
+
+@use 'sass:list';
 @mixin make-bar-styles($colors, $heights, $margins, $breakpoint) {
   @each $color-index, $color in $colors {
     @each $height-index, $height in $heights {
       @each $margin-index, $margin in $margins {
-        @include breakpoint($breakpoint) {
-          .bar-styles-#{$breakpoint}-#{($color-index * (length($heights) * length($margins)))+($height-index * length($margins))
+        @include breakpoints.breakpoint($breakpoint) {
+          .bar-styles-#{$breakpoint}-#{($color-index * (list.length($heights) * list.length($margins)))+($height-index * list.length($margins))
             + $margin-index} {
             margin-top: #{$margin}px;
             height: #{$height}px;
@@ -17,7 +20,7 @@
 
 @mixin make-bar-color-styles($colors) {
   @each $color-index, $color in $colors {
-    @include breakpoint(sm) {
+    @include breakpoints.breakpoint(sm) {
       .bar-color-style-#{$color-index} {
         background-color: $color;
       }
@@ -27,7 +30,7 @@
 
 @mixin make-bar-height-styles($heights, $breakpoint) {
   @each $height-index, $height in $heights {
-    @include breakpoint($breakpoint) {
+    @include breakpoints.breakpoint($breakpoint) {
       .bar-height-style-#{$breakpoint}-#{$height-index} {
         height: #{$height}px;
       }
@@ -37,7 +40,7 @@
 
 @mixin make-bar-margin-styles($margins, $breakpoint) {
   @each $margin-index, $margin in $margins {
-    @include breakpoint($breakpoint) {
+    @include breakpoints.breakpoint($breakpoint) {
       .bar-margin-style-#{$breakpoint}-#{$margin-index} {
         margin-top: #{$margin}px;
       }

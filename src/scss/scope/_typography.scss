@@ -1,3 +1,11 @@
+@use '../core/functions';
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
+@use '../components/terms';
+@use '../components/table';
+
 .typography {
   > :first-child {
     margin-top: 0;
@@ -8,21 +16,19 @@
   }
 
   p {
-    font-size: $paragraph-font-size;
-    margin-bottom: $paragraph-margin-bottom;
+    font-size: variables.$paragraph-font-size;
+    margin-bottom: variables.$paragraph-margin-bottom;
   }
 
   a {
-    font-weight: $font-weight-medium;
-    @include link-border;
+    font-weight: variables.$font-weight-medium;
+    @include type.link-border;
   }
 
   a:not([href*='middlebury.edu']):not([href^='#']):not([href^='/']):not(
-      [href^='mailto:']
-    ):not([href*='drive.google.com']):not([href*='docs.google.com']):not(
-      [href*='.pdf']
-    ):not([href*='middleburycollege-my.sharepoint.com']):not([name]) {
-    @include link-external;
+      [href^='mailto:']):not([href*='drive.google.com']):not([href*='docs.google.com']):not(
+      [href*='.pdf']):not([href*='middleburycollege-my.sharepoint.com']):not([name]) {
+    @include type.link-external;
   }
 
   a[href^='mailto:'],
@@ -32,15 +38,15 @@
   a[href^='/media/'],
   a[href*='middleburycollege-my.sharepoint.com'] {
     &:after {
-      font-size: rem(10);
+      font-size: functions.rem(10);
       display: inline-block;
       text-transform: uppercase;
-      letter-spacing: $letter-spacing;
-      padding: $spacing-1;
+      letter-spacing: variables.$letter-spacing;
+      padding: variables.$spacing-1;
       line-height: 1;
-      background: $navy;
-      color: $white;
-      margin-left: $spacing-1;
+      background: variables.$navy;
+      color: variables.$white;
+      margin-left: variables.$spacing-1;
       transition: 0.2s;
     }
 
@@ -87,16 +93,16 @@
 
   ul,
   ol {
-    margin-bottom: $paragraph-margin-bottom;
-    padding-left: $spacing-5;
-    padding-right: $spacing-5;
-    font-size: $paragraph-font-size;
+    margin-bottom: variables.$paragraph-margin-bottom;
+    padding-left: variables.$spacing-5;
+    padding-right: variables.$spacing-5;
+    font-size: variables.$paragraph-font-size;
 
     ul,
     ol {
-      margin-top: $spacing-3;
-      margin-bottom: $spacing-3;
-      padding-left: $spacing-4;
+      margin-top: variables.$spacing-3;
+      margin-bottom: variables.$spacing-3;
+      padding-left: variables.$spacing-4;
     }
   }
 
@@ -125,17 +131,17 @@
       &:before {
         content: counter(ol) '.';
         position: absolute;
-        right: calc(100% + #{$spacing-2});
+        right: calc(100% + #{variables.$spacing-2});
         top: 0.25rem;
-        font-size: $typescale-2;
-        line-height: $line-height-body;
+        font-size: variables.$typescale-2;
+        line-height: variables.$line-height-body;
       }
     }
   }
 
   li {
     &:not(:last-of-type) {
-      margin-bottom: $spacing-2;
+      margin-bottom: variables.$spacing-2;
     }
 
     p:last-of-type {
@@ -144,18 +150,18 @@
   }
 
   dl {
-    margin-bottom: $spacing-5;
-    margin-top: $spacing-5;
+    margin-bottom: variables.$spacing-5;
+    margin-top: variables.$spacing-5;
 
-    @include terms;
+    @include terms.terms;
   }
 
   dt {
-    @include terms-title;
+    @include terms.terms-title;
   }
 
   dd {
-    @include terms-text;
+    @include terms.terms-text;
   }
 
   // Maintain vertical h2 top margin when
@@ -168,53 +174,59 @@
   // See https://stackoverflow.com/q/36902927/2193516
   @at-root .paragraph--text + .paragraph--text > h2,
     .lead + .paragraph--text > h2 {
-    @include h2;
-    margin-top: $spacing-7;
-    margin-bottom: $spacing-4;
+    @include type.h2;
 
-    @include breakpoint(lg) {
-      margin-top: $spacing-8;
-      margin-bottom: $spacing-5;
+    & {
+      margin-top: variables.$spacing-7;
+      margin-bottom: variables.$spacing-4;
+    }
+
+    @include breakpoints.breakpoint(lg) {
+      margin-top: variables.$spacing-8;
+      margin-bottom: variables.$spacing-5;
     }
   }
 
   h2 {
-    @include h2;
-    margin-top: $spacing-7;
-    margin-bottom: $spacing-4;
+    @include type.h2;
 
-    @include breakpoint(lg) {
-      margin-top: $spacing-8;
-      margin-bottom: $spacing-5;
+    & {
+      margin-top: variables.$spacing-7;
+      margin-bottom: variables.$spacing-4;
+    }
+
+    @include breakpoints.breakpoint(lg) {
+      margin-top: variables.$spacing-8;
+      margin-bottom: variables.$spacing-5;
     }
   }
 
   h3 {
-    @include h3;
-    margin-top: $spacing-5;
-    margin-bottom: $spacing-2;
-    font-weight: $font-weight-semibold;
+    @include type.h3;
+    margin-top: variables.$spacing-5;
+    margin-bottom: variables.$spacing-2;
+    font-weight: variables.$font-weight-semibold;
   }
 
   h4 {
-    @include h4;
-    margin-top: $spacing-5;
-    margin-bottom: $spacing-1;
-    font-weight: $font-weight-semibold;
+    @include type.h4;
+    margin-top: variables.$spacing-5;
+    margin-bottom: variables.$spacing-1;
+    font-weight: variables.$font-weight-semibold;
   }
 
   h5 {
-    @include h5;
-    margin-top: $spacing-5;
-    margin-bottom: $spacing-1;
-    font-weight: $font-weight-semibold;
+    @include type.h5;
+    margin-top: variables.$spacing-5;
+    margin-bottom: variables.$spacing-1;
+    font-weight: variables.$font-weight-semibold;
   }
 
   h6 {
-    @include h6;
-    margin-top: $spacing-5;
-    margin-bottom: $spacing-1;
-    font-weight: $font-weight-semibold;
+    @include type.h6;
+    margin-top: variables.$spacing-5;
+    margin-bottom: variables.$spacing-1;
+    font-weight: variables.$font-weight-semibold;
   }
 
   h6 > a,
@@ -229,18 +241,18 @@
   }
 
   blockquote {
-    padding-left: $spacing-4;
-    border-left: 2px solid $border-color;
-    margin-top: $spacing-5;
-    margin-bottom: $spacing-5;
-    font-size: $paragraph-font-size;
+    padding-left: variables.$spacing-4;
+    border-left: 2px solid variables.$border-color;
+    margin-top: variables.$spacing-5;
+    margin-bottom: variables.$spacing-5;
+    font-size: variables.$paragraph-font-size;
   }
 
   @media print {
     a[href]:after {
       content: '(' attr(href) ')';
       background: transparent;
-      color: $black;
+      color: variables.$black;
       text-transform: none;
       letter-spacing: 0;
       font-size: inherit;
@@ -260,10 +272,10 @@
 .typography--sm {
   li,
   p {
-    font-size: $typescale-2;
+    font-size: variables.$typescale-2;
   }
 }
 
 .contains-links {
-  @include contains-links;
+  @include mixins.contains-links;
 }

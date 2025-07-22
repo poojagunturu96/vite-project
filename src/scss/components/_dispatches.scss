@@ -1,3 +1,7 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use 'dispatches-item';
+
 .dispatches {
   // margin-bottom: $component-margin-bottom;
 }
@@ -7,10 +11,10 @@
 }
 
 .dispatches__controls {
-  margin-top: $spacing-5;
+  margin-top: variables.$spacing-5;
   // padding: 0 $spacing-3;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     margin-top: auto;
   }
 }
@@ -22,45 +26,45 @@
   justify-content: center;
   padding: 0;
   position: absolute;
-  z-index: $z-index-dispatches;
+  z-index: variables.$z-index-dispatches;
   top: 25%;
-  width: $spacing-5;
-  height: $spacing-5;
-  filter: drop-shadow(0px 0px $spacing-2 rgba(0, 0, 0, 0.2));
+  width: variables.$spacing-5;
+  height: variables.$spacing-5;
+  filter: drop-shadow(0 0 variables.$spacing-2 rgb(0 0 0 / 0.2));
 
-  @include breakpoint(sm) {
+  @include breakpoints.breakpoint(sm) {
     top: 50%;
   }
 
-  @include breakpoint(md) {
-    width: $spacing-6;
-    height: $spacing-6;
+  @include breakpoints.breakpoint(md) {
+    width: variables.$spacing-6;
+    height: variables.$spacing-6;
   }
 
   &:first-child {
-    margin-left: $spacing-3;
+    margin-left: variables.$spacing-3;
 
     .dispatches-button--icon {
-      margin-right: $spacing-1;
+      margin-right: variables.$spacing-1;
     }
   }
 
   &:last-child {
     right: 0;
-    margin-right: $spacing-3;
+    margin-right: variables.$spacing-3;
 
     .dispatches-button--icon {
-      margin-left: $spacing-1;
+      margin-left: variables.$spacing-1;
     }
   }
 
   svg.dispatches-button--icon {
-    width: $spacing-4;
-    height: $spacing-4;
+    width: variables.$spacing-4;
+    height: variables.$spacing-4;
 
-    @include breakpoint(md) {
-      width: $spacing-5;
-      height: $spacing-5;
+    @include breakpoints.breakpoint(md) {
+      width: variables.$spacing-5;
+      height: variables.$spacing-5;
     }
   }
 
@@ -70,12 +74,12 @@
 }
 
 .dispatches__container {
-  @include breakpoint(sm) {
-    border-right: $dispatches-border;
+  @include breakpoints.breakpoint(sm) {
+    border-right: dispatches-item.$dispatches-border;
   }
 }
 
 .dispatches__content {
   display: flex;
-  height: $dispatches-card-height;
+  height: dispatches-item.$dispatches-card-height;
 }

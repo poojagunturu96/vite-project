@@ -1,11 +1,18 @@
+@use '../core/functions';
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
+@use 'school-header';
+
 $school-header-breakpoint: xl;
 
 .wrmc-header {
-  background: $wrmc-blue-light;
+  background: variables.$wrmc-blue-light;
   position: relative;
   // overflow-y: hidden;
 
-  @include themify(border-top-color);
+  @include mixins.themify(border-top-color);
 
   &.headroom {
     will-change: transform;
@@ -14,7 +21,7 @@ $school-header-breakpoint: xl;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: $z-index-school-header;
+    z-index: variables.$z-index-school-header;
 
     @media print {
       position: relative;
@@ -49,17 +56,17 @@ $school-header-breakpoint: xl;
   display: flex;
   align-items: center;
   position: relative;
-  margin-left: -$spacing-5;
-  padding-left: $spacing-5;
+  margin-left: -(variables.$spacing-5);
+  padding-left: variables.$spacing-5;
   overflow-y: hidden;
 }
 
 .wrmc-header__logo-graphic {
   display: flex;
   // flex-direction: column;
-  margin: $spacing-3 0;
+  margin: variables.$spacing-3 0;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     margin: 0;
   }
 
@@ -71,10 +78,10 @@ $school-header-breakpoint: xl;
 .wrmc-header__logo-background {
   position: absolute;
   top: 0;
-  left: -$spacing-4;
+  left: -(variables.$spacing-4);
   z-index: -1;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     left: 0;
   }
 }
@@ -82,19 +89,18 @@ $school-header-breakpoint: xl;
 .wrmc-header__logo-wordmark {
   display: flex;
   flex-direction: column;
-  margin-top: $spacing-1;
-  margin-left: $spacing-2;
-  font-family: $font-family-sans-serif;
+  margin-top: variables.$spacing-1;
+  margin-left: variables.$spacing-2;
+  font-family: variables.$font-family-sans-serif;
   font-weight: 800;
-  line-height: $line-height-journey;
+  line-height: variables.$line-height-journey;
   letter-spacing: 2px;
   text-transform: uppercase;
 
-  @include breakpoint(sm) {
-    line-height: $line-height-solid;
+  @include breakpoints.breakpoint(sm) {
+    line-height: variables.$line-height-solid;
   }
 
-  
   // img {
   //   width: fit-content;
 
@@ -105,31 +111,31 @@ $school-header-breakpoint: xl;
   // }
 
   span:first-child {
-    font-size: $typescale-6;
+    font-size: variables.$typescale-6;
 
-    @include breakpoint(sm) {
-      font-size: $typescale-9;
+    @include breakpoints.breakpoint(sm) {
+      font-size: variables.$typescale-9;
     }
 
-    @include breakpoint(xl) {
-      font-size: rem(64);
+    @include breakpoints.breakpoint(xl) {
+      font-size: functions.rem(64);
     }
   }
 
   span:last-child {
     // margin-top: $spacing-1;
-    font-size: $typescale-2;
+    font-size: variables.$typescale-2;
     line-height: 1.2;
 
-    @include breakpoint(sm) {
-      margin-left: rem(12);
-      margin-top: $spacing-2;
-      font-size: $typescale-4;
+    @include breakpoints.breakpoint(sm) {
+      margin-left: functions.rem(12);
+      margin-top: variables.$spacing-2;
+      font-size: variables.$typescale-4;
     }
 
-    @include breakpoint(xl) {
-      margin-top: $spacing-1;
-      font-size: $typescale-4;
+    @include breakpoints.breakpoint(xl) {
+      margin-top: variables.$spacing-1;
+      font-size: variables.$typescale-4;
     }
   }
 }
@@ -140,15 +146,15 @@ $school-header-breakpoint: xl;
   justify-content: flex-start;
   flex-direction: row-reverse;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     position: relative;
   }
 }
 
 .wrmc-nav {
-  @include print-hide;
+  @include mixins.print-hide;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -160,30 +166,30 @@ $school-header-breakpoint: xl;
 .wrmc-nav__handle {
   display: flex;
   align-items: center;
-  margin-top: $spacing-4;
-  font-size: $typescale-2;
-  font-weight: $font-weight-semibold;
-  line-height: $line-height-body;
-  color: $navy;
+  margin-top: variables.$spacing-4;
+  font-size: variables.$typescale-2;
+  font-weight: variables.$font-weight-semibold;
+  line-height: variables.$line-height-body;
+  color: variables.$navy;
   background: none;
   border: 0;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     margin-top: 0;
-    margin-bottom: $spacing-4;
+    margin-bottom: variables.$spacing-4;
   }
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     display: none;
   }
 }
 
 .wrmc-nav__menu {
   display: none;
-  padding-top: $spacing-3;
-  padding-bottom: $spacing-2;
+  padding-top: variables.$spacing-3;
+  padding-bottom: variables.$spacing-2;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     display: flex;
     flex-direction: column;
   }
@@ -202,21 +208,21 @@ $school-header-breakpoint: xl;
   .wrmc-nav__secondary-menu--links {
     display: flex;
     flex-direction: column;
-    margin-left: $spacing-3;
+    margin-left: variables.$spacing-3;
 
     .button {
-      font-size: $typescale-2;
-      font-weight: $font-weight-semibold;
+      font-size: variables.$typescale-2;
+      font-weight: variables.$font-weight-semibold;
       text-transform: uppercase;
-      padding: $spacing-1 rem(12);
-      margin: $spacing-3 0;
+      padding: variables.$spacing-1 functions.rem(12);
+      margin: variables.$spacing-3 0;
       width: fit-content;
     }
-  
+
     a:last-child {
-      font-size: $typescale-1;
-      font-weight: $font-weight-semibold;
-      @include link-border;
+      font-size: variables.$typescale-1;
+      font-weight: variables.$font-weight-semibold;
+      @include type.link-border;
     }
   }
 }
@@ -239,9 +245,9 @@ $school-header-breakpoint: xl;
   display: none;
   justify-content: flex-end;
   align-items: baseline;
-  margin-top: $spacing-6;
+  margin-top: variables.$spacing-6;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     display: flex;
   }
 }
@@ -251,13 +257,13 @@ $school-header-breakpoint: xl;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: $white;
-  padding: #{$spacing-3 / 2} $spacing-3;
-  border: 1px solid $navy;
+  background-color: variables.$white;
+  padding: #{variables.$spacing-3 * 0.5} variables.$spacing-3;
+  border: 1px solid variables.$navy;
   transition: opacity 0.2s;
   opacity: 0;
   visibility: hidden;
-  z-index: $z-index-school-nav-dropdown;
+  z-index: variables.$z-index-school-nav-dropdown;
   min-width: 300px;
 }
 
@@ -277,7 +283,7 @@ $school-header-breakpoint: xl;
   transition: opacity 0.2s;
 
   &:not(:last-child):not(.wrmc-nav__item--sub) {
-    margin-right: $spacing-5;
+    margin-right: variables.$spacing-5;
   }
 
   &:focus-within,
@@ -290,20 +296,22 @@ $school-header-breakpoint: xl;
 
   .school-search__handle {
     padding: 0;
-    padding-bottom: $spacing-1;
-    font-size: $typescale-2;
-    font-weight: $font-weight-semibold;
+    padding-bottom: variables.$spacing-1;
+    font-size: variables.$typescale-2;
+    font-weight: variables.$font-weight-semibold;
   }
 }
 
 .wrmc-nav__link {
   display: block;
   // padding-bottom: $spacing-1;
-  color: $navy;
-  font-size: $typescale-2;
-  font-weight: $font-weight-semibold;
+  color: variables.$navy;
+  font-size: variables.$typescale-2;
+  font-weight: variables.$font-weight-semibold;
   opacity: 0.8;
-  transition: opacity 0.2s, border-color 0.2s;
+  transition:
+    opacity 0.2s,
+    border-color 0.2s;
 
   &:hover {
     text-decoration: none;
@@ -312,9 +320,9 @@ $school-header-breakpoint: xl;
 }
 
 .wrmc-nav__link--sub {
-  padding-top: $spacing-3 / 2;
-  padding-bottom: $spacing-3 / 2;
-  font-size: $typescale-2;
+  padding-top: variables.$spacing-3 * 0.5;
+  padding-bottom: variables.$spacing-3 * 0.5;
+  font-size: variables.$typescale-2;
 
   &:hover,
   &:focus {
@@ -327,22 +335,22 @@ $school-header-breakpoint: xl;
 
   .wrmc-nav__item:focus-within &,
   .wrmc-nav__item:hover & {
-    @include themify(border-color);
+    @include mixins.themify(border-color);
   }
 }
 
 .wrmc-nav__link--active {
-  @include themify(border-color);
+  @include mixins.themify(border-color);
 }
 
 .wrmc-nav__link--util {
-  font-size: $typescale-2;
+  font-size: variables.$typescale-2;
   border-top: 4px solid transparent;
 
   &:hover,
   &:focus {
     text-decoration: none;
-    @include themify(border-top-color);
+    @include mixins.themify(border-top-color);
   }
 }
 
@@ -352,30 +360,29 @@ $school-header-breakpoint: xl;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: flex-start;
-    padding-bottom: $spacing-5;
+    padding-bottom: variables.$spacing-5;
   }
 
   .wrmc-nav__secondary-menu {
     justify-content: flex-start;
-    padding-left: $spacing-3;
-    padding-top: $spacing-3;
+    padding-left: variables.$spacing-3;
+    padding-top: variables.$spacing-3;
 
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       display: none;
     }
   }
 
   .drawer__content {
-    background-color: $wrmc-blue-light;
+    background-color: variables.$wrmc-blue-light;
   }
 
   .drawer-nav__item {
-    border-top-color: $white;
+    border-top-color: variables.$white;
   }
 
   .drawer__close,
   .drawer-nav__link {
-    color: $navy;
+    color: variables.$navy;
   }
 }
-

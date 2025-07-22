@@ -1,8 +1,12 @@
+@use '../core/variables';
+@use '../mixins/buttons';
+@use '../mixins/forms';
+
 .masquerade {
-  margin-bottom: $spacing-6;
+  margin-bottom: variables.$spacing-6;
 
   h2 {
-    @include form-label;
+    @include forms.form-label;
   }
 
   .container-inline {
@@ -10,15 +14,15 @@
   }
 
   input[type='text'] {
-    @include form-control;
-    font-size: $input-font-size-sm;
-    padding: $input-padding-y-sm $input-padding-x-sm;
+    @include forms.form-control;
+    font-size: variables.$input-font-size-sm;
+    padding: variables.$input-padding-y-sm variables.$input-padding-x-sm;
   }
 
   input[type='submit'] {
     // @include button-base;
-    @include button-theme('primary');
-    @include button-size('sm');
+    @include buttons.button-theme('primary');
+    @include buttons.button-size('sm');
     height: 100%; // set height since its wrapped in a div and wont match flex height
   }
 }

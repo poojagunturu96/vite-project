@@ -1,75 +1,105 @@
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+@use '../mixins/type';
+
+@use 'sass:math';
+
 .spotlight {
   position: relative;
-  @include breakpoint(lg) {
-    // use padding bottom instead of margin otherwise
-    // paragraph--spotlight does not combine the margins to have
-    // the correct bottom spacing
-    padding-bottom: $spacing-8;
-  }
 }
 
-.spotlight__figure {
-  @include breakpoint(lg) {
-    padding-top: percentage(9 / 16);
-    position: relative;
-    height: 0;
-    overflow: hidden;
+.paragraphs.paragraphs--wide {
+  .spotlight {
+    @include breakpoints.breakpoint(lg) {
+      // use padding bottom instead of margin otherwise
+      // paragraph--spotlight does not combine the margins to have
+      // the correct bottom spacing
+      padding-bottom: variables.$spacing-8;
+    }
   }
 
-  img {
-    @include breakpoint(lg) {
-      @include absolute-fill;
-      object-fit: cover;
-      font-family: 'object-fit: cover;';
-      z-index: $z-index-spotlight-image;
+  .spotlight__figure {
+    @include breakpoints.breakpoint(lg) {
+      padding-top: math.percentage(math.div(9, 16));
+      position: relative;
+      height: 0;
+      overflow: hidden;
+    }
+
+    img {
+      @include breakpoints.breakpoint(lg) {
+        @include mixins.absolute-fill;
+        object-fit: cover;
+        font-family: 'object-fit: cover;';
+        z-index: variables.$z-index-spotlight-image;
+      }
+    }
+  }
+
+  .spotlight__content {
+    @include breakpoints.breakpoint(lg) {
+      position: absolute;
+      right: variables.$spacing-6;
+      bottom: 0;
+      // TODO: get rid of magic number?
+      //  same as themed-panel secondary
+      width: 360px;
+      z-index: variables.$z-index-spotlight-content;
     }
   }
 }
 
 .spotlight__content {
-  background: $white;
-
-  @include breakpoint(lg) {
-    position: absolute;
-    right: $spacing-6;
-    bottom: 0;
-    // TODO: get rid of magic number?
-    //  same as themed-panel secondary
-    width: 360px;
-    z-index: $z-index-spotlight-content;
-  }
+  background: variables.$white;
 }
 
 .spotlight__title {
-  @include h0;
-  background: $color-primary;
-  color: $white;
-  padding-top: $spacing-4;
-  padding-bottom: $spacing-4;
+  @include type.h0;
 
-  @include breakpoint(md) {
+  & {
+    background: variables.$color-primary;
+    color: variables.$white;
+    padding-top: variables.$spacing-4;
+    padding-bottom: variables.$spacing-4;
+  }
+
+  @include breakpoints.breakpoint(md) {
     // fake column offset with padding plus gutter width
-    padding-left: calc(#{percentage(1 / 12)} + #{$grid-gutter-width / 2});
-    padding-right: calc(#{percentage(1 / 12)} + #{$grid-gutter-width / 2});
+    padding-left: calc(
+      #{math.percentage(math.div(1, 12))} + #{variables.$grid-gutter-width *
+        0.5}
+    );
+    padding-right: calc(
+      #{math.percentage(math.div(1, 12))} + #{variables.$grid-gutter-width *
+        0.5}
+    );
   }
 
   // place after so largest breakpoint overrides
-  @include make-gutters;
+  @include grid.make-gutters;
 }
 
 .spotlight__body {
-  padding-top: $spacing-4;
-  padding-bottom: $spacing-4;
-  border-bottom: 8px solid $color-primary;
+  padding-top: variables.$spacing-4;
+  padding-bottom: variables.$spacing-4;
+  border-bottom: 8px solid variables.$color-primary;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     // fake column offset with padding plus gutter width
-    padding-top: $spacing-5;
-    padding-bottom: $spacing-5;
-    padding-left: calc(#{percentage(1 / 12)} + #{$grid-gutter-width / 2});
-    padding-right: calc(#{percentage(1 / 12)} + #{$grid-gutter-width / 2});
+    padding-top: variables.$spacing-5;
+    padding-bottom: variables.$spacing-5;
+    padding-left: calc(
+      #{math.percentage(math.div(1, 12))} + #{variables.$grid-gutter-width *
+        0.5}
+    );
+    padding-right: calc(
+      #{math.percentage(math.div(1, 12))} + #{variables.$grid-gutter-width *
+        0.5}
+    );
   }
 
   // place after so largest breakpoint overrides
-  @include make-gutters;
+  @include grid.make-gutters;
 }

@@ -1,23 +1,32 @@
+@use '../core/functions';
+@use '../core/variables';
+
 .badge {
   display: inline-block;
-  font-size: $typescale-1;
-  color: $gray;
+  font-size: variables.$typescale-1;
+  color: variables.$gray;
   border: 1px solid currentcolor;
-  padding: rem(2) rem(2) rem(1) rem(2);
-  font-weight: $font-weight-semibold;
+  padding: functions.rem(2) functions.rem(2) functions.rem(1) functions.rem(2);
+  font-weight: variables.$font-weight-semibold;
   text-transform: uppercase;
-  line-height: $line-height-solid;
-  font-family: $font-family-sans-serif;
-  letter-spacing: $letter-spacing;
+  line-height: variables.$line-height-solid;
+  font-family: variables.$font-family-sans-serif;
+  letter-spacing: variables.$letter-spacing;
 }
 
 .badge--primary {
-  background: $navy;
-  color: $white;
-  border-color: $navy;
+  background: variables.$navy;
+  color: variables.$white;
+  border-color: variables.$navy;
 
   &.badge--outline {
     background: transparent;
-    color: $navy;
+    color: variables.$navy;
+  }
+
+  &.badge--no-outline {
+    background: transparent;
+    color: variables.$navy;
+    border-color: transparent;
   }
 }

@@ -1,9 +1,13 @@
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 %media-object-border-top {
-  border-top: 1px solid $gray-light;
+  border-top: 1px solid variables.$gray-light;
 }
 
 .media-object {
-  @include breakpoint(sm) {
+  @include breakpoints.breakpoint(sm) {
     display: flex;
   }
 }
@@ -17,22 +21,22 @@
   height: 1.25em;
 
   path {
-    fill: $navy;
+    fill: variables.$navy;
   }
 }
 
 .media-object__social-icons {
   li {
-    margin-right: $spacing-2 !important;
+    margin-right: variables.$spacing-2 !important;
   }
 }
 
 .media-object__image,
 .media-object__image-profile-teaser {
-  margin-bottom: $spacing-2;
+  margin-bottom: variables.$spacing-2;
 
-  @include breakpoint(sm) {
-    margin-right: $spacing-4;
+  @include breakpoints.breakpoint(sm) {
+    margin-right: variables.$spacing-4;
     min-width: 100px;
     margin-bottom: 0;
   }
@@ -43,64 +47,68 @@
   max-width: calc(3 / 7 * 100%);
   min-width: 126px;
 
-  @include breakpoint(sm) {
-    padding-bottom: $spacing-2;
-    padding-right: $spacing-5;
+  @include breakpoints.breakpoint(sm) {
+    padding-bottom: variables.$spacing-2;
+    padding-right: variables.$spacing-5;
     margin-right: 0;
   }
 
-  @include breakpoint(lg) {
-    margin-right: $spacing-5;
+  @include breakpoints.breakpoint(lg) {
+    margin-right: variables.$spacing-5;
   }
 }
 
 .media-object__body {
   .media-object__pronouns {
-    font-family: $font-family-serif;
-    font-size: $typescale-4;
-    line-height: $line-height-heading;
-    margin-bottom: rem(2);
+    font-family: variables.$font-family-serif;
+    font-size: variables.$typescale-4;
+    line-height: variables.$line-height-heading;
+    margin-bottom: functions.rem(2);
   }
 
-  @include breakpoint(sm) {
+  @include breakpoints.breakpoint(sm) {
     flex: 1;
   }
 }
 
 .media-object--right {
   .media-object__image {
-    @include breakpoint(sm) {
+    @include breakpoints.breakpoint(sm) {
       order: 2;
       margin-right: 0;
-      margin-left: $spacing-4;
+      margin-left: variables.$spacing-4;
     }
   }
 }
 
 .border-top {
-  padding-top: $spacing-2;
+  padding-top: variables.$spacing-2;
   @extend %media-object-border-top;
+}
+
+.border-bottom {
+  border-bottom: 1px solid variables.$gray-light;
 }
 
 .paragraph--profile-list {
   .media-object {
-    margin-left: -$spacing-3;
-    margin-right: -$spacing-3;
-    padding-left: $spacing-3;
-    padding-right: $spacing-3;
+    margin-left: -(variables.$spacing-3);
+    margin-right: -(variables.$spacing-3);
+    padding-left: variables.$spacing-3;
+    padding-right: variables.$spacing-3;
 
-    @include breakpoint(sm) {
+    @include breakpoints.breakpoint(sm) {
       margin: 0;
       padding: 0;
     }
   }
 
   .profile-list .media-object:not(:nth-child(1)) {
-    border-top: solid 4px $gray-light;
-    padding-top: $spacing-5;
+    border-top: solid 4px variables.$gray-light;
+    padding-top: variables.$spacing-5;
 
-    @include breakpoint(lg) {
-      padding-top: $spacing-7;
+    @include breakpoints.breakpoint(lg) {
+      padding-top: variables.$spacing-7;
     }
   }
 
@@ -110,7 +118,7 @@
     }
 
     & ~ ul {
-      margin-top: $spacing-2;
+      margin-top: variables.$spacing-2;
     }
   }
 }

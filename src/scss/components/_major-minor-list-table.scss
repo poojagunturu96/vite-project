@@ -1,46 +1,50 @@
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 .table--course-list {
   width: 100%;
-  margin-bottom: $spacing-7;
+  margin-bottom: variables.$spacing-7;
   border-collapse: collapse;
-  color: $navy;
+  color: variables.$navy;
   empty-cells: hide;
 
   thead {
-    font-size: $typescale-2;
+    font-size: variables.$typescale-2;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    line-height: $line-height-solid;
-    border-top: 4px solid $navy;
+    line-height: variables.$line-height-solid;
+    border-top: 4px solid variables.$navy;
   }
 
   th {
-    border-bottom: 1px solid $border-color;
-    padding-top: $spacing-3;
-    padding-bottom: $spacing-3;
-    font-weight: $font-weight-semibold;
+    border-bottom: 1px solid variables.$border-color;
+    padding-top: variables.$spacing-3;
+    padding-bottom: variables.$spacing-3;
+    font-weight: variables.$font-weight-semibold;
     width: 100%;
 
     &:first-child {
       text-align: left;
-      padding-left: $spacing-3;
+      padding-left: variables.$spacing-3;
     }
 
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       width: initial;
     }
   }
 
   tr {
-    border-bottom: 1px solid $border-color;
-    font-weight: $font-weight-medium;
+    border-bottom: 1px solid variables.$border-color;
+    font-weight: variables.$font-weight-medium;
   }
 
   td {
-    padding-top: $spacing-3;
-    padding-bottom: $spacing-3;
+    padding-top: variables.$spacing-3;
+    padding-bottom: variables.$spacing-3;
 
     &:first-child {
-      padding-left: $spacing-3;
+      padding-left: variables.$spacing-3;
       width: 50%;
     }
 
@@ -68,24 +72,24 @@
   }
 
   .row-label {
-    font-size: $typescale-2;
-    background-color: $blue-lighter;
-    color: $black;
+    font-size: variables.$typescale-2;
+    background-color: variables.$blue-lighter;
+    color: variables.$black;
   }
 
   .row-label--cell {
-    line-height: $line-height-solid;
-    padding-top: rem(10);
-    padding-bottom: rem(10);
+    line-height: variables.$line-height-solid;
+    padding-top: functions.rem(10);
+    padding-bottom: functions.rem(10);
     margin: 0;
   }
 
   .track-label--cell {
     text-transform: uppercase;
-    color: $gray-dark;
-    font-weight: $font-weight-semibold;
-    font-size: rem(12);
-    letter-spacing: $letter-spacing;
+    color: variables.$gray-dark;
+    font-weight: variables.$font-weight-semibold;
+    font-size: functions.rem(12);
+    letter-spacing: variables.$letter-spacing;
     padding-left: 2rem !important;
     padding-bottom: 0;
   }
@@ -113,18 +117,19 @@
     text-align: left;
 
     td:first-child {
-      padding-left: $spacing-5;
+      padding-left: variables.$spacing-5;
       width: 12.5%;
     }
   }
+
   .category {
     font-size: 1rem;
-    line-height: $line-height-body;
-    padding-top: $spacing-2;
+    line-height: variables.$line-height-body;
+    padding-top: variables.$spacing-2;
   }
 }
 
-@include breakpoint(md) {
+@include breakpoints.breakpoint(md) {
   .table--course-list {
     &.desktop {
       display: initial;

@@ -1,40 +1,35 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+
+@use 'sass:math';
+
 .stat-panel {
   position: relative;
-  background-color: $gray;
+  background-color: variables.$gray;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
+    height: 0;
+    padding-top: math.percentage(math.div(9, 16));
     overflow: hidden;
-
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background-color: $color-primary;
-      opacity: 0.7;
-      z-index: $z-index-stat-panel-overlay;
-    }
   }
 }
 
 .stat-panel__text {
-  font-size: $typescale-5;
-  @include breakpoint(lg) {
-    color: $white;
+  font-size: variables.$typescale-5;
+  @include breakpoints.breakpoint(lg) {
+    color: variables.$white;
   }
 }
 
 .stat-panel__media {
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: $z-index-stat-panel-image;
+    z-index: variables.$z-index-stat-panel-image;
   }
 
   img {
@@ -43,82 +38,106 @@
     height: 100%;
     width: 100%;
   }
+
+  &:after {
+    @include breakpoints.breakpoint(lg) {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: variables.$color-primary;
+      opacity: 0.7;
+      z-index: variables.$z-index-stat-panel-overlay;
+    }
+  }
 }
 
 .stat-panel__content {
-  @include breakpoint(md) {
-    @include make-row;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  @include breakpoint(lg) {
-    position: relative;
-    z-index: $z-index-stat-panel-content;
-    min-height: 700px;
+  @include breakpoints.breakpoint(lg) {
+    display: flex;
+    z-index: variables.$z-index-stat-panel-content;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    &.stat-panel__content-right {
+      justify-content: flex-end;
+    }
+
+    &.stat-panel__content-left {
+      justify-content: flex-start;
+    }
   }
 }
 
 .stat-panel__item {
-  padding: $spacing-5;
+  padding: variables.$spacing-5;
 
-  @include breakpoint(md) {
-    @include make-col-ready;
-    @include make-col(6);
+  @include breakpoints.breakpoint(md) {
+    @include grid.make-col-ready;
+    @include grid.make-col(6);
+
+    &.stat-panel__item--secondary:first-child {
+      @include grid.make-col(12);
+    }
   }
 
-  @include breakpoint(lg) {
-    background-color: transparent !important;
-    padding: $spacing-8;
-    @include make-col(5);
-  }
-
-  @include breakpoint(lg) {
-    @include make-col(4);
+  @include breakpoints.breakpoint(lg) {
+    &,
+    &.stat-panel__item--secondary:first-child {
+      background-color: transparent !important;
+      padding: variables.$spacing-8;
+      @include grid.make-col(5);
+    }
   }
 }
 
 // These modifiers have to be before panel item so background color becomes transparent on medium and up
 .stat-panel__item--primary {
-  background-color: $gray-light;
+  background-color: variables.$gray-light;
 }
 
 .stat-panel__item--secondary {
-  background-color: $color-primary;
+  background-color: variables.$color-primary;
   text-align: center;
 }
 
 .stat-panel__stats-list {
-  margin-bottom: $spacing-7;
+  margin-bottom: variables.$spacing-7;
 }
 
 .stat-panel__stats-title {
-  color: $white;
-  font-size: $typescale-7;
-  margin-bottom: $spacing-5;
+  color: variables.$white;
+  font-size: variables.$typescale-7;
+  margin-bottom: variables.$spacing-5;
 }
 
 .stat-panel__stats-label {
   display: block;
-  color: $white;
-  font-family: $font-family-serif;
+  color: variables.$white;
+  font-family: variables.$font-family-serif;
   font-size: 48px; // TODO: add to typescale?
-  line-height: $line-height-solid;
+  line-height: variables.$line-height-solid;
 }
 
 .stat-panel__stats-text {
-  color: $white;
-  font-size: $typescale-3;
+  color: variables.$white;
+  font-size: variables.$typescale-3;
 
   &:not(:last-of-type) {
-    padding-bottom: $spacing-4;
-    margin-bottom: $spacing-4;
-    border-bottom: 1px solid rgba($white, 0.25);
+    padding-bottom: variables.$spacing-4;
+    margin-bottom: variables.$spacing-4;
+    border-bottom: 1px solid rgba(variables.$white, 0.25);
   }
 
-  @include breakpoint(lg) {
-    font-size: $typescale-4;
+  @include breakpoints.breakpoint(lg) {
+    font-size: variables.$typescale-4;
   }
 }

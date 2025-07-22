@@ -1,9 +1,14 @@
-.wrmc-footer {
-  background-color: $wrmc-blue-light;
-  padding: $spacing-7 0;
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
 
-  @include breakpoint(md) {
-    padding: $spacing-5 0;
+.wrmc-footer {
+  background-color: variables.$wrmc-blue-light;
+  padding: variables.$spacing-7 0;
+
+  @include breakpoints.breakpoint(md) {
+    padding: variables.$spacing-5 0;
   }
 }
 
@@ -12,29 +17,29 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 0 $spacing-5;
+  padding: 0 variables.$spacing-5;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     flex-direction: row;
     align-items: initial;
-    padding: 0 $spacing-3;
+    padding: 0 variables.$spacing-3;
   }
 
-  @include breakpoint(lg) {
-    padding: 0 $spacing-5;  
+  @include breakpoints.breakpoint(lg) {
+    padding: 0 variables.$spacing-5;
   }
 }
 
 .wrmc-footer__logo {
-  color: $black;
-  font-size: $typescale-1;
+  color: variables.$black;
+  font-size: variables.$typescale-1;
   font-weight: 800;
-  line-height: $line-height-solid;
-  letter-spacing: $letter-spacing;
+  line-height: variables.$line-height-solid;
+  letter-spacing: variables.$letter-spacing;
   text-transform: uppercase;
 
   span {
-    margin-left: -$spacing-2;
+    margin-left: -(variables.$spacing-2);
   }
 
   &:hover {
@@ -44,7 +49,7 @@
 
 .wrmc-footer__logo-image {
   position: relative;
-  padding-bottom: rem(14);
+  padding-bottom: functions.rem(14);
 
   img:first-child {
     position: absolute;
@@ -53,8 +58,8 @@
   img:last-child {
     z-index: 2;
     position: relative;
-    left: $spacing-7;
-    top: $spacing-3;
+    left: variables.$spacing-7;
+    top: variables.$spacing-3;
   }
 }
 
@@ -62,18 +67,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: $spacing-1;
+  row-gap: variables.$spacing-1;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     flex-direction: row;
     row-gap: initial;
   }
 }
 
 .wrmc-footer__link {
-  font-size: $typescale-1;
-  font-weight: $font-weight-semibold;
-  line-height: $line-height-solid;
+  font-size: variables.$typescale-1;
+  font-weight: variables.$font-weight-semibold;
+  line-height: variables.$line-height-solid;
 
-  @include link-border;
+  @include type.link-border;
 }

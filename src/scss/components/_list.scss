@@ -1,5 +1,8 @@
-$list-item-margin-bottom: $spacing-5;
-$list-item-margin-bottom-sm: $spacing-3;
+@use '../core/variables';
+@use '../mixins/type';
+
+$list-item-margin-bottom: variables.$spacing-5;
+$list-item-margin-bottom-sm: variables.$spacing-3;
 
 .list {
   // margin-bottom: 60px;
@@ -12,7 +15,7 @@ $list-item-margin-bottom-sm: $spacing-3;
 
   p:last-child {
     a {
-      @include link-border;
+      @include type.link-border;
     }
   }
 }
@@ -20,7 +23,7 @@ $list-item-margin-bottom-sm: $spacing-3;
 .list--dividers {
   .list__item {
     &:not(:last-child) {
-      border-bottom: 1px solid $border-color;
+      border-bottom: 1px solid variables.$border-color;
       padding-bottom: $list-item-margin-bottom;
     }
   }

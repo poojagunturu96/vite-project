@@ -1,3 +1,7 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
+
 $card-carousel-height: 600px;
 
 .card-carousel {
@@ -7,12 +11,12 @@ $card-carousel-height: 600px;
 .card-carousel__header {
   height: 100%;
   padding: 2rem;
-  background-color: $color-primary;
+  background-color: variables.$color-primary;
   display: flex;
   flex-direction: column;
   text-align: center;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     text-align: left;
     padding: 8rem 4rem 3rem;
     height: $card-carousel-height;
@@ -20,12 +24,14 @@ $card-carousel-height: 600px;
 }
 
 .card-carousel__title {
-  color: $white;
-  @include h0;
-  // line-height: $h1-line-height;
-  margin-bottom: 1rem;
+  @include type.h0;
 
-  @include breakpoint(md) {
+  & {
+    color: variables.$white;
+    margin-bottom: 1rem;
+  }
+
+  @include breakpoints.breakpoint(md) {
     margin-bottom: 3rem;
   }
 }
@@ -35,7 +41,7 @@ $card-carousel-height: 600px;
 
 .card-carousel__controls {
   margin-top: 2rem;
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     margin-top: auto;
   }
 }
@@ -49,9 +55,9 @@ $card-carousel-height: 600px;
 }
 
 .card-carousel__item {
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     &:not(:last-child) {
-      border-right: 1px solid $white;
+      border-right: 1px solid variables.$white;
     }
   }
 }

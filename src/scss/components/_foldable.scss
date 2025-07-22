@@ -1,38 +1,41 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 // TODO: switch page-nav to this
 .foldable {
 }
 
 .foldable__button {
-  padding: $spacing-3;
-  border: 1px solid $border-color;
+  padding: variables.$spacing-3;
+  border: 1px solid variables.$border-color;
   width: 100%;
   background: none;
-  font-size: $typescale-2;
-  font-weight: $font-weight-semibold;
+  font-size: variables.$typescale-2;
+  font-weight: variables.$font-weight-semibold;
   text-align: left;
-  color: $color-primary;
+  color: variables.$color-primary;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     display: none;
   }
 }
 
 .foldable__icon {
   float: right;
-  transition: $chevron-transition;
+  transition: variables.$chevron-transition;
 
   .foldable__button.is-toggled & {
-    transform: $chevron-transform;
+    transform: variables.$chevron-transform;
   }
 }
 
 .foldable__content {
-  padding: $spacing-3;
-  border: 1px solid $border-color;
+  padding: variables.$spacing-3;
+  border: 1px solid variables.$border-color;
   border-top: 0;
-  background-color: $gray-lighter;
+  background-color: variables.$gray-lighter;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     padding: 0;
     border: 0;
     background-color: transparent;
@@ -41,7 +44,7 @@
   &.has-toggler {
     display: none;
 
-    @include breakpoint(lg) {
+    @include breakpoints.breakpoint(lg) {
       display: block;
     }
   }

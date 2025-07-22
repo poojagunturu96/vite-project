@@ -1,0 +1,45 @@
+@use '../core/variables';
+@use '../mixins/grid';
+@use '../mixins/breakpoints';
+
+.theme-admissions-lp {
+  overflow-x: hidden;
+
+  .typography {
+    .text-background {
+      background: variables.$white;
+      margin: 0 variables.$spacing-3;
+
+      @include breakpoints.breakpoint(lg) {
+        width: calc((10 / 12 * 100%) - variables.$spacing-8);
+        margin: 0 auto;
+      }
+    }
+
+    .text-content {
+      width: calc(100% - variables.$spacing-5);
+      margin: 0 auto;
+
+      @include breakpoints.breakpoint(md) {
+        width: 80%;
+      }
+
+      & > * {
+        font-family: variables.$font-family-sans-serif;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      h2,
+      h3 {
+        font-weight: variables.$font-weight-semibold;
+      }
+    }
+  }
+}

@@ -1,30 +1,33 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 .section.paragraph--pardot-form {
-  margin-bottom: $spacing-7;
-  margin-top: $spacing-7;
+  margin-bottom: variables.$spacing-7;
+  margin-top: variables.$spacing-7;
 
   .form-group {
-    margin-bottom: $spacing-4;
+    margin-bottom: variables.$spacing-4;
   }
 
-  @include breakpoint(md) {
-    margin-bottom: $spacing-8;
-    margin-top: $spacing-8;
+  @include breakpoints.breakpoint(md) {
+    margin-bottom: variables.$spacing-8;
+    margin-top: variables.$spacing-8;
 
     .section__title {
-      margin-bottom: $spacing-5;
+      margin-bottom: variables.$spacing-5;
     }
   }
 
-  @include breakpoint(lg) {
-    margin-bottom: $spacing-9;
-    margin-top: $spacing-9;
+  @include breakpoints.breakpoint(lg) {
+    margin-bottom: variables.$spacing-9;
+    margin-top: variables.$spacing-9;
 
     .section__title {
-      margin-bottom: $spacing-7;
+      margin-bottom: variables.$spacing-7;
     }
 
     .form-group {
-      margin-bottom: $spacing-5;
+      margin-bottom: variables.$spacing-5;
     }
   }
 }

@@ -1,5 +1,8 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 .status-report {
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     column-count: 2;
   }
 }
@@ -9,21 +12,21 @@
   width: 100%;
 
   &:not(:last-child) {
-    border-bottom: 1px solid $border-color;
-    padding-bottom: $spacing-3;
-    margin-bottom: $spacing-3;
+    border-bottom: 1px solid variables.$border-color;
+    padding-bottom: variables.$spacing-3;
+    margin-bottom: variables.$spacing-3;
   }
 }
 
 .status-report__icon {
   display: inline-flex;
-  color: $white;
+  color: variables.$white;
   height: 2rem;
   width: 2rem;
   text-align: center;
   align-items: center;
   justify-content: center;
-  margin-right: $spacing-2;
+  margin-right: variables.$spacing-2;
 
   .icon {
     top: 0; // unset .icon top position which is intended elsewhere for lining up with text

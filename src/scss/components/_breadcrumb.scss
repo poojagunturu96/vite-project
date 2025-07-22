@@ -1,5 +1,9 @@
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 .breadcrumb {
-  @include print-hide;
+  @include mixins.print-hide;
 }
 
 .breadcrumb__list {
@@ -10,7 +14,7 @@
 .breadcrumb__item {
   display: none;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     display: block;
   }
 
@@ -28,12 +32,12 @@
 }
 
 .breadcrumb__link {
-  font-size: $typescale-2;
+  font-size: variables.$typescale-2;
 }
 
 .breadcrumb--light {
   .breadcrumb__item:after,
   .breadcrumb__link {
-    color: $white;
+    color: variables.$white;
   }
 }

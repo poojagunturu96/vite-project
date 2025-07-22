@@ -1,8 +1,12 @@
-$profile-detail-programs-border: 1px solid $gray-light;
-$profile-detail-programs-border-thick: 4px solid $gray-light;
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
+
+$profile-detail-programs-border: 1px solid variables.$gray-light;
+$profile-detail-programs-border-thick: 4px solid variables.$gray-light;
 
 .profile-detail {
-  @each $icon-name, $color in $scholarly-icons {
+  @each $icon-name, $color in variables.$scholarly-icons {
     .profile-detail-#{$icon-name} {
       fill: $color;
     }
@@ -10,25 +14,25 @@ $profile-detail-programs-border-thick: 4px solid $gray-light;
 }
 
 .profile-detail__programs {
-  padding: $spacing-2 0;
+  padding: variables.$spacing-2 0;
   border-bottom: $profile-detail-programs-border;
   border-top: $profile-detail-programs-border-thick;
-  margin-bottom: $spacing-4;
-  margin-left: -$spacing-3;
-  margin-right: -$spacing-3;
-  padding-left: $spacing-3;
+  margin-bottom: variables.$spacing-4;
+  margin-left: -(variables.$spacing-3);
+  margin-right: -(variables.$spacing-3);
+  padding-left: variables.$spacing-3;
 
   a {
-    @include link-border;
+    @include type.link-border;
   }
 
-  @include breakpoint(sm) {
+  @include breakpoints.breakpoint(sm) {
     margin-left: 0;
     margin-right: 0;
     padding-left: 0;
   }
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     border-top: 0;
     padding-top: 0;
   }
@@ -38,17 +42,17 @@ $profile-detail-programs-border-thick: 4px solid $gray-light;
 
     &:not(:last-child):after {
       content: ';';
-      color: $black;
+      color: variables.$black;
       margin-left: -3px;
     }
   }
 }
 
 .profile-detail__link-table {
-  margin-bottom: $spacing-8;
-  border-spacing: $spacing-3;
+  margin-bottom: variables.$spacing-8;
+  border-spacing: variables.$spacing-3;
   border: 1px solid #dedede;
-  padding: $spacing-3;
+  padding: variables.$spacing-3;
 
   div[role='row'] {
     vertical-align: top;
@@ -58,39 +62,38 @@ $profile-detail-programs-border-thick: 4px solid $gray-light;
       overflow-wrap: break-word;
 
       &:not(:first-child) {
-        margin-top: $spacing-3;
+        margin-top: variables.$spacing-3;
         border-top: 1px solid #dedede;
-        padding-top: $spacing-3;
+        padding-top: variables.$spacing-3;
       }
     }
   }
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     margin-bottom: 4.5rem;
-    border-spacing: $spacing-2;
-    padding: $spacing-2;
+    border-spacing: variables.$spacing-2;
+    padding: variables.$spacing-2;
 
     div[role='row'] {
       vertical-align: top;
       flex-direction: row;
 
       div[role='cell'] {
-        padding: $spacing-2;
+        padding: variables.$spacing-2;
+        width: 50%;
 
         &:not(:first-child) {
           border-top: none;
           margin-top: 0;
           border-left: 1px solid #dedede;
-          padding: $spacing-2;
-          padding-left: $spacing-3;
+          padding: variables.$spacing-2;
+          padding-left: variables.$spacing-3;
         }
-
-        width: 50%;
       }
     }
   }
 
-  @include breakpoint(xl) {
-    margin-bottom: $spacing-9;
+  @include breakpoints.breakpoint(xl) {
+    margin-bottom: variables.$spacing-9;
   }
 }

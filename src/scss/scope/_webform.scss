@@ -1,26 +1,32 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/buttons';
+@use '../mixins/forms';
+@use '../mixins/type';
+
 .node-webform {
   padding: 2px;
 
   a {
-    @include link-border;
+    @include type.link-border;
   }
 
   h1 {
-    @include h3;
-    margin-bottom: $spacing-4;
+    @include type.h3;
+    margin-bottom: variables.$spacing-4;
   }
 
   .field-type-text-with-summary {
-    font-size: $paragraph-font-size;
-    margin-bottom: $paragraph-margin-bottom;
+    font-size: variables.$paragraph-font-size;
+    margin-bottom: variables.$paragraph-margin-bottom;
 
     p {
-      margin-bottom: $spacing-4;
+      margin-bottom: variables.$spacing-4;
     }
   }
 
   fieldset {
-    @include form-fieldset;
+    @include forms.form-fieldset;
 
     .form-item:last-child {
       margin-bottom: 0;
@@ -28,73 +34,73 @@
   }
 
   legend {
-    @include form-legend;
+    @include forms.form-legend;
   }
 
   .form-actions,
   .form-item {
-    @include form-group;
+    @include forms.form-group;
   }
 
   label {
-    @include form-label;
+    @include forms.form-label;
   }
 
   .form-required {
-    @include form-required;
+    @include forms.form-required;
   }
 
   .description {
-    font-size: $typescale-2;
-    margin-bottom: $spacing-1;
+    font-size: variables.$typescale-2;
+    margin-bottom: variables.$spacing-1;
   }
 
   .form-select,
   .form-textarea,
   .form-text {
-    @include form-control;
+    @include forms.form-control;
     margin-top: 0; // remove style coming from global form-text, which is meant for helper text
-    padding: $spacing-2;
+    padding: variables.$spacing-2;
     width: auto;
     max-width: 100%;
   }
 
   .form-select {
-    @include form-select;
+    @include forms.form-select;
   }
 
   .form-type-radio,
   .form-type-checkbox {
-    @include form-checkbox-item;
+    @include forms.form-checkbox-item;
 
     input[type='checkbox'],
     input[type='radio'] {
-      @include form-checkbox-control;
+      @include forms.form-checkbox-control;
     }
 
     label {
-      @include form-checkbox-label;
+      @include forms.form-checkbox-label;
     }
   }
 
   .button-primary {
-    @include button-base;
-    @include button-theme('primary');
+    @include buttons.button-base;
+    @include buttons.button-theme('primary');
   }
 
   .form-managed-file {
     display: inline-flex;
-    background: $gray-lighter;
+    background: variables.$gray-lighter;
 
     .form-submit {
-      @include button-base;
-      @include button-theme('primary');
-      @include button-size('sm');
+      @include buttons.button-base;
+      @include buttons.button-theme('primary');
+      @include buttons.button-size('sm');
     }
 
     .form-file {
-      @include button-base;
-      @include button-size('sm');
+      @include buttons.button-base;
+      @include buttons.button-size('sm');
       background: transparent;
     }
   }
@@ -103,7 +109,7 @@
     display: flex;
 
     > li + li {
-      margin-left: $spacing-3;
+      margin-left: variables.$spacing-3;
     }
   }
 
@@ -112,18 +118,18 @@
   }
 
   .webform-container-inline {
-    @include breakpoint(sm) {
+    @include breakpoints.breakpoint(sm) {
       display: flex;
     }
 
     .form-item {
-      @include breakpoint(sm) {
+      @include breakpoints.breakpoint(sm) {
         flex: 0 0 auto;
         margin-bottom: 0;
       }
 
       &:not(:last-child) {
-        margin-right: $spacing-3;
+        margin-right: variables.$spacing-3;
       }
     }
   }

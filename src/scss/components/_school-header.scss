@@ -1,12 +1,16 @@
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 $school-header-breakpoint: xl;
 
 .school-header {
-  background: $white;
-  border-top: 8px solid $color-primary;
+  background: variables.$white;
+  border-top: 8px solid variables.$color-primary;
   position: relative;
-  border-bottom: 1px solid $navy;
+  border-bottom: 1px solid variables.$navy;
 
-  @include themify(border-top-color);
+  @include mixins.themify(border-top-color);
 
   &.headroom {
     will-change: transform;
@@ -15,7 +19,7 @@ $school-header-breakpoint: xl;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: $z-index-school-header;
+    z-index: variables.$z-index-school-header;
 
     @media print {
       position: relative;
@@ -46,8 +50,8 @@ $school-header-breakpoint: xl;
 }
 
 .school-header__logo {
-  padding-top: $spacing-2;
-  padding-bottom: $spacing-2;
+  padding-top: variables.$spacing-2;
+  padding-bottom: variables.$spacing-2;
 }
 
 .school-header__content {
@@ -56,7 +60,7 @@ $school-header-breakpoint: xl;
   justify-content: flex-start;
   flex-direction: row-reverse;
 
-  @include breakpoint($school-header-breakpoint) {
+  @include breakpoints.breakpoint($school-header-breakpoint) {
     position: relative;
   }
 }

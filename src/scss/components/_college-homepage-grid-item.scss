@@ -1,3 +1,9 @@
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+@use '../mixins/type';
+
 // Grid Hover
 
 .quad-item-1,
@@ -11,7 +17,7 @@
     width: 100%;
   }
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     &:hover,
     &:focus-within {
       > .grid-hover__overlay {
@@ -33,30 +39,30 @@
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  color: $white;
+  color: variables.$white;
   width: 100%;
-  padding: 0 $spacing-4;
+  padding: 0 variables.$spacing-4;
   display: none;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     display: block;
   }
 
   .grid-hover__text {
     p {
-      font-size: $typescale-6;
+      font-size: variables.$typescale-6;
     }
   }
 
   &.text-small {
-    padding: 0 $spacing-3;
+    padding: 0 variables.$spacing-3;
 
-    @include breakpoint(xl) {
-      padding: 0 $spacing-4;
+    @include breakpoints.breakpoint(xl) {
+      padding: 0 variables.$spacing-4;
     }
 
     p {
-      font-size: $typescale-4;
+      font-size: variables.$typescale-4;
     }
   }
 }
@@ -65,14 +71,14 @@
 
 .grid-modal {
   display: none;
-  background: rgba($navy-dark, 0.95);
+  background: rgba(variables.$navy-dark, 0.95);
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   z-index: 300;
-  color: $white;
+  color: variables.$white;
 
   &.is-open {
     display: block;
@@ -83,17 +89,17 @@
 
 .grid-modal__overlay {
   figure {
-    padding-top: $spacing-9;
-    padding-bottom: $spacing-5;
+    padding-top: variables.$spacing-9;
+    padding-bottom: variables.$spacing-5;
 
-    @include breakpoint(lg) {
-      padding-bottom: $spacing-7;
+    @include breakpoints.breakpoint(lg) {
+      padding-bottom: variables.$spacing-7;
     }
   }
 
   .portrait-video__content,
   .video__content {
-    background: $black;
+    background: variables.$black;
   }
 
   .portrait-video--grid {
@@ -104,48 +110,48 @@
       z-index: 2;
     }
 
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       max-width: 288px;
     }
 
-    @include breakpoint(lg) {
+    @include breakpoints.breakpoint(lg) {
       max-width: 405px;
     }
 
-    @include breakpoint(xl) {
+    @include breakpoints.breakpoint(xl) {
       max-width: 459px;
     }
   }
 
   .video__text,
   .image__text {
-    font-size: $typescale-2;
+    font-size: variables.$typescale-2;
 
     a {
-      color: $white;
-      @include link-border;
+      color: variables.$white;
+      @include type.link-border;
     }
 
-    @include breakpoint(md) {
-      font-size: $typescale-4;
+    @include breakpoints.breakpoint(md) {
+      font-size: variables.$typescale-4;
     }
   }
 
   .grid-video__body,
   .grid-image__body {
     text-align: left;
-    margin-top: $spacing-2;
+    margin-top: variables.$spacing-2;
 
-    @include breakpoint(lg) {
+    @include breakpoints.breakpoint(lg) {
       margin-right: 8.33333%;
     }
   }
 
   .grid-video__transcript .transcript__button {
-    color: $white;
+    color: variables.$white;
 
     &:hover {
-      border-color: $white;
+      border-color: variables.$white;
       text-decoration: none;
     }
   }
@@ -158,19 +164,19 @@
 
 .grid-modal__button {
   text-transform: uppercase;
-  letter-spacing: $letter-spacing;
-  font-weight: $font-weight-semibold;
-  font-size: $typescale-2;
-  color: $white;
+  letter-spacing: variables.$letter-spacing;
+  font-weight: variables.$font-weight-semibold;
+  font-size: variables.$typescale-2;
+  color: variables.$white;
   background: none;
   border: 0;
   display: block;
-  margin-top: $spacing-4;
-  margin-right: $spacing-3;
+  margin-top: variables.$spacing-4;
+  margin-right: variables.$spacing-3;
 
-  @include breakpoint(lg) {
-    margin-top: $spacing-5;
-    margin-right: $spacing-5;
+  @include breakpoints.breakpoint(lg) {
+    margin-top: variables.$spacing-5;
+    margin-right: variables.$spacing-5;
   }
 
   &:hover,
@@ -193,139 +199,140 @@
 .grid-quote {
   height: 100%;
   width: 100%;
-  background: url(/src/images/homepage-quote-blue.svg) no-repeat $spacing-2 -0.75rem;
+  background: url('/images/homepage-quote-blue.svg') no-repeat
+    variables.$spacing-2 -0.75rem;
   background-size: 76px 60px;
-  background-color: $white;
-  color: $navy;
+  background-color: variables.$white;
+  color: variables.$navy;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: $spacing-2;
+  padding: variables.$spacing-2;
   position: relative;
 
-  @include breakpoint(md) {
-    padding: $spacing-3;
-    background-position-x: $spacing-3;
+  @include breakpoints.breakpoint(md) {
+    padding: variables.$spacing-3;
+    background-position-x: variables.$spacing-3;
     background-position-y: -0.625rem;
   }
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     background-position-y: -0.75rem;
     background-size: 120px 95px;
   }
 
   .grid-quote__text {
-    font-weight: $font-weight-normal;
-    font-size: $typescale-4;
+    font-weight: variables.$font-weight-normal;
+    font-size: variables.$typescale-4;
     line-height: 2;
     text-align: left;
 
-    @include breakpoint(md) {
-      font-size: $typescale-5;
+    @include breakpoints.breakpoint(md) {
+      font-size: variables.$typescale-5;
     }
 
-    @include breakpoint(lg) {
-      font-weight: $font-weight-light;
+    @include breakpoints.breakpoint(lg) {
+      font-weight: variables.$font-weight-light;
       line-height: 2.2;
-      font-size: rem(32);
+      font-size: functions.rem(32);
     }
 
-    @include breakpoint(xl) {
+    @include breakpoints.breakpoint(xl) {
       line-height: 2.6;
-      font-size: $typescale-8;
+      font-size: variables.$typescale-8;
     }
   }
 
   .grid-quote__caption {
     position: absolute;
-    bottom: $spacing-2;
-    right: $spacing-2;
+    bottom: variables.$spacing-2;
+    right: variables.$spacing-2;
 
-    @include breakpoint(md) {
-      bottom: $spacing-3;
-      right: $spacing-3;
+    @include breakpoints.breakpoint(md) {
+      bottom: variables.$spacing-3;
+      right: variables.$spacing-3;
     }
   }
 
   .grid-quote__caption,
   .grid-quote__caption p {
     text-align: right;
-    line-height: $line-height-heading !important;
-    font-size: $typescale-1 !important;
+    line-height: variables.$line-height-heading !important;
+    font-size: variables.$typescale-1 !important;
 
-    @include breakpoint(lg) {
-      font-size: $typescale-3 !important;
+    @include breakpoints.breakpoint(lg) {
+      font-size: variables.$typescale-3 !important;
     }
 
-    @include breakpoint(xl) {
-      font-size: $typescale-4 !important;
+    @include breakpoints.breakpoint(xl) {
+      font-size: variables.$typescale-4 !important;
     }
   }
 
   &.quote--dark {
-    background-image: url(/src/images/homepage-quote-white.svg);
+    background-image: url('/images/homepage-quote-white.svg');
     background-color: #c0e3fd;
-    color: $navy;
+    color: variables.$navy;
 
-    @include breakpoint(md) {
-      background-position-x: $spacing-2;
+    @include breakpoints.breakpoint(md) {
+      background-position-x: variables.$spacing-2;
     }
 
-    @include breakpoint(lg) {
-      background-position-x: $spacing-3;
+    @include breakpoints.breakpoint(lg) {
+      background-position-x: variables.$spacing-3;
     }
   }
 
   &.quote-text--small {
     background-size: 56px 44px;
-    padding: $spacing-2;
+    padding: variables.$spacing-2;
 
-    @include breakpoint(lg) {
-      padding: $spacing-3;
-      padding-top: $spacing-4;
+    @include breakpoints.breakpoint(lg) {
+      padding: variables.$spacing-3;
+      padding-top: variables.$spacing-4;
       background-size: 104px 82px;
     }
 
     .grid-quote__text {
-      font-size: $typescale-1;
-      font-weight: $font-weight-semibold;
-      line-height: $line-height-base;
+      font-size: variables.$typescale-1;
+      font-weight: variables.$font-weight-semibold;
+      line-height: variables.$line-height-base;
 
-      @include breakpoint(md) {
-        font-size: $typescale-2;
+      @include breakpoints.breakpoint(md) {
+        font-size: variables.$typescale-2;
       }
 
-      @include breakpoint(lg) {
+      @include breakpoints.breakpoint(lg) {
         line-height: 2;
-        font-weight: $font-weight-normal;
-        font-size: $typescale-5;
+        font-weight: variables.$font-weight-normal;
+        font-size: variables.$typescale-5;
       }
 
-      @include breakpoint(xl) {
-        font-weight: $font-weight-light;
-        font-size: $typescale-7;
+      @include breakpoints.breakpoint(xl) {
+        font-weight: variables.$font-weight-light;
+        font-size: variables.$typescale-7;
       }
     }
 
     .grid-quote__caption {
-      bottom: $spacing-2;
-      right: $spacing-2;
+      bottom: variables.$spacing-2;
+      right: variables.$spacing-2;
 
-      @include breakpoint(lg) {
-        bottom: $spacing-3;
-        right: $spacing-3;
+      @include breakpoints.breakpoint(lg) {
+        bottom: variables.$spacing-3;
+        right: variables.$spacing-3;
       }
     }
 
     .grid-quote__caption,
     .grid-quote__caption p {
-      font-size: rem(10) !important;
-      font-weight: $font-weight-semibold;
-      line-height: $line-height-heading;
+      font-size: functions.rem(10) !important;
+      font-weight: variables.$font-weight-semibold;
+      line-height: variables.$line-height-heading;
 
-      @include breakpoint(lg) {
-        font-weight: $font-weight-normal;
-        font-size: $typescale-2 !important;
+      @include breakpoints.breakpoint(lg) {
+        font-weight: variables.$font-weight-normal;
+        font-size: variables.$typescale-2 !important;
       }
     }
   }
@@ -341,11 +348,11 @@
   height: 100%;
 
   &.dark {
-    background: $navy;
+    background: variables.$navy;
     color: #fff;
 
     .chart-group__list .chart-group__item .stats__label {
-      border-bottom: 1px solid $white;
+      border-bottom: 1px solid variables.$white;
     }
   }
 
@@ -355,42 +362,45 @@
     margin: 0;
 
     .chart-group__item {
-      @include make-col(9);
-      padding: 0;
-      margin: auto;
+      @include grid.make-col(9);
+
+      & {
+        padding: 0;
+        margin: auto;
+      }
 
       .stats__label {
         display: flex;
         justify-content: center;
-        border-bottom: 1px solid $navy;
-        font-size: $typescale-5;
-        font-weight: $font-weight-bold;
-        padding-bottom: $spacing-1;
-        margin-bottom: $spacing-1;
+        border-bottom: 1px solid variables.$navy;
+        font-size: variables.$typescale-5;
+        font-weight: variables.$font-weight-bold;
+        padding-bottom: variables.$spacing-1;
+        margin-bottom: variables.$spacing-1;
 
-        @include breakpoint(md) {
-          font-size: $typescale-7;
+        @include breakpoints.breakpoint(md) {
+          font-size: variables.$typescale-7;
         }
 
-        @include breakpoint(lg) {
-          font-size: $typescale-10;
-          font-weight: $font-weight-normal;
-          padding-bottom: $spacing-2;
-          margin-bottom: $spacing-2;
+        @include breakpoints.breakpoint(lg) {
+          font-size: variables.$typescale-10;
+          font-weight: variables.$font-weight-normal;
+          padding-bottom: variables.$spacing-2;
+          margin-bottom: variables.$spacing-2;
         }
       }
 
       .stats__text {
-        font-weight: $font-weight-semibold;
-        font-size: $typescale-1;
-        line-height: $line-height-heading;
+        font-weight: variables.$font-weight-semibold;
+        font-size: variables.$typescale-1;
+        line-height: variables.$line-height-heading;
 
-        @include breakpoint(md) {
-          font-size: $typescale-2;
+        @include breakpoints.breakpoint(md) {
+          font-size: variables.$typescale-2;
         }
 
-        @include breakpoint(lg) {
-          font-size: $typescale-4;
+        @include breakpoints.breakpoint(lg) {
+          font-size: variables.$typescale-4;
           line-height: 1.5;
         }
       }
@@ -398,18 +408,18 @@
 
     &.chart-group__list--2 {
       .chart-group__item:first-child {
-        margin-bottom: $spacing-3;
+        margin-bottom: variables.$spacing-3;
 
-        @include breakpoint(md) {
-          margin-bottom: $spacing-4;
+        @include breakpoints.breakpoint(md) {
+          margin-bottom: variables.$spacing-4;
         }
 
-        @include breakpoint(lg) {
-          margin-bottom: $spacing-5;
+        @include breakpoints.breakpoint(lg) {
+          margin-bottom: variables.$spacing-5;
         }
 
-        @include breakpoint(xl) {
-          margin-bottom: $spacing-7;
+        @include breakpoints.breakpoint(xl) {
+          margin-bottom: variables.$spacing-7;
         }
       }
     }

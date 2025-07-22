@@ -1,3 +1,5 @@
+@use '../core/variables';
+
 // TODO: rename to select or picklist since that is closer to its function. Then rename nav-dropdown to dropdown
 .dropdown {
   position: relative;
@@ -5,14 +7,14 @@
 
 .dropdown__button {
   font-family: inherit;
-  font-weight: $font-weight-medium;
-  border: 1px solid $border-color;
-  background: $white;
-  padding: $spacing-3;
+  font-weight: variables.$font-weight-medium;
+  border: 1px solid variables.$border-color;
+  background: variables.$white;
+  padding: variables.$spacing-3;
   line-height: 1;
   width: 100%;
   text-align: left;
-  color: $navy;
+  color: variables.$navy;
   cursor: pointer;
   transition:
     border-color 0.2s,
@@ -22,22 +24,22 @@
   justify-content: space-between;
 
   .dropdown.is-active & {
-    background: $navy;
-    color: $white;
+    background: variables.$navy;
+    color: variables.$white;
   }
 
   .dropdown.is-active &,
   &:hover,
   &:focus {
-    border-color: $navy;
+    border-color: variables.$navy;
   }
 }
 
 .dropdown__icon {
-  transition: $chevron-transition;
+  transition: variables.$chevron-transition;
 
   .dropdown.is-active & {
-    transform: $chevron-transform;
+    transform: variables.$chevron-transform;
   }
 }
 
@@ -46,15 +48,15 @@
   top: 100%;
   left: 0;
   width: 100%;
-  border: 1px solid $navy;
+  border: 1px solid variables.$navy;
   border-top: 0;
-  background: $white;
+  background: variables.$white;
   // max-height: 80vh;
   // overflow-y: auto;
   transition: opacity 0.2s;
   opacity: 0;
   visibility: hidden;
-  z-index: $z-index-dropdown-list;
+  z-index: variables.$z-index-dropdown-list;
 
   .dropdown.is-active & {
     visibility: visible;
@@ -67,10 +69,10 @@
 
 .dropdown__link {
   display: block;
-  padding: $spacing-2 $spacing-3;
-  font-weight: $font-weight-medium;
+  padding: variables.$spacing-2 variables.$spacing-3;
+  font-weight: variables.$font-weight-medium;
 
   &:hover {
-    background: $gray-lighter;
+    background: variables.$gray-lighter;
   }
 }

@@ -1,9 +1,12 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 ////
 /// Flexbox order utilities to change element orders at breakpoints
 ////
 
-@each $breakpoint, $variant in $responsive-variants {
-  @include breakpoint($breakpoint) {
+@each $breakpoint, $variant in variables.$responsive-variants {
+  @include breakpoints.breakpoint($breakpoint) {
     .order#{$variant}-first {
       order: -1;
     }
@@ -12,7 +15,7 @@
       order: 9999;
     }
 
-    @for $i from 0 through $grid-columns {
+    @for $i from 0 through variables.$grid-columns {
       .order#{$variant}-#{$i} {
         order: $i;
       }

@@ -1,0 +1,105 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
+.catalog-search {
+  .form-control {
+    line-height: variables.$line-height-heading;
+  }
+
+  .form-group--course-type .checkbox-group {
+    .checkbox--filter {
+      @include breakpoints.breakpoint(xl) {
+        width: 33%;
+      }
+    }
+  }
+
+  .checkbox-group {
+    .checkbox--filter {
+      min-width: 20%;
+
+      .checkbox__label {
+        padding: variables.$spacing-2 variables.$spacing-2;
+
+        &:hover {
+          background: none;
+        }
+      }
+    }
+  }
+
+  .form-check {
+    align-items: baseline;
+  }
+
+  .catalog-search-item-tab {
+    .catalog-search-item__link {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .catalog-search-item__title {
+      display: flex;
+      justify-content: space-between;
+      padding: variables.$spacing-2;
+      padding-right: variables.$spacing-3;
+      color: variables.$black;
+      font-size: variables.$typescale-3;
+      font-family: variables.$font-family-sans-serif;
+      font-weight: variables.$font-weight-semibold;
+      line-height: variables.$line-height-body;
+      text-transform: uppercase;
+      letter-spacing: variables.$letter-spacing;
+      background-color: variables.$blue-lighter;
+    }
+
+    .catalog-search-item-close {
+      display: none;
+    }
+
+    .catalog-search-item-content {
+      padding-top: variables.$spacing-5;
+      display: none;
+    }
+
+    &.is-toggled {
+      .catalog-search-item-open {
+        display: none;
+      }
+
+      .catalog-search-item-close {
+        display: flex;
+      }
+
+      .catalog-search-item-content {
+        display: flex;
+      }
+    }
+  }
+}
+
+.catalog-search-results {
+  li:not(:last-child) {
+    .catalog-result-card {
+      border-bottom: 4px solid variables.$border-color;
+    }
+  }
+}
+
+.catalog-save-button {
+  display: flex;
+  align-items: flex-start;
+  line-height: variables.$line-height-solid;
+
+  .icon {
+    stroke: variables.$navy;
+    stroke-width: 1.5;
+    width: variables.$typescale-6;
+    height: variables.$typescale-4;
+
+    &.catalog-save-button--saved {
+      stroke-width: 0;
+    }
+  }
+}

@@ -1,16 +1,19 @@
+@use '../core/mixins';
+@use '../core/variables';
+
 .media {
 }
 
 .media__caption {
-  font-size: $typescale-2;
-  padding-top: $spacing-2;
-  @include contains-links;
+  font-size: variables.$typescale-2;
+  padding-top: variables.$spacing-2;
+  @include mixins.contains-links;
 }
 
 .media--contain-caption {
   display: table;
 
-  @include ie {
+  @include mixins.ie {
     table-layout: fixed;
     width: 100%;
 

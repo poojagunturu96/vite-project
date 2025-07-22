@@ -1,28 +1,29 @@
-$pd-text-color: $black;
-$pd-title-color: $color-primary;
-$pd-title-bg: $white;
-$pd-picker-bg: $white;
-$pd-picker-border: $border-color;
-$pd-picker-border-bottom: $border-color;
-$pd-picker-shadow: none;
-$pd-th-color: $black;
-$pd-day-color: $color-primary;
-$pd-day-bg: transparent;
-$pd-day-hover-color: $color-primary;
-$pd-day-hover-bg: $gray-light;
-$pd-day-today-color: $color-primary;
-$pd-day-selected-color: $white;
-$pd-day-selected-bg: $color-primary;
-$pd-day-selected-shadow: transparent;
-$pd-day-disabled-color: #999;
-$pd-week-color: #999;
+@use '../core/variables';
 
-$pd-font-family: $font-family-sans-serif;
-
-// @import '../../../node_modules/pikaday/scss/pikaday';
+@use '../../../node_modules/pikaday/scss/pikaday' with (
+  $pd-text-color: variables.$black,
+  $pd-title-color: variables.$color-primary,
+  $pd-title-bg: variables.$white,
+  $pd-picker-bg: variables.$white,
+  $pd-picker-border: variables.$border-color,
+  $pd-picker-border-bottom: variables.$border-color,
+  $pd-picker-shadow: none,
+  $pd-th-color: variables.$black,
+  $pd-day-color: variables.$color-primary,
+  $pd-day-bg: transparent,
+  $pd-day-hover-color: variables.$color-primary,
+  $pd-day-hover-bg: variables.$gray-light,
+  $pd-day-today-color: variables.$color-primary,
+  $pd-day-selected-color: variables.$white,
+  $pd-day-selected-bg: variables.$color-primary,
+  $pd-day-selected-shadow: transparent,
+  $pd-day-disabled-color: #999,
+  $pd-week-color: #999,
+  $pd-font-family: variables.$font-family-sans-serif
+);
 
 .pika-single {
-  z-index: $z-index-datepicker;
+  z-index: variables.$z-index-datepicker;
   border: 0;
   padding: 0;
 }
@@ -35,13 +36,13 @@ $pd-font-family: $font-family-sans-serif;
 .pika-table {
   th {
     font-size: 14px;
-    color: $black;
+    color: variables.$black;
     font-weight: normal;
     padding-bottom: 0.5rem;
   }
 
   td {
-    border: 1px solid $gray-light;
+    border: 1px solid variables.$gray-light;
   }
 
   abbr {
@@ -54,7 +55,7 @@ $pd-font-family: $font-family-sans-serif;
 .pika-next {
   &:focus {
     opacity: 1;
-    outline: 1px solid $color-primary;
+    outline: 1px solid variables.$color-primary;
   }
 }
 
@@ -69,19 +70,19 @@ $pd-font-family: $font-family-sans-serif;
   .is-selected & {
     &:focus,
     &:hover {
-      background: $pd-day-selected-bg;
-      color: $pd-day-selected-color;
+      background: pikaday.$pd-day-selected-bg;
+      color: pikaday.$pd-day-selected-color;
     }
   }
 
   .is-disabled &,
   .is-outside-current-month & {
     opacity: 1;
-    color: $gray-light;
+    color: variables.$gray-light;
   }
 
   &:focus {
-    background: $pd-day-hover-bg;
-    color: $pd-day-hover-color;
+    background: pikaday.$pd-day-hover-bg;
+    color: pikaday.$pd-day-hover-color;
   }
 }

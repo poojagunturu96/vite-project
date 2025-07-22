@@ -1,3 +1,5 @@
+@use '../core/variables';
+
 ////
 /// Utilities to be combined with [data-toggle-target] JS widget.
 ////
@@ -5,10 +7,10 @@
 // TODO: it isn't clear that these require the parent element to toggle the element the class is defined on.
 // Perhaps we change this something along the lines of `parent-toggled-flip`
 .toggled-flip {
-  transition: $chevron-transition;
+  transition: variables.$chevron-transition;
 
   .is-toggled > & {
-    transform: $chevron-transform;
+    transform: variables.$chevron-transform;
   }
 }
 

@@ -1,36 +1,41 @@
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
+
 .footer-menu {
-  margin-top: $spacing-5;
-  @include breakpoint(lg) {
+  margin-top: variables.$spacing-5;
+  @include breakpoints.breakpoint(lg) {
     margin-top: 0;
   }
-  @include print-hide;
+  @include mixins.print-hide;
 }
 
 .footer-menu__title {
-  @include h5;
-  color: $white;
-  margin-bottom: $spacing-4;
+  @include type.h5;
+  color: variables.$white;
+  margin-bottom: variables.$spacing-4;
 }
 
 .footer-menu__list--cols {
-  @include breakpoint(sm) {
+  @include breakpoints.breakpoint(sm) {
     columns: 2;
   }
 }
 
 .footer-menu__list--four-cols {
-  @include breakpoint(sm) {
+  @include breakpoints.breakpoint(sm) {
     columns: 4;
   }
 }
 
 .footer-menu__item {
   &:not(:last-child) {
-    margin-bottom: $spacing-4;
+    margin-bottom: variables.$spacing-4;
   }
 }
 
 .footer-menu__link {
-  color: $white;
-  font-size: $typescale-2;
+  color: variables.$white;
+  font-size: variables.$typescale-2;
 }

@@ -1,9 +1,12 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 ////
 /// Flexbox utilities
 ////
 
-@each $breakpoint, $variant in $responsive-variants {
-  @include breakpoint($breakpoint) {
+@each $breakpoint, $variant in variables.$responsive-variants {
+  @include breakpoints.breakpoint($breakpoint) {
     .flex#{$variant}-wrap {
       flex-wrap: wrap !important;
     }

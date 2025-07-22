@@ -1,62 +1,75 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
+@use 'sass:color';
+@use 'sass:math';
+@use 'sass:map';
+
 .weekly-schedule {
   position: relative;
 
   .weekly-schedule__column {
-    width: percentage(1/7);
+    width: math.percentage(math.div(1, 7));
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-right: $spacing-2;
+    padding-right: variables.$spacing-2;
 
-    @include breakpoint(lg) {
-      padding-right: $spacing-5;
+    @include breakpoints.breakpoint(lg) {
+      padding-right: variables.$spacing-5;
     }
 
-    &, button {
-      font-size: $typescale-1;
-      font-weight: $font-weight-semibold;
-      line-height: $line-height-heading; 
-      letter-spacing: $letter-spacing;
+    &,
+    button {
+      font-size: variables.$typescale-1;
+      font-weight: variables.$font-weight-semibold;
+      line-height: variables.$line-height-heading;
+      letter-spacing: variables.$letter-spacing;
     }
 
     button:hover,
     button:focus {
       .weekly-schedule__show {
-        background-color: darken($navy, 10%);
+        background-color: color.adjust(variables.$navy, $lightness: -5%);
       }
     }
 
     h2 {
-      color: $black;
-      font-family: $font-family-sans-serif;
-      font-size: $typescale-2;
-      font-weight: $font-weight-semibold;
-      line-height: $line-height-body;
+      color: variables.$black;
+      font-family: variables.$font-family-sans-serif;
+      font-size: variables.$typescale-2;
+      font-weight: variables.$font-weight-semibold;
+      line-height: variables.$line-height-body;
       text-transform: uppercase;
-      margin-bottom: $spacing-6;
+      margin-bottom: variables.$spacing-6;
     }
 
     .weekly-schedule__show-wrapper {
       position: relative;
-      margin-bottom: $spacing-4;
+      margin-bottom: variables.$spacing-4;
 
-      @each $genre, $genre-color in $wrmc-genre-colors {
+      @each $genre, $genre-theme in variables.$wrmc-genre-colors {
         &.#{$genre} {
           .weekly-schedule__show {
-            background-color: $genre-color;
+            background-color: map.get($genre-theme, 'bg-color');
+            color: map.get($genre-theme, 'color');
           }
 
           button:hover,
           button:focus,
           &:focus-within {
             .weekly-schedule__show {
-              background-color: darken($genre-color, 10%);
+              background-color: color.adjust(
+                map.get($genre-theme, 'bg-color'),
+                $lightness: 5%
+              );
             }
           }
         }
       }
 
-      &, button {
+      &,
+      button {
         width: 100%;
 
         &:focus,
@@ -79,8 +92,6 @@
         }
 
         .weekly-schedule__show {
-          // background-color: darken($navy, 10%);
-          
           svg {
             display: block;
           }
@@ -91,14 +102,14 @@
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
-        color: $white;
+        color: variables.$white;
         // background-color: $navy;
 
         time {
           width: 100%;
           text-align: center;
-          border-bottom: 1px solid $white;
-          padding: $spacing-1 0;
+          border-bottom: 1px solid variables.$white;
+          padding: variables.$spacing-1 0;
         }
 
         svg {
@@ -110,10 +121,10 @@
 
         h3 {
           width: 100%;
-          padding: $spacing-2;
-          font-family: $font-family-sans-serif;
-          font-size: $typescale-1;
-          font-weight: $font-weight-semibold;
+          padding: variables.$spacing-2;
+          font-family: variables.$font-family-sans-serif;
+          font-size: variables.$typescale-1;
+          font-weight: variables.$font-weight-semibold;
           text-transform: capitalize;
           letter-spacing: initial;
         }
@@ -121,8 +132,8 @@
     }
 
     .weekly-schedule__time {
-      color: $gray;
-      margin-bottom: $spacing-4;
+      color: variables.$gray;
+      margin-bottom: variables.$spacing-4;
     }
   }
 }

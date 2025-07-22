@@ -1,29 +1,33 @@
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 .wrmc-accordion {
-  margin-top: $spacing-3;
+  margin-top: variables.$spacing-3;
 }
 
 .wrmc-accordion-toggle-links {
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  color: $navy;
-  font-size: $typescale-2;
-  font-weight: $font-weight-semibold;
-  line-height: $line-height-solid;
+  color: variables.$navy;
+  font-size: variables.$typescale-2;
+  font-weight: variables.$font-weight-semibold;
+  line-height: variables.$line-height-solid;
   text-transform: uppercase;
-  margin-bottom: $spacing-3;
+  margin-bottom: variables.$spacing-3;
 
   a:first-child {
-    margin-right: rem(20);
+    margin-right: functions.rem(20);
   }
 
-  @include breakpoint(md) {
-    margin-bottom: $spacing-2;
+  @include breakpoints.breakpoint(md) {
+    margin-bottom: variables.$spacing-2;
   }
 }
 
 .wrmc-accordion-item {
-  margin-bottom: $spacing-2;
+  margin-bottom: variables.$spacing-2;
 
   &.is-toggled {
     margin-bottom: 0;
@@ -31,37 +35,37 @@
 }
 
 .wrmc-accordion-item__char {
-  color: $gray;
-  font-size: $typescale-2;
-  font-family: $font-family-serif;
+  color: variables.$gray;
+  font-size: variables.$typescale-2;
+  font-family: variables.$font-family-serif;
   line-height: 30px;
-  margin-right: $spacing-3;
+  margin-right: variables.$spacing-3;
   align-self: flex-start;
 }
 
 .wrmc-accordion-item__link {
-  color: $black;
+  color: variables.$black;
   transition: background-color 0.2s;
   cursor: pointer;
 
   &:hover {
     text-decoration: none;
-    background-color: rgba($blue-light, 0.2);
+    background-color: rgba(variables.$blue-light, 0.2);
   }
 }
 
 .wrmc-accordion-item__title {
   display: flex;
   justify-content: space-between;
-  padding: $spacing-2;
-  padding-right: $spacing-3;
-  font-size: $typescale-3;
-  font-family: $font-family-sans-serif;
-  font-weight: $font-weight-semibold;
-  line-height: $line-height-body;
+  padding: variables.$spacing-2;
+  padding-right: variables.$spacing-3;
+  font-size: variables.$typescale-3;
+  font-family: variables.$font-family-sans-serif;
+  font-weight: variables.$font-weight-semibold;
+  line-height: variables.$line-height-body;
   text-transform: uppercase;
-  letter-spacing: $letter-spacing;
-  background-color: $blue-lighter;
+  letter-spacing: variables.$letter-spacing;
+  background-color: variables.$blue-lighter;
 
   .wrmc-accordion-item.has-toggler & {
     .wrmc-accordion-item-close {
@@ -82,7 +86,6 @@
       display: none;
     }
   }
-
 }
 
 .wrmc-accordion-item__label {
@@ -90,7 +93,7 @@
   width: 100%;
 
   &--bold {
-    font-weight: $font-weight-bold;
+    font-weight: variables.$font-weight-bold;
     text-transform: uppercase;
     display: flex;
     align-items: center;
@@ -98,12 +101,12 @@
 }
 
 .wrmc-accordion-item__icon {
-  transition: $chevron-transition;
-  margin-left: $spacing-3;
+  transition: variables.$chevron-transition;
+  margin-left: variables.$spacing-3;
   flex: 0 0 auto;
 
   .wrmc-accordion-item.is-toggled & {
-    transform: $chevron-transform;
+    transform: variables.$chevron-transform;
   }
 }
 
@@ -131,37 +134,37 @@
 
 .wrmc-accordion-item__list-item {
   &:first-child {
-    padding-top: $spacing-3;
+    padding-top: variables.$spacing-3;
 
     .show-teaser {
       padding-top: 0;
     }
   }
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     &:first-child {
-      padding-top: $spacing-4;
+      padding-top: variables.$spacing-4;
     }
   }
-  
-  &:not(:last-child){
-    border-bottom: 1px solid $gray-light;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid variables.$gray-light;
   }
 }
 
 .wrmc-accordion-item__sub-title {
-  font-size: $typescale-1;
-  font-family: $font-family-sans-serif;
-  font-weight: $font-weight-medium;
+  font-size: variables.$typescale-1;
+  font-family: variables.$font-family-sans-serif;
+  font-weight: variables.$font-weight-medium;
   text-transform: uppercase;
-  letter-spacing: $letter-spacing;
-  margin-bottom: $spacing-2;
-  color: $gray;
+  letter-spacing: variables.$letter-spacing;
+  margin-bottom: variables.$spacing-2;
+  color: variables.$gray;
 
   &:not(:first-child) {
-    margin-top: $spacing-4;
-    margin-bottom: $spacing-1;
-    padding-top: $spacing-4;
+    margin-top: variables.$spacing-4;
+    margin-bottom: variables.$spacing-1;
+    padding-top: variables.$spacing-4;
     border-top: 1px solid #dedede;
   }
 }

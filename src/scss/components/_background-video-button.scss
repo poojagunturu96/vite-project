@@ -1,0 +1,48 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
+.background-video--button {
+  position: absolute;
+  bottom: variables.$spacing-3;
+  left: variables.$spacing-3;
+  color: white;
+  z-index: variables.$z-index-background-video-control;
+  opacity: 0.5;
+  display: none;
+
+  @include breakpoints.breakpoint(sm) {
+    display: block;
+  }
+
+  @include breakpoints.breakpoint(lg) {
+    bottom: variables.$spacing-5;
+    left: variables.$spacing-5;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    display: none;
+  }
+
+  .background-video--button-play {
+    display: none;
+  }
+
+  .background-video--button-pause {
+    display: block;
+  }
+
+  &.not-playing {
+    .background-video--button-play {
+      display: block;
+    }
+
+    .background-video--button-pause {
+      display: none;
+    }
+  }
+
+  .icon {
+    width: variables.$typescale-9;
+    height: variables.$typescale-9;
+  }
+}

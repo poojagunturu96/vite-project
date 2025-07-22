@@ -1,17 +1,22 @@
+@use '../core/functions';
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 .school-header {
   &.davis-header {
-    background: $black;
+    background: variables.$black;
     position: relative;
     border: 0;
 
     .school-header__main {
       align-items: flex-start;
 
-      @include breakpoint(sm) {
+      @include breakpoints.breakpoint(sm) {
         align-items: center;
       }
 
-      @include breakpoint(xl) {
+      @include breakpoints.breakpoint(xl) {
         align-items: flex-start;
       }
     }
@@ -23,34 +28,41 @@
 
     .school-header__logo {
       img:first-child {
-        padding-bottom: $spacing-7;
+        padding-bottom: variables.$spacing-7;
 
-        @include breakpoint(sm) {
+        @include breakpoints.breakpoint(sm) {
           padding-bottom: 0;
-          padding-right: rem(12);
+          padding-right: functions.rem(12);
         }
       }
 
       img:nth-child(2) {
         position: absolute;
-        left: $spacing-3;
-        top: rem(70);
+        left: variables.$spacing-3;
+        top: functions.rem(70);
+        width: 288px;
 
-        @include breakpoint(sm) {
+        @include breakpoints.breakpoint(sm) {
           position: initial;
+        }
+
+        @include breakpoints.breakpoint(md) {
+          width: 309px;
         }
       }
 
-      padding-top: $spacing-3;
-      padding-bottom: $spacing-3;
-
-      @include breakpoint(md) {
-        padding-top: $spacing-4;
-        padding-bottom: $spacing-4;
+      & {
+        padding-top: variables.$spacing-3;
+        padding-bottom: variables.$spacing-3;
       }
 
-      @include breakpoint(lg) {
-        padding-bottom: $spacing-5;
+      @include breakpoints.breakpoint(md) {
+        padding-top: variables.$spacing-4;
+        padding-bottom: variables.$spacing-4;
+      }
+
+      @include breakpoints.breakpoint(lg) {
+        padding-bottom: variables.$spacing-5;
       }
     }
 
@@ -59,8 +71,8 @@
       flex-direction: row-reverse;
 
       .school-search__handle {
-        color: $white;
-        font-weight: $font-weight-semibold;
+        color: variables.$white;
+        font-weight: variables.$font-weight-semibold;
       }
     }
   }
@@ -72,33 +84,33 @@
   }
 
   .drawer__content {
-    background: $black;
+    background: variables.$black;
   }
 
   .drawer-nav__item {
-    border-top-color: $gray;
+    border-top-color: variables.$gray;
   }
 
   .drawer-nav__handle {
-    border-left-color: $gray;
+    border-left-color: variables.$gray;
   }
 
   .drawer-nav__list {
-    border-top-color: $gray;
+    border-top-color: variables.$gray;
   }
 }
 
 .davis-nav {
-  @include print-hide;
   display: none;
 
-  @include breakpoint(xl) {
+  @include mixins.print-hide;
+  @include breakpoints.breakpoint(xl) {
     display: initial;
   }
 
   .davis-nav__link {
-    font-size: $typescale-1;
-    padding-top: $spacing-3;
+    font-size: variables.$typescale-1;
+    padding-top: variables.$spacing-3;
     padding-bottom: 0;
     border-bottom: 1px solid transparent;
     text-decoration: none;
@@ -112,16 +124,16 @@
 
 .davis-nav__handle {
   display: inline-block;
-  padding: $spacing-3;
+  padding: variables.$spacing-3;
   padding-right: 0;
-  font-size: $typescale-2;
-  font-weight: $font-weight-semibold;
-  line-height: $line-height-body;
-  color: $white;
+  font-size: variables.$typescale-2;
+  font-weight: variables.$font-weight-semibold;
+  line-height: variables.$line-height-body;
+  color: variables.$white;
   background: none;
   border: 0;
 
-  @include breakpoint(xl) {
+  @include breakpoints.breakpoint(xl) {
     display: none;
   }
 }
@@ -129,7 +141,7 @@
 .davis-nav__menu {
   display: none;
 
-  @include breakpoint(xl) {
+  @include breakpoints.breakpoint(xl) {
     display: flex;
     flex-direction: column-reverse;
   }
@@ -159,12 +171,12 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: $black;
-  padding: #{$spacing-3 / 2} $spacing-3;
+  background-color: variables.$black;
+  padding: #{variables.$spacing-3 * 0.5} variables.$spacing-3;
   transition: opacity 0.2s;
   opacity: 0;
   visibility: hidden;
-  z-index: $z-index-school-nav-dropdown;
+  z-index: variables.$z-index-school-nav-dropdown;
   min-width: 300px;
 }
 
@@ -184,7 +196,7 @@
   transition: opacity 0.2s;
 
   &:not(:last-child):not(.davis-nav__item--sub) {
-    margin-right: $spacing-5;
+    margin-right: variables.$spacing-5;
   }
 
   &:focus-within,
@@ -198,11 +210,11 @@
 
 .davis-nav__link {
   display: block;
-  padding-top: $spacing-2;
-  padding-bottom: $spacing-2;
-  color: $white;
-  font-size: $typescale-2;
-  font-weight: $font-weight-semibold;
+  padding-top: variables.$spacing-2;
+  padding-bottom: variables.$spacing-2;
+  color: variables.$white;
+  font-size: variables.$typescale-2;
+  font-weight: variables.$font-weight-semibold;
   opacity: 0.8;
   transition:
     opacity 0.2s,
@@ -215,7 +227,7 @@
 
   &.is-toggled {
     opacity: 1;
-    border-color: $white;
+    border-color: variables.$white;
   }
 }
 
@@ -236,9 +248,9 @@
 }
 
 .davis-nav__link--sub {
-  padding-top: $spacing-3 / 2;
-  padding-bottom: $spacing-3 / 2;
-  font-size: $typescale-2;
+  padding-top: variables.$spacing-3 * 0.5;
+  padding-bottom: variables.$spacing-3 * 0.5;
+  font-size: variables.$typescale-2;
 
   &:hover,
   &:focus {
@@ -251,10 +263,10 @@
 
   .davis-nav__item:focus-within &,
   .davis-nav__item:hover & {
-    @include themify(border-color);
+    @include mixins.themify(border-color);
   }
 }
 
 .davis-nav__link--active {
-  @include themify(border-color);
+  @include mixins.themify(border-color);
 }

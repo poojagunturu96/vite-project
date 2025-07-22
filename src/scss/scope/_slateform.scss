@@ -1,17 +1,23 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/buttons';
+@use '../mixins/forms';
+@use '../mixins/type';
+
 .slateform {
   padding: 2px;
 
   a {
-    @include link-border;
+    @include type.link-border;
   }
 
   h1 {
-    @include h3;
-    margin-bottom: $spacing-4;
+    @include type.h3;
+    margin-bottom: variables.$spacing-4;
   }
 
   fieldset {
-    @include form-fieldset;
+    @include forms.form-fieldset;
 
     div:last-of-type {
       margin-bottom: 0;
@@ -23,23 +29,23 @@
   }
 
   legend {
-    @include form-legend;
+    @include forms.form-legend;
   }
 
   .action,
   .form_question,
   fieldset > div {
-    @include form-group;
+    @include forms.form-group;
   }
 
   label,
   .form_label {
-    @include form-label;
+    @include forms.form-label;
   }
 
   div[data-required='1'] label:after {
     content: ' *';
-    @include form-required;
+    @include forms.form-required;
   }
 
   select,
@@ -47,36 +53,39 @@
   input[type='text'],
   input[type='email'],
   input[type='tel'] {
-    @include form-control;
-    margin-top: 0; // remove style coming from global form-text, which is meant for helper text
-    padding: $spacing-2;
-    width: auto;
-    max-width: 100%;
+    @include forms.form-control;
+
+    & {
+      margin-top: 0; // remove style coming from global form-text, which is meant for helper text
+      padding: variables.$spacing-2;
+      width: auto;
+      max-width: 100%;
+    }
   }
 
   select {
-    @include form-select;
+    @include forms.form-select;
   }
 
   .action button {
-    @include button-base;
-    @include button-theme('primary');
+    @include buttons.button-base;
+    @include buttons.button-theme('primary');
   }
 
   .form_responses {
-    @include breakpoint(sm) {
+    @include breakpoints.breakpoint(sm) {
       display: flex;
     }
 
     select,
     input {
-      @include breakpoint(sm) {
+      @include breakpoints.breakpoint(sm) {
         flex: 0 0 auto;
         margin-bottom: 0;
       }
 
       &:not(:last-child) {
-        margin-right: $spacing-3;
+        margin-right: variables.$spacing-3;
       }
     }
   }

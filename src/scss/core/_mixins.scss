@@ -2,16 +2,17 @@
 /// Sass mixins
 ////
 
-@import 'mixins/breakpoints';
-@import 'mixins/grid';
-@import 'mixins/grid-framework';
-@import 'mixins/clearfix';
-@import 'mixins/type';
-@import 'mixins/screen-reader';
-@import 'mixins/forms';
-@import 'mixins/buttons';
-@import 'mixins/waveform-bars';
-@import 'mixins/homepage_grid';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+@use '../mixins/grid-framework';
+@use '../mixins/clearfix';
+@use '../mixins/type';
+@use '../mixins/screen-reader';
+@use '../mixins/forms';
+@use '../mixins/buttons';
+@use '../mixins/waveform-bars';
+@use '../mixins/homepage_grid';
+@use 'variables';
 
 @mixin absolute-fill {
   position: absolute;
@@ -23,7 +24,7 @@
 
 // applies each theme color to the property passed
 @mixin themify($prop) {
-  @each $name, $color in $themes {
+  @each $name, $color in variables.$themes {
     .theme-#{$name} & {
       #{$prop}: $color;
     }
@@ -38,7 +39,7 @@
 
 @mixin contains-links {
   a {
-    @include link-border;
+    @include type.link-border;
   }
 }
 

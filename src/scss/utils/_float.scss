@@ -1,9 +1,12 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 ////
 /// Float utilities. Use with .clearfix.
 ////
 
-@each $breakpoint, $variant in $responsive-variants {
-  @include breakpoint($breakpoint) {
+@each $breakpoint, $variant in variables.$responsive-variants {
+  @include breakpoints.breakpoint($breakpoint) {
     .float#{$variant}-right {
       float: right;
     }

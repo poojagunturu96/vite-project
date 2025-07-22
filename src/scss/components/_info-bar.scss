@@ -1,0 +1,114 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
+
+.info-bar {
+  background: variables.$blue-lighter;
+  padding-top: variables.$spacing-2;
+  padding-bottom: variables.$spacing-2;
+}
+
+.info-bar__list {
+  @include breakpoints.breakpoint(md) {
+    display: flex;
+  }
+}
+
+.info-bar__item {
+  font-size: variables.$typescale-2;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid variables.$border-color;
+    padding-bottom: variables.$spacing-2;
+    margin-bottom: variables.$spacing-2;
+
+    @include breakpoints.breakpoint(md) {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: 0;
+      border-right: 1px solid variables.$border-color;
+    }
+  }
+
+  @include breakpoints.breakpoint(md) {
+    margin-right: variables.$spacing-4;
+    padding-right: variables.$spacing-4;
+  }
+}
+
+.info-bar.link-list {
+  @include breakpoints.breakpoint(lg) {
+    line-height: variables.$line-height-solid;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include breakpoints.breakpoint(lg) {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    div:first-child {
+      text-align: center;
+      margin-bottom: variables.$spacing-1;
+
+      @include breakpoints.breakpoint(sm) {
+        margin-bottom: 0;
+      }
+
+      li {
+        display: inline;
+        font-weight: variables.$font-weight-semibold;
+        white-space: nowrap;
+
+        &:not(:first-child) {
+          margin-left: variables.$spacing-2;
+          padding-left: variables.$spacing-2;
+
+          @include breakpoints.breakpoint(md) {
+            margin-left: 0;
+            padding-left: 0;
+          }
+        }
+
+        @include breakpoints.breakpoint(md) {
+          margin-right: variables.$spacing-3;
+          padding-right: variables.$spacing-3;
+        }
+
+        @include breakpoints.breakpoint(lg) {
+          margin-right: variables.$spacing-4;
+          padding-right: variables.$spacing-4;
+        }
+
+        &:last-child {
+          @include breakpoints.breakpoint(md) {
+            margin-right: 0;
+            padding-right: 0;
+          }
+
+          @include breakpoints.breakpoint(lg) {
+            margin-right: variables.$spacing-5;
+            padding-right: variables.$spacing-5;
+            border-right: 1px solid variables.$border-color;
+          }
+        }
+
+        a {
+          @include type.link-border;
+        }
+      }
+    }
+
+    ul.d-inline-flex {
+      li:first-child {
+        a {
+          padding-left: 0 !important;
+        }
+      }
+    }
+  }
+}

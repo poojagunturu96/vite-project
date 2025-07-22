@@ -1,24 +1,27 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 ////
 /// Column count utilities. Useful for basic masonry layouts.
 ////
 
 .col-count-md-2 {
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     column-count: 2;
   }
 }
 
 .col-count-xl-3 {
-  @include breakpoint(xl) {
+  @include breakpoints.breakpoint(xl) {
     column-count: 3;
   }
 }
 
 .col-count-md-2,
 .col-count-xl-3 {
-  column-gap: $grid-gutter-width;
+  column-gap: variables.$grid-gutter-width;
 
-  @include breakpoint(lg) {
-    column-gap: $grid-gutter-width-lg;
+  @include breakpoints.breakpoint(lg) {
+    column-gap: variables.$grid-gutter-width-lg;
   }
 }

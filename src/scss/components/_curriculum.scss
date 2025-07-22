@@ -1,0 +1,179 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
+@use '../core/functions';
+
+.curriculum__row {
+  display: inline-grid;
+  width: 100%;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  align-items: center;
+
+  @include breakpoints.breakpoint(md) {
+    column-gap: variables.$spacing-2;
+    grid-template-columns: 4fr repeat(4, 1fr);
+  }
+
+  @include breakpoints.breakpoint(xl) {
+    grid-template-columns: 7fr repeat(4, 1fr);
+  }
+
+  &.curriculum__row--three-column {
+    @include breakpoints.breakpoint(md) {
+      grid-template-columns: 4fr repeat(2, 1fr);
+    }
+  }
+
+  &.curriculum__row--four-column {
+    @include breakpoints.breakpoint(md) {
+      grid-template-columns: 4fr repeat(3, 1fr);
+    }
+
+    @include breakpoints.breakpoint(xl) {
+      grid-template-columns: 6fr repeat(3, 1fr);
+    }
+  }
+
+  &.curriculum__row--one-column {
+    @include breakpoints.breakpoint(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &.curriculum__row--header {
+    display: none;
+    border-bottom: 5px solid variables.$border-color;
+    font-size: variables.$typescale-2;
+    font-weight: variables.$font-weight-semibold;
+    text-align: left;
+    background-color: variables.$white;
+
+    .curriculum__cell {
+      padding-top: variables.$spacing-2;
+      padding-bottom: variables.$spacing-2;
+    }
+
+    @include breakpoints.breakpoint(md) {
+      display: grid;
+      white-space: nowrap;
+      position: sticky;
+      transition: top 0.4s ease-in-out;
+      top: 0;
+      z-index: variables.$z-index-curriculum-header;
+    }
+
+    &.headroom--pinned {
+      @include breakpoints.breakpoint(md) {
+        top: 73px;
+      }
+
+      @include breakpoints.breakpoint(xl) {
+        top: 131px;
+      }
+    }
+
+    &.curriculum__row--one-column {
+      padding: 0;
+    }
+  }
+
+  &:not(.curriculum__row--header) {
+    &:not(:last-of-type) {
+      @include breakpoints.breakpoint(md) {
+        border-bottom: 1px solid variables.$border-color;
+      }
+    }
+  }
+
+  .accordion-item__content--column {
+    display: none;
+    grid-row-start: 2;
+    grid-row-end: span 2;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    padding-left: variables.$spacing-5;
+
+    p {
+      font-size: variables.$typescale-3;
+    }
+  }
+
+  &.is-toggled {
+    .accordion-item__content--column {
+      display: flex;
+    }
+  }
+}
+
+.curriculum__cell {
+  &:not(:first-child) {
+    text-align: center;
+  }
+
+  .curriculum__row:not(.curriculum__row--header) & {
+    padding-top: variables.$spacing-3;
+    padding-bottom: variables.$spacing-3;
+    padding-right: variables.$spacing-3;
+
+    @include breakpoints.breakpoint(md) {
+      padding-right: 0;
+    }
+
+    &:not(:first-child) {
+      display: none;
+      padding-right: 0;
+
+      @include breakpoints.breakpoint(md) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .accordion-item__link {
+    display: flex;
+    align-items: baseline;
+    font-size: variables.$typescale-3;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .accordion-item__icon {
+    transition: variables.$chevron-transition;
+    height: 0.75em;
+  }
+
+  .accordion-item__link.is-toggled .accordion-item__icon {
+    transform: variables.$caret-transform;
+  }
+
+  .curriculum__cell-title {
+    font-size: inherit;
+    font-family: variables.$font-family-sans-serif;
+    line-height: variables.$line-height-body;
+  }
+
+  .curriculum__table-sm-data {
+    span:not(:last-child):after {
+      content: ',  ';
+    }
+  }
+
+  .curriculum__cell--checkmark {
+    display: inline-flex;
+    padding: variables.$spacing-1;
+    background-color: variables.$blue-lighter;
+    color: variables.$navy;
+    border-radius: variables.$spacing-3;
+
+    .icon {
+      width: 0.875em;
+      height: 0.875em;
+    }
+  }
+}

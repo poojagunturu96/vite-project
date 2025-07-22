@@ -1,10 +1,14 @@
+@use '../core/variables';
+@use '../mixins/buttons';
+@use '../mixins/breakpoints';
+
 .button {
-  @include button-base;
+  @include buttons.button-base;
 }
 
 .button--disabled,
 .button[disabled] {
-  @include button-disabled;
+  @include buttons.button-disabled;
 }
 
 // Shapes
@@ -27,35 +31,39 @@
 }
 
 .button--heavy {
-  font-size: $typescale-2;
-  font-weight: $font-weight-semibold;
+  font-size: variables.$typescale-2;
+  font-weight: variables.$font-weight-semibold;
+
+  @include breakpoints.breakpoint(lg) {
+    font-size: variables.$typescale-3;
+  }
 }
 
 // Sizes
 
 .button--sm {
-  @include button-size(sm);
+  @include buttons.button-size(sm);
 }
 
 // Themes
 
 .button--primary {
-  @include button-theme('primary');
+  @include buttons.button-theme('primary');
 
   &.button--outline {
-    @include button-theme('primary-outline');
+    @include buttons.button-theme('primary-outline');
   }
 }
 
 .button--light {
-  @include button-theme('light');
+  @include buttons.button-theme('light');
 
   &.button--outline {
-    @include button-theme('light-outline');
+    @include buttons.button-theme('light-outline');
   }
 
   &.button--dark-outline {
-    @include button-theme('dark-outline');
+    @include buttons.button-theme('dark-outline');
   }
 }
 

@@ -1,3 +1,5 @@
+@use '../core/variables';
+
 .tooltip {
   position: relative;
   display: inline-block;
@@ -19,7 +21,7 @@
   }
 
   .tooltip--light & {
-    color: $white;
+    color: variables.$white;
   }
 }
 
@@ -28,10 +30,10 @@
   position: absolute;
   right: 0;
   bottom: calc(100% + 10px);
-  background: $white;
-  padding: $spacing-2;
-  font-size: $typescale-2;
-  box-shadow: 0 0 8px rgba($black, 0.5);
+  background: variables.$white;
+  padding: variables.$spacing-2;
+  font-size: variables.$typescale-2;
+  box-shadow: 0 0 8px rgba(variables.$black, 0.5);
   min-width: 230px;
   max-width: 100vw;
   animation: fadeInDown 0.2s;

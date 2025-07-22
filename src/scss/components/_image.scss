@@ -1,3 +1,5 @@
+@use '../mixins/breakpoints';
+
 .image {
   display: flex;
   justify-content: center;
@@ -5,7 +7,7 @@
 
 // margin is applied at .paragraphs level
 .image--right {
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     float: right;
   }
 
@@ -15,7 +17,7 @@
 }
 
 .image--left {
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     float: left;
   }
 

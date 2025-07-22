@@ -1,9 +1,13 @@
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 .midd-search {
   order: 1;
   margin-left: auto;
-  @include print-hide;
+  @include mixins.print-hide;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     margin-left: 0;
     order: 2;
     position: relative;
@@ -12,21 +16,21 @@
 
 .midd-search__handle {
   display: inline-block;
-  color: $white;
-  font-weight: $font-weight-medium;
-  font-size: $typescale-2;
-  line-height: $line-height-solid;
-  padding: $spacing-3;
+  color: variables.$white;
+  font-weight: variables.$font-weight-medium;
+  font-size: variables.$typescale-2;
+  line-height: variables.$line-height-solid;
+  padding: variables.$spacing-3;
 
   &:hover {
     text-decoration: none;
   }
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     border-top: 4px solid transparent;
     transition: border-color 0.2s;
-    padding-top: calc(#{$spacing-4} - 4px);
-    padding-bottom: $spacing-4;
+    padding-top: calc(#{variables.$spacing-4} - 4px);
+    padding-bottom: variables.$spacing-4;
     padding-left: 0;
     padding-right: 0;
     opacity: 0.8;
@@ -34,13 +38,14 @@
     &:hover,
     &.is-toggled {
       opacity: 1;
-      border-color: $white;
+      border-color: variables.$white;
     }
   }
 }
 
 .midd-search__mag {
-  margin-right: $spacing-1;
+  margin-right: variables.$spacing-1;
+
   .midd-search__handle.is-toggled & {
     display: none;
   }
@@ -48,44 +53,45 @@
 
 .midd-search__times {
   display: none;
-  margin-right: $spacing-1;
+  margin-right: variables.$spacing-1;
+
   .midd-search__handle.is-toggled & {
     display: inline-block;
   }
 }
 
 .midd-search__content {
-  background: $navy-dark;
+  background: variables.$navy-dark;
   position: absolute;
   top: 100%;
   right: 0;
   width: 100%;
-  padding: $spacing-3;
-  padding-top: $spacing-4; // space away from shield more
+  padding: variables.$spacing-3;
+  padding-top: variables.$spacing-4; // space away from shield more
   opacity: 0;
   visibility: hidden;
   transition: 0.2s;
-  z-index: $z-index-midd-search-content;
+  z-index: variables.$z-index-midd-search-content;
 
   &.is-toggled {
     visibility: visible;
     opacity: 1;
   }
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     width: 400px;
-    border-top: 1px solid $white;
-    padding-top: $spacing-3;
+    border-top: 1px solid variables.$white;
+    padding-top: variables.$spacing-3;
   }
 }
 
 .midd-search__input {
-  border-color: $color-primary-dark;
-  background-color: $white;
+  border-color: variables.$color-primary-dark;
+  background-color: variables.$white;
 }
 
 .midd-search__submit {
-  border-color: $color-primary-dark;
-  color: $navy;
-  background-color: $white;
+  border-color: variables.$color-primary-dark;
+  color: variables.$navy;
+  background-color: variables.$white;
 }

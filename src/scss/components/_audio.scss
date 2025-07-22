@@ -1,9 +1,11 @@
-.audio {
-}
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
+@use 'sass:math';
 
 .audio__embed {
   position: relative;
-  padding-top: percentage(9 / 16);
+  padding-top: math.percentage(math.div(9, 16));
 
   iframe {
     position: absolute;
@@ -15,12 +17,12 @@
 }
 
 .audio__text {
-  font-size: $typescale-3;
+  font-size: variables.$typescale-3;
 }
 
 // TODO: this should be pulled out and only styling the js player
 .audio__player {
-  border: 1px solid $border-color;
+  border: 1px solid variables.$border-color;
   display: flex;
   align-items: center;
 }
@@ -30,7 +32,7 @@
 
 .audio__button-text {
   display: none;
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     display: inline;
   }
 }
@@ -39,7 +41,7 @@
   // width: 300px;
   flex: 0 0 8rem;
   text-align: center;
-  font-size: $typescale-2;
+  font-size: variables.$typescale-2;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -53,6 +55,6 @@
 
 .audio__body {
   padding: 1rem;
-  border: 1px solid $border-color;
+  border: 1px solid variables.$border-color;
   border-top: 0;
 }

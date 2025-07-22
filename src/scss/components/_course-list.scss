@@ -1,45 +1,48 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
 .paragraph--course-list {
   .section__header {
-    margin-bottom: $spacing-5;
+    margin-bottom: variables.$spacing-5;
   }
 
   .course-list--filters {
     display: flex;
     flex-direction: column;
-    margin-top: $spacing-5;
+    margin-top: variables.$spacing-5;
     border-bottom: 1px solid #dedede;
 
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       flex-direction: row;
-      margin-top: $spacing-2;
-      padding-bottom: $spacing-4;
+      margin-top: variables.$spacing-2;
+      padding-bottom: variables.$spacing-4;
 
       .checkbox--filter:not(:last-child) {
-        margin-right: $spacing-7;
+        margin-right: variables.$spacing-7;
       }
     }
 
     .radio__label {
-      font-weight: $font-weight-normal;
-      font-size: $typescale-2;
-      line-height: $line-height-solid;
+      font-weight: variables.$font-weight-normal;
+      font-size: variables.$typescale-2;
+      line-height: variables.$line-height-solid;
       align-items: center;
       padding: 0;
-      margin-bottom: $spacing-4;
+      margin-bottom: variables.$spacing-4;
 
       &:before {
-        margin-right: $spacing-2;
+        margin-right: variables.$spacing-2;
       }
 
-      @include breakpoint(md) {
+      @include breakpoints.breakpoint(md) {
         margin-bottom: 0;
       }
     }
   }
 
   .course-list--text {
-    margin-bottom: $spacing-2;
-    font-size: $typescale-2;
+    margin-bottom: variables.$spacing-2;
+    font-size: variables.$typescale-2;
   }
 }
 
