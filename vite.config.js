@@ -32,7 +32,7 @@ export default defineConfig ({
       filters: {
         exists: (value, args) => {
           if (!value) {
-            console.log(args);
+            // console.log(args);
             throw new Error('value is falsy');
           }
 

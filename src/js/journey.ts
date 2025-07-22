@@ -171,7 +171,6 @@ class Journey {
       animProgress <= this.animPauseThreshold + 0.5
     ) {
       this.journeyLineAnimInstance.pause();
-      console.log(this.journeyLineAnimInstance);
     }
   }
 
