@@ -9,18 +9,20 @@ import _ from 'lodash';
 const PROD = process.env.NODE_ENV === 'production';
 const TEST = process.env.CI;
 
-const ymlData = yaml.load(fs.readFileSync('./src/data/data.yml', 'utf8'));
-const imageStyles = yaml.load(fs.readFileSync('./src/data/image_styles.yml', 'utf8'));
+// const ymlData = yaml.load(fs.readFileSync('./src/data/data.yml', 'utf8'));
+// const imageStyles = yaml.load(fs.readFileSync('./src/data/image_styles.yml', 'utf8'));
 
-const data = {
-  ...ymlData,
-  ...imageStyles,
-  env: {
-    test: TEST,
-    production: PROD,
-    vercel: Boolean(process.env.VERCEL_URL)
-  }
-};
+// const data = {
+//   ...ymlData,
+//   ...imageStyles,
+//   env: {
+//     test: TEST,
+//     production: PROD,
+//     vercel: Boolean(process.env.VERCEL_URL)
+//   }
+// };
+
+// console.log(typeof data);
 
 export default defineConfig ({
   // publicDir: 'dist',
@@ -28,11 +30,9 @@ export default defineConfig ({
     vituum(),
     twig({
       root: './src',
-      // ignoredPaths: ['./src/templates/*layout.twig'],
       filters: {
         exists: (value, args) => {
           if (!value) {
-            // console.log(args);
             throw new Error('value is falsy');
           }
 
@@ -57,7 +57,7 @@ export default defineConfig ({
           });
         }
       },
-      data: data
+      data: ['src/data/*.json']
     }),
   ],
   server: {
@@ -66,14 +66,7 @@ export default defineConfig ({
   build: {
     outDir: 'dist',
     rollupOptions: {
-      // input: ['./src/templates/**/*.twig'],
-      output: {
-        // assetFileNames: (assetInfo) => {
-        //   console.log(assetInfo);
-        //   if (assetInfo.names[0] == "index.css") return "css/styles.css";
-        //   return assetInfo.names;
-        // },
-      }
+      output: {}
     }
   }
 })
