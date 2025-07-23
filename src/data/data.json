@@ -1,0 +1,1887 @@
+{
+  "site_title": "Middlebury College",
+  "site_nav": {
+    "items": [
+      {
+        "text": "About the College",
+        "items": [
+          {
+            "text": "Liberal Arts at Middlebury"
+          },
+          {
+            "text": "Faculty Directory"
+          },
+          {
+            "text": "Departments and Programs"
+          },
+          {
+            "text": "The Library"
+          },
+          {
+            "text": "J-Term"
+          },
+          {
+            "text": "Summer Studies"
+          },
+          {
+            "text": "Study Abroad"
+          },
+          {
+            "text": "Academic Resources and Centers"
+          },
+          {
+            "text": "Academic Calendar"
+          }
+        ]
+      },
+      {
+        "text": "Life at Middlebury"
+      },
+      {
+        "text": "Academics",
+        "items": [
+          {
+            "text": "Liberal Arts at Middlebury"
+          },
+          {
+            "text": "Faculty Directory"
+          },
+          {
+            "text": "Departments and Programs"
+          },
+          {
+            "text": "The Library"
+          }
+        ]
+      },
+      {
+        "text": "Admissions"
+      },
+      {
+        "text": "News"
+      },
+      {
+        "text": "Events"
+      }
+    ]
+  },
+  "wrmc_site_nav": {
+    "items": [
+      {
+        "text": "Schedule"
+      },
+      {
+        "text": "Charts"
+      },
+      {
+        "text": "The Studio"
+      },
+      {
+        "text": "Blog"
+      },
+      {
+        "text": "About"
+      }
+    ]
+  },
+  "footer_nav": [
+    {
+      "title": "Information for",
+      "width": 6,
+      "cols": true,
+      "items": [
+        {
+          "text": "Alumni",
+          "url": "/institute/alumni"
+        },
+        {
+          "text": "Donors",
+          "url": "/institute/giving"
+        },
+        {
+          "text": "Employers",
+          "url": "/institute/advancing-your-career/employers"
+        },
+        {
+          "text": "Faculty and Staff",
+          "url": "/institute/faculty-staff"
+        },
+        {
+          "text": "Media",
+          "url": "/institute/offices-services/communications"
+        },
+        {
+          "text": "Partners",
+          "url": "/institute/leadership-impact/global-partnerships"
+        },
+        {
+          "text": "Students",
+          "url": "/institute/students"
+        },
+        {
+          "text": "Visitors",
+          "url": "/institute/admissions/visit"
+        }
+      ]
+    },
+    {
+      "title": "Quick Links",
+      "width": 6,
+      "cols": true,
+      "items": [
+        {
+          "text": "BannerWeb",
+          "url": "https://ssb-prod.ec.middlebury.edu/PNTR/twbkwbis.P_WWWLogin?"
+        },
+        {
+          "text": "Campus Map",
+          "url": "http://www.myatlascms.com/map/index.php?id=972"
+        },
+        {
+          "text": "Contact Us",
+          "url": "https://www.middlebury.edu/institute/institute-approach/about/contact-us"
+        },
+        {
+          "text": "Course Hub",
+          "url": "http://courses.miis.edu/"
+        },
+        {
+          "text": "Directory",
+          "url": "https://directory.miis.edu/"
+        },
+        {
+          "text": "Emergency",
+          "url": "https://www.middlebury.edu/institute/offices-services/security"
+        },
+        {
+          "text": "Employment",
+          "url": "https://middlebury.peopleadmin.com/"
+        },
+        {
+          "text": "EthicsPoint",
+          "url": "https://secure.ethicspoint.com/domain/media/en/gui/28296/index.html"
+        },
+        {
+          "text": "Offices and Services",
+          "url": "/institute/offices-services"
+        },
+        {
+          "text": "Oracle Cloud",
+          "url": "https://myapps.microsoft.com/gmhec.org"
+        },
+        {
+          "text": "State Authorization",
+          "url": "https://www.middlebury.edu/institute/institute-approach/about/strf"
+        },
+        {
+          "text": "WebMail",
+          "url": "https://mail.middlebury.edu/owa/auth/logon.aspx"
+        },
+        {
+          "text": "Website Support",
+          "url": "http://go.middlebury.edu/sitehelp"
+        },
+        {
+          "text": "Zoom Web Conferencing",
+          "url": "https://middlebury.zoom.us"
+        },
+        {
+          "text": "Site Editor Login",
+          "url": "https://www.middlebury.edu/institute/saml/login?destination=/"
+        }
+      ]
+    }
+  ],
+  "utility_footer_nav": [
+    {
+      "title": "Quick Links",
+      "width": 12,
+      "four_cols": true,
+      "items": [
+        {
+          "text": "BannerWeb",
+          "url": "https://ssb-prod.ec.middlebury.edu/PNTR/twbkwbis.P_WWWLogin?"
+        },
+        {
+          "text": "Campus Map",
+          "url": "http://www.myatlascms.com/map/index.php?id=972"
+        },
+        {
+          "text": "Contact Us",
+          "url": "https://www.middlebury.edu/institute/institute-approach/about/contact-us"
+        },
+        {
+          "text": "Course Hub",
+          "url": "http://courses.miis.edu/"
+        },
+        {
+          "text": "Directory",
+          "url": "https://directory.miis.edu/"
+        },
+        {
+          "text": "Emergency",
+          "url": "https://www.middlebury.edu/institute/offices-services/security"
+        },
+        {
+          "text": "Employment",
+          "url": "https://middlebury.peopleadmin.com/"
+        },
+        {
+          "text": "EthicsPoint",
+          "url": "https://secure.ethicspoint.com/domain/media/en/gui/28296/index.html"
+        },
+        {
+          "text": "Offices and Services",
+          "url": "/institute/offices-services"
+        },
+        {
+          "text": "Oracle Cloud",
+          "url": "https://myapps.microsoft.com/gmhec.org"
+        },
+        {
+          "text": "State Authorization",
+          "url": "https://www.middlebury.edu/institute/institute-approach/about/strf"
+        },
+        {
+          "text": "WebMail",
+          "url": "https://mail.middlebury.edu/owa/auth/logon.aspx"
+        },
+        {
+          "text": "Website Support",
+          "url": "http://go.middlebury.edu/sitehelp"
+        },
+        {
+          "text": "Zoom Web Conferencing",
+          "url": "https://middlebury.zoom.us"
+        },
+        {
+          "text": "Site Editor Login",
+          "url": "https://www.middlebury.edu/institute/saml/login?destination=/"
+        }
+      ]
+    }
+  ],
+  "secondary_footer_nav": [
+    {
+      "text": "About Middlebury",
+      "href": "https://www.middlebury.edu/about"
+    },
+    {
+      "text": "Giving",
+      "href": "https://www.middlebury.edu/giving"
+    },
+    {
+      "text": "Employment",
+      "href": "https://www.middlebury.edu/offices/business/hr/jobseeker"
+    },
+    {
+      "text": "Offices and Services",
+      "href": "https://www.middlebury.edu/office/"
+    },
+    {
+      "text": "Copyright",
+      "href": "https://www.middlebury.edu/about/copyright"
+    },
+    {
+      "text": "Privacy",
+      "href": "https://www.middlebury.edu/about/privacy"
+    },
+    {
+      "text": "Emergency",
+      "href": "https://www.middlebury.edu/emergency-response"
+    },
+    {
+      "text": "Site-Editor login",
+      "href": "#"
+    }
+  ],
+  "wrmc_footer_nav": [
+    {
+      "text": "Log In",
+      "href": "http://www.middlebury.edu/about"
+    }
+  ],
+  "social_links": [
+    {
+      "text": "Instagram",
+      "href": "http://go.middlebury.edu/instagram",
+      "slug": "instagram"
+    },
+    {
+      "text": "Facebook",
+      "href": "http://go.middlebury.edu/facebook",
+      "slug": "facebook"
+    },
+    {
+      "text": "twitter",
+      "href": "http://go.middlebury.edu/twitter",
+      "slug": "twitter"
+    },
+    {
+      "text": "LinkedIn",
+      "href": "http://go.middlebury.edu/linkedin",
+      "slug": "linkedin"
+    },
+    {
+      "text": "Vimeo",
+      "href": "http://go.middlebury.edu/vimeo",
+      "slug": "vimeo"
+    }
+  ],
+  "breakpoints": {
+    "xs": 0,
+    "sm": 580,
+    "md": 960,
+    "lg": 1200,
+    "xl": 1440
+  },
+  "offices": [
+    {
+      "title": "Academic Administration",
+      "group": "Academics"
+    },
+    {
+      "title": "Academic Technology",
+      "group": "Academics"
+    },
+    {
+      "title": "Center for Teaching, Learning and Programs",
+      "group": "Academics"
+    },
+    {
+      "title": "Center for the Comparative Study of Race and Ethnicity",
+      "group": "Academics"
+    },
+    {
+      "title": "Course Scheduling",
+      "group": "Academics"
+    },
+    {
+      "title": "Grants and Sponsored Programs",
+      "group": "Academics"
+    },
+    {
+      "title": "Institutional Review Board",
+      "group": "Academics"
+    },
+    {
+      "title": "Learning Resources",
+      "group": "Academics"
+    },
+    {
+      "title": "Library",
+      "group": "Academics"
+    },
+    {
+      "title": "Provost",
+      "group": "Academics"
+    },
+    {
+      "title": "Registrar",
+      "group": "Academics"
+    },
+    {
+      "title": "Rohatyn Center for Global Affairs",
+      "group": "Academics"
+    },
+    {
+      "title": "Sciences Technical Support Services",
+      "group": "Academics"
+    },
+    {
+      "title": "Study Abroad Programs",
+      "group": "Academics"
+    },
+    {
+      "title": "Undergraduate Research",
+      "group": "Academics"
+    },
+    {
+      "title": "Advancement and Alumni Relations",
+      "group": "Administration"
+    },
+    {
+      "title": "Assessment and Institutional Research",
+      "group": "Administration"
+    },
+    {
+      "title": "Communications and Marketing",
+      "group": "Administration"
+    },
+    {
+      "title": "Dean of Environmental Affairs",
+      "group": "Administration"
+    },
+    {
+      "title": "Dean of the College",
+      "group": "Administration"
+    },
+    {
+      "title": "Finance and Treasurer",
+      "group": "Administration"
+    },
+    {
+      "title": "Human Resources",
+      "group": "Administration"
+    },
+    {
+      "title": "Enterprise Risk Management",
+      "group": "Administration"
+    },
+    {
+      "title": "Office of the General Counsel",
+      "group": "Administration"
+    },
+    {
+      "title": "Office of the President",
+      "group": "Administration"
+    },
+    {
+      "title": "Bookstore",
+      "group": "Campus Services"
+    },
+    {
+      "title": "Business Services",
+      "group": "Campus Services"
+    },
+    {
+      "title": "Catering",
+      "group": "Campus Services"
+    },
+    {
+      "title": "Chaplain's Office",
+      "group": "Campus Services"
+    },
+    {
+      "title": "Dining",
+      "group": "Campus Services"
+    },
+    {
+      "title": "Event Management",
+      "group": "Campus Services"
+    },
+    {
+      "title": "Facilities Services",
+      "group": "Campus Services"
+    },
+    {
+      "title": "Office of Sustainability Integration",
+      "group": "Campus Services"
+    },
+    {
+      "title": "Printing and Mailing Services",
+      "group": "Campus Services"
+    },
+    {
+      "title": "Recycling and Waste Management",
+      "group": "Campus Services"
+    },
+    {
+      "title": "Campus Activities and Leadership",
+      "group": "Student Life"
+    },
+    {
+      "title": "Center for Careers and Internships",
+      "group": "Student Life"
+    },
+    {
+      "title": "Scott Center for Spiritual and Religious Life",
+      "group": "Student Life"
+    },
+    {
+      "title": "Chellis Women's Resource Center",
+      "group": "Student Life"
+    },
+    {
+      "title": "College Bookstore",
+      "group": "Student Life"
+    },
+    {
+      "title": "Community Engagement",
+      "group": "Student Life"
+    },
+    {
+      "title": "Dining",
+      "group": "Student Life"
+    },
+    {
+      "title": "International Student and Scholar Services",
+      "group": "Student Life"
+    },
+    {
+      "title": "Student Accessibility Services",
+      "group": "Student Life"
+    },
+    {
+      "title": "Student Employment",
+      "group": "Student Life"
+    },
+    {
+      "title": "Student Fellowships and Scholarships",
+      "group": "Student Life"
+    },
+    {
+      "title": "Student Financial Services (Financial Aid, Bursar, Cashier)",
+      "group": "Student Life"
+    },
+    {
+      "title": "Student Government",
+      "group": "Student Life"
+    },
+    {
+      "title": "The Campus",
+      "group": "Student Life"
+    },
+    {
+      "title": "The Commons",
+      "group": "Student Life"
+    },
+    {
+      "title": "WRMC 91.1FM",
+      "group": "Student Life"
+    },
+    {
+      "title": "Environmental Health and Safety",
+      "group": "Health and Safety"
+    },
+    {
+      "title": "Health and Wellness Education",
+      "group": "Health and Safety"
+    },
+    {
+      "title": "Parton Center for Health and Wellness",
+      "group": "Health and Safety"
+    },
+    {
+      "title": "Public Safety",
+      "group": "Health and Safety"
+    },
+    {
+      "title": "Sexual Assault Resources and Information",
+      "group": "Health and Safety"
+    },
+    {
+      "title": "Middlebury Magazine",
+      "group": "News"
+    },
+    {
+      "title": "News and Media Relations",
+      "group": "News"
+    },
+    {
+      "title": "Bread Loaf School of English",
+      "group": "Schools and Programs"
+    },
+    {
+      "title": "Bread Loaf Writers' Conferences",
+      "group": "Schools and Programs"
+    },
+    {
+      "title": "Middlebury C.V. Starr Schools Abroad",
+      "group": "Schools and Programs"
+    },
+    {
+      "title": "Middlebury in DC",
+      "group": "Schools and Programs"
+    },
+    {
+      "title": "Middlebury Institute of International Studies at Monterey",
+      "group": "Schools and Programs"
+    },
+    {
+      "title": "Middlebury Language Schools",
+      "group": "Schools and Programs"
+    },
+    {
+      "title": "Middlebury School of the Environment",
+      "group": "Schools and Programs"
+    },
+    {
+      "title": "Undergraduate Admissions",
+      "group": "Schools and Programs"
+    },
+    {
+      "title": "Admissions",
+      "group": "Schools and Programs"
+    },
+    {
+      "title": "Student Financial Services (Financial Aid, Bursar, Cashier)",
+      "group": "Schools and Programs"
+    },
+    {
+      "title": "International Student and Scholar Services",
+      "group": "Schools and Programs"
+    },
+    {
+      "title": "Academic Technology",
+      "group": "Technology"
+    },
+    {
+      "title": "Administrative Systems (Banner)",
+      "group": "Technology"
+    },
+    {
+      "title": "Information Security",
+      "group": "Technology"
+    },
+    {
+      "title": "Information Technology Services",
+      "group": "Technology"
+    },
+    {
+      "title": "Reporting and Business Intelligence",
+      "group": "Technology"
+    },
+    {
+      "title": "SensusAccess",
+      "group": "Technology"
+    },
+    {
+      "title": "Technology HelpDesk",
+      "group": "Technology"
+    },
+    {
+      "title": "Telephone Services",
+      "group": "Technology"
+    },
+    {
+      "title": "WebMail",
+      "group": "Technology"
+    }
+  ],
+  "gallery_data": [
+    {
+      "src": "http://placekitten.com/1280/720",
+      "thumb": "http://placekitten.com/64/36",
+      "width": 1280,
+      "height": 720,
+      "alt": "",
+      "srcset": "",
+      "sizes": "",
+      "caption": "Lorem ipsum <a href=\"#\">dolor</a> sit amet consectetur adipisicing elit."
+    },
+    {
+      "src": "http://placekitten.com/1440/810",
+      "thumb": "http://placekitten.com/64/36",
+      "width": 1440,
+      "height": 810,
+      "alt": "",
+      "srcset": "",
+      "sizes": "",
+      "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!"
+    },
+    {
+      "src": "http://placekitten.com/640/360",
+      "thumb": "http://placekitten.com/64/36",
+      "width": 640,
+      "height": 360,
+      "alt": "",
+      "srcset": "",
+      "sizes": "",
+      "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      "src": "http://placekitten.com/320/130",
+      "thumb": "http://placekitten.com/64/36",
+      "width": 320,
+      "height": 130,
+      "alt": "",
+      "srcset": "",
+      "sizes": "",
+      "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      "src": "http://placekitten.com/960/540",
+      "thumb": "http://placekitten.com/64/36",
+      "width": 960,
+      "height": 540,
+      "alt": "",
+      "srcset": "",
+      "sizes": "",
+      "caption": "Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!"
+    },
+    {
+      "src": "http://placekitten.com/400/800",
+      "width": 400,
+      "height": 800,
+      "thumb": "http://placekitten.com/40/80",
+      "alt": "",
+      "srcset": "",
+      "sizes": "",
+      "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!"
+    },
+    {
+      "src": "http://placekitten.com/400/800",
+      "width": 400,
+      "height": 800,
+      "thumb": "http://placekitten.com/40/80",
+      "alt": "",
+      "srcset": "",
+      "sizes": ""
+    },
+    {
+      "src": "http://placekitten.com/450/800",
+      "width": 450,
+      "height": 800,
+      "thumb": "http://placekitten.com/40/80",
+      "alt": "",
+      "srcset": "",
+      "sizes": ""
+    },
+    {
+      "src": "http://placekitten.com/700/600",
+      "width": 700,
+      "height": 600,
+      "thumb": "http://placekitten.com/40/80",
+      "alt": "",
+      "srcset": "",
+      "sizes": ""
+    },
+    {
+      "src": "http://placekitten.com/700/600",
+      "width": 700,
+      "height": 600,
+      "thumb": "http://placekitten.com/40/80",
+      "alt": "",
+      "srcset": "",
+      "sizes": ""
+    },
+    {
+      "src": "http://placekitten.com/960/540",
+      "thumb": "http://placekitten.com/64/36",
+      "width": 960,
+      "height": 540,
+      "alt": "",
+      "srcset": "",
+      "sizes": "",
+      "caption": "Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!"
+    },
+    {
+      "src": "http://placekitten.com/400/800",
+      "thumb": "http://placekitten.com/40/80",
+      "alt": "",
+      "width": 400,
+      "height": 800,
+      "srcset": "",
+      "sizes": "",
+      "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!"
+    }
+  ],
+  "top_level_nav_example": [
+    {
+      "text": "Application Instructions and Deadlines"
+    },
+    {
+      "text": "Admission Options"
+    },
+    {
+      "text": "Standardized Tests"
+    },
+    {
+      "text": "Interview Policy"
+    },
+    {
+      "text": "February Admission"
+    },
+    {
+      "text": "Transfer Applicants"
+    },
+    {
+      "text": "International Applicants"
+    },
+    {
+      "text": "Undocumented Applicants"
+    },
+    {
+      "text": "Taking a Gap Year"
+    },
+    {
+      "text": "NESCAC Admissions Practices"
+    }
+  ],
+  "midd_nav": [
+    {
+      "text": "Our Schools",
+      "href": "#",
+      "items": [
+        {
+          "href": "http://www.middlebury.edu/college/",
+          "text": "Middlebury College"
+        },
+        {
+          "href": "https://www.middlebury.edu/institute/",
+          "text": "Middlebury Institute of International Studies"
+        },
+        {
+          "href": "http://www.middlebury.edu/language-schools",
+          "text": "Middlebury Language Schools"
+        },
+        {
+          "href": "http://www.middlebury.edu/schools-abroad",
+          "text": "Middlebury C.V. Starr Schools Abroad"
+        },
+        {
+          "href": "http://www.middlebury.edu/school-english",
+          "text": "Middlebury Bread Loaf School of English"
+        },
+        {
+          "href": "http://www.middlebury.edu/writers-conference",
+          "text": "Middlebury Bread Loaf Writers' Conference"
+        }
+      ]
+    },
+    {
+      "text": "Admissions",
+      "href": "#",
+      "items": [
+        {
+          "href": "http://www.middlebury.edu/college/admissions",
+          "text": "Middlebury College Admissions"
+        },
+        {
+          "href": "https://www.middlebury.edu/institute/admissions",
+          "text": "Middlebury Institute of International Studies Admissions"
+        },
+        {
+          "href": "http://www.middlebury.edu/language-schools/admissions",
+          "text": "Middlebury Language Schools Admissions"
+        },
+        {
+          "href": "http://www.middlebury.edu/schools-abroad/admissions",
+          "text": "Middlebury C.V. Starr Schools Abroad Admissions"
+        },
+        {
+          "href": "http://www.middlebury.edu/school-english/admissions",
+          "text": "Middlebury Bread Loaf School of English Admissions"
+        },
+        {
+          "href": "http://www.middlebury.edu/writers-conference",
+          "text": "Middlebury Bread Loaf Writers' Conference Admissions"
+        }
+      ]
+    },
+    {
+      "href": "http://www.middlebury.edu/about",
+      "text": "About Middlebury"
+    },
+    {
+      "href": "http://www.middlebury.edu/office/",
+      "text": "Offices and Services"
+    }
+  ],
+  "institutional_nav": [
+    {
+      "text": "Our Schools",
+      "href": "#",
+      "items": [
+        {
+          "href": "http://www.middlebury.edu",
+          "text": "Middlebury College"
+        },
+        {
+          "href": "http://www.middlebury.edu/ls",
+          "text": "Language Schools"
+        },
+        {
+          "href": "http://www.middlebury.edu/blse",
+          "text": "Bread Loaf School of English"
+        },
+        {
+          "href": "http://www.middlebury.edu/bread-loaf-conferences",
+          "text": "Bread Loaf Writers' Conference"
+        },
+        {
+          "href": "https://www.middlebury.edu/institute/",
+          "text": "Institute of International Studies at Monterey"
+        },
+        {
+          "href": "http://www.middlebury.edu/study-abroad",
+          "text": "C.V. Starr Schools Abroad"
+        },
+        {
+          "href": "http://www.middlebury.edu/environment",
+          "text": "School of the Environment"
+        }
+      ]
+    },
+    {
+      "text": "About Middlebury",
+      "href": "#"
+    },
+    {
+      "text": "Office and Services",
+      "href": "#"
+    }
+  ],
+  "system_status": [
+    {
+      "name": "Internet<br>(Northbound Link)",
+      "type": "success"
+    },
+    {
+      "name": "Internet<br>(Southbound Link)",
+      "type": "warning"
+    },
+    {
+      "name": "Email",
+      "type": "danger",
+      "link": "#"
+    },
+    {
+      "name": "Self-Service Banner (SSB)",
+      "type": "paused"
+    },
+    {
+      "name": "Internet Native Banner (INB)"
+    },
+    {
+      "name": "Oracle Finance"
+    },
+    {
+      "name": "Google Apps",
+      "link": "#"
+    },
+    {
+      "name": "Office365",
+      "link": "#"
+    },
+    {
+      "name": "VPN"
+    },
+    {
+      "name": "Zoom",
+      "link": "#"
+    },
+    {
+      "name": "Directory"
+    },
+    {
+      "name": "GO"
+    },
+    {
+      "name": "WordPress"
+    },
+    {
+      "name": "Canvas"
+    }
+  ],
+  "printer_status": [
+    {
+      "name": "LIB142"
+    },
+    {
+      "name": "LIB242"
+    },
+    {
+      "name": "LIB242K"
+    },
+    {
+      "name": "LIB303"
+    },
+    {
+      "name": "LIB_PUBLIC_COLOR1"
+    },
+    {
+      "name": "LIB Poster Printer"
+    },
+    {
+      "name": "LAF122"
+    },
+    {
+      "name": "BIH_155_COPY"
+    },
+    {
+      "name": "MBH155"
+    },
+    {
+      "name": "BIH203K"
+    },
+    {
+      "name": "BIH203K"
+    },
+    {
+      "name": "BIH505"
+    },
+    {
+      "name": "BIH632"
+    },
+    {
+      "name": "MBH Poster Printer"
+    },
+    {
+      "name": "AXN105"
+    },
+    {
+      "name": "CFA_PUBLIC"
+    },
+    {
+      "name": "MiddXPress"
+    },
+    {
+      "name": "MNR214"
+    },
+    {
+      "name": "RAJLAB"
+    },
+    {
+      "name": "SDL122a"
+    },
+    {
+      "name": "PRTWOOD<br>Proctor Lounge"
+    }
+  ],
+  "flowchart_data": [
+    {
+      "id": 1,
+      "title": "Do you need chat functionality?",
+      "choices": [
+        {
+          "text": "Yes",
+          "to": 2
+        },
+        {
+          "text": "No",
+          "to": 3
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Will your chats include sensitive data or will you be collaborating with external guests?",
+      "text": "Specifically will include sensitive content, not just discussion around sensitive topics – distinguish between “Change the SSN” and “Change SSN from xxx-xx-xxxx to...”",
+      "choices": [
+        {
+          "text": "Yes",
+          "to": 4
+        },
+        {
+          "text": "No",
+          "to": 5
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Do not use chat.",
+      "answer": true
+    },
+    {
+      "id": 4,
+      "title": "Has you department or collaborants selected a tool?",
+      "choices": [
+        {
+          "text": "Yes",
+          "to": 5
+        },
+        {
+          "text": "No",
+          "to": 7
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Teams or Zoom?",
+      "choices": [
+        {
+          "text": "Yes",
+          "to": 6
+        },
+        {
+          "text": "No",
+          "to": 8
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Use Teams or Zoom.",
+      "answer": true
+    },
+    {
+      "id": 7,
+      "title": "Simple Chat? (vs. a more fully featured, integrated capability?)",
+      "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "choices": [
+        {
+          "text": "Yes",
+          "to": 9
+        },
+        {
+          "text": "No",
+          "to": 10
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Use select tool but consider switching to Teams or Zoom.",
+      "answer": true
+    },
+    {
+      "id": 9,
+      "text": "We suggest Teams. <a href=\"#\">Set up your Teams account</a>.",
+      "answer": true
+    },
+    {
+      "id": 10,
+      "text": "We suggest Zoom. <a href=\"#\">Set up your Zoom account</a>.",
+      "answer": true
+    }
+  ],
+  "area_of_study": [
+    {
+      "category": "A",
+      "course_names": [
+        {
+          "name": "African Studies"
+        },
+        {
+          "name": "African American Studies"
+        },
+        {
+          "name": "American Studies"
+        },
+        {
+          "name": "Anthropology"
+        },
+        {
+          "name": "Arabic"
+        }
+      ]
+    },
+    {
+      "category": "B",
+      "course_names": [
+        {
+          "name": "Biology"
+        },
+        {
+          "name": "Black Studies"
+        }
+      ]
+    },
+    {
+      "category": "C",
+      "course_names": [
+        {
+          "name": "Chemistry & Biochemistry"
+        },
+        {
+          "name": "Chinese"
+        },
+        {
+          "name": "Classics and Classical Studies"
+        },
+        {
+          "name": "Comparative Literature"
+        },
+        {
+          "name": "Computer Science"
+        },
+        {
+          "name": "Creative Writing"
+        }
+      ]
+    },
+    {
+      "category": "D",
+      "course_names": [
+        {
+          "name": "Dance"
+        }
+      ]
+    },
+    {
+      "category": "E",
+      "course_names": [
+        {
+          "name": "Economics"
+        },
+        {
+          "name": "Education Studies"
+        },
+        {
+          "name": "English & American Literatures"
+        },
+        {
+          "name": "Environmental Studies"
+        }
+      ]
+    },
+    {
+      "category": "F",
+      "course_names": [
+        {
+          "name": "Film & Media Culture"
+        },
+        {
+          "name": "First-Year Seminars"
+        },
+        {
+          "name": "Food Studies Minor"
+        },
+        {
+          "name": "French and Francophone Studies"
+        }
+      ]
+    },
+    {
+      "category": "G",
+      "course_names": [
+        {
+          "name": "Gender, Sexuality & Feminist Studies"
+        },
+        {
+          "name": "Geography"
+        },
+        {
+          "name": "Geology"
+        },
+        {
+          "name": "German"
+        },
+        {
+          "name": "Global Health Minor"
+        },
+        {
+          "name": "Greek"
+        }
+      ]
+    },
+    {
+      "category": "H",
+      "course_names": [
+        {
+          "name": "Hebrew"
+        },
+        {
+          "name": "History of Art & Architecture",
+          "tracks": [
+            {
+              "name": "Architectural Studies"
+            },
+            {
+              "name": "Art History"
+            }
+          ]
+        },
+        {
+          "name": "History"
+        }
+      ]
+    },
+    {
+      "category": "I",
+      "course_names": [
+        {
+          "name": "Independent Scholar"
+        },
+        {
+          "name": "International Politics & Economics"
+        },
+        {
+          "name": "International & Global Studies",
+          "tracks": [
+            {
+              "name": "African Studies"
+            },
+            {
+              "name": "East Asian Studies"
+            },
+            {
+              "name": "European Studies"
+            },
+            {
+              "name": "Global Environmental Change"
+            },
+            {
+              "name": "Global Gender and Sexuality Studies"
+            },
+            {
+              "name": "Global Migration and Diaspora Studies"
+            },
+            {
+              "name": "Global Security Studies"
+            },
+            {
+              "name": "Latin American Studies"
+            },
+            {
+              "name": "Middle East and North Africa Studies"
+            },
+            {
+              "name": "Russian & East European Studies"
+            },
+            {
+              "name": "South Asian Studies"
+            }
+          ]
+        },
+        {
+          "name": "Italian"
+        }
+      ]
+    },
+    {
+      "category": "J",
+      "course_names": [
+        {
+          "name": "Japanese Studies"
+        },
+        {
+          "name": "Jewish Studies"
+        }
+      ]
+    },
+    {
+      "category": "L",
+      "course_names": [
+        {
+          "name": "Latin"
+        },
+        {
+          "name": "Linguistics Minor"
+        },
+        {
+          "name": "Literary Studies"
+        },
+        {
+          "name": "Luso-Hispanic Studies",
+          "tracks": [
+            {
+              "name": "Spanish"
+            },
+            {
+              "name": "Portuguese"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "M",
+      "course_names": [
+        {
+          "name": "Mathematics"
+        },
+        {
+          "name": "Molecular Biology & Biochemistry"
+        },
+        {
+          "name": "Music"
+        }
+      ]
+    },
+    {
+      "category": "N",
+      "course_names": [
+        {
+          "name": "Neuroscience"
+        }
+      ]
+    },
+    {
+      "category": "P",
+      "course_names": [
+        {
+          "name": "Philosophy"
+        },
+        {
+          "name": "Physical Education"
+        },
+        {
+          "name": "Physics"
+        },
+        {
+          "name": "Political Science"
+        },
+        {
+          "name": "Psychology"
+        }
+      ]
+    },
+    {
+      "category": "R",
+      "course_names": [
+        {
+          "name": "Religion"
+        },
+        {
+          "name": "Russian"
+        }
+      ]
+    },
+    {
+      "category": "S",
+      "course_names": [
+        {
+          "name": "Sociology"
+        },
+        {
+          "name": "South Asian Studies Minor"
+        },
+        {
+          "name": "Studio Art"
+        }
+      ]
+    },
+    {
+      "category": "T",
+      "course_names": [
+        {
+          "name": "Theatre"
+        }
+      ]
+    },
+    {
+      "category": "W",
+      "course_names": [
+        {
+          "name": "Writing and Rhetoric Program"
+        }
+      ]
+    }
+  ],
+  "journey_gallery_data": [
+    {
+      "src": "http://placekitten.com/1376/774",
+      "width": 1376,
+      "height": 774,
+      "srcset": [
+        "1376/774",
+        "1136/639",
+        "736/414",
+        "320/180"
+      ],
+      "alt": "",
+      "sizes": "",
+      "caption": "Lorem ipsum <a href=\"#\">dolor</a> sit amet consectetur adipisicing elit."
+    },
+    {
+      "src": "http://placekitten.com/1376/774",
+      "width": 1376,
+      "height": 774,
+      "srcset": [
+        "1376/774",
+        "1136/639",
+        "736/414",
+        "320/180"
+      ],
+      "alt": "",
+      "sizes": "",
+      "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!"
+    },
+    {
+      "src": "http://placekitten.com/1376/774",
+      "width": 1376,
+      "height": 774,
+      "srcset": [
+        "1376/774",
+        "1136/639",
+        "736/414",
+        "320/180"
+      ],
+      "alt": "",
+      "sizes": "",
+      "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      "src": "http://placekitten.com/1376/774",
+      "width": 1376,
+      "height": 774,
+      "srcset": [
+        "1376/774",
+        "1136/639",
+        "736/414",
+        "320/180"
+      ],
+      "alt": "",
+      "sizes": "",
+      "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      "src": "http://placekitten.com/1376/774",
+      "width": 1376,
+      "height": 774,
+      "srcset": [
+        "1376/774",
+        "1136/639",
+        "736/414",
+        "320/180"
+      ],
+      "alt": "",
+      "sizes": "",
+      "caption": "Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!"
+    }
+  ],
+  "four_fluencies": [
+    {
+      "title": "Solving the Climate Crisis",
+      "blurb": "Middlebury transforming our energy system and responding to issues of climate change, social injustice, and the well-being of all."
+    },
+    {
+      "title": "Analyzing Data",
+      "blurb": "Middlebury providing students access to powerful technological tools and supporting their ability to apply them across disciplines for critical exploration."
+    },
+    {
+      "title": "Transforming Conflict",
+      "blurb": "Middlebury’s incubator for research, teaching, and student experiences to shift the dynamics underlying conflict to address divisiveness in society."
+    },
+    {
+      "title": "Understanding Cultural Difference",
+      "blurb": "Middlebury fostering students’ ability to listen, communicate, and take action in communities with a range of linguistic and cultural backgrounds."
+    }
+  ],
+  "wrmc_schedule_items": [
+    {
+      "day": "Monday",
+      "schedule": [
+        {
+          "start_time": 240,
+          "end_time": 300,
+          "meridiem": "AM",
+          "title": "Mixed Confetti",
+          "hosts": "Aaron Smith, Blair Kloman, Pooja Gunturu",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "genre": "Blues"
+        },
+        {
+          "start_time": 120,
+          "end_time": 180,
+          "meridiem": "PM",
+          "title": "Hot Chocolate on the Bus",
+          "hosts": "Adam Yauch",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "genre": "Country"
+        },
+        {
+          "start_time": 660,
+          "end_time": 720,
+          "meridiem": "PM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genre": "Electronic"
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "schedule": [
+        {
+          "start_time": 300,
+          "end_time": 360,
+          "meridiem": "AM",
+          "title": "Grilled Cheese Sandwich",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "genre": "Folk"
+        },
+        {
+          "start_time": 540,
+          "end_time": 600,
+          "meridiem": "AM",
+          "title": "Jazz Band, Hand and Feet",
+          "genre": "Punk"
+        },
+        {
+          "start_time": 720,
+          "end_time": 60,
+          "meridiem": "AM",
+          "title": "Jazz Band, Hand and Feet",
+          "genre": "Rock"
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "schedule": [
+        {
+          "start_time": 60,
+          "end_time": 120,
+          "meridiem": "PM",
+          "title": "Experimental Jetset Companion",
+          "genre": "World"
+        },
+        {
+          "start_time": 660,
+          "end_time": 720,
+          "meridiem": "PM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genre": "Blues"
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "schedule": [
+        {
+          "start_time": 540,
+          "end_time": 600,
+          "meridiem": "AM",
+          "title": "Jazz Band, Hand and Feet",
+          "genre": "Reggae"
+        },
+        {
+          "start_time": 120,
+          "end_time": 180,
+          "meridiem": "PM",
+          "title": "Hot Chocolate on the Bus",
+          "hosts": "Adam Yauch",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "genre": "Blues"
+        },
+        {
+          "start_time": 120,
+          "end_time": 180,
+          "meridiem": "AM",
+          "title": "I Love Rock and Roll",
+          "hosts": "Matt Jennings and Tom",
+          "genre": "Jazz"
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "schedule": [
+        {
+          "start_time": 420,
+          "end_time": 480,
+          "meridiem": "AM",
+          "title": "Echo Locations",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "genre": "Hip Hop"
+        },
+        {
+          "start_time": 540,
+          "end_time": 600,
+          "meridiem": "AM",
+          "title": "Jazz Band, Hand and Feet",
+          "genre": "Latin"
+        },
+        {
+          "start_time": 660,
+          "end_time": 720,
+          "meridiem": "PM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genre": "Indie"
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "schedule": [
+        {
+          "start_time": 60,
+          "end_time": 120,
+          "meridiem": "PM",
+          "title": "Experimental Jetset Companion",
+          "genre": "Funk"
+        },
+        {
+          "start_time": 120,
+          "end_time": 180,
+          "meridiem": "PM",
+          "title": "Hot Chocolate on the Bus",
+          "hosts": "Adam Yauch",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "genre": "Classical"
+        }
+      ]
+    },
+    {
+      "day": "Sunday",
+      "schedule": [
+        {
+          "start_time": 600,
+          "end_time": 660,
+          "meridiem": "AM",
+          "title": "Experimental Jetset Companion",
+          "genre": "Electronic"
+        },
+        {
+          "start_time": 120,
+          "end_time": 180,
+          "meridiem": "PM",
+          "title": "Hot Chocolate on the Bus",
+          "hosts": "Adam Yauch",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "genre": "Electronic"
+        },
+        {
+          "start_time": 120,
+          "end_time": 180,
+          "meridiem": "AM",
+          "title": "I Love Rock and Roll",
+          "hosts": "Matt Jennings and Tom",
+          "genre": "Blues"
+        }
+      ]
+    }
+  ],
+  "playlist_items": [
+    {
+      "artist": "Mk.gee",
+      "song": "Two Star & The Dream Police"
+    },
+    {
+      "artist": "Quadeca",
+      "song": "SCRAPYARD"
+    },
+    {
+      "artist": "Selmer",
+      "song": "Body Wash"
+    },
+    {
+      "artist": "Abby Sage",
+      "song": "The Rot"
+    },
+    {
+      "artist": "Mike, Tony Seltzer",
+      "song": "Pinball"
+    },
+    {
+      "artist": "Jean Dawson",
+      "song": "Boohoo"
+    },
+    {
+      "artist": "Faye Webster",
+      "song": "Underdressed at the Symphony"
+    },
+    {
+      "artist": "Matt Champion",
+      "song": "Slug"
+    },
+    {
+      "artist": "Hana Vu",
+      "song": "Care"
+    },
+    {
+      "artist": "DESTIN CONRAD",
+      "song": "SUBMISSIVE2"
+    }
+  ],
+  "top_thirty": [
+    {
+      "artist": "Mk.gee",
+      "song": "Two Star & The Dream Police"
+    },
+    {
+      "artist": "Quadeca",
+      "song": "SCRAPYARD"
+    },
+    {
+      "artist": "Selmer",
+      "song": "Body Wash"
+    },
+    {
+      "artist": "Abby Sage",
+      "song": "The Rot"
+    },
+    {
+      "artist": "Mike, Tony Seltzer",
+      "song": "Pinball"
+    },
+    {
+      "artist": "Jean Dawson",
+      "song": "Boohoo"
+    },
+    {
+      "artist": "Faye Webster",
+      "song": "Underdressed at the Symphony"
+    },
+    {
+      "artist": "Matt Champion",
+      "song": "Slug"
+    },
+    {
+      "artist": "Hana Vu",
+      "song": "Care"
+    },
+    {
+      "artist": "DESTIN CONRAD",
+      "song": "SUBMISSIVE2"
+    },
+    {
+      "artist": "Adrianne Lenker",
+      "song": "Fool"
+    },
+    {
+      "artist": "Maggie Rogers",
+      "song": "Don't Forget Me"
+    },
+    {
+      "artist": "Little Simz",
+      "song": "Drop 7"
+    },
+    {
+      "artist": "Zack Villere",
+      "song": "Singles 2017 - 2021"
+    },
+    {
+      "artist": "Loukeman",
+      "song": "Sd-2"
+    },
+    {
+      "artist": "Tommy Richman",
+      "song": "THE RUSH"
+    },
+    {
+      "artist": "RiTchie",
+      "song": "Dizzy"
+    },
+    {
+      "artist": "Schoolboy Q",
+      "song": "BLUE LIPS"
+    },
+    {
+      "artist": "Colouring",
+      "song": "Love To You, Mate"
+    },
+    {
+      "artist": "Iron & Wine",
+      "song": "All in Good Time"
+    },
+    {
+      "artist": "Diamond Day",
+      "song": "Connect the Dots"
+    },
+    {
+      "artist": "DJ Lucas",
+      "song": "Lil Old Town"
+    },
+    {
+      "artist": "Laney Jones",
+      "song": "Stay at Home"
+    },
+    {
+      "artist": "MRCY",
+      "song": "Lorelai"
+    },
+    {
+      "artist": "sagun",
+      "song": "Issues"
+    },
+    {
+      "artist": "Serpentwithfeet",
+      "song": "GRIP"
+    },
+    {
+      "artist": "foamboy",
+      "song": "Eating Me Alive"
+    },
+    {
+      "artist": "MiLES.",
+      "song": "Life Thru New Lens"
+    },
+    {
+      "artist": "Erika de Casier",
+      "song": "Still"
+    },
+    {
+      "artist": "CZARFACE",
+      "song": "CZARTIFICIAL INTELLIGENCE"
+    }
+  ]
+}
