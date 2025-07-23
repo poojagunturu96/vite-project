@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Middlebury Front-end Design System</title>
-    <link rel="stylesheet" href="../scss/main.scss">
+    <link rel="stylesheet" href="/src/scss/main.scss">
     <link
     href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     {# dont index these files if vercel deployment #}
@@ -51,7 +51,7 @@
     {% block layout_before_body_close %}{% endblock %}
     {% block additional_scripts %}{% endblock %}
     {% block scripts %}
-      <script src="../js/index.ts" type="module" async></script>
+      <script src="/src/js/index.ts" type="module" async></script>
     {% endblock %}
   </body>
 </html>
