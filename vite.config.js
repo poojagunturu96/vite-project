@@ -29,7 +29,7 @@ export default defineConfig ({
   plugins: [
     vituum(),
     twig({
-      root: './src',
+      root: './src/templates',
       filters: {
         exists: (value, args) => {
           if (!value) {
