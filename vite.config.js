@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'node:url';
 import fs from 'node:fs';
 import yaml from 'js-yaml';
 import twig from '@vituum/vite-plugin-twig';
@@ -21,13 +22,20 @@ const TEST = process.env.CI;
 //     vercel: Boolean(process.env.VERCEL_URL)
 //   }
 // };
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// console.log(typeof data);
+console.log(resolve(__dirname, 'src/templates'));
 
-export default defineConfig ({
+// console.log(__dirname);
+
+export default defineConfig(() => ({
   // publicDir: 'dist',
   plugins: [
-    vituum(),
+    vituum({
+      pages: {
+        dir: './src/templates/pages'
+      }
+    }),
     twig({
       root: './src/templates',
       filters: {
@@ -66,7 +74,7 @@ export default defineConfig ({
   build: {
     outDir: 'dist',
     rollupOptions: {
-      output: {}
-    }
+			input: resolve(__dirname, 'src/templates/pages/*.twig'),
+		},
   }
-})
+}));
