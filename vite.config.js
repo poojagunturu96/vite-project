@@ -24,10 +24,6 @@ const TEST = process.env.CI;
 // };
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-console.log(resolve(__dirname, 'src/templates'));
-
-// console.log(__dirname);
-
 export default defineConfig(() => ({
   // publicDir: 'dist',
   plugins: [
@@ -37,7 +33,7 @@ export default defineConfig(() => ({
       }
     }),
     twig({
-      root: './src/templates',
+      root: './src/templates/pages',
       filters: {
         exists: (value, args) => {
           if (!value) {
@@ -74,7 +70,7 @@ export default defineConfig(() => ({
   build: {
     outDir: 'dist',
     rollupOptions: {
-			input: resolve(__dirname, 'src/templates/pages/*.twig'),
+			input: resolve(__dirname, 'src/templates/pages/**/*.twig'),
 		},
   }
 }));

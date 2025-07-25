@@ -1,0 +1,71 @@
+{% extends 'layout.twig' %}
+
+{% set office_header_nav =
+  office_header_nav|default(
+    [
+      {
+        text: 'How to apply',
+        active: true
+      },
+      {
+        text: 'Types of aid'
+      },
+      {
+        text: 'Education Loans'
+      },
+      {
+        text: 'Payment Options',
+        items: [
+          {
+            text: 'Helpful Links'
+          },
+          {
+            text: 'How to apply'
+          },
+          {
+            text: 'Types of aid'
+          },
+          {
+            text: 'Education Loans'
+          }
+        ]
+      },
+      {
+        text: 'Helpful Links'
+      },
+      {
+        text: 'How to apply'
+      },
+      {
+        text: 'Types of aid'
+      },
+      {
+        text: 'Education Loans'
+      },
+      {
+        text: 'Payment Options'
+      },
+      {
+        text: 'Helpful Links'
+      }
+    ]
+  )
+%}
+
+{% block layout_header %}
+  {% include 'partials/midd-header.twig' %}
+  {% include 'partials/anchor-header.twig' %}
+{% endblock %}
+
+{% block layout_footer %}
+  {% include 'partials/school-footer.twig' with {
+      name: 'Support the Institute',
+      cta: {
+        text: 'Make a Gift',
+        link: 'https://engage.middlebury.edu/pages/give-to-miis?sid=1637&gid=3&pgid=496&cid=1248&_ga=2.201331473.105684710.1518198910-149004332.1477001419'
+      },
+      has_menus: true,
+      menus: utility_footer_nav
+  } %}
+  {% include 'partials/midd-footer.twig' %}
+{% endblock %}
