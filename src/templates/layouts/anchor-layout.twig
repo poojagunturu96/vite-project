@@ -53,12 +53,12 @@
 %}
 
 {% block layout_header %}
-  {% include 'partials/midd-header.twig' %}
-  {% include 'partials/anchor-header.twig' %}
+  {% include '../partials/midd-header.twig' %}
+  {# {% include '../partials/anchor-header.twig' %} #}
 {% endblock %}
 
 {% block layout_footer %}
-  {% include 'partials/school-footer.twig' with {
+  {# {% include 'partials/school-footer.twig' with {
       name: 'Support the Institute',
       cta: {
         text: 'Make a Gift',
@@ -67,5 +67,5 @@
       has_menus: true,
       menus: utility_footer_nav
   } %}
-  {% include 'partials/midd-footer.twig' %}
+  {% include 'partials/midd-footer.twig' %} #}
 {% endblock %}

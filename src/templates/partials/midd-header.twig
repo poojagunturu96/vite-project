@@ -1,0 +1,68 @@
+<header class="midd-header{% if midd_header_transparent %} midd-header--transparent{% endif %}">
+  <div class="midd-header__container">
+
+    <div class="midd-header__brand">
+      <a href="">
+        {% if midd_header_transparent %}
+          <img src="images/midd-shield-white.svg" width="64px" height="70px" class="midd-header__shield" alt="Logo for Middlebury">
+        {% else %}
+          <img src="images/midd-shield.svg" class="midd-header__shield" alt="Logo for Middlebury">
+        {% endif %}
+        <img src="images/midd-wordmark.svg" width="116px" height="23px" class="midd-header__wordmark" alt="Middlebury">
+        <span class="sr-only">Middlebury</span>
+      </a>
+    </div>
+
+    <nav class="midd-nav" aria-label="Primary navigation">
+      <button class="midd-nav__handle" data-toggle-target=".js-midd-nav" data-toggle-group="midd-header" aria-expanded="false" aria-labelledby="midd-nav__handle-label">
+        {% include 'icon.twig' with { name: 'bars', class: 'mr-1 midd-nav__bars' } %}
+        {% include 'icon.twig' with { name: 'times', class: 'mr-1 midd-nav__times' } %}
+        <span class="d-none d-sm-inline" id="midd-nav__handle-label">Menu</span>
+      </button>
+
+      <ul class="midd-nav__list midd-nav__list--top js-midd-nav">
+        {% for item in midd_nav %}
+          <li class="midd-nav__item midd-nav__item--top">
+            <a href="{{ item.href }}" class="midd-nav__link midd-nav__link--top">
+              {{ item.text }}
+            </a>
+
+            {% if item.items %}
+              <button class="midd-nav__handle midd-nav__handle--sub" data-toggle-target=".js-middnav-list-{{ loop.index }}" aria-labelledby="midd-nav__handle-label">
+                {% include 'icon.twig' with { name: 'chevron-down', class: 'midd-nav__chevron' } %}
+              </button>
+              <ul class="midd-nav__list midd-nav__list--sub js-middnav-list-{{ loop.index }}">
+                {% for subitem in item.items %}
+                  <li class="midd-nav__item">
+                    <a href="{{ subitem.href }}" class="midd-nav__link midd-nav__link--sub">{{ subitem.text }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <section class="midd-search" aria-label="Search">
+      <a href="/search" class="midd-search__handle" role="button" data-toggle-target=".js-midd-search" data-toggle-group="midd-header" data-toggle-focus=".js-midd-search-input" aria-expanded="false" aria-haspopup="true" aria-labelledby="midd-search__handle-label">
+        {% include 'icon.twig' with { name: 'search', class: 'midd-search__mag' } %}
+        {% include 'icon.twig' with { name: 'times', class: 'midd-search__times' } %}
+        <span class="d-none d-sm-inline" id="midd-search__handle-label">Search</span>
+      </a>
+
+      <div class="midd-search__content js-midd-search">
+        <form action="https://www.middlebury.edu/search" method="GET" role="search">
+          <div class="input-group">
+            <input type="search" class="form-control form-control--sm midd-search__input js-midd-search-input" id="midd-search-input" placeholder="Search" name="q2" required/>
+            <button type="submit" class="button button--sm midd-search__submit">
+              <span class="sr-only">Search</span>
+              {% include 'icon.twig' with { name: 'search' } %}
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </div>
+</header>
