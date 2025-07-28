@@ -33,7 +33,7 @@ export default defineConfig(() => ({
       }
     }),
     twig({
-      root: './src/templates',
+      root: './src/templates/pages',
       filters: {
         exists: (value, args) => {
           if (!value) {

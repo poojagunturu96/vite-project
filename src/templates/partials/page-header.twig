@@ -1,0 +1,64 @@
+<div class="container px-0">
+
+  <header class="page-header{% if image_src %} page-header--has-image{% endif %}{% if has_menu %} page-header--has-menu{% endif %}{% if app_header %} page-header--app{% endif %}{% if theme == 'wrmc' %} page-header--wrmc{% endif %}">
+
+    {% if image_src %}
+      <figure class="page-header__figure">
+        {% include 'img.twig' with { name: 'top_level' } %}
+
+        <figcaption class="page-header__caption">
+          {% include 'tooltip.twig' with {
+            light: true,
+            size: 'lg',
+            id: random(1234),
+            label: 'some caption for top level image'
+          } %}
+        </figcaption>
+      </figure>
+    {% endif %}
+
+    {% if weekly_top_ten %}
+      <button class="page-header__list-toggle" aria-describedby="wrmc-tooltip-label-{{random(1234)}}">
+        Weekly Top Ten
+        <span class="page-header__list-ellipsis">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+      <div class="page-header__list" role="tooltip" id="wrmc-tooltip-label-{{random(1234)}}">
+        <ol class="page-header__list-overlay">
+          {% for item in playlist_items %}
+            <li>
+              <p>{{item.artist}}</p>
+              <p><em>{{item.song}}</em></p>
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+    {% endif %}
+
+    <div class="page-header__main">
+      <div class="page-header__content">
+
+        {% if breadcrumb != false %}
+          {% include 'breadcrumb.twig' with {
+            items: breadcrumb,
+            light: image_src  }
+          %}
+        {% endif %}
+        
+        {% if title %}
+          <h1 class="page-header__title" id="midd-page-header-label">{{title}}</h1>
+        {% endif %}
+        {{pronouns}}
+
+        {{after_title}}
+
+        {% if menu_items is not empty %}
+          {% include 'box-menu.twig' with { items: menu_items, class: 'mb-0' } %}
+        {% endif %}
+
+      </div>
+    </div>
+  </header>
+
+</div>

@@ -1,0 +1,11 @@
+<div class="tooltip {{light ? 'tooltip--light' : ''}}">
+  <button class="tooltip__button" aria-labelledby="midd-tooltip-label-{{id}}">
+    {% include 'icon.twig' with {
+      name: 'info',
+      class: 'f5'
+    } %}
+  </button>
+  <div class="tooltip__label" role="tooltip" id="midd-tooltip-label-{{id}}">
+    {{label}}
+  </div>
+</div>

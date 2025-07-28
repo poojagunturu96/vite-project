@@ -1,0 +1,37 @@
+{% set _toc = block('toc') %}
+{% set _sidebar = block('sidebar') %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0 mb-4">
+      {% block nav %}
+
+      {% endblock %}
+
+      {% if _sidebar|trim is not empty %}
+        <div class="js-sidebar"></div>
+      {% endif %}
+    </div>
+
+    {% if _toc is not empty %}
+      <div class="col-md-10 offset-md-1 col-lg-2 offset-lg-0 order-lg-last mb-4 pl-lg-0">
+        {{ _toc|raw }}
+      </div>
+    {% endif %}
+
+    <div class="col-md-10 offset-md-1 {{
+      full_column
+        ? 'col-lg-9'
+        : 'col-lg-7'
+      }} offset-lg-0">
+      {% block content %}
+
+      {% endblock %}
+
+      {% if _sidebar|trim is not empty %}
+        <div data-move-at="(min-width:64em)" data-move-to=".js-sidebar">
+          {{ _sidebar|raw }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
