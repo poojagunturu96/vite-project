@@ -10,13 +10,15 @@ class VideoControls {
 
   constructor(elem: HTMLElement) {
     this.elem = elem;
-    this.videoElement = $('.journey-section__video', this.elem);
-    this.controls = $('[data-journey-video-trigger]', this.elem);
-    this.playButton = $('.journey-video--button-play', this.elem);
-    this.pauseButton = $('.journey-video--button-pause', this.elem);
+    this.videoElement = $('[data-background-video]', this.elem);
+    this.controls = $('[data-background-video-trigger]', this.elem);
+    this.playButton = $('.background-video--button-play', this.elem);
+    this.pauseButton = $('.background-video--button-pause', this.elem);
 
     this.handleClick = this.handleClick.bind(this);
-    this.init();
+    if (this.videoElement) {
+      this.init();
+    }
   }
 
   init() {
@@ -54,9 +56,9 @@ class VideoControls {
   }
 }
 
-const sections = $$('.journey-section');
-sections.shift();
-
+const sections = $$('[data-background-video-parent]');
+// sections.shift();
+console.log(sections);
 sections.forEach((section) => {
   new VideoControls(section);
 });
