@@ -68,9 +68,27 @@ export default defineConfig(() => ({
     port: 3000
   },
   build: {
+    modulePreload: {
+      polyfill: false
+    },
     outDir: 'dist',
     rollupOptions: {
 			input: resolve(__dirname, 'src/templates/pages/**/*.twig'),
+      output: {
+        assetFileNames: (assetInfo) => {
+          let extType = assetInfo.names[0].split('.').at(1);
+          if (/css/i.test(extType)) {
+            return `assets/${extType}/[name][extname]`;
+          }
+          return 'assets/images/[name][extname]';
+        },
+        chunkFileNames: 'assets/js/[name].bundle.js',
+        // entryFileNames: 'assets/js/[name].bundle.js',
+        // manualChunks: {
+        //   main: ['./src/js/index.ts'],
+        //   journey: ['./src/js/journey-module.ts']
+        // }
+      }
 		},
   }
 }));
