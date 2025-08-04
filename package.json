@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/lozad": "^1.16.4",
     "@types/micromodal": "^0.3.5",
     "@types/node": "^24.1.0",
     "@vituum/vite-plugin-twig": "^1.1.0",
@@ -31,6 +32,7 @@
     "mdn-polyfills": "^5.20.0",
     "micromodal": "^0.6.1",
     "object-fit-images": "^3.2.4",
+    "panelsnap": "github:poojagunturu96/panelsnap",
     "pikaday": "^1.8.2",
     "preact": "^10.26.9",
     "promise-polyfill": "^8.3.0",
