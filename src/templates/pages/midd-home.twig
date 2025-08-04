@@ -1,0 +1,117 @@
+{% extends "../layouts/midd-layout.twig" %}
+
+{% set midd_header_transparent = true %}
+
+{% set section_desktop_learning = [
+  {id: 0, label: 'Why Middlebury', x: '1000', y: '195'},
+  {id: 1, label: 'Immersive Environments', x: '1051', y: '407'},
+  {id: 2, label: 'The Undergraduate Experience', x: '954', y: '609'},
+] %}
+
+{% set section_tablet_learning = [
+  {id: 0, label: 'Why Middlebury', x: '420', y: '108'},
+  {id: 1, label: '<tspan x="581" y="344">Immersive</tspan><tspan x="581" y="365">Environments</tspan>', x: '557', y: '339'},
+  {id: 2, label: 'The Undergraduate Experience', x: '244', y: '543'},
+] %}
+
+{% set section_mobile_learning = [
+  {id: 0, label: 'Why Middlebury', x: '174', y: '121'},
+  {id: 1, label: '<tspan x="208" y="427">Immersive</tspan><tspan x="208" y="443">Environments</tspan>', x: '188', y: '422'},
+  {id: 2, label: 'The Undergraduate Experience', x: '76', y: '510'},
+] %}
+
+{% set section_desktop_thinking = [
+  {id: 3, label: 'Alumni in the World', x: '398', y: '265', text_x: '236'},
+  {id: 4, label: 'Middlebury in the News', x: '334', y: '431', text_x: '146'},
+  {id: 5, label: 'Students in Action', x: '403', y: '607', text_x: '254'}
+]
+%}
+
+{% set section_tablet_thinking = [
+  {id: 3, label: 'Alumni in the World', x: '478', y: '148'},
+  {id: 4, label: '<tspan x="619" y="355">Middlebury in</tspan><tspan x="619" y="376">the News</tspan>', x: '595', y: '350'},
+  {id: 5, label: 'Students in Action', x: '440', y: '572'}
+]
+%}
+
+{% set section_mobile_thinking = [
+  {id: 3, label: 'Alumni in the World', x: '133', y: '93'},
+  {id: 4, label: '<tspan x="202" y="431">Middlebury in</tspan><tspan x="202" y="447">the News</tspan>', x: '170', y: '426'},
+  {id: 5, label: 'Students in Action', x: '55', y: '499'}
+] %}
+
+{% set section_desktop_opportunity = [
+  {id: 6, label: 'Connected Middlebury', x: '1000', y: '140'},
+  {id: 7, label: 'Middlebury College', x: '1107', y: '340'},
+  {id: 8, label: 'Graduate and Professional Schools', x: '1004', y: '572'},
+] %}
+
+{% set section_tablet_opportunity = [
+  {id: 6, label: 'Connected Middlebury', x: '469', y: '246'},
+  {id: 7, label: '<tspan x="624" y="396">Middlebury</tspan><tspan x="624" y="417">College</tspan>', x: '600', y: '391'},
+  {id: 8, label: '<tspan x="560" y="591">Graduate and</tspan><tspan x="560" y="612">Professional Schools</tspan>', x: '536', y: '586'},
+] %}
+
+{% set section_mobile_opportunity = [
+  {id: 6, label: 'Connected Middlebury', x: '117', y: '103'},
+  {id: 7, label: 'Middlebury College', x: '159', y: '429'},
+  {id: 8, label: '<tspan x="111" y="511">Graduate and</tspan><tspan x="111" y="527">Professional Schools</tspan>', x: '95', y: '506'},
+] %}
+
+{% block page %}
+  <div class="journey">
+    {% include '../partials/journey-section.twig' with {
+      name: 'intro',
+      title_label: 'midd-page-journey-first',
+      title: 'Chart your own course of study in one of the most <strong>immersive</strong> and <strong>globally engaged</strong> experiences in higher education',
+      sub_title: 'Vermont | Monterey, CA | The World',
+      align: 'center',
+      school_picker: true
+    } %}
+    {% include '../partials/journey-section.twig' with {
+      video: 'https://player.vimeo.com/progressive_redirect/playback/827016634/rendition/1080p/file.mp4?loc=external&signature=c3a2a7c399cca676a461c669c502d16d0ea1c90e92dfbdc61a242766ca58ca7b',
+      name: 'learning',
+      title_label: 'midd-page-journey-second',
+      blurb: 'A breadth and depth of <strong>learning</strong> and <strong>experience</strong> … a capacity for <strong>exploration</strong> that will last you a lifetime',
+      align: 'left'
+    } %}
+    {% include '../partials/journey-section.twig' with {
+      video: 'https://player.vimeo.com/progressive_redirect/playback/827016678/rendition/1080p/file.mp4?loc=external&signature=1843996a0ff0cd945d3d7743d6b8035467edf763fa14cb990e6277beeaa7d2eb',
+      name: 'thinking',
+      title_label: 'midd-page-journey-third',
+      blurb: 'An expansive education built on <strong>critical thinking</strong> and <strong>compassionate doing</strong>',
+      align: 'right left--mobile'
+    } %}
+    {% include '../partials/journey-section.twig' with {
+      video: 'https://player.vimeo.com/progressive_redirect/playback/819840754/rendition/1080p/file.mp4?loc=external&signature=8b838c47930a3ba020001ad0edcfde0ba6eebff1caefd93e23d27362ade615c1',
+      name: 'opportunity',
+      title_label: 'midd-page-journey-fourth',
+      blurb: '<strong>A constellation</strong> of schools and programs, a world of educational <strong>opportunity</strong>',
+      align: 'left'
+    } %}
+    <div class="journey-modal--block" id="midd-journey-overlay" style="overflow-x:hidden">
+      {% include '../partials/journey-modal.twig' with {
+        id: label.id,
+        content_type: 'play',
+        description: 'Take a tour of Middlebury Campus',
+        image_name: 'homepage_grid_2'
+      }%}
+    </div>
+  </div>
+  {% include '../paragraphs/fluencies.twig' %}
+{% endblock %}
+{% block layout_footer %}
+  {% include '../partials/footer-cta-group.twig' with {
+    title: 'What do you want?',
+    background_light: true
+  }%}
+  {% include '../paragraphs/non-discrimination-policy.twig' %}
+  {% include '../paragraphs/banner.twig' %}
+  {% include '../partials/midd-footer.twig' with {
+    journey: true
+  }%}
+{% endblock %}
+
+{% block scripts %}
+  <script src="/src/js/journey.ts" type="module" async></script>
+{% endblock %}

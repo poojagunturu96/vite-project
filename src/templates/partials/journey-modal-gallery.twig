@@ -1,0 +1,32 @@
+{% set placehold = 'https://placecats.com/' %}
+<div class="lightbox__images" aria-describedby="midd-video-label-{{id}}">
+
+  {% for item in journey_gallery_data %}
+    {% set src = '' %}
+    {% set srcset = [] %}
+    {% set width = '' %}
+
+    {% for size in item.srcset %}
+
+      {% set dimensions = size|split('/') %}
+      {% set width = dimensions[0] %}
+
+      {% set src = placehold ~ size %}
+
+      {% set srcset = [placehold ~ size ~ ' ' ~ width ~ 'w']|merge(srcset) %}
+
+    {% endfor %}
+
+    <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox-{{id}}-item-{{loop.index}}" data-journey-gallery-item>
+      {# use encoded svg to add placeholder aspect ratio #}
+      {# https://css-tricks.com/preventing-content-reflow-from-lazy-loaded-images/ #}
+      <img
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{item.width}} {{item.height}}'/%3E" data-src="{{item.src}}" data-srcset="{{srcset|reverse|join(',')}}" width="{{item.width}}" alt=""/> {# loop index shown for dev purposes #}
+      <figcaption class="media__caption text-white">
+        {{item.caption}}
+      </figcaption>
+    </figure>
+
+  {% endfor %}
+
+</div>

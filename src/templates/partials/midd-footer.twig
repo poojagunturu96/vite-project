@@ -1,0 +1,31 @@
+<nav class="midd-footer">
+  <h2 class="sr-only">
+    Additional Navigation
+  </h2>
+  <div class="container px-0">
+    {# <div class="row"> #}
+      <div class="col-lg-3">
+        <div class="mb-4 mb-lg-0">
+          <a href="https://www.middlebury.edu">
+            <img src="images/middlebury-logo-white.svg"
+              alt="Middlebury"
+              width="195"
+              height="71" />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <ul class="midd-footer__list">
+          {% for item in secondary_footer_nav %}
+            <li class="midd-footer__item">
+              <a href="{{ item.href }}" class="midd-footer__link">
+                {{ item.text }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {# </div> #}
+  </div>
+  {% include 'to-top-btn.twig' %}
+</nav>

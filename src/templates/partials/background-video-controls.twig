@@ -1,0 +1,16 @@
+<button aria-label="Play/Pause Background Video" class="background-video--button" data-background-video-trigger>
+  <span aria-labelledby="background-video--pause--{{name}}" class="background-video--button-pause">
+    <span id="background-video--pause--{{name}}" class="sr-only">Pause Animation</span>
+    {% include 'icon.twig' with {
+      name: 'pause-homepage',
+      class: 'homepage-button'
+    } %}
+  </span>
+  <span aria-labelledby="background-video--play--{{name}}" class="background-video--button-play">
+    <span id="background-video--play--{{name}}" class="sr-only">Play Animation</span>
+    {% include 'icon.twig' with {
+      name: 'play-homepage',
+      class: 'homepage-button'
+    } %}
+  </span>
+</button>

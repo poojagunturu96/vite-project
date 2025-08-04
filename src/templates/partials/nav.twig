@@ -1,0 +1,42 @@
+<nav class="nav" aria-label="{{label}}">
+
+  <ul class="nav__list">
+    {% for item in items %}
+      {% set has_dropdown = item.items is not empty %}
+      <li
+        class="nav__item{% if item.active %} nav__item--active{% endif %} {% if has_dropdown %} nav-dropdown{% endif %}"
+      >
+        <a
+          href="{{item.href}}"
+          class="nav__link{% if item.active %} nav__link--active{% endif %}
+          {% if item.external %} link-external{% endif %}"
+        >
+          {{item.text}}
+          {% if has_dropdown %}
+            {% include 'icon.twig' with {
+              name: 'chevron-down',
+              class: 'ml-1 d-none d-lg-inline'
+            } %}
+          {% endif %}
+        </a>
+
+        {% if has_dropdown %}
+          <button class="nav__button" data-toggle-target=".js-dropdown-{{loop.index}}">
+            <span class="sr-only">Toggle {{item.text}} menu</span>
+            {% include 'icon.twig' with {
+              name: 'chevron-down',
+              class: 'toggled-flip'
+            } %}
+          </button>
+          <ul class="nav__sublist nav-dropdown__menu js-dropdown-{{loop.index}}">
+            {% for subitem in item.items %}
+              <li class="nav__subitem">
+                <a href="" class="nav__sublink">{{subitem.text}}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

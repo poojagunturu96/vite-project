@@ -1,0 +1,46 @@
+{% set id = random(1234) %}
+<figure class="{{grid_video ? "portrait-video--grid js-expand-video" : " portrait-video js-video"}}" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
+  <div class="portrait-video__content js-video-content">
+    <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-{{id}}">
+      {% include 'img.twig' with { name: grid_video ? 'portrait_expand_video' : cobblestone_modal ? 'journey_portrait_video' : 'portrait_video', lazy: lazy } %}
+
+      {% if grid_video %}
+        <span class="button {{grid_video ? " grid-portrait-video__button button--light" : " button--primary"}} video__button">
+          Play
+          <span class="ml-3">
+            {% include 'icon.twig' with {
+              name: 'play'
+            } %}
+          </span>
+        </span>
+      {% else %}
+        <div class="portrait-video__body">
+          <h3 class="portrait-video__title" id="midd-video-label-{{id}}">
+            What do students do after graduation?
+          </h3>
+          <span class="button button--primary button--sm button--block {{cobblestone_modal ? 'button--light' : ''}} mt-2">
+            Play
+            {% include 'icon.twig' with {
+              name: 'play',
+              class: 'ml-1'
+            } %}
+          </span>
+        </div>
+      {% endif %}
+    </a>
+  </div>
+  {% if grid_video %}
+    <figcaption class="{{grid_caption_offset ? "offset-lg-1" : ""}} {{grid_video ? "grid-" : ""}}video__body">
+      <h3 class={{grid_video ? "sr-only" : "video__title"}}{% if not hide_title_label %} id="midd-video-label-{{id}}"{% endif %}>Practical Skills for Positive Change</h3>
+      <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique.
+        <a href="">Suspendisse commodo</a>
+        pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
+      {% include 'transcript.twig' with { id: id, class: 'grid-video__transcript' } %}
+    </figcaption>
+  {% else %}
+    {% include 'transcript.twig' with {
+      id: id,
+      class: 'mt-2'
+    } %}
+  {% endif %}
+</figure>

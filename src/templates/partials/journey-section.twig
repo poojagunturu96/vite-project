@@ -1,0 +1,68 @@
+<section id={{name}} class="journey-section journey-section--{{name}} js-journey-section" data-section={{name}} aria-labelledby="{{ title_label }}" data-background-video-parent>
+  {% if name == 'learning'%}
+    <div class="journey-line-box js-journey-line">
+      <svg viewbox="0 0 772 2238" xmlns="http://www.w3.org/2000/svg" class="journey-line-svg journey-line--desktop" style="pointer-events:auto;">
+        <path fill="none" fill-rule="evenodd" stroke="#F4B824" stroke-width="2" stroke-dasharray="4 4" d="M661.812 1C733.812 78.3575 729.263 252.8 673.812 343.583C592.812 476.196 472.316 481.722 404.814 566.446C330.966 659.138 316.318 714.408 169.812 797.905C108.168 833.037 43.7524 885.05 19.8118 945.253C-13.7602 1029.68 -15.5476 1198.2 143.814 1259.59C296.812 1318.53 280.113 1432.82 430.812 1463.43C696.812 1517.45 790.812 1642.7 766.806 1823.2C757.439 1893.63 709.812 2000.02 550.311 2035.01C432.31 2060.9 381.811 2149.82 363.811 2237"/>
+      </svg>
+      <svg viewbox="0 0 454 1920" xmlns="http://www.w3.org/2000/svg" class="journey-line-svg journey-line--tablet" style="pointer-events:auto;">
+        <path fill="none" fill-rule="evenodd" stroke="#F4B824" stroke-width="2" stroke-dasharray="4 4" d="M269.001 1C307.501 21.5 379.118 48.0194 406.001 136C443.558 258.913 324.557 348.643 186.002 378C47.4466 407.357 132.224 440.754 32.0047 537C-56.7386 622.226 72.7195 643.253 136.007 652C259.001 669 360.501 702 406.001 779C466.818 881.922 457.407 1027.17 312 1110C233.004 1155 162 1169 115 1227C68 1285 85.929 1391.69 232.004 1434C522.004 1518 534.006 1764 216.003 1919"/>
+      </svg>
+      <svg viewbox="0 0 277 1598" xmlns="http://www.w3.org/2000/svg" class="journey-line-svg journey-line--mobile" style="pointer-events:auto;">
+        <path fill="none" fill-rule="evenodd" stroke="#F4B824" stroke-width="2" stroke-dasharray="4 4" d="M150 1C293.001 79 308.001 236 130.001 313C27.0665 357.528 10.0011 445 56.9992 501C163.501 610.5 405.501 708 188.501 847.5C87.7999 912.237 1.0011 936 1.0011 997.5C1.0011 1059 29.9498 1076.67 163.001 1188C233.397 1246.9 287.001 1335 152.001 1434C92.7817 1477.43 0.00137329 1542 126.501 1596.5"/>
+      </svg>
+    </div>
+  {% endif %}
+  {% include 'journey-links.twig' %}
+  <div class="journey-section__body">
+    <div class="container">
+      <div class="journey-section__body-content align-{{ align }}">
+        <div class="row">
+          <div class="{{ align == 'center' ? 'col-12 col-sm-10' : 'col-12 col-sm-8 col-lg-7 pr-8 pr-sm-3' }} journey-section__text">
+            {% if title %}
+              <h1 id="{{ title_label }}">
+                {{ title }}
+              </h1>
+            {% endif %}
+            {% if sub_title %}
+              <p class="sub-title">
+                {{ sub_title }}
+              </p>
+            {% endif %}
+            {% if blurb %}
+              <p id="{{ title_label }}" class="blurb">
+                {{ blurb }}
+              </p>
+            {% endif %}
+            {% if button_text %}
+              <button class="journey-section__button">{{ button_text }}</button>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if school_picker %}
+    <div class="school-picker not-fixed">
+      <ul>
+        <li><a href="#"><span>Middlebury College</span></a></li>
+        <li><a href="#"><span>Middlebury Institute of International Studies</span></a></li>
+        <li><a href="#"><span>Middlebury Language Schools</span></a></li>
+        <li><a href="#"><span>Middlebury C.V. Starr Schools Abroad</span></a></li>
+        <li><a href="#"><span>Middlebury Bread Loaf School of English</span></a></li>
+        <li><a href="#"><span>Middlebury Bread Loaf Writers' Conferences</span></a></li>
+      </ul>
+    </div>
+  {% endif %}
+
+  {% if name == 'intro' %}
+    <figure class="journey-section__background" aria-label="[place alt text here]"></figure>
+  {% else %}
+    <figure class="journey-section__background" aria-label="[place alt text here]">
+      <video playsinline autoplay muted loop class="journey-section__video" poster="data:image/gif;base64,r0lgodlhaqabaiaaaaaaap///yh5baeaaaaalaaaaaabaaeaaaibraa7" data-background-video>
+        <source data-src="{{video}}" type="video/mp4">
+        <track kind="descriptions" srclang="en" src="descriptions.vtt" default/>
+      </video>
+    </figure>
+    {% include 'background-video-controls.twig' %}
+  {% endif %}
+</section>

@@ -1,0 +1,120 @@
+{% if name == "learning" %}
+  <div class="journey-link-box section-learning">
+    <svg viewbox="0 0 1440 810" class="journey-links-svg journey-links--desktop" height="100%" width="100%" preserveaspectratio="none">
+      <g class="journey-link--section learning">
+        {% for label in section_desktop_learning %}
+          {% set text_x = label.x + 24 %}{% set text_y = label.y + 5 %}
+          <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+            <circle cx="{{label.x}}" cy="{{label.y}}" r="8" stroke="#F4B824" fill="#F4B824"/>
+            <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
+            <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
+          </a>
+        {% endfor %}
+      </g>
+    </svg>
+    <svg viewbox="0 0 768 675" class="journey-links-svg journey-links--tablet" height="100%" width="100%" preserveaspectratio="none">
+      <g class="journey-link--section learning">
+        {% for label in section_tablet_learning %}
+          {% set text_x = label.x + 24 %}{% set text_y = label.y + 5 %}
+          <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+            <circle cx="{{label.x}}" cy="{{label.y}}" r="8" stroke="#F4B824" fill="#F4B824"/>
+            <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
+            <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
+          </a>
+        {% endfor %}
+      </g>
+    </svg>
+    <svg viewbox="0 0 320 568" class="journey-links-svg journey-links--mobile" style="pointer-events:auto;" preserveaspectratio="none">
+      <g class="journey-link--section learning">
+        {% for label in section_mobile_learning %}
+          {% set text_x = label.x + 22 %}{% set text_y = label.y + 4 %}
+          <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+            <circle cx="{{label.x}}" cy="{{label.y}}" r="6" stroke="#F4B824" fill="#F4B824"/>
+            <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
+            <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
+          </a>
+        {% endfor %}
+      </g>
+    </svg>
+  </div>
+{% endif %}
+{% if name == "thinking" %}
+  <div class="journey-link-box section-thinking">
+    <svg viewbox="0 0 1440 810" class="journey-links-svg journey-links--desktop" height="100%" width="100%" preserveaspectratio="none">
+      <g class="journey-link--section thinking">
+        {% for label in section_desktop_thinking %}
+          {% set text_x = label.text_x %}{% set text_y = label.y + 5 %}
+          <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+            <circle cx="{{label.x}}" cy="{{label.y}}" r="8" stroke="#F4B824" fill="#F4B824"/>
+            <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
+            <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
+          </a>
+        {% endfor %}
+      </g>
+    </svg>
+    <svg viewbox="0 0 768 675" class="journey-links-svg journey-links--tablet" height="100%" width="100%" preserveaspectratio="none">
+      <g class="journey-link--section thinking">
+        {% for label in section_tablet_thinking %}
+          {% set text_x = label.x + 24 %}{% set text_y = label.y + 5 %}
+          <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+            <circle cx="{{label.x}}" cy="{{label.y}}" r="8" stroke="#F4B824" fill="#F4B824"/>
+            <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
+            <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
+          </a>
+        {% endfor %}
+      </g>
+    </svg>
+    <svg viewbox="0 0 320 568" xmlns="http://www.w3.org/2000/svg" class="journey-links-svg journey-links--mobile" style="pointer-events:auto;">
+      <g class="journey-link--section thinking">
+        {% for label in section_mobile_thinking %}
+          {% set text_x = label.x + 22 %}{% set text_y = label.y + 4 %}
+          <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+            <circle cx="{{label.x}}" cy="{{label.y}}" r="6" stroke="#F4B824" fill="#F4B824"/>
+            <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
+            <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
+          </a>
+        {% endfor %}
+      </g>
+    </svg>
+  </div>
+{% endif %}
+{% if name == "opportunity" %}
+  <div class="journey-link-box section-opportunity">
+    <svg viewbox="0 0 1440 810" class="journey-links-svg journey-links--desktop" height="100%" width="100%" preserveaspectratio="none">
+      <g class="journey-link--section opportunity">
+        {% for label in section_desktop_opportunity %}
+          {% set text_x = label.x + 24 %}{% set text_y = label.y + 5  %}
+          <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+            <circle cx="{{label.x}}" cy="{{label.y}}" r="8" stroke="#F4B824" fill="#F4B824"/>
+            <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
+            <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
+          </a>
+        {% endfor %}
+      </g>
+    </svg>
+    <svg viewbox="0 0 768 675" class="journey-links-svg journey-links--tablet" height="100%" width="100%" preserveaspectratio="none">
+      <g class="journey-link--section opportunity">
+        {% for label in section_tablet_opportunity %}
+          {% set text_x = label.x + 24 %}{% set text_y = label.y + 5  %}
+          <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+            <circle cx="{{label.x}}" cy="{{label.y}}" r="8" stroke="#F4B824" fill="#F4B824"/>
+            <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
+            <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
+          </a>
+        {% endfor %}
+      </g>
+    </svg>
+    <svg viewbox="0 0 320 568" xmlns="http://www.w3.org/2000/svg" class="journey-links-svg journey-links--mobile" style="pointer-events:auto;">
+      <g class="journey-link--section opportunity">
+        {% for label in section_mobile_opportunity %}
+          {% set text_x = label.x + 22 %}{% set text_y = label.y + 4 %}
+          <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+            <circle cx="{{label.x}}" cy="{{label.y}}" r="6" stroke="#F4B824" fill="#F4B824"/>
+            <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
+            <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
+          </a>
+        {% endfor %}
+      </g>
+    </svg>
+  </div>
+{% endif %}

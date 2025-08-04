@@ -1,0 +1,93 @@
+{% set section_learning = [
+  {id: 0, label: 'Why Middlebury', hash_class: 'slide0', content_type: 'video'},
+  {id: 1, label: 'Immersive Environments', hash_class: 'slide1', content_type: 'story'},
+  {id: 2, label: 'The Undergraduate Experience', hash_class: 'slide2', content_type: 'portrait-video'},
+] %}
+{% set section_place = [
+  {id: 3, label: 'Alumni in the World', hash_class: 'slide3', content_type: 'gallery'},
+  {id: 4, label: 'Middlebury in the News', hash_class: 'slide4', content_type: 'video-group'},
+  {id: 5, label: 'Students in Action', hash_class: 'slide5', content_type: 'story'}
+]
+%}
+{% set section_purpose_desktop = [
+  {id: 6, label: 'Connected Middlebury', hash_class: 'slide6', content_type: 'portrait-video'},
+  {id: 7, label: 'Middlebury College', hash_class: 'slide7', content_type: 'gallery'},
+  {id: 8, label: 'Graduate and Professional Schools', hash_class: 'slide8', content_type: 'story-list'},
+] %}
+
+<div class="journey-modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <header class="journey-modal__header-container js-headroom">
+    <div class="journey-modal__header--wrapper">
+      <div class="midd-header__brand">
+        <a href="https://www.middlebury.edu">
+          <img src="images/midd-shield-white.svg" width="64px" height="70px" class="midd-header__shield" alt="Logo for Middlebury"/>
+          <img src="images/midd-wordmark.svg" width="116px" height="23px" class="midd-header__wordmark" alt="Middlebury">
+        </a>
+      </div>
+      <button class="journey-modal__button mobile journey-modal__button--close button--light" aria-label="Close modal" data-journey-overlay-close>
+        Close
+        {% include 'icon.twig' with { name: 'times', class: 'ml-1' } %}
+      </button>
+    </div>
+    <div class="journey-modal__controls">
+      <p class="journey-modal__controls--loading-text" data-loading>Loading...</p>
+      <div class="journey-modal__cobblestones is-loading" data-loading>
+        <button class="journey-modal__cobblestones-button js-journey-prev-button" aria-label="Previous" id="journey-modal-button-prev">
+          {% include 'icon.twig' with {
+            name: 'chevron-left',
+            class: 'journey-modal-button--icon'
+          } %}
+        </button>
+        <div class="journey-modal__pagination-wrapper">
+          <div
+            class="journey-modal__pagination">
+            <svg class="journey-modal__svg" width="716" height="2" viewbox="0 0 716 2" xmlns="http://www.w3.org/2000/svg">
+              <path fill="none" fill-rule="evenodd" stroke="white" stroke-dasharray="2" d="M715.201 1.25091L0.200684 1.25098" clip-path="url(#user-space)"/>
+            </svg>
+            <div class="cb__wrapper swiper-pagination"></div>
+          </div>
+        </div>
+        <button class="journey-modal__cobblestones-button js-journey-next-button" aria-label="Next" id="journey-modal-button-next">
+          {% include 'icon.twig' with {
+            name: 'chevron-right',
+            class: 'journey-modal-button--icon'
+          } %}
+        </button>
+      </div>
+      <button class="journey-modal__button desktop journey-modal__button--close button--light" aria-label="Close modal" data-journey-overlay-close>
+        Close
+        {% include 'icon.twig' with { name: 'times', class: 'ml-1' } %}
+      </button>
+    </div>
+  </header>
+  <p class="journey-swiper--loading-text" data-loading>Loading...</p>
+  <div class="swiper journey-swiper is-loading" data-loading>
+    <div class="swiper-wrapper">
+      {% for label in section_learning %}
+        {% include 'journey-modal-content.twig' with {
+          label: label.label,
+          content_type: label.content_type,
+          hash_class: label.hash_class,
+          articles: true
+        }%}
+      {% endfor %}
+      {% for label in section_place %}
+        {% include 'journey-modal-content.twig' with {
+          label: label.label,
+          content_type: label.content_type,
+          hash_class: label.hash_class,
+          articles: true,
+          blurb: true
+        }%}
+      {% endfor %}
+      {% for label in section_purpose_desktop %}
+        {% include 'journey-modal-content.twig' with {
+          label: label.label,
+          content_type: label.content_type,
+          hash_class: label.hash_class,
+          articles: true
+        }%}
+      {% endfor %}
+    </div>
+  </div>
+</div>

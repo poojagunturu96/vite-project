@@ -1,0 +1,29 @@
+{# {% set is_front = false %} #}
+<section class="anchor-header{% if is_front %} anchor-header--front{% endif %}" aria-labelledby="midd-anchor-header-label">
+  <div class="container">
+    <div class="anchor-header__primary">
+      {# TODO: make this an h1 on frontpage #}
+      {% if is_front %}
+        <h1 class="anchor-header__title" id="midd-anchor-header-label">
+      {% else %}
+        <p class="anchor-header__title" id="midd-anchor-header-label">
+      {% endif %}
+        <a href="" class="anchor-header__link">{{page_title|default('Student Financial Services')}}</a>
+      {% if is_front %}
+        </h1>
+      {% else %}
+        </p>
+      {% endif %}
+      <button class="anchor-header__button" data-toggle-target=".js-anchor-header-nav">
+        {% include 'icon.twig' with { name: 'chevron-down', class: 'anchor-header__icon' } %}
+      </button>
+    </div>
+    <div class="anchor-header__nav js-anchor-header-nav">
+      {% include 'nav.twig' with {
+        label: page_title ~ ' Navigation',
+        items: office_header_nav
+      } %}
+    </div>
+  </div>
+  {% block anchor_header_content %}{% endblock %}
+</section>

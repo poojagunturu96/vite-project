@@ -1,0 +1,87 @@
+{# {% set labels = ['college', 'miis', 'bread-loaf', 'lang-schools', 'writers', 'schools-abroad', 'env-school'] %} #}
+{% set labels = ['miis'] %}
+
+<div class="journey-modal__overlay swiper-slide {{content_type}}-slide" data-hash={{hash_class}}>
+  <div class="container px-0 journey-modal__overlay-container">
+    <div class="{% if content_type == 'portrait-video'%}col-12 mb-3 mb-md-3 mb-lg-7{% elseif content_type == 'video-group'%}col-12 mb-3 mb-md-4 mb-lg-7{% elseif content_type == 'gallery' %}col-lg-12 px-3 px-lg-5 m-auto mb-7 mb-md-8 mb-lg-9{% else %}col-lg-10 m-auto mb-7 mb-md-8 mb-lg-9{% endif %}">
+      <h2 class="journey-modal--title {{blurb ? 'offset-lg-1' : ''}}">{{label}}</h2>
+      {% if blurb %}
+        <p class="journey-modal--blurb col-lg-10 px-0 offset-lg-1">Learning at Middlebury is not a passive experience. Sure, many—if not most—students will find plenty of time for quiet contemplation. Their academic journeys will also involve plenty of “doing”—whether that means participation in competitive fellowships or internships; entrepreneurial ventures at the local, state, national, and international levels; field research with faculty; or co- and extracurricular activities that perfectly complement and enhance those more quiet moments.</p>
+      {% endif %}
+      {% if content_type == 'video' %}
+        {% include 'video.twig' with {
+          id: hash_class,
+          hide_title_label: true,
+          grid_video: true,
+          lazy: true
+        } %}
+      {% elseif content_type == 'story' %}
+        {% include 'journey-modal-story.twig' with {
+          id: hash_class,
+          type: 'story'
+        } %}
+      {% elseif content_type == 'portrait-video' %}
+        <div class="row">
+          {% for item in 1..5 %}
+            <div class="col-md-4 mb-5 mb-md-7">
+              {% include 'portrait-video.twig' with {
+                  id: hash_class,
+                  hide_title_label: true,
+                  cobblestone_modal: true,
+                  lazy: true
+                } %}
+            </div>
+          {% endfor %}
+        </div>
+      {% elseif content_type == 'video-group' %}
+        <div class="row">
+          {% for item in 1..5 %}
+            <div class="col-md-4 mb-5 mb-lg-7">
+              {% include 'video.twig' with {
+                  id: hash_class,
+                  hide_title_label: true,
+                  grid_video: true,
+                  lazy: true
+                } %}
+            </div>
+          {% endfor %}
+        </div>
+      {% elseif content_type == 'gallery' %}
+        {% include 'journey-modal-gallery.twig' with {
+          id: hash_class
+        } %}
+      {% elseif content_type == 'story-list' %}
+        {% include 'journey-modal-story.twig' with {
+          id: hash_class
+        } %}
+      {% endif %}
+    </div>
+    {% if articles %}
+      <section class="journey-modal__articles-block">
+        <h2 class="articles-block__title">Related Somethings</h2>
+        <ul class="d-flex flex-wrap articles-block">
+          {% for i in 0..2 %}
+            <li class="col-12 col-md-4">
+              <article class="articles-block__article-card">
+                <div class="articles-block__content">
+                  <span class="article-card--label label-{{random(labels)}}"></span>
+                  <div class="article-card--text-content">
+                    <a href="#">
+                      <h3 class="article-card--title">Learn About Our Sustainability</h3>
+                    </a>
+                    <p class="article-card--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                  </div>
+                  <a href="#" class="article-card--button">Learn more
+                    {% include 'icon.twig' with {
+                      name: 'chevron-right'
+                    } %}
+                  </a>
+                </div>
+              </article>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,80 @@
+{% set id = random(100, 999) %}
+<article class="journey-modal__story" aria-describedby="midd-video-label-{{id}}">
+  {# {% if env.test or random(1) %} #}
+    <figure class="story__image">
+      {% include 'img.twig' with {
+        name: 'journey_story_splash_image',
+        lazy: true
+      } %}
+      <figcaption class="story__image-caption">
+        <h3 class="sr-only">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+        <p class="story__image-caption--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. Suspendisse commodo pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
+      </figcaption>
+    </figure>
+  {# {% endif %} #}
+  <div class="story__content {{type == 'story' ? '' : 'story-list'}} m-auto">
+    {% if type == 'story' %}
+      <h3><a href="#">Middlebury Institute of International Studies at Monterey</a></h3>
+      <a href="https://www.middlebury.edu/institute/">
+        {% include 'img.twig' with {
+          name: 'journey_story_images',
+          lazy: true
+        } %}</a>
+      <p>Founded in 1955 as the Monterey Institute for Foreign Studies,
+        <a href="https://www.middlebury.edu/institute/">the Institute</a>
+        became an official graduate school of Middlebury in 2010. With degree programs that are increasingly relevant in today’s world, students gain key skills in international fields such as environmental policy, public administration, language teaching, translation and interpretation, terrorism, and nonproliferation, and international policy and development. Faculty, students, and a global network of alumni actively address some of the most critical issues of our time. The Institute also oversees several prominent research and program centers, including the James Martin Center for Nonproliferation Studies; the Center on Terrorism, Extremism, and Counterterrorism; Center for the Blue Economy; and Center for Conflict Studies.</p>
+
+      <h3><a href="#">Middlebury Language Schools</a></h3>
+      <a href="https://www.middlebury.edu/language-schools/">
+        {% include 'img.twig' with {
+          name: 'journey_story_images',
+          lazy: true
+        } %}</a>
+      <p>Since 1915, when the German School opened to 47 students seeking an immersive approach to language learning, the
+        <a href="https://www.middlebury.edu/language-schools/">Middlebury Language Schools</a>
+        have grown in number, scope, and prestige. Each summer, the 11 language programs enroll more than 1,500 students who work closely with leading faculty from around the globe. The Middlebury Language Pledge® remains the cornerstone of the experience, and the benefits of this immersive approach have global impact. Through diplomacy, politics, education, defense, commerce, finance, and humanitarian efforts, Language School graduates help connect people with a common language and a shared cultural footing.</p>
+
+      <h3><a href="#">Middlebury C.V. Starr Schools Abroad</a></h3>
+      <a href="https://www.middlebury.edu/schools-abroad/">
+        {% include 'img.twig' with {
+          name: 'journey_story_images',
+          lazy: true
+        } %}</a>
+      <p>
+        <a href="https://www.middlebury.edu/schools-abroad/">The Middlebury C.V. Starr Schools Abroad</a>
+        offer an authentic cultural experience for students to immerse themselves fully in the host language and country. With 38 sites in 17 countries, students can find the place and program that best suits their interests. Guided independence is a foundational concept, encouraging students to engage with their communities, take on internships, and make personal and lifelong discoveries.
+      </p>
+
+      <h3><a href="#">Middlebury Bread Loaf School of English</a></h3>
+      <a href="https://www.middlebury.edu/school-english/">
+        {% include 'img.twig' with {
+          name: 'journey_story_images',
+          lazy: true
+        } %}</a>
+      <p>Founded in 1920, the
+        <a href="https://www.middlebury.edu/school-english/">Bread Loaf School of English</a>
+        is a six-week summer graduate program with locations in Vermont, New Mexico, and Oxford, England. The master’s degree program is designed specifically for K–12 English and language arts teachers, and students work closely with some of the finest faculty in the fields of literature, creative writing, literacy and pedagogy, and theater arts.</p>
+
+      <h3><a href="#">Middlebury Bread Loaf Writers’ Conferences</a></h3>
+      <a href="https://www.middlebury.edu/writers-conferences/">
+        {% include 'img.twig' with {
+          name: 'journey_story_images',
+          lazy: true
+        } %}
+      </a>
+      <p>
+        <a href="https://www.middlebury.edu/writers-conferences/">The Bread Loaf Writers’ Conference</a>, founded in 1926, is known as one of the finest of its kind in the country. It is the cornerstone to the Bread Loaf conferences, which today include the Bread Loaf Writers’ Conference in Sicily, the Bread Loaf Environmental Writers’ Conference, and the Bread Loaf Translators’ Conference. The programs are designed with small-group workshops scheduled among readings and lectures. Some of the world’s most notable writers and translators come each summer as faculty and often return year after year.
+      </p>
+    {% else %}
+      <ul class="list list--dividers mt-lg-4 mb-6 mb-lg-7">
+        {% for i in 0..5 %}
+          <li class="list__item">
+            {% include 'journey-story-list-item.twig' with {
+                id: i
+              } %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</article>

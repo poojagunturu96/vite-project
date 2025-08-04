@@ -1,0 +1,30 @@
+<div class="{{background_light ? 'footer-cta-light' : 'bg-blue-lighter'}} py-lg-7 text-center border-t border-navy" role="region" {% if title %} aria-labelledby="midd-footer-cta-label" {% else %} aria-label="More Actions"{% endif %}>
+  <div class="container">
+    {% if title %}
+      <h2 class="h2 pt-4 pt-md-5 pt-lg-0 mb-lg-7" id="midd-footer-cta-label">
+        {{title}}
+      </h2>
+    {% endif %}
+    <div class="cta-group">
+      {% for i in 0..3 %}
+        <div class="cta-group__item {{background_light ? 'blue-border' : ''}}">
+          {% if not background_light %}
+            <p class="cta-group__text">
+              {% if env.test or random(1) %}
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              {% else %}
+                Lorem ipsum dolor sit
+              {% endif %}
+            </p>
+          {% endif %}
+          <a href="" class="cta-group__button button {{background_light ? 'button--heavy button--light button--dark-outline col-9 col-sm-8 col-lg-auto' : 'button--primary'}}">
+            Call to action
+          </a>
+        </div>
+        {% if background_light %}
+          <span class="border-bottom"></span>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

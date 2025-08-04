@@ -1,0 +1,39 @@
+<section class="paragraph--fluencies" aria-labelledby="midd-fluencies-title-1">
+  <div class="container px-0 px-md-3 px-lg-5 pr-xl-3">
+
+    <div class="text-center">
+      <h2 class="mb-1 mb-lg-2" id="midd-fluencies-title-1">Four Fluencies</h2>
+      <p class="mb-4 mb-md-6 mb-lg-5 mb-lg-7">Focus Areas Across the Curriculum</p>
+    </div>
+    <div class="focus-area--wrapper">
+      <ul class="d-flex">
+        {% for item in four_fluencies %}
+          <li class="col-md-3">
+            <article class="focus-area-item" aria-labelledby="midd-focus-area-item-label-{{loop.index}}">
+              <div class="focus-area-item__media">
+                <a href="">
+                  {% include '../partials/img.twig' with { name: 'journey_fluencies', lazy: true } %}
+                </a>
+              </div>
+              <div class="focus-area-item__content">
+                <div class="focus-area-item__content-text">
+                  <a href="#">
+                    <h3 class="focus-area-item__name" id="midd-focus-area-item-label-{{loop.index}}">
+                      {{item.title}}
+                    </h3>
+                  </a>
+                  <p class="focus-area-item__text">{{item.blurb}}</p>
+                </div>
+                <a href="#" class="focus-area-item--button">Learn more
+                  {% include '../partials/icon.twig' with {
+                    name: 'chevron-right'
+                  } %}
+                </a>
+              </div>
+            </article>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
