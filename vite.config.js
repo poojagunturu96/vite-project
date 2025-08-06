@@ -6,22 +6,14 @@ import yaml from 'js-yaml';
 import twig from '@vituum/vite-plugin-twig';
 import vituum from 'vituum';
 import _ from 'lodash';
+import viteImagemin from '@vheemstra/vite-plugin-imagemin';
+import imageminMozjpeg from 'imagemin-mozjpeg';
+import imageminOptipng from 'imagemin-optipng';
+import imageminSvgo from 'imagemin-svgo';
 
 const PROD = process.env.NODE_ENV === 'production';
 const TEST = process.env.CI;
 
-// const ymlData = yaml.load(fs.readFileSync('./src/data/data.yml', 'utf8'));
-// const imageStyles = yaml.load(fs.readFileSync('./src/data/image_styles.yml', 'utf8'));
-
-// const data = {
-//   ...ymlData,
-//   ...imageStyles,
-//   env: {
-//     test: TEST,
-//     production: PROD,
-//     vercel: Boolean(process.env.VERCEL_URL)
-//   }
-// };
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig(() => ({
@@ -63,6 +55,13 @@ export default defineConfig(() => ({
       },
       data: ['src/data/*.json']
     }),
+    viteImagemin({
+      plugins: {
+        jpg: imageminMozjpeg({ progressive: true }),
+        png: imageminOptipng({ optimizationLevel: 5 }),
+        svg: imageminSvgo({ cleanupIDs: false })
+      },
+    }),
   ],
   server: {
     port: 3000
@@ -83,7 +82,7 @@ export default defineConfig(() => ({
           return 'assets/images/[name][extname]';
         },
         chunkFileNames: 'assets/js/[name].bundle.js',
-        // entryFileNames: 'assets/js/[name].bundle.js',
+        entryFileNames: 'assets/js/[name].bundle.js',
         // manualChunks: {
         //   main: ['./src/js/index.ts'],
         //   journey: ['./src/js/journey-module.ts']
