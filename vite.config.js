@@ -11,8 +11,26 @@ import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminOptipng from 'imagemin-optipng';
 import imageminSvgo from 'imagemin-svgo';
 
-const PROD = process.env.NODE_ENV === 'production';
-const TEST = process.env.CI;
+// const PROD = process.env.NODE_ENV === 'production';
+// const TEST = process.env.CI;
+
+function generateHtmlPlugin() {
+	return {
+		name: 'generate-html',
+		buildStart() {
+			this.emitFile({
+				type: 'chunk',
+				id: 'src/js/index.ts',
+        fileName: 'assets/js/main.bundle.js'
+			});
+			this.emitFile({
+				type: 'chunk',
+				id: 'src/js/journey-module.ts',
+        fileName: 'assets/js/journey.bundle.js',
+			});
+		},
+  }
+}
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -62,8 +80,12 @@ export default defineConfig(() => ({
         svg: imageminSvgo({ cleanupIDs: false })
       },
     }),
+    generateHtmlPlugin()
   ],
   server: {
+    port: 3000
+  },
+  preview: {
     port: 3000
   },
   build: {
@@ -81,12 +103,7 @@ export default defineConfig(() => ({
           }
           return 'assets/images/[name][extname]';
         },
-        chunkFileNames: 'assets/js/[name].bundle.js',
-        entryFileNames: 'assets/js/[name].bundle.js',
-        // manualChunks: {
-        //   main: ['./src/js/index.ts'],
-        //   journey: ['./src/js/journey-module.ts']
-        // }
+        chunkFileNames: 'assets/js/chunks/[name].js',
       }
 		},
   }
