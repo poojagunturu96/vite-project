@@ -14,9 +14,10 @@ import imageminSvgo from 'imagemin-svgo';
 // const PROD = process.env.NODE_ENV === 'production';
 // const TEST = process.env.CI;
 
-function generateHtmlPlugin() {
+function updateJsFilePaths() {
 	return {
-		name: 'generate-html',
+		name: 'update-js-file-paths',
+    apply: 'build',
 		buildStart() {
 			this.emitFile({
 				type: 'chunk',
@@ -80,10 +81,11 @@ export default defineConfig(() => ({
         svg: imageminSvgo({ cleanupIDs: false })
       },
     }),
-    generateHtmlPlugin()
+    updateJsFilePaths()
   ],
   server: {
-    port: 3000
+    port: 3000,
+    open: '/'
   },
   preview: {
     port: 3000
