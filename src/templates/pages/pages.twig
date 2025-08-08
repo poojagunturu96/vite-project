@@ -1,0 +1,14 @@
+{% extends "../layouts/layout.twig" %}
+
+{% block page %}
+  <div class="container my-9">
+    {% embed '../paragraphs/text.twig' %}
+      {% block content %}
+        <h1 class="mb-6">Pages</h1>
+        <ol id="page-list"><ol>
+      {% endblock %}
+    {% endembed %}
+  </div>
+{% endblock %}
+
+
