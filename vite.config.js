@@ -1,8 +1,7 @@
 import { defineConfig } from 'vite';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'node:url';
-import fs from 'node:fs';
-import yaml from 'js-yaml';
+import { globSync } from 'glob';
 import twig from '@vituum/vite-plugin-twig';
 import vituum from 'vituum';
 import _ from 'lodash';
@@ -11,10 +10,39 @@ import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminOptipng from 'imagemin-optipng';
 import imageminSvgo from 'imagemin-svgo';
 
-// const PROD = process.env.NODE_ENV === 'production';
-// const TEST = process.env.CI;
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
-function updateJsFilePaths() {
+const getPages = () => {
+  const files = globSync("src/templates/pages/**/*.twig");
+  let elems = '';
+
+  for (const path of files) {
+    const anchorText = `${path.split('/').slice(3).join('/')}`;
+    const anchorHref = anchorText.replace('.twig', '.html');
+    elems += `<li><a href="/${anchorHref}">${anchorText}</a></li>`;
+  }
+
+  return elems;
+}
+
+const createPagesList = () => {
+	return {
+		name: 'create-pages-list',
+		enforce: 'post',
+		transformIndexHtml(html, context) {
+      if (context.filename.endsWith('pages.twig.html')) {
+        let list = getPages();
+        html = html.replace(
+          `<ol id="page-list"><ol>`,
+          `<ol id="page-list" style="columns: 18rem auto;">${list}<ol>`
+        );
+      }
+			return html;
+		}
+	};
+}
+
+const updateJsFilePaths = () => {
 	return {
 		name: 'update-js-file-paths',
     apply: 'build',
@@ -33,10 +61,9 @@ function updateJsFilePaths() {
   }
 }
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-
 export default defineConfig(() => ({
   // publicDir: 'dist',
+  base: '/themes/custom/middlebury_theme/',
   plugins: [
     vituum({
       pages: {
@@ -81,14 +108,18 @@ export default defineConfig(() => ({
         svg: imageminSvgo({ cleanupIDs: false })
       },
     }),
-    updateJsFilePaths()
+    updateJsFilePaths(),
+    createPagesList()
   ],
   server: {
     port: 3000,
-    open: '/'
+    open: '/pages.html'
   },
   preview: {
     port: 3000
+  },
+  css: {
+    devSourcemap: true
   },
   build: {
     modulePreload: {
