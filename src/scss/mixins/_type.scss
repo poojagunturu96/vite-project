@@ -14,7 +14,7 @@
 @mixin link-external() {
   &:after {
     display: inline-block;
-    content: url('/images/external-link.svg');
+    content: url('/src/images/external-link.svg');
     height: 1em;
     width: 1em;
     font-size: variables.$typescale-2;

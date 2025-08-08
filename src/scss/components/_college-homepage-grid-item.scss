@@ -199,7 +199,7 @@
 .grid-quote {
   height: 100%;
   width: 100%;
-  background: url('/images/homepage-quote-blue.svg') no-repeat
+  background: url('/src/images/homepage-quote-blue.svg') no-repeat
     variables.$spacing-2 -0.75rem;
   background-size: 76px 60px;
   background-color: variables.$white;
@@ -270,7 +270,7 @@
   }
 
   &.quote--dark {
-    background-image: url('/images/homepage-quote-white.svg');
+    background-image: url('/src/images/homepage-quote-white.svg');
     background-color: #c0e3fd;
     color: variables.$navy;
 

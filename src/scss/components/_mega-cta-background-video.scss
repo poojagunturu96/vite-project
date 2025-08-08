@@ -16,7 +16,7 @@
 
     .mega-cta__back {
       background: transparent no-repeat 50% 0% / cover;
-      background-image: url('/images/admissions-cover.jpg');
+      background-image: url('/src/images/admissions-cover.jpg');
 
       @include breakpoints.breakpoint(sm) {
         background: none;
