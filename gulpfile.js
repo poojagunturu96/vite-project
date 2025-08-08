@@ -1,9 +1,16 @@
 import gulp from 'gulp';
-const { series, parallel, task } = gulp;
+const { series, task } = gulp;
 import dom from 'gulp-dom';
 import gulpSvgo from 'gulp-svgo';
 import svgSprite from 'gulp-svg-sprite';
 import rename from 'gulp-rename';
+
+const replaceImagePaths = () => {
+  return gulp
+    .src('./dist/css/*.css')
+    .pipe(replace('/images/', 'https://www.middlebury.edu/themes/custom/middlebury_theme/images/'))
+    .pipe(gulp.dest('./dist/css'));
+};
 
 const copyIcons = () =>
   gulp
@@ -59,5 +66,6 @@ const buildIconSprite = () =>
     )
     .pipe(gulp.dest('./dist/icons/sprites'));
 
+task('replaceImagePaths', replaceImagePaths);
 task('cleanAndCopyIcons', cleanAndCopyIcons);
 task('icons', series(buildIconSprite, copyIcons));
