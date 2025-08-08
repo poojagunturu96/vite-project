@@ -1,0 +1,277 @@
+<div class="typography paragraph--text {{ admissions_lp ? "paragraph--full" : "" }}" data-digest-content>
+  {% if admissions_lp %}
+    <div class="container">
+      <div class="row">
+        <div 
+          class="py-4 py-md-5 text-background {{box_shadow_class}}" 
+          style="--box-shadow-color-primary: {{box_shadow_color_primary}}; --box-shadow-color-secondary: {{box_shadow_color_secondary}};"
+        >
+          <div class="text-content">
+  {% endif %}
+  {% block content %}
+
+    <h2>Text Component</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis ullam praesentium commodi aut id ut tempora obcaecati et eius laborum dicta ab quia ad non, provident enim voluptate sunt. Laboriosam.</p>
+
+    {% for i in 2..6 %}
+      <h{{i}}>Text Component&nbsp;(h{{i}})</h{{i}}>
+      <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit. Minus <a href="">reiciendis odit</a>, adipisci consequatur <em>repellat</em> non distinctio consequuntur delectus, sit veritatis ullam quaerat dolorem perspiciatis voluptas sed pariatur assumenda ut sint.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus reiciendis <sup>odit</sup>, adipisci consequatur repellat non distinctio consequuntur <sub>delectus</sub>, sit veritatis ullam quaerat dolorem perspiciatis voluptas sed pariatur assumenda ut sint.</p>
+    {% endfor %}
+
+    <p>Lorem ipsum <a href="https://learn.middlebury.edu">learn.middlebury.edu</a> amet, <strong>consectetur</strong> adipisicing elit. Minus <a href="/">relative link</a>, adipisci consequatur <em>repellat</em> non distinctio consequuntur delectus, sit veritatis ullam quaerat dolorem <a href="http://google.com">external link</a> sed pariatur assumenda ut sint.</p>
+
+    <p>Lorem ipsum dolor sit amet, <a href="mailto:">email@middlebury.edu</a> elit. Minus reiciendis <sup>odit</sup>, adipisci consequatur repellat non distinctio consequuntur <sub>delectus</sub>, sit veritatis ullam quaerat dolorem perspiciatis voluptas sed pariatur assumenda ut sint.</p>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime blanditiis dolor delectus eum mollitia commodi alias laborum <a href="https://docs.google.com/document/d/1iW2Kp8VU0k4sUSVtjeDe1HvRWejz9evf9jGeJPLD8FY/edit">google docs</a> expedita consequatur, odio numquam ullam accusantium ad. Deserunt facere sequi eum quasi?</p>
+
+    <p>Lorem ipsum, dolor sit amet <a href="https://drive.google.com">google drive</a> adipisicing elit. Maxime blanditiis dolor delectus eum mollitia commodi alias laborum <a href="https://www.middlebury.edu/schools-abroad/sites/www.middlebury.edu.schools-abroad/files/2019-05/discipline%20grid%202019-20.pdf?fv=-8tHe8Vn">pdf file link</a> expedita consequatur, odio numquam ullam accusantium ad. Deserunt facere sequi eum quasi? And another <a href="/media/12345">pdf file link</a>.</p>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime blanditiis dolor delectus eum mollitia commodi alias laborum <a href="https://middleburycollege-my.sharepoint.com/:w:/r/personal/zpykosz_middlebury_edu/_layouts/15/Doc.aspx?sourcedoc=%7BDBBAE29A-47B4-40CA-983A-9942E5FED5C9%7D&file=Document%201.docx&action=editnew&mobileredirect=true&wdTpl=TM00002138&wdNewAndOpenCt=1559232589076&wdPreviousSession=fd0d99b6-766a-403a-a81a-64c0a420f780&wdOrigin=ohpAppStartPages">office 365</a> expedita consequatur, odio numquam ullam accusantium ad. Deserunt facere sequi eum quasi?</p>
+
+
+    <h3>short list</h3>
+
+    <ul>
+      <li>some text</li>
+      <li>some more text sorta long ish text</li>
+      <li>some more long ish text</li>
+    </ul>
+
+    <h3>Unordered list</h3>
+    <ul>
+      <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quas voluptatibus minima facere nesciunt odio, fugiat distinctio minus consequatur quo placeat neque expedita laudantium incidunt blanditiis laborum nam similique illum.</li>
+      <li>
+      Excepturi, minima provident. Reiciendis illo assumenda eveniet vero, velit nihil id, animi in nesciunt voluptatum, beatae officia! Nostrum consequuntur commodi nisi velit voluptatum tempore quisquam illo dolore, fugiat vitae distinctio.
+        <ul>
+          <li>Excepturi, minima provident. Reiciendis illo assumenda eveniet vero</li>
+        </ul>
+      </li>
+      <li>
+        Quae corrupti officia debitis suscipit, quis consequuntur consequatur perspiciatis eveniet odio non! Recusandae, assumenda vero reprehenderit est voluptate qui natus, itaque sapiente officia ex voluptatibus tempora facere error enim repudiandae!
+      </li>
+    </ul>
+
+    <h3>Ordered list</h3>
+    <ol>
+      <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem asperiores ut, aliquid eveniet deleniti impedit mollitia earum, explicabo quaerat, voluptate, dignissimos omnis sed aliquam. Hic possimus eum veritatis corporis labore.</li>
+      <li>Esse numquam nulla at ipsam, consequatur dolore! Officiis enim architecto, sed delectus exercitationem veritatis, voluptatum beatae excepturi sapiente quas veniam hic cum vero itaque, possimus, fuga? Magnam, consequatur reiciendis velit.
+        <ul>
+          <li>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus vero consectetur ea dolor aperiam nostrum rerum totam cumque qui laborum culpa dignissimos impedit, aut, soluta magni nam hic molestiae rem?</p>
+          </li>
+          <li>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus vero consectetur ea dolor aperiam nostrum rerum totam cumque qui laborum culpa dignissimos impedit, aut, soluta magni nam hic molestiae rem?</p>
+          </li>
+        </ul>
+      </li>
+      <li>Dignissimos autem sit deserunt ratione illum reiciendis, atque, facere repellat quaerat excepturi tempore neque cupiditate. Ut unde autem dolores, accusamus, magnam pariatur, facere corrupti doloribus obcaecati fugiat earum quis nisi.</li>
+      <li>Officiis inventore, repellendus ullam laudantium amet aperiam porro illum est, tempora temporibus ut. Placeat quisquam reprehenderit architecto repudiandae fuga id nisi, modi eum, libero mollitia quis rerum molestiae sunt itaque?</li>
+    </ol>
+
+    <table>
+      <thead>
+        <th>table header 1</th>
+        <th>table header 2</th>
+        <th>table header 3</th>
+        <th>table header 4</th>
+      </thead>
+      <tbody>
+      <tr>
+        <td>table data text 1</td>
+        <td>table data text 2</td>
+        <td>table data text 3</td>
+        <td>table data text 4</td>
+      </tr>
+      <tr>
+        <td>table data text 1</td>
+        <td>table data text 2</td>
+        <td>table data text 3</td>
+        <td>table data text 4</td>
+      </tr>
+      <tr>
+        <td>table data text 1</td>
+        <td>table data text 2</td>
+        <td>table data text 3</td>
+        <td>table data text 4</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th>U. Sagrado Corazón</th>
+          <th>UPR-Río Piedras</th>
+          <th>UPR-Mayagüez</th>
+        </tr>
+        <tr>
+          <th>Arrival Date</th>
+          <td>August 8</td>
+          <td>August 8</td>
+          <td>August 6</td>
+        </tr>
+        <tr>
+          <th>Program Orientation</th>
+          <td>August 8-9</td>
+          <td>August 8-9</td>
+          <td>August 8-9</td>
+        </tr>
+        <tr>
+          <th>University Orientation</th>
+          <td>August 11</td>
+          <td>August 14</td>
+          <td>August 8</td>
+        </tr>
+        <tr>
+          <th>Program Classes Begin</th>
+          <td>August TBD</td>
+          <td>August TBD</td>
+          <td>August TBD</td>
+        </tr>
+        <tr>
+          <th>University Classes Begin</th>
+          <td>August 15</td>
+          <td>August 16</td>
+          <td>August 10</td>
+        </tr>
+        <tr>
+          <th>Classes End</th>
+          <td>December 4</td>
+          <td>December 7</td>
+          <td>November 30</td>
+        </tr>
+        <tr>
+          <th>Final Exam Period</th>
+          <td>December 5-11</td>
+          <td>December 12-19</td>
+          <td>December 7-15</td>
+        </tr>
+        <tr>
+          <th>Official Program End Date</th>
+          <td>December 20**</td>
+          <td>December 20</td>
+          <td>December 20</td>
+        </tr>
+      </thead>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Arrival Date</th>
+          <td>August 8</td>
+          <td>August 8</td>
+          <td>August 6</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Program Orientation</th>
+          <td>August 8-9</td>
+          <td>August 8-9</td>
+          <td>August 8-9</td>
+        </tr>
+        <tr>
+          <th>University Orientation</th>
+          <td>August 11</td>
+          <td>August 14</td>
+          <td>August 8</td>
+        </tr>
+        <tr>
+          <th>Program Classes Begin</th>
+          <td>August TBD</td>
+          <td>August TBD</td>
+          <td>August TBD</td>
+        </tr>
+        <tr>
+          <th>University Classes Begin</th>
+          <td>August 15</td>
+          <td>August 16</td>
+          <td>August 10</td>
+        </tr>
+        <tr>
+          <th>Classes End</th>
+          <td>December 4</td>
+          <td>December 7</td>
+          <td>November 30</td>
+        </tr>
+        <tr>
+          <th>Final Exam Period</th>
+          <td>December 5-11</td>
+          <td>December 12-19</td>
+          <td>December 7-15</td>
+        </tr>
+        <tr>
+          <th>Official Program End Date</th>
+          <td>December 20**</td>
+          <td>December 20</td>
+          <td>December 20</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Dignissimos autem sit deserunt ratione illum reiciendis, atque, facere repellat quaerat excepturi tempore neque cupiditate. Ut unde autem dolores, accusamus, magnam pariatur, facere corrupti doloribus obcaecati fugiat earum quis nisi.</p>
+
+    <hr>
+
+    <p>Dignissimos autem sit deserunt ratione illum reiciendis, atque, facere repellat quaerat excepturi tempore neque cupiditate. Ut unde autem dolores, accusamus, magnam pariatur, facere corrupti doloribus obcaecati fugiat earum quis nisi.</p>
+
+    <h2>Definition list</h2>
+
+    <dl>
+      <dt>lorem ipsum instrumental/voice</dt>
+      <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae eaque voluptatum error reiciendis eligendi officia atque praesentium aut quasi adipisci, corporis sapiente ut quod labore? Corrupti a libero sapiente obcaecati.</dd>
+      <dt>lorem ipsum</dt>
+      <dd>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure earum atque consectetur unde eos ipsum perferendis labore iusto eius blanditiis voluptatibus voluptatem doloribus, vitae accusantium in expedita perspiciatis aperiam hic!</p>
+        <ul>
+          <li>list item 1</li>
+          <li>list item 2</li>
+          <li>list item 3</li>
+          <li>list item 4</li>
+        </ul>
+      </dd>
+      <dt>lorem ipsum</dt>
+      <dd>Quisquam ab sunt magni odio animi, iusto blanditiis error ratione, beatae quia autem cumque dicta quasi eos totam deserunt nesciunt id voluptatem illum aperiam voluptates? Nesciunt doloremque maxime rerum libero!</dd>
+      <dt>lorem ipsum</dt>
+      <dd>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates accusantium culpa cum placeat architecto laboriosam sint autem? Veniam corrupti quae animi architecto impedit corporis soluta. Recusandae numquam necessitatibus itaque eum!</p>
+        <ol>
+          <li>list item 1</li>
+          <li>list item 2</li>
+          <li>list item 3</li>
+          <li>list item 4</li>
+        </ol>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>
+        <a href="https://www.middlebury.edu/office/teaching-learning-research/faculty-resources/programming/teaching-and-writing-retreat">Teaching and Writing Retreat</a><br>
+    (August)
+      </dt>
+      <dd>A two-day, off-campus writing and teaching retreat to explore topics in pedagogy, prepare for courses, and explore issues in higher education.</dd>
+      <dt>
+        <a href="https://www.middlebury.edu/office/teaching-learning-research/faculty-resources/programming/contemporary-teaching-liberal-arts">Contemporary Teaching in the Liberal Arts Series</a><br>
+    (January)
+      </dt>
+      <dd>A selection of roundtable discussions and workshops throughout J-term that explore intentional teaching and learning practices. Past topics have included creating inclusive pedagogy, universal design, and contemplative practices.</dd>
+      <dt><a href="http://www.middlebury.edu/office/teaching-learning-research/faculty-resources/programming/learning-institute">Learning Institute</a><br>
+    (May)</dt>
+      <dd>Two-days of workshops centered around a theme related to teaching and learning. Past topics have included inspiring students and the science of learning.</dd>
+    </dl>
+
+    {# heading starts with numbers to test anchorjs invalid selectors #}
+    <h2>350.org</h2>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit expedita hic, rerum doloremque ab illo facere fuga ducimus minima quisquam eius sunt! Minus, rem aspernatur quasi nihil numquam ipsum a!</p>
+  {% endblock %}
+  {% if admissions_lp %}
+          </div>
+        </div>
+      </div>
+    </div> 
+  {% endif %}
+</div>
