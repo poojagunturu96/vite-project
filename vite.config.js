@@ -10,6 +10,9 @@ import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminOptipng from 'imagemin-optipng';
 import imageminSvgo from 'imagemin-svgo';
 
+const PROD = process.env.NODE_ENV === 'production';
+const TEST = process.env.CI;
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const getPages = () => {
@@ -63,7 +66,7 @@ const updateJsFilePaths = () => {
 
 export default defineConfig(() => ({
   // publicDir: 'dist',
-  base: '/themes/custom/middlebury_theme/',
+  // base: '/themes/custom/middlebury_theme/',
   plugins: [
     vituum({
       pages: {
@@ -97,6 +100,14 @@ export default defineConfig(() => ({
               key
             };
           });
+        }
+      },
+      globals: {
+        env: {
+          test: TEST,
+          production: PROD,
+          // store if this is vercel, so we can change templates for deploy previews
+          vercel: Boolean(process.env.VERCEL_URL)
         }
       },
       data: ['src/data/*.json']
