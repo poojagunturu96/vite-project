@@ -50,12 +50,12 @@ const updateJsFilePaths = () => {
 			this.emitFile({
 				type: 'chunk',
 				id: 'src/js/index.ts',
-        fileName: 'assets/js/main.bundle.js'
+        fileName: 'js/main.bundle.js'
 			});
 			this.emitFile({
 				type: 'chunk',
 				id: 'src/js/journey-module.ts',
-        fileName: 'assets/js/journey.bundle.js',
+        fileName: 'js/journey.bundle.js',
 			});
 		},
   }
@@ -132,11 +132,11 @@ export default defineConfig(() => ({
         assetFileNames: (assetInfo) => {
           let extType = assetInfo.names[0].split('.').at(1);
           if (/css/i.test(extType)) {
-            return `assets/${extType}/[name][extname]`;
+            return `${extType}/[name][extname]`;
           }
-          return 'assets/images/[name][extname]';
+          return 'images/[name][extname]';
         },
-        chunkFileNames: 'assets/js/chunks/[name].js',
+        chunkFileNames: 'js/chunks/[name].js',
       }
 		},
   }
