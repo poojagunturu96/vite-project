@@ -7,8 +7,12 @@
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
+    "build:prod": "vite build --base '/themes/custom/middlebury_theme/'",
+    "build:icons": "NODE_ENV=production gulp icons",
     "preview": "vite preview",
-    "build:icons": "NODE_ENV=production gulp icons"
+    "lint": "npm run lint:styles",
+    "lint:styles": "stylelint src/scss/*",
+    "format": "prettier --config ./.prettierrc --write \"src/**/*.{js,ts,scss}\""
   },
   "devDependencies": {
     "@types/lozad": "^1.16.4",
@@ -29,7 +33,12 @@
     "js-yaml": "^4.1.0",
     "postcss-load-config": "^6.0.1",
     "postcss-sort-media-queries": "^5.2.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-twig-melody": "^0.4.6",
     "sass-embedded": "^1.89.1",
+    "stylelint": "^16.23.1",
+    "stylelint-config-xo-scss": "^1.0.1",
+    "stylelint-prettier": "^5.0.3",
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
     "vituum": "^1.2.0"

@@ -1,0 +1,6 @@
+{
+  "singleQuote": true,
+  "trailingComma": "none",
+  "arrowParens": "always",
+  "plugins": ["./node_modules/prettier-plugin-twig-melody/src/index.js"]
+}
