@@ -1,6 +1,5 @@
 import gulp from 'gulp';
 const { series, task } = gulp;
-import dom from 'gulp-dom';
 import gulpSvgo from 'gulp-svgo';
 import svgSprite from 'gulp-svg-sprite';
 import rename from 'gulp-rename';
@@ -22,18 +21,12 @@ const minifySvgs = (src) =>
   gulp
     .src(src)
     .pipe(
-      dom(function () {
-        const svg = this.querySelector('svg');
-        svg.setAttribute('fill-rule', 'evenodd');
-        return this.querySelector('body').innerHTML;
-      }, false)
-    )
-    .pipe(
       gulpSvgo({
         plugins: [
           { removeTitle: true },
           { removeXMLNS: true },
-          { removeAttrs: { attrs: '(stroke)' } }
+          { removeAttrs: { attrs: '(stroke)' } },
+          { addAttributesToSVGElement: { attributes: [{ 'fill-rule': 'evenodd' }] }}
         ]
       })
     );
