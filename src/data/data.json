@@ -651,8 +651,8 @@
   ],
   "gallery_data": [
     {
-      "src": "http://placekitten.com/1280/720",
-      "thumb": "http://placekitten.com/64/36",
+      "src": "https://placecats.com/1280/720",
+      "thumb": "https://placecats.com/64/36",
       "width": 1280,
       "height": 720,
       "alt": "",
@@ -661,8 +661,8 @@
       "caption": "Lorem ipsum <a href=\"#\">dolor</a> sit amet consectetur adipisicing elit."
     },
     {
-      "src": "http://placekitten.com/1440/810",
-      "thumb": "http://placekitten.com/64/36",
+      "src": "https://placecats.com/1440/810",
+      "thumb": "https://placecats.com/64/36",
       "width": 1440,
       "height": 810,
       "alt": "",
@@ -671,8 +671,8 @@
       "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!"
     },
     {
-      "src": "http://placekitten.com/640/360",
-      "thumb": "http://placekitten.com/64/36",
+      "src": "https://placecats.com/640/360",
+      "thumb": "https://placecats.com/64/36",
       "width": 640,
       "height": 360,
       "alt": "",
@@ -681,8 +681,8 @@
       "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
-      "src": "http://placekitten.com/320/130",
-      "thumb": "http://placekitten.com/64/36",
+      "src": "https://placecats.com/320/130",
+      "thumb": "https://placecats.com/64/36",
       "width": 320,
       "height": 130,
       "alt": "",
@@ -691,8 +691,8 @@
       "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
-      "src": "http://placekitten.com/960/540",
-      "thumb": "http://placekitten.com/64/36",
+      "src": "https://placecats.com/960/540",
+      "thumb": "https://placecats.com/64/36",
       "width": 960,
       "height": 540,
       "alt": "",
@@ -701,54 +701,54 @@
       "caption": "Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!"
     },
     {
-      "src": "http://placekitten.com/400/800",
+      "src": "https://placecats.com/400/800",
       "width": 400,
       "height": 800,
-      "thumb": "http://placekitten.com/40/80",
+      "thumb": "https://placecats.com/40/80",
       "alt": "",
       "srcset": "",
       "sizes": "",
       "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!"
     },
     {
-      "src": "http://placekitten.com/400/800",
+      "src": "https://placecats.com/400/800",
       "width": 400,
       "height": 800,
-      "thumb": "http://placekitten.com/40/80",
+      "thumb": "https://placecats.com/40/80",
       "alt": "",
       "srcset": "",
       "sizes": ""
     },
     {
-      "src": "http://placekitten.com/450/800",
+      "src": "https://placecats.com/450/800",
       "width": 450,
       "height": 800,
-      "thumb": "http://placekitten.com/40/80",
+      "thumb": "https://placecats.com/40/80",
       "alt": "",
       "srcset": "",
       "sizes": ""
     },
     {
-      "src": "http://placekitten.com/700/600",
+      "src": "https://placecats.com/700/600",
       "width": 700,
       "height": 600,
-      "thumb": "http://placekitten.com/40/80",
+      "thumb": "https://placecats.com/40/80",
       "alt": "",
       "srcset": "",
       "sizes": ""
     },
     {
-      "src": "http://placekitten.com/700/600",
+      "src": "https://placecats.com/700/600",
       "width": 700,
       "height": 600,
-      "thumb": "http://placekitten.com/40/80",
+      "thumb": "https://placecats.com/40/80",
       "alt": "",
       "srcset": "",
       "sizes": ""
     },
     {
-      "src": "http://placekitten.com/960/540",
-      "thumb": "http://placekitten.com/64/36",
+      "src": "https://placecats.com/960/540",
+      "thumb": "https://placecats.com/64/36",
       "width": 960,
       "height": 540,
       "alt": "",
@@ -757,8 +757,8 @@
       "caption": "Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!"
     },
     {
-      "src": "http://placekitten.com/400/800",
-      "thumb": "http://placekitten.com/40/80",
+      "src": "https://placecats.com/400/800",
+      "thumb": "https://placecats.com/40/80",
       "alt": "",
       "width": 400,
       "height": 800,
@@ -1445,71 +1445,46 @@
   ],
   "journey_gallery_data": [
     {
-      "src": "http://placekitten.com/1376/774",
+      "src": "https://placecats.com/1376/774",
       "width": 1376,
       "height": 774,
-      "srcset": [
-        "1376/774",
-        "1136/639",
-        "736/414",
-        "320/180"
-      ],
+      "srcset": ["1376/774", "1136/639", "736/414", "320/180"],
       "alt": "",
       "sizes": "",
       "caption": "Lorem ipsum <a href=\"#\">dolor</a> sit amet consectetur adipisicing elit."
     },
     {
-      "src": "http://placekitten.com/1376/774",
+      "src": "https://placecats.com/1376/774",
       "width": 1376,
       "height": 774,
-      "srcset": [
-        "1376/774",
-        "1136/639",
-        "736/414",
-        "320/180"
-      ],
+      "srcset": ["1376/774", "1136/639", "736/414", "320/180"],
       "alt": "",
       "sizes": "",
       "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!"
     },
     {
-      "src": "http://placekitten.com/1376/774",
+      "src": "https://placecats.com/1376/774",
       "width": 1376,
       "height": 774,
-      "srcset": [
-        "1376/774",
-        "1136/639",
-        "736/414",
-        "320/180"
-      ],
+      "srcset": ["1376/774", "1136/639", "736/414", "320/180"],
       "alt": "",
       "sizes": "",
       "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
-      "src": "http://placekitten.com/1376/774",
+      "src": "https://placecats.com/1376/774",
       "width": 1376,
       "height": 774,
-      "srcset": [
-        "1376/774",
-        "1136/639",
-        "736/414",
-        "320/180"
-      ],
+      "srcset": ["1376/774", "1136/639", "736/414", "320/180"],
       "alt": "",
       "sizes": "",
       "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
-      "src": "http://placekitten.com/1376/774",
+      "src": "https://placecats.com/1376/774",
       "width": 1376,
       "height": 774,
-      "srcset": [
-        "1376/774",
-        "1136/639",
-        "736/414",
-        "320/180"
-      ],
+      "srcset": ["1376/774", "1136/639", "736/414", "320/180"],
       "alt": "",
       "sizes": "",
       "caption": "Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!"
@@ -1544,16 +1519,116 @@
           "title": "Mixed Confetti",
           "hosts": "Aaron Smith, Blair Kloman, Pooja Gunturu",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "genre": "Blues"
+          "genres": [
+            {
+              "name": "Blues",
+              "class": "genre-1d6ca6"
+            },
+            {
+              "name": "Indie",
+              "class": "genre-916b6b"
+            },
+            {
+              "name": "Rock",
+              "class": "genre-048228"
+            }
+          ]
+        },
+        {
+          "start_time": 300,
+          "end_time": 360,
+          "meridiem": "AM",
+          "title": "Hot Chocolate on the Bus",
+          "hosts": "Adam Yauch",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "genres": [
+            {
+              "name": "Country",
+              "class": "genre-a16b06"
+            }
+          ]
+        },
+        {
+          "start_time": 360,
+          "end_time": 420,
+          "meridiem": "AM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Experimental",
+              "class": "genre-c425de"
+            },
+            {
+              "name": "Country",
+              "class": "genre-a16b06"
+            }
+          ]
+        },
+        {
+          "start_time": 60,
+          "end_time": 120,
+          "meridiem": "PM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "World",
+              "class": "genre-47f5ec"
+            }
+          ]
         },
         {
           "start_time": 120,
           "end_time": 180,
           "meridiem": "PM",
-          "title": "Hot Chocolate on the Bus",
-          "hosts": "Adam Yauch",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "genre": "Country"
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Classical",
+              "class": "genre-3e8369"
+            }
+          ]
+        },
+        {
+          "start_time": 240,
+          "end_time": 300,
+          "meridiem": "PM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Folk",
+              "class": "genre-f29407"
+            }
+          ]
+        },
+        {
+          "start_time": 420,
+          "end_time": 480,
+          "meridiem": "PM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Hip Hop",
+              "class": "genre-01777f"
+            }
+          ]
+        },
+        {
+          "start_time": 600,
+          "end_time": 660,
+          "meridiem": "PM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Reggae",
+              "class": "genre-f2cc46"
+            }
+          ]
         },
         {
           "start_time": 660,
@@ -1561,7 +1636,12 @@
           "meridiem": "PM",
           "title": "Mr. and Mrs. Send It",
           "hosts": "Sid Vicious",
-          "genre": "Electronic"
+          "genres": [
+            {
+              "name": "News",
+              "class": "genre-827373"
+            }
+          ]
         }
       ]
     },
@@ -1569,26 +1649,92 @@
       "day": "Tuesday",
       "schedule": [
         {
-          "start_time": 300,
-          "end_time": 360,
+          "start_time": 240,
+          "end_time": 300,
           "meridiem": "AM",
           "title": "Grilled Cheese Sandwich",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "genre": "Folk"
+          "genres": [
+            {
+              "name": "Talk",
+              "class": "genre-000000"
+            },
+            {
+              "name": "World",
+              "class": "genre-47f5ec"
+            }
+          ]
         },
         {
-          "start_time": 540,
-          "end_time": 600,
+          "start_time": 300,
+          "end_time": 360,
           "meridiem": "AM",
           "title": "Jazz Band, Hand and Feet",
-          "genre": "Punk"
+          "genres": [
+            {
+              "name": "Rap",
+              "class": "genre-880808"
+            },
+            {
+              "name": "Rock",
+              "class": "genre-048228"
+            }
+          ]
+        },
+        {
+          "start_time": 420,
+          "end_time": 480,
+          "meridiem": "AM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Funk",
+              "class": "genre-0ee3ff"
+            },
+            {
+              "name": "Country",
+              "class": "genre-a16b06"
+            }
+          ]
+        },
+        {
+          "start_time": 660,
+          "end_time": 720,
+          "meridiem": "AM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "R&B/Soul",
+              "class": "genre-8fceff"
+            }
+          ]
+        },
+        {
+          "start_time": 720,
+          "end_time": 60,
+          "meridiem": "PM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Rock",
+              "class": "genre-048228"
+            }
+          ]
         },
         {
           "start_time": 720,
           "end_time": 60,
           "meridiem": "AM",
           "title": "Jazz Band, Hand and Feet",
-          "genre": "Rock"
+          "genres": [
+            {
+              "name": "Rock",
+              "class": "genre-048228"
+            }
+          ]
         }
       ]
     },
@@ -1600,7 +1746,12 @@
           "end_time": 120,
           "meridiem": "PM",
           "title": "Experimental Jetset Companion",
-          "genre": "World"
+          "genres": [
+            {
+              "name": "World",
+              "class": "genre-47f5ec"
+            }
+          ]
         },
         {
           "start_time": 660,
@@ -1608,7 +1759,20 @@
           "meridiem": "PM",
           "title": "Mr. and Mrs. Send It",
           "hosts": "Sid Vicious",
-          "genre": "Blues"
+          "genres": [
+            {
+              "name": "Jazz",
+              "class": "genre-13e9bf"
+            },
+            {
+              "name": "Pop",
+              "class": "genre-ff4d4d"
+            },
+            {
+              "name": "R&B / Soul",
+              "class": "genre-8fceff"
+            }
+          ]
         }
       ]
     },
@@ -1620,7 +1784,12 @@
           "end_time": 600,
           "meridiem": "AM",
           "title": "Jazz Band, Hand and Feet",
-          "genre": "Reggae"
+          "genres": [
+            {
+              "name": "Reggae",
+              "class": "genre-f2cc46"
+            }
+          ]
         },
         {
           "start_time": 120,
@@ -1629,7 +1798,51 @@
           "title": "Hot Chocolate on the Bus",
           "hosts": "Adam Yauch",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "genre": "Blues"
+          "genres": [
+            {
+              "name": "Blues",
+              "class": "genre-1d6ca6"
+            }
+          ]
+        },
+        {
+          "start_time": 180,
+          "end_time": 240,
+          "meridiem": "PM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Electronic",
+              "class": "genre-b7c706"
+            }
+          ]
+        },
+        {
+          "start_time": 300,
+          "end_time": 360,
+          "meridiem": "PM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Jazz",
+              "class": "genre-13e9bf"
+            }
+          ]
+        },
+        {
+          "start_time": 360,
+          "end_time": 420,
+          "meridiem": "PM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Heavy Metal",
+              "class": "genre-6b6b6b"
+            }
+          ]
         },
         {
           "start_time": 120,
@@ -1637,7 +1850,12 @@
           "meridiem": "AM",
           "title": "I Love Rock and Roll",
           "hosts": "Matt Jennings and Tom",
-          "genre": "Jazz"
+          "genres": [
+            {
+              "name": "Jazz",
+              "class": "genre-13e9bf"
+            }
+          ]
         }
       ]
     },
@@ -1650,14 +1868,50 @@
           "meridiem": "AM",
           "title": "Echo Locations",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "genre": "Hip Hop"
+          "genres": [
+            {
+              "name": "Hip Hop",
+              "class": "genre-01777f"
+            }
+          ]
         },
         {
           "start_time": 540,
           "end_time": 600,
           "meridiem": "AM",
           "title": "Jazz Band, Hand and Feet",
-          "genre": "Latin"
+          "genres": [
+            {
+              "name": "Latin",
+              "class": "genre-85eb35"
+            }
+          ]
+        },
+        {
+          "start_time": 480,
+          "end_time": 540,
+          "meridiem": "PM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Kpop",
+              "class": "genre-8807d7"
+            }
+          ]
+        },
+        {
+          "start_time": 540,
+          "end_time": 600,
+          "meridiem": "PM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Latin",
+              "class": "genre-85eb35"
+            }
+          ]
         },
         {
           "start_time": 660,
@@ -1665,7 +1919,12 @@
           "meridiem": "PM",
           "title": "Mr. and Mrs. Send It",
           "hosts": "Sid Vicious",
-          "genre": "Indie"
+          "genres": [
+            {
+              "name": "Indie",
+              "class": "genre-916b6b"
+            }
+          ]
         }
       ]
     },
@@ -1673,11 +1932,55 @@
       "day": "Saturday",
       "schedule": [
         {
+          "start_time": 480,
+          "end_time": 540,
+          "meridiem": "AM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Indie",
+              "class": "genre-916b6b"
+            }
+          ]
+        },
+        {
+          "start_time": 540,
+          "end_time": 600,
+          "meridiem": "AM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Pop",
+              "class": "genre-ff4d4d"
+            }
+          ]
+        },
+        {
+          "start_time": 600,
+          "end_time": 660,
+          "meridiem": "AM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Punk",
+              "class": "genre-044882"
+            }
+          ]
+        },
+        {
           "start_time": 60,
           "end_time": 120,
           "meridiem": "PM",
           "title": "Experimental Jetset Companion",
-          "genre": "Funk"
+          "genres": [
+            {
+              "name": "Funk",
+              "class": "genre-0ee3ff"
+            }
+          ]
         },
         {
           "start_time": 120,
@@ -1686,7 +1989,38 @@
           "title": "Hot Chocolate on the Bus",
           "hosts": "Adam Yauch",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "genre": "Classical"
+          "genres": [
+            {
+              "name": "Classical",
+              "class": "genre-3e8369"
+            }
+          ]
+        },
+        {
+          "start_time": 120,
+          "end_time": 180,
+          "meridiem": "AM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Generic",
+              "class": "genre-0d395f"
+            }
+          ]
+        },
+        {
+          "start_time": 180,
+          "end_time": 240,
+          "meridiem": "AM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Rap",
+              "class": "genre-880808"
+            }
+          ]
         }
       ]
     },
@@ -1698,7 +2032,12 @@
           "end_time": 660,
           "meridiem": "AM",
           "title": "Experimental Jetset Companion",
-          "genre": "Electronic"
+          "genres": [
+            {
+              "name": "Electronic",
+              "class": "genre-b7c706"
+            }
+          ]
         },
         {
           "start_time": 120,
@@ -1707,7 +2046,38 @@
           "title": "Hot Chocolate on the Bus",
           "hosts": "Adam Yauch",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "genre": "Electronic"
+          "genres": [
+            {
+              "name": "Electronic",
+              "class": "genre-b7c706"
+            }
+          ]
+        },
+        {
+          "start_time": 720,
+          "end_time": 60,
+          "meridiem": "AM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Talk",
+              "class": "genre-000000"
+            }
+          ]
+        },
+        {
+          "start_time": 60,
+          "end_time": 120,
+          "meridiem": "AM",
+          "title": "Mr. and Mrs. Send It",
+          "hosts": "Sid Vicious",
+          "genres": [
+            {
+              "name": "Rap",
+              "class": "genre-880808"
+            }
+          ]
         },
         {
           "start_time": 120,
@@ -1715,7 +2085,12 @@
           "meridiem": "AM",
           "title": "I Love Rock and Roll",
           "hosts": "Matt Jennings and Tom",
-          "genre": "Blues"
+          "genres": [
+            {
+              "name": "Blues",
+              "class": "genre-1d6ca6"
+            }
+          ]
         }
       ]
     }
@@ -1882,6 +2257,580 @@
     {
       "artist": "CZARFACE",
       "song": "CZARTIFICIAL INTELLIGENCE"
+    }
+  ],
+  "all_genres": [
+    {
+      "name": "Blues",
+      "class": "genre-1d6ca6"
+    },
+    {
+      "name": "Country",
+      "class": "genre-a16b06"
+    },
+    {
+      "name": "Experimental",
+      "class": "genre-c425de"
+    },
+    {
+      "name": "Funk",
+      "class": "genre-0ee3ff"
+    },
+    {
+      "name": "Indie",
+      "class": "genre-916b6b"
+    },
+    {
+      "name": "Pop",
+      "class": "genre-ff4d4d"
+    },
+    {
+      "name": "Punk",
+      "class": "genre-044882"
+    },
+    {
+      "name": "R&B/Soul",
+      "class": "genre-8fceff"
+    },
+    {
+      "name": "Rock",
+      "class": "genre-048228"
+    },
+    {
+      "name": "World",
+      "class": "genre-47f5ec"
+    },
+    {
+      "name": "Classical",
+      "class": "genre-3e8369"
+    },
+    {
+      "name": "Electronic",
+      "class": "genre-b7c706"
+    },
+    {
+      "name": "Folk",
+      "class": "genre-f29407"
+    },
+    {
+      "name": "Jazz",
+      "class": "genre-13e9bf"
+    },
+    {
+      "name": "Heavy Metal",
+      "class": "genre-6b6b6b"
+    },
+    {
+      "name": "Hip Hop",
+      "class": "genre-01777f"
+    },
+    {
+      "name": "Kpop",
+      "class": "genre-8807d7"
+    },
+    {
+      "name": "Latin",
+      "class": "genre-85eb35"
+    },
+    {
+      "name": "Reggae",
+      "class": "genre-f2cc46"
+    },
+    {
+      "name": "News",
+      "class": "genre-827373"
+    },
+    {
+      "name": "Talk",
+      "class": "genre-000000"
+    },
+    {
+      "name": "Rap",
+      "class": "genre-880808"
+    }
+  ],
+  "catalog_search_items": {
+    "requirements": [
+      {
+        "option": "AAL"
+      },
+      {
+        "option": "AMR"
+      },
+      {
+        "option": "ART"
+      },
+      {
+        "option": "CMP"
+      },
+      {
+        "option": "CW"
+      },
+      {
+        "option": "DED"
+      },
+      {
+        "option": "EUR"
+      },
+      {
+        "option": "HIS"
+      },
+      {
+        "option": "LIT"
+      },
+      {
+        "option": "LNG"
+      },
+      {
+        "option": "MDE"
+      },
+      {
+        "option": "NOA"
+      },
+      {
+        "option": "NOR"
+      },
+      {
+        "option": "PE"
+      },
+      {
+        "option": "PHL"
+      },
+      {
+        "option": "SAF"
+      },
+      {
+        "option": "SCI"
+      },
+      {
+        "option": "SOA"
+      },
+      {
+        "option": "SOC"
+      }
+    ],
+    "days": [
+      {
+        "day": "Sunday"
+      },
+      {
+        "day": "Monday"
+      },
+      {
+        "day": "Tuesday"
+      },
+      {
+        "day": "Wednesday"
+      },
+      {
+        "day": "Thursday"
+      },
+      {
+        "day": "Friday"
+      },
+      {
+        "day": "Saturday"
+      }
+    ],
+    "types": [
+      {
+        "type": "Lecture",
+        "value": "LCT"
+      },
+      {
+        "type": "Lab",
+        "value": "LAB"
+      },
+      {
+        "type": "Discussion",
+        "value": "DSC"
+      },
+      {
+        "type": "Drill 1",
+        "value": "DR1"
+      },
+      {
+        "type": "Drill 2",
+        "value": "DR2"
+      },
+      {
+        "type": "Independent Study",
+        "value": "IND"
+      },
+      {
+        "type": "Internship",
+        "value": "INT"
+      },
+      {
+        "type": "PE Course",
+        "value": "PE"
+      },
+      {
+        "type": "Pre-Lab",
+        "value": "PLB"
+      },
+      {
+        "type": "Screening",
+        "value": "SCR"
+      },
+      {
+        "type": "Seminar",
+        "value": "SEM"
+      },
+      {
+        "type": "Senior Work",
+        "value": "SNR"
+      },
+      {
+        "type": "Senior Work-disc. or workshop",
+        "value": "SNZ"
+      },
+      {
+        "type": "Additional Lab",
+        "value": "LA2"
+      },
+      {
+        "type": "Additional Lab",
+        "value": "LA3"
+      }
+    ],
+    "course_modality": [
+      {
+        "label": "In-Person",
+        "value": "PERS"
+      },
+      {
+        "label": "In-Person, Half-Credit",
+        "value": "PERS5"
+      }
+    ],
+    "level": [
+      {
+        "label": "Non-degree",
+        "value": "ND"
+      },
+      {
+        "label": "Undergraduate",
+        "value": "UG"
+      }
+    ],
+    "campus": [
+      {
+        "label": "Main",
+        "value": "M"
+      },
+      {
+        "label": "Middlebury Institute, CA",
+        "value": "CM"
+      },
+      {
+        "label": "Non Midd Student on SA",
+        "value": "N"
+      },
+      {
+        "label": "Off-Campus (LS Grad & SUMR St)",
+        "value": "OFF"
+      },
+      {
+        "label": "Washington, DC",
+        "value": "DC"
+      }
+    ]
+  },
+  "miis_curriculum_header_labels": ["Course", "FA25", "SP26", "FA26", "SP27"],
+  "miis_curriculum": [
+    {
+      "course_number": "GGPD 8500",
+      "title": "Policy & Data Analytics (3 Credits)",
+      "semester": [
+        {
+          "label": "FA25",
+          "value": true
+        },
+        {
+          "label": "SP26",
+          "value": true
+        },
+        {
+          "label": "FA26",
+          "value": true
+        },
+        {
+          "label": "SP27",
+          "value": true
+        }
+      ],
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+    },
+    {
+      "course_number": "GGPD 8506",
+      "title": "International Politics & Development (3 Credits)",
+      "semester": [
+        {
+          "label": "FA25",
+          "value": false
+        },
+        {
+          "label": "SP26",
+          "value": true
+        },
+        {
+          "label": "FA26",
+          "value": false
+        },
+        {
+          "label": "SP27",
+          "value": true
+        }
+      ],
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+    },
+    {
+      "course_number": "GGPD 8508",
+      "title": "Power, Social Change & Orgs (3 Credits)",
+      "semester": [
+        {
+          "label": "FA25",
+          "value": true
+        },
+        {
+          "label": "SP26",
+          "value": false
+        },
+        {
+          "label": "FA26",
+          "value": false
+        },
+        {
+          "label": "SP27",
+          "value": false
+        }
+      ],
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+    },
+    {
+      "course_number": "GGPD 8515",
+      "title": "Trade Policy & Institutions (3 Credits)",
+      "semester": [
+        {
+          "label": "FA25",
+          "value": true
+        },
+        {
+          "label": "SP26",
+          "value": false
+        },
+        {
+          "label": "FA26",
+          "value": true
+        },
+        {
+          "label": "SP27",
+          "value": false
+        }
+      ],
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+    },
+    {
+      "course_number": "GGPD 8519",
+      "title": "Org. Development & Leadership (3 Credits)",
+      "semester": [
+        {
+          "label": "FA25",
+          "value": false
+        },
+        {
+          "label": "SP26",
+          "value": true
+        },
+        {
+          "label": "FA26",
+          "value": false
+        },
+        {
+          "label": "SP27",
+          "value": true
+        }
+      ],
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+    },
+    {
+      "course_number": "GGPD 8521",
+      "title": "International Finance (3 Credits)",
+      "semester": [
+        {
+          "label": "FA25",
+          "value": false
+        },
+        {
+          "label": "SP26",
+          "value": true
+        },
+        {
+          "label": "FA26",
+          "value": false
+        },
+        {
+          "label": "SP27",
+          "value": false
+        }
+      ],
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+    },
+    {
+      "course_number": "GGPD 8529",
+      "title": "Dev Theory & Practice (3 Credits)",
+      "semester": [
+        {
+          "label": "FA25",
+          "value": true
+        },
+        {
+          "label": "SP26",
+          "value": false
+        },
+        {
+          "label": "FA26",
+          "value": true
+        },
+        {
+          "label": "SP27",
+          "value": false
+        }
+      ],
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+    },
+    {
+      "course_number": "GGPD 8539",
+      "title": "Import/Export & Trade Law Compliance (3 Credits)",
+      "semester": [
+        {
+          "label": "FA25",
+          "value": false
+        },
+        {
+          "label": "SP26",
+          "value": "j-term"
+        },
+        {
+          "label": "FA26",
+          "value": false
+        },
+        {
+          "label": "SP27",
+          "value": "j-term"
+        }
+      ],
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+    },
+    {
+      "course_number": "GGPD 8540",
+      "title": "Trade Law/Dispute Resolution (3 Credits)",
+      "semester": [
+        {
+          "label": "FA25",
+          "value": true
+        },
+        {
+          "label": "SP26",
+          "value": false
+        },
+        {
+          "label": "FA26",
+          "value": true
+        },
+        {
+          "label": "SP27",
+          "value": false
+        }
+      ],
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+    },
+    {
+      "course_number": "GGPD 8565",
+      "title": "Intro to Network Analysis (3 Credits)",
+      "semester": [
+        {
+          "label": "FA25",
+          "value": true
+        },
+        {
+          "label": "SP26",
+          "value": true
+        },
+        {
+          "label": "FA26",
+          "value": true
+        },
+        {
+          "label": "SP27",
+          "value": true
+        }
+      ],
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+    },
+    {
+      "course_number": "GGPD 8569",
+      "title": "Economics of Inequality (3 Credits)",
+      "semester": [
+        {
+          "label": "FA25",
+          "value": true
+        },
+        {
+          "label": "SP26",
+          "value": false
+        },
+        {
+          "label": "FA26",
+          "value": true
+        },
+        {
+          "label": "SP27",
+          "value": false
+        }
+      ],
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+    },
+    {
+      "course_number": "GGPD 8570",
+      "title": "Program Management & Implementation (3 Credits)",
+      "semester": [
+        {
+          "label": "FA25",
+          "value": true
+        },
+        {
+          "label": "SP26",
+          "value": false
+        },
+        {
+          "label": "FA26",
+          "value": true
+        },
+        {
+          "label": "SP27",
+          "value": false
+        }
+      ],
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+    }
+  ],
+  "admissions_lp_useful_links": [
+    {
+      "text": "How to Apply"
+    },
+    {
+      "text": "Information about Visiting"
+    },
+    {
+      "text": "Dates and Deadlines"
+    },
+    {
+      "text": "Student Financial Services"
+    },
+    {
+      "text": "Connect with Admissions"
     }
   ]
 }
