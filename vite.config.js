@@ -16,11 +16,11 @@ const TEST = process.env.CI;
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const getPages = () => {
-  const files = globSync('src/templates/pages/**/*.twig');
+  const files = globSync('src/pages/**/*.twig');
   let elems = '';
 
   for (const path of files) {
-    const anchorText = `${path.split('/').slice(3).join('/')}`;
+    const anchorText = `${path.split('/').slice(2).join('/')}`;
     const anchorHref = anchorText.replace('.twig', '.html');
     elems += `<li><a href="/${anchorHref}">${anchorText}</a></li>`;
   }
@@ -33,7 +33,7 @@ const createPagesList = () => {
     name: 'create-pages-list',
     enforce: 'post',
     transformIndexHtml(html, context) {
-      if (context.filename.endsWith('pages.twig.html')) {
+      if (context.filename.endsWith('index.twig.html')) {
         let list = getPages();
         html = html.replace(
           `<ol id="page-list"><ol>`,
@@ -67,14 +67,14 @@ const updateJsFilePaths = () => {
 export default defineConfig(() => ({
   plugins: [
     vituum({
-      pages: {
-        dir: './src/templates/pages'
-      }
+      // pages: {
+      //   dir: './src/templates'
+      // }
     }),
     twig({
-      root: './src/templates/pages',
+      root: './src/templates',
       filters: {
-        exists: (value, args) => {
+        exists: (value) => {
           if (!value) {
             throw new Error('value is falsy');
           }
@@ -122,7 +122,7 @@ export default defineConfig(() => ({
   ],
   server: {
     port: 3000,
-    open: '/pages.html'
+    open: '/'
   },
   preview: {
     port: 3000
@@ -136,7 +136,7 @@ export default defineConfig(() => ({
     },
     outDir: 'dist',
     rollupOptions: {
-      input: resolve(__dirname, 'src/templates/pages/**/*.twig'),
+      // input: resolve(__dirname, 'src/templates/**/**/*.twig'),
       output: {
         assetFileNames: (assetInfo) => {
           let extType = assetInfo.names[0].split('.').at(1);

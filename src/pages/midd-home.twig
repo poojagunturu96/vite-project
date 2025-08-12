@@ -1,4 +1,4 @@
-{% extends "../layouts/midd-layout.twig" %}
+{% extends 'layouts/midd-layout.twig' %}
 
 {% set midd_header_transparent = true %}
 
@@ -60,7 +60,7 @@
 
 {% block page %}
   <div class="journey">
-    {% include '../partials/journey-section.twig' with {
+    {% include 'partials/journey-section.twig' with {
       name: 'intro',
       title_label: 'midd-page-journey-first',
       title: 'Chart your own course of study in one of the most <strong>immersive</strong> and <strong>globally engaged</strong> experiences in higher education',
@@ -68,21 +68,21 @@
       align: 'center',
       school_picker: true
     } %}
-    {% include '../partials/journey-section.twig' with {
+    {% include 'partials/journey-section.twig' with {
       video: 'https://player.vimeo.com/progressive_redirect/playback/827016634/rendition/1080p/file.mp4?loc=external&signature=c3a2a7c399cca676a461c669c502d16d0ea1c90e92dfbdc61a242766ca58ca7b',
       name: 'learning',
       title_label: 'midd-page-journey-second',
       blurb: 'A breadth and depth of <strong>learning</strong> and <strong>experience</strong> … a capacity for <strong>exploration</strong> that will last you a lifetime',
       align: 'left'
     } %}
-    {% include '../partials/journey-section.twig' with {
+    {% include 'partials/journey-section.twig' with {
       video: 'https://player.vimeo.com/progressive_redirect/playback/827016678/rendition/1080p/file.mp4?loc=external&signature=1843996a0ff0cd945d3d7743d6b8035467edf763fa14cb990e6277beeaa7d2eb',
       name: 'thinking',
       title_label: 'midd-page-journey-third',
       blurb: 'An expansive education built on <strong>critical thinking</strong> and <strong>compassionate doing</strong>',
       align: 'right left--mobile'
     } %}
-    {% include '../partials/journey-section.twig' with {
+    {% include 'partials/journey-section.twig' with {
       video: 'https://player.vimeo.com/progressive_redirect/playback/819840754/rendition/1080p/file.mp4?loc=external&signature=8b838c47930a3ba020001ad0edcfde0ba6eebff1caefd93e23d27362ade615c1',
       name: 'opportunity',
       title_label: 'midd-page-journey-fourth',
@@ -90,7 +90,7 @@
       align: 'left'
     } %}
     <div class="journey-modal--block" id="midd-journey-overlay" style="overflow-x:hidden">
-      {% include '../partials/journey-modal.twig' with {
+      {% include 'partials/journey-modal.twig' with {
         id: label.id,
         content_type: 'play',
         description: 'Take a tour of Middlebury Campus',
@@ -98,16 +98,16 @@
       }%}
     </div>
   </div>
-  {% include '../paragraphs/fluencies.twig' %}
+  {% include 'paragraphs/fluencies.twig' %}
 {% endblock %}
 {% block layout_footer %}
-  {% include '../partials/footer-cta-group.twig' with {
+  {% include 'partials/footer-cta-group.twig' with {
     title: 'What do you want?',
     background_light: true
   }%}
-  {% include '../paragraphs/non-discrimination-policy.twig' %}
-  {% include '../paragraphs/banner.twig' %}
-  {% include '../partials/midd-footer.twig' with {
+  {% include 'paragraphs/non-discrimination-policy.twig' %}
+  {% include 'paragraphs/banner.twig' %}
+  {% include 'partials/midd-footer.twig' with {
     journey: true
   }%}
 {% endblock %}

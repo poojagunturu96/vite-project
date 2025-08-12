@@ -1,4 +1,4 @@
-{% extends '../layouts/anchor-layout.twig' %}
+{% extends 'layouts/anchor-layout.twig' %}
 
 {% set page_title = 'Civil Rights and Title IX Office' %}
 
@@ -15,9 +15,9 @@
 } %}
 
 {% block page %}
-  {% embed '../partials/sidebar-layout.twig' %}
+  {% embed 'partials/sidebar-layout.twig' %}
     {% block nav %}
-      {% include '../partials/page-nav.twig' with {
+      {% include 'partials/page-nav.twig' with {
         label: 'Policies, Laws, and Procedures',
         items: [
           {
@@ -60,11 +60,11 @@
       <div class="bg-gray-lighter mb-md-6 p-3">
         <div class="row">
           <div class="col-12 col-md-6 col-lg-12 order-md-2 order-lg-1">
-            {% include '../partials/page-cta.twig' %}
+            {% include 'partials/page-cta.twig' %}
             <div class="border-b my-6 d-md-none d-lg-block"></div>
           </div>
           <div class="col-12 col-md-6 col-lg-12 order-md-1 order-lg-2">
-            {% include '../partials/office-meta.twig' %}
+            {% include 'partials/office-meta.twig' %}
           </div>
         </div>
       </div>
