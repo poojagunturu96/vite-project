@@ -16,7 +16,7 @@ const TEST = process.env.CI;
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const getPages = () => {
-  const files = globSync("src/templates/pages/**/*.twig");
+  const files = globSync('src/templates/pages/**/*.twig');
   let elems = '';
 
   for (const path of files) {
@@ -26,13 +26,13 @@ const getPages = () => {
   }
 
   return elems;
-}
+};
 
 const createPagesList = () => {
-	return {
-		name: 'create-pages-list',
-		enforce: 'post',
-		transformIndexHtml(html, context) {
+  return {
+    name: 'create-pages-list',
+    enforce: 'post',
+    transformIndexHtml(html, context) {
       if (context.filename.endsWith('pages.twig.html')) {
         let list = getPages();
         html = html.replace(
@@ -40,33 +40,31 @@ const createPagesList = () => {
           `<ol id="page-list" style="columns: 18rem auto;">${list}<ol>`
         );
       }
-			return html;
-		}
-	};
-}
+      return html;
+    }
+  };
+};
 
 const updateJsFilePaths = () => {
-	return {
-		name: 'update-js-file-paths',
+  return {
+    name: 'update-js-file-paths',
     apply: 'build',
-		buildStart() {
-			this.emitFile({
-				type: 'chunk',
-				id: 'src/js/index.ts',
+    buildStart() {
+      this.emitFile({
+        type: 'chunk',
+        id: 'src/js/index.ts',
         fileName: 'js/main.bundle.js'
-			});
-			this.emitFile({
-				type: 'chunk',
-				id: 'src/js/journey-module.ts',
-        fileName: 'js/journey.bundle.js',
-			});
-		},
-  }
-}
+      });
+      this.emitFile({
+        type: 'chunk',
+        id: 'src/js/journey-module.ts',
+        fileName: 'js/journey.bundle.js'
+      });
+    }
+  };
+};
 
 export default defineConfig(() => ({
-  // publicDir: 'dist',
-  // base: '/themes/custom/middlebury_theme/',
   plugins: [
     vituum({
       pages: {
@@ -117,7 +115,7 @@ export default defineConfig(() => ({
         jpg: imageminMozjpeg({ progressive: true }),
         png: imageminOptipng({ optimizationLevel: 5 }),
         svg: imageminSvgo({ cleanupIDs: false })
-      },
+      }
     }),
     updateJsFilePaths(),
     createPagesList()
@@ -138,7 +136,7 @@ export default defineConfig(() => ({
     },
     outDir: 'dist',
     rollupOptions: {
-			input: resolve(__dirname, 'src/templates/pages/**/*.twig'),
+      input: resolve(__dirname, 'src/templates/pages/**/*.twig'),
       output: {
         assetFileNames: (assetInfo) => {
           let extType = assetInfo.names[0].split('.').at(1);
@@ -147,8 +145,8 @@ export default defineConfig(() => ({
           }
           return 'images/[name][extname]';
         },
-        chunkFileNames: 'js/chunks/[name].js',
+        chunkFileNames: 'js/chunks/[name].js'
       }
-		},
+    }
   }
 }));
