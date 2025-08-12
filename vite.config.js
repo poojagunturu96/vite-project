@@ -13,7 +13,7 @@ import imageminSvgo from 'imagemin-svgo';
 const PROD = process.env.NODE_ENV === 'production';
 const TEST = process.env.CI;
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+// const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const getPages = () => {
   const files = globSync('src/pages/**/*.twig');
@@ -22,7 +22,7 @@ const getPages = () => {
   for (const path of files) {
     const anchorText = `${path.split('/').slice(2).join('/')}`;
     const anchorHref = anchorText.replace('.twig', '.html');
-    elems += `<li><a href="/${anchorHref}">${anchorText}</a></li>`;
+    elems += `<li class="pr-2 pb-3"><a href="/${anchorHref}">${anchorText}</a></li>`;
   }
 
   return elems;
@@ -37,7 +37,7 @@ const createPagesList = () => {
         let list = getPages();
         html = html.replace(
           `<ol id="page-list"><ol>`,
-          `<ol id="page-list" style="columns: 18rem auto;">${list}<ol>`
+          `<ol id="page-list" style="columns: 20rem auto;">${list}<ol>`
         );
       }
       return html;
