@@ -1,0 +1,40 @@
+{% set filter_active = true %}
+{% set day = "Sunday, May 23" %}
+
+{% embed 'sidebar-layout.twig' %}
+  {% block nav %}
+    {% include 'event-search.twig' with {
+      title: "Search Events"
+    }%}
+    {% include 'event-filters.twig' %}
+  {% endblock %}
+  {% block content %}
+    {% if filter_active %}
+      {% include 'active-filters.twig' %}
+    {% endif %}
+
+    {% if no_results %}
+      <p class="lead">
+        There are no events on this date.
+      </p>
+    {% endif %}
+
+    {% for y in 0..2 %}
+      <section class="section">
+        <h2 class="section__title">
+          {{day}}
+        </h2>
+
+        <ul class="list list--dividers list--md">
+          {% for i in 0..3 %}
+            <li class="list__item">
+              {% include 'event-teaser.twig' %}
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endfor %}
+
+    {% include 'pagination.twig' %}
+  {% endblock %}
+{% endembed %}

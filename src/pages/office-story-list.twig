@@ -1,0 +1,14 @@
+{% extends "layouts/anchor-layout.twig" %}
+
+{% set page_header = {
+  title: 'Office News',
+  breadcrumb: [
+    { text: 'Leadership and Impact' },
+  ],
+} %}
+
+{% block page %}
+
+  {% include 'partials/story-list-page.twig' %}
+
+{% endblock %}

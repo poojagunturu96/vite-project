@@ -1,0 +1,93 @@
+{% extends "layouts/course-hub-layout.twig" %}
+
+{% set page_header = {
+  title: 'Course Warning Email',
+  breadcrumb: [
+    { text: 'Middlebury' },
+    { text: 'Course Hub' },
+  ],
+} %}
+
+{% block nav %}
+  {% include 'partials/page-nav.twig' with {
+    label: 'My Terms',
+    items: [
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+    ]
+  } %}
+{% endblock %}
+
+{% block content %}
+
+  <p class="lead">Possible intro text helping the editor understand the form.</p>
+
+
+  <div class="form-group">
+    <label for="">To</label>
+    <input type="email" class="form-control" value="jconnell@middlebury.edu">
+  </div>
+
+  <div class="form-group">
+    <label for="">CC</label>
+    <input type="text" class="form-control" value="R. Longman <longman@middlebury.edu>; Rachael Joo <rjoo@middlebury.edu>; Jennifer Bates <jbates@middlebury.edu>">
+  </div>
+
+  <div class="form-group">
+    <label for="">Subject</label>
+    <input type="text" class="form-control" value="COURSE WARNING -- CONFIDENTIAL">
+  </div>
+
+  <div class="form-group">
+    <label for="">Message</label>
+    <textarea class="form-control">
+      Date:
+                 August 16, 2019
+            
+            Student Name:
+                Connell, James Holland (Jimmy)
+            
+            ID #:
+                00707393
+            
+            You have been placed on warning in:
+                AMST 0225A
+            
+            By Professor:
+                Newbury, Michael R.
+            
+            For the selected reasons noted below (marked with an 'x'):
+                ( ) Poor attendance
+                ( ) Low grade on assignments
+                ( ) Missing assignments
+                ( ) Does not participate in discussions
+                ( ) Hands in work late
+                ( ) Other
+            
+            Present academic standing including current grade if available:
+            
+            
+            Professor’s Comments:
+            
+            
+            RESOURCES FOR THE STUDENT
+            
+            There are many resources for students to use when meeting academic challenges. Please consult with your course adviser to discuss managing the overall workload and a general academic plan.
+            
+            Your Commons Dean will receive a copy of this warning notice and at his or her discretion will call you in to discuss your course progress.
+            
+            *If you are receiving a second warning for the term or are on academic probation from the previous term, your Commons Dean will notify your parents.
+            
+            CC: Commons Dean, Adviser, CTLR
+    </textarea>
+  </div>
+
+  <div class="form-group d-flex align-items-center">
+    <a href="mailto:" class="button button--primary">Prepare email</a>
+    <p class="f2 ml-3">Open your default email software with the above fields prepopulated</p>
+  </div>
+
+</form>{% endblock %}

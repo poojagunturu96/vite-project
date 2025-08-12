@@ -1,0 +1,29 @@
+<div class="paragraph--expand paragraph--pull-up paragraph--box-menu__pull-up">
+  <nav 
+    class="box-menu box-menu--admissions-lp border-dual-box-shadow ml-2 ml-md-0" 
+    aria-labelledby="midd-box-menu-label" 
+    style="--box-shadow-color-primary: {{box_shadow_color_primary}}; --box-shadow-color-secondary: {{box_shadow_color_secondary}};"
+  >
+    <button 
+      class="box-menu__button"
+      data-toggle-target=".js-box-menu"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <span class="box-menu__title" id="midd-box-menu-label">Useful Links</span>
+      {% include 'icon.twig' with {
+        name: 'chevron-down'
+      } %}
+    </button>
+    <h2 class="box-menu__title d-none d-lg-block" id="midd-box-menu-label">Useful Links</h2>
+    <ul class="box-menu__list js-box-menu">
+      {% for item in items %}
+        <li class="box-menu__item">
+          <a href="" class="box-menu__link{% if item.active %} box-menu__link--active{% endif %}">
+            {{item.text}}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>

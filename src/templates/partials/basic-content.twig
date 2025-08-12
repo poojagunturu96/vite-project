@@ -1,0 +1,114 @@
+{% include 'page-image.twig' %}
+
+<div class="paragraphs">
+  {% include 'lead.twig' %}
+
+  {% include '../paragraphs/emma-form.twig' %}
+
+  {% include '../paragraphs/schedule.twig' %}
+
+  {% include '../paragraphs/helpfulness.twig' %}
+
+  {% include '../paragraphs/flowchart.twig' %}
+
+  {% include '../paragraphs/portrait-video-group.twig' %}
+
+  {% include '../paragraphs/media-group.twig' with {
+    title: 'Media group',
+    blurb: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus
+        quam optio ratione labore possimus iusto corrupti vero fugiat explicabo
+        officiis ex, a sunt obcaecati molestias voluptate eum earum ipsam
+        accusantium.',
+    media_content_items: ['video', 'image', 'image', 'audio', 'video']
+  } %}
+
+  {% include '../paragraphs/status-report.twig' %}
+
+  {% include '../paragraphs/status-report.twig' with {
+    items: printer_status
+  } %}
+
+  {% include '../paragraphs/gallery.twig' %}
+
+  {% include '../paragraphs/gallery.twig' %}
+
+  {% include '../paragraphs/related-events-list.twig' %}
+
+  {% include '../paragraphs/related-stories-list.twig' %}
+
+  {% include '../paragraphs/mega-cta.twig' %}
+
+  {% include '../paragraphs/spotlight.twig' %}
+
+  {% include '../paragraphs/text.twig' %}
+
+  {% include '../paragraphs/profile-list.twig' %}
+
+  {% if not env.test %}
+    {% include '../paragraphs/audio.twig' with {
+      paragraph: true
+    } %}
+  {% endif %}
+
+  {% include '../paragraphs/announcement.twig' %}
+
+  {% include '../paragraphs/schedule.twig' %}
+
+  {% include '../paragraphs/image-with-text.twig' %}
+
+  {% include '../paragraphs/image-with-text.twig' with {
+    right: true
+  } %}
+
+  {% include '../paragraphs/faq.twig' %}
+
+  {% include '../paragraphs/course-list.twig' with {
+		course_title: 'Course List'
+	} %}
+
+  {% include '../paragraphs/text.twig' %}
+
+  {% include '../paragraphs/image.twig' with {
+    right: true
+  } %}
+
+  {% include '../paragraphs/text-short.twig' %}
+
+  {% include '../paragraphs/image.twig' %}
+
+  {% include '../paragraphs/two-col-text.twig' %}
+
+  {% include '../paragraphs/video.twig' with {
+    transcript: true
+  } %}
+
+  {% include '../paragraphs/text.twig' %}
+
+  {% include '../paragraphs/button.twig' with { 
+    n: 2
+  }%}
+
+  {% include '../paragraphs/two-col-text.twig' %}
+
+  {% include '../paragraphs/text-short.twig' %}
+
+  {% include '../paragraphs/link-list.twig' %}
+
+  {% embed '../paragraphs/text.twig' %}
+    {% block content %}
+      <h2>Course Schedule</h2>
+      <h3>Core Coursework</h3>
+      <p>Core classes provide a base of natural science literacy, along with an emphasis on interdisciplinary social science—economics, law, policy, psychology, communication, and data analysis. We don't simply study problems but address them, paying particular attention to behavioral design, effective advocacy, and social justice concerns. You will gain and develop the following:</p>
+      <ul>
+        <li>A fundamental understanding of economics as it relates to environmental policy</li>
+        <li>Quantitative skills to support environmental policymaking</li>
+        <li>An understanding of the applied science that underlies effective natural resources management, conservation, risk assessment, and decision making in a changing world</li>
+        <li>A strong background in environmental policy and management strategies</li>
+      </ul>
+    {% endblock %}
+  {% endembed %}
+
+  {% include '../paragraphs/curriculum.twig' %}
+
+  {# {% include '../paragraphs/embed.twig' %} #}
+</div>

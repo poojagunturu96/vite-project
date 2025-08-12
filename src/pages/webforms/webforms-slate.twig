@@ -1,24 +1,9 @@
-{% extends 'layouts/anchor-layout.twig' %}
-
-{% set page_title = 'Civil Rights and Title IX Office' %}
-
-{% set page_header = {
-  title: 'Policies, Laws, and Procedures',
-  breadcrumb: [
-    {
-      text: 'Offices and Services'
-    },
-    {
-      text: 'Civil Rights and Title IX Office'
-    }
-  ]
-} %}
+{% extends "layouts/anchor-basic-content.twig" %}
 
 {% block page %}
   {% embed 'partials/sidebar-layout.twig' %}
     {% block nav %}
       {% include 'partials/page-nav.twig' with {
-        label: 'Policies, Laws, and Procedures',
         items: [
           {
             text: 'Curriculum',
@@ -70,7 +55,26 @@
       </div>
     {% endblock %}
     {% block content %}
-      {% include 'partials/basic-content.twig' %}
+      <div id="form_08c8914d-d97e-43e2-bfac-4857a0080098" class="slateform">Loading...</div>
+      <script>
+        /*<![CDATA[*/
+        var script = document.createElement("script");
+        script.async = 1;
+        script.src = "https://admissions.middlebury.edu/register/?id=08c8914d-d97e-43e2-bfac-4857a0080098&amp;output=embed&amp;div=form_08c8914d-d97e-43e2-bfac-4857a0080098" + (
+        (location.search.length > 1) ? "&" + location.search.substring(1) : ""
+      );
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(script, s);
+        script.addEventListener("load", function () {
+          var checkExist = setInterval(function () {
+            var links = document.querySelectorAll("link[href*=\"technolutions.net\"]");
+            [].forEach.call(links, function (link) {
+              link.disabled = "true";
+            });
+            clearInterval(checkExist);
+          }, 100);
+        }); /*]]>*/
+      </script>
     {% endblock %}
   {% endembed %}
 {% endblock %}

@@ -1,0 +1,123 @@
+<form class="mb-7">
+  <div class="filters">
+    <div class="filters__header">
+      <h2 class="filters__title">
+        Filters
+      </h2>
+      <a href="" class="button button--sm px-0">
+        {% include 'icon.twig' with {
+          name: 'redo',
+          class: 'mr-1'
+        } %}Clear
+      </a>
+    </div>
+
+    {% embed 'filter.twig'
+      with {
+        id: 'event-date-filter',
+        title: 'Date'
+      }
+    %}
+      {% block filter_content %}
+        <label for="midd-events-datepicker" class="sr-only">
+          Filter by date
+        </label>
+        {# do not init datepicker on CI since it defaults to current day and breaks visual diff day change #}
+        {% if not env.test %}
+          <input type="text"
+            class="form-control js-events-datepicker"
+            id="midd-events-datepicker" />
+        {% endif %}
+      {% endblock %}
+    {% endembed %}
+
+    {% include 'filter.twig' with {
+      title: 'Categories',
+      items: [
+        {
+          text: 'Arts Calendar'
+        },
+        {
+          text: 'Athletics Calendar'
+        },
+        {
+          text: 'Campus Calendar'
+        },
+        {
+          text: 'Featured Events Calendar'
+        },
+        {
+          text: 'MIIS Main Calendar'
+        },
+        {
+          text: 'Student Calendar'
+        }
+      ]
+    } %}
+
+    {% include 'filter.twig' with {
+      title: 'Organizations',
+      items: [
+        {
+          text: 'Academic Departments',
+          children: [
+            {
+              text: 'American Studies',
+            },
+            {
+              text: 'Anthropology',
+            },
+            {
+              text: 'Axinn Center for the Humanities',
+            },
+            {
+              text: 'Biology',
+            },
+            {
+              text: 'Internatioanl Programs & Off Campus Study',
+            },
+            {
+              text: 'Music',
+            },
+          ]
+        },
+        {
+          text: 'Administrative Offices',
+          children: [
+            {
+              text: 'Academic Affairs',
+            },
+            {
+              text: 'Admissions',
+            },
+            {
+              text: 'Charles P. Scott Center for Spiritual and Religious Life',
+            },
+            {
+              text: 'Museum of Art',
+            },
+          ]
+        },
+        {
+          text: 'Student Organizations',
+          children: [
+            {
+              text: 'Amnesty International',
+            },
+            {
+              text: 'Black Student Union',
+            },
+            {
+              text: 'Middlebury College Tea Enthusiast Association',
+            },
+            {
+              text: 'Quidditch',
+            },
+          ]
+        }
+      ]
+    } %}
+
+    <input type="submit" class="sr-only sr-focusable" value="Apply Filters" />
+  </div>
+</form>

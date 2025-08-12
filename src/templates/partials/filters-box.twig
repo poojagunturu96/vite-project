@@ -1,0 +1,20 @@
+<div class="filters">
+  <div class="filters__header">
+    <h2 class="filters__title">
+      Filters
+    </h2>
+    <a href="" class="button button--sm px-0">
+      {% include 'icon.twig' with {
+        name: 'redo',
+        class: 'mr-1'
+      } %}Clear
+    </a>
+  </div>
+
+  {% block filter_content %}
+  {% endblock %}
+
+  <input type="submit"
+    class="button button--primary button--block"
+    value="Apply Filters" />
+</div>

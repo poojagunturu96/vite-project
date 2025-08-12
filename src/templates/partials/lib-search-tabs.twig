@@ -1,0 +1,570 @@
+{# {% set alphabet = ['a','b','c','d','e','f']} #}
+{% embed 'tabs.twig' with {
+  light: true,
+  tablist: [
+    { label: 'All', id: 'midd-lib-all' },
+    { label: 'MIDCAT', id: 'midd-lib-midcat' },
+    { label: 'Guides', id: 'midd-lib-guides' },
+    { label: 'Journals', id: 'midd-lib-journals' },
+    { label: 'Database', id: 'midd-lib-database' },
+    { label: 'Reserves', id: 'midd-lib-reserves' },
+    { label: 'Videos', id: 'midd-lib-videos' },
+  ],
+}
+%}
+  {% block tabpanels %}
+    {% embed 'tab.twig' with { id: 'midd-lib-all' } %}
+      {% block tabcontent %}
+
+        <form class="ebscohostCustomSearchBox" action="" onsubmit="return ebscoHostSearchGo(this);" method="post" style="overflow:hidden;">
+          <input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+          <input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&scope=site&type=0&site=eds-live&lang=en" />
+          <input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+          <input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+          <input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+
+          <div class="form-group">
+            <label for="lib-summon-search">Search Everything</label>
+            <div class="input-group">
+              <input id="ebscohostsearchtext" class="form-control" name="ebscohostsearchtext" type="text" size="40" placeholder="Enter a keyword...">
+              <button type="submit" class="button button--primary">Search</button>
+            </div>
+
+            <div class="form-check form-check--inline">
+              <input class="form-check__input" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked"  />
+              <label class="form-check__label" for="guidedField_0">Keyword</label>
+            </div>
+
+            <div class="form-check form-check--inline">
+              <input class="form-check__input" type="radio" name="searchFieldSelector" id="guidedField_1" value="TI" />
+              <label class="form-check__label" for="guidedField_1">Title</label>
+            </div>
+
+            <div class="form-check form-check--inline">
+              <input class="form-check__input" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU" />
+              <label class="form-check__label" for="guidedField_2">Author</label>
+            </div>
+
+          </div>
+
+          <div id="limiterblock" class="form-group" style="display:none;">
+            <div id="limitertitle">Limit Your Results</div>
+
+            <div class="limiter" style="display:none;">
+              <input type="checkbox" class="form-control" id="chkFullText" name="chkFullText"  />
+              <label for="chkFullText">Full Text</label>
+            </div>
+
+            <div class="limiter" style="display:none;">
+              <input type="checkbox" class="form-control" id="chkLibraryCollection" name="chkLibraryCollection"  />
+              <label for="chkLibraryCollection">Available in Library Collection</label>
+            </div>
+
+            <div class="limiter" style="display:none;">
+              <input type="checkbox" class="form-control" id="chkPeerReviewed" name="chkPeerReviewed"  />
+              <label for="chkPeerReviewed">Peer Reviewed</label>
+            </div>
+
+            <div class="limiter" style="display:none;">
+              <input type="checkbox" class="form-control" id="chkCatalogOnly" name="chkCatalogOnly"  />
+              <label for="chkCatalogOnly">Catalog Only</label>
+            </div>
+
+            <div class="limiter" style="display:none;">
+              <input type="checkbox" class="form-control" id="chkIROnly" name="chkIROnly"  />
+              <label for="chkIROnly">Institutional Repository Only</label>
+            </div>
+
+          </div>
+        </form>
+
+      {% endblock %}
+    {% endembed %}
+    {% embed 'tab.twig' with { id: 'midd-lib-midcat' } %}
+      {% block tabcontent %}
+
+        <form action="http://mbury.iii.com/search/a?a" method="post">
+          <input name="searchscope" type="hidden" value="2">
+          <input name="SORT" type="hidden" value="D">
+          <input name="submit" type="hidden" value="Submit">
+          <input name="submit.x" type="hidden" value="0">
+          <input name="submit.y" type="hidden" value="0">
+
+          <div class="row">
+            <div class="col-md-4">
+
+              <div class="form-group">
+                <label for="lib-catalog-searchtype">Search By</label>
+                <select name="searchtype" class="form-control" id="lib-catalog-searchtype">
+                  <option value="Y">Keyword</option>
+                  <option value="t">Title</option>
+                  <option value="a">Author</option>
+                  <option value="d">Subject</option>
+                  <option value="j">Genre</option>
+                  <option value="c">LC Call Number</option>
+                  <option value="h">Local Call Number</option>
+                  <option value="g">Gov Docs Number</option>
+                  <option value="i">ISBN/ISSN</option>
+                </select>
+              </div>
+
+            </div>
+            <div class="col-md-8">
+              <div class="form-group">
+                <label for="lib-catalog-search">Search MIDCAT</label>
+                <div class="input-group">
+                  <input id="lib-catalog-search" class="form-control" name="searcharg" size="50" type="text" placeholder="Search">
+                  <button type="submit" class="button button--primary">
+                    Search
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="row mb-5">
+          <div class="col">
+            <h3 class="h3 f2 mb-3">MIDCAT</h3>
+
+            <dl class="contains-links f2">
+              <dt>
+                <a href="http://mbury.iii.com/search~S2">MIDCAT</a>
+              </dt>
+              <dd class="mb-2">
+                Find books, ebooks, DVDs, and more.
+              </dd>
+              <dt>
+                <a href="http://mbury.iii.com/search/X">Advanced Search</a>
+              </dt>
+              <dd class="mb-2">
+                Customize your search.
+              </dd>
+              <dt>
+                <a href="http://mbury.iii.com/search/j?SEARCH=equipment&searchscope=2">Equipment List</a>
+              </dt>
+              <dd class="mb-2">
+                See available cameras, computers, and more.
+              </dd>
+              <dt>
+                <a href="http://mbury.iii.com/patroninfo">My MIDCAT</a><br>
+              </dt>
+              <dd class="mb-2">
+                Renew your books.
+              </dd>
+            </dl>
+
+          </div>
+          <div class="col">
+            <h3 class="h3 f2 mb-3">Beyond Midd</h3>
+
+            <dl class="contains-links f2">
+              <dt>
+                <a href="http://go.middlebury.edu/worldcat">WorldCat Catalog</a>
+              </dt>
+              <dd class="mb-2">
+                Find items in libraries world-wide.
+              </dd>
+              <dt>
+                <a href="http://ill.middlebury.edu/illiad/mdy/logon.html">ILL</a>
+              </dt>
+              <dd>
+                Manage your interlibrary loan requests online.
+              </dd>
+            </dl>
+
+          </div>
+        </div>
+      {% endblock %}
+    {% endembed %}
+    {% embed 'tab.twig' with { id: 'midd-lib-guides' } %}
+      {% block tabcontent %}
+
+        <form method="post" action="http://middlebury.libguides.com">
+          <div class="form-group">
+            <label for="lib-guides-guide-subject">Subject Guides</label>
+            <div class="input-group">
+              <select id="lib-guides-guide-subject" name="gourl" class="form-control">
+                <option value="#">Select a subject guide...</option>
+                <option value="http://middlebury.libguides.com/americanstudies">American Studies</option>
+                <option value="http://middlebury.libguides.com/anthropology">Anthropology</option>
+                <option value="http://middlebury.libguides.com/arabic">Arabic</option>
+                <option value="http://middlebury.libguides.com/art">Art</option>
+                <option value="http://middlebury.libguides.com/biochemistry">Biochemistry</option>
+                <option value="http://middlebury.libguides.com/biology">Biology</option>
+                <option value="http://middlebury.libguides.com/blse">Bread Loaf</option>
+                <option value="http://middlebury.libguides.com/biz">Business, Investing, &amp; Career Resources</option>
+                <option value="http://middlebury.libguides.com/chemistry">Chemistry</option>
+                <option value="http://middlebury.libguides.com/chinese">Chinese</option>
+                <option value="http://middlebury.libguides.com/classics">Classics</option>
+                <option value="http://middlebury.libguides.com/complit">Comparative Literature</option>
+                <option value="http://middlebury.libguides.com/csci">Computer Science</option>
+                <option value="http://middlebury.libguides.com/dance">Dance</option>
+                <option value="http://middlebury.libguides.com/disabilitystudies">Disability Studies</option>
+                <option value="http://middlebury.libguides.com/econ">Economics</option>
+                <option value="http://middlebury.libguides.com/educ">Education Studies</option>
+                <option value="http://middlebury.libguides.com/litwrite">English &amp; American Literature</option>
+                <option value="http://middlebury.libguides.com/envs">Environmental Studies</option>
+                <option value="http://middlebury.libguides.com/ethnicstudies">Ethnic Studies</option>
+                <option value="http://middlebury.libguides.com/fmmc">Film &amp; Media Culture</option>
+                <option value="http://middlebury.libguides.com/french">French</option>
+                <option value="http://middlebury.libguides.com/gsfs">Gender, Sexuality, &amp; Feminist Studies</option>
+                <option value="http://middlebury.libguides.com/genealogy">Genealogy</option>
+                <option value="http://middlebury.libguides.com/geography">Geography</option>
+                <option value="http://middlebury.libguides.com/geology">Geology</option>
+                <option value="http://middlebury.libguides.com/german">German</option>
+                <option value="http://middlebury.libguides.com/hebrew">Hebrew</option>
+                <option value="http://middlebury.libguides.com/africa-mideast">History-African &amp; Middle Eastern</option>
+                <option value="http://middlebury.libguides.com/ancient-medieval">History-Ancient &amp; Medieval</option>
+                <option value="http://middlebury.libguides.com/asian">History-Asian</option>
+                <option value="http://middlebury.libguides.com/history-european">History-European</option>
+                <option value="http://middlebury.libguides.com/latinamerican">History-Latin American</option>
+                <option value="http://middlebury.libguides.com/history-us">History-US</option>
+                <option value="http://middlebury.libguides.com/harc">History of Art &amp; Architecture</option>
+                <option value="http://middlebury.libguides.com/italian">Italian</option>
+                <option value="http://middlebury.libguides.com/italianguideforLS">Guida italiana per la scuola italiana</option>
+                <option value="http://middlebury.libguides.com/japanese">Japanese</option>
+                <option value="http://middlebury.libguides.com/korean">Korean</option>
+                <option value="http://middlebury.libguides.com/legal">Legal Information</option>
+                <option value="http://middlebury.libguides.com/lgbtguide">Lesbian, Gay, Bisexual, &amp; Transgender Studies</option>
+                <option value="http://middlebury.libguides.com/linguistics">Linguistics</option>
+                <option value="http://middlebury.libguides.com/math">Mathematics</option>
+                <option value="http://middlebury.libguides.com/biochemistry">Medicine (Biochemistry)</option>
+                <option value="http://middlebury.libguides.com/music">Music</option>
+                <option value="http://middlebury.libguides.com/musicforfrench">Music for French Students</option>
+                <option value="http://middlebury.libguides.com/musicforgerman">Music for German Students</option>
+                <option value="http://middlebury.libguides.com/musicforitalian">Music for Italian Students</option>
+                <option value="http://middlebury.libguides.com/neuroscience">Neuroscience</option>
+                <option value="http://middlebury.libguides.com/philosophy">Philosophy</option>
+                <option value="http://middlebury.libguides.com/physics">Physics</option>
+                <option value="http://middlebury.libguides.com/psci">Political Science</option>
+                <option value="http://middlebury.libguides.com/portuguese">Portuguese</option>
+                <option value="http://middlebury.libguides.com/psychology">Psychology</option>
+                <option value="http://middlebury.libguides.com/religion">Religion</option>
+                <option value="http://middlebury.libguides.com/russian">Russian</option>
+                <option value="http://middlebury.libguides.com/sociology">Sociology</option>
+                <option value="http://middlebury.libguides.com/spanish">Spanish</option>
+                <option value="http://middlebury.libguides.com/theatre">Theatre</option>
+                <option value="https://middlebury.libguides.com/vermont-studies">Vermont Studies</option>
+              </select>
+              <input value="Go" type="submit" class="button button--primary" data-select-url="#lib-guides-guide-subject">
+            </div>
+          </div>
+        </form>
+
+        <form method="post" action="http://middlebury.libguides.com">
+          <div class="form-group">
+            <label for="lib-guides-guide-howto">How to find it, use it, cite it</label>
+            <div class="input-group">
+              <select id="lib-guides-guide-howto" name="gourl" class="form-control">
+                <option value="#">Select a "how to find it, use it, cite it" guide...</option>
+                <option value="http://middlebury.libguides.com/bookreviews">Book Reviews</option>
+                <option value="http://middlebury.libguides.com/citation">Citation &amp; Style</option>
+                <option value="http://middlebury.libguides.com/econstats">Economic Statistics</option>
+                <option value="http://middlebury.libguides.com/wikipedia">Editing Wikipedia</option>
+                <option value="http://middlebury.libguides.com/findaplay">Finding Plays or Reviews of Plays</option>
+                <option value="http://middlebury.libguides.com/genealogy">Genealogy</option>
+                <option value="https://middlebury.libguides.com/omeka">Getting Started with Omeka</option>
+                <option value="http://middlebury.libguides.com/governmentinfo">Government Documents</option>
+                <option value="https://middlebury.libguides.com/infolit">Information Literacy Resources</option>
+                <option value="http://middlebury.libguides.com/maps-gis">Maps &amp; GIS</option>
+                <option value="http://middlebury.libguides.com/libraryquickguide">Midd Libraries Quick Guide</option>
+                <option value="http://middlebury.libguides.com/newspapers">Newspapers</option>
+                <option value="http://middlebury.libguides.com/pwtlibrary">Peer Writing Tutors</option>
+                <option value="http://middlebury.libguides.com/reference">Reference</option>
+                <option value="http://middlebury.libguides.com/scholarvspopular">Scholarly vs. Popular Periodicals</option>
+                <option value="http://go.middlebury.edu/statsguide">Statistics</option>
+                <option value="http://go.middlebury.edu/studyabroadguide">Study Abroad</option>
+                <option value="https://middlebury.libguides.com/thesisguide">Thesis Guide</option>
+                <option value="http://middlebury.libguides.com/video">Video, Image, and Sound Effects</option>
+                <option value="http://go.middlebury.edu/zoteromidd">Zotero @ Middlebury</option>
+              </select>
+              <input value="Go" type="submit" class="button button--primary" data-select-url="#lib-guides-guide-howto">
+            </div>
+          </div>
+        </form>
+
+        <form method="post" action="http://middlebury.libguides.com">
+          <div class="form-group">
+            <label for="lib-guides-guide-course">Course Guides</label>
+            <div class="input-group">
+              <select id="lib-guides-guide-course" name="gourl" class="form-control">
+                <option value="#">Select a course guide...</option>
+                <option value="https://middlebury.libguides.com/fyse1062">FYSE 1062 Listening to the 1930s</option>
+                <option value="https://middlebury.libguides.com/fyse1511">FYSE 1511 Folk Fairy Tales of the World</option>
+                <option value="https://middlebury.libguides.com/fyse1534">FYSE 1534 Who Owns Culture?</option>
+                <option value="https://middlebury.libguides.com/geog100">GEOG 100 Place and Society</option>
+                <option value="https://middlebury.libguides.com/wrpr0202">WRPR 0202 Writing to Heal</option>
+                <option value="https://middlebury.libguides.com/wrpr0206guide">WRPR/LNGT 0206 Narratives in the News Media</option>
+              </select>
+              <input value="Go" type="submit" class="button button--primary" data-select-url="#lib-guides-guide-course">
+            </div>
+          </div>
+        </form>
+
+      {% endblock %}
+    {% endembed %}
+    {% embed 'tab.twig' with { id: 'midd-lib-journals' } %}
+      {% block tabcontent %}
+
+        <p class="mb-5 f4">Find print and electronic journals, magazines, and newspapers.</p>
+
+        <form action="http://XU8KT9SN3C.search.serialssolutions.com" method="get">
+          <input name="V" type="hidden" value="1.0">
+          <input name="N" type="hidden" value="100">
+          <input name="L" type="hidden" value="XU8KT9SN3C">
+
+          <div class="row">
+            <div class="col-md-6 col-lg-5">
+              <div class="form-group">
+
+                <label for="lib-journals-title-begins">Find journals by title or ISSN</label>
+                <select name="S" id="lib-journals-title-begins" class="form-control">
+                  <option value="AC_T_B">Title begins with</option>
+                  <option value="AC_T_M">Title equal</option>
+                  <option value="T_W_A">Title contains all words</option>
+                  <option value="I_M">ISSN equals</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-7">
+              <div class="form-group">
+                <label for="SS_CFocusTag">Find a Journal</label>
+                <div class="input-group">
+                  <input id="SS_CFocusTag" name="C" class="form-control">
+                  <input type="submit" value="Find" class="button button--primary">
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="form-group">
+          <h3 class="label">Browse journals by title</h3>
+
+          <ul class="d-flex flex-wrap">
+            <li class="mr-3">
+              <a href="http://XU8KT9SN3C.search.serialssolutions.com/?V=1.0&L=XU8KT9SN3C&N=100&S=T_AZ&C=0" class="link-underline">0-9</a>
+            </li>
+            {% for i in 1..26 %}
+              <li class="mr-3">
+                {% set letter = range('A','Z')[loop.index - 1] %}
+                <a href="http://XU8KT9SN3C.search.serialssolutions.com/?V=1.0&L=XU8KT9SN3C&N=100&S=T_AZ&C={{letter}}" class="link-underline">
+                  {{letter}}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <form action="http://XU8KT9SN3C.search.serialssolutions.com/" method="get">
+          <input name="V" type="hidden" value="1.0">
+          <input name="L" type="hidden" value="XU8KT9SN3C">
+          <input name="S" type="hidden" value="SC">
+
+          <div class="form-group">
+            <label for="lib-journals-subject">Browse journals by subject</label>
+            <div class="input-group">
+              <select name="C" id="lib-journals-subject" class="form-control">
+                <option>Select a subject category</option>
+                <option value="01">Art, Architecture &amp; Applied Arts</option>
+                <option value="BU">Business &amp; Economics</option>
+                <option value="11">Earth &amp; Environmental Sciences</option>
+                <option value="TE">Engineering &amp; Applied Sciences</option>
+                <option value="GI">General</option>
+                <option value="HE">Health &amp; Biological Sciences</option>
+                <option value="06">History &amp; Archaeology</option>
+                <option value="07">Journalism &amp; Communications</option>
+                <option value="08">Languages &amp; Literatures</option>
+                <option value="GO">Law, Politics &amp; Government</option>
+                <option value="10">Music, Dance, Drama &amp; Film</option>
+                <option value="RE">Philosophy &amp; Religion</option>
+                <option value="LS">Physical Sciences &amp; Mathematics</option>
+                <option value="SO">Social Sciences</option>
+              </select>
+              <input type="submit" value="Browse" class="button button--primary">
+            </div>
+          </div>
+        </form>
+      {% endblock %}
+    {% endembed %}
+    {% embed 'tab.twig' with { id: 'midd-lib-database' } %}
+      {% block tabcontent %}
+
+        <div class="form-group">
+          <h3 class="label">Browse database by title</h3>
+
+          <ul class="d-flex flex-wrap">
+            {% for i in 0..26 %}
+              <li class="mr-3">
+                {% set letter = range('A','Z')[loop.index - 1] %}
+                <a href="https://middlebury.libguides.com/az.php?a={{letter}}" class="link-underline">
+                  {{letter}}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <p class="mb-5">
+          <a href="http://middlebury.libguides.com" class="link-underline">Find databases by subject in our research guides</a>
+        </p>
+
+      {% endblock %}
+    {% endembed %}
+    {% embed 'tab.twig' with { id: 'midd-lib-reserves' } %}
+      {% block tabcontent %}
+
+        <p class="f4 mb-3">Print and Media</p>
+
+        <form action="http://mbury.iii.com/search/r" method="get">
+          <div class="form-group">
+            <label for="lib-reserves-courseno">Course Number Search</label>
+            <div class="input-group">
+              <input id="lib-reserves-courseno" class="form-control" name="SEARCH" type="text" placeholder="Course number e.g. AMST0235">
+              <input type="submit" value="Search" class="button button--primary">
+            </div>
+            {# <p>(e.g., <strong>AMST0235</strong>)</p> #}
+          </div>
+        </form>
+
+        <form action="http://mbury.iii.com/search/p" method="get">
+          <div class="form-group">
+            <label for="lib-reserves-instructor">Instructor Last Name</label>
+            <div class="input-group">
+              <input id="lib-reserves-instructor" name="SEARCH" type="text" class="form-control" placeholder="Last name e.g. Smith">
+              <input type="submit" value="Search" class="button button--primary">
+            </div>
+          </div>
+          {# <p>(e.g., <strong>Smith</strong>)</p> #}
+        </form>
+
+        <div class="row mb-5 contains-links f2">
+          <div class="col">
+            <h3 class="f2 mb-3">Electronic</h3>
+            <a href="http://go.middlebury.edu/eres">ERes</a>
+          </div>
+          <div class="col">
+            <h3 class="f2 mb-3">Help</h3>
+            <ul>
+              <li class="mb-3">
+                <a href="http://mediawiki.middlebury.edu/wiki/LIS/Reserves_Information_for_Faculty">For Faculty</a>
+              </li>
+              <li>
+                <a href="http://mediawiki.middlebury.edu/wiki/LIS/Reserves_Information_for_Students">For Students</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      {% endblock %}
+    {% endembed %}
+    {% embed 'tab.twig' with { id: 'midd-lib-videos' } %}
+      {% block tabcontent %}
+
+        <form action="http://mbury.iii.com/search/a" method="get">
+          <input name="SORT" type="hidden" value="D">
+          <input name="searchscope" type="hidden" value="3">
+          <input name="submit.x" type="hidden" value="0">
+          <input name="submit.y" type="hidden" value="0">
+          <input name="submit" type="hidden" value="Submit">
+
+          <div class="row">
+            <div class="col-md-6 col-lg-4">
+              <div class="form-group">
+                <label for="lib-videos-type">Search videos by</label>
+                <select name="searchtype" id="lib-videos-type" class="form-control">
+                  <option value="Y">Keyword</option>
+                  <option value="t">Title</option>
+                  <option value="a">Author</option>
+                  <option value="d">Subject</option>
+                  <option value="j">Genre</option>
+                  <option value="c">LC Call Number</option>
+                  <option value="h">Local Call Number</option>
+                  <option value="g">Gov Docs Number</option>
+                  <option value="i">ISBN/ISSN</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-8">
+              <div class="form-group">
+                <label for="lib-videos-search">Search the Library for video materials</label>
+                <div class="input-group">
+                  <input id="lib-videos-search" name="searcharg" size="50" type="text" class="form-control" placeholder="Search videos">
+                  <input type="submit" value="Search" class="button button--primary">
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <form action="http://mbury.iii.com/search/a?a" method="post">
+          <input name="searchtype" type="hidden" value="j">
+          <input name="searchscope" type="hidden" value="3">
+
+          <div class="form-group">
+            <label for="lib-videos-language">Browse videos by language</label>
+            <div class="input-group">
+              <select name="searcharg" id="lib-videos-language" class="form-control">
+                <option>Select a language...</option>
+                <option value="Arabic language film">Arabic Language Films</option>
+                <option value="Chinese language film">Chinese Language Films</option>
+                <option value="French language film">French Language Films</option>
+                <option value="German language film">German Language Films</option>
+                <option value="Hebrew language film">Hebrew Language Films</option>
+                <option value="Italian language film">Italian Language Films</option>
+                <option value="Japanese language film">Japanese Language Films</option>
+                <option value="Portuguese language film">Portuguese Language Films</option>
+                <option value="Russian language film">Russian Language Films</option>
+                <option value="Spanish language film">Spanish Language Films</option>
+              </select>
+              <input type="submit" value="Browse" class="button button--primary">
+            </div>
+          </div>
+        </form>
+
+        <form action="http://mbury.iii.com/search/a?a" method="post">
+          <input name="searchtype" type="hidden" value="j">
+          <input name="searchscope" type="hidden" value="3">
+
+          <div class="form-group">
+            <label for="lib-videos-genre">Browse videos by genre</label>
+            <div class="input-group">
+              <select name="searcharg" id="lib-videos-genre" class="form-control">
+                <option>Select a genre...</option>
+                <option value="adventure">Adventure Films</option>
+                <option value="animated">Animated Films</option>
+                <option value="anime">Anime Films</option>
+                <option value="comedy">Comedy Films</option>
+                <option value="dance">Dance Films</option>
+                <option value="detective">Detective and Mystery Films</option>
+                <option value="documentary">Documentary Films</option>
+                <option value="experimental">Experimental Films</option>
+                <option value="fantasy">Fantasy Films</option>
+                <option value="feature films">Feature Films</option>
+                <option value="film noir">Film Noir</option>
+                <option value="gangster">Gangster Films</option>
+                <option value="gay">Gay &amp; Lesbian Films</option>
+                <option value="historical">Historical Films</option>
+                <option value="horror">Horror Films</option>
+                <option value="martial arts">Martial Arts Films</option>
+                <option value="musical">Musical Films</option>
+                <option value="operas">Operas</option>
+                <option value="romance">Romance Films</option>
+                <option value="romantic comedy">Romantic Comedy Films</option>
+                <option value="science fiction">Science Fiction Films</option>
+                <option value="silent">Silent Films</option>
+                <option value="spy">Spy Films</option>
+                <option value="television">Television Programs</option>
+                <option value="thrillers">Thrillers</option>
+              </select>
+              <input type="submit" value="Browse" class="button button--primary">
+            </div>
+          </div>
+        </form>
+
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}

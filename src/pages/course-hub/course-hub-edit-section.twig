@@ -1,0 +1,106 @@
+{% extends "layouts/course-hub-layout.twig" %}
+
+{% set page_header = {
+  title: 'Sections in Winter 2020',
+  breadcrumb: [
+    { text: 'Middlebury' },
+    { text: 'Course Hub' },
+    { text: 'Dashboard' },
+    { text: 'Manage Sections' },
+  ],
+} %}
+
+{% block nav %}
+  {% include 'partials/page-nav.twig' with {
+    label: 'My Terms',
+    items: [
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+    ]
+  } %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="typography">
+
+    <table>
+      <caption>Sections you are instructor for in Winter 2020:</caption>
+
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>Title</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Operations</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>
+            <p>AMST 0500F</p>
+          </td>
+          <td>
+            <p>Independent Study</p>
+          </td>
+          <td>
+            <p>Independent Study</p>
+          </td>
+          <td></td>
+          <td>
+            <a href="/~afranco/drupal/hubtest/dashboard/terms/87/build/section-202010-10478?token=kVsI9enjDZ5_QLH9zujuHaFF7lhzwju1sbS5TYC67gY">Create</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>AMST 0710F</p>
+          </td>
+          <td>
+            <p>Honors Thesis</p>
+          </td>
+          <td>
+            <p>Senior Work</p>
+          </td>
+          <td></td>
+          <td>
+            <a href="/~afranco/drupal/hubtest/dashboard/terms/87/build/section-202010-10488?token=K0QOfqP3WjThG3cb8E-WjnzN0Uv8fMQqpMiYFc7PFP0">Create</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>ENAM 0500R</p>
+          </td>
+          <td>
+            <p>Special Project: Lit</p>
+          </td>
+          <td>
+            <p>Independent Study</p>
+          </td>
+          <td></td>
+          <td>
+            <a href="/~afranco/drupal/hubtest/dashboard/terms/87/build/section-202010-10545?token=I3aEbO0cAstji7WYbKCZ5_c_14rEb1Zj3Y2EsWP6B6c">Create</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Normally instructors do not need to create additional Course Hub Sites for lab and discussion sections since the Course Hub sites for the Lecture or Seminar sections suffice for most needs and reduce clutter in students' dashboards.</p>
+
+    <p>Here are some cases where you may want to create Course Hub sites for labs, discussions, and other section-types:</p>
+
+    <ul>
+      <li>The lab is taught by a separate instructor with its own resources and syllabus.</li>
+      <li>There is a need to create separate resources (e.g. Canvas Sites) for each discussion section.</li>
+      <li>An 'independent study' or 'thesis' type section is being taught as a class or needs course resources.</li>
+    </ul>
+
+  </div>
+
+
+{% endblock %}

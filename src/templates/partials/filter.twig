@@ -1,0 +1,59 @@
+{% set id = random(1234) %}
+
+<fieldset class="filter">
+  <legend class="filter__legend">
+    <button class="filter__button"
+      data-toggle-target=".js-filter-{{ id }}"
+      aria-expanded="true">
+      {{ title|default('Filter label') }}
+
+      {% include 'icon.twig' with {
+        name: 'minus',
+        class: 'filter__icon-close'
+      } %}
+      {% include 'icon.twig' with {
+        name: 'plus',
+        class: 'filter__icon-open'
+      } %}
+    </button>
+  </legend>
+
+  <div class="filter__body js-filter-{{ id }}">
+    {% block filter_content %}
+
+    {% endblock %}
+
+    {% if items %}
+      {% for item in items %}
+        <div class="checkbox checkbox--filter">
+          <input type="checkbox"
+            class="checkbox__input"
+            id="checkbox-item-{{ id }}-{{ loop.index }}" />
+          <label for="checkbox-item-{{ id }}-{{ loop.index }}"
+            id="checkbox-label-{{ id }}-{{ loop.index }}"
+            class="checkbox__label">
+            {{ item.text }}
+          </label>
+        </div>
+        {% if item.children %}
+          {% set parent_index = loop.index %}
+          <div class="filter__children">
+          {% for child in item.children %}
+            <div class="checkbox checkbox--filter">
+              <input type="checkbox"
+                class="checkbox__input"
+                id="checkbox-item-{{ id }}-{{parent_index}}-child-{{ loop.index }}"
+                aria-labelledby="checkbox-label-{{ id }}-{{parent_index}}-child-{{ loop.index }} checkbox-label-{{ id }}-{{parent_index}}" />
+              <label for="checkbox-item-{{ id }}-{{parent_index}}--child-{{ loop.index }}"
+                id="checkbox-label-{{ id }}-{{parent_index}}-child-{{ loop.index }}"
+                class="checkbox__label">
+                {{ child.text }}
+              </label>
+            </div>
+          {% endfor %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</fieldset>

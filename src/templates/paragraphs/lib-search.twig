@@ -1,0 +1,26 @@
+<div class="paragraph--lib-search">
+  <div class="container px-0">
+    <div class="lib-search">
+
+      <div class="lib-search__cover">
+        <div class="lib-search__content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                <h2 class="lib-search__title">Search</h2>
+                {% include '../partials/lib-search-tabs.twig' %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <figure class="lib-search__back">
+
+          {% include '../partials/img.twig' with {
+            name: 'top_level'
+          } %}
+
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>

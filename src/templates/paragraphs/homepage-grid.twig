@@ -1,0 +1,112 @@
+{% set id = random(1234) %}
+{% set grid_item_2 = random(['video', 'image', 'stats', 'quote']) %}
+{% set grid_item_3 = random(['video', 'image', 'quote']) %}
+{% set grid_item_4 = random(['image', 'stats']) %}
+
+{# {% set grid_item_2 = random(['quote']) %}
+{% set grid_item_3 = random(['quote']) %}
+{% set grid_item_4 = random(['stats']) %} #}
+
+<div class="paragraph paragraph--full">
+  {% include 'homepage-grid-header.twig' %}
+  <div class="container px-0">
+    <section>
+      <div class="grid-container js-grid-container">
+        {% for i in 1..4 %}
+          <div class="grid-quad-block quad-{{i}}">
+            <div class="quad-item-1" tabindex="0">
+              {% include '../partials/grid-expandable-tile.twig' with {
+                content_type: 'play',
+                description: 'Take a tour of Middlebury Campus',
+                image_name: 'homepage_grid_1'
+              }%}
+            </div>
+            <div class="quad-item-2" tabindex="0">
+              {% if grid_item_2 == 'video' %}
+                {% include '../partials/grid-expandable-tile.twig' with {
+                  content_type: 'play',
+                  description: 'Take a tour of Middlebury Campus',
+                  image_name: 'homepage_grid_2'
+                }%}
+              {% elseif grid_item_2 == 'image' %}
+                {% include '../partials/grid-expandable-tile.twig' with {
+                  content_type: 'expand',
+                  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                  image_name: 'homepage_grid_2',
+                  overlay_image: 'homepage_grid_overlay_large'
+                }%}
+              {% elseif grid_item_2 == 'stats' %}
+                {% include '../partials/grid-stats.twig' with {
+                  items: [
+                    { type: 'stats', number: 16, label: 'average class size', },
+                    { type: 'stats', number: 500, label: 'on-campus interviews' },
+                  ],
+                  dark: true
+                } %}
+              {% else %}
+                {% include '../partials/grid-quote.twig' with {
+                  quote_text: 'I went to the Knoll and the sky was so clear. I saw Jupiter and my first shooting star!”',
+                  quote_author: 'Ella Roelofs ’23.5',
+                  quote_author_title: 'Student',
+                  small: true,
+                  dark: true
+                }%}
+              {% endif %}
+            </div>
+            <div class="quad-item-3" tabindex="0">
+              {% if grid_item_3 == 'video' %}
+                {% include '../partials/grid-expandable-tile.twig' with {
+                  content_type: 'play',
+                  description: 'Take a tour of Middlebury Campus',
+                  image_name: 'homepage_grid_3'
+                }%}
+              {% elseif grid_item_3 == 'image' %}
+                {% include '../partials/grid-expandable-tile.twig' with {
+                  content_type: 'expand',
+                  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                  image_name: 'homepage_grid_3',
+                  overlay_image: 'homepage_grid_overlay_small'
+                }%}
+              {% else %}
+                {% include '../partials/grid-quote.twig' with {
+                  quote_text: 'Students here are very open-minded and curious about other cultures, so it was easy to make friends”',
+                  quote_author: 'Ai Hattori ’24',
+                  quote_author_title: 'Student'
+                }%}
+              {% endif %}
+            </div>
+            <div class="quad-item-4" tabindex="0">
+              {% if grid_item_4 == 'image' %}
+                {% include '../partials/grid-expandable-tile.twig' with {
+                  content_type: 'expand',
+                  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                  image_name: 'homepage_grid_4',
+                  small: true,
+                  overlay_image: 'homepage_grid_overlay_large'
+                }%}
+              {% else %}
+                {% include '../partials/grid-stats.twig' with {
+                  items: [
+                    { type: 'stats', number: 8, suffix: ':1', label: 'average class size' }
+                  ],
+                  dark: true
+                } %}
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+    <button class="button button--light grid__button" aria-label="Load more grid content" data-grid-toggle-target=".js-grid-container">
+      <span class="button--load-more">Load More{% include '../partials/icon.twig' with {
+          name: 'chevron-down'
+        } %}
+      </span>
+      <a href="#midd-pagetop" class="button--show-less js-grid-to-top-btn">
+        Show Less{% include '../partials/icon.twig' with {
+          name: 'chevron-up'
+        } %}
+      </a>
+    </button>
+  </div>
+</div>

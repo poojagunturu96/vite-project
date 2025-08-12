@@ -1,0 +1,20 @@
+{% extends "layouts/school-layout.twig" %}
+
+{% block layout_header %}
+  {% embed 'partials/school-header.twig' %}
+    {% block school_logo %}
+      <img src="images/museum-logo.png" srcset="images/museum-logo.png 1x, images/museum-logo@2x.png 2x" width="320px" alt="Logo for Middlebury College Museum of Art"/>
+      <span class="sr-only">Middlebury College Museum of Art</span>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+
+{% block page %}
+  <div class="container">
+    <div class="row">
+      <div class="paragraphs paragraphs--wide">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

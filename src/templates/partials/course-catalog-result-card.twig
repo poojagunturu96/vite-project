@@ -1,0 +1,74 @@
+<div class="catalog-result-card mt-5 pb-4">
+  <div class="d-inline-block col-6 px-0">
+    <p class="f3 font-semibold"><a class="link-underline" href="/offerings/view/catalog/catalog%2FMCUG/offering/section%2F202520%2F21451">AMST0216A-F24</a></p>
+    {% if random(1) %}
+      <p class="f2 font-semibold">Cross-Listed As: <a class="link-underline" href="/offerings/view/catalog/catalog%2FMCUG/type/genera%3Aoffering%2FLCT/type/genera%3Aoffering%2FSEM/search/Search/offering/section%2F202490%2F92560">HIST0216A-F24</a>*{% if random(1) %}, <a class="link-underline" href="/offerings/view/catalog/catalog%2FMCUG/type/genera%3Aoffering%2FLCT/type/genera%3Aoffering%2FSEM/search/Search/offering/section%2F202490%2F92560">HIST0216B-F24</a>*{% endif %}</p>
+    {% endif %}
+  </div>
+  <a href="#" title="click to save" class="f2 float-right catalog-save-button">
+    {% if random(1) %}
+      {% include 'icon.twig' with {
+        name: 'save-open'
+      } %}
+      Save
+    {% elseif random(1) %}
+      {% include 'icon.twig' with {
+        name: 'save-close',
+        class: 'catalog-save-button--saved'
+      } %}
+      Saved
+    {% else %}
+      Log-in to save
+    {% endif %}
+  </a>
+  <h3 class="pt-2">Hist of American West</h3>
+  <p class="f2 pb-2 pt-2">This is a survey of the history of the trans-Mississippi West from colonial contact through the 1980s...<a class="link-underline" href="#">read more</a></p>
+  <div class="row">
+    <div class="col-md-6">
+      <dl class="f2">
+        <div class="pt-2 pb-2">
+          <dt class="d-block font-semibold">Type:</dt>
+          <dd>Lecture</dd>
+        </div>
+        <div class="pt-2 pb-2 border-top">
+          <dt class="d-block font-semibold">Course Modality:</dt>
+          <dd><a class="link-underline" href="/topics/view/catalog/catalog%2FMCUG/term/term%2F202520/topic/topic%2Finstruction_method%2FPERS">In-Person</a></dd>
+        </div>
+        <div class="pt-2 pb-2 border-top">
+          <dt class="d-block font-semibold">Term:</dt>
+          <dd>Fall 2024</dd>
+        </div>
+        <div class="pt-2 pb-2 border-top">
+          <dt class="d-block font-semibold">Department:</dt>
+          <dd><a class="link-underline" href="/topics/view/catalog/catalog%2FMCUG/term/term%2F202520/topic/topic%2Fdepartment%2FBIOL">Biology</a></dd>
+        </div>
+        <div class="pt-2 pb-2 border-top">
+          <dt class="d-block font-semibold">Requirements Fulfilled:</dt>
+          <dd><a class="link-underline" href="/topics/view/catalog/catalog%2FMCUG/term/term%2F202520/topic/topic%2Frequirement%2FDED">HIS</a> <a class="link-underline" href="/topics/view/catalog/catalog%2FMCUG/term/term%2F202520/topic/topic%2Frequirement%2FSCI">SOC</a></dd>
+        </div>
+      </dl>
+    </div>
+    <div class="col-md-6">
+      <dl class="f2">
+        <div class="pt-2 pb-2">
+          <dt class="d-block font-semibold">Instructors:</dt>
+          <dd><a class="link-underline" href="/resources/view/catalog/catalog%2FMCUG/term/term%2F200390/resource/resource%2Fperson%2FB8254EED4F08BDC932184E2EBD4E7D34">Eric Moody</a> </dd>
+        </div>
+        <div class="pt-2 pb-2 border-top">
+          <dt class="d-block font-semibold">Location:</dt>
+          <dd>McCardell Bicentennial Hall 317 <span class="location_description">(MBH 317)</span>
+          </dd>
+        </div>
+        <div class="pt-2 pb-2 border-top">
+          <dt class="d-block font-semibold">Schedule:</dt>
+          <dd>8:40am-9:30am on Monday, Wednesday, Friday <span style="white-space: nowrap">(Feb 10, 2025 to May 12, 2025)</span></dd>
+        </div>
+        <div class="pt-2 pb-2 border-top">
+          <dt class="d-block font-semibold">Availability:</dt>
+          <dd><a class="link-underline" href="https://ssb-prod.ec.middlebury.edu/PNTR/bwckschd.p_disp_detail_sched?term_in=202520&amp;crn_in=20685" target="_blank" class="availability_link">View availability, prerequisites, and other requirements.</a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>

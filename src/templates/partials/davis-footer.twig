@@ -1,0 +1,38 @@
+<nav class="midd-footer davis-footer">
+  <h2 class="sr-only">
+    Additional Navigation
+  </h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-4">
+        <div class="mb-2 mb-xl-0">
+          <a class="davis-logo" href="https://www.middlebury.edu">
+            <img
+              src="images/davis-globe.png"
+              srcset="images/davis-globe.png 1x, images/davis-globe@2x.png 2x"
+              alt="Globe in logo for Davis United World College Scholars Program"
+            />
+            <img
+              src="images/davis-uwc-logo-309x35.png"
+              srcset="images/davis-uwc-logo-309x35.png 1x, images/davis-uwc-logo-309x35@2x.png 2x"
+              alt="Davis United World College Scholars Program"
+            />
+            <span class="sr-only">Davis United World College Scholars Program Logo</span>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-8">
+        <ul class="midd-footer__list">
+          {% for item in secondary_footer_nav %}
+            <li class="midd-footer__item">
+              <a href="{{ item.href }}" class="midd-footer__link">
+                {{ item.text }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% include 'to-top-btn.twig' %}
+</nav>

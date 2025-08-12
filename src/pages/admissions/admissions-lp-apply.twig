@@ -1,0 +1,87 @@
+{% extends 'admissions-lp-layout.twig' %}
+
+{% set theme = 'admissions-lp' %}
+{% set body_gradient = 'linear-gradient(174deg, #0d395f 30.66%, #75a3cd 50.81%, #7f9e94 77.49%)' %}
+{% set admissions_lp = true %}
+
+{% block content %}
+
+  {% include 'paragraphs/mega-cta.twig' with {
+    title: 'Apply to Middlebury',
+    link: 'Add Us to the Common App',
+    text_color: '#75a3cd',
+    text_shadow_color_primary: '#ed01a7',
+    text_shadow_color_secondary: '#f99f33',
+    dual_border_color_primary: '#75a3cd',
+    dual_border_color_secondary: '#fff791'
+  } %}
+
+  {% include 'partials/admissions-lp-box-menu.twig' with {
+    items: admissions_lp_useful_links,
+    box_shadow_color_primary: '#fff791',
+    box_shadow_color_secondary: '#75a3cd'
+  }%}
+
+  {% include 'partials/lead.twig' with {
+    class: 'paragraph--expand lead--admissions-lp'
+  }%}
+
+  {% embed 'paragraphs/text.twig' with {
+    box_shadow_class: 'border-dual-box-shadow--right',
+    box_shadow_color_primary: '#57068C',
+    box_shadow_color_secondary: '#F05F84'
+  } %}
+    {% block content %}
+      <h2>Who you are is what matters most</h2>
+      <h3>When you apply to Middlebury, here’s what’s we look for:</h3>
+      <ul>
+        <li>Who you are at school, in your community, and as part of your family</li>
+        <li>Your high school records</li>
+        <li>Teacher recommendations</li>
+        <li>Your personal essay</li>
+        <li>Co-curricular activities</li>
+        <li>Your individual background and story</li>
+        <li>Your unique characteristics.</li>
+        <li>Standardized test scores, if you choose to submit them</li>
+      </ul>
+      <h3>Here's what we don't look for.</h3>
+      <ul>
+        <li>Middlebury is a need-blind institution. Your financial aid status will not impact your admissions decision.</li>
+        <li>Opting out of submitting standardized test scores.</li>
+      </ul>
+    {% endblock %}
+  {% endembed %}
+
+  {% include 'paragraphs/chart-group.twig' with {
+    title: 'Meet the Class of 2028 and 2028.5',
+    text: 'For a class size of 700 students (600 September and 100 Febs), here’s what the numbers show:', 
+    items: [
+      { type: 'stats', number: 12541, label: 'applications', },
+      { type: 'stats', number: 1500, label: 'admitted students' },
+      { type: 'stats', number: 12, suffix: '%', label: 'Applicants Admitted', },
+      { type: 'stats', number: 90, label: 'lorem ipsum', },
+      { type: 'stats', number: 500, label: 'lorem ipsum', },
+      { type: 'stats', number: 2500, label: 'lorem ipsum', },
+    ]
+  } %}
+
+  {% embed 'paragraphs/text.twig' with {
+    box_shadow_class: 'border-dual-box-shadow',
+    box_shadow_color_primary: '#fff791',
+    box_shadow_color_secondary: '#75a3cd'
+  }%}
+    {% block content %}
+      <h2>Febs</h2>
+      <p>You might be one of the 100 or so students who are admitted to MIddlebury each year as a Feb! Our February Admissions program is one of the oldest, largest, and most renowned mid-year start programs in the country. Febs get a .5 next to their graduation year, and have their own orientation and graduation.</p>
+    {% endblock %}
+  {% endembed %}
+
+  {% include 'paragraphs/mega-cta.twig' with {
+    link: 'Add Us to the Common App',
+    banner_cta: true,
+    image: 'banner_cta',
+    dual_border_color_primary: '#75a3cd',
+    dual_border_color_secondary: '#fff791'
+  } %}
+
+{% endblock %}

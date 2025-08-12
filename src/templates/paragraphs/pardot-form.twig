@@ -1,0 +1,39 @@
+<section class="section paragraph--pardot-form" data-digest-content>
+    <h2 class="section__title">{{ title }}</h2>
+    <form action="{{ post_url }}" method="POST">
+        <div class="row row-sm-gutters">
+            <input name="program" type="hidden" value="{{ program }}">
+            <input name="success_location" type="hidden" value="{{ confirmation }}">
+            <div class="col-md-6 col-xl-6 form-group">
+                <label for="midd-pardot-first-name" class="label">First name*</label>
+                <input id="midd-pardot-first-name" name="firstname" type="text" class="form-control" required>
+            </div>
+            <div class="col-md-6 col-xl-6 form-group">
+                <label for="midd-pardot-last-name" class="label">Last name*</label>
+                <input id="midd-pardot-last-name" name="lastname" type="text" class="form-control" required>
+            </div>
+            <div class="col-md-6 col-xl-6 form-group">
+                <label for="midd-pardot-email" class="label">Email*</label>
+                <input id="midd-pardot-email" name="email" type="email" class="form-control" required>
+            </div>
+            <div class="col-md-6 col-xl-6 form-group">
+                <label for="midd-pardot-how-heard" class="label">How did you first learn about us?*</label>
+                <select name="how_heard" class="form-control" id="midd-pardot-how-heard">
+                    <option value="" selected>- None -</option>
+                    <option value="Alumni/Student">Alumni/Student</option>
+                    <option value="College Counselor/Professor">College Counselor/Professor</option>
+                    <option value="Employer">Employer</option>
+                    <option value="Friend/Relative">Friend/Relative</option>
+                    <option value="Fair/Event">Fair/Event</option>
+                    <option value="Internet">Internet</option>
+                    <option value="Social Media">Social Media</option>
+                    <option value="Partner Organization/School">Partner Organization/School</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="col-md-12 col-xl-12 form-group">
+                <input type="submit" value="{{ button }}" class="button button--primary">
+            </div>
+        </div>
+    </form>
+</section>

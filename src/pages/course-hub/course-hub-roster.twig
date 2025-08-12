@@ -1,0 +1,114 @@
+{% extends 'course-hub-layout.twig' %}
+
+{% set body_class = 'roster-page' %}
+
+{% set page_header = {
+  title: 'Roster for AMST 0210A',
+  breadcrumb: [
+    {
+      text: 'Course Hub'
+    },
+    {
+      text: 'Schools and Programs'
+    },
+    {
+      text: 'Middlebury College'
+    },
+    {
+      text: 'Spring 2019'
+    },
+    {
+      text: 'American Studies'
+    },
+    {
+      text: 'AMST 0210A: Mod. American Cult. 1830-1919'
+    }
+  ]
+} %}
+
+{% block nav %}
+  <div class="print-hide">
+    {% include 'partials/page-nav.twig' with {
+      label: 'My Terms',
+      items: [
+        {
+          text: 'Fall 2019'
+        },
+        {
+          text: 'Fall 2019'
+        },
+        {
+          text: 'Fall 2019'
+        },
+        {
+          text: 'Fall 2019'
+        },
+        {
+          text: 'Fall 2019'
+        }
+      ]
+    } %}
+  </div>
+{% endblock %}
+{% block sidebar %}
+  <div class="print-hide">
+    {% include 'partials/course-hub-sidebar.twig' %}
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="print-hide">
+    {% include 'partials/course-hub-tabs.twig' with {
+      active: 4
+    } %}
+  </div>
+
+  <div class="roster">
+    {% set names = [
+      'Some short name',
+      'Mid size name here',
+      'Some long name here it should wrap (nickname)'
+    ] %}
+
+    {% for n in 0..20 %}
+      <div class="break-inside-avoid">
+        {% set name = random(names) %}
+
+        {% if env.test %}
+          {% set name = names[0] %}
+        {% endif %}
+
+        {% include 'partials/coursehub-profile.twig' with {
+          name: name,
+          meta: [
+            {
+              name: 'Email',
+              value: 'jconnell@middlebury.edu',
+              href: '#'
+            },
+            {
+              name: 'Advisor',
+              value: 'Rachael Joo',
+              href: '#'
+            },
+            {
+              name: 'Commons',
+              value: 'Wonnacott'
+            },
+            {
+              name: 'Dean',
+              value: 'R. Longman',
+              href: '#'
+            }
+          ],
+          actions: [
+            {
+              label: 'Create course warning email',
+              href: 'course-hub-email.html'
+            }
+          ]
+        } %}
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

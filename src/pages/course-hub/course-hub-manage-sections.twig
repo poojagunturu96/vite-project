@@ -1,0 +1,157 @@
+{% extends "layouts/course-hub-layout.twig" %}
+
+{% set page_header = {
+  title: 'Manage Sections',
+  breadcrumb: [
+    { text: 'Middlebury' },
+    { text: 'Course Hub' },
+    { text: 'Dashboard' },
+  ],
+} %}
+
+{% block nav %}
+  {% include 'partials/page-nav.twig' with {
+    label: 'My Terms',
+    items: [
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+    ]
+  } %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="typography">
+
+    <table>
+      <caption>Choose a term to manage sections for.</caption>
+
+      <thead>
+        <tr>
+          <th>Term</th>
+          <th>School</th>
+          <th>Code</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>
+            <a href="/~afranco/drupal/hubtest/dashboard/terms/175">Fall 2019</a>
+          </td>
+          <td>
+            <p>Middlebury Language Schools</p>
+          </td>
+          <td>
+            <p>201990</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="/~afranco/drupal/hubtest/dashboard/terms/32">Spring 2020</a>
+          </td>
+          <td>
+            <p>Middlebury College</p>
+          </td>
+          <td>
+            <p>202020</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="/~afranco/drupal/hubtest/dashboard/terms/87">Winter 2020</a>
+          </td>
+          <td>
+            <p>Middlebury College</p>
+          </td>
+          <td>
+            <p>202010</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="/~afranco/drupal/hubtest/dashboard/terms/33">Fall 2019</a>
+          </td>
+          <td>
+            <p>Middlebury College</p>
+          </td>
+          <td>
+            <p>201990</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="/~afranco/drupal/hubtest/dashboard/terms/105">Fall 2019 - MIIS</a>
+          </td>
+          <td>
+            <p>Middlebury Institute of International Studies</p>
+          </td>
+          <td>
+            <p>201998</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="/~afranco/drupal/hubtest/dashboard/terms/106">Summer 2019 - MIIS</a>
+          </td>
+          <td>
+            <p>Middlebury Institute of International Studies</p>
+          </td>
+          <td>
+            <p>201968</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="/~afranco/drupal/hubtest/dashboard/terms/111">Fall 2019 Language Programs</a>
+          </td>
+          <td>
+            <p>Middlebury Institute of Internation Studies - Language and Professional Programs</p>
+          </td>
+          <td>
+            <p>201988</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="/~afranco/drupal/hubtest/dashboard/terms/119">Spring 2020</a>
+          </td>
+          <td>
+            <p>Middlebury Schools Abroad</p>
+          </td>
+          <td>
+            <p>202020</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="/~afranco/drupal/hubtest/dashboard/terms/120">Winter 2020</a>
+          </td>
+          <td>
+            <p>Middlebury Schools Abroad</p>
+          </td>
+          <td>
+            <p>202010</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="/~afranco/drupal/hubtest/dashboard/terms/121">Fall 2019</a>
+          </td>
+          <td>
+            <p>Middlebury Schools Abroad</p>
+          </td>
+          <td>
+            <p>201990</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+
+{% endblock %}

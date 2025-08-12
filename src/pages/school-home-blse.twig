@@ -1,0 +1,45 @@
+{% extends "layouts/school-home.twig" %}
+
+{% set theme = 'blse' %}
+{% set is_front = true %}
+
+{% block layout_header %}
+  {% embed 'partials/school-header.twig' %}
+    {% block school_logo %}
+      <img
+        src="images/blse-logo.svg"
+        srcset="images/blse-logo.svg 180w"
+        sizes="(min-width: 1280px) 180px, 120px"
+        alt="Logo for Middlebury Bread Loaf School of English"
+      />
+      <span class="sr-only">Middlebury Bread Loaf School of English</span>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+
+{% block content %}
+
+  {% include 'paragraphs/mega-cta.twig' with {
+    title: '',
+    text: 'You are a teacher. A student. A reader. A writer. You are ready to become even more. Earn your master’s at Bread Loaf School of English. ',
+    caption: 'caption for mega cta',
+    blse: true
+  } %}
+
+  {% include 'paragraphs/button-box.twig' %}
+
+{% endblock %}
+
+{% block layout_footer %}
+  {% include 'partials/school-footer.twig' with {
+    name: 'Middlebury Bread Loaf School of English',
+    addr: '356 College Street<br>Middlebury, VT 05753',
+    tel: '802-443-5745',
+    email: 'blse@middlebury.edu',
+    cta: {
+      text: 'Request Info',
+      link: 'http://go.middlebury.edu/sa-inquiry'
+    },
+  } %}
+  {% include 'partials/midd-footer.twig' %}
+{% endblock %}

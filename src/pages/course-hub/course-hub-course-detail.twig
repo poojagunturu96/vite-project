@@ -1,0 +1,163 @@
+{% extends 'course-hub-layout.twig' %}
+
+{% set page_header = {
+  title: 'AMST 0210A<br>Mod. American Cult. 1830-1919',
+  breadcrumb: [
+    {
+      text: 'Course Hub'
+    },
+    {
+      text: 'Schools and Programs'
+    },
+    {
+      text: 'Middlebury College'
+    },
+    {
+      text: 'Spring 2019'
+    },
+    {
+      text: 'American Studies'
+    }
+  ]
+} %}
+
+{% block nav %}
+  {% include 'partials/page-nav.twig' with {
+    label: 'My Terms',
+    items: [
+      {
+        text: 'Fall 2019'
+      },
+      {
+        text: 'Fall 2019'
+      },
+      {
+        text: 'Fall 2019'
+      },
+      {
+        text: 'Fall 2019'
+      },
+      {
+        text: 'Fall 2019'
+      }
+    ]
+  } %}
+{% endblock %}
+
+{% block content %}
+  {% include 'partials/course-hub-tabs.twig' with {
+    active: 1
+  } %}
+
+  <div class="typography mb-7">
+    <p>
+      <strong>Formations of Race and Ethnicity in the U.S.</strong><br/>
+      Historical memories, everyday experiences, and possible futures are powerfully
+                              shaped by racial and ethnic differences. Categories of race and ethnicity structure
+                              social relationships and cultural meanings in the United States and beyond.
+                              In this course we will track the theoretical and historical bases of ideas
+                              of race and ethnicity in modern America. We will investigate how race and ethnicity
+                              intersect at particular historical moments with other forms of difference including
+                              gender, sexuality, nation, and class. The course offers an approach informed
+                              by critical studies of race including texts in history, political theory, cultural
+                              studies, and anthropology. (Critical Race Feminisms) 3 hrs. lect.
+    </p>
+  </div>
+
+  <dl class="terms">
+    <dt class="terms__title text-caps f2">
+      Schedule
+    </dt>
+    <dd class="terms__text">
+      11:00am-12:15pm on Tuesday, Thursday (Feb 11, 2019 to May 13, 2019)
+    </dd>
+    <dt class="terms__title text-caps f2">
+      Location
+    </dt>
+    <dd class="terms__text">Axinn Center 104</dd>
+    <dt class="terms__title text-caps f2">
+      Instructors
+    </dt>
+    <dd class="terms__text">
+      <ul class="list list--dividers list--sm mb-7">
+        {% for item in 0..2 %}
+          <li class="list__item">
+            <h3 class="font-sans-serif f3 font-medium">
+              Joe Smith
+            </h3>
+            <a href="mailto:" class="link-underline mb-3">
+              jsmith@middlebury.edu
+            </a>
+            <div class="mt-3">
+              {% include 'partials/pronunciation.twig' %}
+            </div>
+            <div class="mt-3">
+              <strong class="font-medium">Pronouns</strong>: he/him/his
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </dd>
+  </dl>
+
+  {% embed 'partials/section.twig'
+    with {
+      title: 'Section Details'
+    }
+  %}
+    {% block content %}
+      <div class="typography">
+        <dl>
+          <dt>
+            Course Number
+          </dt>
+          <dd>0224</dd>
+          <dt>
+            Section Identifier
+          </dt>
+          <dd>A</dd>
+          <dt>
+            Syncing
+          </dt>
+          <dd>Off</dd>
+          <dt>
+            Short Name
+          </dt>
+          <dd>AMST 0224A</dd>
+          <dt>
+            External ID
+          </dt>
+          <dd>section/201920/22206</dd>
+          <dt>
+            Term Code
+          </dt>
+          <dd>201920</dd>
+          <dt>
+            Section Title
+          </dt>
+          <dd>Race and Ethnicity in the US</dd>
+          <dt>
+            Subject Code
+          </dt>
+          <dd>AMST</dd>
+          <dt>
+            Subject Label
+          </dt>
+          <dd>American Studies</dd>
+          <dt>
+            CRN
+          </dt>
+          <dd>22206</dd>
+          <dt>
+            Start Date
+          </dt>
+          <dd>Mon, 02/11/2019 - 12:00</dd>
+          <dt>
+            End Date
+          </dt>
+          <dd>Mon, 05/13/2019 - 12:00</dd>
+        </dl>
+      </div>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

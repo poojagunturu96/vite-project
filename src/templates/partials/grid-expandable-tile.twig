@@ -1,0 +1,62 @@
+{% set id = random(1234) %}
+
+<div class="grid-expandable-tile js-grid-tile-expand" data-grid-overlay-open="midd-grid-overlay-{{id}}">
+  <span class="button grid__label-icon{{ content_type == 'expand' ? ' expand' : ''}}">
+    {% include 'icon.twig' with {
+      name: content_type,
+      class: content_type
+    } %}
+  </span>
+
+  {% include 'img.twig' with {
+    name: image_name,
+    lazy: true
+  } %}
+</div>
+
+<div class="grid-hover__overlay{{ content_type == 'expand' ? ' expand' : ''}} {{ small ? 'text-small' : '' }}" data-grid-overlay-open="midd-grid-overlay-{{id}}">
+  <div class="grid-hover__text">
+    <p>{{description}}</p>
+    <button class="button button--light mt-4" aria-label="Open overlay">
+      {{content_type == 'expand' ? 'Expand' : 'Play'}}
+      <span class="ml-3">
+        {% include 'icon.twig' with {
+        name: content_type
+      } %}
+      </span>
+    </button>
+  </div>
+</div>
+
+<div class="grid-modal" id="midd-grid-overlay-{{id}}" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1">
+  <div class="grid-modal__button-container">
+    <button class="grid-modal__button grid-modal__button--close" aria-label="Close modal" data-grid-overlay-close>
+      Close
+      {% include 'icon.twig' with { name: 'times', class: 'ml-1' } %}
+    </button>
+  </div>
+  <div class="grid-modal__overlay container">
+    {% if content_type == 'play' %}
+      {% include 'video.twig' with {
+        grid_video: true,
+        grid_caption_offset: true,
+        lazy: true
+      } %}
+      {# {% include 'portrait-video.twig' with {
+              grid_video: true,
+              grid_caption_offset: true
+            } %} #}
+    {% elseif content_type == 'expand' %}
+      <figure class="grid-modal__image">
+        {% include 'img.twig' with {
+          name: overlay_image,
+          lazy: true
+        } %}
+        <figcaption class="offset-lg-1 grid-image__body">
+          <h3 class="sr-only" id="midd-video-label-729">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+          <p class="image__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. Suspendisse commodo pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
+        </figcaption>
+      </figure>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,35 @@
+{% set id = random(1234) %}
+<div class="gallery paragraph--gallery">
+	<div
+		class="gallery__image">
+		{# should link to drupal page rendering the gallery images #}
+    <a
+      href="/"
+      class="gallery__link"
+      data-lightbox-open="midd-lightbox-{{id}}"
+      aria-label="Open gallery"
+      aria-describedby="midd-gallery-{{id}}-label midd-gallery-{{id}}-count"
+      role="button"
+    >
+			{% include '../partials/img.twig' with { name: 'video' } %}
+			<span class="button button--primary gallery__button">
+				Open Gallery
+				<span class="ml-3">
+					{% include '../partials/icon.twig' with { name: 'images' } %}
+				</span>
+				<span class="d-none d-sm-inline">
+					<span class="mx-2">|</span>
+					<span id="midd-gallery-{{id}}-count">{{gallery_data.length}}
+						images</span>
+				</span>
+			</span>
+		</a>
+	</div>
+	<div class="gallery__body">
+		<h2 class="gallery__title" id="midd-gallery-{{id}}-label">Gallery title</h2>
+		<p class="gallery__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, ipsum incidunt quasi enim nihil unde id. Labore nulla fugiat necessitatibus corporis at facere quas error, quaerat quo ut obcaecati. Tenetur?</p>
+	</div>
+</div>
+
+
+{% include '../partials/gallery-modal.twig' %}

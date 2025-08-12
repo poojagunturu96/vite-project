@@ -1,0 +1,123 @@
+{% set items =
+  items|default(
+    [
+      {
+        name: 'Beryl Levinger',
+        pronouns: 'She, Her',
+        scholar_icons: true,
+        role: 'Program Chair, Master of Public Administration and International Policy and Development',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quis, repellat iusto cum non molestiae voluptatem adipisci accusamus rerum vero harum consectetur esse obcaecati nesciunt excepturi nihil magnam, assumenda sit?',
+        meta: [
+          {
+            name: 'Email',
+            value: 'blevinger@middlebury.edu',
+            href: 'mailto:'
+          },
+          {
+            name: 'Tel',
+            value: '555-555-5555',
+            href: 'tel:'
+          },
+          {
+            name: 'Office',
+            value: 'McCone Building M212'
+          },
+          {
+            name: 'Office Hours',
+            value: 'Tuesdays 3-4pm, Thursdays 11am-12pm'
+          }
+        ],
+        social: social_links
+      },
+      {
+        name: 'Aaron Smith',
+        pronouns: 'He, Him',
+        scholar_icons: true,
+        role: 'Distinguished Professor',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        meta: [
+          {
+            name: 'Tel',
+            value: '555-555-5555',
+            href: 'tel:'
+          }
+        ]
+      },
+      {
+        name: 'Aaron Smith',
+        pronouns: 'He, Him',
+        scholar_icons: true,
+        role: 'Distinguished Professor',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quis, repellat iusto cum non molestiae voluptatem adipisci accusamus rerum vero harum consectetur esse obcaecati nesciunt excepturi nihil magnam, assumenda sit?',
+        meta: [
+          {
+            name: 'Email',
+            value: 'bigbird@sesamestreet.org',
+            href: 'mailto:'
+          },
+          {
+            name: 'Tel',
+            value: '555-555-5555',
+            href: 'tel:'
+          },
+          {
+            name: 'Office',
+            value: '123 Sesame Street'
+          }
+        ]
+      },
+      {
+        name: 'Aaron Smith',
+        pronouns: 'He, Him',
+        scholar_icons: true,
+        role: 'Distinguished Professor',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quis, repellat iusto cum non molestiae voluptatem adipisci accusamus rerum vero harum consectetur esse obcaecati nesciunt excepturi nihil magnam, assumenda sit?',
+        meta: [
+          {
+            name: 'Email',
+            value: 'bigbird@sesamestreet.org',
+            href: 'mailto:'
+          },
+          {
+            name: 'Tel',
+            value: '555-555-5555',
+            href: 'tel:'
+          },
+          {
+            name: 'Office',
+            value: '123 Sesame Street'
+          },
+          {
+            name: 'Office Hours',
+            value: 'Tuesdays 3-4pm, Thursdays 11am-12pm'
+          }
+        ],
+        social: social_links
+      }
+    ]
+  )
+%}
+
+<section class="section paragraph--profile-list" data-digest-content>
+  <header class="section__header">
+    <h2 class="section__title">
+      {{
+        title|default(
+          'Profile team heading Excepteur officia consectetur deserunt duis Aliquip ea pariatur enim labore officia&nbsp;ipsum..'
+        )
+      }}
+    </h2>
+    <a href="" class="section__link">{{ moreLinkText|default('View all') }}</a>
+    <p class="section__text">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores pariatur
+      amet vitae soluta quidem minus nostrum veritatis quos ducimus in
+      cupiditate, repellendus aliquid aliquam mollitia rem excepturi ipsam ad!
+      Debitis.
+    </p>
+  </header>
+  <div class="profile-list">
+  {% for item in items %}
+    {% include '../partials/profile-teaser.twig' with item %}
+  {% endfor %}
+  </div>
+</section>

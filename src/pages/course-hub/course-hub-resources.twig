@@ -1,0 +1,55 @@
+{% extends "layouts/course-hub-layout.twig" %}
+
+{% set page_header = {
+  title: 'Resources for AMST 0210A',
+  breadcrumb: [
+    { text: 'Course Hub' },
+    { text: 'Schools and Programs' },
+    { text: 'Middlebury College' },
+    { text: 'Spring 2019' },
+    { text: 'American Studies' },
+    { text: 'AMST 0210A: Mod. American Cult. 1830-1919' },
+  ],
+} %}
+
+{% block nav %}
+  {% include 'partials/page-nav.twig' with {
+    label: 'My Terms',
+    items: [
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+    ]
+  } %}
+{% endblock %}
+
+{% block content %}
+  {% include 'partials/course-hub-tabs.twig' with { active: 3 } %}
+
+  <div class="typography mb-7">
+    <ul>
+      <li>
+        <a href="">Resource one</a>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, quis rem dolore amet animi quo hic ea est at corrupti et odio inventore neque assumenda doloremque! Nesciunt error sed vitae.</p>
+      </li>
+      <li>
+        <a href="">Resource two</a>
+      </li>
+      <li>
+        <a href="">Resource two</a>
+      </li>
+    </ul>
+  </div>
+  {# alert if no resources #}
+  <div class="alert alert--status mb-4">
+    No resources have been added yet.
+  </div>
+  {# always shown to instructor button #}
+  <div class="mb-7">
+    <a href="" class="button button--outline button--primary">+ Add a resource</a>
+  </div>
+
+
+{% endblock %}

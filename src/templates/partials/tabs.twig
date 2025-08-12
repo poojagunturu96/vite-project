@@ -1,0 +1,13 @@
+<div class="tabs {{light ? 'tabs--light' : ''}}" data-tabs>
+  <div class="tabs__nav">
+    <ul class="tabs__list" data-tabs-list>
+      {% for tab in tablist %}
+        <li class="tabs__item" data-tabs-item>
+          <a href="#{{tab.id}}" class="tabs__button" data-tabs-tab>{{tab.label}}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% block tabpanels %}{% endblock %}
+</div>
+

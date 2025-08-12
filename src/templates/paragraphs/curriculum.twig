@@ -1,0 +1,117 @@
+{% set j_term_badge = '<span class="badge badge--primary badge--no-outline" aria-hidden="true">j-term</span>' %}
+{% set row_class = '' %}
+{% set no_of_columns = random([1, 3, 4, 5]) %}
+{% set show_labels = true %}
+
+{% if no_of_columns == 4 %}
+  {% set row_class = 'curriculum__row--four-column' %}
+{% elseif no_of_columns == 3 %}
+  {% set row_class = 'curriculum__row--three-column' %}
+{% elseif no_of_columns == 1 %}
+  {% set row_class = 'curriculum__row--one-column' %}
+{% endif %}
+
+<div class="paragraph--curriculum">
+  <ul class="curriculum__rows" aria-label="curriculum course list">
+    {% if show_labels %}
+      <div class="curriculum__row {{row_class}} curriculum__row--header js-curriculum-headroom" aria-hidden="true">
+        <div class="curriculum__cell">{{miis_curriculum_header_labels[0]}}</div>
+
+        {% for label in miis_curriculum_header_labels|slice(1, no_of_columns - 1) %}
+          <div class="curriculum__cell">{{label}}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% for item in miis_curriculum %}
+
+      {% set id = random(1234) %}
+
+      <li class="curriculum__row {{row_class}} accordion-item js-accordion-item-{{id}}">
+        <div class="curriculum__cell">
+          <a 
+            href="#midd-accordion-item-label-{{id}}"
+            class="accordion-item__link"
+            data-toggle-target=".js-accordion-item-{{id}}"
+            aria-expanded="false"
+            aria-controls="midd-accordion-content-{{id}}"
+            aria-labelledby="midd-accordion-item-label-{{id}}"
+          >
+            {% if show_labels %}
+              <span class="sr-only">{{miis_curriculum_header_labels[0]}}</span>
+            {% endif %}
+
+            {% include '../partials/icon.twig' with { name: 'caret-right', class: 'accordion-item__icon mx-2' } %}
+            <h3 class="curriculum__cell-title" id="midd-accordion-item-label-{{id}}">{{item.course_number}}: {{item.title}}</h3>
+          </a>
+          
+          {% if item.semester|slice(0, no_of_columns - 1) != 0 %}
+            <dl class="f2 pt-3 pl-5 d-md-none curriculum__table-sm-data">
+              <dt class="font-semibold">Offered in:</dt>
+              <dd>
+                {% for label in item.semester|slice(0, no_of_columns - 1) %}
+                  {% if label.value %}
+                    {% if label.value == 'j-term' %}
+                      <span>{{label.label}} ({{label.value}})</span>
+                    {% else %}
+                      <span>{{label.label}}</span>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </dd>
+            </dl>
+          {% endif %}
+        </div>
+        {% for data in item.semester|slice(0, no_of_columns - 1) %}
+          <div class="curriculum__cell">
+            {% if data.value == 'j-term' %}
+              {% if show_labels %}
+                <span class="sr-only">offered in: {{data.label}} ({{data.value}})</span>
+              {% endif %}
+
+              {{j_term_badge}}
+            {% else %}
+              {% if data.value %}
+                {% if show_labels %}
+                  <span class="sr-only">offered in: {{data.label}}</span>
+                {% endif %}
+                <span class="curriculum__cell--checkmark">
+                  {% include '../partials/icon.twig' with {
+                    name: 'check'
+                  } %}
+                </span>
+              {% else %}
+                {% if show_labels %}
+                  <span class="sr-only">not offered in: {{data.label}}</span>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          </div>
+        {% endfor %}
+        <div 
+          class="accordion-item__content--column" 
+          id="midd-accordion-content-{{id}}" 
+          role="region" 
+          aria-labelledby="midd-accordion-item-label-{{id}}"
+        >
+          <h4 class="accordion-item__sub-title">Course Description</h4>
+          <div class="typography">
+            {{item.content}}
+          </div>
+          {% if item.terms %}
+            <h4 class="accordion-item__sub-title">Terms Taught</h4>
+            <div class="typography">
+              {{item.terms}}
+            </div>
+          {% endif %}
+          {% if item.requirements %}
+            <h4 class="accordion-item__sub-title">Requirements</h4>
+            <div class="typography">
+              {{item.requirements}}
+            </div>
+          {% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

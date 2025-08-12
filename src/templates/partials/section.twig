@@ -1,0 +1,14 @@
+<section class="section" aria-labelledby="{{labelledby}}">
+  <header class="section__header">
+    <h2 class="section__title" id="{{labelledby}}">{{title}}</h2>
+    {% if moreLinkText %}
+      <a href="" class="section__link">{{moreLinkText|default("View all")}}</a>
+    {% endif %}
+    {% if text %}
+      <p class="section__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem temporibus, adipisci saepe ex debitis voluptate cum! Dolore ipsam sapiente nihil veniam molestiae doloribus, necessitatibus fugit, aliquid hic, tempora consectetur cupiditate.</p>
+    {% endif %}
+  </header>
+  {% block content %}{% endblock %}
+</section>
+
+

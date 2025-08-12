@@ -1,0 +1,97 @@
+{% set filter_active = false %}
+{% set minor_badge = '<span class="badge badge--primary ml-2">Major</span>' %}
+{% set major_badge = '<span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>' %}
+
+{% embed 'sidebar-layout.twig' %}
+	{% block nav %}
+		{% include 'event-search.twig' with {
+      title: 'Search Courses'
+    } %}
+		{% include 'event-filters.twig' %}
+	{% endblock %}
+	{% block content %}
+		{% if filter_active %}
+			{% include 'active-filters.twig' %}
+		{% endif %}
+
+		{% if no_results %}
+			<p class="lead">
+				There are no events on this date.
+			</p>
+		{% endif %}
+
+		<p style="padding-bottom:48px">Middlebury College's liberal arts curriculum will challenge you for the rest of your life. Our
+			<a href="#">undergraduate</a>
+			and
+			<a href="#">graduate programs</a>
+			prepare students to meet the challenges of responsible citizenship in a complex, changing world.<br><br>Our curriculum is designed to ensure that each student's education includes breadth of experience across many fields and disciplines, as well as in-depth study in one area defined by the
+			<a href="http://www.middlebury.edu/academics/options">major</a>. Breadth is achieved through a set of
+			<a href="http://www.middlebury.edu/about/handbook/ug-college-policies/ug-policies/academics/degree-requires">distribution requirements</a>
+			that encompass seven academic categories and four courses in different cultures and civilizations. An
+			<a href="#">emphasis on writing</a>
+			in all disciplines sharpens students' capacity for critical thinking and expression.
+			<br><br>An array of interdisciplinary programs provide opportunities to synthesize and connect what you learn in many different departments. Intensive study in the major may culminate in a senior thesis, independent project, or artistic production, working closely with professors in laboratories, studios and classrooms to collaborate on research and creative projects. You'll have a broad range of choices, and a great deal of freedom to set your own academic path.</p>
+
+		<table class="table--course-list">
+			<thead>
+				<th>
+					Area of Study
+				</th>
+				<th>
+					<span class="sr-only">Major</span>
+				</th>
+				<th>
+					<span class="sr-only">Minor</span>
+				</th>
+			</thead>
+			<tbody>
+				{% for item in area_of_study %}
+					<tr class="row-label">
+						<td colspan="100%" class="row-label--cell">{{ item.category }}</td>
+					</tr>
+					{% for course_name in item.course_names %}
+						<tr valign="top">
+							<td>
+								<a href="#">{{ course_name.name }}</a>
+							</td>
+							<td>
+								{% if env.test or random(1) %}
+									{{ minor_badge }}
+								{% endif %}
+							</td>
+							<td>
+								{% if env.test or random(1) %}
+									{{ major_badge }}
+								{% endif %}
+							</td>
+						</tr>
+						{% if course_name.tracks is not empty %}
+							<tr class="track-label">
+								<td colspan="100%" class="track-label--cell">Specialized Tracks</td>
+							</tr>
+							{% for track_name in course_name.tracks %}
+								<tr valign="top" class="sublist">
+									<td>
+										<div>
+											<a href="#">{{track_name.name }}</a>
+										</div>
+									</td>
+									<td>
+										{% if env.test or random(1) %}
+											{{ minor_badge }}
+										{% endif %}
+									</td>
+									<td>
+										{% if env.test or random(1) %}
+											{{ major_badge }}
+										{% endif %}
+									</td>
+								</tr>
+							{% endfor %}
+						{% endif %}
+					{% endfor %}
+				{% endfor %}
+			</tbody>
+		</table>
+	{% endblock %}
+{% endembed %}

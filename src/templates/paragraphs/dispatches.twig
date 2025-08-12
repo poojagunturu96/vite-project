@@ -1,0 +1,52 @@
+{% set id = random(1234) %}
+<section class="section paragraph" aria-labelledby="section-{{ id }}-label" data-digest-content>
+  <div class="section__header">
+    <h2 class="section__title" id="section-{{ id }}-label">
+      Featured News
+    </h2>
+    <a href="" class="section__link">View all</a>
+    <p class="section__text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+            reiciendis quod temporibus enim non beatae ipsa explicabo necessitatibus
+            iure. Asperiores optio ad repudiandae culpa voluptatum pariatur saepe,
+            tenetur recusandae possimus?
+    </p>
+  </div>
+  <div class="paragraph--dispatches">
+    <div class="container px-0">
+      <div class="dispatches js-dispatches" {% if randomize %} data-randomize {% endif %}>
+        <div class="dispatches-row row row--no-gutters">
+          <div class="dispatches__controls" aria-label="dispatches controls" role="navigation">
+            <button class="dispatches-button button button--primary button--circle js-dispatches-prev-button" aria-label="Previous" id="midd-dispatches-button-prev">
+              {% include '../partials/icon.twig' with {
+                name: 'chevron-left',
+                class: 'dispatches-button--icon'
+              } %}
+            </button>
+            <button class="dispatches-button button button--primary button--circle js-dispatches-next-button" aria-label="Next" id="midd-dispatches-button-next">
+              {% include '../partials/icon.twig' with {
+                name: 'chevron-right',
+                class: 'dispatches-button--icon'
+              } %}
+            </button>
+          </div>
+          <div class="col-12">
+            <div class="dispatches__container swiper js-swiper-container">
+              <div class="dispatches__content swiper-wrapper js-swiper-wrapper">
+
+                {% for item in 0..5 %}
+                  <div class="dispatches-item swiper-slide">
+                    {% include '../partials/dispatches-item.twig' with {
+                      id: loop.index
+                    } %}
+                  </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,75 @@
+{% set id = random(1234) %}
+<section class="section paragraph"
+  aria-labelledby="section-{{ id }}-label"
+  data-digest-content>
+  <div class="section__header">
+    <h2 class="section__title" id="section-{{ id }}-label">
+      Schedule Component
+    </h2>
+    <p class="section__text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+      reiciendis quod temporibus enim non beatae ipsa explicabo necessitatibus
+      iure. Asperiores optio ad repudiandae culpa voluptatum pariatur saepe,
+      tenetur recusandae possimus?
+    </p>
+  </div>
+
+  <div class="schedule-header">
+    <p class="schedule-header__date">
+      Sunday, December 10
+    </p>
+    <h3 id="midd-event-{{ id }}" class="schedule-header__title">
+      Arrival Day This Title is longer so it extends outside the normal render
+      area&nbsp;<a class="anchorjs-link" aria-label="Anchor" data-anchorjs-icon="&#59851;" href="#midd-event-{{ id }}" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a>
+    </h3>
+  </div>
+  {% for i in 0..3 %}
+    <div class="schedule-item">
+      <div class="schedule-item__details">
+        <p class="schedule-item__time">
+          <time>8:00 AM&ndash;5:00 PM</time>
+        </p>
+        <p class="schedule-item__local">
+          152 College St
+        </p>
+      </div>
+      <div class="schedule-item__body">
+        <div class="schedule-item__img">
+          {% include '../partials/image-with-caption.twig' with {
+            name: 'schedule'
+          } %}
+        </div>
+        <ul class="schedule-item__speakers">
+          {% for y in 0..i %}
+            {% if y > 0 %}
+              <li class="schedule-item__speaker">
+                <p class="schedule-item__name">
+                  Aaron Smith
+                </p>
+                <p class="schedule-item__job">
+                  Director of Digital Services
+                </p>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+        <h4 class="schedule-item__title">
+          Some event title
+        </h4>
+        <p class="schedule-item__text">
+          Lorem ipsum dolor sit amet consectetur <a href="">
+            adipisicing elit
+          </a>. Dicta aspernatur modi reiciendis quos voluptatum obcaecati
+          aperiam! Perferendis consequatur voluptatibus, incidunt aut, officia
+          et autem rem rerum nobis assumenda natus cupiditate.
+        </p>
+        <div class="text-center">
+          <a href=""
+            class="schedule-item__button button button--outline button--primary">
+            Call to action for event item
+          </a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</section>

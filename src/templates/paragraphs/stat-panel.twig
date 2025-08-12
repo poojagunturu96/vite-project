@@ -1,0 +1,40 @@
+<figure class="paragraph--stat-panel">
+  <div class="container px-0">
+    <div class="stat-panel">
+      <div class="stat-panel__media">
+
+        {% include '../partials/img.twig' with { name: 'spotlight' } %}
+
+      </div>
+      <figcaption class="stat-panel__content {% if align %}stat-panel__content-{{align}}{% endif %}">
+        {% if blurb %}
+          <div class="stat-panel__item stat-panel__item--primary">
+              <p class="stat-panel__text">
+                &ldquo;I liked the Institute’s focused approach — there was nothing unnecessary or outdated in the curriculum. And we were all empowered to help influence and evolve the curriculum ourselves. My degree was a great combination of working and studying.&rdquo;
+              </p>
+          </div>
+        {% endif %}
+        <div class="stat-panel__item stat-panel__item--secondary">
+
+          <h3 class="stat-panel__stats-title">Career Outcomes</h3>
+
+          {% set stats = [
+            { label: '81%', text: 'Using Language &amp; Cultural Skills' },
+            { label: '85%', text: 'Pursing Career Passions' },
+            { label: '88%', text: 'Living Aligned with Values' }
+          ] %}
+
+          <dl class="stat-panel__stats-list">
+            {% for item in stats %}
+              <dt class="stat-panel__stats-label">{{item.label}}</dt>
+              <dd class="stat-panel__stats-text">{{item.text}}</dd>
+            {% endfor %}
+          </dl>
+
+          <a href="#" class="stat-panel__stats-button button button--outline button--light">View Employment Report</a>
+
+        </div>
+      </figcaption>
+    </div>
+  </div>
+</figure>

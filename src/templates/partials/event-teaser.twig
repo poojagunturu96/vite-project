@@ -1,0 +1,55 @@
+{% set time = "11:45 AM ET" %}
+
+<article class="d-flex" aria-labelledby="midd-event-{{ i }}-header">
+  <time datetime="" class="text-center mt-1 lh-solid"  aria-hidden="true">
+    <span class="f3 d-block">Jun</span>
+    <span class="f7 d-block">24</span>
+  </time>
+  <div class="w-100 pl-3 clearfix">
+    <figure class="mb-2 float-md-right ml-md-3">
+      <a href="">
+        {% include 'img.twig' with {
+          name: 'event_teaser'
+        } %}
+      </a>
+    </figure>
+    <h3 class="h3" id="midd-event-{{ i }}-header">
+      <a href="{{ url|default('#') }}">
+        Museum of Art Lecture Series
+      </a>
+    </h3>
+    <time datetime="" class="d-block font-medium" aria-label="{{day}} at {{time}}">{{time}}</time>
+    <div class="f3 my-3 typography">
+      {# {% set max_length = (i * 30) + 20 %} #}
+      {% set text =
+        '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+      asperiores illum quas, voluptatum atque voluptas, animi ipsam magni sit
+      quo quae ut fugit. Accusantium explicabo sunt laborum? Soluta, placeat
+      nisi.</p>
+      <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+      </ul>
+      <ol>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+      </ol>'
+      %}
+      {{ text }}
+      {# naive example of truncate event text to 100 #}
+      {# {{ (text|striptags|length) > max_length
+        ? (text|striptags|slice(0, max_length)) ~ '...'
+        : text|striptags }} #}
+    </div>
+    <p class="f3 font-medium">
+      McCone Irvine Auditorium
+    </p>
+    {% if env.test or random(1) %}
+      <small class="f2 text-gray">Open to the Public</small>
+    {% endif %}
+  </div>
+</article>

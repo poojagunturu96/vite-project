@@ -1,0 +1,75 @@
+{% extends "layouts/application-layout.twig" %}
+
+{% set app_layout_full_width = false %}
+{% set app_title = 'Directory' %}
+{% set app_menu_items = [
+  {
+    text: 'Change Information'
+  },
+  {
+    text: 'Upload Photo'
+  },
+  {
+    text: 'Class Photo Roster (Faculty Only)'
+  },
+  {
+    text: 'Help',
+    active: true
+  },
+  {
+    text: 'Log In'
+  }
+] %}
+
+{% set page_header = {
+  title: 'Help',
+  breadcrumb: [
+    { text: 'Middlebury' },
+    { text: 'Directory' }
+  ],
+} %}
+
+{% set help_items = [
+  {
+    title: 'What is the Directory?',
+    content: '<p>The Directory contains contact information for students, faculty, and staff at Middlebury. For student records, the campus telephone number and class year are accessible only by computers on the Middlebury network and the mailbox address is shown in place of the residence hall location.</p>'
+  },
+  {
+    title: 'How do I look up someone in the Directory?',
+    content: '<ol><li>Enter any information you know about the person you are looking for in the search form.<ul><li>If you only enter part of the person	&apos;s name, it will find anyone whose name contains those letters (entering &quot;jo&quot; will return anyone named &quot;Joe&quot;, &quot;John&quot; and people with last names such as &quot;Johnson&quot;).</li><li>When searching by phone numbers, enter the person	&apos;s four digit extension.</li><li>When searching for a student by their postal address, only enter their box number.</li></ul></li><li>When you have entered the information, click Search. If only one person in the directory matches the information, you will be shown their entry. Otherwise, you will be presented with a list of possible matches.</li><li>Click on the desired name to view the directory information associated with that person.</li></ol>'
+  },
+  {
+    title: 'How do I change my Directory information?',
+    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+  },
+  {
+    title: 'How do I upload a photo for my Directory listing?',
+    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+  },
+  {
+    title: 'How do I remove my Directory information?',
+    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+  },
+  {
+    title: 'Why is the link to my webpage not showing up?',
+    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+  }
+] %}
+
+{% block page %}
+  {% embed 'partials/sidebar-layout.twig' %}
+    {% block content %}
+      <div class="paragraphs">
+        {% embed 'paragraphs/faq.twig' %}
+          {% block accordion %}
+            {% include 'partials/accordion.twig' with {
+              items: help_items,
+              course_list: false,
+              faq: true
+            } %}
+          {% endblock %}
+        {% endembed %}
+      </div>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

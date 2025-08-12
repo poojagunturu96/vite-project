@@ -1,0 +1,59 @@
+<div class="container">
+  <section class="homepage-header run-animation" data-animation-container>
+    <div class="homepage-header__container">
+      <h1 class="homepage-title" id="midd-page-header-label" data-animation-target>At middlebury you will
+        <span class="homepage-title--transition-state" aria-hidden="false">
+          <strong>Focus your learning</strong>
+        </span>
+        <span class="homepage-title--transition-state" aria-hidden="true">
+          <strong>Discover Vermont</strong>
+        </span>
+        <span class="homepage-title--transition-state" aria-hidden="true">
+          <strong>Find meaning in doing</strong>
+        </span>
+        <span class="homepage-title--transition-state" aria-hidden="true">
+          <strong>Explore what inspires you</strong>
+        </span>
+      </h1>
+      <button aria-label="Pause Animation" class="homepage-title--pause-button" data-animation-trigger>
+        <span class="sr-only">Pause Animation</span>
+        {% include '../partials/icon.twig' with {
+          name: 'pause-homepage',
+          class: 'homepage-button'
+        } %}
+      </button>
+      <button aria-label="Play Animation" class="homepage-title--play-button" data-animation-trigger>
+        <span class="sr-only">Play Animation</span>
+        {% include '../partials/icon.twig' with {
+          name: 'play-homepage',
+          class: 'homepage-button'
+        } %}
+      </button>
+      <button aria-label="Replay Animation" class="homepage-title--replay-button" data-animation-trigger>
+        <span class="sr-only">Replay Animation</span>
+        {% include '../partials/icon.twig' with {
+          name: 'replay-homepage',
+          class: 'homepage-button'
+        } %}
+      </button>
+    </div>
+    <ul class="homepage-header__list">
+      <li>
+        <p data-animation-target>
+          <strong>Focus your undergraduate learning</strong>
+          with faculty who get as excited about things as you do.
+        </p>
+      </li>
+      <li>
+        <p data-animation-target>
+          <strong>Discover Vermont</strong>, a place that grounds us in history and extends to the world.
+        </p>
+      </li>
+      <li>
+        <p data-animation-target>
+          <strong>Find meaning in doing</strong>, and feel energized and ready for what's next.
+        </p>
+      </li>
+    </ul>
+  </section>
+</div>

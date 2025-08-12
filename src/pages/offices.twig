@@ -1,0 +1,100 @@
+{% extends "layouts/midd-layout.twig" %}
+
+{% set page_header = {
+  title: 'Offices and Services',
+  breadcrumb: []
+} %}
+
+{% block page %}
+
+  <div class="js-offices">
+
+    {% embed 'partials/sidebar-layout.twig' %}
+
+      {% block nav %}
+
+        <div class="form-group js-offices-form" data-sticky data-sticky-offset="32">
+          <form>
+            <label for="midd-office-search">Find on page</label>
+            <div class="input-group">
+              <input type="search" class="form-control form-control--sm js-offices-input" placeholder="Type a department name..." id="midd-office-search">
+              <button type="submit" aria-label="Show results" class="button button--sm button--primary button--outline js-offices-button">
+                {% include 'partials/icon.twig' with {
+                name: 'search',
+              } %}
+              </button>
+            </div>
+          </form>'partials/
+        </div>
+
+      {% endblock %}
+      {% block toc %}
+
+        <div data-sticky data-digest-nav></div>
+
+      {% endblock %}
+      {% block content %}
+
+        <div class="js-offices-region" id="midd-offices" data-digest-content>
+
+          {% for item in offices|groupBy('group') %}
+
+            <section class="section js-offices-group">
+              <h2 class="section__title">{{item.group}}</h2>
+
+              <div class="col-count-md-2">
+
+                {% for subitem in item.items %}
+                  <article class="w-100 d-inline-block mb-5 js-offices-item">
+                    <h3 class="f4 mb-2 font-sans-serif js-offices-title">
+                      <a href="" class="link-underline">{{subitem.title}}</a>
+                    </h3>
+
+                    {% if env.test or random(1) %}
+                      <p class="f2 mb-1">
+                        152 College St<br>Middlebury, VT 05753
+                      </p>
+                    {% endif %}
+
+                    <p class="f2 mb-1">
+                      {% if env.test or random(1) %}
+                        <a href="mailto:" class="link-underline">admissions<wbr>@middlebury.edu</a><br>
+                      {% endif %}
+
+                      {% if env.test or random(1) %}
+                        <a href="tel:" class="link-underline">(802) 555-5555</a><br>
+                      {% endif %}
+                    </p>
+
+                    <div class="d-flex">
+                      {% for social in ['youtube', 'facebook', 'instagram', 'twitter', 'vimeo'] %}
+                        {% if env.test or random(1) %}
+                          <div class="mr-2">
+                            <a href="" class="hover-fadein d-inline-block p-1">
+                              {% include 'partials/icon.twig' with { name: social } %}
+                            </a>
+                          </div>
+                        {% endif %}
+                      {% endfor %}
+                    </div>'partials/
+
+                  </article>
+                {% endfor %}
+
+              </div>
+
+            </section>
+
+          {% endfor %}
+
+        </div>
+        {# end offices region #}
+
+      {% endblock %}
+    {% endembed %}
+
+  </div>
+  {# container #}
+
+
+{% endblock %}

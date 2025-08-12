@@ -1,0 +1,36 @@
+<nav class="wrmc-footer">
+  <h2 class="sr-only">
+    Additional Navigation
+  </h2>
+  <div class="wrmc-footer__content">
+    <div class="mb-8 mb-md-4 mb-lg-0">
+      <a class="wrmc-footer__logo" href="https://www.middlebury.edu">
+        <div class="wrmc-footer__logo-image">
+          <img src="images/wrmc-footer-logo.svg"
+            alt="WRMC 91.1FM"
+            width="175"
+            height="145"/>
+          <img src="images/wrmc-ear.svg" 
+            width="80" 
+            height="124"  
+            alt="Ear illustration in WRMC logo"/>
+        </div>
+        <span>Middlebury Radio Station</span>
+      </a>
+    </div>
+    <ul class="wrmc-footer__list">
+      {% for item in wrmc_footer_nav %}
+        <li class="wrmc-footer__item">
+          <img src="images/wrmc-log.svg"
+              alt="Log of wood illustration"
+              width="60"
+              height="30" />
+          <a href="{{ item.href }}" class="wrmc-footer__link ml-2">
+            {{ item.text }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% include 'to-top-btn.twig' %}
+</nav>

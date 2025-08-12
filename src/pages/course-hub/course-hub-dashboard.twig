@@ -1,0 +1,50 @@
+{% extends "layouts/course-hub-layout.twig" %}
+
+{% set is_front = true %}
+{% set app_layout_full_width = true %}
+
+{% set page_header = {
+  title: 'Fall 2019 Dashboard',
+} %}
+
+{% block content %}
+
+  <div class="container">
+    <div class="alert alert--status alert--dismissible mb-5">
+      <div>
+        <p class="f3">
+          You can now set your name pronunciation and pronouns on your profile.
+        </p>
+        <a href="" class="button button--primary button--sm mt-2">
+          Update your profile
+        </a>
+        <button class="button button--primary button--sm button--outline mt-2">
+          Remind me later
+        </button>
+      </div>
+      <button class="alert__dismiss">
+        <span class="sr-only">Dismiss</span>
+        {% include 'partials/icon.twig' with {
+          name: 'times'
+        } %}
+      </button>
+    </div>
+
+    <ul class="row">
+      {% for item in 0..7 %}
+        <li class="col-md-6 col-lg-4 mb-7 mb-md-9">
+          {% include 'partials/course-hub-card.twig' with {
+            title: 'AMST 0225A<br>Gothic and Horror',
+            syllabus: ['Institution Syllabus', 'Public Syllabus', 'Syllabus Text', 'Test Syllabus'],
+            resources: ['Resource one', 'Resource two']
+          } %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    {% include 'partials/course-hub-sidebar.twig' %}
+
+  </div>
+
+
+{% endblock %}

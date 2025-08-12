@@ -1,0 +1,18 @@
+{% extends "layouts/anchor-layout.twig" %}
+
+{% set page_header = {
+  title: 'Top level without image',
+  breadcrumb: [
+    { text: 'Middlebury' },
+    { text: 'Offices and Services' },
+  ],
+  has_menu: true
+} %}
+
+{% block page %}
+  {% include 'partials/top-level-layout.twig' with {
+    show_menu: true,
+    show_lead: true,
+    has_page_image: has_page_image
+  } %}
+{% endblock %}

@@ -1,0 +1,16 @@
+<ul class="{{ no_label ? 'd-inline-flex pb-2' : 'd-block d-md-inline-flex pb-3 pb-md-7' }} {{class}}">
+  {% for name in [{icon:'orcid', label:'ORCID'}, {icon:'scopus', label:'Scopus'}, {icon:'google-scholar', label:'Google Scholar', icon_monochrome: 'google-scholar-monochrome'}, {icon:'middlebury-shield', label:'Middlebury'}, {icon:'github', label:'Github'}] %}
+    {# {% if env.test or random(1) %} #}
+      <li class="{{ no_label ? 'mr-4 hover-fadein' : 'pb-3 pb-md-0 pr-md-5'}}">
+        {% if not no_label %}
+          {% include 'icon.twig' with {name: name.icon, class: class ~ '-' ~ name.icon} %}
+          <a href="#" class="ml-2 link-underline">{{ name.label }}</a>
+        {% else %}
+          <a href="#">
+            {% include 'icon.twig' with { name: name.icon == 'google-scholar' ? name.icon_monochrome : name.icon, class: 'media-object__scholarly-icon' } %}
+          </a>
+        {% endif %}
+      </li>
+    {# {% endif %} #}
+  {% endfor %}
+</ul>

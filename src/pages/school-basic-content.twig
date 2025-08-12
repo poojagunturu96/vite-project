@@ -1,0 +1,51 @@
+{% extends "layouts/school-layout.twig" %}
+
+{% set theme = 'college' %}
+
+{% set page_header = {
+  title: 'School basic content',
+  breadcrumb: [
+    { text: 'Offices and Services' },
+    { text: 'Student Financial Services' },
+  ]
+} %}
+
+{% block page %}
+  {% embed 'partials/sidebar-layout.twig' %}
+    {% block nav %}
+
+      {% include 'partials/page-nav.twig' with {
+        label: 'Student Financial Services',
+        items: [
+          { text: 'Curriculum', href: '#' },
+          {
+            text: 'Faculty',
+            href: '#',
+            items: [
+              { text: 'Faculty sub page 1', href: '#' },
+              { text: 'Faculty sub page 2', href: '#' },
+              {
+                text: 'Faculty sub page 3',
+                href: '#',
+                active: true
+              },
+              { text: 'Faculty sub page 4', href: '#' },
+            ]
+          },
+          { text: 'Financing Your Education', href: '#' },
+        ]
+      } %}
+
+    {% endblock %}
+    {% block toc %}
+
+      <div data-digest-nav data-sticky data-sticky-offset=".js-headroom"></div>
+
+    {% endblock %}
+    {% block content %}
+
+      {% include 'partials/basic-content.twig' %}
+
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

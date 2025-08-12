@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+
+    {% if show_menu %}
+      <div class="col-md-10 offset-md-1">
+        {# set overlap if page has featured image #}
+        {% include 'box-menu.twig' with {
+          overlap: has_page_image,
+          items: top_level_nav_example
+        } %}
+      </div>
+    {% endif %}
+
+
+    <div class="paragraphs paragraphs--wide">
+      {% block paragraphs %}
+        {% include 'lead.twig' %}
+        {% include 'top-level-paragraphs.twig' %}
+      {% endblock %}
+    </div>
+
+    {# if page has cta or address #}
+    <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2 mt-7">
+      {# slightly differs from markup on office basic content #}
+      <div class="bg-gray-lighter mb-6 p-5">
+        <div class="row">
+          {# if page has cta #}
+          <div class="col-md-6">
+            {% include 'page-cta.twig' %}
+            {# if also has address #}
+            <div class="border-b my-6 d-md-none"></div>
+          </div>
+          {# if office meta #}
+          <div class="col-md-6">
+            {% include 'office-meta.twig' %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,49 @@
+{# should have no more than 4
+should have a toggle option to display the 'large' variant on left or right
+should display 2 columns if 2 stories, both large display
+should display first as large and 2 small if 3 #}
+
+{% if count is not defined %}
+  {% set count = 3 %}
+{% endif %}
+
+{% set col = 12 / count %}
+
+{% embed '../partials/section.twig' with {
+  title: 'Related basic content'
+} %}
+  {% block content %}
+
+    <div class="row">
+
+      {% for i in 1..count %}
+
+        {% if loop.last %}
+          <div class="col-md-{{col}}">
+        {% else %}
+          <div class="col-md-{{col}} border-md-r mb-4 mb-md-0">
+            <div class="border-b border-md-b-0 pb-4 pb-md-0">
+        {% endif %}
+
+          {% include '../partials/card.twig' with {
+            id: i,
+            type: 'basic-content',
+            image: true,
+            image_sizes: image_sizes,
+            title: 'some page title',
+            text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et temporibus deleniti vitae sint quod? Dolorum tenetur suscipit temporibus excepturi doloribus inventore eos optio, placeat aliquid, repellat iusto repellendus illo a.'
+          } %}
+
+        {% if loop.last %}
+          </div>
+        {% else %}
+            </div>
+          </div>
+        {% endif %}
+
+
+      {% endfor %}
+    </div>
+
+  {% endblock %}
+{% endembed %}

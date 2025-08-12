@@ -1,0 +1,102 @@
+<header class="wrmc-header js-headroom">
+
+  <div class="px-3 px-lg-5">
+
+    <div class="wrmc-header__main">
+
+      <div class="wrmc-header__logo">
+        {% if is_front %}
+          <h1 class="wrmc-header__title">
+          {% endif %}
+          <a class="wrmc-header__logo-graphic" href="">
+            <img class="wrmc-header__logo-background" src="images/wrmc-triangle.svg" alt="Pink triangle background in WRMC logo"/>
+            <img src="images/wrmc-ear.svg" srcset="images/wrmc-ear.svg 91w" sizes="(max-width: 512px) 62px, (max-width: 768px) 89px, 91px" alt="Ear illustration in WRMC logo"/>
+            <div class="wrmc-header__logo-wordmark">
+              <span>WRMC 91.1FM</span>
+              <span>Middlebury Radio Station</span>
+            </div>
+          </a>
+          {% if is_front %}
+          </h1>
+        {% endif %}
+      </div>
+
+      <div class="wrmc-header__content">
+
+        <div class="wrmc-nav">
+          <div class="wrmc-nav__menu">
+
+            <nav class="wrmc-nav__secondary-menu" aria-label="Secondary navigation">
+              <img src="images/wrmc-headphones.svg" alt="Headphones illustration"/>
+              <div class="wrmc-nav__secondary-menu--links">
+                <a href="#" class="button button--light">listen now</a>
+                <a href="#">Get the WRMC App</a>
+              </div>
+            </nav>
+
+            <nav aria-label="Main navigation">
+              <ul class="wrmc-nav__list">
+                {% for item in wrmc_site_nav.items %}
+                  <li class="wrmc-nav__item">
+
+                    {% set active = loop.index == 3 %}
+
+                    <a href="" class="wrmc-nav__link wrmc-nav__link--top{% if active %} wrmc-nav__link--active{% endif %}">{{item.text}}</a>
+
+                  </li>
+                {% endfor %}
+
+                <li class="wrmc-nav__item d-none d-lg-block">
+                  <a href="/search" class="school-search__handle" role="button" aria-label="Toggle site search" aria-expanded="false" aria-haspopup="true" data-toggle-target=".js-site-search" data-toggle-focus=".js-site-search-input" data-toggle-group="wrmc-header">
+
+                    {% include 'icon.twig' with {
+                      name: 'search', class: 'mr-1 school-search__mag'
+                    } %}
+                    {% include 'icon.twig' with {
+                      name: 'times', class: 'mr-1 school-search__times'
+                    } %}
+                    Search
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+          </div>
+
+           {# Mobile burger menu icon #}
+          <button class="wrmc-nav__handle" data-drawer="midd-nav-drawer" aria-label="Open navigation">
+            {% include 'icon.twig' with { name: 'bars', class: 'mr-2' } %}
+            <span class="d-inline d-lg-none">Menu</span>
+          </button>
+
+        </div>
+
+        <div class="school-search">
+          <a href="/search" class="school-search__handle d-none" role="button" aria-label="Toggle site search" aria-expanded="false" aria-haspopup="true" {# data-toggle-target=".js-site-search" #} data-toggle-focus=".js-site-search-input" data-toggle-group="wrmc-header">
+            {% include 'icon.twig' with {
+              name: 'search', class: 'mr-1 school-search__mag'
+            } %}
+            {% include 'icon.twig' with {
+              name: 'times', class: 'mr-1 school-search__times'
+            } %}
+            <span class="d-none d-sm-inline">Search</span>
+          </a>
+
+          <div class="school-search__content js-site-search">
+            <form class="">
+              <div class="input-group">
+                <label for="midd-school-search" class="sr-only">Search</label>
+                <input type="search" class="form-control js-site-search-input" id="midd-school-search" placeholder="Search">
+                <button type="submit" class="button px-3 button--primary">
+                  <span class="sr-only">Search</span>
+                  {% include 'icon.twig' with { name: 'search' } %}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>

@@ -1,0 +1,12 @@
+<div class="grid-modal" id="midd-grid-overlay-2" aria-hidden="true" role="dialog" aria-modal="true" data-grid-overlay tabindex="-1">
+  <div class="grid-overlay">
+    <button class="lightbox__button lightbox__button--close" aria-label="Close modal" data-grid-overlay-close>
+      Close
+      {% include 'icon.twig' with { name: 'times', class: 'ml-1' } %}
+    </button>
+    {% include 'video.twig' with {
+    grid_video: true,
+    grid_caption_offset: true
+  } %}
+  </div>
+</div>

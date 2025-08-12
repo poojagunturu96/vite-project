@@ -1,0 +1,13 @@
+{% set active_index = active|default(2) %}
+
+<nav class="tabs">
+  <div class="tabs__list">
+    {% for item in ['Overview', 'Syllabi', 'Resources', 'Roster'] %}
+      <div class="tabs__item">
+        <a href="" class="tabs__button {% if loop.index == active_index  %} tabs__button--active{% endif %}">
+          {{item}}
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</nav>

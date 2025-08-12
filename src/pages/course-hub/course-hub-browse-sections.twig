@@ -1,0 +1,40 @@
+{% extends "layouts/course-hub-layout.twig" %}
+
+{% set page_header = {
+  title: 'Spring 2019',
+  breadcrumb: [
+    { text: 'Course Hub' },
+    { text: 'Browse Course Sites' },
+    { text: 'Middlebury College' },
+  ],
+} %}
+
+{% block nav %}
+  {% include 'partials/page-nav.twig' with {
+    label: 'My Terms',
+    items: [
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+    ]
+  } %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="typography mb-9">
+    <ul>
+      {% for item in ['American Studies', 'Arabic', 'Arts Division', 'Biology', 'Chemistry and Biochemistry', 'Chinese', 'Classics', 'Comparative Literature', 'Computer Science', 'Creative Writing', 'Dance', 'Economics', 'Education Studies', 'English & American Literatures', 'Environmental Studies', 'Film & Media Culture', 'French', 'Gender Sexuality &Fem. Studies', 'Geography', 'Geology', 'German', 'Hebrew (Modern)', 'History', 'History of Art & Architecture', 'Interdepartmental', 'Italian', 'Japanese', 'Linguistics', 'Mathematics', 'Music', 'Neuroscience', 'Philosophy', 'Physics', 'Political Science', 'Portuguese', 'Psychology', 'Religion', 'Russian', 'Sociology', 'Spanish', 'Studio Art', 'Theatre', 'Writing and Rhetoric Program' ] %}
+
+        <li>
+          <a href="">
+            {{item}}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+{% endblock %}

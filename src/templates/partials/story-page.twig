@@ -1,0 +1,64 @@
+{% embed 'sidebar-layout.twig' %}
+  {% block nav %}
+
+    {% include 'page-nav.twig' with {
+      label: 'Story list page',
+      items: [
+        { text: 'Category 1', href: '#' },
+        { text: 'Category 2', href: '#' },
+        { text: 'Category 3', href: '#' },
+      ]
+    } %}
+
+  {% endblock %}
+  {% block content %}
+
+    <div class="mb-6 f2">
+      <p class="mb-1 f2">October 25, 2018 <span class="mx-2">|</span> by <a href="#" class="link-underline">Sarah Ray</a>, <a href="#" class="link-underline">Sarah Ray</a></p>
+
+      <p class="f2 text-caps">
+        <a href="#">Category 1</a>,
+        <a href="#">Category 1</a>
+      </p>
+    </div>
+
+    {% include 'page-image.twig' %}
+
+    <div class="paragraphs">
+      {% include 'lead.twig' %}
+
+      {% include '../paragraphs/text-short.twig' %}
+
+      {% include '../paragraphs/quote.twig' %}
+
+      {% include '../paragraphs/text-short.twig' %}
+
+    </div>
+
+    <div class="mb-7">
+      {% include 'share.twig' %}
+    </div>
+
+    <div class="d-flex mb-3 f2">
+
+      <span class="mr-2 text-bold">Tags:</span>
+
+      <ul class="d-flex flex-wrap">
+        {% for i in 0..3 %}
+          <li class="mr-1">
+            <a href="#" class="link-underline">another longer tag {{loop.index}}</a>{% if not loop.last %}, {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+
+    </div>
+
+    <div class="border p-3 mb-9">
+      <h2 class="h3 mb-2">Media Contact</h2>
+
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+    </div>
+
+  {% endblock %}
+{% endembed %}
+

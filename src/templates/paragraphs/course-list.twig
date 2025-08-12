@@ -1,0 +1,86 @@
+{% set current_badge = '<span class="badge badge--primary badge--outline ml-2">Current</span>' %}
+{% set upcoming_badge = '<span class="badge badge--primary badge--outline ml-2">Upcoming</span>' %}
+{% set id = random(1234) %}
+
+{% set course_items = [
+  {
+    course_number: 'biol 0140' ~ current_badge ~ upcoming_badge,
+    current: true,
+    upcoming: true,
+    title: 'Ecology and Evolution',
+    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
+    terms: '<p>Spring 2017, Spring 2019, Spring 2020, Spring 2021</p>',
+    requirements: '<p>DED, SCI</p>'
+  },
+  {
+    course_number: 'biol 0140',
+    current: false,
+    upcoming: false,
+    title: 'Film and Television, from Apocolipse Now to the Simpsons',
+    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
+    terms: '<p>Spring 2017, Spring 2019, Spring 2020, Spring 2021</p>',
+  },
+  {
+    course_number: 'biol 0140' ~ current_badge,
+    current: true,
+    upcoming: false,
+    title: 'Biology of Plants Growing in the Forest',
+    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
+    terms: '<p>Spring 2017, Spring 2019, Spring 2020, Spring 2021</p>',
+    requirements: '<p>DED, SCI</p>'
+  },
+  {
+    course_number: 'biol 0140' ~ upcoming_badge,
+    current: false,
+    upcoming: true,
+    title: 'Tropical Ecology and how reefs grow',
+    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
+    requirements: '<p>DED, SCI</p>'
+  },
+  {
+    course_number: 'biol 0140',
+    current: false,
+    upcoming: false,
+    title: 'Teaching Literature from Around the World',
+    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+  }
+] %}
+
+<section class="section paragraph--course-list js-filter-{{id}}" data-digest-content>
+	<div class="section__header">
+		<h2 class="section__title">
+			{{ course_title }}
+		</h2>
+    {% if show_controls %}
+      <p class="section__text">
+        These are the courses taught in this department.
+      </p>
+    {% else %}
+      <p class="section__text">
+        These are the courses I teach.
+      </p>
+    {% endif %}
+	</div>
+  {% if show_controls %}
+    <p class="course-list--text">Courses offered in the past four years. Courses offered currently are as noted.</p>
+    <div class="course-list--filters">
+      <div class="checkbox checkbox--filter">
+        <input id="course-list-filter-all-{{id}}" name="course-list-filter-{{id}}" class="radio__input course-list-filter course-list-filter-all" type="radio" checked data-course-filter="{{id}}">
+        <label class="radio__label" for="course-list-filter-all-{{id}}">Show all courses.</label>
+      </div>
+      <div class="checkbox checkbox--filter">
+        <input id="course-list-filter-current-{{id}}" name="course-list-filter-{{id}}" class="radio__input course-list-filter course-list-filter-current" type="radio" data-course-filter="{{id}}">
+        <label class="radio__label" for="course-list-filter-current-{{id}}">Show current courses.</label>
+      </div>
+      <div class="checkbox checkbox--filter">
+        <input id="course-list-filter-upcoming-{{id}}" name="course-list-filter-{{id}}" class="radio__input course-list-filter course-list-filter-upcoming" type="radio" data-course-filter="{{id}}">
+        <label class="radio__label" for="course-list-filter-upcoming-{{id}}">Show upcoming courses.</label>
+      </div>
+    </div>
+  {% endif %}
+	{% include '../partials/accordion.twig' with {
+    items: course_items,
+    course_list: true,
+    faq: false
+  } %}
+</section>

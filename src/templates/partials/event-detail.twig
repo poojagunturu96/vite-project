@@ -1,0 +1,131 @@
+{% embed 'sidebar-layout.twig' %}
+  {% block nav %}
+
+    <div class="row">
+      <div class="col-sm-7 col-lg-12">
+        <div class="bg-gray-lighter mb-2 mb-lg-5 p-3 pt-4">
+          <p class="f4 mb-3 fw5">
+            <time datetime="">
+              November 15, 2017<br>
+              1:00 PM-2:30 PM
+            </time>
+          </p>
+
+          <address class="f4">
+            Casa Fuente 442 - Pacific Lab<br>
+            Casa Fuente<br>
+            450 Pacific St<br>
+            Monterey, CA 93940
+          </address>
+
+          <a href="#" class="d-sm-none mb-3 mt-2 button button--outline button--sm button--primary">
+            {% include 'icon.twig' with { name: 'map-marker' } %}
+            View in Campus Map
+          </a>
+
+          <p class="f2 mt-3">
+            Staff $10 | Students $20<br>
+            Open to the Public
+          </p>
+        </div>
+
+      </div>
+      <div class="col-sm-5 col-lg-12">
+
+        <div class="d-none d-sm-block">
+
+          <a href="#" class="">
+            {# TODO: lazyload #}
+            <img alt="Map of Morse B106" src="https://staticmap.concept3d.com/map/static-map/?map=972&loc=185852&scale=1&label&zoom=19">
+          </a>
+
+          <a href="#" class="mt-2 mb-7 button button--outline button--sm button--primary button--block">
+            {% include 'icon.twig' with { name: 'map-marker' } %}
+            View in Campus Map
+          </a>
+        </div>
+
+      </div>
+  </div>
+
+  {% endblock %}
+
+  {% block content %}
+
+    {% include 'page-image.twig' %}
+
+    <div class="typography mb-5">
+      <p>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proinauctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi.</p>
+      <p>Integer volutpat ligula eget enim. Suspendisse vitae arcu. Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proin auctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi.</p>
+    </div>
+
+    <dl class="mb-5">
+      <div class="mb-2">
+        <dt class="d-block d-sm-inline text-bold">Sponsored by:</dt>
+        <dd class="d-inline"><a href="#">Art History</a>; <a href="#">MCFA</a></dd>
+      </div>
+
+      <div class="mb-2">
+        <dt class="d-block d-sm-inline text-bold">Related URL:</dt>
+        <dd class="d-inline"><a href="#">https://www.example.com/12345</a></dd>
+      </div>
+
+      <div class="mb-2">
+        <dt class="d-block d-sm-inline text-bold">Event Type:</dt>
+        <dd class="d-inline"><a href="#">Performance</a></dd>
+      </div>
+
+      <div class="mb-2">
+        <dt class="d-block d-sm-inline text-bold">Categories:</dt>
+        <dd class="d-inline"><a href="#" hreflang="en">Featured Events Calendar</a>; <a href="#" hreflang="en">Campus Calendar</a></dd>
+      </div>
+  </dl>
+
+    <div class="mb-7 mb-lg-9">
+      {% set addtocal %}
+        {% include 'event-add-to-cal.twig' with {
+          'id': 'add-to-cal-1',
+          'options': [
+            {
+              'label': 'Google',
+              'aria-label': 'Add to Google Calendar',
+              'addtocal-type': 'google',
+              'url': 'https://calendar.google.com/calendar/render?action=TEMPLATE&amp;dates=20201207T161500/20201207T170000&amp;ctz=America/New_York&amp;text=When+Galaxies+Collide&amp;details=%28%3Ca+href%3D%22https%3A%2F%2Fsaw.middlebury.edu%2F%7Eafranco%2Fdrupal%2Fevents%2Fevent%2Fwhen-galaxies-collide-2020-12-07%22%3EEvent+Details%3C%2Fa%3E%29%0D%0A%0D%0A%3Cp%3EThe+galaxies+we+see+in+the+universe+today+formed+through+a+hierarchical+process+of+smaller+galaxies+merging+together%2C+often+multiple+times%2C+over+billions+of+years.+During+these+mergers%2C+the+supermassive+black+holes+residing+in+the+galaxies%E2%80%99+centers+also+merge.+In+2015%2C+the+%3Cspan+class%3D%22caps%22%3ELIGO%3C%2Fspan%3E+experiment+detected%2C+for+the+first+time%2C+gravitational+waves+from+the+mergers+of+small+black+holes+%E2%80%93+but+what+about+the+supermassive+ones+in+the+centers+of+merging+galaxies%3F+How+will+we+detect+those%3F+And+where+should+we+look+to+find+these+events%3F+I+will+present+a+new+project+that+I+am+developing+to+answer+these+questions+and+identify+merging+galaxies+and+their+supermassive+black%26nbsp%3Bholes.%3C%2Fp%3E%0A%3Cp%3EEilat+Glikman+%28B.A.%2C+Rutgers+University%3B+PhD%2C+Columbia+University%3B+%3Cspan+class%3D%22caps%22%3ENSF%3C%2Fspan%3E+Astronomy+and+Astrophysics+Postdoctoral+Fellow%2C+Yale+University%29+is+an+astrophysicist+who+has+been+on+the+faculty+at+Middlebury+since+2013.+She+uses+observations+from+ground-+and+space-based+telescopes+across+the+electromagnetic+spectrum+to+study+how+black+holes+grow+in+distant+galaxies+and+their+impact+on+their+environment.+She+has+published+dozens+of+peer-reviewed+articles+on+this+subject+and+was+featured+in+a+%3Cspan+class%3D%22caps%22%3EPBS%3C%2Fspan%3E-%3Cspan+class%3D%22caps%22%3ENOVA%3C%2Fspan%3E+program+on+black+holes+in%26nbsp%3B2018.%3C%2Fp%3E%0A%3Cp%3EHosted+by+Caitlin+Myers%2C+John+G.+McCullough+Professor+of%26nbsp%3BEconomics.%3C%2Fp%3E%0A%3Cp%3ESee+the+Faculty+at+Home+website+for+additional+information%2C+including+how+to+register+for+this+free+event%3A+%3Ca+href%3D%22https%3A%2F%2Fwww.middlebury.edu%2Foffice%2Fprovost%2Ffaculty-home%22%3Ehttps%3A%2F%2Fwww.middlebury.edu%2Foffice%2Fprovost%2Ffaculty-home%3C%2Fa%3E%3C%2Fp%3E&amp;location=Virtual+Middlebury&amp;sprop=&amp;sprop=name:',
+            },
+            {
+              'label': 'Yahoo!',
+              'aria-label': 'Add to Yahoo Calendar',
+              'addtocal-type': 'yahoo',
+              'url': 'https://calendar.yahoo.com/?v=60&amp;view=d&amp;type=20&amp;st=20201207T211500Z&amp;dur=0045&amp;title=When+Galaxies+Collide&amp;desc=%28%3Ca+href%3D%22https%3A%2F%2Fsaw.middlebury.edu%2F%7Eafranco%2Fdrupal%2Fevents%2Fevent%2Fwhen-galaxies-collide-2020-12-07%22%3EEvent+Details%3C%2Fa%3E%29%0D%0A%0D%0A%3Cp%3EThe+galaxies+we+see+in+the+universe+today+formed+through+a+hierarchical+process+of+smaller+galaxies+merging+together%2C+often+multiple+times%2C+over+billions+of+years.+During+these+mergers%2C+the+supermassive+black+holes+residing+in+the+galaxies%E2%80%99+centers+also+merge.+In+2015%2C+the+%3Cspan+class%3D%22caps%22%3ELIGO%3C%2Fspan%3E+experiment+detected%2C+for+the+first+time%2C+gravitational+waves+from+the+mergers+of+small+black+holes+%E2%80%93+but+what+about+the+supermassive+ones+in+the+centers+of+merging+galaxies%3F+How+will+we+detect+those%3F+And+where+should+we+look+to+find+these+events%3F+I+will+present+a+new+project+that+I+am+developing+to+answer+these+questions+and+identify+merging+galaxies+and+their+supermassive+black%26nbsp%3Bholes.%3C%2Fp%3E%0A%3Cp%3EEilat+Glikman+%28B.A.%2C+Rutgers+University%3B+PhD%2C+Columbia+University%3B+%3Cspan+class%3D%22caps%22%3ENSF%3C%2Fspan%3E+Astronomy+and+Astrophysics+Postdoctoral+Fellow%2C+Yale+University%29+is+an+astrophysicist+who+has+been+on+the+faculty+at+Middlebury+since+2013.+She+uses+observations+from+ground-+and+space-based+telescopes+across+the+electromagnetic+spectrum+to+study+how+black+holes+grow+in+distant+galaxies+and+their+impact+on+their+environment.+She+has+published+dozens+of+peer-reviewed+articles+on+this+subject+and+was+featured+in+a+%3Cspan+class%3D%22caps%22%3EPBS%3C%2Fspan%3E-%3Cspan+class%3D%22caps%22%3ENOVA%3C%2Fspan%3E+program+on+black+holes+in%26nbsp%3B2018.%3C%2Fp%3E%0A%3Cp%3EHosted+by+Caitlin+Myers%2C+John+G.+McCullough+Professor+of%26nbsp%3BEconomics.%3C%2Fp%3E%0A%3Cp%3ESee+the+Faculty+at+Home+website+for+additional+information%2C+including+how+to+register+for+this+free+event%3A+%3Ca+href%3D%22https%3A%2F%2Fwww.middlebury.edu%2Foffice%2Fprovost%2Ffaculty-home%22%3Ehttps%3A%2F%2Fwww.middlebury.edu%2Foffice%2Fprovost%2Ffaculty-home%3C%2Fa%3E%3C%2Fp%3E&amp;in_loc=Virtual+Middlebury',
+            },
+            {
+              'label': 'Outlook.com',
+              'aria-label': 'Add to Outlook.com Calendar',
+              'addtocal-type': 'web_outlook',
+              'url': 'https://outlook.live.com/calendar/deeplink/compose?path=/calendar/action/compose&amp;rru=addevent&amp;startdt=2020-12-07T21:15:00Z&amp;enddt=2020-12-07T22:00:00Z&amp;subject=When+Galaxies+Collide&amp;body=%28%3Ca+href%3D%22https%3A%2F%2Fsaw.middlebury.edu%2F%7Eafranco%2Fdrupal%2Fevents%2Fevent%2Fwhen-galaxies-collide-2020-12-07%22%3EEvent+Details%3C%2Fa%3E%29%0D%0A%0D%0A%3Cp%3EThe+galaxies+we+see+in+the+universe+today+formed+through+a+hierarchical+process+of+smaller+galaxies+merging+together%2C+often+multiple+times%2C+over+billions+of+years.+During+these+mergers%2C+the+supermassive+black+holes+residing+in+the+galaxies%E2%80%99+centers+also+merge.+In+2015%2C+the+%3Cspan+class%3D%22caps%22%3ELIGO%3C%2Fspan%3E+experiment+detected%2C+for+the+first+time%2C+gravitational+waves+from+the+mergers+of+small+black+holes+%E2%80%93+but+what+about+the+supermassive+ones+in+the+centers+of+merging+galaxies%3F+How+will+we+detect+those%3F+And+where+should+we+look+to+find+these+events%3F+I+will+present+a+new+project+that+I+am+developing+to+answer+these+questions+and+identify+merging+galaxies+and+their+supermassive+black%26nbsp%3Bholes.%3C%2Fp%3E%0A%3Cp%3EEilat+Glikman+%28B.A.%2C+Rutgers+University%3B+PhD%2C+Columbia+University%3B+%3Cspan+class%3D%22caps%22%3ENSF%3C%2Fspan%3E+Astronomy+and+Astrophysics+Postdoctoral+Fellow%2C+Yale+University%29+is+an+astrophysicist+who+has+been+on+the+faculty+at+Middlebury+since+2013.+She+uses+observations+from+ground-+and+space-based+telescopes+across+the+electromagnetic+spectrum+to+study+how+black+holes+grow+in+distant+galaxies+and+their+impact+on+their+environment.+She+has+published+dozens+of+peer-reviewed+articles+on+this+subject+and+was+featured+in+a+%3Cspan+class%3D%22caps%22%3EPBS%3C%2Fspan%3E-%3Cspan+class%3D%22caps%22%3ENOVA%3C%2Fspan%3E+program+on+black+holes+in%26nbsp%3B2018.%3C%2Fp%3E%0A%3Cp%3EHosted+by+Caitlin+Myers%2C+John+G.+McCullough+Professor+of%26nbsp%3BEconomics.%3C%2Fp%3E%0A%3Cp%3ESee+the+Faculty+at+Home+website+for+additional+information%2C+including+how+to+register+for+this+free+event%3A+%3Ca+href%3D%22https%3A%2F%2Fwww.middlebury.edu%2Foffice%2Fprovost%2Ffaculty-home%22%3Ehttps%3A%2F%2Fwww.middlebury.edu%2Foffice%2Fprovost%2Ffaculty-home%3C%2Fa%3E%3C%2Fp%3E&amp;location=Virtual+Middlebury',
+            },
+            {
+              'label': 'iCal / MS Outlook',
+              'aria-label': 'Add to iCal / MS Outlook',
+              'addtocal-type': 'ics',
+              'url': 'data:text/calendar;charset=utf8;base64,QkVHSU46VkNBTEVOREFSDQpWRVJTSU9OOjIuMA0KQkVHSU46VkVWRU5UDQpVSUQ6MGM4YmU0NzczZjRjMTk3YTA3YWUwNDMxODlhNzJjZGYNClNVTU1BUlk6V2hlbiBHYWxheGllcyBDb2xsaWRlDQpEVFNUQVJUO1RaSUQ9QW1lcmljYS9OZXdfWW9yazoyMDIwMTIwN1QxNjE1MDANCkRURU5EO1RaSUQ9QW1lcmljYS9OZXdfWW9yazoyMDIwMTIwN1QxNzAwMDANCkRFU0NSSVBUSU9OOig8YSBocmVmPSJodHRwczovL3Nhdy5taWRkbGVidXJ5LmVkdS9+YWZyYW5jby9kcnVwYWwvZXZlbnRzL2V2ZW50L3doZW4tZ2FsYXhpZXMtY29sbGlkZS0yMDIwLTEyLTA3Ij5FdmVudCBEZXRhaWxzPC9hPilcclxuXHJcbjxwPlRoZSBnYWxheGllcyB3ZSBzZWUgaW4gdGhlIHVuaXZlcnNlIHRvZGF5IGZvcm1lZCB0aHJvdWdoIGEgaGllcmFyY2hpY2FsIHByb2Nlc3Mgb2Ygc21hbGxlciBnYWxheGllcyBtZXJnaW5nIHRvZ2V0aGVyXCwgb2Z0ZW4gbXVsdGlwbGUgdGltZXNcLCBvdmVyIGJpbGxpb25zIG9mIHllYXJzLiBEdXJpbmcgdGhlc2UgbWVyZ2Vyc1wsIHRoZSBzdXBlcm1hc3NpdmUgYmxhY2sgaG9sZXMgcmVzaWRpbmcgaW4gdGhlIGdhbGF4aWVz4oCZIGNlbnRlcnMgYWxzbyBtZXJnZS4gSW4gMjAxNVwsIHRoZSA8c3BhbiBjbGFzcz0iY2FwcyI+TElHTzwvc3Bhbj4gZXhwZXJpbWVudCBkZXRlY3RlZFwsIGZvciB0aGUgZmlyc3QgdGltZVwsIGdyYXZpdGF0aW9uYWwgd2F2ZXMgZnJvbSB0aGUgbWVyZ2VycyBvZiBzbWFsbCBibGFjayBob2xlcyDigJMgYnV0IHdoYXQgYWJvdXQgdGhlIHN1cGVybWFzc2l2ZSBvbmVzIGluIHRoZSBjZW50ZXJzIG9mIG1lcmdpbmcgZ2FsYXhpZXM/IEhvdyB3aWxsIHdlIGRldGVjdCB0aG9zZT8gQW5kIHdoZXJlIHNob3VsZCB3ZSBsb29rIHRvIGZpbmQgdGhlc2UgZXZlbnRzPyBJIHdpbGwgcHJlc2VudCBhIG5ldyBwcm9qZWN0IHRoYXQgSSBhbSBkZXZlbG9waW5nIHRvIGFuc3dlciB0aGVzZSBxdWVzdGlvbnMgYW5kIGlkZW50aWZ5IG1lcmdpbmcgZ2FsYXhpZXMgYW5kIHRoZWlyIHN1cGVybWFzc2l2ZSBibGFjayZuYnNwXDtob2xlcy48L3A+XG48cD5FaWxhdCBHbGlrbWFuIChCLkEuXCwgUnV0Z2VycyBVbml2ZXJzaXR5XDsgUGhEXCwgQ29sdW1iaWEgVW5pdmVyc2l0eVw7IDxzcGFuIGNsYXNzPSJjYXBzIj5OU0Y8L3NwYW4+IEFzdHJvbm9teSBhbmQgQXN0cm9waHlzaWNzIFBvc3Rkb2N0b3JhbCBGZWxsb3dcLCBZYWxlIFVuaXZlcnNpdHkpIGlzIGFuIGFzdHJvcGh5c2ljaXN0IHdobyBoYXMgYmVlbiBvbiB0aGUgZmFjdWx0eSBhdCBNaWRkbGVidXJ5IHNpbmNlIDIwMTMuIFNoZSB1c2VzIG9ic2VydmF0aW9ucyBmcm9tIGdyb3VuZC0gYW5kIHNwYWNlLWJhc2VkIHRlbGVzY29wZXMgYWNyb3NzIHRoZSBlbGVjdHJvbWFnbmV0aWMgc3BlY3RydW0gdG8gc3R1ZHkgaG93IGJsYWNrIGhvbGVzIGdyb3cgaW4gZGlzdGFudCBnYWxheGllcyBhbmQgdGhlaXIgaW1wYWN0IG9uIHRoZWlyIGVudmlyb25tZW50LiBTaGUgaGFzIHB1Ymxpc2hlZCBkb3plbnMgb2YgcGVlci1yZXZpZXdlZCBhcnRpY2xlcyBvbiB0aGlzIHN1YmplY3QgYW5kIHdhcyBmZWF0dXJlZCBpbiBhIDxzcGFuIGNsYXNzPSJjYXBzIj5QQlM8L3NwYW4+LTxzcGFuIGNsYXNzPSJjYXBzIj5OT1ZBPC9zcGFuPiBwcm9ncmFtIG9uIGJsYWNrIGhvbGVzIGluJm5ic3BcOzIwMTguPC9wPlxuPHA+SG9zdGVkIGJ5IENhaXRsaW4gTXllcnNcLCBKb2huIEcuIE1jQ3VsbG91Z2ggUHJvZmVzc29yIG9mJm5ic3BcO0Vjb25vbWljcy48L3A+XG48cD5TZWUgdGhlIEZhY3VsdHkgYXQgSG9tZSB3ZWJzaXRlIGZvciBhZGRpdGlvbmFsIGluZm9ybWF0aW9uXCwgaW5jbHVkaW5nIGhvdyB0byByZWdpc3RlciBmb3IgdGhpcyBmcmVlIGV2ZW50OiA8YSBocmVmPSJodHRwczovL3d3dy5taWRkbGVidXJ5LmVkdS9vZmZpY2UvcHJvdm9zdC9mYWN1bHR5LWhvbWUiPmh0dHBzOi8vd3d3Lm1pZGRsZWJ1cnkuZWR1L29mZmljZS9wcm92b3N0L2ZhY3VsdHktaG9tZTwvYT48L3A+DQpMT0NBVElPTjpWaXJ0dWFsIE1pZGRsZWJ1cnkNCkVORDpWRVZFTlQNCkVORDpWQ0FMRU5EQVI=',
+            },
+          ],
+        } %}
+      {% endset %}
+      {% include 'share.twig' with {
+        'additional': [addtocal],
+      } %}
+    </div>
+
+    <section class="section" aria-labelledby="midd-profile-section-interests-label">
+      <h2 class="section__title" id="midd-profile-section-interests-label">Contact Organizer</h2>
+      <p>
+        Testing McTesterson<br>
+        <a href="mailto:" class="link-underline">testing@example.com</a><br>
+        <a href="tel:" class="link-underline">555-555-5555</a>
+      </p>
+    </section>
+
+  {% endblock %}
+{% endembed %}

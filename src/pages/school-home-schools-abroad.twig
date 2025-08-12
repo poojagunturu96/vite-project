@@ -1,0 +1,50 @@
+{% extends 'layouts/school-home.twig' %}
+
+{% set theme = 'sa' %}
+{% set is_front = true %}
+
+{% block content %}
+  {% include 'paragraphs/mega-cta.twig' with {
+    pin: 'left-bottom',
+    hero: true,
+    caption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+  } %}
+
+  {% include 'paragraphs/school-explorer.twig' %}
+
+  {% include 'paragraphs/media-group.twig' with {
+    title: 'Media group',
+    blurb: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus
+        quam optio ratione labore possimus iusto corrupti vero fugiat explicabo
+        officiis ex, a sunt obcaecati molestias voluptate eum earum ipsam
+        accusantium.',
+    media_content_items : ['video', 'image', 'image', 'audio', 'video']
+  } %}
+
+  {# {% include 'paragraphs/video-group.twig' %} #}
+
+  {% include 'paragraphs/themed-panel.twig' with {
+    main_title: true,
+    main_article: true,
+    main_article_cta: true,
+    main_article_title_link: true,
+    subarticles: 3,
+  } %}
+
+  {% include 'paragraphs/spotlight.twig' %}
+
+  {% include 'paragraphs/card-carousel.twig' with {
+    colors: true,
+    randomize: not env.test
+  } %}
+
+  {% include 'paragraphs/text-short.twig' %}
+
+  {% include 'paragraphs/video.twig' %}
+
+  {% include 'paragraphs/announcement.twig' %}
+
+  {% include 'paragraphs/mega-cta.twig' %}
+
+  {% include 'paragraphs/cta-group.twig' %}
+{% endblock %}

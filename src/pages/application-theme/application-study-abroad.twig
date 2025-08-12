@@ -1,0 +1,137 @@
+{% extends "layouts/application-layout.twig" %}
+
+{% set app_layout_full_width = false %}
+{% set app_title = 'Middlebury Study Abroad Courses' %}
+{% set app_menu_items = [] %}
+
+{% set page_header = {
+  title: 'New Search',
+  breadcrumb: [
+    { text: 'Middlebury' },
+    { text: 'Middlebury Study Abroad Courses' }
+  ],
+} %}
+
+{% block page %}
+  {% embed 'partials/sidebar-layout.twig' %}
+    {% block nav %}
+      {% include 'partials/page-nav.twig' with {
+        label: 'Course Information Database',
+        items: [
+          {
+            text: 'New Search',
+            href: '#',
+            active: true
+          }
+        ]
+      } %}
+    {% endblock %}
+    {% block content %}
+      <div class="paragraphs">
+        <div class="paragraph--text typography">
+          <div data-drupal-messages-fallback="" class="hidden"></div>
+          <p>*Apply Search Criteria button is&nbsp;below</p>
+
+
+          <form action="/study-abroad-courses/search-results" method="get" id="views-exposed-form-courses-study-abroad-courses" accept-charset="UTF-8">
+            <div class="form-group">
+              <label class="label" for="edit-field-major-minor-target-id">Major/Minor</label>
+              <select class="form-control" data-drupal-selector="edit-field-major-minor-target-id" name="field_major_minor_target_id[]" id="edit-field-major-minor-target-id" tabindex="-1">
+                <option value="461">American Studies</option>
+                <option value="501">Anthropology</option>
+                <option value="504">Arabic</option>
+                <option value="436">Biochemistry</option>
+                <option value="458">Biology</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="label" for="edit-field-approving-department-target-id">Approving Department</label>
+              <select class="form-control" data-drupal-selector="edit-field-approving-department-target-id" name="field_approving_department_target_id[]" id="edit-field-approving-department-target-id" data-once="chosenBef chosen" tabindex="-1">
+                <option value="408">AMST</option>
+                <option value="582">ANTH</option>
+                <option value="585">ARBC</option>
+                <option value="386">ART</option>
+                <option value="406">BIOL</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="label" for="edit-field-stand-alone-minor-target-id">Stand-Alone Minor</label>
+              <select class="form-control" data-drupal-selector="edit-field-stand-alone-minor-target-id" name="field_stand_alone_minor_target_id[]" id="edit-field-stand-alone-minor-target-id" data-once="chosenBef chosen" tabindex="-1">
+                <option value="576">African American Studies</option>
+                <option value="579">Environmental Studies</option>
+                <option value="573">Food Studies</option>
+                <option value="473">Global Health</option>
+                <option value="475">Linguistics</option>
+                <option value="474">Portuguese</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="label" for="edit-field-academic-distribution-target-id">Academic Distribution</label>
+              <select class="form-control" data-drupal-selector="edit-field-academic-distribution-target-id" name="field_academic_distribution_target_id[]" id="edit-field-academic-distribution-target-id" data-once="chosenBef chosen" tabindex="-1">
+                <option value="414">ART</option>
+                <option value="420">DED</option>
+                <option value="413">HIS</option>
+                <option value="418">LIT</option>
+                <option value="419">LNG</option>
+                <option value="417">PHL</option>
+                <option value="416">SCI</option>
+                <option value="415">SOC</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="label" for="edit-field-cultures-civilization-target-id">Cultures &amp; Civilizations</label>
+              <select class="form-control" data-drupal-selector="edit-field-cultures-civilization-target-id" name="field_cultures_civilization_target_id[]" id="edit-field-cultures-civilization-target-id" data-once="chosenBef chosen" tabindex="-1">
+                <option value="373">AAL</option>
+                <option value="609">AMR</option>
+                <option value="371">CMP</option>
+                <option value="370">EUR</option>
+                <option value="612">MDE</option>
+                <option value="603">NOA</option>
+                <option value="372">NOR</option>
+                <option value="606">SAF</option>
+                <option value="374">SOA</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="label" for="edit-field-host-university-target-id">Host University</label>
+              <select class="form-control" data-drupal-selector="edit-field-host-university-target-id" name="field_host_university_target_id[]" id="edit-field-host-university-target-id" data-once="chosenBef chosen" tabindex="-1">
+                <option value="169">Bogazici University</option>
+                <option value="154">Boston University</option>
+                <option value="225">Central Saint Martins College of Art and Design</option>
+                <option value="206">Centre Madeleine</option>
+                <option value="178">Ecole Spéciale d'Architecture</option>
+                <option value="180">Freie Universitat Berlin</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="label" for="edit-field-city-target-id">City</label>
+              <select class="form-control" data-drupal-selector="edit-field-city-target-id" name="field_city_target_id[]" id="edit-field-city-target-id" data-once="chosenBef chosen" tabindex="-1">
+                <option value="306">Uppsala</option>
+                <option value="756">Utrecht</option>
+                <option value="248">Valdivia</option>
+                <option value="264">Valparaíso</option>
+                <option value="286">Vina del Mar</option>
+                <option value="304">Warsaw</option>
+                <option value="307">Xalapa</option>
+                <option value="267">Yaounde</option>
+                <option value="625">Yaroslavl</option>
+                <option value="318">Zanzibar</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="label" for="edit-field-country-target-id">Country</label>
+              <select class="form-control" data-drupal-selector="edit-field-country-target-id" name="field_country_target_id[]" id="edit-field-country-target-id" data-once="chosenBef chosen" tabindex="-1">
+                <option value="328">Argentina</option>
+                <option value="322">Australia</option>
+                <option value="661">Bhutan</option>
+                <option value="363">Botswana</option>
+                <option value="339">Brazil</option>
+              </select>
+            </div>
+            <input data-drupal-selector="edit-submit-courses" type="submit" id="edit-submit-courses" value="Apply" class="button button--primary js-form-submit">
+          </form>
+        </div>
+      </div>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

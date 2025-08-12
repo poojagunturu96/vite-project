@@ -1,0 +1,112 @@
+{% extends 'layouts/school-layout.twig' %}
+
+{% set page_header = {
+  title: 'Collection',
+  breadcrumb: [
+    {
+      text: 'Collection Name'
+    }
+  ]
+} %}
+
+{% block page %}
+  {% embed 'partials/sidebar-layout.twig'
+    with {
+      full_column: true
+    }
+  %}
+    {% block nav %}
+      {% include 'partials/page-nav.twig' with {
+        label: 'Argentina',
+        items: [
+          {
+            text: 'Curriculum',
+            href: '#'
+          },
+          {
+            text: 'Faculty',
+            href: '#'
+          },
+          {
+            text: 'Financing Your Education',
+            href: '#'
+          }
+        ]
+      } %}
+
+      <form>
+        <div class="filters">
+          <div class="filters__header">
+            <h2 class="filters__title">
+              Filters
+            </h2>
+            <a href="" class="button button--sm px-0">
+              {% include 'partials/icon.twig' with {
+                name: 'redo',
+                class: 'mr-1'
+              } %}Clear
+            </a>
+          </div>
+          {% include 'partials/filter.twig' with {
+            title: 'Medium',
+            items: [
+              {
+                text: 'Photograph'
+              },
+              {
+                text: 'Short Story'
+              },
+              {
+                text: 'Poem'
+              },
+              {
+                text: 'Audio'
+              },
+              {
+                text: 'Video'
+              }
+            ]
+          } %}
+          {% include 'partials/filter.twig' with {
+            title: 'Decades',
+            items: [
+              {
+                text: '1980-90'
+              },
+              {
+                text: '1970-80'
+              },
+              {
+                text: '1960-70'
+              },
+              {
+                text: '1940-50'
+              }
+            ]
+          } %}
+
+          <input type="submit" class="button button--primary button--block" value="Apply Filters"/>
+        </div>
+      </form>
+    {% endblock %}
+    {% block content %}
+      {% include 'partials/active-filters.twig' %}
+
+      <div class="mb-8">
+        {% include 'partials/collection-card.twig' with {
+          featured: true
+        } %}
+      </div>
+
+      <ul class="col-count-md-2 col-count-xl-3">
+        {% for item in 0..7 %}
+          <li class="w-100 d-inline-block mb-8">
+            {% include 'partials/collection-card.twig' with {} %}
+          </li>
+        {% endfor %}
+      </ul>
+
+      {% include 'partials/pagination.twig' %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

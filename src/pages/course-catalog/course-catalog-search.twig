@@ -1,0 +1,597 @@
+{% extends 'course-hub-layout.twig' %}
+
+{% block layout_header %}
+  {% include 'partials/app-header.twig' with {
+    title: 'Course Catalog',
+    items: [
+      {
+        text: 'My Terms',
+        icon: 'chevron-down',
+        icon_class: 'd-none d-lg-inline',
+        active: true,
+        items: [
+          {
+            text: 'Fall 2019'
+          },
+          {
+            text: 'Fall 2019'
+          },
+          {
+            text: 'Fall 2019'
+          },
+          {
+            text: 'Fall 2019'
+          }
+        ]
+      },
+      {
+        text: 'Browse Course Sites'
+      },
+      {
+        text: 'Hub Help'
+      },
+      {
+        text: 'Course Catalog',
+        external: true
+      },
+      {
+        text: 'Schedule Builder',
+        external: true
+      },
+      {
+        text: 'Academic Calendar'
+      }
+    ],
+    search: true
+  } %}
+{% endblock %}
+
+{% set page_header = {
+  title: 'Search in Middlebury College Spring 2025',
+  breadcrumb: [
+    {
+      text: 'All Catalogs'
+    },
+    {
+      text: 'Middlebury College'
+    }
+  ]
+} %}
+
+{% block nav %}
+  {% include 'partials/page-nav.twig' with {
+    label: 'All Catalogs',
+    items: [
+      {
+        text: 'Middlebury College',
+        href: '#',
+        items: [
+          {
+            text: 'Search',
+            href: '#'
+          },
+          {
+            text: 'Course & Requirements',
+            href: '#'
+          }
+        ]
+      },
+      {
+        text: 'My Schedule Planner'
+      }
+    ]
+  } %}
+{% endblock %}
+
+{% block content %}
+  <form action="http://learn.middlebury.edu/l/74172/2016-04-04/4fsyft" method="post">
+    <input type="hidden" name="success_location" value="http://www.middlebury.edu/language-schools/thank-you">
+    <div class="catalog-search row row--sm-gutters">
+      <div class="col-md-6 form-group">
+        <label for="by-term" class="label">By Term</label>
+        <select class="form-control" id="by-term" name="by-term" required>
+          <option value="" disabled selected>Choose...</option>
+          <option value="ANY">Any Term</option>
+          <option value="term/202620">Spring 2026</option>
+          <option value="term/202610">Winter 2026</option>
+          <option value="term/202590">Fall 2025</option>
+          <option value="term/202520" selected="selected">Spring 2025</option>
+          <option value="term/202510">Winter 2025</option>
+          <option value="term/202490">Fall 2024</option>
+          <option value="term/202465">Summer Study 2024</option>
+          <option value="term/202420">Spring 2024</option>
+          <option value="term/202410">Winter 2024</option>
+          <option value="term/202390">Fall 2023</option>
+          <option value="term/202365">Summer Study 2023</option>
+          <option value="term/202320">Spring 2023</option>
+          <option value="term/202310">Winter 2023</option>
+          <option value="term/202290">Fall 2022</option>
+          <option value="term/202265">Summer Study 2022</option>
+          <option value="term/202220">Spring 2022</option>
+          <option value="term/202210">Winter 2022</option>
+          <option value="term/202190">Fall 2021</option>
+          <option value="term/202120">Spring 2021</option>
+          <option value="term/202110">Winter 2021</option>
+          <option value="term/202090">Fall 2020</option>
+          <option value="term/202065">Summer Study 2020</option>
+          <option value="term/202020">Spring 2020</option>
+          <option value="term/202010">Winter 2020</option>
+          <option value="term/201990">Fall 2019</option>
+          <option value="term/201965">Summer Study 2019</option>
+          <option value="term/201920">Spring 2019</option>
+          <option value="term/201910">Winter 2019</option>
+          <option value="term/201890">Fall 2018</option>
+          <option value="term/201865">Summer Study 2018</option>
+          <option value="term/201820">Spring 2018</option>
+          <option value="term/201810">Winter 2018</option>
+          <option value="term/201790">Fall 2017</option>
+          <option value="term/201765">Summer Study 2017</option>
+          <option value="term/201720">Spring 2017</option>
+          <option value="term/201710">Winter 2017</option>
+          <option value="term/201690">Fall 2016</option>
+          <option value="term/201665">Summer Study 2016</option>
+          <option value="term/201620">Spring 2016</option>
+          <option value="term/201610">Winter 2016</option>
+          <option value="term/201590">Fall 2015</option>
+          <option value="term/201565">Summer Study 2015</option>
+          <option value="term/201520">Spring 2015</option>
+          <option value="term/201510">Winter 2015</option>
+          <option value="term/201490">Fall 2014</option>
+          <option value="term/201420">Spring 2014</option>
+          <option value="term/201410">Winter 2014</option>
+          <option value="term/201390">Fall 2013</option>
+          <option value="term/201320">Spring 2013</option>
+          <option value="term/201310">Winter 2013</option>
+          <option value="term/201290">Fall 2012</option>
+          <option value="term/201220">Spring 2012</option>
+          <option value="term/201210">Winter 2012</option>
+          <option value="term/201190">Fall 2011</option>
+          <option value="term/201120">Spring 2011</option>
+          <option value="term/201110">Winter 2011</option>
+          <option value="term/201090">Fall 2010</option>
+          <option value="term/201020">Spring 2010</option>
+          <option value="term/201010">Winter 2010</option>
+          <option value="term/200990">Fall 2009</option>
+          <option value="term/200920">Spring 2009</option>
+          <option value="term/200910">Winter 2009</option>
+          <option value="term/200890">Fall 2008</option>
+          <option value="term/200820">Spring 2008</option>
+          <option value="term/200810">Winter 2008</option>
+          <option value="term/200790">Fall 2007</option>
+          <option value="term/200720">Spring 2007</option>
+          <option value="term/200710">Winter 2007</option>
+          <option value="term/200690">Fall 2006</option>
+          <option value="term/200620">Spring 2006</option>
+          <option value="term/200610">Winter 2006</option>
+          <option value="term/200590">Fall 2005</option>
+          <option value="term/200520">Spring 2005</option>
+          <option value="term/200510">Winter 2005</option>
+          <option value="term/200490">Fall 2004</option>
+          <option value="term/200420">Spring 2004</option>
+          <option value="term/200410">Winter 2004</option>
+          <option value="term/200390">Fall 2003</option>
+        </select>
+      </div>
+      <div class="col-md-6 form-group">
+        <label for="department" class="label">By Subject/Department</label>
+        <select class="form-control" id="department" name="department">
+          <option value="">Any Subject or Department</option>
+          <optgroup label="Subjects">
+            <option value="topic/subject/AMCV">American Civilization</option>
+            <option value="topic/subject/AMLT">American Literature</option>
+            <option value="topic/subject/AMST">American Studies</option>
+            <option value="topic/subject/ANTH">Anthropology</option>
+            <option value="topic/subject/ARBC">Arabic</option>
+            <option value="topic/subject/ARDV">Arts Division</option>
+            <option value="topic/subject/BIOL">Biology</option>
+            <option value="topic/subject/BLST">Black Studies</option>
+            <option value="topic/subject/CHEM">Chemistry and Biochemistry</option>
+            <option value="topic/subject/CHNS">Chinese</option>
+            <option value="topic/subject/CLAS">Classics</option>
+            <option value="topic/subject/CMLT">Comparative Literature</option>
+            <option value="topic/subject/CSCI">Computer Science</option>
+            <option value="topic/subject/CRWR">Creative Writing</option>
+            <option value="topic/subject/DANC">Dance</option>
+            <option value="topic/subject/ECSC">Earth &amp; Climate Sciences</option>
+            <option value="topic/subject/ECON">Economics</option>
+            <option value="topic/subject/EDST">Education Studies</option>
+            <option value="topic/subject/ENGL">English</option>
+            <option value="topic/subject/ENAM">English &amp; American Literatures</option>
+            <option value="topic/subject/ENVS">Environmental Studies</option>
+            <option value="topic/subject/FMMC">Film &amp; Media Culture</option>
+            <option value="topic/subject/FYSE">First Year Seminar</option>
+            <option value="topic/subject/FOOD">Food Studies</option>
+            <option value="topic/subject/FREN">French</option>
+            <option value="topic/subject/GSFS">Gender Sexuality &amp;Fem. Studies</option>
+            <option value="topic/subject/GEOG">Geography</option>
+            <option value="topic/subject/GEOL">Geology</option>
+            <option value="topic/subject/GRMN">German</option>
+            <option value="topic/subject/GHLT">Global Health</option>
+            <option value="topic/subject/GREK">Greek</option>
+            <option value="topic/subject/HEBR">Hebrew (Classical)</option>
+            <option value="topic/subject/HEBM">Hebrew (Modern)</option>
+            <option value="topic/subject/HIST">History</option>
+            <option value="topic/subject/HARC">History of Art &amp; Architecture</option>
+            <option value="topic/subject/HUDV">Humanities Division</option>
+            <option value="topic/subject/INDE">Independent Scholar</option>
+            <option value="topic/subject/IPEC">Int'l Politics &amp; Economics</option>
+            <option value="topic/subject/INTD">Interdepartmental</option>
+            <option value="topic/subject/IGST">International &amp; Global Studies</option>
+            <option value="topic/subject/INTL">International Studies</option>
+            <option value="topic/subject/INTN">Internship</option>
+            <option value="topic/subject/ITAL">Italian</option>
+            <option value="topic/subject/JAPN">Japanese</option>
+            <option value="topic/subject/JWST">Jewish Studies</option>
+            <option value="topic/subject/LATN">Latin</option>
+            <option value="topic/subject/LNGT">Linguistics</option>
+            <option value="topic/subject/LITS">Literary Studies</option>
+            <option value="topic/subject/LITP">Literature Program</option>
+            <option value="topic/subject/MATH">Mathematics</option>
+            <option value="topic/subject/MIIS">Middlebury Institute</option>
+            <option value="topic/subject/MSAB">Middlebury School Abroad</option>
+            <option value="topic/subject/MBBC">Molecular Biology  &amp; Biochem</option>
+            <option value="topic/subject/MUSC">Music</option>
+            <option value="topic/subject/NSCI">Neuroscience</option>
+            <option value="topic/subject/PHIL">Philosophy</option>
+            <option value="topic/subject/PHED">Physical Education</option>
+            <option value="topic/subject/PHYS">Physics</option>
+            <option value="topic/subject/PSCI">Political Science</option>
+            <option value="topic/subject/PGSE">Portuguese</option>
+            <option value="topic/subject/PSYC">Psychology</option>
+            <option value="topic/subject/RELI">Religion</option>
+            <option value="topic/subject/RUSS">Russian</option>
+            <option value="topic/subject/SOCI">Sociology</option>
+            <option value="topic/subject/SOAN">Sociology/Anthropology</option>
+            <option value="topic/subject/SISP">Sophomore Integrated Studies</option>
+            <option value="topic/subject/SPAN">Spanish</option>
+            <option value="topic/subject/STAT">Statistics</option>
+            <option value="topic/subject/STLD">Student Led (Winter)</option>
+            <option value="topic/subject/ART">Studio Art</option>
+            <option value="topic/subject/SUMR">Summer Study</option>
+            <option value="topic/subject/TEDU">Teacher Education</option>
+            <option value="topic/subject/THEA">Theatre</option>
+            <option value="topic/subject/WNTR">Winter Term</option>
+            <option value="topic/subject/WAGS">Women's &amp; Gender Studies</option>
+            <option value="topic/subject/WRPR">Writing and Rhetoric Program</option>
+          </optgroup>
+          <optgroup label="Departments">
+            <option value="topic/department/ALAC">Amer Lit &amp; Civilization</option>
+            <option value="topic/department/AMLT">Amer Lit &amp; Civilization</option>
+            <option value="topic/department/ANTH">Anthropology</option>
+            <option value="topic/department/ARBC">Arabic</option>
+            <option value="topic/department/SAAR">Argentina</option>
+            <option value="topic/department/ARDV">Arts Division</option>
+            <option value="topic/department/BIOL">Biology</option>
+            <option value="topic/department/SABR">Brazil</option>
+            <option value="topic/department/CHEM">Chemistry &amp; Biochemistry</option>
+            <option value="topic/department/SACL">Chile</option>
+            <option value="topic/department/CHNS">Chinese</option>
+            <option value="topic/department/CLAS">Classics</option>
+            <option value="topic/department/CMLT">Comparative Literature</option>
+            <option value="topic/department/CSCI">Computer Science</option>
+            <option value="topic/department/DANC">Dance</option>
+            <option value="topic/department/DPPG">Development Practice &amp; Policy</option>
+            <option value="topic/department/ECSC">Earth &amp; Climate Sciences</option>
+            <option value="topic/department/ECON">Economics</option>
+            <option value="topic/department/EDST">Education Studies</option>
+            <option value="topic/department/ENGL">English</option>
+            <option value="topic/department/ENAM">English &amp; American Literatures</option>
+            <option value="topic/department/FMMC">Film &amp; Media Culture</option>
+            <option value="topic/department/FYSE">First-Year Seminar Program</option>
+            <option value="topic/department/FOOD">Food Studies</option>
+            <option value="topic/department/FREN">French</option>
+            <option value="topic/department/GEOG">Geography</option>
+            <option value="topic/department/GEOL">Geology</option>
+            <option value="topic/department/GRMN">German</option>
+            <option value="topic/department/SAGN">Germany</option>
+            <option value="topic/department/GHLT">Global Health</option>
+            <option value="topic/department/HIST">History</option>
+            <option value="topic/department/HARC">History of Art &amp; Architecture</option>
+            <option value="topic/department/HUDV">Humanities Division</option>
+            <option value="topic/department/INDE">Independent Scholar Program</option>
+            <option value="topic/department/INTD">Interdepartmental</option>
+            <option value="topic/department/IGST">International &amp; Global Studies</option>
+            <option value="topic/department/INTN">Internships</option>
+            <option value="topic/department/IEPG">Intl Environmental Policy</option>
+            <option value="topic/department/ITAL">Italian</option>
+            <option value="topic/department/JAPN">Japanese Studies</option>
+            <option value="topic/department/JWST">Jewish Studies</option>
+            <option value="topic/department/SAJO">Jordan</option>
+            <option value="topic/department/LANG">Language &amp; Intercultural Study</option>
+            <option value="topic/department/TCHG">Language Education</option>
+            <option value="topic/department/LNGT">Linguistics</option>
+            <option value="topic/department/LITP">Literature Program</option>
+            <option value="topic/department/SPLH">Luso-Hispanic Studies</option>
+            <option value="topic/department/MATH">Mathematics</option>
+            <option value="topic/department/MAST">Mathematics &amp; Statistics</option>
+            <option value="topic/department/HEBM">Modern Hebrew</option>
+            <option value="topic/department/SAMR">Morocco</option>
+            <option value="topic/department/MUSC">Music</option>
+            <option value="topic/department/NPTG">Nonproliferatn&amp;Terrorsm Stdies</option>
+            <option value="topic/department/PHIL">Philosophy</option>
+            <option value="topic/department/PHED">Physical Education</option>
+            <option value="topic/department/PHYS">Physics</option>
+            <option value="topic/department/PSCI">Political Science</option>
+            <option value="topic/department/PGSE">Portuguese (LS)</option>
+            <option value="topic/department/GSFS">PrgGender/Sexuality/Fem. Study</option>
+            <option value="topic/department/AMCV">Prog in American Civilization</option>
+            <option value="topic/department/ENVS">Prog in Environmental Studies</option>
+            <option value="topic/department/IPEC">Prog in Int'l Politics &amp; Econ</option>
+            <option value="topic/department/INTL">Prog in International Studies</option>
+            <option value="topic/department/MBBC">Prog in Molecular Bio &amp; Biochm</option>
+            <option value="topic/department/NSCI">Prog in Neuroscience</option>
+            <option value="topic/department/TEDU">Prog in Teacher Education</option>
+            <option value="topic/department/WAGS">Prog in Women's &amp; Gender Study</option>
+            <option value="topic/department/AMST">Program in American Studies</option>
+            <option value="topic/department/BLST">Program in Black Studies</option>
+            <option value="topic/department/LITS">Program in Literary Studies</option>
+            <option value="topic/department/ART">Program in Studio Art</option>
+            <option value="topic/department/PSYC">Psychology</option>
+            <option value="topic/department/RELI">Religion</option>
+            <option value="topic/department/RUSS">Russian</option>
+            <option value="topic/department/SOCI">Sociology</option>
+            <option value="topic/department/SOAN">Sociology/Anthropology</option>
+            <option value="topic/department/SISP">Sophmore Integrated Studies Pr</option>
+            <option value="topic/department/SPAN">Spanish (&amp; Portuguese UG)</option>
+            <option value="topic/department/STLD">Student Led (Winter)</option>
+            <option value="topic/department/SUMR">Summer Study (UG)</option>
+            <option value="topic/department/THEA">Theatre</option>
+            <option value="topic/department/0000">Undeclared/Unknown</option>
+            <option value="topic/department/WRPR">Writing and Rhetoric Program</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="col-md-12 form-group">
+        <label for="keywords" class="label">Keywords</label>
+        <input type="text" class="form-control" name="keywords" id="keywords" aria-describedby="instructions">
+        <p class="f1 font-semibold">By default results only have to match one of the supplied keywords. Use a plus (+) before a word to require it or a minus (-) to exclude it. Use an asterisk (*) as a wildcard.</p>
+      </div>
+
+      <fieldset class="col-md-12 form-group form-group--course-type">
+        <legend class="label">
+          <p class="f2">Type</p>
+          <p class="f1">(Leave all blank for no preference)</p>
+        </legend>
+        <div class="checkbox-group d-flex flex-wrap">
+          {% for item in catalog_search_items.types %}
+            <div class="checkbox checkbox--filter">
+              <input type="checkbox" class="checkbox__input" id="checkbox-type-item-{{loop.index}}" value="genera:offering/{{item.value}}">
+              <label for="checkbox-type-item-{{loop.index}}" id="checkbox-type-label-{{loop.index}}" class="checkbox__label">{{item.type}}</label>
+            </div>
+          {% endfor %}
+        </div>
+      </fieldset>
+
+      <div class="col-12 mb-5" role="tablist">
+        {% set id = random(1234) %}
+        <div class="my-2 catalog-search-item-tab js-catalog-search-item-{{id}}">
+          <a href="#catalog-search-item-label-{{id}}" class="catalog-search-item__link" data-toggle-target=".js-catalog-search-item-{{id}}" aria-expanded="false" aria-controls="catalog-search-item-content-{{id}}" aria-labelledby="catalog-search-item-label-{{id}}" role="tab">
+            <h2 class="catalog-search-item__title">
+              <span id="catalog-search-item-label-{{id}}">Day of the week, Time, Campus</span>
+
+              <span class="catalog-search-item-close">&ndash;</span>
+              <span class="catalog-search-item-open">&#43;</span>
+            </h2>
+          </a>
+          <div role="tabpanel" id="catalog-search-item-content-{{id}}" class="row mx-0 catalog-search-item-content">
+            <fieldset class="col-md-6 form-group">
+              <legend class="label">Day of the week</legend>
+              <div class="checkbox-group d-flex flex-wrap">
+                {% for item in catalog_search_items.days %}
+                  <div class="checkbox checkbox--filter">
+                    <p>{{loop.id}}</p>
+                    <input type="checkbox" class="checkbox__input" id="checkbox-day-item-{{loop.index}}" value="{{item.day}}">
+                    <label for="checkbox-day-item-{{loop.index}}" id="checkbox-day-label-{{loop.index}}" class="checkbox__label">{{item.day}}</label>
+                  </div>
+                {% endfor %}
+              </div>
+              <p class="f1 font-semibold mb-3">Leave all unchecked if no preference.</p>
+              {% include 'partials/form-check.twig' with {
+                id: 'course-catalog-days-inclusive',
+                name: 'days_mode',
+                label: 'Inclusive search - meets on all of the selected days and possibly others',
+                value: 'inclusive',
+              } %}
+              {% include 'partials/form-check.twig' with {
+                id: 'course-catalog-days-exclusive',
+                name: 'da'partials/
+                label: 'Exclusive search - meets only on selected days, not on unselected days',
+                value: 'exclusive',
+              } %}
+            </fieldset>
+
+            <div class="c'partials/rm-group">
+              <label for="last_name" class="label">Time</label>
+              <label class="d-inline-flex">From
+                <select class="form-control ml-2" name="time_start" class="time_select">
+                  <option value="0" selected="selected">Any Time</option>
+                  <option value="1800">12:30 am</option>
+                  <option value="3600">1:00 am</option>
+                  <option value="5400">1:30 am</option>
+                  <option value="7200">2:00 am</option>
+                  <option value="9000">2:30 am</option>
+                  <option value="10800">3:00 am</option>
+                  <option value="12600">3:30 am</option>
+                  <option value="14400">4:00 am</option>
+                  <option value="16200">4:30 am</option>
+                  <option value="18000">5:00 am</option>
+                  <option value="19800">5:30 am</option>
+                  <option value="21600">6:00 am</option>
+                  <option value="23400">6:30 am</option>
+                  <option value="25200">7:00 am</option>
+                  <option value="27000">7:30 am</option>
+                  <option value="28800">8:00 am</option>
+                  <option value="30600">8:30 am</option>
+                  <option value="32400">9:00 am</option>
+                  <option value="34200">9:30 am</option>
+                  <option value="36000">10:00 am</option>
+                  <option value="37800">10:30 am</option>
+                  <option value="39600">11:00 am</option>
+                  <option value="41400">11:30 am</option>
+                  <option value="43200">12:00 pm</option>
+                  <option value="45000">12:30 pm</option>
+                  <option value="46800">1:00 pm</option>
+                  <option value="48600">1:30 pm</option>
+                  <option value="50400">2:00 pm</option>
+                  <option value="52200">2:30 pm</option>
+                  <option value="54000">3:00 pm</option>
+                  <option value="55800">3:30 pm</option>
+                  <option value="57600">4:00 pm</option>
+                  <option value="59400">4:30 pm</option>
+                  <option value="61200">5:00 pm</option>
+                  <option value="63000">5:30 pm</option>
+                  <option value="64800">6:00 pm</option>
+                  <option value="66600">6:30 pm</option>
+                  <option value="68400">7:00 pm</option>
+                  <option value="70200">7:30 pm</option>
+                  <option value="72000">8:00 pm</option>
+                  <option value="73800">8:30 pm</option>
+                  <option value="75600">9:00 pm</option>
+                  <option value="77400">9:30 pm</option>
+                  <option value="79200">10:00 pm</option>
+                  <option value="81000">10:30 pm</option>
+                  <option value="82800">11:00 pm</option>
+                  <option value="84600">11:30 pm</option>
+                </select>
+              </label>
+              <label class="d-inline-flex ml-3">To
+                <select class="form-control ml-2" name="time_end" class="time_select">
+                  <option value="1800">12:30 am</option>
+                  <option value="3600">1:00 am</option>
+                  <option value="5400">1:30 am</option>
+                  <option value="7200">2:00 am</option>
+                  <option value="9000">2:30 am</option>
+                  <option value="10800">3:00 am</option>
+                  <option value="12600">3:30 am</option>
+                  <option value="14400">4:00 am</option>
+                  <option value="16200">4:30 am</option>
+                  <option value="18000">5:00 am</option>
+                  <option value="19800">5:30 am</option>
+                  <option value="21600">6:00 am</option>
+                  <option value="23400">6:30 am</option>
+                  <option value="25200">7:00 am</option>
+                  <option value="27000">7:30 am</option>
+                  <option value="28800">8:00 am</option>
+                  <option value="30600">8:30 am</option>
+                  <option value="32400">9:00 am</option>
+                  <option value="34200">9:30 am</option>
+                  <option value="36000">10:00 am</option>
+                  <option value="37800">10:30 am</option>
+                  <option value="39600">11:00 am</option>
+                  <option value="41400">11:30 am</option>
+                  <option value="43200">12:00 pm</option>
+                  <option value="45000">12:30 pm</option>
+                  <option value="46800">1:00 pm</option>
+                  <option value="48600">1:30 pm</option>
+                  <option value="50400">2:00 pm</option>
+                  <option value="52200">2:30 pm</option>
+                  <option value="54000">3:00 pm</option>
+                  <option value="55800">3:30 pm</option>
+                  <option value="57600">4:00 pm</option>
+                  <option value="59400">4:30 pm</option>
+                  <option value="61200">5:00 pm</option>
+                  <option value="63000">5:30 pm</option>
+                  <option value="64800">6:00 pm</option>
+                  <option value="66600">6:30 pm</option>
+                  <option value="68400">7:00 pm</option>
+                  <option value="70200">7:30 pm</option>
+                  <option value="72000">8:00 pm</option>
+                  <option value="73800">8:30 pm</option>
+                  <option value="75600">9:00 pm</option>
+                  <option value="77400">9:30 pm</option>
+                  <option value="79200">10:00 pm</option>
+                  <option value="81000">10:30 pm</option>
+                  <option value="82800">11:00 pm</option>
+                  <option value="84600">11:30 pm</option>
+                  <option value="86400" selected="selected">Any Time</option>
+                </select>
+              </label>
+            </label>
+          </div>
+
+          <fieldset class="col-md-6 form-group">
+            <legend class="label">
+              <p class="f2">Campus</p>
+              <p class="f1">(Leave all blank for no preference)</p>
+            </legend>
+            <div class="checkbox-group">
+              {% for item in catalog_search_items.campus %}
+                <div class="checkbox checkbox--filter">
+                  <input type="checkbox" class="checkbox__input" id="checkbox-campus-item-{{loop.index}}" value="resource/place/campus/{{item.value}}">
+                  <label for="checkbox-campus-item-{{loop.index}}" id="checkbox-campus-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
+                </div>
+              {% endfor %}
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+      {% set id = random(1234) %}
+      <div class="my-2 catalog-search-item-tab js-catalog-search-item-{{id}}">
+        <a href="#catalog-search-item-label-{{id}}" class="catalog-search-item__link" data-toggle-target=".js-catalog-search-item-{{id}}" aria-expanded="false" aria-controls="catalog-search-item-content-{{id}}" aria-labelledby="catalog-search-item-label-{{id}}" role="tab">
+          <h2 class="catalog-search-item__title">
+            <span id="catalog-search-item-label-{{id}}">Satisfies requirements, Course Modality, Level</span>
+
+            <span class="catalog-search-item-close">&ndash;</span>
+            <span class="catalog-search-item-open">&#43;</span>
+          </h2>
+        </a>
+        <div role="tabpanel" id="catalog-search-item-content-{{id}}" class="row mx-0 catalog-search-item-content">
+          <fieldset class="col-md-6 form-group">
+            <legend class="label">
+              <p class="f2">Satisfies requirements</p>
+              <p class="f1">(Leave all blank for no preference)</p>
+            </legend>
+            <div class="checkbox-group d-flex flex-wrap">
+              {% for item in catalog_search_items.requirements %}
+                <div class="checkbox checkbox--filter">
+                  <input type="checkbox" class="checkbox__input" id="checkbox-req-item-{{loop.index}}" value="topic/requirement/{{item.option}}">
+                  <label for="checkbox-req-item-{{loop.index}}" id="checkbox-req-label-{{loop.index}}" class="checkbox__label">{{item.option}}</label>
+                </div>
+              {% endfor %}
+            </div>
+          </fieldset>
+          <fieldset class="col-md-6 form-group">
+            <legend class="label">
+              <p class="f2">Course Modality</p>
+              <p class="f1">(Leave all blank for no preference)</p>
+            </legend>
+            <div class="checkbox-group">
+              {% for item in catalog_search_items.course_modality %}
+                <div class="checkbox checkbox--filter">
+                  <input type="checkbox" class="checkbox__input" id="checkbox-mod-item-{{loop.index}}" value="topic/instruction_method/{{item.value}}">
+                  <label for="checkbox-mod-item-{{loop.index}}" id="checkbox-mod-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
+                </div>
+              {% endfor %}
+            </div>
+          </fieldset>
+
+          <fieldset class="col-md-6 form-group">
+            <legend class="label">
+              <p class="f2">Level</p>
+              <p class="f1">(Leave all blank for no preference)</p>
+            </legend>
+            <div class="checkbox-group">
+              {% for item in catalog_search_items.level %}
+                <div class="checkbox checkbox--filter">
+                  <input type="checkbox" class="checkbox__input" id="checkbox-level-item-{{loop.index}}" value="topic/level/{{item.value}}">
+                  <label for="checkbox-level-item-{{loop.index}}" id="checkbox-level-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
+                </div>
+              {% endfor %}
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-xl-4 form-group">
+      <input type="submit" value="Search" class="button button--primary d-block d-md-inline-block">
+    </div>
+
+  </div>
+</form>
+{% include 'partials/course-catalog-search-results.twig' %}{% endblock %}'partials/
+'partials/
+'partials/
+'partials/

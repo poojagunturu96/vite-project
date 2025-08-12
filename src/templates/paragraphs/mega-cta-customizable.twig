@@ -1,0 +1,44 @@
+{% set id = random(1234) %}
+
+<div class="paragraph paragraph--full">
+  <div class="container px-0">
+
+    <section class="mega-cta mega-cta--customizable" aria-labelledby="midd-mega-cta-label-{{id}}">
+      <figure class="mega-cta__back">
+        {% include '../partials/img.twig' with {
+          name: 'spotlight'
+        } %}
+        {% if caption %}
+          <figcaption class="mega-cta__caption">
+            {% include '../partials/tooltip.twig' with {
+              light: true,
+              size: 'lg',
+              id: random(1234),
+              label: caption
+            } %}
+          </figcaption>
+        {% endif %}
+      </figure>
+
+      <div class="mega-cta__front mega-cta__front--with-borders" style="--dual-border-color-primary: {{dual_border_color_primary}}; --dual-border-color-secondary: {{dual_border_color_secondary}};">
+        <div class="mega-cta__content mega-cta__content--{{mode}} mega-cta__content--{{pin_content}} px-3 px-lg-5">
+          {% if title %}
+            <h2 class="mega-cta__title font-sans-serif" id="midd-mega-cta-label-{{id}}">{{title|default('What makes Middlebury different?')}}</h2>
+          {% endif %}
+          {% if title_link %}
+            <a href="#" class="mega-cta__link">
+              <h2 class="mega-cta__title font-sans-serif" id="midd-mega-cta-label-{{id}}">{{title_link}}</h2>
+            </a>
+          {% endif %}
+          {% if text %}
+            <p class="mega-cta__text">
+              {{text}}
+            </p>
+          {% endif %}
+          <a class="button button--outline {{mode == "dark" ? " button--light" : " button--primary"}} py-3 px-5 p-lg-3" href="">{{link|default('Apply now')}}</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

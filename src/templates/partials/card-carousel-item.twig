@@ -1,0 +1,56 @@
+<article class="card-carousel-item js-card-carousel-item-{{id}}" aria-labelledby="midd-card-carousel-{{id}}-header">
+
+	<figure class="card-carousel-item__image">
+		{% include 'img.twig' with { name: 'card_carousel' } %}
+	</figure>
+
+	<div class="card-carousel-item__content">
+		<div class="card-carousel-item__side card-carousel-item__side--front">
+
+			<button class="card-carousel-item__toggle button button--sm button--primary" aria-label="Show more information for {{title}}" data-toggle-target=".js-card-carousel-item-{{id}}" data-toggle-group="card-carousel">
+				{% include 'icon.twig' with { name: 'plus' } %}
+			</button>
+
+			<div class="card-carousel-item__header {% if color %} card-carousel-item__header--band card-carousel-item__header--{{color}}{% endif %} ">
+				<h3 class="card-carousel-item__title" id="midd-card-carousel-{{id}}-header">Some name
+					{{id}}</h3>
+				<p class="card-carousel-item__text">Program here</p>
+			</div>
+			<div class="card-carousel-item__footer">
+				<a href="#" class="card-carousel-item__label button button--light">
+					{% if env.test or random(1) %}
+						Program title
+					{% else %}
+						Program title here a bit lengthy of one it should wrap
+					{% endif %}
+				</a>
+			</div>
+
+		</div>
+		<aside class="card-carousel-item__side card-carousel-item__side--back" id="midd-card-carousel-item-aside-{{id}}" aria-labelledby="midd-card-carousel-{{id}}-aside">
+
+			<button class="card-carousel-item__toggle button button--sm button--tertiary" aria-label="Close" data-toggle-target=".js-card-carousel-item-{{id}}" data-toggle-group="card-carousel" data-toggle-linked="card-carousel-item-{{id}}">
+				{% include 'icon.twig' with { name: 'times' } %}
+			</button>
+
+			<div class="card-carousel-item__header">
+				<h3 class="card-carousel-item__title" id="midd-card-carousel-{{id}}-aside">{{title}}</h3>
+				<p class="card-carousel-item__text">{{type}}</p>
+			</div>
+			<div class="card-carousel-item__body">
+				<div class="typography typography--sm">
+					<h4>What made the Institute special?</h4>
+					<p>I traveled to Tokyo as part of a seminar on foreign policy, trade, and security. Most of the others were policy and management students, and I was there to provide simultaneous interpretation for the speakers who addressed the class. It was an amazing real-world opportunity to practice my profession.</p>
+
+					<h4>What now?</h4>
+					<p>I’m an interpreter and translator for Faraday Future, an innovative company making high-performance electric vehicles and concept cars.</p>
+				</div>
+			</div>
+			<div class="card-carousel-item__footer">
+				<a href="#" class="link-underline">Learn more about
+					{{program}}</a>
+			</div>
+
+		</aside>
+	</div>
+</article>

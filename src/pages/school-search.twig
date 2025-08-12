@@ -1,0 +1,20 @@
+{% extends "layouts/school-layout.twig" %}
+
+{% set page_header = {
+  title: 'Search',
+  breadcrumb: [
+    { text: 'Schools Abroad' },
+  ]
+} %}
+
+{% block page %}
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        {% include 'partials/google-search.twig' %}
+      </div>
+    </div>
+
+  </div>
+{% endblock %}

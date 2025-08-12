@@ -1,0 +1,128 @@
+<header class="davis-header school-header js-headroom">
+
+  <div class="container">
+
+    <div class="school-header__main">
+
+      <div class="school-header__menu-content">
+        <div class="school-header__logo">
+          {% if is_front %}
+            <h1 class="school-header__title">
+          {% endif %}
+              <a href="#">
+                {% block school_logo %}
+                  <img
+                    src="images/davis-globe.png"
+                    srcset="images/davis-globe.png 1x, images/davis-globe@2x.png 2x"
+                    alt="Globe in logo for Davis United World College Scholars Program"
+                  />
+                  <img
+                    src="images/davis-uwc-logo-309x35.png"
+                    srcset="images/davis-uwc-logo-309x35.png 1x, images/davis-uwc-logo-309x35@2x.png 2x"
+                    alt="Davis United World College Scholars Program"
+                  />
+                  <span class="sr-only">Davis United World College Scholars Program</span>
+                {% endblock %}
+              </a>
+          {% if is_front %}
+            </h1>
+          {% endif %}
+        </div>
+        <div class="davis-nav__menu">
+          <nav aria-labelledby="midd-main-nav-label">
+            <h2 class="sr-only" id="midd-main-nav-label">Main navigation</h2>
+            <ul class="davis-nav__list">
+              {% for item in site_nav.items %}
+                <li class="davis-nav__item">
+
+                  {% set active = loop.index == 3 %}
+
+                  <a href="" class="davis-nav__link davis-nav__link--top{% if active %} davis-nav__link--active{% endif %}">{{item.text}}</a>
+
+                  {% if item.items %}
+                    <ul class="davis-nav__list davis-nav__list--sub {% if item.items.length > 8 %} davis-nav__list--cols{% endif %}">
+                      {% for subitem in item.items %}
+                        <li class="davis-nav__item davis-nav__item--sub">
+                          <a href="" class="davis-nav__link davis-nav__link--sub">{{subitem.text}}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+
+                </li>
+              {% endfor %}
+
+              <li class="davis-nav__item d-none d-xl-block">
+                <a href="/search" class="davis-nav__link davis-nav__link--top" role="button" aria-label="Toggle site search" aria-expanded="false" aria-haspopup="true" data-toggle-target=".js-site-search-xl" data-toggle-focus=".js-site-search-input" data-toggle-group="school-header">
+
+                  {% include 'icon.twig' with {
+                    name: 'search', class: 'mr-1 school-search__mag'
+                  } %}
+                  {% include 'icon.twig' with {
+                    name: 'times', class: 'mr-1 school-search__times'
+                  } %}
+                  Search
+                </a>
+                <div class="school-search__content d-none d-xl-block js-site-search-xl">
+                  <form class="">
+                    <div class="input-group">
+                      <label for="midd-school-search" class="sr-only">Search</label>
+                      <input type="search" class="form-control js-site-search-input" id="midd-school-search" placeholder="Search">
+                      <button type="submit" class="button px-3 button--primary">
+                        <span class="sr-only">Search</span>
+                        {% include 'icon.twig' with { name: 'search' } %}
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+      </div>
+
+      <div class="school-header__util-links">
+        <div class="davis-nav">
+          <nav aria-labelledby="midd-secondary-nav-label" aria-label="Secondary navigation">
+            <ul class="davis-nav__list">
+              {% for item in ['Midd Students', 'Parents', 'Advisors'] %}
+                <li class="davis-nav__item">
+                  <a href="" class="davis-nav__link davis-nav__link--util">{{item}}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </div>
+        <button class="davis-nav__handle" data-drawer="midd-nav-drawer" aria-label="Open navigation">
+          {% include 'icon.twig' with { name: 'bars', class: 'mr-1' } %}
+          <span class="d-none d-sm-inline">Menu</span>
+        </button>
+      <div class="school-search">
+        <a href="/search" class="school-search__handle d-xl-none" role="button" aria-label="Toggle site search" aria-expanded="false" aria-haspopup="true" data-toggle-target=".js-site-search" data-toggle-focus=".js-site-search-input" data-toggle-group="school-header">
+          {% include 'icon.twig' with {
+            name: 'search', class: 'mr-1 school-search__mag'
+          } %}
+          {% include 'icon.twig' with {
+            name: 'times', class: 'mr-1 school-search__times'
+          } %}
+          <span class="d-none d-sm-inline">Search</span>
+        </a>
+
+        <div class="school-search__content d-xl-none js-site-search">
+          <form class="">
+            <div class="input-group">
+              <label for="midd-school-search" class="sr-only">Search</label>
+              <input type="search" class="form-control js-site-search-input" id="midd-school-search" placeholder="Search">
+              <button type="submit" class="button px-3 button--primary">
+                <span class="sr-only">Search</span>
+                {% include 'icon.twig' with { name: 'search' } %}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</header>

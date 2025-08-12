@@ -1,0 +1,24 @@
+<div class="info-bar {{info_bar_class}}">
+  <div class="container">
+    {% if cci %}
+      <div>
+        <ul class="f2">
+          {% for item in items %}
+            <li>{{item.text}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% else %}
+      <ul class="info-bar__list">
+        {% for item in items %}
+          <li class="info-bar__item">{{item.text}}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% if show_social_links %}
+      <div>
+        {% include 'social-links.twig' with show_social_links %}
+      </div>
+    {% endif %}
+  </div>
+</div>

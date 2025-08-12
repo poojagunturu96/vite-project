@@ -1,0 +1,13 @@
+{% extends 'school-layout.twig' %}
+
+{# {% set theme = 'college' %} #}
+
+{% block page %}
+  <div class="container">
+    <div class="row">
+      <div class="paragraphs paragraphs--wide">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

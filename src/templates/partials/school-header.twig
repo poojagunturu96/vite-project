@@ -1,0 +1,123 @@
+<header class="school-header js-headroom">
+
+  <div class="container">
+
+    <div class="school-header__main">
+
+      <div class="school-header__logo">
+        {% if is_front %}
+          <h1 class="school-header__title">
+          {% endif %}
+          <a href="">
+            {% block school_logo %}
+              <img src="images/schools-abroad-logo.svg" srcset="images/schools-abroad-logo.svg 186w" sizes="(min-width: 1280px) 186px, 124px" alt="Logo for Middlebury C.V. Starr Schools Abroad"/>
+              <span class="sr-only">Middlebury C.V. Starr Schools Abroad</span>
+            {% endblock %}
+          </a>
+          {% if is_front %}
+          </h1>
+        {% endif %}
+      </div>
+
+      <div class="school-header__content">
+
+        <div class="school-nav">
+
+          <button class="school-nav__handle" data-drawer="midd-nav-drawer" aria-label="Open navigation">
+            {% include 'icon.twig' with { name: 'bars', class: 'mr-1' } %}
+            <span class="d-none d-sm-inline">Menu</span>
+          </button>
+
+          <div class="school-nav__menu">
+
+            <nav aria-label="Main navigation">
+              <ul class="school-nav__list">
+                {% for item in site_nav.items %}
+                  <li class="school-nav__item">
+
+                    {% set active = loop.index == 3 %}
+
+                    <a href="" class="school-nav__link school-nav__link--top{% if active %} school-nav__link--active{% endif %}">{{item.text}}</a>
+
+                    {% if item.items %}
+                      <ul class="school-nav__list school-nav__list--sub {% if item.items.length > 8 %} school-nav__list--cols{% endif %}">
+                        {% for subitem in item.items %}
+                          <li class="school-nav__item school-nav__item--sub">
+                            <a href="" class="school-nav__link school-nav__link--sub">{{subitem.text}}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+
+                  </li>
+                {% endfor %}
+
+                <li class="school-nav__item d-none d-xl-block">
+                  <a href="/search" class="school-search__handle" role="button" aria-label="Toggle site search" aria-expanded="false" aria-haspopup="true" data-toggle-target=".js-site-search" data-toggle-focus=".js-site-search-input" data-toggle-group="school-header">
+
+                    {% include 'icon.twig' with {
+                      name: 'search', class: 'mr-1 school-search__mag'
+                    } %}
+                    {% include 'icon.twig' with {
+                      name: 'times', class: 'mr-1 school-search__times'
+                    } %}
+                    Search
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+            <nav aria-label="Secondary navigation">
+              <ul class="school-nav__list">
+                {% for item in ['Midd Students', 'Parents', 'Advisors'] %}
+                  <li class="school-nav__item">
+                    <a href="" class="school-nav__link school-nav__link--util">{{item}}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+              {% if extended %}
+                <span class="school-nav__list--extended">
+                  <ul class="school-nav__list">
+                    {% for item in ['Apply', 'Visit', 'Financial Aid'] %}
+                      <li class="school-nav__item">
+                        <a href="" class="school-nav__link school-nav__link--util">{{item}}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </span>
+              {% endif %}
+            </nav>
+
+          </div>
+
+        </div>
+
+        <div class="school-search">
+          <a href="/search" class="school-search__handle d-xl-none" role="button" aria-label="Toggle site search" aria-expanded="false" aria-haspopup="true" {# data-toggle-target=".js-site-search" #} data-toggle-focus=".js-site-search-input" data-toggle-group="school-header">
+            {% include 'icon.twig' with {
+              name: 'search', class: 'mr-1 school-search__mag'
+            } %}
+            {% include 'icon.twig' with {
+              name: 'times', class: 'mr-1 school-search__times'
+            } %}
+            <span class="d-none d-sm-inline">Search</span>
+          </a>
+
+          <div class="school-search__content js-site-search">
+            <form class="">
+              <div class="input-group">
+                <label for="midd-school-search" class="sr-only">Search</label>
+                <input type="search" class="form-control js-site-search-input" id="midd-school-search" placeholder="Search">
+                <button type="submit" class="button px-3 button--primary">
+                  <span class="sr-only">Search</span>
+                  {% include 'icon.twig' with { name: 'search' } %}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>

@@ -1,0 +1,31 @@
+{% set current_icon = '<span class="badge ml-2" aria-label="Offered in the current term">current</span>' %}
+{% set upcoming_icon = '<span class="badge ml-2" aria-label="Offered in the upcoming term">Upcoming</span>' %}
+
+{% include 'accordion.twig' with {
+  items: [
+    {
+      title: '<strong>TRLM 8535</strong> Really long title lorem ipsum dolor sit amet consectetur adipisicing elit' ~ current_icon,
+      content: '<p>The purpose of this course is to familiarize students with web technologies, development and localization. We will look at
+          this topic from the point of view of the project manager, the localization engineer, and even the translator. The
+          hands-on style of this course will put students in situations that require critical thinking, risk mitigation skills
+          and solid knowledge of the web localization industry—all of which will be honed throughout this class. Specifically,
+          we will be covering the following topics: creating and localizing websites using opensource frameworks such as WordPress
+          and Drupal, web technologies such as HTML, CSS and responsive design and JavaScript, wiki technology such as MediaWiki
+          and Dokuwiki, bug tracking in Jira and The Bug Genie, and proxy localization such as Transifex and Smartling.</p>
+        <p>Fall 2017 - MIIS</p>
+        <p><a href="http://catalog.middlebury.edu/courses/view/catalog/catalog%2FMIIS/course/course%2FTRLM8535" title="View TRLM 8535 - Really long title lorem ipsum dolor sit amet consectetur adipisicing elit in the Course Catalog">View in Course Catalog</a></p>'
+    },
+    {
+      title: '<strong>TRLM 8535</strong> Really long sit amet consectetur adipisicing elit' ~ current_icon ~ upcoming_icon,
+      content: '<p>The purpose of this course is to familiarize students with web technologies, development and localization. We will look at this topic from the point of view of the project manager, the localization engineer, and even the translator. The hands-on style of this course will put students in situations that require critical thinking, risk mitigation skills and solid knowledge of the web localization industry—all of which will be honed throughout this class. Specifically, we will be covering the following topics: creating and localizing websites using opensource frameworks such as WordPress and Drupal, web technologies such as HTML, CSS and responsive design and JavaScript, wiki technology such as MediaWiki and Dokuwiki, bug tracking in Jira and The Bug Genie, and proxy localization such as Transifex and Smartling.</p>
+        <p>Fall 2017 - MIIS</p>
+        <p><a href="http://catalog.middlebury.edu/courses/view/catalog/catalog%2FMIIS/course/course%2FTRLM8535" title="View TRLM 8535 - Really long sit amet consectetur adipisicing elit in the Course Catalog">View in Course Catalog</a></p>'
+    },
+    {
+      title: '<strong>TRLM 8535</strong> short title',
+      content: '<p>The purpose of this course is to familiarize students with web technologies, development and localization. We will look at this topic from the point of view of the project manager, the localization engineer, and even the translator. The hands-on style of this course will put students in situations that require critical thinking, risk mitigation skills and solid knowledge of the web localization industry—all of which will be honed throughout this class. Specifically, we will be covering the following topics: creating and localizing websites using opensource frameworks such as WordPress and Drupal, web technologies such as HTML, CSS and responsive design and JavaScript, wiki technology such as MediaWiki and Dokuwiki, bug tracking in Jira and The Bug Genie, and proxy localization such as Transifex and Smartling.</p>
+        <p>Fall 2017 - MIIS</p>
+        <p><a href="http://catalog.middlebury.edu/courses/view/catalog/catalog%2FMIIS/course/course%2FTRLM8535" title="View TRLM 8535 - Really long sit amet consectetur adipisicing elit in the Course Catalog">View in Course Catalog</a></p>'
+    }
+  ]
+} %}

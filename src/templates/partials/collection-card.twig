@@ -1,0 +1,53 @@
+<article class="border-t border-4 border-navy pt-2"
+  aria-labelledby="midd-collection-item-label-{{ id }}">
+  {% if featured %}
+    <div class="mb-3">
+      <a href="">
+        <figure class="media">
+          {% include 'img.twig' with {
+            name: 'collection_featured'
+          } %}
+        </figure>
+      </a>
+    </div>
+  {% else %}
+    {% if env.test or random(1) %}
+      <div class="mb-4">
+        <a href="">
+          <figure class="media">
+            {% include 'img.twig' with {
+              name: 'collection_card'
+            } %}
+          </figure>
+        </a>
+      </div>
+    {% endif %}
+  {% endif %}
+
+  <h2 class="{{ featured ? 'h2' : 'h3' }} mb-1"
+    id="midd-collection-item-label-{{ id }}">
+    <a href="#">
+      {% if env.test or random(1) %}
+        Longer headline starting here lorem ipsum dolor sit amet consectetur
+        adipisicing elit
+      {% else %}
+        Shorter headline a few words
+      {% endif %}
+    </a>
+  </h2>
+  <p class="f3">
+    by Ari Terkel
+  </p>
+  <p class="f3">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  </p>
+
+  <ul class="d-flex flex-wrap f2 mt-2">
+    {% for tag in 0..9 %}
+      <li class="mr-2">
+        <a href="#" class="link-underline">tag {{ loop.index % 3 == 0 ? 'Lorem ipsum dolor sit amet ' ~ loop.index : loop.index }}</a>{% if
+          not loop.last %},{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</article>

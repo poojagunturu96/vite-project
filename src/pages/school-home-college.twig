@@ -1,0 +1,19 @@
+{% extends "layouts/school-home.twig" %}
+
+{% set theme = 'college' %}
+{% set is_front = true %}
+
+{% block layout_header %}
+  {% embed 'partials/school-header.twig' %}
+    {% block school_logo %}
+      <img src="images/college-logo.svg" srcset="images/college-logo.svg 180w" sizes="(min-width: 1280px) 180px, 120px" alt="Logo for Middlebury College"/>
+      <span class="sr-only">Middlebury College</span>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+
+{% block content %}
+
+  {% include 'paragraphs/homepage-grid.twig' %}
+
+{% endblock %}

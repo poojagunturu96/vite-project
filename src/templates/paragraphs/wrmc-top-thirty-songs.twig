@@ -1,0 +1,25 @@
+<section class="paragraph--top-thirty-songs paragraph--full" aria-labelledby="midd-page-header-label">
+  {# <h2 id="midd-top-thirty-label" class="sr-only">Weekly Top Thirty</h2> #}
+  <div class="songs container">
+    <ol class="row">
+      {% for song in top_thirty %}
+        <li class="col-6 col-sm-3 col-lg-2">
+          <span class="song__trapezoid-marker"></span>
+          {% if random(1) %}
+            {% include '../partials/img.twig' with {
+              name: 'wrmc_top_thirty_splash_image'
+            } %}
+          {% else %}
+            <div class="song__album-placeholder">
+              <div class="song__album-placeholder-image">
+                <img src="images/wrmc-album-default-120x120@2x.png" alt="Album cover placeholder image">
+              </div>
+            </div>
+          {% endif %}
+          <p class="song__artist">{{song.artist}}</p>
+          <p class="song__title"><em>{{song.song}}</em></p>
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>

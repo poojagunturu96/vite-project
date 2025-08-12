@@ -1,0 +1,39 @@
+{% extends 'layouts/school-layout.twig' %}
+
+{% set theme = 'uwc' %}
+{% set is_front = true %}
+{% set has_page_image = true %}
+
+{% block layout_header %}
+  {% include 'partials/davis-header.twig' %}
+{% endblock %}
+
+{% block layout_footer %}
+  {% include 'partials/davis-footer.twig' %}
+{% endblock %}
+
+{% set page_header = {
+  breadcrumb: false,
+  image_src: has_page_image,
+  has_menu: false
+} %}
+
+{% block page %}
+  <div class="container">
+    <div class="row">
+      <div class="paragraphs paragraphs--wide">
+        {% include 'partials/lead.twig' with {
+          pulled_up: true
+        }%}
+        {% include 'partials/lead.twig' %}
+        {% include 'paragraphs/chart-group.twig' with {
+          items: [
+            { type: 'stats', number: 160, label: 'countries represented' },
+            { type: 'stats', number: 4000, label: 'current scholars' },
+            { type: 'stats', number: 10000, label: 'alumni' }
+          ]
+        } %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

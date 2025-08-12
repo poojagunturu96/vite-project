@@ -1,0 +1,132 @@
+{% extends "layouts/anchor-layout.twig" %}
+
+{% set page_title = 'Center for Careers and Internships' %}
+
+{% set office_header_nav =
+  office_header_nav|default(
+    [
+      {
+        text: 'See An Advisor',
+        active: true,
+        items: [
+          {
+            text: 'Helpful Links'
+          },
+          {
+            text: 'How to apply'
+          },
+          {
+            text: 'Types of aid'
+          },
+          {
+            text: 'Education Loans'
+          }
+        ]
+      },
+      {
+        text: 'Events and Programs',
+        items: [
+          {
+            text: 'Helpful Links'
+          },
+          {
+            text: 'How to apply'
+          },
+          {
+            text: 'Types of aid'
+          },
+          {
+            text: 'Education Loans'
+          }
+        ]
+      },
+      {
+        text: 'CCI News'
+      },
+      {
+        text: 'I Want To...',
+        items: [
+          {
+            text: 'Helpful Links'
+          },
+          {
+            text: 'How to apply'
+          },
+          {
+            text: 'Types of aid'
+          },
+          {
+            text: 'Education Loans'
+          }
+        ]
+      },
+      {
+        text: 'Alumni',
+        items: [
+          {
+            text: 'Helpful Links'
+          },
+          {
+            text: 'How to apply'
+          },
+          {
+            text: 'Types of aid'
+          },
+          {
+            text: 'Education Loans'
+          }
+        ]
+      },
+      {
+        text: 'Faculty'
+      },
+      {
+        text: 'Employers',
+        items: [
+          {
+            text: 'Helpful Links'
+          },
+          {
+            text: 'How to apply'
+          },
+          {
+            text: 'Types of aid'
+          },
+          {
+            text: 'Education Loans'
+          }
+        ]
+      },
+      {
+        text: 'Families'
+      }
+    ]
+  )
+%}
+
+{% block layout_header %}
+  {% include 'partials/midd-header.twig' %}
+  {% embed 'partials/anchor-header.twig' with {
+    is_front: true
+  }%}
+    {% block anchor_header_content %}
+      {% include 'partials/info-bar.twig' with {
+        cci: true,
+        info_bar_class: 'link-list',
+        items: [
+          { text: '<a href="#">Appointments and Drop-Ins</a>' },
+          { text: '<a href="#">Handshake</a>' },
+          { text: '<a href="#">Midd2Midd</a>' },
+          { text: '<a href="#">Hire a MiddKid</a>' }
+        ],
+        show_social_links: {
+          items: ['linkedin', 'instagram', 'youtube', 'facebook']
+        }
+      } %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+
+{% block page %}
+  {% include 'partials/top-level-layout.twig' %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'layouts/school-home.twig' %}
+
+{% set theme = 'blwc' %}
+{% set is_front = true %}
+
+{% block layout_header %}
+  {% embed 'partials/school-header.twig' %}
+    {% block school_logo %}
+      <img src="images/blwc-logo.svg" srcset="images/blwc-logo.svg 180w" sizes="(min-width: 1280px) 180px, 120px" alt="Logo for Bread Loaf Writers' Conferences"/>
+      <span class="sr-only">Bread Loaf Writers' Conferences</span>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+
+{% block content %}
+  homepage
+{% endblock %}

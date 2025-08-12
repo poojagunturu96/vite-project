@@ -1,0 +1,37 @@
+{% embed 'sidebar-layout.twig' %}
+  {% block nav %}
+
+    {% include 'page-nav.twig' with {
+      items: [
+        { text: 'Curriculum', href: '#' },
+        { text: 'Financing Your Education', href: '#' },
+      ]
+    } %}
+
+  {% endblock %}
+  {% block content %}
+
+    <ul class="list list--dividers mb-7">
+
+      <li class="list__item">
+        {% include 'story.twig' with {
+          id: 1,
+          featured: true
+        } %}
+      </li>
+
+      {% for i in 0..3 %}
+        <li class="list__item">
+          {% include 'story.twig' with {
+            id: i + 1
+          } %}
+        </li>
+      {% endfor %}
+
+    </ul>
+
+    {% include 'pagination.twig' %}
+
+  {% endblock %}
+{% endembed %}
+

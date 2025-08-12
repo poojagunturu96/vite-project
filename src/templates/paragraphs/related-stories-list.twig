@@ -1,0 +1,23 @@
+<div data-digest-content>
+  {% embed '../partials/section.twig'
+    with {
+      title: 'Related Stories',
+      labelledby: 'midd-related-stories',
+      role: 'complementary',
+      moreLinkText: 'View all',
+      moreLinkHref: '#'
+    }
+  %}
+    {% block content %}
+      <ul class="list list--dividers list--md">
+        {% for i in 0..3 %}
+          <li class="list__item">
+            {% include '../partials/story.twig' with {
+              id: i
+            } %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endblock %}
+  {% endembed %}
+</div>

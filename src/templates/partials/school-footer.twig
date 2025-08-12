@@ -1,0 +1,48 @@
+{% set has_menus = menus is not empty %}
+<footer class="school-footer{% if not has_menus %} school-footer--lite{% endif %}">
+  <div class="container">
+    {% if has_menus %}
+      <div class="row">
+        <div class="school-footer__main">
+    {% endif %}
+
+        <div class="row">
+          <div class="school-footer__primary">
+
+            {# use same markup for slogan #}
+            <p class="school-footer__text">{{name}}</p>
+
+            <a href="{{cta.link}}" class="button button--light">{{cta.text}}</a>
+
+          </div>
+          <div class="school-footer__secondary">
+
+            <div class="text-white f2 mb-3">
+              <p class="mb-1 f2">{{addr}}</p>
+              <a href="mailto:" class="text-white link-underline">{{email}}</a><br>
+              <a href="tel:" class="text-white link-underline">{{tel}}</a>
+            </div>
+
+            {% include 'social-links.twig' with {
+              light: true,
+              large: true
+            } %}
+
+          </div>
+
+      {% if has_menus %}
+        </div>
+      </div>
+      {% endif %}
+      {% if has_menus %}
+        <div class="school-footer__nav">
+          <div class="row">
+            {% for menu in menus %}
+              {% include 'footer-menu.twig' with menu %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</footer>

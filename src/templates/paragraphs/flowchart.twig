@@ -1,0 +1,40 @@
+{% set id = random(1000) %}
+
+<div class="paragraph flowchart" id="{{ id }}" data-flowchart>
+  {#                        <h2 class="h2 mb-5">
+    Flowchart
+  </h2> #}
+
+  {% for item in flowchart_data %}
+    <div id="flowchart-{{ id }}-{{ item.id }}"
+      class="flowchart__item {% if item.answer %} flowchart__item--answer{% endif %}"
+      data-flowchart-item>
+      {% if item.answer %}<span class="d-block text-caps mb-5">Based on your answers</span>{% endif %}
+      {% if item.title is not empty %}
+        <h3 class="h3 mb-2 flowchart__title">
+          {{ item.title }}
+        </h3>
+      {% endif %}
+
+      {% if item.text %}
+        <div class="typography">
+          {{ item.text }}
+        </div>
+      {% endif %}
+
+      {% if item.choices is not empty %}
+        <div class="mt-4">
+          {% for choice in item.choices %}
+            <div class="radio">
+              <a href="#flowchart-{{ id }}-{{ choice.to }}"
+                class="radio__label"
+                data-flowchart-btn>
+                {{ choice.text }}
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>

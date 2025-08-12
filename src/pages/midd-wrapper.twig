@@ -1,0 +1,43 @@
+{% extends "layouts/anchor-layout.twig" %}
+
+{% set page_header = {
+  title: 'Payment Options',
+  breadcrumb: [
+    { text: 'Offices and Services' },
+    { text: 'Student Financial Services' },
+  ]
+} %}
+
+{% block page %}
+  {% embed 'partials/sidebar-layout.twig' %}
+    {% block sidebar %}
+
+      {% include 'partials/page-nav.twig' with {
+        items: [
+          { text: 'Curriculum', href: '#' },
+          {
+            text: 'Faculty',
+            href: '#',
+            items: [
+              { text: 'Faculty sub page 1', href: '#' },
+              { text: 'Faculty sub page 2', href: '#' },
+              {
+                text: 'Faculty sub page 3',
+                href: '#',
+              },
+              { text: 'Faculty sub page 4', href: '#' },
+            ]
+          },
+          { text: 'Financing Your Education', href: '#' },
+        ]
+      } %}
+
+    {% endblock %}
+    {% block content %}
+
+      {% include 'partials/page-image.twig' %}
+      {% include 'paragraphs/text.twig' %}
+
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

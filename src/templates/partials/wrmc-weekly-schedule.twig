@@ -1,0 +1,63 @@
+<section class="paragraph--full d-none d-md-block" aria-labelledby="midd-page-header-label">
+  <div class="container weekly-schedule">
+    <div class="row pl-3 pr-2 pl-lg-5 pr-lg-0">
+      {% for item in wrmc_schedule_items %}
+        {% set outer_loop_index = loop.index %}
+        {% set schedule_item_index = 0 %}
+        <article class="weekly-schedule__column" aria-label="Shows scheduled for {{item.day}}">
+          <h2>{{item.day}}</h2>
+            {% for i in 12..35 %}
+              {% set meridiem = (i < 12) or (i > 23) ? "PM" : "AM" %}
+              {% if i < 13 %}
+                {% set time = i ~ ":00" %}
+              {% elseif (i > 12) and (i < 25) %}
+                {% set time = (i - 12) ~ ":00" %}
+              {% else %}
+                {% set time = (i - 24) ~ ":00" %}
+              {% endif %}
+
+              {% set schedule_item = item.schedule[schedule_item_index] %}
+              {% set id = random(1234) %}
+
+              {% if (schedule_item.start_time == time) and (schedule_item.meridiem == meridiem) %}
+
+                {# set class to align show description according to postion of parent in the component #}
+                {% if outer_loop_index <= 4 %}
+                  {% set class = 'align-top' %}
+                {% elseif outer_loop_index > 4 %}
+                  {% set class = 'align-top-right' %}
+                {% endif %}
+
+                <div class="weekly-schedule__show-wrapper {{schedule_item.genres[0].class}}">
+                  <button aria-haspopup="dialog">
+                    <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-{{id}}">
+                      <h3 id="wrmc-show-title-{{id}}">{{schedule_item.title}}</h3>
+                      <time datetime="{{schedule_item.start_time}}" aria-label="show starts at {{schedule_item.start_time}} {{meridiem}}">{{schedule_item.start_time}} {{meridiem}}</time>
+                      {% set schedule_item_index = schedule_item_index + 1 %}
+                    </article>
+                  </button>
+                  {% include 'wrmc-show-teaser.twig' with {
+                    item: schedule_item,
+                    class: "weekly-schedule__show-teaser " ~ class,
+                    role: "dialog"
+                  } %}
+                </div>
+              {% else %}
+                <div class="weekly-schedule__show-wrapper">
+                  <article class="text-center" aria-labelledby="wrmc-show-title-{{id}}">
+                    <h3 id="wrmc-show-title-{{id}}" class="sr-only">No show scheduled</h3>
+                    <time class="weekly-schedule__time" datetime="{{time}}" aria-label="show starts at {{time}} {{meridiem}}">{{time}} {{meridiem}}</time>
+                  </article>
+                </div>
+              {% endif %}
+            {% endfor %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<div class="d-block d-md-none">
+  {% include 'wrmc-accordion.twig' with {
+    toggle_all: true
+  }%}
+</div>

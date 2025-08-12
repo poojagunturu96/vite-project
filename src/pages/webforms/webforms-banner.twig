@@ -1,0 +1,343 @@
+{% extends "layouts/layout.twig" %}
+
+{% block page %}
+  <article id="node-306" class="node node-webform">
+    <header>
+      <h1>Banner Access Request</h1>
+    </header>
+    <section class="contents">
+      <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+        <div class="field-items">
+          <div class="field-item even">
+            <p>To request Banner access for an employee, please provide the required information in this Banner Access Request form. The employee in need of access, the employee's supervisor, or the Security Administrator for the Banner functional area may place this request.</p>
+            <p>Please provide as many details as possible about the access needed for the employee (referred to as "user" in this form). At the end of the form, click Submit and the request will be sent to the Security Administrator. A copy of the request will be emailed to the employee and the employee's supervisor. The employee will be notified by email that the request has been processed by the Security Administrator.</p>
+            <p>If this is a request for a new Banner account, the employee must acknowledge and agree to the Banner Security procedures found in the
+              <a href="http://saw.middlebury.edu/~imcbride/about/handbook/lis/privacy#banner" target="_blank">College Handbook</a>. The employee will receive instructions for sending the acknowledgement in the email sent by the Security Administrator when the request has been processed. The employee is responsible for maintaining the confidentiality and security of their Banner password.</p>
+          </div>
+        </div>
+      </div>
+      <form class="webform-client-form webform-client-form-306" action="/~imcbride/middforms/webform-embed/306" method="post" id="webform-client-form-306" accept-charset="UTF-8">
+        <div>
+          <div class="form-item webform-component webform-component-textfield webform-component--form-submitter">
+            <label for="edit-submitted-form-submitter">Form Submitter
+              <span class="form-required" title="This field is required.">*</span>
+            </label>
+            <input required="required" type="text" id="edit-submitted-form-submitter" name="submitted[form_submitter]" value="Zeb Pykosz zpykosz@middlebury.edu" size="60" maxlength="128" class="form-text required">
+          </div>
+          <div class="form-item webform-component webform-component-email webform-component--form-submitters-email-address">
+            <label for="edit-submitted-form-submitters-email-address">Form Submitter's Email Address
+              <span class="form-required" title="This field is required.">*</span>
+            </label>
+            <input required="required" class="email form-text form-email required" type="email" id="edit-submitted-form-submitters-email-address" name="submitted[form_submitters_email_address]" value="zpykosz@middlebury.edu" size="60">
+          </div>
+          <div class="form-item webform-component webform-component-select webform-component--select-who-is-submitting-this-request">
+            <label for="edit-submitted-select-who-is-submitting-this-request">Select who is submitting this request
+              <span class="form-required" title="This field is required.">*</span>
+            </label>
+            <select required="required" id="edit-submitted-select-who-is-submitting-this-request" name="submitted[select_who_is_submitting_this_request]" class="form-select required">
+              <option value="0" selected="selected">Employee who needs access</option>
+              <option value="1">Supervisor of the person who needs access</option>
+              <option value="2">Security administrator for a functional area</option>
+              <option value="3">Other</option>
+            </select>
+          </div>
+          <fieldset class="webform-component-fieldset webform-component--employee-needing-access form-wrapper">
+            <legend>
+              <span class="fieldset-legend">Employee Needing Access</span>
+            </legend>
+            <div class="fieldset-wrapper">
+              <div class="form-item webform-component webform-component-textfield webform-component--employee-needing-access--name-of-the-employee-needing">
+                <label for="edit-submitted-employee-needing-access-name-of-the-employee-needing">Name of the employee needing access
+                  <span class="form-required" title="This field is required.">*</span>
+                </label>
+                <input required="required" type="text" id="edit-submitted-employee-needing-access-name-of-the-employee-needing" name="submitted[employee_needing_access][name_of_the_employee_needing]" value="" size="60" maxlength="128" class="form-text required">
+              </div>
+              <div class="form-item webform-component webform-component-textfield webform-component--employee-needing-access--employees-username">
+                <label for="edit-submitted-employee-needing-access-employees-username">Employee's Username
+                  <span class="form-required" title="This field is required.">*</span>
+                </label>
+                <input required="required" type="text" id="edit-submitted-employee-needing-access-employees-username" name="submitted[employee_needing_access][employees_username]" value="" size="60" maxlength="128" class="form-text required">
+              </div>
+              <div class="form-item webform-component webform-component-textfield webform-component--employee-needing-access--employees-job-title">
+                <label for="edit-submitted-employee-needing-access-employees-job-title">Employee's Job Title
+                  <span class="form-required" title="This field is required.">*</span>
+                </label>
+                <input required="required" type="text" id="edit-submitted-employee-needing-access-employees-job-title" name="submitted[employee_needing_access][employees_job_title]" value="" size="60" maxlength="128" class="form-text required">
+              </div>
+              <div class="form-item webform-component webform-component-textfield webform-component--employee-needing-access--employees-department">
+                <label for="edit-submitted-employee-needing-access-employees-department">Employee's Department
+                  <span class="form-required" title="This field is required.">*</span>
+                </label>
+                <input required="required" type="text" id="edit-submitted-employee-needing-access-employees-department" name="submitted[employee_needing_access][employees_department]" value="" size="60" maxlength="128" class="form-text required">
+              </div>
+              <div class="form-item webform-component webform-component-email webform-component--employee-needing-access--employees-email-address">
+                <label for="edit-submitted-employee-needing-access-employees-email-address">Employee's Email Address
+                  <span class="form-required" title="This field is required.">*</span>
+                </label>
+                <input required="required" class="email form-text form-email required" type="email" id="edit-submitted-employee-needing-access-employees-email-address" name="submitted[employee_needing_access][employees_email_address]" size="60">
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="webform-component-fieldset webform-component--supervisor-information form-wrapper">
+            <legend>
+              <span class="fieldset-legend">Supervisor Information</span>
+            </legend>
+            <div class="fieldset-wrapper">
+              <div class="form-item webform-component webform-component-textfield webform-component--supervisor-information--name-of-the-employees-supervisor">
+                <label for="edit-submitted-supervisor-information-name-of-the-employees-supervisor">Name of the employee's supervisor
+                  <span class="form-required" title="This field is required.">*</span>
+                </label>
+                <input required="required" type="text" id="edit-submitted-supervisor-information-name-of-the-employees-supervisor" name="submitted[supervisor_information][name_of_the_employees_supervisor]" value="" size="60" maxlength="128" class="form-text required">
+              </div>
+              <div class="form-item webform-component webform-component-textfield webform-component--supervisor-information--supervisors-job-title">
+                <label for="edit-submitted-supervisor-information-supervisors-job-title">Supervisor's Job Title
+                  <span class="form-required" title="This field is required.">*</span>
+                </label>
+                <input required="required" type="text" id="edit-submitted-supervisor-information-supervisors-job-title" name="submitted[supervisor_information][supervisors_job_title]" value="" size="60" maxlength="128" class="form-text required">
+              </div>
+              <div class="form-item webform-component webform-component-textfield webform-component--supervisor-information--supervisors-department">
+                <label for="edit-submitted-supervisor-information-supervisors-department">Supervisor's Department
+                  <span class="form-required" title="This field is required.">*</span>
+                </label>
+                <input required="required" type="text" id="edit-submitted-supervisor-information-supervisors-department" name="submitted[supervisor_information][supervisors_department]" value="" size="60" maxlength="128" class="form-text required">
+              </div>
+              <div class="form-item webform-component webform-component-email webform-component--supervisor-information--supervisors-email-address">
+                <label for="edit-submitted-supervisor-information-supervisors-email-address">Supervisor's Email Address
+                  <span class="form-required" title="This field is required.">*</span>
+                </label>
+                <input required="required" class="email form-text form-email required" type="email" id="edit-submitted-supervisor-information-supervisors-email-address" name="submitted[supervisor_information][supervisors_email_address]" size="60">
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="webform-component-fieldset webform-component--type-of-request form-wrapper">
+            <legend>
+              <span class="fieldset-legend">Type of Request</span>
+            </legend>
+            <div class="fieldset-wrapper">
+              <div class="form-item webform-component webform-component-radios webform-component--type-of-request--type-of-request">
+                <label for="edit-submitted-type-of-request-type-of-request">Type of Request
+                  <span class="form-required" title="This field is required.">*</span>
+                </label>
+                <div id="edit-submitted-type-of-request-type-of-request" class="form-radios">
+                  <div class="form-item form-type-radio form-item-submitted-type-of-request-type-of-request">
+                    <input required="required" type="radio" id="edit-submitted-type-of-request-type-of-request-1" name="submitted[type_of_request][type_of_request]" value="0" checked="checked" class="form-radio">
+                    <label class="option" for="edit-submitted-type-of-request-type-of-request-1">Create new user
+                    </label>
+
+                  </div>
+                  <div class="form-item form-type-radio form-item-submitted-type-of-request-type-of-request">
+                    <input required="required" type="radio" id="edit-submitted-type-of-request-type-of-request-2" name="submitted[type_of_request][type_of_request]" value="1" class="form-radio">
+                    <label class="option" for="edit-submitted-type-of-request-type-of-request-2">Add to existing user
+                    </label>
+
+                  </div>
+                  <div class="form-item form-type-radio form-item-submitted-type-of-request-type-of-request">
+                    <input required="required" type="radio" id="edit-submitted-type-of-request-type-of-request-3" name="submitted[type_of_request][type_of_request]" value="2" class="form-radio">
+                    <label class="option" for="edit-submitted-type-of-request-type-of-request-3">Remove from user
+                    </label>
+
+                  </div>
+                  <div class="form-item form-type-radio form-item-submitted-type-of-request-type-of-request">
+                    <input required="required" type="radio" id="edit-submitted-type-of-request-type-of-request-4" name="submitted[type_of_request][type_of_request]" value="3" class="form-radio">
+                    <label class="option" for="edit-submitted-type-of-request-type-of-request-4">Disable user
+                    </label>
+
+                  </div>
+                </div>
+              </div>
+              <div class="form-item webform-component webform-component-date webform-component--type-of-request--effective-date">
+                <label>Effective Date
+                  <span class="form-required" title="This field is required.">*</span>
+                </label>
+                <div class="webform-container-inline webform-datepicker">
+                  <div class="form-item form-type-select form-item-submitted-type-of-request-effective-date-month">
+                    <label class="element-invisible" for="edit-submitted-type-of-request-effective-date-month">Month
+                    </label>
+                    <select class="month form-select" required="required" id="edit-submitted-type-of-request-effective-date-month" name="submitted[type_of_request][effective_date][month]">
+                      <option value="">Month</option>
+                      <option value="1">Jan</option>
+                      <option value="2">Feb</option>
+                      <option value="3">Mar</option>
+                      <option value="4">Apr</option>
+                      <option value="5">May</option>
+                      <option value="6" selected="selected">Jun</option>
+                      <option value="7">Jul</option>
+                      <option value="8">Aug</option>
+                      <option value="9">Sep</option>
+                      <option value="10">Oct</option>
+                      <option value="11">Nov</option>
+                      <option value="12">Dec</option>
+                    </select>
+                  </div>
+                  <div class="form-item form-type-select form-item-submitted-type-of-request-effective-date-day">
+                    <label class="element-invisible" for="edit-submitted-type-of-request-effective-date-day">Day
+                    </label>
+                    <select class="day form-select" required="required" id="edit-submitted-type-of-request-effective-date-day" name="submitted[type_of_request][effective_date][day]">
+                      <option value="">Day</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12" selected="selected">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                      <option value="24">24</option>
+                      <option value="25">25</option>
+                      <option value="26">26</option>
+                      <option value="27">27</option>
+                      <option value="28">28</option>
+                      <option value="29">29</option>
+                      <option value="30">30</option>
+                      <option value="31">31</option>
+                    </select>
+                  </div>
+                  <div class="form-item form-type-select form-item-submitted-type-of-request-effective-date-year">
+                    <label class="element-invisible" for="edit-submitted-type-of-request-effective-date-year">Year
+                    </label>
+                    <select class="year form-select" required="required" id="edit-submitted-type-of-request-effective-date-year" name="submitted[type_of_request][effective_date][year]">
+                      <option value="">Year</option>
+                      <option value="2017">2017</option>
+                      <option value="2018">2018</option>
+                      <option value="2019" selected="selected">2019</option>
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
+                    </select>
+                  </div>
+                  <input type="image" aria-hidden="true" role="presentation" src="/~imcbride/middforms/sites/all/modules/webform/images/calendar.png" class="webform-calendar webform-calendar-start-2017-06-12 webform-calendar-end-2021-06-12 webform-calendar-day-0" alt="Open popup calendar" title="Open popup calendar">
+                </div>
+              </div>
+              <div class="form-item webform-component webform-component-checkboxes webform-component--type-of-request--area-or-module-where-access-is-needed">
+                <label for="edit-submitted-type-of-request-area-or-module-where-access-is-needed">Area or module where access is needed
+                  <span class="form-required" title="This field is required.">*</span>
+                </label>
+                <div id="edit-submitted-type-of-request-area-or-module-where-access-is-needed" class="form-checkboxes">
+                  <div class="form-item form-type-checkbox form-item-submitted-type-of-request-area-or-module-where-access-is-needed-1">
+                    <input type="checkbox" id="edit-submitted-type-of-request-area-or-module-where-access-is-needed-1" name="submitted[type_of_request][area_or_module_where_access_is_needed][1]" value="1" class="form-checkbox">
+                    <label class="option" for="edit-submitted-type-of-request-area-or-module-where-access-is-needed-1">Accounts Receivable
+                    </label>
+
+                  </div>
+                  <div class="form-item form-type-checkbox form-item-submitted-type-of-request-area-or-module-where-access-is-needed-2">
+                    <input type="checkbox" id="edit-submitted-type-of-request-area-or-module-where-access-is-needed-2" name="submitted[type_of_request][area_or_module_where_access_is_needed][2]" value="2" class="form-checkbox">
+                    <label class="option" for="edit-submitted-type-of-request-area-or-module-where-access-is-needed-2">Admissions
+                    </label>
+
+                  </div>
+                  <div class="form-item form-type-checkbox form-item-submitted-type-of-request-area-or-module-where-access-is-needed-3">
+                    <input type="checkbox" id="edit-submitted-type-of-request-area-or-module-where-access-is-needed-3" name="submitted[type_of_request][area_or_module_where_access_is_needed][3]" value="3" class="form-checkbox">
+                    <label class="option" for="edit-submitted-type-of-request-area-or-module-where-access-is-needed-3">Advancement
+                    </label>
+
+                  </div>
+                  <div class="form-item form-type-checkbox form-item-submitted-type-of-request-area-or-module-where-access-is-needed-4">
+                    <input type="checkbox" id="edit-submitted-type-of-request-area-or-module-where-access-is-needed-4" name="submitted[type_of_request][area_or_module_where_access_is_needed][4]" value="4" class="form-checkbox">
+                    <label class="option" for="edit-submitted-type-of-request-area-or-module-where-access-is-needed-4">Finance - Budgets
+                    </label>
+
+                  </div>
+                  <div class="form-item form-type-checkbox form-item-submitted-type-of-request-area-or-module-where-access-is-needed-10">
+                    <input type="checkbox" id="edit-submitted-type-of-request-area-or-module-where-access-is-needed-5" name="submitted[type_of_request][area_or_module_where_access_is_needed][10]" value="10" class="form-checkbox">
+                    <label class="option" for="edit-submitted-type-of-request-area-or-module-where-access-is-needed-5">Finance - General
+                    </label>
+
+                  </div>
+                  <div class="form-item form-type-checkbox form-item-submitted-type-of-request-area-or-module-where-access-is-needed-5">
+                    <input type="checkbox" id="edit-submitted-type-of-request-area-or-module-where-access-is-needed-6" name="submitted[type_of_request][area_or_module_where_access_is_needed][5]" value="5" class="form-checkbox">
+                    <label class="option" for="edit-submitted-type-of-request-area-or-module-where-access-is-needed-6">Financial Aid
+                    </label>
+
+                  </div>
+                  <div class="form-item form-type-checkbox form-item-submitted-type-of-request-area-or-module-where-access-is-needed-6">
+                    <input type="checkbox" id="edit-submitted-type-of-request-area-or-module-where-access-is-needed-7" name="submitted[type_of_request][area_or_module_where_access_is_needed][6]" value="6" class="form-checkbox">
+                    <label class="option" for="edit-submitted-type-of-request-area-or-module-where-access-is-needed-7">Human Resources
+                    </label>
+
+                  </div>
+                  <div class="form-item form-type-checkbox form-item-submitted-type-of-request-area-or-module-where-access-is-needed-7">
+                    <input type="checkbox" id="edit-submitted-type-of-request-area-or-module-where-access-is-needed-8" name="submitted[type_of_request][area_or_module_where_access_is_needed][7]" value="7" class="form-checkbox">
+                    <label class="option" for="edit-submitted-type-of-request-area-or-module-where-access-is-needed-8">Public Safety (Parking, Vehicle Registration, &amp;c.)
+                    </label>
+
+                  </div>
+                  <div class="form-item form-type-checkbox form-item-submitted-type-of-request-area-or-module-where-access-is-needed-8">
+                    <input type="checkbox" id="edit-submitted-type-of-request-area-or-module-where-access-is-needed-9" name="submitted[type_of_request][area_or_module_where_access_is_needed][8]" value="8" class="form-checkbox">
+                    <label class="option" for="edit-submitted-type-of-request-area-or-module-where-access-is-needed-9">Student
+                    </label>
+
+                  </div>
+                  <div class="form-item form-type-checkbox form-item-submitted-type-of-request-area-or-module-where-access-is-needed-9">
+                    <input type="checkbox" id="edit-submitted-type-of-request-area-or-module-where-access-is-needed-10" name="submitted[type_of_request][area_or_module_where_access_is_needed][9]" value="9" class="form-checkbox">
+                    <label class="option" for="edit-submitted-type-of-request-area-or-module-where-access-is-needed-10">Other/Do Not Know
+                    </label>
+
+                  </div>
+                </div>
+              </div>
+              <div class="form-item webform-component webform-component-select webform-component--type-of-request--type-of-finance-viewing-access-if-needed">
+                <label for="edit-submitted-type-of-request-type-of-finance-viewing-access-if-needed">Type of Finance Viewing Access, if needed
+                </label>
+                <select id="edit-submitted-type-of-request-type-of-finance-viewing-access-if-needed" name="submitted[type_of_request][type_of_finance_viewing_access_if_needed]" class="form-select">
+                  <option value="" selected="selected">- None -</option>
+                  <option value="11">Viewing access</option>
+                  <option value="12">Posting access</option>
+                  <option value="13">Both viewing and posting access</option>
+                </select>
+              </div>
+              <div class="form-item webform-component webform-component-checkboxes webform-component--type-of-request--special-access">
+                <label for="edit-submitted-type-of-request-special-access">Special Access
+                </label>
+                <div id="edit-submitted-type-of-request-special-access" class="form-checkboxes">
+                  <div class="form-item form-type-checkbox form-item-submitted-type-of-request-special-access-1">
+                    <input type="checkbox" id="edit-submitted-type-of-request-special-access-1" name="submitted[type_of_request][special_access][1]" value="1" class="form-checkbox">
+                    <label class="option" for="edit-submitted-type-of-request-special-access-1">Timesheet Approver
+                    </label>
+
+                  </div>
+                  <div class="form-item form-type-checkbox form-item-submitted-type-of-request-special-access-2">
+                    <input type="checkbox" id="edit-submitted-type-of-request-special-access-2" name="submitted[type_of_request][special_access][2]" value="2" class="form-checkbox">
+                    <label class="option" for="edit-submitted-type-of-request-special-access-2">Student Worker
+                    </label>
+
+                  </div>
+                </div>
+              </div>
+              <div class="form-item webform-component webform-component-textarea webform-component--type-of-request--request-details">
+                <label for="edit-submitted-type-of-request-request-details">Request Details
+                  <span class="form-required" title="This field is required.">*</span>
+                </label>
+                <div class="form-textarea-wrapper resizable">
+                  <textarea required="required" id="edit-submitted-type-of-request-request-details" name="submitted[type_of_request][request_details]" cols="60" rows="5" class="form-textarea required"></textarea>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <input type="hidden" name="details[sid]">
+          <input type="hidden" name="details[page_num]" value="1">
+          <input type="hidden" name="details[page_count]" value="1">
+          <input type="hidden" name="details[finished]" value="0">
+          <input type="hidden" name="form_build_id" value="form-KkLCH60pgQ0M51A5yUUozAbMUAp52dJhvHtd1lhQqF8">
+          <input type="hidden" name="form_token" value="x5cg7y6WL4rljokNvyUY7S0MGNe89Emf8VasrJO-TmQ">
+          <input type="hidden" name="form_id" value="webform_client_form_306">
+          <div class="form-actions"><input class="webform-submit button-primary form-submit" type="submit" name="op" value="Submit"></div>
+        </div>
+      </form>
+    </section>
+  </article>
+
+{% endblock %}

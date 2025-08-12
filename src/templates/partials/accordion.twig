@@ -1,0 +1,64 @@
+<div class="accordion" role="tablist">
+
+  {% for item in items %}
+
+    {# ID must be unique on the page #}
+    {% set id = random(1234) %}
+
+    <div class="accordion-item js-accordion-item-{{id}}{{ item.current ? " accordion-item-current" : "" }}{{ item.upcoming ? " accordion-item-upcoming" : "" }}">
+      <a 
+        href="#midd-accordion-item-label-{{id}}"
+        class="accordion-item__link"
+        data-toggle-target=".js-accordion-item-{{id}}"
+        aria-expanded="false"
+        aria-controls="midd-accordion-content-{{id}}"
+        aria-labelledby="midd-accordion-item-label-{{id}}"
+        role="tab">
+        <h3 class="accordion-item__title">
+          {% if faq %}
+            <span class="accordion-item__char" aria-hidden="true">Q</span>
+            <span class="accordion-item__label" id="midd-accordion-item-label-{{id}}">{{item.title}}</span>
+          {% elseif course_list %}
+            <span id="midd-accordion-item-label-{{id}}">
+              <p class="accordion-item__label--bold">{{item.course_number}}</p>
+              {{item.title}}
+            </span>
+          {% else %}
+            {# This case is true when using the FAQ component as a generic accordions #}
+            <span class="accordion-item__label" id="midd-accordion-item-label-{{id}}">{{item.title}}</span>
+          {% endif %}
+
+          {% include 'icon.twig' with { name: 'chevron-down', class: 'accordion-item__icon' } %}
+        </h3>
+      </a>
+
+      <div class="accordion-item__content{{course_list ? "--column" : ""}}" id="midd-accordion-content-{{id}}" role="tabpanel" aria-labelledby="midd-accordion-item-label-{{id}}">
+        {% if faq %}
+          <span class="accordion-item__char" aria-hidden="true">A</span>
+        {% endif %}
+        {% if course_list %}
+          <p class="accordion-item__sub-title">Course Description</p>
+        {% endif %}
+        <div class="typography">
+          {{item.content}}
+        </div>
+        {% if course_list %}
+          {% if item.terms %}
+            <p class="accordion-item__sub-title">Terms Taught</p>
+            <div class="typography">
+              {{item.terms}}
+            </div>
+          {% endif %}
+          {% if item.requirements %}
+            <p class="accordion-item__sub-title">Requirements</p>
+            <div class="typography">
+              {{item.requirements}}
+            </div>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+
+</div>
+

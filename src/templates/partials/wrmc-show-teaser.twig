@@ -1,0 +1,28 @@
+{% set i = random(1234) %}
+<article class="show-teaser {{class}}" aria-labelledby="wrmc-show-teaser-header-{{i}}" {% if role %} role={{role}} {% endif %}>
+  <div class="show-time">
+    <time datetime="{{item.start_time}}" class="" aria-label="show starts at {{item.start_time}} {{item.meridiem}}">{{item.start_time}}</time><time datetime="{{item.end_time}}" class="" aria-label="show ends at {{item.end_time}} {{item.meridiem}}">-{{item.end_time}} {{item.meridiem}}</time>
+  </div>
+  <div class="show-details">
+    <a href="{{ url|default('#') }}">
+      <h3 id="wrmc-show-teaser-header-{{i}}">
+          {{item.title}}
+      </h3>
+    </a>
+    {% if item.hosts %}
+      <p class="show-details__hosts">
+        <em>{{item.hosts}}</em>
+      </p>
+    {% endif %}
+    {% if item.description %}
+      <p class="show-details__description">
+        {{item.description}}
+      </p>
+    {% endif %}
+    <div class="show-details__genres">
+      {% for genre in item.genres %}
+        <a href="#" class="show-details__genre {{genre.class}}">{{genre.name}}</a>
+      {% endfor %}
+    </div>
+  </div>
+</article>

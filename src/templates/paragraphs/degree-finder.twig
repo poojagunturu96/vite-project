@@ -1,0 +1,55 @@
+<div class="paragraph--expand paragraph--pull-up">
+	<nav class="themed-box themed-box--compress" aria-labelledby="midd-school-explorer-label">
+		<h2 class="h2 f6 mb-3" id="midd-school-explorer-label">Explore our Graduate Degrees and Programs</h2>
+
+		<div class="d-md-flex align-items-center">
+			<div class="flex-auto mr-4">
+
+				{% include '../partials/dropdown.twig' with {
+          items: [
+            { href: '', label: 'International Education Management' },
+            { href: '', label: 'International Environmental Policy' },
+            { href: '', label: 'International Policy and Development' },
+            { href: '', label: 'MPA' },
+            { href: '', label: 'International Trade and Economic Diplomacy' },
+            { href: '', label: 'Nonproliferation and Terrorism Studies' },
+            { href: '', label: 'TESOL' },
+            { href: '', label: 'Teaching Foreign Language' },
+            { href: '', label: 'Translation; Translation and Interpretation; Conference Interpretation' },
+            { href: '', label: 'Translation and Localization Management' },
+            { href: '', label: 'Online Translation and Localization Management' },
+          ],
+          label: 'Graduate Degrees'
+        } %}
+
+			</div>
+			<div class="flex-auto mr-4">
+
+				{% include '../partials/dropdown.twig' with {
+          items: [
+            { href: '', label: 'Joint MPA/MA in International Education Management' },
+            { href: '', label: 'Joint MPA/MA in International Trade and Economic Diplomacy' },
+            { href: '', label: 'Joint MA in International Policy and Development/MA in International Trade and Economic Diplomacy' },
+            { href: '', label: 'Joint BA/MA Degrees' },
+          ],
+          label: 'Joint Graduate Degrees'
+        } %}
+
+			</div>
+			<div class="flex-auto mr-4">
+
+				{% include '../partials/dropdown.twig' with {
+          items: [
+            { href: '', label: 'Certificates and Specializations' },
+            { href: '', label: 'Language Programs' },
+            { href: '', label: 'Professional Development' },
+          ],
+          label: 'Additional Programs'
+        } %}
+
+			</div>
+		</div>
+
+	</nav>
+
+</div>

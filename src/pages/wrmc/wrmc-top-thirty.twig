@@ -1,0 +1,18 @@
+{% extends "layouts/wrmc-layout.twig" %}
+
+{% set has_page_image = true %}
+
+{% set page_header = {
+  title: 'Top Thirty',
+  breadcrumb: [
+    {
+      text: 'Home'
+    }
+  ],
+  image_src: has_page_image,
+  weekly_top_ten: true
+} %}
+
+{% block content %}
+  {% include 'paragraphs/wrmc-top-thirty-songs.twig' %}
+{% endblock %}

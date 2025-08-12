@@ -1,0 +1,59 @@
+{% extends "layouts/course-hub-layout.twig" %}
+
+{% set page_header = {
+  title: 'Syllabi for AMST 0210A',
+  breadcrumb: [
+    { text: 'Course Hub' },
+    { text: 'Schools and Programs' },
+    { text: 'Middlebury College' },
+    { text: 'Spring 2019' },
+    { text: 'American Studies' },
+  ],
+} %}
+
+{% block nav %}
+  {% include 'partials/page-nav.twig' with {
+    label: 'My Terms',
+    items: [
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+    ]
+  } %}
+{% endblock %}
+
+{% block content %}
+
+  {% include 'partials/course-hub-tabs.twig' with { active: 2 } %}
+
+  {# syllabus links can render in a list like this  #}
+  <div class="typography mb-7">
+    <ul>
+      <li>
+        <a href="">Syllabus one</a>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, quis rem dolore amet animi quo hic ea est at corrupti et odio inventore neque assumenda doloremque! Nesciunt error sed vitae.</p>
+      </li>
+    </ul>
+  </div>
+
+  {# else render text syllabus like this #}
+  <div class="typography mb-4">
+    <h3>Syllabus title</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, nobis consectetur magni expedita quia amet. Doloribus placeat fugiat quae optio repellendus, nostrum sint, totam soluta assumenda magnam inventore. Quod, fugiat.</p>
+    <p>Possimus molestias eum corrupti tempore saepe rerum fugiat reprehenderit sapiente ad! Amet eveniet recusandae nulla ex doloribus ipsa, cumque excepturi dolor laborum labore? Eligendi numquam delectus cum, placeat alias deleniti?</p>
+    <p>Suscipit, accusantium. Aliquam minus odio veniam optio similique, beatae culpa provident dicta accusantium, aliquid maiores, adipisci ab eligendi eaque officia. Officia inventore corrupti doloremque! Pariatur ducimus corrupti magnam repellendus veritatis?</p>
+  </div>
+
+  {# alert if no syllabi #}
+  <div class="alert alert--status mb-4">
+    No syllabi have been added yet.
+  </div>
+  {# always shown to instructor button #}
+  <div class="mb-7">
+    <a href="" class="button button--outline button--primary">+ Add a syllabus</a>
+  </div>
+
+
+{% endblock %}

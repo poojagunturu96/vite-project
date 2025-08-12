@@ -1,0 +1,56 @@
+<div class="media-object mb-4 mb-lg-6">
+  <div class="media-object__image-profile-teaser">
+    <a href="#">
+      {% include 'img.twig' with {
+        name: 'profile_teaser'
+      } %}
+    </a>
+  </div>
+  <div class="media-object__body">
+    <h3>
+      <a href="#">{{name}}</a>
+    </h3>
+    <p class="media-object__pronouns">{{pronouns}}</p>
+    <p class="f2 mb-2">{{role}}</p>
+    {% if scholar_icons %}
+      {% include 'scholarly-identity-links.twig' with {
+        no_label: true,
+        class: 'media-object__scholarly-icon-list'
+      }%}
+    {% endif %}
+    {% if text %}
+      <p class="f2 pb-2 pt-2 border-top">{{text}}</p>
+    {% endif %}
+
+    <dl class="f2">
+      {% for item in meta %}
+        <div class="pt-2 pb-2 border-top">
+          <dt class="d-block font-semibold">{{item.name}}:</dt>
+
+          <dd class="d-inline">
+            {% if item.href %}
+              <a href="{{item.href}}" class="link-underline">{{item.value}}</a>
+            {% else %}
+              {{item.value}}
+            {% endif %}
+          </dd>
+        </div>
+
+      {% endfor %}
+    </dl>
+    {% if social %}
+      {% include 'social-links.twig' with {
+        items: social,
+        class: 'w-100 pt-0 border-top media-object__social-icons',
+      } %}
+    {% endif %}
+
+    {% if actions %}
+      <div class="mt-4">
+        {% for action in actions %}
+          <a href="{{action.href}}" class="f2 link-underline">{{action.label}}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>

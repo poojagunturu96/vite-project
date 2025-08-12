@@ -1,0 +1,63 @@
+{% set id = random(1234) %}
+
+<div class="paragraph paragraph--full">
+  <div
+    class="container px-0">
+
+    {# gradient should be one of left-bottom, left-top, right-bottom, right-top, center #}
+
+    <section class="mega-cta {{miis ? 'mega-cta--miis' : ''}} mega-cta--image{{pin ? '-' ~ pin : '-bottom-left'}} {% if hero %} mega-cta--hero{% endif %}{% if blse %} mega-cta--blse{% endif %}{% if admissions_lp %} mega-cta--admissions-lp {{banner_cta ? 'mega-cta--banner-cta' : '' }}{% endif %}" aria-labelledby="midd-mega-cta-label-{{id}}">
+      {% if gradient %}
+        <div class="mega-cta__back-gradient">
+      {% endif %}
+        <figure class="mega-cta__back">
+          {% include '../partials/img.twig' with {
+            name: image ?? 'spotlight'
+          } %}
+          {% if caption %}
+            <figcaption class="mega-cta__caption">
+              {% include '../partials/tooltip.twig' with {
+								light: true,
+								size: 'lg',
+								id: random(1234),
+								label: caption
+							} %}
+            </figcaption>
+          {% endif %}
+        </figure>
+      {% if gradient %}
+        </div>
+      {% endif %}
+
+      <div class="mega-cta__front {% if gradient %} mega-cta--gradient-{{gradient}} {% endif %} {{dual_border_color_primary ? " mega-cta__front--with-borders" : " "}}" {% if dual_border_color_primary %} style="--dual-border-color-primary: {{dual_border_color_primary}}; --dual-border-color-secondary: {{dual_border_color_secondary}};" {% endif %}>
+        <div class="{% if gradient %} mega-cta__content mega-cta__content-position mega-cta__content-position-{{gradient}} {% else %} mega-cta__content {% endif %}">
+          {% if title %}
+            {% if admissions_lp %}
+              <h1 class="mega-cta__title font-sans-serif font-semibold border-dual-text-shadow" id="midd-mega-cta-label-{{id}}" style=" --text-color: {{text_color}}; --text-shadow-color-primary: {{text_shadow_color_primary}}; --text-shadow-color-secondary: {{text_shadow_color_secondary}};">
+                {{title}}
+              </h1>
+            {% else %}
+              <h2 class="mega-cta__title" id="midd-mega-cta-label-{{id}}">{{title|default('What makes Middlebury different?')}}</h2>
+            {% endif %}
+          {% endif %}
+          {% if title_link %}
+            <a href="#" class="mega-cta__link">
+              <h2 class="mega-cta__title{{miis ? '-miis' : ''}}" id="midd-mega-cta-label-{{id}}">{{title_link}}</h2>
+            </a>
+          {% endif %}
+          {% if text %}
+            <p class="mega-cta__text{{miis ? '-miis' : ''}}">
+              {{text}}
+            </p>
+          {% endif %}
+          {% if admissions_lp %}
+            <a class="button button--primary button--heavy" href="">{{link}}</a>
+          {% else %}
+            <a class="button button--outline button--light" href="">{{link|default('Apply now')}}</a>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

@@ -1,0 +1,44 @@
+{% set colors = ['#C0E3FD', '#83C9FC', '#0E68B1', '#07487B', '#043666'] %}
+{% set card_open = random(10) %}
+
+<div class="paragraph--waveform">
+	<div class="container px-0">
+		<section class="waveform">
+			<header class="waveform__header">
+				<h2 class="section__title">
+					Section Title Events
+				</h2>
+				<a href="https://www.google.com" target="_blank" class="paragraph--button button button--light button--outline">View All</a>
+				<div class="waveform__blurb">
+					<p class="section__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidi ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+				</div>
+			</header>
+			<div class="waveform__wrapper">
+				<ul class="waveform__list shifting-slider">
+					{% for i in 0..48 %}
+						{% set bar_color = random(4) %}
+						<li class="waveform__list-item js-waveform-item-{{i}} {{i == card_open ? " is-toggled" : " "}} bar-color-style-{{bar_color}} bar-height-style-xl-{{random(5)}} bar-height-style-lg-{{random(5)}} bar-height-style-sm-{{random(5)}} bar-margin-style-xl-{{random(4)}} bar-margin-style-lg-{{random(5)}} bar-margin-style-sm-{{random(4)}}" data-toggle-single-target=".js-waveform-item-{{i}}" data-tooltip="Museum of Art Lecture Series" aria-label="Museum of Art Lecture Series" tabindex="0">
+							<div class="waveform__event-card" style="display:none;border-left:8px solid {{colors[bar_color]}}">
+								<div class="waveform__event-card__content">
+									<div class="waveform__event-card__content--text">
+										<time datetime="" class="text-center lh-solid">
+											March 24, 2019
+										</time>
+										<h3 id="midd-event-{{i}}-header">
+											<a href="{{ url|default('#') }}" title="{{ title }} on June 24, 2017 &middot; 11:45 AM">
+												Museum of Art Lecture Series
+											</a>
+										</h3>
+										<p class="f3 mt-2 mt-lg-3">
+											Lorem ipsum dolor sit amet; dolor sit amet; nostrud exercitation ullamco. Lorem ipsum dolor sit amet; dolor sit amet; nostrud exercitation ullamco. Lorem ipsum dolor sit amet; dolor sit amet; nostrud exercitation ullamco. Lorem ipsum dolor sit amet; dolor sit amet; nostrud exercitation ullamco. Lorem ipsum dolor sit amet; dolor sit amet; nostrud exercitation ullamco. Lorem ipsum dolor sit amet; dolor sit amet; nostrud exercitation ullamco. Lorem ipsum dolor sit amet; dolor sit amet; nostrud exercitation ullamco.
+										</p>
+									</div>
+									<a href="#" target="_blank" class="paragraph--button button button--primary">Do something awesome</a>
+								</div>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</section>
+		</div>
+	</div>

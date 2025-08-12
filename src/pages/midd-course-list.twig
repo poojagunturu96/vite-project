@@ -1,0 +1,15 @@
+{% extends "layouts/school-layout.twig" %}
+
+{% set page_header = {
+  title: 'Majors and Minors',
+  breadcrumb: [
+    { text: 'Middlebury' },
+  ],
+  school: true
+} %}
+
+{% block page %}
+
+  {% include 'partials/course-list-table.twig' %}
+
+{% endblock %}

@@ -1,0 +1,25 @@
+<div class="d-inline-block bg-gray-lighter p-4 mb-9">
+  {% set logged_in = true %}
+
+  {% if logged_in %}
+
+    {% include 'masquerade.twig' %}
+
+    <ul>
+      <li class="mb-2">
+        <a href="" class="f2 link-underline">Manage Course Sections</a>
+      </li>
+      <li>
+        <a href="" class="f2 link-underline">Log out</a>
+      </li>
+    </ul>
+
+  {% else %}
+    {% include 'page-cta.twig' with {
+      title: 'My Terms',
+      text: 'Log in to view courses you are in or instruct.',
+      link_href: '#',
+      link_text: 'Log in'
+    } %}
+  {% endif %}
+</div>

@@ -1,0 +1,21 @@
+{% extends "layouts/school-home.twig" %}
+
+{% set theme = 'ls' %}
+{% set is_front = true %}
+
+{% block layout_header %}
+  {% embed 'partials/school-header.twig' %}
+    {% block school_logo %}
+      <img src="images/language-schools-logo.svg" srcset="images/language-schools-logo.svg 232w" sizes="(min-width: 1280px) 232px, 158px" alt="Logo for Middlebury Language Schools"/>
+      <span class="sr-only">Middlebury Language Schools</span>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+
+{% block content %}
+
+  {% include 'paragraphs/ls-hero.twig' %}
+
+  {% include 'paragraphs/ls-form.twig' %}
+
+{% endblock %}

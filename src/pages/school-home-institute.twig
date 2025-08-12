@@ -1,0 +1,101 @@
+{% extends 'layouts/school-home.twig' %}
+
+{% set theme = 'institute' %}
+{% set is_front = true %}
+
+{% block layout_header %}
+  {% embed 'partials/school-header.twig' %}
+    {% block school_logo %}
+      <img src="images/miis-logo.svg" srcset="images/miis-logo.svg 361w" sizes="(min-width: 1280px) 361px, 248px" alt="Logo for Middlebury Institute of International Studies at Monterey"/>
+      <span class="sr-only">
+        Middlebury Institute of International Studies at Monterey
+      </span>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+
+{% block content %}
+  {% include 'paragraphs/mega-cta.twig' with {
+    pin: 'left-bottom',
+    miis: 'true',
+    gradient: 'left-top',
+    image: 'miis_spotlight',
+    caption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    title_link: 'Water Sanitation Research and Development, India',
+    text: 'Access to safe water and adequate sanitation services has proven to be one of the most efficient ways of improving human health.',
+    link: 'Read more'
+  } %}
+
+  {% include 'paragraphs/degree-finder.twig' %}
+
+  {% include 'paragraphs/text-short.twig' %}
+
+  {% include 'paragraphs/pardot-form.twig' with {
+    title: 'Find out if IEM is right for you',
+    post_url: 'https://learn.middlebury.edu/l/74172/2021-08-04/21x2y5y',
+    program: 'International Education Management',
+    confirmation: 'http://www.middlebury.edu',
+    button: 'Get Info'
+  } %}
+
+  {% include 'paragraphs/text-short.twig' %}
+
+  {% include 'paragraphs/card-carousel.twig' %}
+
+  {% include 'paragraphs/dispatches.twig' %}
+
+  {% include 'paragraphs/spotlight.twig' %}
+
+  {% include 'paragraphs/chart-group.twig' with {
+    title: 'Internships',
+    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, sunt sit impedit aliquid eum vero officiis saepe natus veritatis, ullam quaerat similique quasi molestias numquam voluptate quam incidunt, provident fugiat?',
+    items: [
+      { type: 'stats', number: 90, label: 'on-campus info sessions with employers', },
+      { type: 'stats', number: 500, label: 'on-campus interviews' },
+      { type: 'stats', number: 2500.53, label: 'Opportunities in our online database', },
+      { type: 'stats', number: 600.23, prefix: '$', suffix: 'k', label: 'of summer internship funding', },
+      { type: 'stats', number: 800, label: 'Summer internships', },
+      { type: 'stats', number: 7500, suffix: '+', label: 'Alumni Career volunteers', },
+    ]
+  } %}
+
+  {% include 'paragraphs/logo-bar.twig' %}
+
+  {% include 'paragraphs/card-carousel.twig' %}
+
+  {% include 'paragraphs/faq.twig' %}
+
+  {% include 'paragraphs/course-list.twig' with {
+      course_title: 'Course List'
+    } 
+  %}
+
+  {% include 'paragraphs/waveform.twig' with {
+    lines: true
+  } %}
+
+  {% include 'paragraphs/quad-story.twig' %}
+
+  {% include 'paragraphs/themed-panel.twig' with {
+    main_title: true,
+    main_article: true,
+    main_article_cta: true,
+    main_article_title_link: false,
+    subarticles: 3,
+  }%}
+{% endblock %}
+
+{% block layout_footer %}
+	{% include 'partials/olark.twig' %}
+	{% include 'partials/footer-cta-group.twig' %}
+	{% include 'partials/school-footer.twig' with {
+    name: 'Support the Institute',
+    cta: {
+      text: 'Make a Gift',
+      link: 'https://engage.middlebury.edu/pages/give-to-miis?sid=1637&gid=3&pgid=496&cid=1248&_ga=2.201331473.105684710.1518198910-149004332.1477001419'
+    },
+    has_menus: true,
+    menus: footer_nav
+  } %}
+	{% include 'partials/midd-footer.twig' %}
+{% endblock %}

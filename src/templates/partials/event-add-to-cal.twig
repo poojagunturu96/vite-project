@@ -1,0 +1,14 @@
+<div class="dropdown addtocal-container" data-dropdown>
+  <button  class="button button--sm button--primary button--outline dropdown__button addtocal" aria-label="Open Add to Calendar menu" aria-haspopup="true" aria-expanded="false" data-dropdown-button>
+    {% include 'icon.twig' with { name: 'calendar-alt', class: 'mr-2' } %}
+    Add to Calendar
+    {% include 'icon.twig' with { name: 'chevron-down', class: 'dropdown__icon ml-4' } %}
+  </button>
+  <ul class="dropdown__list addtocal-menu" data-dropdown-menu>
+    {% for opt in options %}
+        <li class="dropdown__item addtocal-link" data-addtocal-type="{{ opt['addtocal-type'] }}">
+          <a href="{{ opt['url'] }}" target="_blank" rel="noopener" aria-label="{{ opt['aria-label'] }}" class="dropdown__link">{{ opt['label'] }}</a>
+        </li>
+    {% endfor %}
+  </ul>
+</div>

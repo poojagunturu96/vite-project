@@ -1,0 +1,60 @@
+<div class="paragraph--card-carousel">
+  <div class="container px-0">
+    <section
+      class="card-carousel js-card-carousel"
+      aria-labelledby="midd-card-carousel-label"
+      {% if randomize %} data-randomize{% endif %}
+    >
+      <div class="row row--no-gutters">
+        <div class="col-md-6 col-lg-4 col-xl-3">
+
+          <div class="card-carousel__header">
+            <h2 class="card-carousel__title" id="midd-card-carousel-label">Program Spotlight</h2>
+            <div class="card-carousel__button">
+              <a href="#" class="button button--outline button--light">Explore our Programs</a>
+            </div>
+            <div class="card-carousel__controls" aria-label="program spotlight controls" role="navigation">
+              {# ids for tracking #}
+              <button class="button button--light button--outline button--circle js-card-carousel-prev-button" aria-label="Previous" id="midd-card-carousel-button-prev">
+                <span aria-hidden="true">&lsaquo;</span>
+              </button>
+              <button class="button button--light button--outline button--circle js-card-carousel-next-button" aria-label="Next" id="midd-card-carousel-button-next">
+                <span aria-hidden="true">&rsaquo;</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-6 col-lg-8 col-xl-9">
+          <div class="card-carousel__container swiper js-swiper-container">
+            <div class="card-carousel__content swiper-wrapper js-swiper-wrapper">
+
+              {# these colors will need to be stored in a select option on card carousel items #}
+              {% set card_carousel_colors = [
+                'dark-blue',
+                'red',
+                'green',
+                'light-blue',
+                'maroon',
+                'bronze',
+                'teal',
+                'orange'
+              ] %}
+
+              {% for item in 0..5 %}
+                <div class="card-carousel__item swiper-slide">
+                  {% include '../partials/card-carousel-item.twig' with {
+                    id: loop.index,
+                    color: colors ? card_carousel_colors[loop.index] : ''
+                  } %}
+                </div>
+              {% endfor %}
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

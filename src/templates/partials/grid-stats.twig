@@ -1,0 +1,25 @@
+<div class="grid-stats{{dark ? " dark": " "}}">
+  {% if items.length >= 1 %}
+    <div class="chart-group__list{% if items.length == 2 %} chart-group__list--2{% endif %}">
+      {% for item in items %}
+        <div class="chart-group__item chart-group__item--{{item.type}}">
+          {% if item.type == 'stats' %}
+
+            <div class="stats">
+              <span class="stats__label">{{item.prefix}}<span data-countup>{{item.number}}</span>
+                {{item.suffix}}</span>
+              <span class="stats__text">{{item.label}}</span>
+            </div>
+
+          {% else %}
+            {% include 'chart.twig' with item %}
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+
+    {% include 'chart.twig' with item: items[0] %}
+
+  {% endif %}
+</div>

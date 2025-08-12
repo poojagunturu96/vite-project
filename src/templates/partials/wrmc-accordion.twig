@@ -1,0 +1,42 @@
+<section class="wrmc-accordion" aria-labelledby="midd-page-header-label" data-toggle-all-group>
+  <div class="wrmc-accordion-toggle-links">
+    <a href="#" data-toggle-open-all>open all</a>
+    <a href="#" data-toggle-close-all>close all</a>
+  </div>
+  <div role="tablist">
+    {% for schedule_item in wrmc_schedule_items %}
+
+      {# ID must be unique on the page #}
+      {% set id = random(1234) %}
+
+      <div class="wrmc-accordion-item {{"now"|date('l') == schedule_item.day ? "is-toggled" : (toggle_all ? "is-toggled" : "")}} js-accordion-item-{{id}}">
+        <a
+          href="#wrmc-accordion-item-label-{{id}}"
+          class="wrmc-accordion-item__link"
+          data-toggle-target=".js-accordion-item-{{id}}"
+          aria-expanded="{{"now"|date('l') == schedule_item.day ? "true" : (toggle_all ? "true" : "false")}}"
+          aria-controls="wrmc-accordion-content-{{id}}"
+          aria-labelledby="wrmc-accordion-item-label-{{id}}"
+          role="tab"
+          >
+          <h2 class="wrmc-accordion-item__title">
+            <span id="wrmc-accordion-item-label-{{id}}">{{schedule_item.day}}</span>
+
+            <span class="wrmc-accordion-item-close">&ndash;</span>
+            <span class="wrmc-accordion-item-open">&#43;</span>
+          </h2>
+        </a>
+        <div role="tabpanel" id="wrmc-accordion-content-{{id}}" aria-labelledby="wrmc-accordion-item-label-{{id}}">
+          <ul class="wrmc-accordion-item__content-list">
+            {% for item in schedule_item.schedule %}
+              <li class="wrmc-accordion-item__list-item">
+                {% include 'wrmc-show-teaser.twig' %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+

@@ -1,0 +1,58 @@
+<article class="border-t border-navy border-4 pt-3">
+  <h2 class="h3 mb-3 border-b pb-3">
+    <a href="course-hub-course-detail.html" class="link-underline">
+      {{ title }}
+    </a>
+  </h2>
+
+  <dl class="f2 lh6 border-b mb-3">
+    <div class="mb-3">
+      <dt class="text-caps f1 font-medium">
+        Schedule
+      </dt>
+      <dd>
+        11:00am-12:15pm on Tuesday, Thursday (Feb 11, 2019 to May 13, 2019)
+      </dd>
+    </div>
+    <div class="mb-3">
+      <dt class="text-caps f1 font-medium">
+        Location
+      </dt>
+      <dd>Axinn Center 104</dd>
+    </div>
+    {# hide for instructors? #}
+    <div class="mb-3">
+      <dt class="text-caps f1 font-medium">
+        Instructors
+      </dt>
+      <dd>
+        John Smith<br /><a href="mailto:" class="link-underline">
+          jsmith@middlebury.edu
+        </a>
+      </dd>
+    </div>
+  </dl>
+
+  {% set items = syllabus|merge(resources) %}
+
+  <ul class="d-flex flex-wrap">
+    {% for subitem in items %}
+      <li class="mr-3 mb-2">
+        <a href="" class="f2 link-underline">{{ subitem }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {# for admin/course owner only #}
+  <ul class="d-flex border-t pt-3 mt-2 f2">
+    <li class="mr-3">
+      <a href="course-hub-roster.html" class="link-underline">View Roster</a>
+    </li>
+    <li class="mr-3">
+      <a href="course-hub-roster.html" class="link-underline">Add Syllabus</a>
+    </li>
+    <li class="mr-3">
+      <a href="course-hub-roster.html" class="link-underline">Add Resource</a>
+    </li>
+  </ul>
+</article>

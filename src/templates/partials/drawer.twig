@@ -1,0 +1,27 @@
+<div class="{{theme == 'wrmc' ? "wrmc-drawer" : ""}} drawer" id="midd-nav-drawer" aria-hidden="true">
+  <div class="drawer__overlay" tabindex="-1" data-drawer-close>
+    <div class="drawer__content" role="dialog" aria-modal="true" aria-labelledby="midd-modal-1-title">
+      <div class="drawer__header">
+        <h2 class="sr-only" id="midd-modal-1-title">{{title}}</h2>
+        <button class="drawer__close" aria-label="Close modal" data-drawer-close>
+          {% include 'icon.twig' with { name: 'times', class: 'mr-1' } %}
+          Close
+        </button> 
+
+      {% if theme == 'wrmc' %}
+        <div class="wrmc-nav__secondary-menu">
+          <img src="images/wrmc-headphones.svg"/>
+          <div class="wrmc-nav__secondary-menu--links">
+            <a href="#" class="button button--light">listen now</a>
+            <a href="#">Get the WRMC App</a>
+          </div>
+        </div>
+      {% endif %}
+      </div>
+      <div id="midd-modal-1-content">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
+

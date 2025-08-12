@@ -1,0 +1,16 @@
+{% extends "layouts/school-layout.twig" %}
+
+{% set page_header = {
+  title: 'Drupal Training',
+  breadcrumb: [
+    { text: 'Middlebury' },
+    { text: 'Events' },
+  ],
+  school: true
+} %}
+
+{% block page %}
+
+  {% include 'partials/event-detail.twig' %}
+
+{% endblock %}

@@ -1,0 +1,50 @@
+<article class="clearfix" aria-labelledby="midd-story-label-{{id}}">
+	{% if featured %}
+		<div class="mb-3">
+			<a href="">
+				<figure class="media">
+					{% include 'img.twig' with { name: 'featured' } %}
+				</figure>
+			</a>
+		</div>
+	{% else %}
+		<div class="float-right ml-4 mb-4">
+			<a href="">
+				<figure class="media">
+					{% include 'img.twig' with { name: 'story_teaser' } %}
+				</figure>
+			</a>
+		</div>
+	{% endif %}
+
+	<p class="d-flex flex-wrap f2 text-caps mb-1">
+		<a href="">Category 1</a>,&nbsp;
+		<a href="">Category 1</a>
+	</p>
+
+	<h2 class="{{featured ? 'h2' : 'h3'}} mb-1" id="midd-story-label-{{id}}">
+		<a href="#">
+			{% if env.test or random(1) %}
+				Longer headline starting here lorem ipsum dolor sit amet consectetur adipisicing elit
+			{% else %}
+				Shorter headline a few words
+			{% endif %}
+		</a>
+	</h2>
+	<p class="f2 mb-3">
+		<time datetime="">Ocotober 10, 2018</time>
+		<span class="mx-2">|</span>
+		by
+		{% for name in ['Sarah Ray', 'Stephen Diehl'] %}
+			<a href="">{{name}}</a>
+			{% if not loop.last %},
+			{% endif %}
+		{% endfor %}
+	</p>
+	<p class="f3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum rem dolor
+		<a href="#" class="link-underline">harum consequuntur</a>
+		laudantium commodi accusantium debitis quisquam eligendi deleniti itaque saepe voluptatibus soluta necessitatibus, voluptas minus possimus? Itaque, sed.</p>
+	{% if env.test or random(1) %}
+		<span class="badge mt-2">Video</span>
+	{% endif %}
+</article>

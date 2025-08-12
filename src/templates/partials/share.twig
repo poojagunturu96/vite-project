@@ -1,0 +1,27 @@
+<ul class="d-flex flex-wrap">
+  <li class="mr-2 mb-2">
+    <a href="https://www.facebook.com/sharer.php?u={{pageUrl}}" target="_blank" title="Share on Facebook" class="button button--sm button--primary button--outline">
+      {% include 'icon.twig' with { name: 'facebook', class: 'mr-1' } %}
+      Share
+    </a>
+  </li>
+  <li class="mr-2 mb-2">
+    <a href="http://twitter.com/share?text={{title}}&url={{pageUrl}}" target="_blank" title="Share on Twitter" class="button button--sm button--primary button--outline">
+      {% include 'icon.twig' with { name: 'twitter', class: 'mr-1' } %}
+      Tweet
+    </a>
+  </li>
+  <li class="mr-2 mb-2">
+    <a href="mailto:?subject={{title}}&body={{pageUrl}}" title="Share via email" class="button button--sm button--primary button--outline">
+      {% include 'icon.twig' with { name: 'envelope', class: 'mr-1' } %}
+      Email
+    </a>
+  </li>
+  {% if additional %}
+    {% for item in additional %}
+      <li class="mr-2 mb-2">
+        {{ item }}
+      </li>
+    {% endfor %}
+  {% endif %}
+</ul>

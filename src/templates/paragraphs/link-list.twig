@@ -1,0 +1,66 @@
+{% set title = title|default('Link List') %}
+{% set items =
+  items|default(
+    [
+      {
+        title: 'Some resource',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'
+      },
+      {
+        title: 'Some resource long title',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'
+      },
+      {
+        title: 'Some resource',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'
+      },
+      {
+        title: 'Some resource',
+        text: 'Lorem ipsum elit'
+      },
+      {
+        title: 'Some title',
+        text: 'Lorem ipsum elit'
+      },
+      {
+        title: 'Some resource',
+        text: 'Lorem ipsum elit'
+      }
+    ]
+  )
+%}
+
+{% set text =
+  text|default(
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem temporibus, adipisci saepe ex debitis voluptate cum! Dolore ipsam sapiente nihil veniam molestiae doloribus, necessitatibus fugit, aliquid hic, tempora consectetur cupiditate.'
+  )
+%}
+
+<div class="paragraph--link-list" data-digest-content>
+  {% embed '../partials/section.twig'
+    with {
+      title: title,
+      moreLinkText: moreLinkText,
+      moreLinkHref: moreLinkHref,
+      text: text,
+      labelledby: 'midd-related-link-list'
+    }
+  %}
+    {% block content %}
+      <ul class="link-list__list">
+        {% for item in items %}
+          <li class="link-list__item">
+            <div class="link-list__box">
+              <a href="" class="link-list__link">{{ item.title }}</a>
+              {% if item.text %}
+                <p class="link-list__info">
+                  {{ item.text }}
+                </p>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endblock %}
+  {% endembed %}
+</div>

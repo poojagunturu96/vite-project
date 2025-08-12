@@ -1,0 +1,35 @@
+{% extends "layouts/school-layout.twig" %}
+
+{% set page_header = {
+  title: 'Taxonomy page',
+  breadcrumb: [
+    { text: 'Offices and Services' },
+  ]
+} %}
+
+{% block page %}
+  {% embed 'partials/sidebar-layout.twig' %}
+    {% block content %}
+
+      <p class="count">6 Items</p>
+
+      <ul class="list list--dividers mb-7">
+        <li class="list__item">
+          {% include 'partials/story.twig' %}
+        </li>
+        <li class="list__item">
+          {% include 'partials/basic-content-teaser.twig' %}
+        </li>
+        <li class="list__item">
+          {% include 'partials/event-teaser.twig' %}
+        </li>
+        <li class="list__item">
+          {% include 'partials/profile-teaser.twig' %}
+        </li>
+      </ul>
+
+      {% include 'partials/pagination.twig' %}
+
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

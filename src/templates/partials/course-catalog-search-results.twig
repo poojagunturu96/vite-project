@@ -1,0 +1,14 @@
+<div class="catalog-search-results">
+  <h2 class="h2 mt-5" id="catalog-search-results">
+    Search Results
+  </h2>
+  <ul class="col-count-xl-1">
+    {% for item in 0..8 %}
+      <li class="w-100 d-inline-block">
+        {% include 'course-catalog-result-card.twig' %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% include 'pagination.twig' %}
+</div>

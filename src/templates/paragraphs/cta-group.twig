@@ -1,0 +1,34 @@
+<div class="paragraph--cta-group">
+
+  <div class="container">
+
+    <div class="cta-group">
+
+      {% for item in 1..4 %}
+        <div class="cta-group__item">
+
+          <h3 class="cta-group__title">
+            {% if env.test or random(1) %}
+              Lorem ipsum dolor sit amet
+            {% else %}
+              Lorem ipsum dolor sit amet ipsum dolor sit amet
+            {% endif %}
+          </h3>
+
+          <p class="cta-group__text">
+            {% if env.test or random(1) %}
+              March 28-29, 2017
+            {% else %}
+              Lorem ipsum dolor sit amet ipsum dolor sit amet
+            {% endif %}
+          </p>
+
+          <a href="" class="cta-group__button button button--primary">Request Info</a>
+
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,49 @@
+{% extends 'layout.twig' %}
+
+{% block layout_header %}
+  {% include '../partials/admissions-lp-header.twig' with {
+    background: 'linear-gradient(109deg, #0d395f 15.52%, #1b76c5 85.63%)'
+  } %}
+{% endblock %}
+
+{% block page %}
+  <div class="container">
+    <div class="row">
+      <div class="paragraphs paragraphs--wide">
+      {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block layout_footer %}
+  {% include '../partials/office-footer.twig' with {
+    name: 'Middlebury Admissions',
+    addr: 'Emma Willard House<br>131 South Main Street<br>Middlebury, VT 05753',
+    tel: {
+      text: '802-443-3000'
+    },
+    email: 'admissions@middlebury.edu',
+    social: {
+      facebook: '#',
+      twitter: '#',
+      instagram: '#',
+      linkedin: '#',
+      vimeo: '#'
+    },
+    hours: '<strong>Monday-Thursday</strong><br>8:30 AM-5:00 PM<br>
+    <strong>Monday-Thursday</strong><br>8:30 AM-5:00 PM'
+  } %}
+  {% include '../partials/school-footer.twig' with {
+    name: 'Middlebury C.V. Starr Schools Abroad',
+    addr: '356 College Street<br>Middlebury, VT 05753',
+    tel: '802-443-5745',
+    email: 'internationalprograms@middlebury.edu',
+    cta: {
+      text: 'Request Info',
+      link: 'http://go.middlebury.edu/sa-inquiry'
+    },
+    menus: footer_nav
+  } %}
+  {% include '../partials/midd-footer.twig' %}
+{% endblock %}

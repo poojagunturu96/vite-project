@@ -1,0 +1,52 @@
+<div class="paragraph--logo-bar px-3 px-lg-0" aria-labelledby="midd-logo-bar-title">
+  <div class="logo-bar container px-0">
+    <h2 class="logo-bar__title" id="midd-logo-bar-title">Our Graduates Work At</h2>
+    <ul class="logo-bar__list">
+
+      {% for item in [
+        {
+          name: "united-nations",
+          alt: "United Nations logo",
+          width: 211
+        },
+        {
+          name: "debt-of-state",
+          alt: "Department of State logo",
+          width: 67
+        },
+        {
+          name: "netflix",
+          alt: "Netflix logo",
+          width: 107
+        },
+        {
+          name: "conservation-international",
+          alt: "Conservation International logo",
+          width: 149
+        },
+        {
+          name: "tesla",
+          alt: "Telsa logo",
+          width: 146
+        },
+        {
+          name: "jpmorgan-chase",
+          alt: "JP Morgan Chase logo",
+          width: 125
+        },
+        {
+          name: "power-int-edu",
+          alt: "IIE: The Power of International Education logo",
+          width: 128
+        },
+      ] %}
+        <li class="logo-bar__item">
+          <img src="/src/images/logo-{{item.name}}.png" srcset="/src/images/logo-{{item.name}}.png 1x, /src/images/logo-{{item.name}}@2x.png" alt="{{item.alt}}" width="{{item.width}}"/>
+        </li>
+
+      {% endfor %}
+
+
+    </ul>
+  </div>
+</div>

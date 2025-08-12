@@ -1,0 +1,56 @@
+{% set items = items|default(system_status) %}
+<div class="section paragraph">
+  <h2 class="section__title">
+    Status Report
+  </h2>
+
+  {% set status = {
+    success: {
+      icon: 'check',
+      name: 'success',
+      label: 'Available'
+    },
+    danger: {
+      icon: 'times',
+      name: 'danger',
+      label: 'Unavailable'
+    },
+    warning: {
+      icon: 'warning',
+      name: 'warning',
+      label: 'Experiencing issues'
+    },
+    paused: {
+      icon: 'pause',
+      name: 'gray',
+      label: 'Paused'
+    }
+  } %}
+
+  <ul class="status-report">
+    {% for item in items %}
+      <li class="status-report__item">
+        {% set icon = item.type is not empty
+          ? status[item.type]
+          : status['success']
+        %}
+
+        <span class="status-report__icon bg-{{ icon.name }}">
+          <span class="sr-only">{{ icon.label }}</span>
+          {% include '../partials/icon.twig' with {
+            name: icon.icon
+          } %}
+        </span>
+
+        <div>
+          <p>
+            {{ item.name }}
+          </p>
+          {% if item.link %}
+            <a href="#" class="link-underline f2">Vendor Status Report</a>
+          {% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

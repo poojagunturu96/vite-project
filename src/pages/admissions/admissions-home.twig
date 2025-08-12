@@ -1,0 +1,57 @@
+{% extends "layouts/school-home.twig" %}
+
+{% set theme = 'college' %}
+
+{% set has_page_image = true %}
+
+{% block layout_header %}
+  {% embed 'partials/school-header.twig' with {
+    extended: true
+  } %}
+    {% block school_logo %}
+      <img src="images/college-logo.svg" srcset="images/college-logo.svg 180w" sizes="(min-width: 1280px) 180px, 120px" alt="Logo for Middlebury College"/>
+      <span class="sr-only">Middlebury College</span>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+
+{% block content %}
+
+  {% include 'paragraphs/mega-cta-background-video.twig' with {
+    text_color: '#75a3cd',
+    text_shadow_color_primary: '#ed01a7',
+    text_shadow_color_secondary: '#f99f33'
+  } %}
+  <div class="paragraph--expand paragraph--pull-up">
+    {% include 'partials/box-menu.twig' with {
+      overlap: has_page_image,
+      items: top_level_nav_example
+    } %}
+  </div>
+
+  {% include 'partials/lead.twig' with {
+    class: 'lead--admissions-home text-center text-black'
+  } %}
+
+  {# possible options for variables used by mega-cta-custom.twig:
+      pin_content: 'top-left', 'top-right', 'bottom-left', 'bottom-right', 'center', 'center-left', 'center-right'
+      mode: 'dark', 'light' #}
+  {% include 'paragraphs/mega-cta-customizable.twig' with {
+    pin_content: 'center-right',
+    mode: 'light',
+    dual_border_color_primary: '#75a3cd',
+    dual_border_color_secondary: '#fff791',
+    title_link: 'Water Sanitation Research and Development, India',
+    text: 'Access to safe water and adequate sanitation services has proven to be one of the most efficient ways of improving human health.',
+    link: 'Read more'
+  } %}
+
+  {# 
+    possible options for variables used by stat-panel.twig:
+    blurb: 'true', 'false'
+    align: 'left', 'right' 
+  #}
+  {% include 'paragraphs/stat-panel.twig' with {
+    align: 'right'
+  }%}
+{% endblock %}

@@ -1,0 +1,30 @@
+<div class="section paragraph paragraph--expand" data-digest-content>
+  <div class="paragraphs--wide__offset">
+    <div class="section__header mb-7 mb-lg-8">
+      <h2 class="section__title">
+        {{title}}
+      </h2>
+      <p class="section__text">
+        {{blurb}}
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    {% for item in media_content_items %}
+      <div class="col-md-6 mb-7 {{loop.index % 2 == 0 ? 'pl-lg-4' : 'pr-lg-4'}}">
+        {% if item == 'video' %}
+          {% include '../partials/video.twig' %}
+        {% elseif item == 'audio' %}
+          {% include 'audio.twig' with {paragraph: false} %}
+        {% elseif item == 'image' %}
+          {% if loop.index % 2 == 1 %}<div class="float-md-right">{% endif %}
+              {% include '../partials/image-with-caption.twig' with {
+                name: 'media_group',
+              } %}
+          {% if loop.index % 2 == 1 %}</div>{% endif %}
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,35 @@
+{% extends 'layout.twig' %}
+
+{% set theme = 'wrmc' %}
+{% set is_front = false %}
+
+{% block layout_header %}
+  {% include '../partials/wrmc-header.twig' %}
+  {% include '../paragraphs/wrmc-status-bar.twig' %}
+{% endblock %}
+
+{% block page %}
+  <div class="container">
+    <div class="row">
+      <div class="paragraphs paragraphs--wide">
+      {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block layout_footer %}
+  {% include '../partials/wrmc-footer.twig' %}
+{% endblock %}
+
+{% block layout_before_body_close %}
+  {% embed '../partials/drawer.twig'
+    with {
+      title: 'Navigation'
+    }
+  %}
+    {% block content %}
+      {% include '../partials/drawer-nav.twig' %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

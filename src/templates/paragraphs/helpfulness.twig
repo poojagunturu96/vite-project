@@ -1,0 +1,78 @@
+<div class="paragraph helpfulness print-hide">
+  <h2 class="h3 mb-3">
+    Was this page helpful?
+    {# We should hard code this title. If editors could in theory add multiple to a page, they could assume they could ask if specific regions on the page are useful vs the entire page. #}
+  </h2>
+  <form action="/~imcbride/helpfulness/announcements/faq"
+    method="post"
+    id="helpfulness-block-form"
+    accept-charset="UTF-8">
+
+    <div id="edit-helpfulness-rating--3">
+      <div class="js-form-item form-item js-form-type-radio form-item-helpfulness-rating js-form-item-helpfulness-rating">
+        <input data-drupal-selector="edit-helpfulness-rating-1-3" type="radio" id="edit-helpfulness-rating-1--3" name="helpfulness_rating" value="1" class="form-radio" />
+        <label for="edit-helpfulness-rating-1--3" class="option">Yes</label>
+      </div>
+
+      <div class="js-form-item form-item js-form-type-radio form-item-helpfulness-rating js-form-item-helpfulness-rating">
+        <input data-drupal-selector="edit-helpfulness-rating-0-3" type="radio" id="edit-helpfulness-rating-0--3" name="helpfulness_rating" value="0" class="form-radio" />
+        <label for="edit-helpfulness-rating-0--3" class="option">No</label>
+      </div>
+    </div>
+
+    <div class="js-form-item form-item js-form-type-textarea form-item-helpfulness-comments-yes js-form-item-helpfulness-comments-yes">
+      <label for="edit-helpfulness-comments-yes--3">
+        <div class="helpfulness_yes_title">
+          <p>Thanks. Any other comments?</p>
+        </div>
+      </label>
+      <div>
+        <textarea data-drupal-selector="edit-helpfulness-comments-yes" aria-describedby="edit-helpfulness-comments-yes--3--description" id="edit-helpfulness-comments-yes--3" name="helpfulness_comments_yes" rows="5" cols="60" class="form-textarea"></textarea>
+      </div>
+      <div id="edit-helpfulness-comments-yes--3--description" class="description">
+        <div class="helpfulness_yes_description">
+          <p>We appreciate your feedback.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="js-form-item form-item js-form-type-textarea form-item-helpfulness-comments-no js-form-item-helpfulness-comments-no">
+      <label for="edit-helpfulness-comments-no--3">
+        <div class="helpfulness_no_title">
+          <p>Sorry to hear that. Please tell me more!</p>
+        </div>
+      </label>
+      <div>
+        <textarea data-drupal-selector="edit-helpfulness-comments-no" aria-describedby="edit-helpfulness-comments-no--3--description" id="edit-helpfulness-comments-no--3" name="helpfulness_comments_no" rows="5" cols="60" class="form-textarea"></textarea>
+      </div>
+      <div id="edit-helpfulness-comments-no--3--description" class="description">
+        <div class="helpfulness_no_description">
+          <p>Please include your email if you want us to follow up with you.</p>
+        </div>
+      </div>
+    </div>
+
+    <input autocomplete="off"
+      data-drupal-selector="form-fdflpoar6zmeejttcltk3z3sv-dcanulunqi74le-zm"
+      type="hidden"
+      name="form_build_id"
+      value="form-FDFLPoAR6zMeejTtcltk3Z3sV_DcAnUlUNQi74le-ZM" />
+
+    <input data-drupal-selector="edit-helpfulness-block-form-form-token"
+      type="hidden"
+      name="form_token"
+      value="3pZdgZADg754_m5fCg1cjveJOlIMNHqf3_ft3NxDVN8" />
+
+    <input data-drupal-selector="edit-helpfulness-block-form"
+      type="hidden"
+      name="form_id"
+      value="helpfulness_block_form" />
+
+    <input data-drupal-selector="edit-submit"
+      type="submit"
+      id="edit-submit"
+      name="op"
+      value="Submit"
+      class="button button--primary js-form-submit form-submit" />
+  </form>
+</div>

@@ -1,0 +1,18 @@
+<div class="form-group js-quicksearch-form" data-sticky data-sticky-offset="32" data-search-elem="{{ searchElem }}">
+  <form>
+    <label for="midd-quicksearch">Find on page</label>
+    <div class="input-group">
+      <input
+        type="search"
+        class="form-control form-control--sm js-quicksearch-input"
+        placeholder="Begin typing to search..."
+        id="midd-quicksearch"
+      >
+      <button type="submit" aria-label="Show results" class="button button--sm button--primary button--outline js-quicksearch-button">
+        {% include 'icon.twig' with {
+          name: 'search',
+        } %}
+      </button>
+    </div>
+  </form>
+</div>

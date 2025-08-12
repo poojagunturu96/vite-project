@@ -1,0 +1,79 @@
+<header class="app-header">
+  <div class="app-header__wrap app-header__wrap--main">
+    <div class="app-header__logo">
+      <a href="#">
+        <img
+          src="images/midd-shield.svg"
+          srcset="images/midd-shield.svg 67w"
+          sizes="(min-width: 1024px) 67px, 44px"
+          alt="Middlebury Shield"
+        />
+      </a>
+    </div>
+
+    {% if is_front %}
+      <h1 class="app-header__title" id="midd-app-header-label">
+    {% else %}
+      <p class="app-header__title" id="midd-app-header-label">
+    {% endif %}
+      <a href="" class="app-header__link">{{title|default('Course Hub')}}</a>
+    {% if is_front %}
+      </h1>
+    {% endif %}
+
+  </div>
+  {% if items %}
+    <div class="app-header__secondary">
+      <div class="app-header__wrap">
+
+        <div class="app-header__dropdown">
+          <button
+            class="app-header__button d-lg-none"
+            data-toggle-target=".js-app-nav"
+            data-toggle-group="app-header"
+            aria-label="Open navigation"
+          >
+            {% include 'icon.twig' with { name: 'bars', class: 'toggled-hide' } %}
+            {% include 'icon.twig' with { name: 'times', class: 'toggled-show' } %}
+            <span class="ml-1">Menu</span>
+          </button>
+
+          <div class="app-header__nav js-app-nav">
+            {% include 'nav.twig' with { label: 'Course Hub Navigation', items: items } %}
+          </div>
+        </div>
+
+        {% if search %}
+          <div class="app-header__dropdown">
+
+          <button
+            class="app-header__button"
+            data-toggle-target=".js-app-search"
+            data-toggle-group="app-header"
+            data-toggle-focus=".js-app-search-input"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            {% include 'icon.twig' with { name: 'search', class: 'toggled-hide' } %}
+            {% include 'icon.twig' with { name: 'times', class: 'toggled-show' } %}
+            <span class="ml-1">Search</span>
+          </button>
+
+          <div class="app-header__search js-app-search">
+            <form class="">
+              <div class="input-group">
+                <label for="app-header-search" class="sr-only">Search</label>
+                <input type="search" class="form-control js-app-search-input" id="app-header-search" placeholder="Search">
+                <button type="submit" class="button px-3 button--primary">
+                  <span class="sr-only">Search</span>
+                  {% include 'icon.twig' with { name: 'search' } %}
+                </button>
+              </div>
+            </form>
+          </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+</header>

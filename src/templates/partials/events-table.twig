@@ -1,0 +1,30 @@
+<section class="section">
+  <h2 class="section__title">Tuesday, May 22, 2018</h2>
+
+  <table class="table table--no-mobile-headers table--fixed table--spacious">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th class="w-md-40">Event</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+
+    {% for i in 1..10 %}
+      <tr>
+        <td>Jul 25, 2018</td>
+        <td>6:00 PM</td>
+        <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
+        <td>
+          McCone Irvine Auditorium
+          <br>
+          {% if env.test or random(1) %}
+          <small class="f2 text-gray">Open to the Public</small>
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+
+</section>

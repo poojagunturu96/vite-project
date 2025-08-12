@@ -1,0 +1,38 @@
+{% set id = random(1234) %}
+
+<div class="paragraph paragraph--full">
+  <div
+    class="px-0">
+
+    {# gradient should be one of left-bottom, left-top, right-bottom, right-top, center #}
+
+    <section class="mega-cta mega-cta--background-video mega-cta--image{{pin ? '-' ~ pin : '-bottom-left'}}" aria-labelledby="midd-mega-cta-label-{{id}}" data-background-video-parent>
+      <figure class="mega-cta__back">
+        <video class="js-lazy-load" playsinline autoplay muted loop data-background-video poster="/images/admissions-cover.jpg" data-background-video>
+          <source data-src="https://player.vimeo.com/progressive_redirect/playback/1102974147/rendition/1080p/file.mp4?loc=external&signature=c289c45cc820d97b7b3546b93f4552ea6b8cb8f0ae17fd09ff7303d0cf40e907" type="video/mp4">
+          <track kind="descriptions" srclang="en" src="descriptions.vtt" default/>
+        </video>
+      </figure>
+      {% include '../partials/background-video-controls.twig' %}
+
+      <div class="mega-cta__front">
+        <div class="mega-cta__content">
+          <h1 class="font-sans-serif">
+            <span class="f4 font-bold mb-5">Admissions & Financial Aid</span>
+          </h1>
+          <p class="mega-cta__title font-sans-serif border-dual-text-shadow mb-6" id="midd-mega-cta-label-{{id}}" style=" --text-color: {{text_color}}; --text-shadow-color-primary: {{text_shadow_color_primary}}; --text-shadow-color-secondary: {{text_shadow_color_secondary}};">
+            <span>YOU.</span>
+            <span>VERMONT.</span>
+            <span>THE WORLD.</span>
+          </p>
+          <div class="mega-cta__buttons">
+            {% for link in ['Apply now', 'Visit Middlebury', 'Explore Financial Aid'] %}
+              <a class="button button--primary button--light font-semibold text-uppercase {{loop.last ? "mb-7" : " mr-2 mb-4"}} mb-lg-0" href="">{{link}}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

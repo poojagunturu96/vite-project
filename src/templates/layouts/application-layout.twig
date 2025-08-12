@@ -1,0 +1,25 @@
+{% extends 'layout.twig' %}
+
+{% set app_layout_full_width =
+  app_layout_full_width|default(false)
+%}
+
+{% block layout_header %}
+  {% include '../partials/app-header.twig' with {
+    title: app_title,
+    items: app_menu_items,
+    search: false
+  } %}
+{% endblock %}
+
+{% set page_header = {
+  app_header: true,
+  breadcrumb: page_header.breadcrumb|default(false),
+  after_title: page_header.after_title,
+  title: page_header.title,
+  menu_items: page_header.menu_items
+} %}
+
+{% block layout_footer %}
+  {% include '../partials/midd-footer.twig' %}
+{% endblock %}

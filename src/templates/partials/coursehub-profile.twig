@@ -1,0 +1,56 @@
+<div class="mb-4 mb-md-7 media-object">
+	<div class="mb-3 media-object__image">
+		<a href="#"><img src="https://placehold.co/180x180" alt=""/></a>
+	</div>
+	<div class="media-object__body">
+		<h3 class="mb-2">
+			<a href="#">{{ name }}</a>
+		</h3>
+
+		<dl class="f2 clearfix">
+			<div class="w-md-50 float-md-left pr-md-3">
+				{% for item in meta %}
+					<div class="mb-2">
+						<dt class="d-inline-block text-bold">
+							{{ item.name }}:
+						</dt>
+
+						<dd class="d-inline-block">
+							{% if item.href %}
+								<a href="{{ item.href }}" class="link-underline">
+									{{ item.value }}
+								</a>
+							{% else %}
+								{{ item.value }}
+							{% endif %}
+						</dd>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="w-md-50 float-md-left">
+				<div class="mb-2">
+					<dt class="d-inline font-medium">
+						Pronouns:
+					</dt>
+					<dd class="d-inline">he/him/his</dd>
+				</div>
+				<div class="mb-2">
+					<dt class="font-medium">
+						Pronunciation:
+					</dt>
+					<dd>{% include 'pronunciation.twig' %}</dd>
+				</div>
+			</div>
+		</dl>
+
+		{% if actions %}
+			<div class="print-hide">
+				{% for action in actions %}
+					<a href="{{ action.href }}" class="f2 link-underline">
+						{{ action.label }}
+					</a>
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+</div>

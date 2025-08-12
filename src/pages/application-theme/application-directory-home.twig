@@ -1,0 +1,146 @@
+{% extends "layouts/application-layout.twig" %}
+
+{% set app_layout_full_width = false %}
+{% set app_title = 'Directory' %}
+{% set app_menu_items = [
+  {
+    text: 'Search the Directory',
+    active: true
+  },
+  {
+    text: 'Change Information'
+  },
+  {
+    text: 'Upload Photo'
+  },
+  {
+    text: 'Class Photo Roster (Faculty Only)'
+  },
+  {
+    text: 'Help'
+  },
+  {
+    text: 'Log In'
+  }
+] %}
+
+{% set page_header = {
+  title: 'Search the Directory',
+  breadcrumb: [
+    { text: 'Middlebury' },
+    { text: 'Directory' }
+  ],
+} %}
+
+{% block page %}
+  {% embed 'partials/sidebar-layout.twig' %}
+    {% block nav %}{% endblock %}
+    {% block content %}
+      <div class="paragraphs">
+        <div class="paragraph--text typography" data-digest-content>
+          <div id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_pnlSimpleForm" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_ctl00_PageContent_PageContent_middDirectoryForm_btnSimpleSearch')">
+
+            <h2 class="mt-0">Basic Search</h2>
+            <div class="row row--sm-gutters">
+              <div class="col-md-6 col-xl-8 mb-0 form-group">
+                <label for="txtSimpleSearch">Search the Directory</label>
+                <input name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$txtSimpleSearch" type="text" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_txtSimpleSearch" class="form-control" autofocus="autofocus">
+              </div>
+              <div class="col-12 col-xl-4 mb-0 form-group d-flex align-items-end justify-content-end">
+                <input type="submit" name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$btnSimpleSearch" value="Search" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_btnSimpleSearch" class="button button--primary d-block d-md-inline-block">
+              </div>
+            </div>
+          </div>
+          <div id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_pnlForm" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_ctl00_PageContent_PageContent_middDirectoryForm_btnSearch')">
+            <h2>Advanced Search</h2>
+            <div class="row row--sm-gutters">
+              <div class="col-md-6 col-xl-4 form-group">
+                <label for="txtLastName">Last Name</label>
+                <input name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$txtLastName" type="text" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_txtLastName" class="form-control">
+                <div data-lastpass-icon-root="" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div>
+              </div>
+              <div class="col-md-6 col-xl-4 form-group">
+                <label id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_Label1" for="txtFirstName">First Name</label>
+                <input name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$txtFirstName" type="text" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_txtFirstName" class="form-control">
+              </div>
+              <div class="col-md-6 col-xl-4 form-group">
+                <label id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_Label2" for="txtSamaccountname">E-mail</label>
+                <input name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$txtSamaccountname" type="text" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_txtSamaccountname" class="form-control">
+              </div>
+              <div class="col-md-6 col-xl-4 form-group">
+                <label id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_Label3" for="txtTelephonenumber">Telephone</label>
+                <input name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$txtTelephonenumber" type="text" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_txtTelephonenumber" class="form-control">
+              </div>
+              <div class="col-md-6 col-xl-4 form-group">
+                <label id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_Label4" for="txtExtensionattribute3">Address</label>
+                <input name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$txtExtensionattribute3" type="text" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_txtExtensionattribute3" class="form-control">
+              </div>
+              <div class="col-md-6 col-xl-4 form-group">
+                <label id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_Label5" for="txtExtensionattribute4">Location</label>
+                <input name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$txtExtensionattribute4" type="text" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_txtExtensionattribute4" class="form-control">
+              </div>
+              <div class="col-md-6 col-xl-4 form-group">
+                <label for="txtTitle">Job Title</label>
+                <input name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$txtTitle" type="text" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_txtTitle" class="form-control">
+              </div>
+              <div class="col-md-6 col-xl-4 form-group">
+                <label for="ddlDepartment">Department (all schools)</label>
+                <select name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$ddlDepartment" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_ddlDepartment" class="form-control">
+                  <option value="">Any Department</option>
+                  <option value="(IA)Graduate School of International Policy and Management">(IA)Graduate School of International Policy and Management</option>
+                  <option value="(IA)GSTILE-Language Studies (MIIS)">(IA)GSTILE-Language Studies (MIIS)</option>
+                  <option value="Abenaki School">Abenaki School</option>
+                  <option value="Admin Online">Admin Online</option>
+                  <option value="Administrators">Administrators</option>
+                  <option value="Advancement">Advancement</option>
+                  <option value="Alumni and Parent Programs">Alumni and Parent Programs</option>
+                  <option value="American Studies">American Studies</option>
+                  <option value="Anderson Freeman Center">Anderson Freeman Center</option>
+                  <option value="Annual Giving">Annual Giving</option>
+                </select>
+              </div>
+              <div class="col-12 col-xl-4 form-group d-flex align-items-end justify-content-end">
+                <input type="submit" name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$btnSearch" value="Search" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_btnSearch" class="button button--primary d-block d-md-inline-block">
+              </div>
+            </div>
+          </div>
+          <h2>Responsible Use</h2>
+          <p>Information obtained from the Middlebury Directory may not be used to provide addresses for mailings to students, faculty or staff. Any solicitation of business, information, contributions or other response from individuals listed in this directory by email, mail, telephone, or other means is forbidden. Any unauthorized or inappropriate use of the photos or graphics contained within is forbidden.</p>
+          <h2>Updating Your Information</h2>
+          <p>Updates to the Directory for faculty and staff are made through
+            <a href="mailto:hr@middlebury.edu">Human Resources</a>. Updates for Middlebury College students are made through their Dean's office. Middlebury Institute students should contact the
+            <a href="mailto:records@middlebury.edu">Records Office</a>. These changes will be inputted into the master records, from which the Directory pulls its information. Please note that changes to personal information can take approximately 7 days for those updates to be reflected in the Directory.</p>
+          <h2>Have a Question</h2>
+          <p>Faculty and Staff may contact
+            <a href="mailto:hr@middlebury.edu">Human Resources</a>
+            with questions about updating their office or phone information.</p>
+          <p>If you have questions about the Telephone or Voicemail system, please read the
+            <a href="http://go.middlebury.edu/phone">Faculty &amp; Staff quick Telephone &amp; Voicemail Reference</a>.</p>
+          <p>Technical questions regarding the Directory should be directed to Web Services at:
+            <a href="mailto:webmaster@middlebury.edu">webmaster@middlebury.edu</a>.</p>
+          <h2>Contacting members of the Middlebury Institute Community</h2>
+          <p>When addressing correspondence, please use the Middlebury Institute's central mailroom address for all employees.</p>
+          <address>
+            Middlebury Institute of International Studies at Monterey<br>
+            Attn: Name or Department<br>
+            460 Pierce Street<br>
+            Monterey, CA 93940
+          </address>
+          <p>or</p>
+          <address>
+            CNS WDC Office<br>
+            James Martin Center for Nonproliferation Studies<br>
+            Attn: Name or Department<br>
+            1400 K Street, NW, Suite 1225<br>
+            Washington, DC 20005
+          </address>
+        </div>
+      </div>
+    {% endblock %}
+    {% block toc %}
+
+      <div data-sticky data-digest-nav></div>
+
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
