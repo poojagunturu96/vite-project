@@ -35,7 +35,6 @@
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^11.0.1",
-    "js-yaml": "^4.1.0",
     "postcss-load-config": "^6.0.1",
     "postcss-sort-media-queries": "^5.2.0",
     "prettier": "^3.6.2",
