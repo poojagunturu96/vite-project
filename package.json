@@ -15,9 +15,14 @@
     "format": "prettier --config ./.prettierrc --write \"src/**/*.{js,ts,scss}\""
   },
   "devDependencies": {
+    "@types/anchor-js": "^5.0.3",
+    "@types/clamp-js-main": "^0.11.5",
+    "@types/headroom.js": "^0.12.4",
+    "@types/lodash": "^4.17.20",
     "@types/lozad": "^1.16.4",
     "@types/micromodal": "^0.3.5",
     "@types/node": "^24.1.0",
+    "@types/pikaday": "^1.7.9",
     "@vheemstra/vite-plugin-imagemin": "^2.2.0",
     "@vituum/vite-plugin-twig": "^1.1.0",
     "autoprefixer": "^10.4.21",
@@ -46,6 +51,7 @@
   "dependencies": {
     "anchor-js": "^5.0.0",
     "animejs": "^4.0.2",
+    "chart.js": "^4.5.0",
     "focus-within-polyfill": "^5.2.1",
     "headroom.js": "^0.12.0",
     "intersection-observer": "^0.12.2",
