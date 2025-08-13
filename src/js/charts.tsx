@@ -19,10 +19,6 @@ const colors = [
   '#962c28'
 ];
 
-// Grab chart instance off window since we load chartjs only if there's a chart component
-// on page and don't want to bundle it with the main js bundle.
-const { Chart } = window;
-
 const ALLOW_CHART_TYPES = [
   'pie',
   'doughnut',
@@ -158,13 +154,11 @@ class MiddChart {
     }
   }
 
-  setDefaultGlobals() {
+  setDefaultGlobals(Chart: any) {
     // Chart.defaults.global.elements.line.tension = 0;
     Chart.defaults.color = '#222';
     Chart.defaults.font.family = 'Open Sans, arial, verdana, sans-serif';
     Chart.defaults.font.size = 14;
-
-    // @ts-ignore
     Chart.overrides.doughnut.cutout = '80%';
   }
 
@@ -196,7 +190,6 @@ class MiddChart {
       : prefixTick;
 
     const options: ChartTypes.ChartOptions = {
-      // @ts-ignore
       indexAxis: axis,
       animation: {
         duration: PREFERS_REDUCED_MOTION ? 0 : 1000
@@ -223,7 +216,6 @@ class MiddChart {
           borderWidth: 1,
           borderColor: '#ccc',
           callbacks: {
-            // @ts-ignore
             label: (context) => {
               if (context.dataset.label) {
                 return `${context.dataset.label}: ${valuePrefix}${context.raw}${valueSuffix}`;
@@ -260,14 +252,11 @@ class MiddChart {
 
     if (isAxisChart) {
       options.scales = {
-        // @ts-ignore
         x: {
           title: {
             display: Boolean(xLabel),
             text: xLabel
           },
-          // @ts-ignore
-          // maxBarThickness,
           suggestedMax: max,
           suggestedMin: min,
           beginAtZero: !min,
@@ -280,8 +269,6 @@ class MiddChart {
             display: Boolean(yLabel),
             text: yLabel
           },
-          // @ts-ignore
-          // maxBarThickness,
           suggestedMax: max,
           suggestedMin: min,
           beginAtZero: !min,
@@ -304,89 +291,94 @@ class MiddChart {
   }
 
   init() {
-    this.setDefaultGlobals();
-    this.draw();
+    import('chart.js/auto').then(({ Chart }) => {
+      this.setDefaultGlobals(Chart);
+      this.draw(Chart);
+    });
   }
 
-  draw() {
-    this.el.classList.add('chart--loaded');
+  draw(Chart: any) {
+    import('chart.js').then(({ Chart }) => {
+      this.el.classList.add('chart--loaded');
 
-    const { labels, datasets, type, axis } = this.config;
-    this.el.classList.add('chart', `chart--${type}`);
+      const { labels, datasets, type, axis } = this.config;
+      this.el.classList.add('chart', `chart--${type}`);
 
-    if (type === 'bar' || axis === 'y' || type === 'line') {
-      this.el.classList.add('chart--axis');
-    }
+      if (type === 'bar' || axis === 'y' || type === 'line') {
+        this.el.classList.add('chart--axis');
+      }
 
-    const maxBarThickness = this.isGroupChart ? 16 : 32;
+      const maxBarThickness = this.isGroupChart ? 16 : 32;
 
-    this.canvas = document.createElement('canvas');
-    this.canvas.style.width = '500px';
-    this.canvas.style.height = '400px';
+      this.canvas = document.createElement('canvas');
+      this.canvas.style.width = '500px';
+      this.canvas.style.height = '400px';
 
-    this.el.appendChild(this.canvas);
+      this.el.appendChild(this.canvas);
 
-    const options = this.getBaseOptions();
+      const options = this.getBaseOptions();
 
-    const PLUGIN_KEY = '$lazy';
+      const PLUGIN_KEY = '$lazy';
 
-    this.chart = new Chart(this.canvas, {
-      type,
-      data: {
-        datasets: datasets.map((d: any, i: number) => {
-          const color = this.getItemColor(i);
-          return {
-            ...d,
-            borderColor: type === 'line' ? color : 'white',
-            backgroundColor: color,
-            maxBarThickness
-          };
-        }),
-        labels
-      },
-      // @ts-ignore
-      options,
-      plugins: [
-        {
-          // basic recreation of chartjs-plugin-deferred but using intersection observer
-          // and allowing us to not install the extra dependency
-          beforeInit(chart: any) {
-            // create the plugin config to store values
-            chart[PLUGIN_KEY] = {};
+      this.chart = new Chart(this.canvas, {
+        // @ts-ignore
+        type,
+        data: {
+          datasets: datasets.map((d: any, i: number) => {
+            const color = this.getItemColor(i);
+            return {
+              ...d,
+              borderColor: type === 'line' ? color : 'white',
+              backgroundColor: color,
+              maxBarThickness
+            };
+          }),
+          labels
+        },
+        options,
+        plugins: [
+          {
+            // basic recreation of chartjs-plugin-deferred but using intersection observer
+            // and allowing us to not install the extra dependency
+            beforeInit(chart: any) {
+              // create the plugin config to store values
+              chart[PLUGIN_KEY] = {};
 
-            const model = chart[PLUGIN_KEY];
+              const model = chart[PLUGIN_KEY];
 
-            // Don't restart for chart animation
-            // since there's no animation duration anyway.
-            if (PREFERS_REDUCED_MOTION) {
-              return;
+              // Don't restart for chart animation
+              // since there's no animation duration anyway.
+              if (PREFERS_REDUCED_MOTION) {
+                return;
+              }
+
+              // add an is in view flag which is checked before datasets update
+              model.isInView = false;
+
+              model.io = onElementInView(chart.canvas, () => {
+                model.isInView = true;
+
+                // delay the chart update slightly since it may not have enough of it in view
+                setTimeout(() => {
+                  // update the chart now that it's in view
+                  chart.update();
+                }, 400);
+              });
+            },
+            beforeDatasetsUpdate(chart: any) {
+              // only update the dataset once it's in view
+              return chart[PLUGIN_KEY].isInView;
+            },
+            // @ts-ignore
+            destroy(chart: any) {
+              chart[PLUGIN_KEY].io.unobserve();
             }
-
-            // add an is in view flag which is checked before datasets update
-            model.isInView = false;
-
-            model.io = onElementInView(chart.canvas, () => {
-              model.isInView = true;
-
-              // delay the chart update slightly since it may not have enough of it in view
-              setTimeout(() => {
-                // update the chart now that it's in view
-                chart.update();
-              }, 400);
-            });
-          },
-          beforeDatasetsUpdate(chart: any) {
-            // only update the dataset once it's in view
-            return chart[PLUGIN_KEY].isInView;
-          },
-          destroy(chart: any) {
-            chart[PLUGIN_KEY].io.unobserve();
           }
-        }
-      ]
-    });
+        ]
+      });
 
-    this.addLegend();
+      this.addLegend();
+    });
   }
 
   addLegend() {
