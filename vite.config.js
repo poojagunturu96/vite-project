@@ -131,9 +131,6 @@ export default defineConfig(() => ({
     devSourcemap: true
   },
   build: {
-    modulePreload: {
-      polyfill: false
-    },
     outDir: 'dist',
     rollupOptions: {
       // input: resolve(__dirname, 'src/templates/**/**/*.twig'),
