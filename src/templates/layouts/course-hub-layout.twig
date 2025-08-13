@@ -12,7 +12,7 @@
 } %}
 
 {% block layout_header %}
-  {% include 'partials/app-header.twig' with {
+  {% include '../partials/app-header.twig' with {
     title: 'Course Hub',
     items: [
       {
@@ -58,7 +58,7 @@
 {% endblock %}
 
 {% block layout_footer %}
-  {% include 'partials/midd-footer.twig' %}
+  {% include '../partials/midd-footer.twig' %}
 {% endblock %}
 
 {% block page %}
@@ -68,7 +68,7 @@
   {% set _sidebar = block('sidebar') %}
 
   {% if not app_layout_full_width %}
-    {% embed 'partials/sidebar-layout.twig' %}
+    {% embed '../partials/sidebar-layout.twig' %}
       {% block nav %}
         {{ _nav|raw }}
       {% endblock %}

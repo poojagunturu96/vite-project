@@ -19,7 +19,7 @@
 
     <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox-{{id}}-item-{{loop.index}}" data-journey-gallery-item>
       {# use encoded svg to add placeholder aspect ratio #}
-      {# https://css-tricks.com/preventing-content-reflow-from-lazy-loaded-images/ #}
+      {# https://css-tricks.com/preventing-content-reflow-from-lazy-loaded-src/images/ #}
       <img
       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{item.width}} {{item.height}}'/%3E" data-src="{{item.src}}" data-srcset="{{srcset|reverse|join(',')}}" width="{{item.width}}" alt=""/> {# loop index shown for dev purposes #}
       <figcaption class="media__caption text-white">

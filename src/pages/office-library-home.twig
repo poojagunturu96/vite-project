@@ -35,8 +35,8 @@
 {% endblock %}
 
 {% block scripts %}
-  <script src="js/main.bundle.js" async></script>
+  <script src="/src/js/index.ts" type="module" async></script>
   {% if env.vercel or not env.production %}
-    <script src="//middlebury.libanswers.com/load_chat.php?hash=7799596699468240cefaabd896f80a52"></script>
+    <script src="//middlebury.libanswers.com/load_chat.php?hash=7799596699468240cefaabd896f80a52" vite-ignore></script>
   {% endif %}
 {% endblock %}

@@ -1,4 +1,18 @@
-{% extends "layouts/anchor-basic-content.twig" %}
+{% extends 'layouts/anchor-layout.twig' %}
+
+{% set page_title = 'Civil Rights and Title IX Office' %}
+
+{% set page_header = {
+  title: 'Policies, Laws, and Procedures',
+  breadcrumb: [
+    {
+      text: 'Offices and Services'
+    },
+    {
+      text: 'Civil Rights and Title IX Office'
+    }
+  ]
+} %}
 
 {% block page %}
   {% embed 'partials/sidebar-layout.twig' %}

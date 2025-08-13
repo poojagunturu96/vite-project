@@ -1,4 +1,4 @@
-{% extends 'course-hub-layout.twig' %}
+{% extends 'layouts/course-hub-layout.twig' %}
 
 {% block layout_header %}
   {% include 'partials/app-header.twig' with {
@@ -91,92 +91,92 @@
         <label for="by-term" class="label">By Term</label>
         <select class="form-control" id="by-term" name="by-term" required>
           <option value="" disabled selected>Choose...</option>
-          <option value="ANY">Any Term</option>
-          <option value="term/202620">Spring 2026</option>
-          <option value="term/202610">Winter 2026</option>
-          <option value="term/202590">Fall 2025</option>
-          <option value="term/202520" selected="selected">Spring 2025</option>
-          <option value="term/202510">Winter 2025</option>
-          <option value="term/202490">Fall 2024</option>
-          <option value="term/202465">Summer Study 2024</option>
-          <option value="term/202420">Spring 2024</option>
-          <option value="term/202410">Winter 2024</option>
-          <option value="term/202390">Fall 2023</option>
-          <option value="term/202365">Summer Study 2023</option>
-          <option value="term/202320">Spring 2023</option>
-          <option value="term/202310">Winter 2023</option>
-          <option value="term/202290">Fall 2022</option>
-          <option value="term/202265">Summer Study 2022</option>
-          <option value="term/202220">Spring 2022</option>
-          <option value="term/202210">Winter 2022</option>
-          <option value="term/202190">Fall 2021</option>
-          <option value="term/202120">Spring 2021</option>
-          <option value="term/202110">Winter 2021</option>
-          <option value="term/202090">Fall 2020</option>
-          <option value="term/202065">Summer Study 2020</option>
-          <option value="term/202020">Spring 2020</option>
-          <option value="term/202010">Winter 2020</option>
-          <option value="term/201990">Fall 2019</option>
-          <option value="term/201965">Summer Study 2019</option>
-          <option value="term/201920">Spring 2019</option>
-          <option value="term/201910">Winter 2019</option>
-          <option value="term/201890">Fall 2018</option>
-          <option value="term/201865">Summer Study 2018</option>
-          <option value="term/201820">Spring 2018</option>
-          <option value="term/201810">Winter 2018</option>
-          <option value="term/201790">Fall 2017</option>
-          <option value="term/201765">Summer Study 2017</option>
-          <option value="term/201720">Spring 2017</option>
-          <option value="term/201710">Winter 2017</option>
-          <option value="term/201690">Fall 2016</option>
-          <option value="term/201665">Summer Study 2016</option>
-          <option value="term/201620">Spring 2016</option>
-          <option value="term/201610">Winter 2016</option>
-          <option value="term/201590">Fall 2015</option>
-          <option value="term/201565">Summer Study 2015</option>
-          <option value="term/201520">Spring 2015</option>
-          <option value="term/201510">Winter 2015</option>
-          <option value="term/201490">Fall 2014</option>
-          <option value="term/201420">Spring 2014</option>
-          <option value="term/201410">Winter 2014</option>
-          <option value="term/201390">Fall 2013</option>
-          <option value="term/201320">Spring 2013</option>
-          <option value="term/201310">Winter 2013</option>
-          <option value="term/201290">Fall 2012</option>
-          <option value="term/201220">Spring 2012</option>
-          <option value="term/201210">Winter 2012</option>
-          <option value="term/201190">Fall 2011</option>
-          <option value="term/201120">Spring 2011</option>
-          <option value="term/201110">Winter 2011</option>
-          <option value="term/201090">Fall 2010</option>
-          <option value="term/201020">Spring 2010</option>
-          <option value="term/201010">Winter 2010</option>
-          <option value="term/200990">Fall 2009</option>
-          <option value="term/200920">Spring 2009</option>
-          <option value="term/200910">Winter 2009</option>
-          <option value="term/200890">Fall 2008</option>
-          <option value="term/200820">Spring 2008</option>
-          <option value="term/200810">Winter 2008</option>
-          <option value="term/200790">Fall 2007</option>
-          <option value="term/200720">Spring 2007</option>
-          <option value="term/200710">Winter 2007</option>
-          <option value="term/200690">Fall 2006</option>
-          <option value="term/200620">Spring 2006</option>
-          <option value="term/200610">Winter 2006</option>
-          <option value="term/200590">Fall 2005</option>
-          <option value="term/200520">Spring 2005</option>
-          <option value="term/200510">Winter 2005</option>
-          <option value="term/200490">Fall 2004</option>
-          <option value="term/200420">Spring 2004</option>
-          <option value="term/200410">Winter 2004</option>
-          <option value="term/200390">Fall 2003</option>
+					<option value="ANY">Any Term</option>
+					<option value="term/202620">Spring 2026</option>
+					<option value="term/202610">Winter 2026</option>
+					<option value="term/202590">Fall 2025</option>
+					<option value="term/202520" selected="selected">Spring 2025</option>
+					<option value="term/202510">Winter 2025</option>
+					<option value="term/202490">Fall 2024</option>
+					<option value="term/202465">Summer Study 2024</option>
+					<option value="term/202420">Spring 2024</option>
+					<option value="term/202410">Winter 2024</option>
+					<option value="term/202390">Fall 2023</option>
+					<option value="term/202365">Summer Study 2023</option>
+					<option value="term/202320">Spring 2023</option>
+					<option value="term/202310">Winter 2023</option>
+					<option value="term/202290">Fall 2022</option>
+					<option value="term/202265">Summer Study 2022</option>
+					<option value="term/202220">Spring 2022</option>
+					<option value="term/202210">Winter 2022</option>
+					<option value="term/202190">Fall 2021</option>
+					<option value="term/202120">Spring 2021</option>
+					<option value="term/202110">Winter 2021</option>
+					<option value="term/202090">Fall 2020</option>
+					<option value="term/202065">Summer Study 2020</option>
+					<option value="term/202020">Spring 2020</option>
+					<option value="term/202010">Winter 2020</option>
+					<option value="term/201990">Fall 2019</option>
+					<option value="term/201965">Summer Study 2019</option>
+					<option value="term/201920">Spring 2019</option>
+					<option value="term/201910">Winter 2019</option>
+					<option value="term/201890">Fall 2018</option>
+					<option value="term/201865">Summer Study 2018</option>
+					<option value="term/201820">Spring 2018</option>
+					<option value="term/201810">Winter 2018</option>
+					<option value="term/201790">Fall 2017</option>
+					<option value="term/201765">Summer Study 2017</option>
+					<option value="term/201720">Spring 2017</option>
+					<option value="term/201710">Winter 2017</option>
+					<option value="term/201690">Fall 2016</option>
+					<option value="term/201665">Summer Study 2016</option>
+					<option value="term/201620">Spring 2016</option>
+					<option value="term/201610">Winter 2016</option>
+					<option value="term/201590">Fall 2015</option>
+					<option value="term/201565">Summer Study 2015</option>
+					<option value="term/201520">Spring 2015</option>
+					<option value="term/201510">Winter 2015</option>
+					<option value="term/201490">Fall 2014</option>
+					<option value="term/201420">Spring 2014</option>
+					<option value="term/201410">Winter 2014</option>
+					<option value="term/201390">Fall 2013</option>
+					<option value="term/201320">Spring 2013</option>
+					<option value="term/201310">Winter 2013</option>
+					<option value="term/201290">Fall 2012</option>
+					<option value="term/201220">Spring 2012</option>
+					<option value="term/201210">Winter 2012</option>
+					<option value="term/201190">Fall 2011</option>
+					<option value="term/201120">Spring 2011</option>
+					<option value="term/201110">Winter 2011</option>
+					<option value="term/201090">Fall 2010</option>
+					<option value="term/201020">Spring 2010</option>
+					<option value="term/201010">Winter 2010</option>
+					<option value="term/200990">Fall 2009</option>
+					<option value="term/200920">Spring 2009</option>
+					<option value="term/200910">Winter 2009</option>
+					<option value="term/200890">Fall 2008</option>
+					<option value="term/200820">Spring 2008</option>
+					<option value="term/200810">Winter 2008</option>
+					<option value="term/200790">Fall 2007</option>
+					<option value="term/200720">Spring 2007</option>
+					<option value="term/200710">Winter 2007</option>
+					<option value="term/200690">Fall 2006</option>
+					<option value="term/200620">Spring 2006</option>
+					<option value="term/200610">Winter 2006</option>
+					<option value="term/200590">Fall 2005</option>
+					<option value="term/200520">Spring 2005</option>
+					<option value="term/200510">Winter 2005</option>
+					<option value="term/200490">Fall 2004</option>
+					<option value="term/200420">Spring 2004</option>
+					<option value="term/200410">Winter 2004</option>
+					<option value="term/200390">Fall 2003</option>				
         </select>
       </div>
       <div class="col-md-6 form-group">
         <label for="department" class="label">By Subject/Department</label>
         <select class="form-control" id="department" name="department">
-          <option value="">Any Subject or Department</option>
-          <optgroup label="Subjects">
+					<option value="">Any Subject or Department</option>
+					<optgroup label="Subjects">
             <option value="topic/subject/AMCV">American Civilization</option>
             <option value="topic/subject/AMLT">American Literature</option>
             <option value="topic/subject/AMST">American Studies</option>
@@ -252,9 +252,9 @@
             <option value="topic/subject/THEA">Theatre</option>
             <option value="topic/subject/WNTR">Winter Term</option>
             <option value="topic/subject/WAGS">Women's &amp; Gender Studies</option>
-            <option value="topic/subject/WRPR">Writing and Rhetoric Program</option>
+            <option value="topic/subject/WRPR">Writing and Rhetoric Program</option>					
           </optgroup>
-          <optgroup label="Departments">
+					<optgroup label="Departments">
             <option value="topic/department/ALAC">Amer Lit &amp; Civilization</option>
             <option value="topic/department/AMLT">Amer Lit &amp; Civilization</option>
             <option value="topic/department/ANTH">Anthropology</option>
@@ -337,9 +337,9 @@
             <option value="topic/department/SUMR">Summer Study (UG)</option>
             <option value="topic/department/THEA">Theatre</option>
             <option value="topic/department/0000">Undeclared/Unknown</option>
-            <option value="topic/department/WRPR">Writing and Rhetoric Program</option>
+            <option value="topic/department/WRPR">Writing and Rhetoric Program</option>					
           </optgroup>
-        </select>
+				</select>
       </div>
 
       <div class="col-md-12 form-group">
@@ -366,7 +366,15 @@
       <div class="col-12 mb-5" role="tablist">
         {% set id = random(1234) %}
         <div class="my-2 catalog-search-item-tab js-catalog-search-item-{{id}}">
-          <a href="#catalog-search-item-label-{{id}}" class="catalog-search-item__link" data-toggle-target=".js-catalog-search-item-{{id}}" aria-expanded="false" aria-controls="catalog-search-item-content-{{id}}" aria-labelledby="catalog-search-item-label-{{id}}" role="tab">
+          <a
+            href="#catalog-search-item-label-{{id}}"
+            class="catalog-search-item__link"
+            data-toggle-target=".js-catalog-search-item-{{id}}"
+            aria-expanded="false"
+            aria-controls="catalog-search-item-content-{{id}}"
+            aria-labelledby="catalog-search-item-label-{{id}}"
+            role="tab"
+          >
             <h2 class="catalog-search-item__title">
               <span id="catalog-search-item-label-{{id}}">Day of the week, Time, Campus</span>
 
@@ -395,203 +403,209 @@
               } %}
               {% include 'partials/form-check.twig' with {
                 id: 'course-catalog-days-exclusive',
-                name: 'da'partials/
+                name: 'days_mode',
                 label: 'Exclusive search - meets only on selected days, not on unselected days',
                 value: 'exclusive',
               } %}
             </fieldset>
 
-            <div class="c'partials/rm-group">
+            <div class="col-md-6 form-group">
               <label for="last_name" class="label">Time</label>
-              <label class="d-inline-flex">From
-                <select class="form-control ml-2" name="time_start" class="time_select">
-                  <option value="0" selected="selected">Any Time</option>
-                  <option value="1800">12:30 am</option>
-                  <option value="3600">1:00 am</option>
-                  <option value="5400">1:30 am</option>
-                  <option value="7200">2:00 am</option>
-                  <option value="9000">2:30 am</option>
-                  <option value="10800">3:00 am</option>
-                  <option value="12600">3:30 am</option>
-                  <option value="14400">4:00 am</option>
-                  <option value="16200">4:30 am</option>
-                  <option value="18000">5:00 am</option>
-                  <option value="19800">5:30 am</option>
-                  <option value="21600">6:00 am</option>
-                  <option value="23400">6:30 am</option>
-                  <option value="25200">7:00 am</option>
-                  <option value="27000">7:30 am</option>
-                  <option value="28800">8:00 am</option>
-                  <option value="30600">8:30 am</option>
-                  <option value="32400">9:00 am</option>
-                  <option value="34200">9:30 am</option>
-                  <option value="36000">10:00 am</option>
-                  <option value="37800">10:30 am</option>
-                  <option value="39600">11:00 am</option>
-                  <option value="41400">11:30 am</option>
-                  <option value="43200">12:00 pm</option>
-                  <option value="45000">12:30 pm</option>
-                  <option value="46800">1:00 pm</option>
-                  <option value="48600">1:30 pm</option>
-                  <option value="50400">2:00 pm</option>
-                  <option value="52200">2:30 pm</option>
-                  <option value="54000">3:00 pm</option>
-                  <option value="55800">3:30 pm</option>
-                  <option value="57600">4:00 pm</option>
-                  <option value="59400">4:30 pm</option>
-                  <option value="61200">5:00 pm</option>
-                  <option value="63000">5:30 pm</option>
-                  <option value="64800">6:00 pm</option>
-                  <option value="66600">6:30 pm</option>
-                  <option value="68400">7:00 pm</option>
-                  <option value="70200">7:30 pm</option>
-                  <option value="72000">8:00 pm</option>
-                  <option value="73800">8:30 pm</option>
-                  <option value="75600">9:00 pm</option>
-                  <option value="77400">9:30 pm</option>
-                  <option value="79200">10:00 pm</option>
-                  <option value="81000">10:30 pm</option>
-                  <option value="82800">11:00 pm</option>
-                  <option value="84600">11:30 pm</option>
-                </select>
+                <label class="d-inline-flex">From
+                  <select class="form-control ml-2" name="time_start" class="time_select">
+                    <option value="0" selected="selected">Any Time</option>
+                    <option value="1800">12:30 am</option>
+                    <option value="3600">1:00 am</option>
+                    <option value="5400">1:30 am</option>
+                    <option value="7200">2:00 am</option>
+                    <option value="9000">2:30 am</option>
+                    <option value="10800">3:00 am</option>
+                    <option value="12600">3:30 am</option>
+                    <option value="14400">4:00 am</option>
+                    <option value="16200">4:30 am</option>
+                    <option value="18000">5:00 am</option>
+                    <option value="19800">5:30 am</option>
+                    <option value="21600">6:00 am</option>
+                    <option value="23400">6:30 am</option>
+                    <option value="25200">7:00 am</option>
+                    <option value="27000">7:30 am</option>
+                    <option value="28800">8:00 am</option>
+                    <option value="30600">8:30 am</option>
+                    <option value="32400">9:00 am</option>
+                    <option value="34200">9:30 am</option>
+                    <option value="36000">10:00 am</option>
+                    <option value="37800">10:30 am</option>
+                    <option value="39600">11:00 am</option>
+                    <option value="41400">11:30 am</option>
+                    <option value="43200">12:00 pm</option>
+                    <option value="45000">12:30 pm</option>
+                    <option value="46800">1:00 pm</option>
+                    <option value="48600">1:30 pm</option>
+                    <option value="50400">2:00 pm</option>
+                    <option value="52200">2:30 pm</option>
+                    <option value="54000">3:00 pm</option>
+                    <option value="55800">3:30 pm</option>
+                    <option value="57600">4:00 pm</option>
+                    <option value="59400">4:30 pm</option>
+                    <option value="61200">5:00 pm</option>
+                    <option value="63000">5:30 pm</option>
+                    <option value="64800">6:00 pm</option>
+                    <option value="66600">6:30 pm</option>
+                    <option value="68400">7:00 pm</option>
+                    <option value="70200">7:30 pm</option>
+                    <option value="72000">8:00 pm</option>
+                    <option value="73800">8:30 pm</option>
+                    <option value="75600">9:00 pm</option>
+                    <option value="77400">9:30 pm</option>
+                    <option value="79200">10:00 pm</option>
+                    <option value="81000">10:30 pm</option>
+                    <option value="82800">11:00 pm</option>
+                    <option value="84600">11:30 pm</option>				
+                  </select>
+                </label>
+                <label class="d-inline-flex ml-3">To
+                  <select class="form-control ml-2" name="time_end" class="time_select">
+                    <option value="1800">12:30 am</option>
+                    <option value="3600">1:00 am</option>
+                    <option value="5400">1:30 am</option>
+                    <option value="7200">2:00 am</option>
+                    <option value="9000">2:30 am</option>
+                    <option value="10800">3:00 am</option>
+                    <option value="12600">3:30 am</option>
+                    <option value="14400">4:00 am</option>
+                    <option value="16200">4:30 am</option>
+                    <option value="18000">5:00 am</option>
+                    <option value="19800">5:30 am</option>
+                    <option value="21600">6:00 am</option>
+                    <option value="23400">6:30 am</option>
+                    <option value="25200">7:00 am</option>
+                    <option value="27000">7:30 am</option>
+                    <option value="28800">8:00 am</option>
+                    <option value="30600">8:30 am</option>
+                    <option value="32400">9:00 am</option>
+                    <option value="34200">9:30 am</option>
+                    <option value="36000">10:00 am</option>
+                    <option value="37800">10:30 am</option>
+                    <option value="39600">11:00 am</option>
+                    <option value="41400">11:30 am</option>
+                    <option value="43200">12:00 pm</option>
+                    <option value="45000">12:30 pm</option>
+                    <option value="46800">1:00 pm</option>
+                    <option value="48600">1:30 pm</option>
+                    <option value="50400">2:00 pm</option>
+                    <option value="52200">2:30 pm</option>
+                    <option value="54000">3:00 pm</option>
+                    <option value="55800">3:30 pm</option>
+                    <option value="57600">4:00 pm</option>
+                    <option value="59400">4:30 pm</option>
+                    <option value="61200">5:00 pm</option>
+                    <option value="63000">5:30 pm</option>
+                    <option value="64800">6:00 pm</option>
+                    <option value="66600">6:30 pm</option>
+                    <option value="68400">7:00 pm</option>
+                    <option value="70200">7:30 pm</option>
+                    <option value="72000">8:00 pm</option>
+                    <option value="73800">8:30 pm</option>
+                    <option value="75600">9:00 pm</option>
+                    <option value="77400">9:30 pm</option>
+                    <option value="79200">10:00 pm</option>
+                    <option value="81000">10:30 pm</option>
+                    <option value="82800">11:00 pm</option>
+                    <option value="84600">11:30 pm</option>				
+                    <option value="86400" selected="selected">Any Time</option>
+                  </select>
+                </label>
               </label>
-              <label class="d-inline-flex ml-3">To
-                <select class="form-control ml-2" name="time_end" class="time_select">
-                  <option value="1800">12:30 am</option>
-                  <option value="3600">1:00 am</option>
-                  <option value="5400">1:30 am</option>
-                  <option value="7200">2:00 am</option>
-                  <option value="9000">2:30 am</option>
-                  <option value="10800">3:00 am</option>
-                  <option value="12600">3:30 am</option>
-                  <option value="14400">4:00 am</option>
-                  <option value="16200">4:30 am</option>
-                  <option value="18000">5:00 am</option>
-                  <option value="19800">5:30 am</option>
-                  <option value="21600">6:00 am</option>
-                  <option value="23400">6:30 am</option>
-                  <option value="25200">7:00 am</option>
-                  <option value="27000">7:30 am</option>
-                  <option value="28800">8:00 am</option>
-                  <option value="30600">8:30 am</option>
-                  <option value="32400">9:00 am</option>
-                  <option value="34200">9:30 am</option>
-                  <option value="36000">10:00 am</option>
-                  <option value="37800">10:30 am</option>
-                  <option value="39600">11:00 am</option>
-                  <option value="41400">11:30 am</option>
-                  <option value="43200">12:00 pm</option>
-                  <option value="45000">12:30 pm</option>
-                  <option value="46800">1:00 pm</option>
-                  <option value="48600">1:30 pm</option>
-                  <option value="50400">2:00 pm</option>
-                  <option value="52200">2:30 pm</option>
-                  <option value="54000">3:00 pm</option>
-                  <option value="55800">3:30 pm</option>
-                  <option value="57600">4:00 pm</option>
-                  <option value="59400">4:30 pm</option>
-                  <option value="61200">5:00 pm</option>
-                  <option value="63000">5:30 pm</option>
-                  <option value="64800">6:00 pm</option>
-                  <option value="66600">6:30 pm</option>
-                  <option value="68400">7:00 pm</option>
-                  <option value="70200">7:30 pm</option>
-                  <option value="72000">8:00 pm</option>
-                  <option value="73800">8:30 pm</option>
-                  <option value="75600">9:00 pm</option>
-                  <option value="77400">9:30 pm</option>
-                  <option value="79200">10:00 pm</option>
-                  <option value="81000">10:30 pm</option>
-                  <option value="82800">11:00 pm</option>
-                  <option value="84600">11:30 pm</option>
-                  <option value="86400" selected="selected">Any Time</option>
-                </select>
-              </label>
-            </label>
+            </div>
+
+            <fieldset class="col-md-6 form-group">
+              <legend class="label">
+                <p class="f2">Campus</p>
+                <p class="f1">(Leave all blank for no preference)</p>
+              </legend>
+              <div class="checkbox-group">
+                {% for item in catalog_search_items.campus %}
+                  <div class="checkbox checkbox--filter">
+                    <input type="checkbox" class="checkbox__input" id="checkbox-campus-item-{{loop.index}}" value="resource/place/campus/{{item.value}}">
+                    <label for="checkbox-campus-item-{{loop.index}}" id="checkbox-campus-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
+                  </div>
+                {% endfor %}
+              </div>
+            </fieldset>
           </div>
+        </div>
 
-          <fieldset class="col-md-6 form-group">
-            <legend class="label">
-              <p class="f2">Campus</p>
-              <p class="f1">(Leave all blank for no preference)</p>
-            </legend>
-            <div class="checkbox-group">
-              {% for item in catalog_search_items.campus %}
-                <div class="checkbox checkbox--filter">
-                  <input type="checkbox" class="checkbox__input" id="checkbox-campus-item-{{loop.index}}" value="resource/place/campus/{{item.value}}">
-                  <label for="checkbox-campus-item-{{loop.index}}" id="checkbox-campus-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
-                </div>
-              {% endfor %}
-            </div>
-          </fieldset>
+        {% set id = random(1234) %}
+        <div class="my-2 catalog-search-item-tab js-catalog-search-item-{{id}}">
+          <a
+            href="#catalog-search-item-label-{{id}}"
+            class="catalog-search-item__link"
+            data-toggle-target=".js-catalog-search-item-{{id}}"
+            aria-expanded="false"
+            aria-controls="catalog-search-item-content-{{id}}"
+            aria-labelledby="catalog-search-item-label-{{id}}"
+            role="tab"
+          >
+            <h2 class="catalog-search-item__title">
+              <span id="catalog-search-item-label-{{id}}">Satisfies requirements, Course Modality, Level</span>
+
+              <span class="catalog-search-item-close">&ndash;</span>
+              <span class="catalog-search-item-open">&#43;</span>
+            </h2>
+          </a>
+          <div role="tabpanel" id="catalog-search-item-content-{{id}}" class="row mx-0 catalog-search-item-content">
+            <fieldset class="col-md-6 form-group">
+              <legend class="label">
+                <p class="f2">Satisfies requirements</p>
+                <p class="f1">(Leave all blank for no preference)</p>
+              </legend>
+              <div class="checkbox-group d-flex flex-wrap">
+                {% for item in catalog_search_items.requirements %}
+                  <div class="checkbox checkbox--filter">
+                    <input type="checkbox" class="checkbox__input" id="checkbox-req-item-{{loop.index}}" value="topic/requirement/{{item.option}}">
+                    <label for="checkbox-req-item-{{loop.index}}" id="checkbox-req-label-{{loop.index}}" class="checkbox__label">{{item.option}}</label>
+                  </div>
+                {% endfor %}
+              </div>
+            </fieldset>
+            <fieldset class="col-md-6 form-group">
+              <legend class="label">
+                <p class="f2">Course Modality</p>
+                <p class="f1">(Leave all blank for no preference)</p>
+              </legend>
+              <div class="checkbox-group">
+                {% for item in catalog_search_items.course_modality %}
+                  <div class="checkbox checkbox--filter">
+                    <input type="checkbox" class="checkbox__input" id="checkbox-mod-item-{{loop.index}}" value="topic/instruction_method/{{item.value}}">
+                    <label for="checkbox-mod-item-{{loop.index}}" id="checkbox-mod-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
+                  </div>
+                {% endfor %}
+              </div>
+            </fieldset>
+
+            <fieldset class="col-md-6 form-group">
+              <legend class="label">
+                <p class="f2">Level</p>
+                <p class="f1">(Leave all blank for no preference)</p>
+              </legend>
+              <div class="checkbox-group">
+                {% for item in catalog_search_items.level %}
+                  <div class="checkbox checkbox--filter">
+                    <input type="checkbox" class="checkbox__input" id="checkbox-level-item-{{loop.index}}" value="topic/level/{{item.value}}">
+                    <label for="checkbox-level-item-{{loop.index}}" id="checkbox-level-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
+                  </div>
+                {% endfor %}
+              </div>
+            </fieldset>
+          </div>
         </div>
       </div>
 
-      {% set id = random(1234) %}
-      <div class="my-2 catalog-search-item-tab js-catalog-search-item-{{id}}">
-        <a href="#catalog-search-item-label-{{id}}" class="catalog-search-item__link" data-toggle-target=".js-catalog-search-item-{{id}}" aria-expanded="false" aria-controls="catalog-search-item-content-{{id}}" aria-labelledby="catalog-search-item-label-{{id}}" role="tab">
-          <h2 class="catalog-search-item__title">
-            <span id="catalog-search-item-label-{{id}}">Satisfies requirements, Course Modality, Level</span>
-
-            <span class="catalog-search-item-close">&ndash;</span>
-            <span class="catalog-search-item-open">&#43;</span>
-          </h2>
-        </a>
-        <div role="tabpanel" id="catalog-search-item-content-{{id}}" class="row mx-0 catalog-search-item-content">
-          <fieldset class="col-md-6 form-group">
-            <legend class="label">
-              <p class="f2">Satisfies requirements</p>
-              <p class="f1">(Leave all blank for no preference)</p>
-            </legend>
-            <div class="checkbox-group d-flex flex-wrap">
-              {% for item in catalog_search_items.requirements %}
-                <div class="checkbox checkbox--filter">
-                  <input type="checkbox" class="checkbox__input" id="checkbox-req-item-{{loop.index}}" value="topic/requirement/{{item.option}}">
-                  <label for="checkbox-req-item-{{loop.index}}" id="checkbox-req-label-{{loop.index}}" class="checkbox__label">{{item.option}}</label>
-                </div>
-              {% endfor %}
-            </div>
-          </fieldset>
-          <fieldset class="col-md-6 form-group">
-            <legend class="label">
-              <p class="f2">Course Modality</p>
-              <p class="f1">(Leave all blank for no preference)</p>
-            </legend>
-            <div class="checkbox-group">
-              {% for item in catalog_search_items.course_modality %}
-                <div class="checkbox checkbox--filter">
-                  <input type="checkbox" class="checkbox__input" id="checkbox-mod-item-{{loop.index}}" value="topic/instruction_method/{{item.value}}">
-                  <label for="checkbox-mod-item-{{loop.index}}" id="checkbox-mod-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
-                </div>
-              {% endfor %}
-            </div>
-          </fieldset>
-
-          <fieldset class="col-md-6 form-group">
-            <legend class="label">
-              <p class="f2">Level</p>
-              <p class="f1">(Leave all blank for no preference)</p>
-            </legend>
-            <div class="checkbox-group">
-              {% for item in catalog_search_items.level %}
-                <div class="checkbox checkbox--filter">
-                  <input type="checkbox" class="checkbox__input" id="checkbox-level-item-{{loop.index}}" value="topic/level/{{item.value}}">
-                  <label for="checkbox-level-item-{{loop.index}}" id="checkbox-level-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
-                </div>
-              {% endfor %}
-            </div>
-          </fieldset>
-        </div>
+      <div class="col-12 col-xl-4 form-group">
+        <input type="submit" value="Search" class="button button--primary d-block d-md-inline-block">
       </div>
-    </div>
 
-    <div class="col-12 col-xl-4 form-group">
-      <input type="submit" value="Search" class="button button--primary d-block d-md-inline-block">
     </div>
-
-  </div>
-</form>
-{% include 'partials/course-catalog-search-results.twig' %}{% endblock %}'partials/
-'partials/
-'partials/
-'partials/
+  </form>
+  {% include 'partials/course-catalog-search-results.twig' %}
+{% endblock %}
