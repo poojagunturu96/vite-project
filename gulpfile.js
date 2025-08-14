@@ -4,13 +4,6 @@ import gulpSvgo from 'gulp-svgo';
 import svgSprite from 'gulp-svg-sprite';
 import rename from 'gulp-rename';
 
-const replaceImagePaths = () => {
-  return gulp
-    .src('./dist/css/*.css')
-    .pipe(replace('/images/', 'https://www.middlebury.edu/themes/custom/middlebury_theme/images/'))
-    .pipe(gulp.dest('./dist/css'));
-};
-
 const copyIcons = () =>
   gulp
     .src('./dist/icons/sprites/symbol/svg/sprite.symbol.svg')
@@ -18,22 +11,20 @@ const copyIcons = () =>
     .pipe(gulp.dest('./src/templates/partials'));
 
 const minifySvgs = (src) =>
-  gulp
-    .src(src)
-    .pipe(
-      gulpSvgo({
-        plugins: [
-          { removeTitle: true },
-          { removeXMLNS: true },
-          { removeAttrs: { attrs: '(stroke)' } },
-          { addAttributesToSVGElement: { attributes: [{ 'fill-rule': 'evenodd' }] }}
-        ]
-      })
-    );
-
-// clean up and minify svgs
-const cleanAndCopyIcons = () =>
-  minifySvgs('./src/icons/*.svg').pipe(gulp.dest('./dist/icons/svg'));
+  gulp.src(src).pipe(
+    gulpSvgo({
+      plugins: [
+        { removeTitle: true },
+        { removeXMLNS: true },
+        { removeAttrs: { attrs: '(stroke)' } },
+        {
+          addAttributesToSVGElement: {
+            attributes: [{ 'fill-rule': 'evenodd' }]
+          }
+        }
+      ]
+    })
+  );
 
 // create svg sprite
 const buildIconSprite = () =>
@@ -59,6 +50,4 @@ const buildIconSprite = () =>
     )
     .pipe(gulp.dest('./dist/icons/sprites'));
 
-task('replaceImagePaths', replaceImagePaths);
-task('cleanAndCopyIcons', cleanAndCopyIcons);
 task('icons', series(buildIconSprite, copyIcons));
