@@ -9,10 +9,12 @@
     "build": "vite build",
     "build:prod": "vite build --base '/themes/custom/middlebury_theme/'",
     "build:icons": "NODE_ENV=production gulp icons",
+    "postbuild": "npm run test:bundlesize",
     "preview": "vite preview",
     "lint": "npm run lint:styles",
     "lint:styles": "stylelint src/scss/*",
-    "format": "prettier --config ./.prettierrc --write \"src/**/*.{js,ts,scss}\""
+    "format": "prettier --config ./.prettierrc --write \"src/**/*.{js,ts,scss}\"",
+    "test:bundlesize": "bundlesize"
   },
   "devDependencies": {
     "@types/anchor-js": "^5.0.3",
@@ -26,6 +28,7 @@
     "@vheemstra/vite-plugin-imagemin": "^2.2.0",
     "@vituum/vite-plugin-twig": "^1.1.0",
     "autoprefixer": "^10.4.21",
+    "bundlesize": "^0.18.2",
     "cssnano": "^7.1.0",
     "glob": "^10.4.5",
     "gulp": "^5.0.1",
@@ -66,5 +69,22 @@
     "stickybits": "^3.7.11",
     "superclamp": "^0.2.3",
     "swiper": "^11.2.8"
-  }
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/css/*.css",
+      "maxSize": "55 kB",
+      "compression": "gzip"
+    },
+    {
+      "path": "./dist/js/main.bundle.js",
+      "maxSize": "35 kB",
+      "compression": "gzip"
+    },
+    {
+      "path": "./dist/js/chunks/to-top-btn.js",
+      "maxSize": "25 kB",
+      "compression": "gzip"
+    }
+  ]
 }
