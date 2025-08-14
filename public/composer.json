@@ -1,0 +1,7 @@
+{
+    "name": "middlebury/midd-frontend",
+    "description": "Middlebury College's theme assets.",
+    "homepage": "https://github.com/middlebury/midd-frontend",
+    "type": "drupal-library",
+    "license": "GPL-2.0-or-later"
+}
