@@ -1,6 +1,4 @@
-import { defineConfig } from 'vite';
-import { dirname, resolve } from 'path';
-import { fileURLToPath } from 'node:url';
+import { createLogger, defineConfig } from 'vite';
 import { globSync } from 'glob';
 import twig from '@vituum/vite-plugin-twig';
 import vituum from 'vituum';
@@ -13,7 +11,7 @@ import imageminSvgo from 'imagemin-svgo';
 const PROD = process.env.NODE_ENV === 'production';
 const TEST = process.env.CI;
 
-// const __dirname = dirname(fileURLToPath(import.meta.url));
+const logger = createLogger();
 
 const getPages = () => {
   const files = globSync('src/pages/**/*.twig');
@@ -66,11 +64,7 @@ const updateJsFilePaths = () => {
 
 export default defineConfig(() => ({
   plugins: [
-    vituum({
-      // pages: {
-      //   dir: './src/templates'
-      // }
-    }),
+    vituum(),
     twig({
       root: './src/templates',
       filters: {
@@ -115,7 +109,8 @@ export default defineConfig(() => ({
         jpg: imageminMozjpeg({ progressive: true }),
         png: imageminOptipng({ optimizationLevel: 5 }),
         svg: imageminSvgo({ cleanupIDs: false })
-      }
+      },
+      verbose: false
     }),
     updateJsFilePaths(),
     createPagesList()
@@ -130,10 +125,18 @@ export default defineConfig(() => ({
   css: {
     devSourcemap: true
   },
+  customLogger: {
+    ...logger,
+    info: (msg, options) => {
+      if (msg.includes('.html')) return;
+      logger.info(msg, options);
+    }
+  },
   build: {
     outDir: 'dist',
+    publicDir: '/',
     rollupOptions: {
-      // input: resolve(__dirname, 'src/templates/**/**/*.twig'),
+      external: [/moment$/],
       output: {
         assetFileNames: (assetInfo) => {
           let extType = assetInfo.names[0].split('.').at(1);
