@@ -6,10 +6,10 @@
       <li class="mr-1">
         <a href="#" class="d-inline-block {% if light %}text-white hover-fadeout{% elseif dark %}hover-fadeout{% else %}hover-fadein{% endif %} {{office_footer ? " px-1" : " p-1"}}">
           {% include 'icon.twig' with {
-            name: name,
+            name: name.slug,
             class: large ? 'f5' : null
           } %}
-          <span class="sr-only">Link to page/content on {{name}}</span>
+          <span class="sr-only">Link to page/content on {{name.text}}</span>
         </a>
       </li>
     {% endif %}
