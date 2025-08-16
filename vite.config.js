@@ -140,15 +140,23 @@ export default defineConfig(() => ({
   build: {
     outDir: 'dist',
     publicDir: '/',
-    modulePreload: {
-      polyfill: false
-    },
+    // modulePreload: {
+    //   polyfill: false
+    // },
     rollupOptions: {
-      // treeshake: {
-      //   moduleSideEffects: 'no-external'
-      // },
+      treeshake: {
+        moduleSideEffects: (id) => {
+          // if (/\.(mjs|js)$/.test(id)) {
+          //   return false;
+          // }
+          if (id.includes('node_modules')) {
+            return false;
+          }
+        }
+      },
       external: [/moment$/],
       output: {
+        compact: true,
         assetFileNames: (assetInfo) => {
           let extType = assetInfo.names[0].split('.').at(1);
           // console.log(assetInfo);
