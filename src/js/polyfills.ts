@@ -25,3 +25,7 @@ import 'promise-polyfill/src/polyfill';
 
 // requestAnimationFrame polyfill
 import './utils/animation-polyfill';
+
+// Vite module preload polyfill
+// https://vite.dev/config/build-options.html#build-modulepreload
+import 'vite/modulepreload-polyfill';
