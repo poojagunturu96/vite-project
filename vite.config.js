@@ -1,4 +1,5 @@
 import { createLogger, defineConfig } from 'vite';
+import path from 'node:path';
 import { globSync } from 'glob';
 import twig from '@vituum/vite-plugin-twig';
 import vituum from 'vituum';
@@ -7,6 +8,7 @@ import viteImagemin from '@vheemstra/vite-plugin-imagemin';
 import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminOptipng from 'imagemin-optipng';
 import imageminSvgo from 'imagemin-svgo';
+import license from 'rollup-plugin-license';
 
 const PROD = process.env.NODE_ENV === 'production';
 const TEST = process.env.CI;
@@ -68,6 +70,9 @@ const updateJsFilePaths = () => {
 };
 
 export default defineConfig(() => ({
+  esbuild: {
+    legalComments: 'none' // Removes all comments, including legal ones like @license
+  },
   plugins: [
     vituum(),
     twig({
@@ -118,7 +123,18 @@ export default defineConfig(() => ({
       verbose: false
     }),
     updateJsFilePaths(),
-    createPagesList()
+    createPagesList(),
+    {
+      ...license({
+        thirdParty: {
+          output: {
+            file: path.join(__dirname, 'dist/js', 'dependencies.txt'),
+            encoding: 'utf-8'
+          }
+        }
+      }),
+      apply: 'build'
+    }
   ],
   server: {
     port: 3000,
@@ -140,15 +156,9 @@ export default defineConfig(() => ({
   build: {
     outDir: 'dist',
     publicDir: '/',
-    // modulePreload: {
-    //   polyfill: false
-    // },
     rollupOptions: {
       treeshake: {
         moduleSideEffects: (id) => {
-          // if (/\.(mjs|js)$/.test(id)) {
-          //   return false;
-          // }
           if (id.includes('node_modules')) {
             return false;
           }
@@ -159,26 +169,12 @@ export default defineConfig(() => ({
         compact: true,
         assetFileNames: (assetInfo) => {
           let extType = assetInfo.names[0].split('.').at(1);
-          // console.log(assetInfo);
           if (/css/i.test(extType)) {
             return `${extType}/[name][extname]`;
           }
           return 'images/[name][extname]';
         },
         chunkFileNames: 'js/chunks/[name].js'
-        // entryFileNames: (entryFile) => {
-        //   // let extType = assetInfo.names[0].split('.').at(1);
-        //   console.log(entryFile);
-        //   // if (/css/i.test(extType)) {
-        //   //   return `${extType}/[name][extname]`;
-        //   // }
-        //   return 'js/[name].js';
-        // }
-        // manualChunks: {
-        //   main: ['src/js/index.ts'],
-        //   journey: ['src/js/journey-module.ts'],
-        //   calculator: ['src/js/cost-calculator.ts']
-        // }
       }
     }
   }

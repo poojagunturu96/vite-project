@@ -42,6 +42,7 @@
     "postcss-load-config": "^6.0.1",
     "postcss-sort-media-queries": "^5.2.0",
     "prettier": "^3.6.2",
+    "rollup-plugin-license": "^3.6.0",
     "sass-embedded": "^1.89.1",
     "stylelint": "^16.23.1",
     "stylelint-config-xo-scss": "^1.0.1",
