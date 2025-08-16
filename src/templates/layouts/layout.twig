@@ -32,7 +32,7 @@
 
       {% block layout_header %}{% endblock %}
 
-      <main class="main" id="midd-main" aria-labelledby="midd-page-header-label"> {% block before_page_header %}{% endblock %}
+      <main class="main" id="midd-main" {% if body_gradient %} style="background:{{body_gradient}}"{% endif %} aria-labelledby="midd-page-header-label"> {% block before_page_header %}{% endblock %}
         {% if page_header %}
           {% include '../partials/page-header.twig' with page_header %}
         {% endif %}
