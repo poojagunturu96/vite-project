@@ -50,7 +50,7 @@ class ResponsiveTable {
   }
 }
 
-const tables = $$('table') as HTMLTableElement[];
+const tables = $$('table:not(.js-omit-table)') as HTMLTableElement[];
 
 tables.forEach((elem: HTMLTableElement) => new ResponsiveTable(elem));
 

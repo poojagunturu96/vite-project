@@ -1,10 +1,3 @@
-/**
- *  Polyfills to support cross-browser compatibility
- */
-
-// Common polyfills
-import './polyfills';
-
 // used in flowchart, offices, lightbox
 import 'mdn-polyfills/Element.prototype.closest';
 
@@ -12,13 +5,13 @@ import 'mdn-polyfills/Element.prototype.closest';
 // Used in card-carousel and more.
 import 'object-fit-images';
 
+// Shared imports
+import './shared';
+
 /**
  * Custom JS imports
  */
 
-import './lazy-load';
-import './headroom'; // sticky site headers
-import './toggler'; // toggler util used in transcript toggle, accordions, and more
 import './single-toggler';
 import './group-toggler';
 import './shifting-slider'; // slider utility used to slide components on hover
@@ -40,7 +33,6 @@ import './select-url';
 import './charts';
 import './countup';
 import './flowchart';
-import './to-top-btn';
 import './helpfulness';
 import './homepage-grid';
 import './course-list';
