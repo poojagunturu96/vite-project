@@ -1,0 +1,9 @@
+{% embed 'text.twig' %}
+  {% block content %}
+    <h2>Budget Worksheet</h2>
+    <p><strong>NOTE: All charges with the exception of Student Health Insurance are fixed amounts.</strong></p>
+  {% endblock %}
+{% endembed %}
+<form action="" class="cost-calculator js-cost-calculator" id="cost-calculator" method="post" name="form">
+  {% include '../partials/cost-calculator-tables.twig' %}
+</form>
