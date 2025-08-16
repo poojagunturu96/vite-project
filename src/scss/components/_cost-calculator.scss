@@ -1,0 +1,92 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+
+.cost-calculator {
+  overflow-x: scroll;
+
+  @include breakpoints.breakpoint(sm) {
+    overflow-x: initial;
+  }
+}
+
+.cost-calculator__table {
+  min-width: 500px;
+}
+
+.cost-calculator__table,
+.cost-calculator__table--annual-amount {
+  .table {
+    margin-bottom: variables.$spacing-5;
+
+    th {
+      display: initial;
+    }
+
+    tr {
+      display: flex;
+
+      > * {
+        width: 50%;
+      }
+
+      &:not(:last-child) {
+        td {
+          border-bottom: 1px solid variables.$gray-light;
+        }
+      }
+
+      td:first-child,
+      th:first-child {
+        margin-right: variables.$spacing-2;
+      }
+    }
+
+    td {
+      display: flex;
+      justify-content: space-between;
+
+      label {
+        width: 70%;
+      }
+
+      label[for='cost-calc-total-fall-charges'] {
+        font-weight: variables.$font-weight-bold;
+      }
+
+      input {
+        height: fit-content;
+        width: 30%;
+        // padding: variables.$spacing-2;
+      }
+
+      input:disabled {
+        border: none;
+        font-weight: variables.$font-weight-bold;
+        color: variables.$black;
+        background: none;
+        padding: 0;
+        padding-left: variables.$spacing-3;
+        padding-top: variables.$spacing-1;
+      }
+    }
+  }
+}
+
+.cost-calculator__table--annual-amount {
+  .table {
+    display: inline;
+    width: 50%;
+
+    tr > * {
+      width: 100%;
+    }
+
+    td {
+      border: 0;
+
+      label {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -58,6 +58,11 @@ const updateJsFilePaths = () => {
         id: 'src/js/journey-module.ts',
         fileName: 'js/journey.bundle.js'
       });
+      this.emitFile({
+        type: 'chunk',
+        id: 'src/js/cost-calculator.ts',
+        fileName: 'js/calculator.bundle.js'
+      });
     }
   };
 };
@@ -135,17 +140,37 @@ export default defineConfig(() => ({
   build: {
     outDir: 'dist',
     publicDir: '/',
+    modulePreload: {
+      polyfill: false
+    },
     rollupOptions: {
+      // treeshake: {
+      //   moduleSideEffects: 'no-external'
+      // },
       external: [/moment$/],
       output: {
         assetFileNames: (assetInfo) => {
           let extType = assetInfo.names[0].split('.').at(1);
+          // console.log(assetInfo);
           if (/css/i.test(extType)) {
             return `${extType}/[name][extname]`;
           }
           return 'images/[name][extname]';
         },
         chunkFileNames: 'js/chunks/[name].js'
+        // entryFileNames: (entryFile) => {
+        //   // let extType = assetInfo.names[0].split('.').at(1);
+        //   console.log(entryFile);
+        //   // if (/css/i.test(extType)) {
+        //   //   return `${extType}/[name][extname]`;
+        //   // }
+        //   return 'js/[name].js';
+        // }
+        // manualChunks: {
+        //   main: ['src/js/index.ts'],
+        //   journey: ['src/js/journey-module.ts'],
+        //   calculator: ['src/js/cost-calculator.ts']
+        // }
       }
     }
   }
