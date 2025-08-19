@@ -156,6 +156,7 @@ export default defineConfig(() => ({
   build: {
     outDir: 'dist',
     publicDir: '/',
+    manifest: true,
     rollupOptions: {
       treeshake: {
         moduleSideEffects: (id) => {
