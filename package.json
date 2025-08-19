@@ -84,7 +84,7 @@
       "compression": "gzip"
     },
     {
-      "path": "./dist/js/chunks/to-top-btn.js",
+      "path": "./dist/js/chunks/preload-helper.js",
       "maxSize": "25 kB",
       "compression": "gzip"
     }
