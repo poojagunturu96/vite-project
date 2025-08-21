@@ -31,7 +31,7 @@ const getPages = () => {
 const createPagesList = () => {
   return {
     name: 'create-pages-list',
-    enforce: 'post',
+    // enforce: 'post',
     transformIndexHtml(html, context) {
       if (context.filename.endsWith('index.twig.html')) {
         let list = getPages();
