@@ -9,6 +9,7 @@ import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminOptipng from 'imagemin-optipng';
 import imageminSvgo from 'imagemin-svgo';
 import license from 'rollup-plugin-license';
+import checker from 'vite-plugin-checker';
 
 const PROD = process.env.NODE_ENV === 'production';
 const TEST = process.env.CI;
@@ -31,7 +32,6 @@ const getPages = () => {
 const createPagesList = () => {
   return {
     name: 'create-pages-list',
-    // enforce: 'post',
     transformIndexHtml(html, context) {
       if (context.filename.endsWith('index.twig.html')) {
         let list = getPages();
@@ -71,7 +71,8 @@ const updateJsFilePaths = () => {
 
 export default defineConfig(() => ({
   esbuild: {
-    legalComments: 'none' // Removes all comments, including legal ones like @license
+    // Removes all comments, including legal ones like @license
+    legalComments: 'none'
   },
   plugins: [
     vituum(),
@@ -134,7 +135,14 @@ export default defineConfig(() => ({
         }
       }),
       apply: 'build'
-    }
+    },
+    checker({
+      typescript: true,
+      overlay: {
+        initialIsOpen: false,
+        position: 'br'
+      }
+    })
   ],
   server: {
     port: 3000,

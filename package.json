@@ -47,7 +47,9 @@
     "stylelint": "^16.23.1",
     "stylelint-config-xo-scss": "^1.0.1",
     "stylelint-prettier": "^5.0.3",
+    "typescript": "^5.9.2",
     "vite": "^7.1.3",
+    "vite-plugin-checker": "^0.10.3",
     "vituum": "^1.2.0"
   },
   "dependencies": {
