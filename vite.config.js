@@ -21,7 +21,7 @@ const getPages = () => {
   let elems = '';
 
   for (const path of files) {
-    const anchorText = `${path.split('/').slice(2).join('/')}`;
+    const anchorText = `${path.split('/').slice(2).join(' / ')}`;
     const anchorHref = anchorText.replace('.twig', '.html');
     elems += `<li class="pr-2 pb-3"><a href="/${anchorHref}">${anchorText}</a></li>`;
   }
